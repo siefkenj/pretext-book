@@ -1,0 +1,81 @@
+{
+    "name": "pretext-book",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Tools for working with PreTeXt in TypeScript",
+    "workspaces": [
+        "./packages/jsx"
+    ],
+    "scripts": {
+        "build": "npm run build -ws",
+        "test": "jest "
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "node_modules/(?!unified|bail|is-plain-obj|trough|vfile.*|unist.*|hast.*|property-information|html-void-elements|.*-separated-tokens|.*entities.*|ccount|rehype*|string-width|strip-ansi|ansi-regex|supports-color|rehype|web-namespaces|zwitch)"
+        ],
+        "transform": {
+            "\\.m?jsx?$": "esbuild-jest",
+            "\\.pegjs$": "<rootDir>/lambda-calculus-interpreter/tests/pegjs-preprocessor.cjs",
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "haste": {
+            "forceNodeFilesystemAPI": true
+        },
+        "modulePathIgnorePatterns": [
+            "/dist/"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/siefkenj/pretext-book.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/siefkenj/pretext-book/issues"
+    },
+    "homepage": "https://github.com/siefkenj/pretext-book",
+    "devDependencies": {
+        "@types/github-slugger": "^2.0.0",
+        "@types/react": "^18.0.26",
+        "@types/react-dom": "^18.0.9",
+        "@types/xast": "^1.0.2",
+        "@types/glob": "^8.0.0",
+        "@types/jest": "^29.2.4",
+        "@types/node": "^18.11.17",
+        "esbuild": "^0.16.9",
+        "esbuild-jest": "^0.5.0",
+        "esbuild-node-externals": "^1.6.0",
+        "esbuild-runner": "^2.2.2",
+        "jest": "^29.3.1",
+        "mkdirp": "^1.0.4",
+        "prettier": "^2.8.1",
+        "prettier-plugin-pegjs": "^0.5.3",
+        "ts-jest": "^29.0.3",
+        "typescript": "^4.9.4"
+    },
+    "dependencies": {
+        "peggy": "^2.0.1",
+        "xast-util-from-xml": "^2.0.1",
+        "xast-util-to-string": "^2.0.0",
+        "xast-util-to-xml": "^3.0.0",
+        "buffer": "^6.0.3",
+        "comma-separated-tokens": "^2.0.3",
+        "github-slugger": "^2.0.0",
+        "hast-util-whitespace": "^2.0.0",
+        "html-react-parser": "^3.0.4",
+        "prettier": "^2.8.1",
+        "property-information": "^6.2.0",
+        "raw.macro": "^0.7.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "space-separated-tokens": "^2.0.2",
+        "unified": "^10.1.2",
+        "unist-util-is": "^5.1.1",
+        "unist-util-remove": "^3.1.0",
+        "unist-util-select": "^4.0.1",
+        "unist-util-visit": "^4.1.1",
+        "vfile": "^5.3.6"
+    }
+}
