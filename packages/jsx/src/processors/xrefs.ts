@@ -1,7 +1,7 @@
 import { Element as XMLElement, Root } from "xast";
 import { Plugin } from "unified";
 import { visit, EXIT } from "unist-util-visit";
-import { elmMatcher, onlyElementsAndText } from "./tools";
+import { elmMatcher, onlyElementsAndText } from "../utils/tools";
 import { remove } from "unist-util-remove";
 
 import Slugger from "github-slugger";

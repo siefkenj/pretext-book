@@ -4,7 +4,7 @@
  */
 
 import { Element } from "xast";
-import { isElement } from "../processors/tools";
+import { isElement } from "../utils/tools";
 import { toString } from "xast-util-to-string";
 import {
     NGAttribute,

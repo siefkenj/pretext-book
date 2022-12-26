@@ -1,20 +1,33 @@
 import { Plugin } from "unified";
-import { DocInfo } from "../types/relax-ng";
-import { elmMatcher } from "../utils/tools";
-import { remove } from "unist-util-remove";
 import { toString } from "xast-util-to-string";
-import { PretextRoot } from "./types";
-import { ElementDocInfo } from "../preprocessors/generated-types";
+import { ElementDocInfo } from "../../assets/generated-types";
+import { PretextRoot } from "../../assets/types";
+import { PretextState } from "../../state";
+import { isElement } from "../../utils/tools";
+import { replaceNode } from "../../utils/xast";
 
-const isDocInfoNode = elmMatcher("docinfo");
+export type PluginOptions = {
+    state: PretextState;
+};
 
 /**
  * Extract all information from the `<docinfo />` node and
  * remove it from the tree.
  */
-export const extractDocInfoPlugin: Plugin<void[], PretextRoot, PretextRoot> =
-    () => (ast, file) => {
-        const pretext = ast.children[0];
+export const extractDocInfoPlugin: Plugin<
+    PluginOptions[],
+    PretextRoot,
+    PretextRoot
+> = function (options) {
+    const { state } = options;
+    if (!state) {
+        throw new Error(
+            `Cannot use plugin without passing in a PretextState object`
+        );
+    }
+
+    return (root, file) => {
+        const pretext = root.children[0];
         const docinfoNode = pretext.children.find(
             (n) => n.name === "docinfo"
         ) as ElementDocInfo;
@@ -22,10 +35,9 @@ export const extractDocInfoPlugin: Plugin<void[], PretextRoot, PretextRoot> =
             console.warn("Could not find <docinfo> node");
             return;
         }
-        const docinfo: DocInfo = {
-            base: docinfoNode.attributes["xml:base"],
-            lang: docinfoNode.attributes["xml:lang"],
-        };
+        const docinfo = state.docinfo;
+        docinfo.base = docinfoNode.attributes["xml:base"];
+        docinfo.lang = docinfoNode.attributes["xml:lang"];
 
         for (const node of docinfoNode.children) {
             switch (node.name) {
@@ -78,8 +90,9 @@ export const extractDocInfoPlugin: Plugin<void[], PretextRoot, PretextRoot> =
             }
         }
 
-        file.data.docinfo = docinfo;
-
-        // Remove from the tree when we've extracted the info
-        (remove as any)(ast, isDocInfoNode);
+        // Remove the docinfo element from the tree
+        replaceNode(root, (node) =>
+            isElement(node) && node.name === "docinfo" ? null : undefined
+        );
     };
+};

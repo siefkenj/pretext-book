@@ -1,0 +1,1 @@
+This folder contains assets auto-generated from the PreTeXt source. These files should not be modified on their own.

@@ -7,7 +7,7 @@ import {
     Editor,
     TitlePage,
 } from "../types/relax-ng";
-import { elmMatcher } from "./tools";
+import { elmMatcher } from "../utils/tools";
 import {
     ElementArticleFrontMatter,
     ElementAuthor,

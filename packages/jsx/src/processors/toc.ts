@@ -1,6 +1,6 @@
 import { Element as XMLElement, Root } from "xast";
 import { Plugin } from "unified";
-import { elmMatcher, onlyElementsAndText } from "./tools";
+import { elmMatcher, onlyElementsAndText } from "../utils/tools";
 
 import { Toc, TocItem } from "../types/extra";
 import { xmlVisit } from "../workarounds/visitor";
