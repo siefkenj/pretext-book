@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Normalize PreTeXt XML Passes hello world 1`] = `"<pretext><article xml:id="hello-world"><p>Hello, World!</p></article></pretext>"`;

@@ -1,11 +1,9 @@
 import util from "util";
-import { normalizePretextXml } from "../src";
-import { toString } from "hast-util-to-string";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
 import { visit } from "../src/utils/xast/visit";
 import { replaceNode } from "../src/utils/xast/replace-node";
-import { XastAst } from "../src/utils/xast/types";
+import { XastNode } from "../src/utils/xast/types";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default
@@ -48,7 +46,7 @@ describe("XAST utility functions", () => {
             {
                 test: ((node: any) => node && node.type === "element") as (
                     node: any
-                ) => node is XastAst & { type: "element" },
+                ) => node is XastNode & { type: "element" },
             }
         );
 
@@ -63,7 +61,7 @@ describe("XAST utility functions", () => {
     it("can replace nodes", async () => {
         let source: string;
         source = `<pretext><article xml:id="hello-world"><p>Hello, World!</p><b>foo</b></article><baz /><p>fun times</p></pretext>`;
-        let ast: XastAst;
+        let ast: XastNode;
 
         // Get rid of any <p>
         ast = fromXml(source);

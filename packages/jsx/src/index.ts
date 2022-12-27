@@ -1,3 +1,3 @@
-import { normalizePretextXml } from "./relax-ng/normalize-pretext-xml";
+import { pretextToHtml } from "./target/html";
 
-export { normalizePretextXml };
+export { pretextToHtml };

@@ -1,4 +1,4 @@
-import { XastAst } from "./types";
+import { XastNode } from "./types";
 import { VisitInfo } from "./visit";
 
 /**
@@ -7,7 +7,7 @@ import { VisitInfo } from "./visit";
  * the function will error.
  */
 export function replaceNodeDuringVisit(
-    replacement: XastAst | XastAst[],
+    replacement: XastNode | XastNode[],
     info: VisitInfo
 ) {
     const parent = info.parents[0];
@@ -15,7 +15,7 @@ export function replaceNodeDuringVisit(
         throw new Error(`Cannot replace node: parent not found`);
     }
     const container = parent[info.key as keyof typeof parent] as
-        | XastAst[]
+        | XastNode[]
         | undefined;
     if (!Array.isArray(container)) {
         throw new Error(`Cannot replace node: containing array not found`);

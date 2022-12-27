@@ -1,9 +1,7 @@
 import util from "util";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
-import { XastAst, XastRoot } from "../src/utils/xast/types";
-import { Plugin, unified } from "unified";
-import { stripCommentsAndFriendsPlugin } from "../src/stages/0-normalize/plugin-strip-comments";
+import { XastNode, XastRoot } from "../src/utils/xast/types";
 import { JsonGrammar } from "../src/utils/relax-ng/types";
 import { createNodeToSchemaMap } from "../src/utils/relax-ng/create-node-to-schema-map";
 import { visit } from "../src/utils/xast";

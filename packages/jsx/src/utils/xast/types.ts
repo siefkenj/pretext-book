@@ -14,7 +14,7 @@ import {
     Text,
 } from "xast";
 
-export type XastAst =
+export type XastNode =
     | Cdata
     | Comment
     | Doctype

@@ -1,10 +1,10 @@
-import { XastAst, XastElement, XastText } from "./xast";
+import { XastNode, XastElement, XastText } from "./xast";
 
 /**
  * Filter a list of XML nodes to ensure that only elements and text nodes are in the list.
  */
 export function onlyElementsAndText(
-    nodes: XastAst[]
+    nodes: XastNode[]
 ): (XastElement | XastText)[] {
     return nodes.filter(
         (node) => node.type === "element" || node.type === "text"

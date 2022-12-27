@@ -1,4 +1,4 @@
-import { XastAst } from "./types";
+import { XastNode } from "./types";
 import { visit, VisitInfo } from "./visit";
 
 /**
@@ -7,12 +7,12 @@ import { visit, VisitInfo } from "./visit";
  * If `null` is returned, the node is deleted. If `undefined` is returned, no replacement happens.
  */
 export function replaceNode(
-    ast: XastAst | XastAst[],
+    ast: XastNode | XastNode[],
     visitor: (
-        node: XastAst,
+        node: XastNode,
         info: VisitInfo
     ) =>
-        | XastAst | XastAst[]
+        | XastNode | XastNode[]
         | null
         | undefined
         | void

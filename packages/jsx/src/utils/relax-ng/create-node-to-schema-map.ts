@@ -1,5 +1,5 @@
 import { toXml } from "xast-util-to-xml";
-import { XastAst, XastElement } from "../xast";
+import { XastNode, XastElement } from "../xast";
 import {
     JsonGrammar,
     NodeToTypeMap,
@@ -15,7 +15,7 @@ type SchemaType = RelaxNgText | RelaxNgElement;
  * and a diagnostic warning is returned.
  */
 export function createNodeToSchemaMap(
-    tree: XastAst,
+    tree: XastNode,
     schema: JsonGrammar,
     nodeToTypeMap?: NodeToTypeMap
 ): { nodeToTypeMap: NodeToTypeMap; warnings: string[] } {
@@ -102,7 +102,7 @@ function mapElementTypes(
 /**
  * Guess the type of `node`, using element name if `node` is an XastElement.
  */
-function guessType(node: XastAst, schema: JsonGrammar): string | null {
+function guessType(node: XastNode, schema: JsonGrammar): string | null {
     if (node.type === "text") {
         return "XMLText";
     }
@@ -119,7 +119,7 @@ function guessType(node: XastAst, schema: JsonGrammar): string | null {
 /**
  * Returns whether the `node` matches the type of `schemaType`.
  */
-function matches(node: XastAst, schemaType: SchemaType): boolean {
+function matches(node: XastNode, schemaType: SchemaType): boolean {
     if (!schemaType) {
         throw new Error("`schemaType` is undefined");
     }
@@ -137,14 +137,14 @@ function matches(node: XastAst, schemaType: SchemaType): boolean {
 }
 
 const makeWarning = {
-    guessedType(node: XastAst, guessedType: string | null) {
+    guessedType(node: XastNode, guessedType: string | null) {
         return `${nodePosition(node)}Type of ${nodeToString(
             node
         )} could not be determined. Guessing ${guessedType || "null"}`;
     },
 };
 
-function nodeToString(node: XastAst) {
+function nodeToString(node: XastNode) {
     if (node.type === "element") {
         return `<${node.name}>`;
     }
@@ -154,7 +154,7 @@ function nodeToString(node: XastAst) {
 /**
  * Format `node`'s position as `line:column `, with a trailing space.
  */
-function nodePosition(node: XastAst): string {
+function nodePosition(node: XastNode): string {
     if (node.position) {
         return `${node.position.start.line}:${node.position.start.column} `;
     }

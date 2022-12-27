@@ -2,7 +2,7 @@ import { Plugin, unified } from "unified";
 import { jsonGrammar } from "../../assets/generated-grammar";
 import { PretextRoot } from "../../assets/types";
 import { JsonGrammar } from "../../utils/relax-ng/types";
-import { XastAst, XastRoot } from "../../utils/xast";
+import { XastNode, XastRoot } from "../../utils/xast";
 import { expandCdataPlugin } from "./plugin-expand-cdata";
 import { mergeAdjacentTextPlugin } from "./plugin-merge-adjacent-text";
 import { removeUnneededTextPlugin } from "./plugin-remove-unneeded-text";
@@ -17,7 +17,7 @@ export const normalizePretextPlugin: Plugin<void[], XastRoot, PretextRoot> =
     function () {
         const schema = jsonGrammar as JsonGrammar;
         const validationErrors: string[] = [];
-        const nodeToSchemaMap: Map<XastAst, string> = new Map();
+        const nodeToSchemaMap: Map<XastNode, string> = new Map();
 
         const processor = unified()
             .use(stripCommentsAndFriendsPlugin)

@@ -1,5 +1,5 @@
 import { Plugin } from "unified";
-import { replaceNode, XastAst, XastRoot } from "../../utils/xast";
+import { replaceNode, XastNode, XastRoot } from "../../utils/xast";
 
 /**
  * Unifiedjs plugin that merges any adjacent text nodes.
@@ -12,7 +12,7 @@ export const mergeAdjacentTextPlugin: Plugin<void[], XastRoot, XastRoot> =
                     return;
                 }
                 const children = node.children;
-                let prevNode: XastAst | null = null;
+                let prevNode: XastNode | null = null;
                 let needsMerging = false;
                 for (const n of children) {
                     if (

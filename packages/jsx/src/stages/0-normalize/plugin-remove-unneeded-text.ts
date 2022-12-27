@@ -1,10 +1,10 @@
 import { Plugin } from "unified";
 import { JsonGrammar } from "../../utils/relax-ng/types";
-import { replaceNode, XastAst, XastRoot } from "../../utils/xast";
+import { replaceNode, XastNode, XastRoot } from "../../utils/xast";
 
 type PluginOptions = {
     schema: JsonGrammar;
-    nodeToSchemaMap: Map<XastAst, string> | WeakMap<XastAst, string>;
+    nodeToSchemaMap: Map<XastNode, string> | WeakMap<XastNode, string>;
 };
 
 /**

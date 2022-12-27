@@ -1,7 +1,7 @@
 import util from "util";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
-import { XastAst, XastRoot } from "../src/utils/xast/types";
+import { XastNode, XastRoot } from "../src/utils/xast/types";
 import { Plugin, unified } from "unified";
 import { JsonGrammar } from "../src/utils/relax-ng/types";
 import { PretextState } from "../src/state";
@@ -9,9 +9,9 @@ import { normalizePretextPlugin } from "../src/stages/0-normalize/plugin-normali
 import { extractDocInfoPlugin } from "../src/stages/1-assemble/plugin-extract-docinfo";
 import { ensureIdsPlugin } from "../src/stages/1-assemble/plugin-ensure-ids";
 import { extractFrontmatterPlugin } from "../src/stages/1-assemble/plugin-extract-frontmatter";
-import { extractTocPlugin } from "../src/stages/1-assemble/plugin-extract-toc";
 import { assemblePlugin } from "../src/stages/1-assemble/plugin-assemble";
 import { visit } from "../src/utils/xast";
+import { attachRootToStatePlugin } from "../src/stages/helpers/attach-root-to-state";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default
@@ -222,7 +222,7 @@ describe("Stage 1 tests", () => {
                 },
             ],
         });
-        let frontmatterNode: XastAst | null = null;
+        let frontmatterNode: XastNode | null = null;
         visit(processed, (node) => {
             if (node.type === "element" && node.name === "frontmatter") {
                 frontmatterNode = node;
@@ -251,7 +251,7 @@ describe("Stage 1 tests", () => {
         const processor = unified()
             .use(normalizePretextPlugin)
             .use(ensureIdsPlugin, { state })
-            .use(extractTocPlugin, { state });
+            .use(attachRootToStatePlugin, { state });
         const processed = processor.runSync(ast);
 
         expect(state.toc).toMatchObject([
@@ -301,7 +301,8 @@ describe("Stage 1 tests", () => {
         // Set up the processor
         const processor = unified()
             .use(normalizePretextPlugin)
-            .use(assemblePlugin, { state });
+            .use(assemblePlugin, { state })
+            .use(attachRootToStatePlugin, { state });
         const processed = processor.runSync(ast);
 
         // If the TOC got extracted, we'll assume everything else worked too

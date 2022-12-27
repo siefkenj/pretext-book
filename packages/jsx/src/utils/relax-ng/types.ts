@@ -1,4 +1,4 @@
-import { XastAst } from "../xast";
+import { XastNode } from "../xast";
 
 export type RelaxNgText = {
     type: "text";
@@ -18,4 +18,4 @@ export type JsonGrammar = {
     refs: Record<string, RelaxNgRef>;
 };
 
-export type NodeToTypeMap = Map<XastAst, string> | WeakMap<XastAst, string>;
+export type NodeToTypeMap = Map<XastNode, string> | WeakMap<XastNode, string>;

@@ -147,7 +147,5 @@ export const ensureIdsPlugin: Plugin<
             },
             { test: isRefable }
         );
-
-        return root;
     };
 };

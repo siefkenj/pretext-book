@@ -18,20 +18,21 @@ import { stringify as commas } from "comma-separated-tokens";
 import style from "style-to-object";
 import { Properties } from "property-information/lib/util/schema";
 import { VFile } from "vfile";
+import { XastNode } from "./types";
 
 const toReact = hastToReact as Record<string, string>;
 type Context = { schema: Schema; prefix: string | null; key: number };
 
 /**
- * Function that can be called to process remaining HAST AST nodes
+ * Function that can be called to process remaining Xast AST nodes
  * when converting an AST to React.
  */
 export type ProcessContentFunc = (
-    nodes: XMLElement | XMLElement[]
+    nodes: XastNode | XastNode[]
 ) => React.ReactNode;
 
 /**
- * Function that can be called on a `HastElement` to (optionally)
+ * Function that can be called on a `XastElement` to (optionally)
  * replace it with a React node.
  */
 export type ReplacerFunc = (
@@ -172,7 +173,9 @@ export const xastReactTransformer: Plugin<
             return process(node, 0, file);
         };
 
+    // We don't want to be a compiler. We merely want to turn the content to react and pass it on.
     Object.assign(this, { Compiler: compiler });
+    // return compiler;
 };
 
 /**

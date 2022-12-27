@@ -1,5 +1,5 @@
 import * as Xast from "xast";
-import { XastAst } from "./types";
+import { XastNode } from "./types";
 
 export type VisitorContext = {
     /**
@@ -33,7 +33,7 @@ type GuardTypeOf<T extends (x: any) => boolean> = GetGuard<T> extends never
  */
 type GuardFromOptions<
     Opts extends VisitOptions,
-    PossibleTypes = XastAst | XastAst[]
+    PossibleTypes = XastNode | XastNode[]
 > = Opts extends {
     test: infer R;
 }
@@ -97,7 +97,7 @@ type VisitOptions = {
     /**
      * Type guard for types that are passed to the `visitor` function.
      */
-    test?: (node: XastAst | XastAst[], info: VisitInfo) => boolean;
+    test?: (node: XastNode | XastNode[], info: VisitInfo) => boolean;
     /**
      * Whether arrays will be sent to the `visitor` function. If falsy,
      * only nodes will be past to `visitor`.
@@ -122,11 +122,11 @@ export type VisitInfo = {
     /**
      * A list of ancestor nodes, `[parent, grandparent, great-grandparent, ...]`
      */
-    readonly parents: XastAst[];
+    readonly parents: XastNode[];
     /**
      * If the element was accessed in an array, the array that it is part of.
      */
-    readonly containingArray: XastAst[] | undefined;
+    readonly containingArray: XastNode[] | undefined;
     /**
      * The LaTeX context of the current match.
      */
@@ -140,7 +140,7 @@ export type VisitInfo = {
  * @param [visitor] Function to run for each node
  */
 export function visit<Opts extends VisitOptions>(
-    tree: XastAst | XastAst[],
+    tree: XastNode | XastNode[],
     visitor:
         | Visitor<VisitorTypeFromOptions<Opts>>
         | Visitors<VisitorTypeFromOptions<Opts>>,
@@ -170,7 +170,7 @@ export function visit<Opts extends VisitOptions>(
     });
 
     function walk(
-        node: XastAst | XastAst[],
+        node: XastNode | XastNode[],
         { key, index, parents, context, containingArray }: VisitInfo
     ): ActionTuple {
         const nodePassesTest = includeArrays
@@ -234,7 +234,7 @@ export function visit<Opts extends VisitOptions>(
             // Recursively walk all child nodes
             const key = "children";
             if (key in node) {
-                const grandparents = ([node] as XastAst[]).concat(parents);
+                const grandparents = ([node] as XastNode[]).concat(parents);
 
                 const result = walk(node.children, {
                     key,
