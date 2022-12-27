@@ -4,7 +4,8 @@
     "version": "1.0.0",
     "description": "Tools for working with PreTeXt in TypeScript",
     "workspaces": [
-        "./packages/jsx"
+        "./packages/jsx",
+        "./packages/pretext-playground"
     ],
     "scripts": {
         "build": "npm run build -ws",
@@ -37,7 +38,6 @@
     },
     "homepage": "https://github.com/siefkenj/pretext-book",
     "devDependencies": {
-        "@types/github-slugger": "^2.0.0",
         "@types/glob": "^8.0.0",
         "@types/jest": "^29.2.4",
         "@types/node": "^18.11.17",
@@ -58,6 +58,7 @@
     "dependencies": {
         "buffer": "^6.0.3",
         "comma-separated-tokens": "^2.0.3",
+        "create-react-app": "^5.0.1",
         "github-slugger": "^2.0.0",
         "hast-util-to-string": "^2.0.0",
         "hast-util-whitespace": "^2.0.0",
