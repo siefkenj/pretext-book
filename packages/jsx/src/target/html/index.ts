@@ -8,11 +8,17 @@ import { xastReactTransformer } from "../../utils/xast";
 import { xastParserPlugin } from "../../utils/xast";
 import { Book } from "./components/book";
 import { ClassedSection } from "./components/classed-section";
+import { Definition } from "./components/definition";
+import { IntroOrConclusion } from "./components/intro-conclusion";
 import { P } from "./components/p";
+import { Term } from "./components/term";
 import { Title } from "./components/title";
 import { reactToHtml } from "./react-to-html";
 import { createContextPassingRootReplacer } from "./replacers/pretext";
-import { replacerFactoryWithId } from "./replacers/replacer-factory";
+import {
+    replacerFactory,
+    replacerFactoryWithId,
+} from "./replacers/replacer-factory";
 
 /**
  * Parse PreTeXt source and turn it into HTML.
@@ -32,6 +38,11 @@ export function pretextToHtml(source: string) {
                 replacerFactoryWithId("title", Title),
                 replacerFactoryWithId("chapter", ClassedSection),
                 replacerFactoryWithId("section", ClassedSection),
+                replacerFactoryWithId("subsection", ClassedSection),
+                replacerFactoryWithId("introduction", IntroOrConclusion),
+                replacerFactoryWithId("conclusion", IntroOrConclusion),
+                replacerFactoryWithId("definition", Definition),
+                replacerFactory("term", Term),
             ],
         });
 

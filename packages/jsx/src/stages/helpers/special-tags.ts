@@ -17,6 +17,13 @@ export const DIVISIONS = new Set([
     "conclusion",
     "headnote",
 ]);
+/** Special division elements that don't get numbers displayed */
+export const DIVISIONS_WITHOUT_NUMBERS = new Set([
+    "frontmatter",
+    "introduction",
+    "conclusion",
+    "headnote",
+]);
 
 /** Elements that can be referenced. They get an id auto-generated */
 export const REFABLE = new Set([
@@ -32,6 +39,9 @@ export const REFABLE = new Set([
     "dblbrackets",
     "delete",
     "em",
+    "me",
+    "men",
+    "mrow",
     "entity",
     "fn",
     "foreign",
@@ -48,6 +58,44 @@ export const REFABLE = new Set([
     "title",
     "p",
     "li",
+    "axiom",
+    "theorem",
+    "corollary",
+    "lemma",
+    "algorithm",
+    "proposition",
+    "claim",
+    "fact",
+    "definition",
+    "conjecture",
+    "axiom",
+    "principle",
+    "heuristic",
+    "hypothesis",
+    "assumption",
+    "example",
+    "remark",
+]);
+
+/** Blocks that get their own numbering (based on the division number) */
+export const NUMBERED_BLOCKS = new Set([
+    "axiom",
+    "theorem",
+    "corollary",
+    "lemma",
+    "algorithm",
+    "proposition",
+    "claim",
+    "fact",
+    "definition",
+    "conjecture",
+    "axiom",
+    "principle",
+    "heuristic",
+    "hypothesis",
+    "assumption",
+    "example",
+    "remark",
 ]);
 
 /** Matches a `<title>` element. */

@@ -2,8 +2,10 @@ import Slugger from "github-slugger";
 import { toXml } from "xast-util-to-xml";
 import {
     DIVISIONS,
+    DIVISIONS_WITHOUT_NUMBERS,
     isDivision,
     isTitleNode,
+    NUMBERED_BLOCKS,
 } from "../stages/helpers/special-tags";
 import { JsonGrammar } from "../utils/relax-ng/types";
 import { elmMatcher, isElement, onlyElementsAndText } from "../utils/tools";
@@ -14,6 +16,7 @@ import {
     XastElement,
     XastRoot,
 } from "../utils/xast";
+import { STRING_ID_TO_DISPLAY_NAME } from "./i18n";
 import { ArticleFrontMatter, DocInfo, Toc, TocItem } from "./types";
 
 /**
@@ -47,6 +50,7 @@ export class PretextState {
     _parentMap: WeakMap<XastNode, XastNode>;
     _xastNodeToTocDivisionId: WeakMap<XastNode, string>;
     _xastDivisions: WeakSet<XastElement>;
+    _xastBlockToNumber: WeakMap<XastElement, number>;
 
     constructor(schema?: JsonGrammar) {
         this.docinfo = {};
@@ -62,6 +66,7 @@ export class PretextState {
         this._parentMap = new WeakMap();
         this._xastNodeToTocDivisionId = new WeakMap();
         this._xastDivisions = new WeakSet();
+        this._xastBlockToNumber = new WeakMap();
     }
 
     /**
@@ -105,6 +110,24 @@ export class PretextState {
         });
     }
 
+    _generateBlockToNumberMap() {
+        let number = 0;
+        visit(
+            this.root,
+            (node) => {
+                if (isDivision(node)) {
+                    // Counting resets in every division.
+                    number = 0;
+                }
+                if (NUMBERED_BLOCKS.has(node.name)) {
+                    this._xastBlockToNumber.set(node, number);
+                    number++;
+                }
+            },
+            { test: isElement }
+        );
+    }
+
     /**
      * Generate a map from TOC item ids to information about that item.
      */
@@ -112,10 +135,10 @@ export class PretextState {
         const map: typeof this._tocInfoMap = new Map();
 
         const traverse = (items: TocItem[], level = 0, parent?: TocItem) => {
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
+            let number = 0;
+            for (const item of items) {
                 const parentInfo = map.get(parent?.id || "");
-                let numbering = [i];
+                let numbering = [number];
                 if (parentInfo) {
                     numbering.unshift(...parentInfo.numbering);
                 }
@@ -128,6 +151,15 @@ export class PretextState {
                 });
 
                 traverse(item.children, level + 1, item);
+                if (!DIVISIONS_WITHOUT_NUMBERS.has(item.division)) {
+                    // Some divisions are "skipped over" for numbering.
+                    // To accomplish this, we only advance the number on regular divisions.
+                    number++;
+                }else {
+                    // Divisions that don't have numbers also should have their `numbering`
+                    // array one shorter.
+                    numbering.pop()
+                }
             }
         };
         traverse(this.toc);
@@ -217,6 +249,7 @@ export class PretextState {
 
         this._generateTocItemInfoMap();
         this._generateNodeToDivisionIdMap();
+        this._generateBlockToNumberMap();
     }
 
     /**
@@ -228,6 +261,35 @@ export class PretextState {
         if (tocParentId) {
             return this._tocInfoMap.get(tocParentId);
         }
+    }
+
+    /**
+     * Get the display name of the division that `node` belongs to. (`node` could itself
+     * be a division.) For example, if `node` is `<chapter>`, `"Chapter"` is returned.
+     */
+    getDivisionDisplayName(node: XastElement) {
+        const tocParentId = this._xastNodeToTocDivisionId.get(node);
+        const tocInfo = this._tocInfoMap.get(tocParentId || "");
+        if (tocInfo) {
+            return STRING_ID_TO_DISPLAY_NAME[tocInfo.item.division];
+        }
+    }
+
+    /**
+     * Returns information about the block `node`. This is used,
+     * for example, when `node` is a `<definition>` element, etc.
+     */
+    getBlockInfo(node: XastElement) {
+        const number = this._xastBlockToNumber.get(node);
+        const divisionInfo = this.getTocItemInfo(node);
+        if (!divisionInfo) {
+            return;
+        }
+        return {
+            displayName: STRING_ID_TO_DISPLAY_NAME[node.name] || node.name,
+            number,
+            divisionInfo,
+        };
     }
 }
 

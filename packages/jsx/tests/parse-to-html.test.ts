@@ -1,4 +1,5 @@
 import util from "util";
+import * as fs from "node:fs"
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
 import { XastNode, XastRoot } from "../src/utils/xast/types";
@@ -12,6 +13,7 @@ import { extractFrontmatterPlugin } from "../src/stages/1-assemble/plugin-extrac
 import { assemblePlugin } from "../src/stages/1-assemble/plugin-assemble";
 import { visit } from "../src/utils/xast";
 import { pretextToHtml } from "../src/target/html";
+import { fstat } from "fs";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default
@@ -33,17 +35,32 @@ describe("Parse to HTML tests", () => {
                             <title>The first title!</title>
                             <section>
                                 <title>Important!</title>
-                                <p>Hello, World!</p>
+				<introduction>
+					<title>My Intro</title>
+					<p>Hello, World!</p>
+					<definition xml:id="mydef">
+						<title>The Good Dog</title>
+						<statement>A <term>Good Dog</term> is a dog that sits.</statement>
+					</definition>
+				</introduction>
+				<subsection>
+					<title>My Sub</title>
+					<p>The contents of the subsection</p>
+				</subsection>
+				<conclusion>
+					<p>And stuff</p>
+				</conclusion>
                             </section>
                             <section>
                                 <p>Again here</p>
-                                <p>Some more</p>
+				<p>Some more. See <xref ref="mydef" /></p>
                             </section>
                         </chapter>
                     </book>
                 </pretext>`;
 
         const processed = pretextToHtml(source);
+        fs.writeFileSync("./tests/tmp/webpage.html", processed)
         console.log(processed);
     });
 });

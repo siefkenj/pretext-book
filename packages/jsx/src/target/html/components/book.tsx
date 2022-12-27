@@ -24,22 +24,43 @@ export const Book: ReplacerComponentWithId = function ({ node: _node, id }) {
         (n) =>
             !["title", "shorttitle", "subtitle", "plaintitle"].includes(n.name)
     );
-    
-
 
     return (
         <html>
             <head>
                 <title>{titleString}</title>
+                {[
+                    "pretext",
+                    "pretext_add_on",
+                    "shell_default",
+                    "banner_default",
+                    "navbar_default",
+                    "toc_default",
+                    "knowls_default",
+                    "style_default",
+                    "colors_blue_red",
+                    "setcolors",
+                ].map((n) => (
+                    <link
+                        key={n}
+                        href={`https://pretextbook.org/css/0.6/${n}.css`}
+                        rel="stylesheet"
+                        type="text/css"
+                    />
+                ))}
             </head>
             <body className="pretext book">
-                <main className="ptx-main">
-                    <div id="ptx-context" className="ptx-context">
-                        <section id={id} className="book">
-                            {state.processContent(rest)}
-                        </section>
-                    </div>
-                </main>
+                <div className="ptx-page">
+                    <div className="ptx-sidebar" />
+                    <main className="ptx-main">
+                        <div id="ptx-content" className="ptx-content">
+                            <section id={id} className="book">
+                                {state.processContent(rest)}
+                            </section>
+                        </div>
+                        <div className="ptx-page-footer" />
+                    </main>
+                </div>
             </body>
         </html>
     );
