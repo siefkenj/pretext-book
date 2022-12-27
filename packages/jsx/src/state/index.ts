@@ -1,5 +1,10 @@
 import Slugger from "github-slugger";
 import { toXml } from "xast-util-to-xml";
+import {
+    DIVISIONS,
+    isDivision,
+    isTitleNode,
+} from "../stages/helpers/special-tags";
 import { JsonGrammar } from "../utils/relax-ng/types";
 import { elmMatcher, isElement, onlyElementsAndText } from "../utils/tools";
 import {
@@ -159,27 +164,6 @@ export class PretextState {
      * Extract table of contents information from the tree. Nodes are left intact in the process.
      */
     _generateToc() {
-        const DIVISIONS = new Set([
-            "book",
-            "article",
-            "part",
-            "chapter",
-            "section",
-            "subsection",
-            "subsubsection",
-            "paragraphs",
-            // These are special divisions; they can still be referenced.
-            "frontmatter",
-            "introduction",
-            "conclusion",
-            "headnote",
-        ]);
-
-        const isTitleNode = elmMatcher("title");
-        const isDivision = (node: any): node is XastElement => {
-            return isElement(node) && DIVISIONS.has(node.name);
-        };
-
         const toc = this.toc;
         const tocItemsById: Record<string, TocItem> = {};
 

@@ -2,6 +2,7 @@ import { Plugin, unified } from "unified";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
 import { ensureIdsPlugin } from "./plugin-ensure-ids";
+import { ensureTitleElementsPlugin } from "./plugin-ensure-title-elements";
 import { extractDocInfoPlugin } from "./plugin-extract-docinfo";
 import { extractFrontmatterPlugin } from "./plugin-extract-frontmatter";
 
@@ -23,6 +24,7 @@ export const assemblePlugin: Plugin<PluginOptions[], PretextRoot, PretextRoot> =
         }
         const processor = unified()
             .use(extractDocInfoPlugin, { state })
+            .use(ensureTitleElementsPlugin)
             .use(ensureIdsPlugin, { state })
             .use(extractFrontmatterPlugin, { state });
         return (root, file) => {

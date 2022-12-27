@@ -2,68 +2,12 @@ import { Plugin } from "unified";
 import { toString } from "xast-util-to-string";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
-import { elmMatcher, isElement } from "../../utils/tools";
-import { visit, XastElement } from "../../utils/xast";
+import { isElement } from "../../utils/tools";
+import { visit } from "../../utils/xast";
+import { isDivision, isRefable, isTitleNode } from "../helpers/special-tags";
 
 type PluginOptions = {
     state: PretextState;
-};
-
-// Division elements. They get ids auto-generated
-const DIVISIONS = new Set([
-    "book",
-    "article",
-    "part",
-    "chapter",
-    "section",
-    "subsection",
-    "subsubsection",
-    "paragraphs",
-    // These are special divisions; they can still be referenced.
-    "frontmatter",
-    "introduction",
-    "conclusion",
-    "headnote",
-]);
-
-// Elements that can be referenced. They get an id auto-generated
-const REFABLE = new Set([
-    "mrow",
-    "author",
-    "alert",
-    "angles",
-    "articletitle",
-    "attribution",
-    "biblio",
-    "caption",
-    "cell",
-    "dblbrackets",
-    "delete",
-    "em",
-    "entity",
-    "fn",
-    "foreign",
-    "insert",
-    "intertext",
-    "line",
-    "pubtitle",
-    "q",
-    "shortlicense",
-    "sq",
-    "stale",
-    "subtitle",
-    "term",
-    "title",
-    "p",
-    "li",
-]);
-
-const isTitleNode = elmMatcher("title");
-const isDivision = (node: any): node is XastElement => {
-    return isElement(node) && DIVISIONS.has(node.name);
-};
-const isRefable = (node: any): node is XastElement => {
-    return isElement(node) && REFABLE.has(node.name);
 };
 
 /**
