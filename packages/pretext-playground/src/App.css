@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  overflow: hidden;
+}
+.main-area {
+  flex-grow: 1;
+  position: relative;
+}
+.file-tab-label {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    line-height: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.file-tab-label .file-path {
+    font-size: x-small;
+    color: var(--bs-secondary);
+}
+.text-light .file-tab-label .file-path {
+    font-size: x-small;
+    color: var(--bs-gray-500);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.code-editor {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.code-editor .nav-tabs {
+    --bs-nav-tabs-border-color: var(--bs-primary);
+    --bs-nav-tabs-border-width: 0px;
+    --bs-nav-tabs-border-radius: 0;
+    --bs-nav-tabs-link-hover-border-color: var(--bs-gray-500) var(--bs-gray-500)
+        var(--bs-primary);
+    --bs-nav-tabs-link-active-color: #495057;
+    --bs-nav-tabs-link-active-bg: var(--bs-primary);
+    --bs-nav-tabs-link-active-border-color: var(--bs-primary) var(--bs-primary)
+        var(--bs-secondary);
+}
+
+.code-editor .nav-item {
+    background-color: var(--bs-gray-300);
+}
+
+.file-tabstrip {
+    display: flex;
+    border-bottom: 1.5px solid var(--bs-primary);
+}
+.file-tabstrip .btn {
+    --bs-btn-border-radius: 0px;
+}
+
+.monaco-editor-parent {
+    border-left: 1px solid var(--bs-primary);
+    border-right: 1px solid var(--bs-primary);
+    border-bottom: 1px solid var(--bs-primary);
+}
+
+.file-dropper-overlay {
+    background-color: rgba(0, 102, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 4ex;
+    backdrop-filter: blur(2px);
+}
+.file-dropper-overlay div {
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 102, 255, 1);
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
 }

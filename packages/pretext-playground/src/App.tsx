@@ -1,24 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Container, Navbar } from "react-bootstrap";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FileEditor } from "./components/file-editor";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <React.Fragment>
+            <Navbar bg="dark" variant="dark">
+                <Container fluid>
+                    <Navbar.Brand>PreTeXt Playground</Navbar.Brand>
+                </Container>
+            </Navbar>
+            <Container fluid className="main-area my-2" >
+                <FileEditor />
+            </Container>
+        </React.Fragment>
+    );
 }
 
 export default App;
