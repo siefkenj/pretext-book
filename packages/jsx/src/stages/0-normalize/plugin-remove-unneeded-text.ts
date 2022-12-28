@@ -41,6 +41,5 @@ export const removeUnneededTextPlugin: Plugin<
                 return null;
             }
         });
-        return root;
     };
 };

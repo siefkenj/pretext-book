@@ -9,6 +9,7 @@ import { xastParserPlugin } from "../../utils/xast";
 import { Book } from "./components/book";
 import { ClassedSection } from "./components/classed-section";
 import { Definition } from "./components/definition";
+import { Input } from "./components/input";
 import { IntroOrConclusion } from "./components/intro-conclusion";
 import { P } from "./components/p";
 import { Term } from "./components/term";
@@ -43,6 +44,7 @@ export function pretextToHtml(source: string) {
                 replacerFactoryWithId("conclusion", IntroOrConclusion),
                 replacerFactoryWithId("definition", Definition),
                 replacerFactory("term", Term),
+                replacerFactory("input", Input),
             ],
         });
 
@@ -50,3 +52,5 @@ export function pretextToHtml(source: string) {
     const processed = processor.processSync(file);
     return reactToHtml(processed.result);
 }
+
+export const X = 5

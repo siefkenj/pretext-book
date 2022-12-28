@@ -1,5 +1,6 @@
 import { Plugin } from "unified";
 import { toString } from "xast-util-to-string";
+import { toXml } from "xast-util-to-xml";
 import { ElementDocInfo } from "../../assets/generated-types";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
@@ -27,6 +28,7 @@ export const extractDocInfoPlugin: Plugin<
     }
 
     return (root, file) => {
+        console.log("Found root", root)
         const pretext = root.children[0];
         const docinfoNode = pretext.children.find(
             (n) => n.name === "docinfo"

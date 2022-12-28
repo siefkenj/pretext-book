@@ -16,6 +16,5 @@ export const expandCdataPlugin: Plugin<void[], XastRoot, XastRoot> =
                     return { type: "text", value: node.value };
                 }
             });
-            return root;
         };
     };

@@ -8,6 +8,7 @@ import { mergeAdjacentTextPlugin } from "./plugin-merge-adjacent-text";
 import { removeUnneededTextPlugin } from "./plugin-remove-unneeded-text";
 import { stripCommentsAndFriendsPlugin } from "./plugin-strip-comments";
 import { createNodeToSchemaMapPlugin } from "../helpers/plugin-create-node-to-schema-map";
+import { findRootElementPlugin } from "./plugin-find-root-element";
 
 /**
  * Unifiedjs plugin that removes normalizes a pretext document to conform to the pretext schema. E.g.,
@@ -20,6 +21,7 @@ export const normalizePretextPlugin: Plugin<void[], XastRoot, PretextRoot> =
         const nodeToSchemaMap: Map<XastNode, string> = new Map();
 
         const processor = unified()
+            .use(findRootElementPlugin)
             .use(stripCommentsAndFriendsPlugin)
             .use(expandCdataPlugin)
             .use(mergeAdjacentTextPlugin)

@@ -42,11 +42,11 @@ export const mergeAdjacentTextPlugin: Plugin<void[], XastRoot, XastRoot> =
                         prevNode.value += n.value;
                         continue;
                     }
+                    newChildren.push(n);
                     prevNode = n;
                 }
                 node.children = newChildren;
                 return node;
             });
-            return root;
         };
     };

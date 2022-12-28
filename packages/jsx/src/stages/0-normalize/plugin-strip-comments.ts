@@ -20,6 +20,5 @@ export const stripCommentsAndFriendsPlugin: Plugin<void[], XastRoot, XastRoot> =
                     return null;
                 }
             });
-            return root;
         };
     };

@@ -10,6 +10,7 @@ import { removeUnneededTextPlugin } from "../src/stages/0-normalize/plugin-remov
 import { createNodeToSchemaMapPlugin } from "../src/stages/helpers/plugin-create-node-to-schema-map";
 import { JsonGrammar } from "../src/utils/relax-ng/types";
 import { normalizePretextPlugin } from "../src/stages/0-normalize/plugin-normalize-pretext";
+import { findRootElementPlugin } from "../src/stages/0-normalize/plugin-find-root-element";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default
@@ -243,8 +244,23 @@ grammar {
             );
         }
     });
+    it("Can extract pretext element", () => {
+        const source = `<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!-- comment -->
+        
+        <pretext><p>Hello, World!</p></pretext>`;
+        const ast = fromXml(source) as XastRoot;
+        // Set up the processor
+        const processor = unified().use(findRootElementPlugin);
+        const processed = processor.runSync(ast);
+        expect(toXml(processed)).toEqual(
+            "<pretext><p>Hello, World!</p></pretext>"
+        );
+    });
     it("Can normalize pretext document", () => {
-        const source = `<pretext><!-- a comment -->
+        const source = `<pretext>
+        <!-- a comment -->
                     <article xml:id="hello-world">
                        <p>Hello, World!</p>
                        <p><![CDATA[other <stuff>]]></p>

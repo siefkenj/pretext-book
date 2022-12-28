@@ -11,7 +11,9 @@ import { nodeExternalsPlugin } from "esbuild-node-externals";
     );
 
     // We want to externalize modules that are explicitly installed as a dependency
-    const explicitDeps = Object.keys(packageJson.dependencies || {});
+    let explicitDeps = Object.keys(packageJson.dependencies || {});
+    explicitDeps = explicitDeps.filter((d) => !d.startsWith("prettier"));
+    console.log("excluding", explicitDeps);
 
     const commonConfig = {
         entryPoints: ["./src/index.ts"],
@@ -21,10 +23,11 @@ import { nodeExternalsPlugin } from "esbuild-node-externals";
         sourcemap: true,
         format: "esm",
         target: "es2020",
-        plugins: [nodeExternalsPlugin(), 
+        plugins: [
+            //nodeExternalsPlugin(),
             //pegjsLoader()
         ],
-        external: [...explicitDeps],
+ //       external: [...explicitDeps],
     };
 
     // Build the ESM

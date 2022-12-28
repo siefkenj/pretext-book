@@ -9,6 +9,7 @@ import {
     ThunkOn,
 } from "easy-peasy";
 import { VFile } from "vfile";
+import { DEFAULT_PRETEXT_SOURCE } from "./defaults";
 
 export interface Todo {
     text: string;
@@ -23,6 +24,8 @@ export interface PlaygroundModel {
     activeFile: Computed<this, VFile>;
     setActiveFile: Action<this, this["activeFilePath"]>;
     setFileContents: Action<this, { filePath: string; value: string }>;
+    renderedSource: string;
+    setRenderedSource: Action<this, string>;
 }
 
 const playgroundStore: PlaygroundModel = {
@@ -52,6 +55,10 @@ const playgroundStore: PlaygroundModel = {
         }
         file.value = payload.value;
     }),
+    renderedSource: "",
+    setRenderedSource: action((state, payload) => {
+        state.renderedSource = payload;
+    }),
 };
 
 export { playgroundStore };
@@ -61,7 +68,7 @@ export function getActiveFile(files: VFile[], activeFilePath: string | null) {
         files.find((f) => f.path === activeFilePath) ||
         new VFile({
             path: "main.ptx",
-            value: `<?xml version="1.0" encoding="UTF-8" ?>\n<pretext>\n\n</pretext>`,
+            value: DEFAULT_PRETEXT_SOURCE,
         })
     );
 }

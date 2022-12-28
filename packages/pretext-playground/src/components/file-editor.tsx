@@ -75,19 +75,23 @@ export function FileEditor() {
                 </div>
             ) : null}
             <TabStrip />
-            <Editor
-                height="100%"
-                defaultLanguage="xml"
-                path={activeFile.path}
-                defaultValue={normalizeVFileValue(activeFile.value)}
-                onChange={onChange}
-                options={{
-                    minimap: { enabled: false },
-                    fontSize: 12,
-                    lineNumbers: "off",
-                }}
-                className="monaco-editor-parent"
-            />
+            <div className="editor-surround">
+                <Editor
+                    height="100%"
+                    defaultLanguage="xml"
+                    path={activeFile.path}
+                    defaultValue={normalizeVFileValue(activeFile.value)}
+                    onChange={onChange}
+                    options={{
+                        minimap: { enabled: false },
+                        fontSize: 12,
+                        lineNumbers: "off",
+                        guides: { indentation: false },
+                        automaticLayout: true,
+                    }}
+                    className="monaco-editor-parent"
+                />
+            </div>
         </div>
     );
 }
