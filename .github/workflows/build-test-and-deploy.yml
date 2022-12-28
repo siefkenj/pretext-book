@@ -32,7 +32,7 @@ jobs:
             - run: npm test
 
             - name: Prepare for Github Pages
-              if: ${{ github.event_name === 'push' }}
+              if: ${{ github.event_name == 'push' }}
               uses: actions/upload-pages-artifact@v1
               with:
                   path: ./packages/pretext-playground/build
