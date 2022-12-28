@@ -128,7 +128,7 @@ describe("Parse to HTML tests", () => {
     `
 
         const processed = pretextToHtml(source);
-        fs.writeFileSync("./tests/tmp/webpage.html", processed)
+        //fs.writeFileSync("./tests/tmp/webpage.html", processed)
         console.log(processed);
     });
 });
