@@ -7,6 +7,8 @@ import classNames from "classnames";
 import { getActiveFile } from "../store/model";
 import { useDropzone } from "react-dropzone";
 import { Folder2Open } from "react-bootstrap-icons";
+import { useDebouncedCallback } from "use-debounce";
+import { parsingWorker } from "../worker/worker-wrapper";
 
 function normalizeVFileValue(value: VFile["value"]): string {
     if (typeof value === "string") {
@@ -26,6 +28,12 @@ export function FileEditor() {
     const addFile = useStoreActions((a) => a.addFile);
     const setActiveFile = useStoreActions((a) => a.setActiveFile);
     const clearFiles = useStoreActions((a) => a.clearFiles);
+    // Only rerender the source at most once per second
+    const debouncedRender = useDebouncedCallback(async (source: string) => {
+        const rendered = await parsingWorker.pretextToHtml(source);
+        setRenderedSource(rendered);
+    }, 1000);
+    const setRenderedSource = useStoreActions((a) => a.setRenderedSource);
     const onChange = React.useCallback<OnChange>(
         (value, event) => {
             if (!activeFilePath) {
@@ -39,9 +47,17 @@ export function FileEditor() {
                 setActiveFile(activeFile.path);
                 return;
             }
+            debouncedRender(value || "");
             setFileContents({ filePath: activeFilePath, value: value || "" });
         },
-        [activeFilePath, setFileContents, activeFile, setActiveFile, addFile]
+        [
+            activeFilePath,
+            setFileContents,
+            activeFile,
+            setActiveFile,
+            addFile,
+            debouncedRender,
+        ]
     );
 
     const onDrop = React.useCallback(

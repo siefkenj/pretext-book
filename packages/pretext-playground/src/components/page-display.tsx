@@ -125,9 +125,10 @@ const SOURCE = `<html>
 export function PageDisplay() {
     const source = useStoreState((s) => s.renderedSource);
     const setSource = useStoreActions((a) => a.setRenderedSource);
+
     return (
         <div className="page-display">
-            <Tabs defaultActiveKey="source">
+            <Tabs defaultActiveKey="rendered">
                 <Tab eventKey="source" title="Source">
                     <div className="editor-surround">
                         <Editor
