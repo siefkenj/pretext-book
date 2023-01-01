@@ -4,8 +4,7 @@
     "version": "1.0.0",
     "description": "Tools for working with PreTeXt in TypeScript",
     "workspaces": [
-        "./packages/jsx",
-        "./packages/pretext-playground"
+        "./packages/*"
     ],
     "scripts": {
         "build": "npm run build -ws",
@@ -39,11 +38,11 @@
     "devDependencies": {
         "@types/glob": "^8.0.0",
         "@types/jest": "^29.2.4",
-        "@types/node": "^18.11.17",
+        "@types/node": "^18.11.18",
         "@types/react": "^18.0.26",
-        "@types/react-dom": "^18.0.9",
+        "@types/react-dom": "^18.0.10",
         "@types/xast": "^1.0.2",
-        "esbuild": "^0.16.9",
+        "esbuild": "^0.16.12",
         "esbuild-jest": "^0.5.0",
         "esbuild-node-externals": "^1.6.0",
         "esbuild-runner": "^2.2.2",
@@ -61,7 +60,7 @@
         "github-slugger": "^2.0.0",
         "hast-util-to-string": "^2.0.0",
         "hast-util-whitespace": "^2.0.0",
-        "html-react-parser": "^3.0.4",
+        "html-react-parser": "^3.0.6",
         "peggy": "^2.0.1",
         "prettier": "^2.8.1",
         "property-information": "^6.2.0",

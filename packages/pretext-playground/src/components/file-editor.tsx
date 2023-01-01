@@ -32,7 +32,7 @@ export function FileEditor() {
     const debouncedRender = useDebouncedCallback(async (source: string) => {
         const rendered = await parsingWorker.pretextToHtml(source);
         setRenderedSource(rendered);
-    }, 1000);
+    }, 500);
     const setRenderedSource = useStoreActions((a) => a.setRenderedSource);
     const onChange = React.useCallback<OnChange>(
         (value, event) => {
