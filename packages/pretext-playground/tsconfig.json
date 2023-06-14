@@ -23,6 +23,7 @@
     "include": ["src"],
     "references": [{ "path": "../jsx" }],
     "paths": {
-        "@typescript-xml/*": ["../*"]
+        "@typescript-xml/*": ["../*"],
+        "@pretext-book/*": ["../*"]
     }
 }

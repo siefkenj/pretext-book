@@ -49,7 +49,7 @@ export function pretextToHtml(source: string) {
         });
 
     const file = new VFile(source);
-    const processed = processor.processSync(file);
+    const processed = processor.processSync(file as any);
     return reactToHtml(processed.result);
 }
 
