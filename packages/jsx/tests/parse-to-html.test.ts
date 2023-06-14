@@ -1,5 +1,6 @@
 import util from "util";
-import * as fs from "node:fs"
+import { describe, it } from "vitest";
+import * as fs from "node:fs";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
 import { XastNode, XastRoot } from "../src/utils/xast/types";
@@ -58,7 +59,7 @@ describe("Parse to HTML tests", () => {
                         </chapter>
                     </book>
                 </pretext>`;
-        source=`<?xml version="1.0" encoding="UTF=8"?><pretext>
+        source = String.raw`<?xml version="1.0" encoding="UTF=8"?><pretext>
 
         <docinfo>
             <macros>
@@ -125,7 +126,7 @@ describe("Parse to HTML tests", () => {
         </article>
     
     </pretext>
-    `
+    `;
 
         const processed = pretextToHtml(source);
         //fs.writeFileSync("./tests/tmp/webpage.html", processed)

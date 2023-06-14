@@ -1,4 +1,5 @@
 import util from "util";
+import { describe, it } from "vitest";
 import * as fs from "node:fs";
 import {
     BasicMemFS,
