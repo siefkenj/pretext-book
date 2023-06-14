@@ -55,7 +55,6 @@
     "dependencies": {
         "buffer": "^6.0.3",
         "comma-separated-tokens": "^2.0.3",
-        "create-react-app": "^5.0.1",
         "github-slugger": "^2.0.0",
         "hast-util-to-string": "^2.0.0",
         "hast-util-whitespace": "^2.0.1",
