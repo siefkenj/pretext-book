@@ -1,6 +1,22 @@
 import esbuild from "esbuild";
 import fs from "node:fs/promises";
 
+const [bin, sourcePath, ...args] = process.argv;
+
+const printOnBuildPlugin = () => ({
+    name: "print-on-build",
+    setup(build) {
+        build.onEnd(async (result, x) => {
+            const { errors, outputFiles } = result;
+            if (!errors.length) {
+                console.log("Built", build.initialOptions.outfile);
+            } else {
+                console.error(errors);
+            }
+        });
+    },
+});
+
 (async () => {
     const packageJson = JSON.parse(
         await fs.readFile(new URL("./package.json", import.meta.url))
@@ -8,8 +24,6 @@ import fs from "node:fs/promises";
 
     // We want to externalize modules that are explicitly installed as a dependency
     let explicitDeps = Object.keys(packageJson.dependencies || {});
-    explicitDeps = explicitDeps.filter((d) => !d.startsWith("prettier"));
-    console.log("excluding", explicitDeps);
 
     const commonConfig = {
         entryPoints: ["./src/index.ts"],
@@ -20,22 +34,30 @@ import fs from "node:fs/promises";
         format: "esm",
         target: "es2020",
         platform: "node",
-        plugins: [
-            //nodeExternalsPlugin(),
-            //pegjsLoader()
-        ],
- //       external: [...explicitDeps],
+        plugins: [printOnBuildPlugin()],
+        //       external: [...explicitDeps],
     };
-
     // Build the ESM
-    esbuild.build(commonConfig).catch(() => process.exit(1));
+    const esBuilder = await esbuild
+        .context(commonConfig)
+        .catch(() => process.exit(1));
 
     // Build a CommonJS version as well
-    esbuild
-        .build({
+    const cjsBuilder = await esbuild
+        .context({
             ...commonConfig,
             outfile: "./dist/index.cjs",
             format: "cjs",
         })
         .catch(() => process.exit(1));
+
+    // Build both versions and watch appropriately
+    if (args.includes("--watch")) {
+        esBuilder.watch();
+        cjsBuilder.watch();
+    } else {
+        await Promise.all([esBuilder.rebuild(), cjsBuilder.rebuild()]);
+        esBuilder.dispose();
+        cjsBuilder.dispose();
+    }
 })();
