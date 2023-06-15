@@ -1,9 +1,5 @@
 import esbuild from "esbuild";
 import fs from "node:fs/promises";
-//import {pegjsLoader} from "./scripts/esbuild-pegjs-loader.mjs";
-
-// Automatically exclude all node_modules from the bundled version
-import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 (async () => {
     const packageJson = JSON.parse(
@@ -23,6 +19,7 @@ import { nodeExternalsPlugin } from "esbuild-node-externals";
         sourcemap: true,
         format: "esm",
         target: "es2020",
+        platform: "node",
         plugins: [
             //nodeExternalsPlugin(),
             //pegjsLoader()

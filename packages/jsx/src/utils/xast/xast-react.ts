@@ -170,6 +170,7 @@ export const xastReactTransformer: Plugin<
 
     const compiler: CompilerFunction<XMLRoot, React.ReactNode> =
         function compiler(node, file) {
+            // @ts-ignore
             return process(node, 0, file);
         };
 

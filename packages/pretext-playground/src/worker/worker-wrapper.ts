@@ -1,8 +1,7 @@
 import * as Comlink from "comlink";
-//import Worker from "worker-loader!"
 /* eslint-disable import/no-webpack-loader-syntax */
 //@ts-ignore
-import workerFactory from "workerize-loader!./parsing-worker.ts";
+import workerFactory from "./parsing-worker.ts?worker";
 import { Exposed } from "./parsing-worker";
 
 const rawWorker = new workerFactory();

@@ -5,9 +5,6 @@ import plugin from "node-stdlib-browser/helpers/esbuild/plugin";
 import stdLibBrowser from "node-stdlib-browser";
 const require = createRequire(import.meta.url);
 
-// Automatically exclude all node_modules from the bundled version
-import { nodeExternalsPlugin } from "esbuild-node-externals";
-
 (async () => {
     const packageJson = JSON.parse(
         await fs.readFile(new URL("./package.json", import.meta.url))

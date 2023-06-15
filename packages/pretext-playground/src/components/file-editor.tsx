@@ -80,6 +80,7 @@ export function FileEditor() {
         [addFile, clearFiles, setActiveFile]
     );
     const { getRootProps, isDragActive } = useDropzone({
+        noClick: true,
         onDrop,
     });
 
