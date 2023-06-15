@@ -23,6 +23,7 @@
     "devDependencies": {
         "@types/glob": "^8.1.0",
         "@types/node": "^20.3.1",
+        "@types/prettier": "^2.7.3",
         "@types/react": "^18.2.12",
         "@types/react-dom": "^18.2.5",
         "@types/xast": "^1.0.2",
