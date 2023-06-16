@@ -1,10 +1,13 @@
 import { pretextToHtml } from "@pretext-book/jsx";
 import * as Comlink from "comlink";
 
+(globalThis as any).window = globalThis
+
 const exposed = {
     parse: (s: string) => {
+        console.log("being asked to render")
         try {
-            return pretextToHtml(s);
+            return "foo" //pretextToHtml(s);
         } catch (e: any) {
             if (e.format) {
                 throw Object.assign(
@@ -15,6 +18,8 @@ const exposed = {
             throw e;
         }
     },
+    // @ts-ignore
+    //pretextToHtml(foo:any){console.log(typeof WorkerGlobalScope);return "Foo"}
     pretextToHtml,
 };
 

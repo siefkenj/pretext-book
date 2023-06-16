@@ -5,8 +5,6 @@ import { toString } from "xast-util-to-string";
 import { ReplacerComponentWithId } from "../replacers/replacer-factory";
 
 export const Book: ReplacerComponentWithId = function ({ node: _node, id }) {
-    const state = React.useContext(PretextStateContext);
-
     const node = _node as ElementBook;
 
     const titleElement = node.children.find(
@@ -18,12 +16,6 @@ export const Book: ReplacerComponentWithId = function ({ node: _node, id }) {
         name: "",
         children: titleChildren,
     }).trim();
-    const title = state.processContent(titleChildren);
-
-    const rest = node.children.filter(
-        (n) =>
-            !["title", "shorttitle", "subtitle", "plaintitle"].includes(n.name)
-    );
 
     return (
         <html>
@@ -52,16 +44,33 @@ export const Book: ReplacerComponentWithId = function ({ node: _node, id }) {
             <body className="pretext book">
                 <div className="ptx-page">
                     <div className="ptx-sidebar" />
-                    <main className="ptx-main">
-                        <div id="ptx-content" className="ptx-content">
-                            <section id={id} className="book">
-                                {state.processContent(rest)}
-                            </section>
-                        </div>
-                        <div className="ptx-page-footer" />
-                    </main>
+                    <BookPtxMain node={node} id={id} />
                 </div>
             </body>
         </html>
+    );
+};
+
+export const BookPtxMain: ReplacerComponentWithId = function ({
+    node: _node,
+    id,
+}) {
+    const state = React.useContext(PretextStateContext);
+    const node = _node as ElementBook;
+
+    const rest = node.children.filter(
+        (n) =>
+            !["title", "shorttitle", "subtitle", "plaintitle"].includes(n.name)
+    );
+
+    return (
+        <main className="ptx-main">
+            <div id="ptx-content" className="ptx-content">
+                <section id={id} className="book">
+                    {state.processContent(rest)}
+                </section>
+            </div>
+            <div className="ptx-page-footer" />
+        </main>
     );
 };

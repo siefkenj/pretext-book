@@ -18,6 +18,7 @@
     },
     "scripts": {
         "build": "npm run clean && mkdirp ./dist && npm run compile",
+        "watch": "node build.js --watch",
         "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
         "compile": "tsc -b tsconfig.json & node build.js & wait",
         "test": "vitest"

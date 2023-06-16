@@ -3,6 +3,10 @@ import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import IframeResizer from "iframe-resizer-react";
 import { useStoreState, useStoreActions } from "../store";
+import { pretextToHtml, pretextToReact } from "@pretext-book/jsx";
+import { getActiveFile } from "../store/model";
+import { renderToStaticMarkup } from "react-dom/server";
+import { ReactLiveRender } from "./react-live-render";
 
 const SOURCE = `<html>
 <head>
@@ -162,6 +166,9 @@ export function PageDisplay() {
                         }}
                         scrolling={true}
                     />
+                </Tab>
+                <Tab eventKey="react-version" title="React Rendered">
+                    <ReactLiveRender />
                 </Tab>
             </Tabs>
         </div>
