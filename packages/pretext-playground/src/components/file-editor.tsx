@@ -24,6 +24,9 @@ function normalizeVFileValue(value: VFile["value"]): string {
 export function FileEditor() {
     const activeFilePath = useStoreState((s) => s.activeFilePath);
     const setFileContents = useStoreActions((a) => a.setFileContents);
+    const setActiveEditorString = useStoreActions(
+        (a) => a.setActiveEditorString
+    );
     const activeFile = useStoreState((s) => s.activeFile);
     const addFile = useStoreActions((a) => a.addFile);
     const setActiveFile = useStoreActions((a) => a.setActiveFile);
@@ -49,6 +52,7 @@ export function FileEditor() {
             }
             debouncedRender(value || "");
             setFileContents({ filePath: activeFilePath, value: value || "" });
+            setActiveEditorString(value || "");
         },
         [
             activeFilePath,
@@ -59,6 +63,19 @@ export function FileEditor() {
             debouncedRender,
         ]
     );
+    const [initialRenderCompleted, setInitialRenderCompleted] =
+        React.useState(false);
+    React.useEffect(() => {
+        if (initialRenderCompleted) {
+            return;
+        }
+        const source = normalizeVFileValue(activeFile.value);
+        if (source) {
+            setInitialRenderCompleted(true);
+            debouncedRender(source);
+            setActiveEditorString(source);
+        }
+    }, [activeFile, initialRenderCompleted]);
 
     const onDrop = React.useCallback(
         async (acceptedFiles: File[]) => {

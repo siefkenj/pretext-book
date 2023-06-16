@@ -1,9 +1,9 @@
 import util from "util";
+import { describe, it, expect } from "vitest";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
 import { XastNode, XastRoot } from "../src/utils/xast/types";
 import { Plugin, unified } from "unified";
-import { JsonGrammar } from "../src/utils/relax-ng/types";
 import { PretextState } from "../src/state";
 import { normalizePretextPlugin } from "../src/stages/0-normalize/plugin-normalize-pretext";
 import { extractDocInfoPlugin } from "../src/stages/1-assemble/plugin-extract-docinfo";

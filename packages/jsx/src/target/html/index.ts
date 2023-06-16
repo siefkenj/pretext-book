@@ -6,7 +6,7 @@ import { attachRootToStatePlugin } from "../../stages/helpers/attach-root-to-sta
 import { PretextState } from "../../state";
 import { xastReactTransformer } from "../../utils/xast";
 import { xastParserPlugin } from "../../utils/xast";
-import { Book } from "./components/book";
+import { Book, BookPtxMain } from "./components/book";
 import { ClassedSection } from "./components/classed-section";
 import { Definition } from "./components/definition";
 import { Input } from "./components/input";
@@ -20,6 +20,7 @@ import {
     replacerFactory,
     replacerFactoryWithId,
 } from "./replacers/replacer-factory";
+import { XRef } from "./components/xref";
 
 /**
  * Parse PreTeXt source and turn it into HTML.
@@ -45,6 +46,7 @@ export function pretextToHtml(source: string) {
                 replacerFactoryWithId("definition", Definition),
                 replacerFactory("term", Term),
                 replacerFactory("input", Input),
+                replacerFactory("xref", XRef),
             ],
         });
 
@@ -53,4 +55,36 @@ export function pretextToHtml(source: string) {
     return reactToHtml(processed.result);
 }
 
-export const X = 5
+/**
+ * Parse PreTeXt source and turn it into a React component.
+ */
+export function pretextToReact(source: string) {
+    const state = new PretextState();
+    const processor = unified()
+        .use(xastParserPlugin)
+        .use(normalizePretextPlugin)
+        .use(assemblePlugin, { state })
+        .use(attachRootToStatePlugin, { state })
+        .use(xastReactTransformer, {
+            replacers: [
+                createContextPassingRootReplacer(state),
+                // We don't want to return a frame with `<html>...` We only want to return the `<div id="ptx-main">...`
+                replacerFactoryWithId("book", BookPtxMain),
+                replacerFactoryWithId("p", P),
+                replacerFactoryWithId("title", Title),
+                replacerFactoryWithId("chapter", ClassedSection),
+                replacerFactoryWithId("section", ClassedSection),
+                replacerFactoryWithId("subsection", ClassedSection),
+                replacerFactoryWithId("introduction", IntroOrConclusion),
+                replacerFactoryWithId("conclusion", IntroOrConclusion),
+                replacerFactoryWithId("definition", Definition),
+                replacerFactory("term", Term),
+                replacerFactory("input", Input),
+                replacerFactory("xref", XRef),
+            ],
+        });
+
+    const file = new VFile(source);
+    const processed = processor.processSync(file as any);
+    return processed.result;
+}

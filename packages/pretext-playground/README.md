@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# PreTeXt Playground
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Try the [playground](siefkenj.github.io/pretext-book)!
 
-## Available Scripts
+The PreTeXt playground is a live-rendered (via Javascript) implementation of PreTeXt. It is nowhere near complete, but can be used to experimentation.
 
-In the project directory, you can run:
+### What is in this repository?
 
-### `npm start`
+In this repository is the frontend code for the PreTeXt playground. The code that actually processes XML into HTML/React components can be found in `packages/jsx`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project uses the `vite` build system and depends 
+on `packages/jsx`. To build, first to **from the root directory
+of the monorepo**
 
-### `npm test`
+```
+npm install
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will build all packages and install required dependencies. Once these are built, from the `packages/jsx` folder, run
 
-### `npm run build`
+```
+npm install
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will spin up a web server with hot reloading. See the console output for details about the url for the server.

@@ -35,6 +35,7 @@ const printOnBuildPlugin = () => ({
         target: "es2020",
         platform: "node",
         plugins: [printOnBuildPlugin()],
+        external: ["react", "react-dom"],
         //       external: [...explicitDeps],
     };
     // Build the ESM

@@ -1,20 +1,9 @@
 import util from "util";
 import { describe, it } from "vitest";
-import * as fs from "node:fs";
 import { toXml } from "xast-util-to-xml";
-import { fromXml } from "xast-util-from-xml";
 import { XastNode, XastRoot } from "../src/utils/xast/types";
 import { Plugin, unified } from "unified";
-import { JsonGrammar } from "../src/utils/relax-ng/types";
-import { PretextState } from "../src/state";
-import { normalizePretextPlugin } from "../src/stages/0-normalize/plugin-normalize-pretext";
-import { extractDocInfoPlugin } from "../src/stages/1-assemble/plugin-extract-docinfo";
-import { ensureIdsPlugin } from "../src/stages/1-assemble/plugin-ensure-ids";
-import { extractFrontmatterPlugin } from "../src/stages/1-assemble/plugin-extract-frontmatter";
-import { assemblePlugin } from "../src/stages/1-assemble/plugin-assemble";
-import { visit } from "../src/utils/xast";
 import { pretextToHtml } from "../src/target/html";
-import { fstat } from "fs";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default

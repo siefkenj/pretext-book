@@ -22,6 +22,8 @@ export interface PlaygroundModel {
     clearFiles: Action<this, void>;
     activeFilePath: string | null;
     activeFile: Computed<this, VFile>;
+    activeEditorString: string;
+    setActiveEditorString: Action<this, string>;
     setActiveFile: Action<this, this["activeFilePath"]>;
     setFileContents: Action<this, { filePath: string; value: string }>;
     renderedSource: string;
@@ -43,6 +45,10 @@ const playgroundStore: PlaygroundModel = {
             return getActiveFile(files, activeFilePath);
         }
     ),
+    activeEditorString: "",
+    setActiveEditorString: action((state, contents) => {
+        state.activeEditorString = contents;
+    }),
     setActiveFile: action((state, filePath) => {
         state.activeFilePath = filePath;
         state.files.push(new VFile());

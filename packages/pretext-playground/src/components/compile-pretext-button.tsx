@@ -11,10 +11,8 @@ export function CompilePretextButton() {
     const setRenderedSource = useStoreActions((a) => a.setRenderedSource);
 
     const onClick = React.useCallback(() => {
-        console.log("rendering", String(activeFile));
         const rendered = pretextToHtml(String(activeFile));
         setRenderedSource(rendered);
-        console.log(rendered);
     }, [activeFile, setRenderedSource]);
 
     return <Button onClick={onClick}>Compile PreTeXt Source</Button>;

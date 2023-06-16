@@ -12,6 +12,7 @@ body {
     flex-grow: 1;
     position: relative;
     display: flex;
+    overflow: hidden;
 }
 .main-area > div {
     flex-grow: 1;
@@ -107,6 +108,7 @@ body {
 }
 .page-display .tab-content {
     flex-grow: 1;
+    overflow: hidden;
 }
 .page-display .tab-pane {
     height: 100%;

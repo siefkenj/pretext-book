@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
+// XXX Waiting on bug #152. Cannot hot reload
+//import react from "@vitejs/plugin-react";
 import viteTsconfigPaths from "vite-tsconfig-paths";
 import svgrPlugin from "vite-plugin-svgr";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
@@ -8,8 +9,11 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 export default defineConfig({
     base: "./",
     build: { outDir: "./build" },
+    define: {
+        global: "globalThis",
+    },
     plugins: [
-        react(),
+        //     react(),
         viteTsconfigPaths(),
         svgrPlugin(),
         nodePolyfills({
