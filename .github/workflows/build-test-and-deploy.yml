@@ -43,7 +43,7 @@ jobs:
               with:
                   path: ./packages/pretext-playground/build
     deploy:
-        if: github.event.pull_request == true
+        if: ${{ github.event_name == 'push' }}
         environment:
             name: github-pages
         runs-on: ubuntu-latest
