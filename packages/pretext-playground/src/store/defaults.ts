@@ -14,7 +14,7 @@ export const DEFAULT_PRETEXT_SOURCE = `<pretext xml:lang="en-US" xmlns:xi="http:
 					<statement>A <term>Good Dog</term> is a dog that sits.</statement>
 				</definition>
 			</introduction>
-			<subsection>
+			<subsection xml:id="subsec">
 				<title>My Sub</title>
 				<p>The contents of the subsection</p>
 			</subsection>
@@ -24,7 +24,8 @@ export const DEFAULT_PRETEXT_SOURCE = `<pretext xml:lang="en-US" xmlns:xi="http:
 		</section>
 		<section>
 			<p>Again here</p>
-			<p>Some more. See <xref ref="mydef" /></p>
+			<p>Some more. See <xref ref="mydef" />
+			or <xref ref="subsec" /></p>
 		</section>
 	</chapter>
 </book>

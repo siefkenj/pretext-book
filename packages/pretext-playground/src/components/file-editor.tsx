@@ -33,9 +33,7 @@ export function FileEditor() {
     const clearFiles = useStoreActions((a) => a.clearFiles);
     // Only rerender the source at most once per second
     const debouncedRender = useDebouncedCallback(async (source: string) => {
-        console.log("pre asking for render");
         const rendered = await parsingWorker.pretextToHtml(source);
-        console.log("asking for render");
         setRenderedSource(rendered);
     }, 500);
     const setRenderedSource = useStoreActions((a) => a.setRenderedSource);

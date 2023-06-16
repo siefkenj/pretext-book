@@ -4,7 +4,9 @@ import {
     DIVISIONS,
     DIVISIONS_WITHOUT_NUMBERS,
     isDivision,
+    isRefable,
     isTitleNode,
+    isXRefable,
     NUMBERED_BLOCKS,
 } from "../stages/helpers/special-tags";
 import { JsonGrammar } from "../utils/relax-ng/types";
@@ -18,6 +20,14 @@ import {
 } from "../utils/xast";
 import { STRING_ID_TO_DISPLAY_NAME } from "./i18n";
 import { ArticleFrontMatter, DocInfo, Toc, TocItem } from "./types";
+
+export type XRefTargetInfo = {
+    node: XastElement;
+    tag: string;
+    id: string;
+    title: XastNode[];
+    codenumber: string;
+};
 
 /**
  * Object to keep track of the global processing state during a transformation.
@@ -41,6 +51,7 @@ export class PretextState {
             item: TocItem;
         }
     >;
+    _xrefableMap: Map<string, XRefTargetInfo>;
     root: XastRoot;
     /**
      * Function that continues processing content with XastToReact's `processContent` function.
@@ -62,6 +73,7 @@ export class PretextState {
         };
         this.toc = [];
         this._tocInfoMap = new Map();
+        this._xrefableMap = new Map();
         this.root = { type: "root", children: [] };
         this._parentMap = new WeakMap();
         this._xastNodeToTocDivisionId = new WeakMap();
@@ -99,6 +111,7 @@ export class PretextState {
         this.root = root;
         this._generateParentMap();
         this._generateToc();
+        this._generateRefalbeInfoMap();
     }
 
     _generateParentMap() {
@@ -155,10 +168,10 @@ export class PretextState {
                     // Some divisions are "skipped over" for numbering.
                     // To accomplish this, we only advance the number on regular divisions.
                     number++;
-                }else {
+                } else {
                     // Divisions that don't have numbers also should have their `numbering`
                     // array one shorter.
-                    numbering.pop()
+                    numbering.pop();
                 }
             }
         };
@@ -190,6 +203,72 @@ export class PretextState {
                 }
             }
         });
+    }
+
+    /**
+     * Generate a map for all items that can be xref-ed.
+     */
+    _generateRefalbeInfoMap() {
+        const map: typeof this._xrefableMap = new Map();
+        visit(
+            this.root,
+            (node, info) => {
+                const attrs = node.attributes || {};
+                if (!attrs["xml:id"]) {
+                    console.warn(
+                        "Trying to add entry for a refable item, but item has not been assigned an `xml:id`. Did you forget to decorate all items with an id first?"
+                    );
+                    return;
+                }
+                const id = attrs["xml:id"];
+
+                // Look for the title and try to make a new slug.
+                const titleNode = node.children.find((node) =>
+                    isTitleNode(node)
+                );
+                const title = isElement(titleNode)
+                    ? onlyElementsAndText(titleNode.children)
+                    : [];
+                const blockInfo = this.getBlockInfo(node);
+                /**
+                 * Make a codenumber (e.g., `1.1.3`) out of a `numbering` array.
+                 */
+                function makeCodenumber(numbering: number[]) {
+                    // The first division is `book` or `article`. These don't get displayed in the codenumbers
+                    return numbering
+                        .slice(1)
+                        .map((n) => `${n + 1}`)
+                        .join(".");
+                }
+                const codenumberBase = makeCodenumber(
+                    blockInfo?.divisionInfo?.numbering || []
+                );
+                let codenumber = codenumberBase;
+                // non-division tags get an extra number after them.
+                // E.g., a definition in section 2.2 gets an extra digition
+                // like 2.2.1
+                if (!isDivision(node)) {
+                    codenumber =
+                        codenumberBase.length > 0
+                            ? `${codenumberBase}.${
+                                  (blockInfo?.number || 0) + 1
+                              }`
+                            : String((blockInfo?.number || 0) + 1) || "";
+                }
+
+                const refInfo: XRefTargetInfo = {
+                    node,
+                    tag: node.name,
+                    id,
+                    title,
+                    codenumber,
+                };
+                map.set(id, refInfo);
+            },
+            { test: isXRefable }
+        );
+
+        this._xrefableMap = map;
     }
 
     /**
@@ -261,6 +340,14 @@ export class PretextState {
         if (tocParentId) {
             return this._tocInfoMap.get(tocParentId);
         }
+    }
+
+    /**
+     * Return TOC info relating to the target of an `<xref ... />` node.
+     */
+    getRefTargetInfo(node: XastElement) {
+        const refTargetId = node.attributes?.ref || "";
+        return this._xrefableMap.get(refTargetId);
     }
 
     /**
