@@ -1,4 +1,5 @@
 import util from "util";
+import { describe, it, expect } from "vitest";
 import { toXml } from "xast-util-to-xml";
 import { fromXml } from "xast-util-from-xml";
 import { XastNode, XastRoot } from "../src/utils/xast/types";

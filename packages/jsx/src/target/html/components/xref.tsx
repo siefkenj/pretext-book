@@ -1,7 +1,7 @@
 import React from "react";
 import { PretextStateContext } from "../state";
 import { ReplacerComponent } from "../replacers/replacer-factory";
-import { STRING_ID_TO_DISPLAY_NAME } from "@typescript-xml/jsx/src/state/i18n";
+import { STRING_ID_TO_DISPLAY_NAME } from "../../../state/i18n";
 
 function isEquation(name: string): boolean {
     return name === "men" || name === "mrow";
