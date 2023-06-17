@@ -28,7 +28,8 @@
   },
   "scripts": {
     "start": "vite --force",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "echo 'no tests to run'"
   },
   "eslintConfig": {
     "extends": [
