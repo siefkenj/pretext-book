@@ -29,8 +29,9 @@
         "declarationMap": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
+        "skipLibCheck": true,
         "paths": {
-            "@typescript-xml/*": ["./packages/*"]
+            "@pretext-book/*": ["./packages/*"]
         }
     }
 }

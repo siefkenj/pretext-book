@@ -53,13 +53,30 @@ const printOnBuildPlugin = () => ({
         })
         .catch(() => process.exit(1));
 
+    const cliBuilder = await esbuild.context({
+        entryPoints: ["./src/cli/index.ts"],
+        outfile: "./dist/cli.js",
+        format: "esm",
+        bundle: true,
+        minify: false,
+        platform: "node",
+        target: "es2020",
+        plugins: [printOnBuildPlugin(), pegjsLoader()],
+    });
+
     // Build both versions and watch appropriately
     if (args.includes("--watch")) {
         esBuilder.watch();
         cjsBuilder.watch();
+        cliBuilder.watch();
     } else {
-        await Promise.all([esBuilder.rebuild(), cjsBuilder.rebuild()]);
+        await Promise.all([
+            esBuilder.rebuild(),
+            cjsBuilder.rebuild(),
+            cliBuilder.rebuild(),
+        ]);
         esBuilder.dispose();
         cjsBuilder.dispose();
+        cliBuilder.dispose();
     }
 })();

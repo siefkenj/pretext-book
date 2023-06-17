@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import type { Fragment, XastRoot } from "../src/types";
 import { parseFragment } from "../src/lib/parse-fragment";
 import { fragmentToXast } from "../src/lib/fragment-to-pretext";
+import { getTemplateName } from "../src/lib/get-template-name";
 import { toXml } from "xast-util-to-xml";
 /* eslint-env jest */
 
@@ -43,18 +44,26 @@ describe("Fragments", () => {
         expect(toXml(parsed)).toEqual(
             `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></bar></foo></article>`
         );
-        
+
         source = `<fragment parents="foo bar"><xxx /></fragment>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
             `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`
         );
-        
+
         // Doesn't overwrite existing xml:ids
         source = `<fragment parents="foo#myid bar"><xxx /></fragment>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
             `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="myid"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`
         );
+    });
+    it("can extract template name from fragment", async () => {
+        let source: string;
+        source = `<fragment parents="foo bar"><baz><biz>sss</biz></baz></fragment>`;
+        expect(getTemplateName(source)).toEqual("article");
+
+        source = `<fragment parents="foo bar" template="raw"><baz><biz>sss</biz></baz></fragment>`;
+        expect(getTemplateName(source)).toEqual("raw");
     });
 });
