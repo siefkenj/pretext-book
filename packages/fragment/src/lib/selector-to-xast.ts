@@ -11,8 +11,13 @@ import type { Selector, SimpleSelector } from "../grammars/peggy-types";
  *
  * Results are wrapped in a xast Root node.
  */
-export function selectorToXast(selector: Selector): XastRoot {
-    return { type: "root", children: [selectorToXastNode(selector)] };
+export function selectorToXast(selector: Selector | null): XastRoot {
+    const ret: XastRoot = { type: "root", children: [] };
+    if (!selector) {
+        return ret;
+    }
+    ret.children.push(selectorToXastNode(selector));
+    return ret;
 }
 
 /**

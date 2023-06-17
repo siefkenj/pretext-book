@@ -50,7 +50,7 @@
     }
 }}
 
-start = selector
+start = S* @selector / [\s]* { return null; }
 
 operator
     = @"/" S*

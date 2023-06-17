@@ -7,7 +7,10 @@ import { replaceNode } from "../src/utils/xast/replace-node";
 import { XastNode } from "../src/utils/xast/types";
 import { CssSelectorParser } from "../src";
 import { Selector } from "../src/grammars/peggy-types";
-import { selectorToXastNode } from "../src/lib/selector-to-xast";
+import {
+    selectorToXast,
+    selectorToXastNode,
+} from "../src/lib/selector-to-xast";
 /* eslint-env jest */
 
 // Make console.log pretty-print by default
@@ -36,28 +39,44 @@ describe("Selector functions", () => {
         }).not.toThrow();
     });
     it("can convert selector to xml", async () => {
-        let selector: Selector;
+        let selector: Selector | null;
 
         selector = CssSelectorParser.parse(`foo`);
-        expect(toXml(selectorToXastNode(selector))).toEqual("<foo></foo>");
+        expect(toXml(selectorToXast(selector))).toEqual("<foo></foo>");
 
         selector = CssSelectorParser.parse(`foo bar`);
-        expect(toXml(selectorToXastNode(selector))).toEqual("<foo><bar></bar></foo>");
+        expect(toXml(selectorToXast(selector))).toEqual(
+            "<foo><bar></bar></foo>"
+        );
 
         selector = CssSelectorParser.parse(`foo bar#baz[biz="bang"]`);
-        expect(toXml(selectorToXastNode(selector))).toEqual(`<foo><bar xml:id="baz" biz="bang"></bar></foo>`);
+        expect(toXml(selectorToXast(selector))).toEqual(
+            `<foo><bar xml:id="baz" biz="bang"></bar></foo>`
+        );
 
         selector = CssSelectorParser.parse(`foo bar#baz[biz=bang]`);
-        expect(toXml(selectorToXastNode(selector))).toEqual(`<foo><bar xml:id="baz" biz="bang"></bar></foo>`);
-        
+        expect(toXml(selectorToXast(selector))).toEqual(
+            `<foo><bar xml:id="baz" biz="bang"></bar></foo>`
+        );
+
         selector = CssSelectorParser.parse(`foo bar.baz[biz=bang]`);
-        expect(toXml(selectorToXastNode(selector))).toEqual(`<foo><bar class="baz" biz="bang"></bar></foo>`);
-        
+        expect(toXml(selectorToXast(selector))).toEqual(
+            `<foo><bar class="baz" biz="bang"></bar></foo>`
+        );
+
         selector = CssSelectorParser.parse(`foo bar.baz.biz`);
-        expect(toXml(selectorToXastNode(selector))).toEqual(`<foo><bar class="baz biz"></bar></foo>`);
-        
+        expect(toXml(selectorToXast(selector))).toEqual(
+            `<foo><bar class="baz biz"></bar></foo>`
+        );
+
         // pseudo-selectors should do nothing.
         selector = CssSelectorParser.parse(`foo bar:baz`);
-        expect(toXml(selectorToXastNode(selector))).toEqual(`<foo><bar></bar></foo>`);
+        expect(toXml(selectorToXast(selector))).toEqual(
+            `<foo><bar></bar></foo>`
+        );
+
+        // can parse empty selector.
+        selector = CssSelectorParser.parse("");
+        expect(toXml(selectorToXast(selector))).toEqual(``);
     });
 });
