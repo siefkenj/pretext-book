@@ -6,11 +6,16 @@ import { getTemplateName } from "../lib/get-template-name";
 import { fragmentToXast } from "../lib/fragment-to-pretext";
 import { toXml } from "xast-util-to-xml";
 import { extractFragmentFromHtml } from "../lib/extract-fragment-from-html";
+// Typescript doesn't like us importing from outside the project root.
+// However, this is a static import, so it is fine.
+// @ts-ignore
+import { version } from "../../package.json";
 
 const yargsObj = yargs(hideBin(process.argv))
     .usage(
         `$0 --template-file ./template.ptx --fragment-file ./fragment.xml`.trim()
     )
+    .version(version)
     .options({
         "template-file": {
             type: "string",
