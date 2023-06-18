@@ -14,7 +14,7 @@ export function getTemplateName(fragmentSource: string): string {
     visit(
         ast,
         (node) => {
-            if (node.name === "fragment") {
+            if (node.name === "FRAGMENT") {
                 templateName = node.attributes?.template || templateName;
             }
         },
