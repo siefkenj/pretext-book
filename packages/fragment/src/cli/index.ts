@@ -5,13 +5,11 @@ import fs from "node:fs/promises";
 import { getTemplateName } from "../lib/get-template-name";
 import { fragmentToXast } from "../lib/fragment-to-pretext";
 import { toXml } from "xast-util-to-xml";
+import { extractFragmentFromHtml } from "../lib/extract-fragment-from-html";
 
-const options = yargs(hideBin(process.argv))
+const yargsObj = yargs(hideBin(process.argv))
     .usage(
-        `
-Substitute a fragment into a template:
-> $0 --template-file ./template.ptx --fragment-file ./fragment.xml
-`.trim()
+        `$0 --template-file ./template.ptx --fragment-file ./fragment.xml`.trim()
     )
     .options({
         "template-file": {
@@ -43,6 +41,23 @@ Substitute a fragment into a template:
                 "Fragment as a string. This string should have a <fragment /> element as the root node.",
             requiresArg: true,
         },
+        "extract-from-html-file": {
+            type: "string",
+            description:
+                "Extract the rendered fragment from the specified file.",
+            requiresArg: true,
+        },
+        "extract-from-html": {
+            type: "string",
+            description:
+                "Extract the rendered fragment from the specified string.",
+            requiresArg: true,
+        },
+        "pretty-print": {
+            type: "boolean",
+            description:
+                "Whether to pretty-print fragments extracted from HTML",
+        },
         out: {
             type: "string",
             alias: "o",
@@ -50,12 +65,17 @@ Substitute a fragment into a template:
             requiresArg: true,
         },
     })
-    .help("h").argv;
+    .help();
+const options = yargsObj.argv;
 
 type Options = Awaited<typeof options>;
 
-const cache: { template?: string; fragment?: string } = {};
+const cache: { template?: string; fragment?: string; html?: string } = {};
 
+/**
+ * Cached function to get the contents of the _fragment_ as specified
+ * by command-line options
+ */
 async function getFragment(options: Options) {
     if (cache.fragment) {
         return cache.fragment;
@@ -66,6 +86,11 @@ async function getFragment(options: Options) {
             (await fs.readFile(options.fragmentFile, { encoding: "utf-8" })))
     );
 }
+
+/**
+ * Cached function to get the contents of the _template_ as specified
+ * by command-line options
+ */
 async function getTemplate(options: Options) {
     if (cache.fragment) {
         return cache.fragment;
@@ -76,6 +101,24 @@ async function getTemplate(options: Options) {
             (await fs.readFile(options.templateFile, { encoding: "utf-8" })))
     );
 }
+
+/**
+ * Cached function to extract the contents of the rendered fragment from the _html_ as specified
+ * by command-line options
+ */
+async function getHtml(options: Options) {
+    if (cache.html) {
+        return cache.html;
+    }
+    return (
+        options.extractFromHtml ||
+        (options.extractFromHtmlFile &&
+            (await fs.readFile(options.extractFromHtmlFile, {
+                encoding: "utf-8",
+            })))
+    );
+}
+
 async function getTemplateNameFromFragment(options: Options) {
     const fragment = await getFragment(options);
     if (!fragment) {
@@ -106,6 +149,16 @@ async function evaluateTemplate(options: Options) {
     return toXml(renderedAst);
 }
 
+async function extractFromHtml(options: Options) {
+    const html = await getHtml(options);
+    if (!html) {
+        throw new Error(
+            `You must supply an html string or file to extract a fragment from`
+        );
+    }
+    return extractFragmentFromHtml(html, { prettyPrint: options.prettyPrint });
+}
+
 /**
  * Write to a file or log to stdout the contents of `str`, depending on
  * whether `--out` was specified in `options`.
@@ -131,6 +184,15 @@ async function main() {
         await writeOrLog(rendered, opts);
         return;
     }
+
+    if (opts.extractFromHtml || opts.extractFromHtmlFile) {
+        const extracted = await extractFromHtml(opts);
+        await writeOrLog(extracted, opts);
+        return;
+    }
+
+    // If no arguments were given, show the help
+    yargsObj.showHelp();
 }
 
 main();
