@@ -27,7 +27,7 @@ export function fragmentToXast(
         if (!isElement(node)) {
             return;
         }
-        if (node.name === "fragment") {
+        if (node.name === "FRAGMENT") {
             return parents.children;
         }
     });

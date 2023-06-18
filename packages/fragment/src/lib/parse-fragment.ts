@@ -14,7 +14,7 @@ export function parseFragment(source: string): Fragment {
     visit(
         ast,
         (node) => {
-            if (node.name === "fragment") {
+            if (node.name === "FRAGMENT") {
                 fragmentNode = node;
                 return EXIT;
             }
