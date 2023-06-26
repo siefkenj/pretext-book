@@ -2,6 +2,7 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import fs from "node:fs/promises";
+import path from "node:path";
 import { getTemplateName } from "../lib/get-template-name";
 import { fragmentToXast } from "../lib/fragment-to-pretext";
 import { toXml } from "xast-util-to-xml";
@@ -78,6 +79,17 @@ type Options = Awaited<typeof options>;
 const cache: { template?: string; fragment?: string; html?: string } = {};
 
 /**
+ * Normalize a file path to a path that is relative to the current working directory.
+ */
+function makePath(pathName: string) {
+    if (pathName.startsWith("/")) {
+        return pathName;
+    }
+    const cwd = process.env.INIT_CWD || process.cwd();
+    return path.join(cwd, pathName);
+}
+
+/**
  * Cached function to get the contents of the _fragment_ as specified
  * by command-line options
  */
@@ -88,7 +100,9 @@ async function getFragment(options: Options) {
     return (
         options.fragment ||
         (options.fragmentFile &&
-            (await fs.readFile(options.fragmentFile, { encoding: "utf-8" })))
+            (await fs.readFile(makePath(options.fragmentFile), {
+                encoding: "utf-8",
+            })))
     );
 }
 
@@ -103,7 +117,9 @@ async function getTemplate(options: Options) {
     return (
         options.template ||
         (options.templateFile &&
-            (await fs.readFile(options.templateFile, { encoding: "utf-8" })))
+            (await fs.readFile(makePath(options.templateFile), {
+                encoding: "utf-8",
+            })))
     );
 }
 
@@ -118,7 +134,7 @@ async function getHtml(options: Options) {
     return (
         options.extractFromHtml ||
         (options.extractFromHtmlFile &&
-            (await fs.readFile(options.extractFromHtmlFile, {
+            (await fs.readFile(makePath(options.extractFromHtmlFile), {
                 encoding: "utf-8",
             })))
     );

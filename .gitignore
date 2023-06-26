@@ -8,6 +8,7 @@ lerna-debug.log*
 .vscode
 *.swp
 tmp/
+tmp*/
 build/
 packages/prose-mirror-editor
 

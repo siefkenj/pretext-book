@@ -1,0 +1,3 @@
+<FRAGMENT parents="p">
+    Text with <abbr>A.B.</abbr> X.Y. abbreviation.
+</FRAGMENT>

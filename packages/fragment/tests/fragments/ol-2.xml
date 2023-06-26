@@ -1,0 +1,6 @@
+<FRAGMENT parents="p">
+    <ol marker="A">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+</FRAGMENT>

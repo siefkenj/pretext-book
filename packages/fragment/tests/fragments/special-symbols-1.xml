@@ -1,0 +1,19 @@
+<FRAGMENT parents="p">
+    <copyright />
+    <phonomark/>
+    <copyleft />
+    <registered />
+    <trademark />
+    <servicemark />
+    <ellipsis />
+    <midpoint />
+    <swungdash />
+    <permille />
+    <pilcrow />
+    <section-mark />
+    <minus/>
+    <times/>
+    <solidus/>
+    <obelus/>
+    <plusminus/>
+</FRAGMENT>
