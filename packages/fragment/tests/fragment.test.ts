@@ -66,4 +66,15 @@ describe("Fragments", () => {
         source = `<FRAGMENT parents="foo bar" template="raw"><baz><biz>sss</biz></baz></FRAGMENT>`;
         expect(getTemplateName(source)).toEqual("raw");
     });
+    it("can insert a fragment into a template with empty parents", async () => {
+        let source: string;
+        let parsed: XastRoot;
+        let templates = { article: "<article><FRAGMENT /></article>" };
+
+        source = `<FRAGMENT><baz><biz>sss</biz></baz></FRAGMENT>`;
+        parsed = fragmentToXast(source, templates);
+        expect(toXml(parsed)).toEqual(
+            `<article xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></article>`
+        );
+    });
 });

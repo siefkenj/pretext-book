@@ -8,7 +8,6 @@ import { CssSelectorParser } from "../parser";
 
 const REPLACEMENT_NODE_NAME = "__REPLACEMENT_NODE__";
 
-
 export function fragmentToXast(
     fragmentSource: string,
     templates: Record<string, string>
@@ -59,12 +58,12 @@ export function fragmentToXast(
             return;
         }
         parent.attributes ||= {};
-        parent.attributes["xml:id"] = `FRAGMENT_PARENT_ID__${i}`
+        parent.attributes["xml:id"] = `FRAGMENT_PARENT_ID__${i}`;
     });
 
     // We have inserted a node with name REPLACEMENT_NODE_NAME as the lowest "child" This child should be replaced
     // with our content.
-    replaceNode(parents, (node) => {
+    replaceNode(template, (node) => {
         if (!isElement(node)) {
             return;
         }
