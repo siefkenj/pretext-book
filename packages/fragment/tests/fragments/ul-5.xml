@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    <ul>
+        <li>Item 1</li>
+        <!-- Make sure that including some child <p>s and not others works. -->
+        <li><p>Item 2</p></li>
+    </ul>
+</FRAGMENT>

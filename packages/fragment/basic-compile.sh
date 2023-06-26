@@ -55,7 +55,7 @@ IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 		<worksheets formatted="yes" />
 	</latex>
 	<html platform="web">
-		<knowl theorem="no" proof="yes" definition="no" example="yes" example-solution="yes" project="no" task="no" remark="no" objectives="no" outcomes="no" figure="no" table="no" listing="no" list="no" exercise-inline="yes" exercise-divisional="no" exercise-worksheet="no" exercise-readingquestion="no" />
+		<knowl theorem="no" proof="no" definition="no" example="no" example-solution="no" project="no" task="no" remark="no" objectives="no" outcomes="no" figure="no" table="no" listing="no" list="no" exercise-inline="yes" exercise-divisional="no" exercise-worksheet="no" exercise-readingquestion="no" />
 		<css style="default" colors="blue_red" />
 		<search variant="default" />
 		<calculator model="none" activecode="none" />
@@ -76,6 +76,9 @@ EOF
 
 MAIN_PTX=$(npx pretext-fragment --fragment-file "$FRAGMENT_FILE_PATH" --template "$ARTICLE_TEMPLATE")
 
+echo "Rendering the following pretext file:"
+echo "$MAIN_PTX"
+
 # A hard-coded version of a fragment file. Uncomment to force the use of this file.
 #
 #IFS='' read -r -d '' MAIN_PTX <<"EOF"
@@ -94,7 +97,7 @@ echo "$PROJECT_PTX" > $TMP_DIR/project.ptx
 echo "$MAIN_PTX" > $TMP_DIR/main.ptx
 
 pushd $TMP_DIR
-pretext build web
+pretext build web --clean
 
 # find the rendered fragment and extract it
 # The file we want to extract has the form `FRAGMENT_PARENT_ID__##.html` where ## is the smallest number

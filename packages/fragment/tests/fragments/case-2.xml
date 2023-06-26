@@ -1,0 +1,16 @@
+<FRAGMENT parents="theorem proof">
+    <case>
+        <title>Special Case</title>
+        <p>This case</p>
+    </case>
+    <case direction="forward">
+        <p>This case</p>
+    </case>
+    <case direction="backward">
+        <p>This case</p>
+    </case>
+    <case direction="forward">
+        <title>Special Case</title>
+        <p>This case</p>
+    </case>
+</FRAGMENT>

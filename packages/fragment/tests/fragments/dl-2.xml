@@ -1,0 +1,11 @@
+<FRAGMENT parents="p">
+    <dl width="narrow">
+        <li><title>The Title</title>Item 1</li>
+    </dl>
+    <dl width = "medium">
+        <li><title>The Title</title>Item 1</li>
+    </dl>
+    <dl width = "wide">
+        <li><title>The Title</title>Item 1</li>
+    </dl>
+</FRAGMENT>

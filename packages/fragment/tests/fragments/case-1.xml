@@ -1,0 +1,5 @@
+<FRAGMENT parents="theorem proof">
+    <case>
+        <p>This case</p>
+    </case>
+</FRAGMENT>
