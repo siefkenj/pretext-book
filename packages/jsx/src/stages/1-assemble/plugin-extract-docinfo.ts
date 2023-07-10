@@ -33,7 +33,8 @@ export const extractDocInfoPlugin: Plugin<
             (n) => n.name === "docinfo"
         ) as ElementDocInfo;
         if (!docinfoNode) {
-            console.warn("Could not find <docinfo> node");
+            // This turns out to be a common occurrence in fragments.
+            // console.warn("Could not find <docinfo> node");
             return;
         }
         const docinfo = state.docinfo;

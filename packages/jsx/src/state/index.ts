@@ -306,7 +306,12 @@ export class PretextState {
                 };
 
                 const parent = info.parents[0];
-                if (!isElement(parent) || !parent.attributes?.["xml:id"]) {
+                if (
+                    !isElement(parent) ||
+                    !parent.attributes?.["xml:id"] ||
+                    // The root <pretext> element may have an ID on it, but it shouldn't show up in the TOC.
+                    parent.name === "pretext"
+                ) {
                     // We're a root node with no immediate parent.
                     toc.push(newTocItem);
                 } else {

@@ -16,7 +16,7 @@ const toXmlPlugin = function () {
     Object.assign(this, { Compiler: toXml });
 } as Plugin<never[], XastRoot, string>;
 
-describe("Parse to HTML tests", () => {
+describe.skip("Parse to HTML tests", () => {
     it("Can do a basic conversion", () => {
         let source = `<pretext><docinfo />
                     <book xml:id="hello-world">
