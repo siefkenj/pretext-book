@@ -68,6 +68,7 @@
         "yargs": "^17.7.2"
     },
     "dependencies": {
-        "@pretext-book/fragment": "file:"
+        "@pretext-book/fragment": "file:",
+        "@types/hast": "^3.0.0"
     }
 }

@@ -29,6 +29,7 @@
         "@types/xast": "^1.0.2",
         "esbuild": "^0.18.2",
         "esbuild-runner": "^2.2.2",
+        "glob": "^10.3.0",
         "jsdom": "^22.1.0",
         "mkdirp": "^3.0.1",
         "prettier": "^2.8.8",

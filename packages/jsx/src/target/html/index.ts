@@ -21,6 +21,27 @@ import {
     replacerFactoryWithId,
 } from "./replacers/replacer-factory";
 import { XRef } from "./components/xref";
+import { Article, ArticlePtxMain } from "./components/article";
+import { Ul } from "./components/ul";
+import { Li } from "./components/li";
+import { Ol } from "./components/ol";
+
+const REPLACERS = [
+    replacerFactoryWithId("p", P),
+    replacerFactoryWithId("title", Title),
+    replacerFactoryWithId("chapter", ClassedSection),
+    replacerFactoryWithId("section", ClassedSection),
+    replacerFactoryWithId("subsection", ClassedSection),
+    replacerFactoryWithId("introduction", IntroOrConclusion),
+    replacerFactoryWithId("conclusion", IntroOrConclusion),
+    replacerFactoryWithId("definition", Definition),
+    replacerFactory("ul", Ul),
+    replacerFactory("ol", Ol),
+    replacerFactoryWithId("li", Li),
+    replacerFactory("term", Term),
+    replacerFactory("input", Input),
+    replacerFactory("xref", XRef),
+];
 
 /**
  * Parse PreTeXt source and turn it into HTML.
@@ -36,17 +57,8 @@ export function pretextToHtml(source: string) {
             replacers: [
                 createContextPassingRootReplacer(state),
                 replacerFactoryWithId("book", Book),
-                replacerFactoryWithId("p", P),
-                replacerFactoryWithId("title", Title),
-                replacerFactoryWithId("chapter", ClassedSection),
-                replacerFactoryWithId("section", ClassedSection),
-                replacerFactoryWithId("subsection", ClassedSection),
-                replacerFactoryWithId("introduction", IntroOrConclusion),
-                replacerFactoryWithId("conclusion", IntroOrConclusion),
-                replacerFactoryWithId("definition", Definition),
-                replacerFactory("term", Term),
-                replacerFactory("input", Input),
-                replacerFactory("xref", XRef),
+                replacerFactoryWithId("article", Article),
+                ...REPLACERS,
             ],
         });
 
@@ -70,17 +82,8 @@ export function pretextToReact(source: string) {
                 createContextPassingRootReplacer(state),
                 // We don't want to return a frame with `<html>...` We only want to return the `<div id="ptx-main">...`
                 replacerFactoryWithId("book", BookPtxMain),
-                replacerFactoryWithId("p", P),
-                replacerFactoryWithId("title", Title),
-                replacerFactoryWithId("chapter", ClassedSection),
-                replacerFactoryWithId("section", ClassedSection),
-                replacerFactoryWithId("subsection", ClassedSection),
-                replacerFactoryWithId("introduction", IntroOrConclusion),
-                replacerFactoryWithId("conclusion", IntroOrConclusion),
-                replacerFactoryWithId("definition", Definition),
-                replacerFactory("term", Term),
-                replacerFactory("input", Input),
-                replacerFactory("xref", XRef),
+                replacerFactoryWithId("article", ArticlePtxMain),
+                ...REPLACERS,
             ],
         });
 
