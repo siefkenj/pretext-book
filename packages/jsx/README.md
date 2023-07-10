@@ -18,6 +18,23 @@ Running `npm run watch` will start the build script with live reloading every ti
 ### Tests
 Run `npm run test` to execute the test suite. `vitest` is used as a test runner. Test are located in `test/` and always end in a `.test.ts`. Because the tests are ouside of `src/` your Typescript linter _may_ complain about using references outside of the Typescript root.
 
+If you want to run a specific test, you can press `t` in the `vitest` console and then type the name of the test you want to run. For example, to
+run tests related to the fragment `ol-1.xml` you could type "`t` `ol-1`".
+
+#### Fragments
+A temporary script has been created to render fragments until the CLI has the capability built in. It is called `basic-compile.sh` and relies on
+you running in a linux environment with the cli and nodejs installed. By default it renders to the `./tmp_fragment_compile/` folder. If you just want to see
+the results of a rendered fragment exported directly to the console, **navigate to the `packages/fragment` directory** and then, you may run a command like
+```bash
+NAME="ol-1"; ./basic-compile.sh tests/fragments/$NAME.xml && cat ./tmp_fragment_compile/$NAME.html
+```
+where `NAME` is set to the name of the fragment you wish to render.
+
+To rerender and save all fragments, you can run
+```bash
+for i in tests/fragments/*xml; do A=`basename "$i"`; B=${A%.*}; NAME=$B; ./basic-compile.sh tests/fragments/$NAME.xml && cat ./tmp_fragment_compile/$NAME.html > tests/fragments/pretext-xsl-reference/$NAME.html; done
+```
+
 # How it Works
 
 `@pretext-book/jsx` mimics the steps of the XSLT implementation of PreTeXt. Processing a document proceeds via:
