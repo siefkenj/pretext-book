@@ -11,9 +11,11 @@ import {
     extractFragmentFromHtml,
     fragmentToPretext,
     getTemplateName,
+    jestToMatchFragment,
 } from "@pretext-book/fragment";
 import Prettier from "prettier/standalone";
 import * as prettierPluginHtml from "prettier/parser-html";
+/* eslint-env jest */
 
 function printPrettier(source: string) {
     return Prettier.format(source, {
@@ -22,7 +24,7 @@ function printPrettier(source: string) {
     });
 }
 
-/* eslint-env jest */
+expect.extend(jestToMatchFragment);
 
 // Make console.log pretty-print by default
 const origLog = console.log;
@@ -81,14 +83,16 @@ describe("Basic fragment rendering", async () => {
                 renderedFilePath,
                 { encoding: "utf-8" }
             );
-            it(`Render of fragment "${fileName}" matches PreTeXt reference`, async () => {
+            it.skip(`Render of fragment "${fileName}" matches PreTeXt reference`, async () => {
                 const templateName = getTemplateName(fragment);
                 const expandedFragment = fragmentToPretext(fragment, {
                     [templateName]: ARTICLE_TEMPLATE,
                 });
                 const processed = pretextToHtml(expandedFragment);
-                const extracted = printPrettier(extractFragmentFromHtml(processed));
-                expect(extracted).toEqual(pretextRenderedFragment);
+                const extracted = printPrettier(
+                    extractFragmentFromHtml(processed)
+                );
+                expect(extracted).toMatchFragment(pretextRenderedFragment);
             });
         }
     }

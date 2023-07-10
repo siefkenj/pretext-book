@@ -18,5 +18,5 @@ export const Ol: ReplacerComponent = function ({ node }) {
         I: "upper-roman",
     }[formatCode || ""];
 
-    return <ul className={style}>{state.processContent(node.children)}</ul>;
+    return <ol className={style}>{state.processContent(node.children)}</ol>;
 };
