@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    <console>
+        <prompt>x $</prompt>
+        <input>foo -bar</input>
+        <output>THE OUTPUT</output>
+    </console>
+</FRAGMENT>

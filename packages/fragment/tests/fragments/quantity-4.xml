@@ -1,0 +1,15 @@
+<FRAGMENT parents="section p">
+    <quantity>
+        <mag>2\pi</mag>
+        <unit base="radian"/>
+    </quantity>
+    <quantity>
+        <mag>21\pi45\pi234\pi890</mag>
+        <unit base="radian"/>
+    </quantity>.
+    <quantity><mag>9192631770</mag></quantity>
+    <quantity>
+        <mag>2<m>\pi</m></mag>
+        <unit base="radian"/>
+    </quantity>
+</FRAGMENT>

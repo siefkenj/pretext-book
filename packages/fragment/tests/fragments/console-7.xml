@@ -1,0 +1,10 @@
+<FRAGMENT parents="p">
+    <console margins="4%">
+        <prompt>x $</prompt>
+        <input>foo -bar</input>
+    </console>
+    <console margins="10% 20%">
+        <prompt>x $</prompt>
+        <input>foo -bar</input>
+    </console>
+</FRAGMENT>

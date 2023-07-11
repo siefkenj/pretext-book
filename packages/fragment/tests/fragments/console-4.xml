@@ -1,0 +1,13 @@
+<FRAGMENT parents="p">
+    <console>
+        <prompt>x $</prompt>
+        <input>foo -bar</input>
+        <output>
+            THE OUTPUT with newlines
+        </output>
+        <prompt>y $</prompt>
+        <input>Baz \
+more command on next line without indent
+        </input>
+    </console>
+</FRAGMENT>
