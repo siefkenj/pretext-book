@@ -42,6 +42,27 @@ describe("normalize HTML", () => {
             `<li class="alice bees zed">bar</li>`
         );
     });
+    it("Pretty print treats newlines and spaces interchangeably", async () => {
+        let source1: string, source2: string;
+        source1 = `
+      <h2 class="heading hide-type">
+        <span class="type">Chapter</span> <span class="codenumber"></span>
+        <span class="title"></span>
+      </h2>
+      <div class="para" id="p-1">Some text!</div>
+      `;
+        source2 = `
+      <h2 class="heading hide-type">
+        <span class="type">Chapter</span>
+        <span class="codenumber"></span>
+        <span class="title"></span>
+      </h2>
+      <div class="para" id="p-1">Some text!</div>
+      `;
+        expect(normalizeFragmentHtml(source1)).toEqual(
+            normalizeFragmentHtml(source2)
+        );
+    });
     it("Fragment matcher works", () => {
         expect(`<li id="foo">bar</li>`).toMatchFragment(
             `<li id="id-0" >bar</li>`

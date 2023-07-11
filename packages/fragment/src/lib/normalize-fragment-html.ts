@@ -10,6 +10,7 @@ function printPrettier(source: string) {
     return Prettier.format(source, {
         parser: "html",
         plugins: [prettierPluginHtml],
+        htmlWhitespaceSensitivity: "ignore",
     });
 }
 
