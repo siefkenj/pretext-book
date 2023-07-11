@@ -1,0 +1,9 @@
+<FRAGMENT parents="p">
+    <cd>
+        <cline>Item 1
+extra
+whitespace
+        </cline>
+        <cline>Item 2</cline>
+    </cd>
+</FRAGMENT>
