@@ -1,6 +1,6 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponent, ReplacerComponentWithId } from "../replacers/replacer-factory";
+import { ReplacerComponent } from "../replacers/replacer-factory";
 
 export const Init: ReplacerComponent = function ({ node }) {
     const state = React.useContext(PretextStateContext);
