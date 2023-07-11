@@ -1,0 +1,12 @@
+<FRAGMENT parents="section p">
+    <tabular>
+        <row header="yes">
+            <cell>Item 1</cell>
+            <cell>Item 2</cell>
+        </row>
+        <row>
+            <cell>Item 3</cell>
+            <cell>Item 4</cell>
+        </row>
+    </tabular>
+</FRAGMENT>

@@ -1,0 +1,20 @@
+<FRAGMENT parents="section p">
+    <tabular valign="middle" top="minor" left="minor" halign="center">
+        <col right="medium"/>
+        <col right="major"/>
+        <col />
+        <!--  -->
+        <row bottom="medium">
+            <cell>1111</cell>
+            <cell right="minor">2222</cell>
+        </row>
+        <row bottom="major">
+            <cell>aaaa</cell>
+            <cell right="medium">bbbb</cell>
+        </row>
+        <row>
+            <cell bottom="minor">AAAA</cell>
+            <cell bottom="major" right="major">BBBB</cell>
+        </row>
+    </tabular>
+</FRAGMENT>

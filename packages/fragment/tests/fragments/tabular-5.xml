@@ -1,0 +1,18 @@
+<FRAGMENT parents="section p">
+    <tabular>
+        <col/>
+        <col halign="center" right="medium"/>
+        <col/>
+        <col halign="center" right="medium"/>
+        <col/>
+        <col halign="center"/>
+        <row>
+            <cell>Item 1</cell>
+            <cell>Item 2</cell>
+            <cell>Item 2</cell>
+            <cell>Item 2</cell>
+            <cell>Item 2</cell>
+            <cell>Item 2</cell>
+        </row>
+    </tabular>
+</FRAGMENT>
