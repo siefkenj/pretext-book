@@ -1,0 +1,8 @@
+<FRAGMENT parents="p">
+    A sentence ending in a period
+    <md>
+        <mrow>\frac{d}{dx}\definiteintegral{a}{x}{f(t)}{t}&amp;=\frac{d}{dx}\left(F(x)-F(a)\right)</mrow>
+        <mrow number="yes">&amp;=\frac{d}{dx}F(x)-\frac{d}{dx}F(a)</mrow>
+        <mrow>&amp;=f(x)-0 = f(x)</mrow>
+    </md>.
+</FRAGMENT>
