@@ -6,41 +6,47 @@ import { attachRootToStatePlugin } from "../../stages/helpers/attach-root-to-sta
 import { PretextState } from "../../state";
 import { xastReactTransformer } from "../../utils/xast";
 import { xastParserPlugin } from "../../utils/xast";
-import { Book, BookPtxMain } from "./components/book";
-import { ClassedSection } from "./components/classed-section";
-import { Definition } from "./components/definition";
-import { Input } from "./components/input";
-import { IntroOrConclusion } from "./components/intro-conclusion";
-import { P } from "./components/p";
-import { Term } from "./components/term";
-import { Title } from "./components/title";
 import { reactToHtml } from "./react-to-html";
 import { createContextPassingRootReplacer } from "./replacers/pretext";
+import { replacerFactoryWithId } from "./replacers/replacer-factory";
+import { multiReplacer } from "./replacers/multi-replacer";
+
+// Element components
 import {
-    replacerFactory,
-    replacerFactoryWithId,
-} from "./replacers/replacer-factory";
-import { XRef } from "./components/xref";
-import { Article, ArticlePtxMain } from "./components/article";
-import { Ul } from "./components/ul";
-import { Li } from "./components/li";
-import { Ol } from "./components/ol";
+    Article,
+    ArticlePtxMain,
+    Book,
+    BookPtxMain,
+    ClassedSection,
+    Definition,
+    Input,
+    IntroOrConclusion,
+    Li,
+    Ol,
+    P,
+    Term,
+    Title,
+    Ul,
+    XRef,
+} from "./components";
 
 const REPLACERS = [
-    replacerFactoryWithId("p", P),
-    replacerFactoryWithId("title", Title),
-    replacerFactoryWithId("chapter", ClassedSection),
-    replacerFactoryWithId("section", ClassedSection),
-    replacerFactoryWithId("subsection", ClassedSection),
-    replacerFactoryWithId("introduction", IntroOrConclusion),
-    replacerFactoryWithId("conclusion", IntroOrConclusion),
-    replacerFactoryWithId("definition", Definition),
-    replacerFactory("ul", Ul),
-    replacerFactory("ol", Ol),
-    replacerFactoryWithId("li", Li),
-    replacerFactory("term", Term),
-    replacerFactory("input", Input),
-    replacerFactory("xref", XRef),
+    multiReplacer({
+        p: { component: P, passId: true },
+        title: { component: Title, passId: true },
+        chapter: { component: ClassedSection, passId: true },
+        section: { component: ClassedSection, passId: true },
+        subsection: { component: ClassedSection, passId: true },
+        introduction: { component: IntroOrConclusion, passId: true },
+        conclusion: { component: IntroOrConclusion, passId: true },
+        definition: { component: Definition, passId: true },
+        li: { component: Li, passId: true },
+        ul: { component: Ul },
+        ol: { component: Ol },
+        term: { component: Term },
+        input: { component: Input },
+        xref: { component: XRef },
+    }),
 ];
 
 /**
