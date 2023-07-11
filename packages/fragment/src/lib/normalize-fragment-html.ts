@@ -10,7 +10,11 @@ function printPrettier(source: string) {
     return Prettier.format(source, {
         parser: "html",
         plugins: [prettierPluginHtml],
-        htmlWhitespaceSensitivity: "ignore",
+        // Setting a value to `insensitive` here will cause whitespace to
+        // be totally ignored. We don't want that, but we do want to eagerly wrap
+        // as much as possible. We attempt this by setting a small `printWidth`.
+        htmlWhitespaceSensitivity: "css",
+        printWidth: 50,
     });
 }
 
