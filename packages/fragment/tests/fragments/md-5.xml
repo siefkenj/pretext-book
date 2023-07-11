@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    A sentence ending in a period
+    <md>
+        <mrow>math^2</mrow>
+        <mrow>math_5</mrow>
+    </md>.
+</FRAGMENT>
