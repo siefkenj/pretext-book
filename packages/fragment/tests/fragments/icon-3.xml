@@ -1,0 +1,18 @@
+<FRAGMENT parents="section p">
+	<icon name="file-save" />
+	<icon name="arrow-left" />
+	<icon name="media-rewind" />
+	<icon name="arrow-up" />
+	<icon name="arrow-right" />
+	<icon name="media-fast-forward" />
+	<icon name="menu" />
+	<icon name="arrow-down" />
+	<icon name="media-skip-to-start" />
+	<icon name="wrench" />
+	<icon name="media-stop" />
+	<icon name="media-pause" />
+	<icon name="gear" />
+	<icon name="media-play" />
+	<icon name="media-skip-to-end" />
+	<icon name="power" />
+</FRAGMENT>

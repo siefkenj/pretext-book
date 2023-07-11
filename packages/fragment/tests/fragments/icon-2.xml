@@ -1,0 +1,3 @@
+<FRAGMENT parents="section p">
+    Some text <icon name="arrow-up" /> <icon name="arrow-up" /> with icons. The space between icons collapses.
+</FRAGMENT>
