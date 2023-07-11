@@ -43,7 +43,7 @@ describe("normalize HTML", () => {
         );
     });
     it("Pretty print treats newlines and spaces interchangeably", async () => {
-        let source1: string, source2: string;
+        let source1: string, source2: string, source3: string;
         source1 = `
       <h2 class="heading hide-type">
         <span class="type">Chapter</span> <span class="codenumber"></span>
@@ -59,8 +59,18 @@ describe("normalize HTML", () => {
       </h2>
       <div class="para" id="p-1">Some text!</div>
       `;
+        source3 = `
+      <h2 class="heading hide-type">
+        <span class="type">Chapter</span><span class="codenumber"></span>
+        <span class="title"></span>
+      </h2>
+      <div class="para" id="p-1">Some text!</div>
+      `;
         expect(normalizeFragmentHtml(source1)).toEqual(
             normalizeFragmentHtml(source2)
+        );
+        expect(normalizeFragmentHtml(source1)).not.toEqual(
+            normalizeFragmentHtml(source3)
         );
     });
     it("Fragment matcher works", () => {
