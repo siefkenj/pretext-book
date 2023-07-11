@@ -54,7 +54,8 @@ export function fragmentToXast(
     }
     // Now we have the immediate parents of replacement node, so we can add ids
     parentsOfReplacementNode.forEach((parent, i) => {
-        if (parent.attributes?.["xml:id"]) {
+        // The `pretext` tag must not have an `xml:id` per the schema.
+        if (parent.attributes?.["xml:id"] || parent.name === "pretext") {
             return;
         }
         parent.attributes ||= {};

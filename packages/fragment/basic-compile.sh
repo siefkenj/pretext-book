@@ -102,6 +102,8 @@ echo "$MAIN_PTX" > $TMP_DIR/main.ptx
 echo "$REQUIREMENTS_TXT" > $TMP_DIR/requirements.txt
 
 pushd $TMP_DIR
+python3 -c "from pretext.core import validate; validate('./main.ptx', 'main.jing', '')"
+cat main.jing
 pretext build web --clean
 
 # find the rendered fragment and extract it
