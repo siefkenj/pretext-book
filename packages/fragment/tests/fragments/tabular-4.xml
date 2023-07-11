@@ -1,5 +1,5 @@
 <FRAGMENT parents="section p">
-    <tabular  top="major" halign="center">
+    <tabular top="major" halign="center">
         <row bottom="minor">
             <cell>Item 1</cell>
             <cell>Item 2</cell>

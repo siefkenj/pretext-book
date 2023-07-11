@@ -27,6 +27,8 @@ import {
     Li,
     Ol,
     P,
+    Row,
+    Tabular,
     Term,
     Title,
     Ul,
@@ -52,6 +54,8 @@ const REPLACERS = [
         abbr: { component: Abbr },
         acro: { component: Acro },
         init: { component: Init },
+        tabular: { component: Tabular },
+        row: { component: Row },
     }),
 ];
 
