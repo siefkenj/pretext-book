@@ -37,7 +37,6 @@ const normalizeIdsPlugin: Plugin<void[], HastRoot, HastRoot> = function () {
 const alphabetizeAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
     function () {
         return (root) => {
-            let idCounter = 0;
             visit(root, (node) => {
                 if (node.type !== "element") {
                     return;
@@ -59,7 +58,6 @@ const alphabetizeAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
 const alphabetizeClassNamesPlugin: Plugin<void[], HastRoot, HastRoot> =
     function () {
         return (root) => {
-            let idCounter = 0;
             visit(root, (node) => {
                 if (
                     node.type !== "element" ||
