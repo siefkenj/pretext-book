@@ -27,7 +27,6 @@ import {
     Li,
     Ol,
     P,
-    Row,
     Tabular,
     Term,
     Title,
@@ -55,7 +54,6 @@ const REPLACERS = [
         acro: { component: Acro },
         init: { component: Init },
         tabular: { component: Tabular },
-        row: { component: Row },
     }),
 ];
 
