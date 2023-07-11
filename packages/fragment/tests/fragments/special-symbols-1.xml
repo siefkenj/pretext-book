@@ -1,19 +1,2 @@
 <FRAGMENT parents="p">
-    <copyright />
-    <phonomark/>
-    <copyleft />
-    <registered />
-    <trademark />
-    <servicemark />
-    <ellipsis />
-    <midpoint />
-    <swungdash />
-    <permille />
-    <pilcrow />
-    <section-mark />
-    <minus/>
-    <times/>
-    <solidus/>
-    <obelus/>
-    <plusminus/>
-</FRAGMENT>
+    <copyright /> is a copyright, while <phonomark /> is a phonomar. <copyleft /> is the copyleft symbol. <registered /> is a registered trademark. <trademark /> is a trademark. <servicemark /> is a servicemark. <ellipsis /> are ellipsis. And <midpoint /> is a midpoint. <swungdash /> is called a swungdash. <permille /> is a permille. <pilcrow /> is a pilcrow. Other symbols are <section-mark />, <minus />, <times />, <solidus />, and <obelus />. Finally, <plusminus /> is a plus-minus sign. </FRAGMENT>
