@@ -11,3 +11,6 @@ export { Title } from "./title";
 export { Ul } from "./ul";
 export { Li } from "./li";
 export { Ol } from "./ol";
+export { Abbr } from "./abbr";
+export { Acro } from "./acro";
+export { Init } from "./init";
