@@ -64,6 +64,10 @@ IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 </publication>
 EOF
 
+IFS='' read -r -d '' REQUIREMENTS_TXT <<"EOF"
+pretext == 1.6.0
+EOF
+
 
 IFS='' read -r -d '' ARTICLE_TEMPLATE <<"EOF"
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -95,6 +99,7 @@ mkdir -p $TMP_DIR
 echo "$PUBLICATION_PTX" > $TMP_DIR/publication.ptx
 echo "$PROJECT_PTX" > $TMP_DIR/project.ptx
 echo "$MAIN_PTX" > $TMP_DIR/main.ptx
+echo "$REQUIREMENTS_TXT" > $TMP_DIR/requirements.txt
 
 pushd $TMP_DIR
 pretext build web --clean
