@@ -1,0 +1,17 @@
+<FRAGMENT parents="section p">
+	<kbd name="enter" />
+	<kbd name="left" />
+	<kbd name="right" />
+	<kbd name="up" />
+	<kbd name="down" />
+	<kbd name="shift" />
+	<kbd name="solidus" />
+	<kbd name="plus" />
+	<kbd name="minus" />
+	<kbd name="times" />
+	<kbd name="left-paren" />
+	<kbd name="obelus" />
+	<kbd name="squared" />
+	<kbd name="inverse" />
+	<kbd name="right-paren" />
+</FRAGMENT>
