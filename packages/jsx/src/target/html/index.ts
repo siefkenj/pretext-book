@@ -13,12 +13,15 @@ import { multiReplacer } from "./replacers/multi-replacer";
 
 // Element components
 import {
+    Abbr,
+    Acro,
     Article,
     ArticlePtxMain,
     Book,
     BookPtxMain,
     ClassedSection,
     Definition,
+    Init,
     Input,
     IntroOrConclusion,
     Li,
@@ -46,6 +49,9 @@ const REPLACERS = [
         term: { component: Term },
         input: { component: Input },
         xref: { component: XRef },
+        abbr: { component: Abbr },
+        acro: { component: Acro },
+        init: { component: Init },
     }),
 ];
 
