@@ -38,9 +38,9 @@ const cellClasses = function (
     if (tabular.attributes?.bottom && r_index == rows.length - 1) {
         bottomLine = "b" + toNum(tabular.attributes.bottom);
     }
-    if (col?.attributes?.bottom && r_index == rows.length - 1) {
-        bottomLine = "b" + toNum(col.attributes.bottom);
-    }
+    // if (col?.attributes?.bottom && r_index == rows.length - 1) {
+    //     bottomLine = "b" + toNum(col.attributes.bottom);
+    // }
     if (row.attributes?.bottom) {
         bottomLine = "b" + toNum(row.attributes.bottom);
     }
@@ -55,26 +55,26 @@ const cellClasses = function (
     if (col?.attributes?.top && r_index == 0) {
         topLine = "t" + toNum(col.attributes.top);
     }
-    if (row.attributes?.top) {
-        topLine = "t" + toNum(row.attributes.top);
-    }
-    if (cell.attributes?.top) {
-        topLine = "t" + toNum(cell.attributes.top);
-    }
+    // if (row.attributes?.top) {
+    //     topLine = "t" + toNum(row.attributes.top);
+    // }
+    // if (cell.attributes?.top) {
+    //     topLine = "t" + toNum(cell.attributes.top);
+    // }
 
     let leftLine: string = "l0";
     if (tabular.attributes?.left && c_index == 0) {
         leftLine = "l" + toNum(tabular.attributes.left);
     }
-    if (col?.attributes?.left) {
-        leftLine = "l" + toNum(col.attributes.left);
-    }
+    // if (col?.attributes?.left) {
+    //     leftLine = "l" + toNum(col.attributes.left);
+    // }
     if (row.attributes?.left && c_index == 0) {
         leftLine = "l" + toNum(row.attributes.left);
     }
-    if (cell.attributes?.left) {
-        leftLine = "l" + toNum(cell.attributes.left);
-    }
+    // if (cell.attributes?.left) {
+    //     leftLine = "l" + toNum(cell.attributes.left);
+    // }
 
     let rightLine: string = "r0";
     if (tabular.attributes?.right && c_index == cells.length - 1) {
@@ -83,9 +83,9 @@ const cellClasses = function (
     if (col?.attributes?.right) {
         rightLine = "r" + toNum(col.attributes.right);
     }
-    if (row.attributes?.right && c_index == cells.length - 1) {
-        rightLine = "r" + toNum(row.attributes.right);
-    }
+    // if (row.attributes?.right && c_index == cells.length - 1) {
+    //     rightLine = "r" + toNum(row.attributes.right);
+    // }
     if (cell.attributes?.right) {
         rightLine = "r" + toNum(cell.attributes.right);
     }
@@ -103,15 +103,15 @@ const cellClasses = function (
     if (tabular.attributes?.valign) {
         vAlign = toVAlign(tabular.attributes.valign);
     }
-    if (col?.attributes?.halign) {
-        vAlign = toVAlign(col.attributes.valign);
-    }
+    // if (col?.attributes?.halign) {
+    //     vAlign = toVAlign(col.attributes.valign);
+    // }
     if (row?.attributes?.halign) {
         vAlign = toVAlign(row.attributes.valign);
     }
-    if (cell?.attributes?.halign) {
-        vAlign = toVAlign(cell.attributes.valign);
-    }
+    // if (cell?.attributes?.halign) {
+    //     vAlign = toVAlign(cell.attributes.valign);
+    // }
 
     const toHAlign = (s: string | null | undefined) => {
         if (s == "center") {

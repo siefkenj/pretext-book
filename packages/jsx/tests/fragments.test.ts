@@ -83,7 +83,7 @@ describe("Basic fragment rendering", async () => {
                 renderedFilePath,
                 { encoding: "utf-8" }
             );
-            it.skip(`Render of fragment "${fileName}" matches PreTeXt reference`, async () => {
+            it(`Render of fragment "${fileName}" matches PreTeXt reference`, async () => {
                 const templateName = getTemplateName(fragment);
                 const expandedFragment = fragmentToPretext(fragment, {
                     [templateName]: ARTICLE_TEMPLATE,
