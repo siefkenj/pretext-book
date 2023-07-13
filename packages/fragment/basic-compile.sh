@@ -64,11 +64,16 @@ IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 </publication>
 EOF
 
+IFS='' read -r -d '' REQUIREMENTS_TXT <<"EOF"
+pretext == 1.6.0
+EOF
+
 
 IFS='' read -r -d '' ARTICLE_TEMPLATE <<"EOF"
 <?xml version="1.0" encoding="UTF-8" ?>
 <pretext>
     <article>
+        <title></title>
         <FRAGMENT />
     </article>
 </pretext>
@@ -95,8 +100,11 @@ mkdir -p $TMP_DIR
 echo "$PUBLICATION_PTX" > $TMP_DIR/publication.ptx
 echo "$PROJECT_PTX" > $TMP_DIR/project.ptx
 echo "$MAIN_PTX" > $TMP_DIR/main.ptx
+echo "$REQUIREMENTS_TXT" > $TMP_DIR/requirements.txt
 
 pushd $TMP_DIR
+python3 -c "from pretext.core import validate; validate('./main.ptx', 'main.jing', '')"
+cat main.jing
 pretext build web --clean
 
 # find the rendered fragment and extract it

@@ -1,0 +1,26 @@
+<FRAGMENT parents="section p">
+        <kbd>&amp;</kbd>
+        <kbd name="ampersand"/>
+        <kbd>&lt;</kbd>
+        <kbd name="less"/>
+        <kbd>&gt;</kbd>
+        <kbd name="greater"/>
+        <kbd>$</kbd>
+        <kbd name="dollar"/>
+        <kbd>%</kbd>
+        <kbd name="percent"/>
+        <kbd>{</kbd>
+        <kbd name="openbrace"/>
+        <kbd>}</kbd>
+        <kbd name="closebrace"/>
+        <kbd>#</kbd>
+        <kbd name="hash"/>
+        <kbd>\</kbd>
+        <kbd name="backslash"/>
+        <kbd>~</kbd>
+        <kbd name="tilde"/>
+        <kbd>^</kbd>
+        <kbd name="circumflex"/>
+        <kbd>_</kbd>
+        <kbd name="underscore"/>
+</FRAGMENT>
