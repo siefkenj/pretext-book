@@ -159,9 +159,9 @@ export const Tabular: ReplacerComponent = function ({ node }) {
                     {rows.map((row, row_index) => {
                         const isHeader = row.attributes?.header == "yes";
                         // CellTag is `th` or `td`
-                        const CellTag = `t${
+                        const CellTag: keyof JSX.IntrinsicElements = `t${
                             isHeader ? "h" : "d"
-                        }` as keyof JSX.IntrinsicElements;
+                        }`;
                         const cells = row.children.filter(
                             (n): n is XastElement =>
                                 n.type == "element" && n.name == "cell"
@@ -182,7 +182,9 @@ export const Tabular: ReplacerComponent = function ({ node }) {
                                             )}
                                             scope={isHeader ? "col" : undefined}
                                         >
-                                            {state.processContent(cell.children)}
+                                            {state.processContent(
+                                                cell.children
+                                            )}
                                         </CellTag>
                                     );
                                 })}
