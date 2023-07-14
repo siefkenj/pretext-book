@@ -17,6 +17,7 @@ import {
     Acro,
     Article,
     ArticlePtxMain,
+    Blockquote,
     Book,
     BookPtxMain,
     ClassedSection,
@@ -70,6 +71,7 @@ const REPLACERS = [
         times: { component: SpecialSymbol },
         solidus: { component: SpecialSymbol },
         obelus: { component: SpecialSymbol },
+        blockquote: { component: Blockquote, passId: true },
     }),
 ];
 

@@ -19,7 +19,10 @@ import {
     XastRoot,
 } from "../utils/xast";
 import { STRING_ID_TO_DISPLAY_NAME } from "./i18n";
+import { _generateToc, _generateTocItemInfoMap } from "./helpers/toc";
 import { ArticleFrontMatter, DocInfo, Toc, TocItem } from "./types";
+import { _generateRefalbeInfoMap } from "./helpers/refs";
+import { getListItemInfo } from "./helpers/lists";
 
 export type XRefTargetInfo = {
     node: XastElement;
@@ -58,7 +61,7 @@ export class PretextState {
      * This property must be set some time in the rendering phase.
      */
     processContent?: ProcessContentFunc;
-    _parentMap: WeakMap<XastNode, XastNode>;
+    _parentMap: WeakMap<XastNode, XastElement | XastRoot>;
     _xastNodeToTocDivisionId: WeakMap<XastNode, string>;
     _xastDivisions: WeakSet<XastElement>;
     _xastBlockToNumber: WeakMap<XastElement, number>;
@@ -95,6 +98,7 @@ export class PretextState {
         this._declaredIdCache.add(id);
         return false;
     }
+
     /**
      * Get an unused id that matches `preferredName`, if possible.
      */
@@ -107,6 +111,10 @@ export class PretextState {
         return this._slugger.slug(preferredName || "auto-generated-id", true);
     }
 
+    /**
+     * Set the root node of the XAST tree. This function
+     * also generates information needed for the TOC, etc.
+     */
     setRoot(root: XastRoot) {
         this.root = root;
         this._generateParentMap();
@@ -118,7 +126,7 @@ export class PretextState {
         visit(this.root, (node, info) => {
             const parent = info.parents[0];
             if (parent) {
-                this._parentMap.set(node, parent);
+                this._parentMap.set(node, parent as XastElement | XastRoot);
             }
         });
     }
@@ -144,40 +152,7 @@ export class PretextState {
     /**
      * Generate a map from TOC item ids to information about that item.
      */
-    _generateTocItemInfoMap() {
-        const map: typeof this._tocInfoMap = new Map();
-
-        const traverse = (items: TocItem[], level = 0, parent?: TocItem) => {
-            let number = 0;
-            for (const item of items) {
-                const parentInfo = map.get(parent?.id || "");
-                let numbering = [number];
-                if (parentInfo) {
-                    numbering.unshift(...parentInfo.numbering);
-                }
-
-                map.set(item.id, {
-                    level,
-                    numbering,
-                    item,
-                    parent: parentInfo?.item,
-                });
-
-                traverse(item.children, level + 1, item);
-                if (!DIVISIONS_WITHOUT_NUMBERS.has(item.division)) {
-                    // Some divisions are "skipped over" for numbering.
-                    // To accomplish this, we only advance the number on regular divisions.
-                    number++;
-                } else {
-                    // Divisions that don't have numbers also should have their `numbering`
-                    // array one shorter.
-                    numbering.pop();
-                }
-            }
-        };
-        traverse(this.toc);
-        this._tocInfoMap = map;
-    }
+    _generateTocItemInfoMap = _generateTocItemInfoMap;
 
     /**
      * Map every element to its nearest division parent.
@@ -208,133 +183,12 @@ export class PretextState {
     /**
      * Generate a map for all items that can be xref-ed.
      */
-    _generateRefalbeInfoMap() {
-        const map: typeof this._xrefableMap = new Map();
-        visit(
-            this.root,
-            (node, info) => {
-                const attrs = node.attributes || {};
-                if (!attrs["xml:id"]) {
-                    console.warn(
-                        "Trying to add entry for a refable item, but item has not been assigned an `xml:id`. Did you forget to decorate all items with an id first?"
-                    );
-                    return;
-                }
-                const id = attrs["xml:id"];
-
-                // Look for the title and try to make a new slug.
-                const titleNode = node.children.find((node) =>
-                    isTitleNode(node)
-                );
-                const title = isElement(titleNode)
-                    ? onlyElementsAndText(titleNode.children)
-                    : [];
-                const blockInfo = this.getBlockInfo(node);
-                /**
-                 * Make a codenumber (e.g., `1.1.3`) out of a `numbering` array.
-                 */
-                function makeCodenumber(numbering: number[]) {
-                    // The first division is `book` or `article`. These don't get displayed in the codenumbers
-                    return numbering
-                        .slice(1)
-                        .map((n) => `${n + 1}`)
-                        .join(".");
-                }
-                const codenumberBase = makeCodenumber(
-                    blockInfo?.divisionInfo?.numbering || []
-                );
-                let codenumber = codenumberBase;
-                // non-division tags get an extra number after them.
-                // E.g., a definition in section 2.2 gets an extra digition
-                // like 2.2.1
-                if (!isDivision(node)) {
-                    codenumber =
-                        codenumberBase.length > 0
-                            ? `${codenumberBase}.${
-                                  (blockInfo?.number || 0) + 1
-                              }`
-                            : String((blockInfo?.number || 0) + 1) || "";
-                }
-
-                const refInfo: XRefTargetInfo = {
-                    node,
-                    tag: node.name,
-                    id,
-                    title,
-                    codenumber,
-                };
-                map.set(id, refInfo);
-            },
-            { test: isXRefable }
-        );
-
-        this._xrefableMap = map;
-    }
+    _generateRefalbeInfoMap = _generateRefalbeInfoMap;
 
     /**
      * Extract table of contents information from the tree. Nodes are left intact in the process.
      */
-    _generateToc() {
-        const toc = this.toc;
-        const tocItemsById: Record<string, TocItem> = {};
-
-        visit(
-            this.root,
-            (node, info) => {
-                const attrs = node.attributes || {};
-                if (!attrs["xml:id"]) {
-                    console.warn(
-                        "Trying to add TOC entry, but item has not been assigned an `xml:id`. Did you forget to decorate all items with an id first?"
-                    );
-                    return;
-                }
-                const id = attrs["xml:id"];
-
-                // Look for the title and try to make a new slug.
-                const titleNode = node.children.find((node) =>
-                    isTitleNode(node)
-                );
-                const title = isElement(titleNode)
-                    ? onlyElementsAndText(titleNode.children)
-                    : [];
-
-                const newTocItem: TocItem = {
-                    id,
-                    title,
-                    division: node.name,
-                    children: [],
-                };
-
-                const parent = info.parents[0];
-                if (
-                    !isElement(parent) ||
-                    !parent.attributes?.["xml:id"] ||
-                    // The root <pretext> element may have an ID on it, but it shouldn't show up in the TOC.
-                    parent.name === "pretext"
-                ) {
-                    // We're a root node with no immediate parent.
-                    toc.push(newTocItem);
-                } else {
-                    const parentId = parent.attributes["xml:id"];
-                    if (!tocItemsById[parentId]) {
-                        throw new Error(
-                            `Parent with id "${parentId}" not in the toc. Cannot insert child.`
-                        );
-                    }
-                    tocItemsById[parentId].children.push(newTocItem);
-                }
-                tocItemsById[newTocItem.id] = newTocItem;
-
-                // Keep track of all the nodes that we assigned a TOC item to.
-                this._xastDivisions.add(node);
-            },
-            { test: isDivision }
-        );
-
-        this._generateTocItemInfoMap();
-        this._generateNodeToDivisionIdMap();
-        this._generateBlockToNumberMap();
-    }
+    _generateToc = _generateToc;
 
     /**
      * Get information about refable item that is included in the TOC.
@@ -383,6 +237,12 @@ export class PretextState {
             divisionInfo,
         };
     }
+
+    /**
+     * Get information about what type of label a list should have. This is done by walking up the
+     * parents and counting down from the last one that has a specified label, cycling through the label types.
+     */
+    getListItemInfo = getListItemInfo;
 }
 
 // PartiallyRequired from https://pawelgrzybek.com/make-the-typescript-interface-partially-optional-required/
