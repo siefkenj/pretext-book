@@ -1,20 +1,7 @@
 import * as Xast from "xast";
-import { XastNode } from "./types";
+import { XastElement, XastNode, XastRoot } from "./types";
 
-export type VisitorContext = {
-    /**
-     * Whether the node is being processed in math mode.
-     *
-     * This happens when the node is a director or indirect child
-     * of a math environment (e.g. `$abc$`), but not when an environment
-     * re-establishes text mode (e.g. `$\text{abc}$`)
-     */
-    inMathMode?: boolean;
-    /**
-     * Whether the node has any ancestor that is processed in math mode.
-     */
-    hasMathModeAncestor?: boolean;
-};
+export type VisitorContext = {};
 
 type GetGuard<T> = T extends (x: any) => x is infer R ? R : never;
 /**
@@ -122,7 +109,7 @@ export type VisitInfo = {
     /**
      * A list of ancestor nodes, `[parent, grandparent, great-grandparent, ...]`
      */
-    readonly parents: XastNode[];
+    readonly parents: XastElement[];
     /**
      * If the element was accessed in an array, the array that it is part of.
      */
@@ -234,7 +221,8 @@ export function visit<Opts extends VisitOptions>(
             // Recursively walk all child nodes
             const key = "children";
             if (key in node) {
-                const grandparents = ([node] as XastNode[]).concat(parents);
+                const grandparents =
+                    node.type === "root" ? parents : [node, ...parents];
 
                 const result = walk(node.children, {
                     key,
