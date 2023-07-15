@@ -171,6 +171,7 @@ export const Tabular: ReplacerComponent = function ({ node }) {
                                 className={
                                     isHeader ? "header-horizontal" : undefined
                                 }
+                                key={row_index}
                             >
                                 {cells.map((cell, col_index) => {
                                     return (
@@ -181,6 +182,7 @@ export const Tabular: ReplacerComponent = function ({ node }) {
                                                 col_index
                                             )}
                                             scope={isHeader ? "col" : undefined}
+                                            key={col_index}
                                         >
                                             {state.processContent(
                                                 cell.children
