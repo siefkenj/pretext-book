@@ -15,3 +15,5 @@ export { Abbr } from "./abbr";
 export { Acro } from "./acro";
 export { Init } from "./init";
 export { SpecialSymbol } from "./special-symbols";
+export { Date } from "./date";
+export { Em } from "./em";
