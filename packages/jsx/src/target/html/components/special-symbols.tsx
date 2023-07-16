@@ -1,5 +1,4 @@
 import React from "react";
-import { PretextStateContext } from "../state";
 import { ReplacerComponent } from "../replacers/replacer-factory";
 
 const SYMBOL_MAP: Record<string, string> = {
@@ -19,6 +18,12 @@ const SYMBOL_MAP: Record<string, string> = {
     solidus: "⁄",
     obelus: "÷",
     plusminus: "±",
+    ndash: "–",
+    mdash: "—",
+    nbsp: " ",
+    degree: "°",
+    prime: "′",
+    dblprime: "″",
 };
 
 export const SpecialSymbol: ReplacerComponent = function ({ node }) {
