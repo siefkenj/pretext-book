@@ -19,3 +19,4 @@ export { SpecialSymbol } from "./special-symbols";
 export { Blockquote } from "./blockquote";
 export { Date } from "./date";
 export { Em } from "./em";
+export { Cd } from "./cd";

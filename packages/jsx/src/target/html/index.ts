@@ -36,6 +36,7 @@ import {
     Title,
     Ul,
     XRef,
+    Cd,
 } from "./components";
 
 const REPLACERS = [
@@ -84,6 +85,7 @@ const REPLACERS = [
         prime: { component: SpecialSymbol },
         dblprime: { component: SpecialSymbol },
         date: { component: Date },
+        cd: { component: Cd },
     }),
 ];
 
