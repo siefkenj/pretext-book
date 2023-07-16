@@ -50,12 +50,12 @@ export const ensureLiHasPChildrenPlugin: Plugin<
                 }
 
                 // The children of an li element should be p elements. If they aren't, wrap them in one.
-                const firstChild = node.children[0];
-                if (
-                    node.children.length !== 1 ||
-                    !isElement(firstChild) ||
-                    !isBlockElement(firstChild)
-                ) {
+                // However, take care to avoid any blank text elements.
+                const significantChildren = node.children.filter(
+                    (n) => !(n.type === "text" && n.value.trim() === "")
+                );
+                const firstChild = significantChildren[0];
+                if (significantChildren.length !== 1 || !isBlockElement(firstChild)) {
                     node.children = [
                         { type: "element", name: "p", children: node.children },
                     ];
