@@ -14,4 +14,5 @@ export { Ol } from "./ol";
 export { Abbr } from "./abbr";
 export { Acro } from "./acro";
 export { Init } from "./init";
+export { Tabular } from "./tabular";
 export { SpecialSymbol } from "./special-symbols";
