@@ -1,13 +1,11 @@
 import { ReplacerFunc, XastNode, XastElement } from "../../../utils/xast";
 import React from "react";
+import { ReplacerComponent, ReplacerComponentWithId } from "./replacer-factory";
 
-export type ReplacerComponent = React.FunctionComponent<{ node: XastElement }>;
-export type ReplacerComponentWithId = React.FunctionComponent<{
-    node: XastElement;
-    id: string;
-}>;
-
-export type ComponentMapEntry = { component: ReplacerComponent; passId?: false };
+export type ComponentMapEntry = {
+    component: ReplacerComponent;
+    passId?: false;
+};
 export type ComponentMapEntryWithId = {
     component: ReplacerComponentWithId;
     passId: true;

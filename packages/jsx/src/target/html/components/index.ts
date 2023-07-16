@@ -16,5 +16,6 @@ export { Acro } from "./acro";
 export { Init } from "./init";
 export { Tabular } from "./tabular";
 export { SpecialSymbol } from "./special-symbols";
+export { Blockquote } from "./blockquote";
 export { Date } from "./date";
 export { Em } from "./em";

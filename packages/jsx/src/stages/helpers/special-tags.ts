@@ -289,7 +289,10 @@ export const isDivision = (node: any): node is XastElement => {
 
 /** Matches any element that can be referenced. */
 export const isRefable = (node: any): node is XastElement => {
-    return isElement(node) && REFABLE.has(node.name);
+    // Something that can be cross-referenced can also be referenced.
+    return (
+        isElement(node) && (REFABLE.has(node.name) || XREFABLE.has(node.name))
+    );
 };
 
 /** Matches any element that can be <xref />ed. */

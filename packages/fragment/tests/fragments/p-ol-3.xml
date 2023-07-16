@@ -1,7 +1,7 @@
 <FRAGMENT parents="p">
     <ol>
         <li>
-            <p>
+            <p xml:id="inner-p">
                 <ol>
                     <li>Item 1</li>
                     <li>Item 2</li>

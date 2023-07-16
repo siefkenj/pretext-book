@@ -4,6 +4,7 @@ import { PretextState } from "../../state";
 import { ensureIdsPlugin } from "./plugin-ensure-ids";
 import { ensureLiHasPChildrenPlugin } from "./plugin-ensure-li-have-p-children";
 import { ensureTitleElementsPlugin } from "./plugin-ensure-title-elements";
+import { ensureTitlePunctuation } from "./plugin-ensure-title-punctuation";
 import { extractDocInfoPlugin } from "./plugin-extract-docinfo";
 import { extractFrontmatterPlugin } from "./plugin-extract-frontmatter";
 
@@ -26,6 +27,7 @@ export const assemblePlugin: Plugin<PluginOptions[], PretextRoot, PretextRoot> =
         const processor = unified()
             .use(extractDocInfoPlugin, { state })
             .use(ensureTitleElementsPlugin)
+            .use(ensureTitlePunctuation)
             .use(ensureLiHasPChildrenPlugin)
             .use(ensureIdsPlugin, { state })
             .use(extractFrontmatterPlugin, { state });

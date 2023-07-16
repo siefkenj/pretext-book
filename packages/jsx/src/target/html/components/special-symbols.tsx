@@ -1,7 +1,7 @@
 import React from "react";
 import { ReplacerComponent } from "../replacers/replacer-factory";
 
-const SYMBOL_MAP: Record<string, string> = {
+const SYMBOL_MAP: Record<string, React.ReactNode> = {
     copyright: "©",
     phonomark: "℗",
     copyleft: "🄯",
@@ -24,13 +24,11 @@ const SYMBOL_MAP: Record<string, string> = {
     degree: "°",
     prime: "′",
     dblprime: "″",
+    times: <span className="times-sign">×</span>,
 };
 
 export const SpecialSymbol: ReplacerComponent = function ({ node }) {
     const symbolName = node.name;
     const symbol = SYMBOL_MAP[symbolName] || symbolName;
-    if (symbolName === "times") {
-        return <span className="times-sign">×</span>;
-    }
-    return symbol;
+    return <React.Fragment>{symbol}</React.Fragment>;
 };

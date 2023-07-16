@@ -1,3 +1,12 @@
 <FRAGMENT parents="p">
-    The remaining special symbols are <degree />, which is a degree sign, and could also be next to a number, like 30<degree />C, <prime/> which could be used for F<prime/> as well as <dblprime/> for F<dblprime/>, for example.
+	The remaining special symbols are
+	<degree />
+	, which is a degree sign, and could also be next to a number, like 30<degree />
+	C,
+	<prime />
+	which could be used for F<prime />
+	as well as
+	<dblprime />
+	for F<dblprime />
+	, for example.
 </FRAGMENT>
