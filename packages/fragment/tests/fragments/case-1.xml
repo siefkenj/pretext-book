@@ -1,4 +1,4 @@
-<FRAGMENT parents="theorem proof">
+<FRAGMENT parents="section theorem proof">
     <case>
         <p>This case</p>
     </case>
