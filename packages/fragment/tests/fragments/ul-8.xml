@@ -1,6 +1,6 @@
 <FRAGMENT parents="p">
     <ul>
         <li>Item 1</li>
-        <li><blockquote><p>Some quote...</p></blockquote></li>
+        <li><blockquote>Some quote...</blockquote></li>
     </ul>
 </FRAGMENT>
