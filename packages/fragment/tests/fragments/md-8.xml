@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    <md alignment="alignat" alignat-columns="2">
+        <mrow>A &amp;= \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix}
+        &amp;
+        I &amp;= \begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1\end{bmatrix}</mrow>
+    </md>
+</FRAGMENT>

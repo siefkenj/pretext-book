@@ -58,3 +58,18 @@ export function extractTitle(nodes: XastNode[]): {
         rest: [...nodes.slice(0, titleIndex), ...nodes.slice(titleIndex + 1)],
     };
 }
+
+/**
+ * Find the last element in a list that matches a predicate.
+ */
+export function findLast<T extends XastNode>(
+    nodes: XastNode[],
+    predicate: (node: XastNode) => node is T
+): T | null {
+    for (let i = nodes.length - 1; i >= 0; i--) {
+        if (predicate(nodes[i])) {
+            return nodes[i] as T;
+        }
+    }
+    return null;
+}

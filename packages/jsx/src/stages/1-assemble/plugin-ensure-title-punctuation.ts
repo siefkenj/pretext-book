@@ -98,7 +98,7 @@ function ensurePunctuation(node: XastElement): void {
         return;
     }
     const lastChild = node.children[node.children.length - 1];
-    if (lastChild.type === "text") {
+    if (lastChild?.type === "text") {
         lastChild.value += ".";
     } else {
         node.children.push({

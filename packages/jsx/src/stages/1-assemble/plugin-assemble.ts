@@ -3,6 +3,7 @@ import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
 import { ensureIdsPlugin } from "./plugin-ensure-ids";
 import { ensureLiHasPChildrenPlugin } from "./plugin-ensure-li-have-p-children";
+import { ensureMathAbsorbsFollowingPunctuation } from "./plugin-ensure-math-absorbs-following-punctuation";
 import { ensureTitleElementsPlugin } from "./plugin-ensure-title-elements";
 import { ensureTitlePunctuation } from "./plugin-ensure-title-punctuation";
 import { extractDocInfoPlugin } from "./plugin-extract-docinfo";
@@ -28,6 +29,7 @@ export const assemblePlugin: Plugin<PluginOptions[], PretextRoot, PretextRoot> =
             .use(extractDocInfoPlugin, { state })
             .use(ensureTitleElementsPlugin)
             .use(ensureTitlePunctuation)
+            .use(ensureMathAbsorbsFollowingPunctuation)
             .use(ensureLiHasPChildrenPlugin)
             .use(ensureIdsPlugin, { state })
             .use(extractFrontmatterPlugin, { state });

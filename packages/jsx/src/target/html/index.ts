@@ -36,6 +36,10 @@ import {
     Title,
     Ul,
     XRef,
+    Cd,
+    M,
+    Md,
+    LatinAbbreviation,
 } from "./components";
 
 const REPLACERS = [
@@ -84,6 +88,22 @@ const REPLACERS = [
         prime: { component: SpecialSymbol },
         dblprime: { component: SpecialSymbol },
         date: { component: Date },
+        cd: { component: Cd },
+        m: { component: M },
+        md: { component: Md, passId: true },
+        ad: { component: LatinAbbreviation },
+        am: { component: LatinAbbreviation },
+        bc: { component: LatinAbbreviation },
+        ca: { component: LatinAbbreviation },
+        eg: { component: LatinAbbreviation },
+        etal: { component: LatinAbbreviation },
+        etc: { component: LatinAbbreviation },
+        ie: { component: LatinAbbreviation },
+        nb: { component: LatinAbbreviation },
+        pm: { component: LatinAbbreviation },
+        ps: { component: LatinAbbreviation },
+        vs: { component: LatinAbbreviation },
+        viz: { component: LatinAbbreviation },
     }),
 ];
 
