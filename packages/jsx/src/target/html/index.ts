@@ -37,6 +37,8 @@ import {
     Ul,
     XRef,
     Cd,
+    M,
+    Md,
 } from "./components";
 
 const REPLACERS = [
@@ -86,6 +88,8 @@ const REPLACERS = [
         dblprime: { component: SpecialSymbol },
         date: { component: Date },
         cd: { component: Cd },
+        m: { component: M },
+        md: { component: Md, passId: true },
     }),
 ];
 

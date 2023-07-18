@@ -1,16 +1,7 @@
 import Slugger from "github-slugger";
-import { toXml } from "xast-util-to-xml";
-import {
-    DIVISIONS,
-    DIVISIONS_WITHOUT_NUMBERS,
-    isDivision,
-    isRefable,
-    isTitleNode,
-    isXRefable,
-    NUMBERED_BLOCKS,
-} from "../stages/helpers/special-tags";
+import { isDivision, NUMBERED_BLOCKS } from "../stages/helpers/special-tags";
 import { JsonGrammar } from "../utils/relax-ng/types";
-import { elmMatcher, isElement, onlyElementsAndText } from "../utils/tools";
+import { isElement } from "../utils/tools";
 import {
     ProcessContentFunc,
     visit,
@@ -23,6 +14,7 @@ import { _generateToc, _generateTocItemInfoMap } from "./helpers/toc";
 import { ArticleFrontMatter, DocInfo, Toc, TocItem } from "./types";
 import { _generateRefalbeInfoMap } from "./helpers/refs";
 import { getListItemInfo } from "./helpers/lists";
+import { _generateEquationNumberingMap } from "./helpers/numbering";
 
 export type XRefTargetInfo = {
     node: XastElement;
@@ -65,6 +57,7 @@ export class PretextState {
     _xastNodeToTocDivisionId: WeakMap<XastNode, string>;
     _xastDivisions: WeakSet<XastElement>;
     _xastBlockToNumber: WeakMap<XastElement, number>;
+    _equationNumberingMap: Map<string, number> = new Map();
 
     constructor(schema?: JsonGrammar) {
         this.docinfo = {};
@@ -120,6 +113,7 @@ export class PretextState {
         this._generateParentMap();
         this._generateToc();
         this._generateRefalbeInfoMap();
+        this._generateEquationNumberingMap();
     }
 
     _generateParentMap() {
@@ -243,6 +237,44 @@ export class PretextState {
      * parents and counting down from the last one that has a specified label, cycling through the label types.
      */
     getListItemInfo = getListItemInfo;
+
+    /**
+     * Generates numbering for all equations. Numbering works as follows: every single
+     * refable item is assigned a number. The number is incremented when a numbered equation
+     * is encountered. This information can be used to compute the number of an equation
+     * by first looking up the number of the parent division and then taking the difference
+     * between that and the number of the equation.
+     */
+    _generateEquationNumberingMap = _generateEquationNumberingMap;
+
+    getEquationNumber(node: XastElement) {
+        // If this element cannot take a number, we return null.
+        const parent = this._parentMap.get(node) as XastElement | undefined;
+        if (
+            node.name === "me" ||
+            node.attributes?.number === "no" ||
+            node.attributes?.tag ||
+            (parent?.name === "md" &&
+                parent?.attributes?.number !== "yes" &&
+                node.attributes?.number !== "yes")
+        ) {
+            return "";
+        }
+
+        const id = node.attributes?.["xml:id"];
+        const eqRawNum = this._equationNumberingMap.get(id || "") || 0;
+        const parentDivisionId = this._xastNodeToTocDivisionId.get(node);
+        const parentDivision = this._xrefableMap.get(parentDivisionId || "");
+        if (!parentDivision || !parentDivision.codenumber) {
+            return `${eqRawNum + 1}`;
+        }
+        const parentDivisionNumber =
+            this._equationNumberingMap.get(parentDivision.id) || 0;
+
+        return `${parentDivision.codenumber}.${
+            eqRawNum - parentDivisionNumber + 1
+        }`;
+    }
 }
 
 // PartiallyRequired from https://pawelgrzybek.com/make-the-typescript-interface-partially-optional-required/

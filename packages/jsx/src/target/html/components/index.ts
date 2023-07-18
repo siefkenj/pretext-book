@@ -20,3 +20,5 @@ export { Blockquote } from "./blockquote";
 export { Date } from "./date";
 export { Em } from "./em";
 export { Cd } from "./cd";
+export { M } from "./m";
+export { Md } from "./md";
