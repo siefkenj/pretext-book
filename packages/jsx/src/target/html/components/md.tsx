@@ -4,7 +4,6 @@ import { ReplacerComponentWithId } from "../replacers/replacer-factory";
 import { toString } from "xast-util-to-string";
 import { isElement } from "../../../utils/tools";
 import { XastElement } from "../../../utils/xast";
-import { toXml } from "xast-util-to-xml";
 
 export const Md: ReplacerComponentWithId = function ({ node, id }) {
     const state = React.useContext(PretextStateContext);
