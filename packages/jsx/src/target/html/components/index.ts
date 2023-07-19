@@ -23,3 +23,4 @@ export { Cd } from "./cd";
 export { M } from "./m";
 export { Md } from "./md";
 export { LatinAbbreviation } from "./latin-abbreviation";
+export { Kbd } from "./kbd";
