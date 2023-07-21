@@ -40,6 +40,9 @@ import {
     M,
     Md,
     LatinAbbreviation,
+    Kbd,
+    Url,
+    Quantity,
 } from "./components";
 
 const REPLACERS = [
@@ -104,6 +107,9 @@ const REPLACERS = [
         ps: { component: LatinAbbreviation },
         vs: { component: LatinAbbreviation },
         viz: { component: LatinAbbreviation },
+        kbd: { component: Kbd },
+        url: { component: Url },
+        quantity: { component: Quantity },
     }),
 ];
 
