@@ -26,3 +26,8 @@ export { LatinAbbreviation } from "./latin-abbreviation";
 export { Kbd } from "./kbd";
 export { Url } from "./url";
 export { Quantity } from "./quantity";
+export { Console } from "./console";
+export { Tag } from "./tag";
+export { Tage } from "./tage";
+export { Attr } from "./attr";
+export { Delete } from "./delete";

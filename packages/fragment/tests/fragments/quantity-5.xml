@@ -1,0 +1,11 @@
+<FRAGMENT parents="section p">
+	<quantity>
+		<mag>
+			9.8
+		</mag>
+		<unit base="meter" />
+		<unit base="second" />
+		<per base="second" exp="2" />
+		<per base="liter" prefix="milli" />
+	</quantity>
+</FRAGMENT>

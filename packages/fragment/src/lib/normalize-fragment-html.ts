@@ -5,6 +5,8 @@ import { EXIT, visit } from "unist-util-visit";
 import { toHtml } from "hast-util-to-html";
 import Prettier from "prettier/standalone";
 import * as prettierPluginHtml from "prettier/parser-html";
+import * as prettierPluginCss from "prettier/parser-postcss";
+import { format } from "path";
 
 function printPrettier(source: string) {
     return Prettier.format(source, {
@@ -16,6 +18,18 @@ function printPrettier(source: string) {
         htmlWhitespaceSensitivity: "strict",
         printWidth: 50,
     });
+}
+
+function prettyPrintCss(source: string) {
+    try {
+        return Prettier.format(source, {
+            parser: "css",
+            plugins: [prettierPluginCss],
+            printWidth: 50,
+        });
+    } catch (e) {
+        return source;
+    }
 }
 
 /**
@@ -77,6 +91,29 @@ const alphabetizeClassNamesPlugin: Plugin<void[], HastRoot, HastRoot> =
     };
 
 /**
+ * Ensure classes always occur in alphabetical order
+ */
+const formatStyleAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
+    function () {
+        return (root) => {
+            visit(root, (node) => {
+                if (
+                    node.type !== "element" ||
+                    !node.properties.style ||
+                    typeof node.properties.style !== "string"
+                ) {
+                    return;
+                }
+                const style = node.properties.style;
+                let formattedStyle = prettyPrintCss(style).trim();
+                // formattedStyle has newlines separating properties, but we want spaces.
+                formattedStyle = formattedStyle.replace(/\n/g, " ");
+                node.properties.style = formattedStyle;
+            });
+        };
+    };
+
+/**
  * Extract the children of the body element from the HTML
  */
 const extractBody: Plugin<void[], HastRoot, HastNode[]> = function () {
@@ -96,6 +133,7 @@ const processor = unified()
     .use(normalizeIdsPlugin)
     .use(alphabetizeAttributesPlugin)
     .use(alphabetizeClassNamesPlugin)
+    .use(formatStyleAttributesPlugin)
     .use(extractBody);
 
 /**

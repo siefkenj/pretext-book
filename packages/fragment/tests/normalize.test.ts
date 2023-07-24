@@ -1,9 +1,6 @@
 import util from "util";
 import { describe, it, expect } from "vitest";
-import {
-    jestToMatchFragment,
-    normalizeFragmentHtml,
-} from "../src";
+import { jestToMatchFragment, normalizeFragmentHtml } from "../src";
 
 /* eslint-env jest */
 
@@ -28,6 +25,7 @@ describe("normalize HTML", () => {
             `<li id="id-0"><i id="id-1">bar</i></li>`
         );
     });
+
     it("Can alphabetize HTML attributes", async () => {
         let source: string;
         source = `<li id="foo" class="bees" wos="waz">bar</li>`;
@@ -35,6 +33,7 @@ describe("normalize HTML", () => {
             `<li class="bees" id="id-0" wos="waz">bar</li>`
         );
     });
+
     it("Can alphabetize class names", async () => {
         let source: string;
         source = `<li class="bees alice zed">bar</li>`;
@@ -42,6 +41,7 @@ describe("normalize HTML", () => {
             `<li class="alice bees zed">bar</li>`
         );
     });
+
     it("Pretty print treats newlines and spaces interchangeably", async () => {
         let source1: string, source2: string, source3: string;
         source1 = `
@@ -73,9 +73,19 @@ describe("normalize HTML", () => {
             normalizeFragmentHtml(source3)
         );
     });
+
     it("Fragment matcher works", () => {
         expect(`<li id="foo">bar</li>`).toMatchFragment(
             `<li id="id-0" >bar</li>`
+        );
+    });
+
+    it("Pretty print formats stye attributes", async () => {
+        let source1: string, source2: string, source3: string;
+        source1 = `<div style="color: red; font-size: 12px;">Some text!</div>`;
+        source2 = `<div style="color:red;font-size:12px;">Some text!</div>`;
+        expect(normalizeFragmentHtml(source1)).toEqual(
+            normalizeFragmentHtml(source2)
         );
     });
 });

@@ -43,6 +43,11 @@ import {
     Kbd,
     Url,
     Quantity,
+    Console,
+    Tag,
+    Tage,
+    Attr,
+    Delete,
 } from "./components";
 
 const REPLACERS = [
@@ -110,6 +115,11 @@ const REPLACERS = [
         kbd: { component: Kbd },
         url: { component: Url },
         quantity: { component: Quantity },
+        console: { component: Console },
+        tag: { component: Tag },
+        tage: { component: Tage },
+        attr: { component: Attr },
+        delete: { component: Delete },
     }),
 ];
 
