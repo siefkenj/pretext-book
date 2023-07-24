@@ -74,6 +74,21 @@ describe("normalize HTML", () => {
         );
     });
 
+    it("Secondary newline test", () => {
+        let source1: string, source2: string;
+        source1 = `It is fine if
+<span class="times-sign">×</span>
+appears twice
+<span class="times-sign">×</span>
+`;
+        source2 = `It is fine if <span class="times-sign">×</span> appears twice
+<span class="times-sign">×</span>`;
+
+        expect(normalizeFragmentHtml(source1)).toEqual(
+            normalizeFragmentHtml(source2)
+        );
+    });
+
     it("Fragment matcher works", () => {
         expect(`<li id="foo">bar</li>`).toMatchFragment(
             `<li id="id-0" >bar</li>`

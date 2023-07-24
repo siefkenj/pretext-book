@@ -6,9 +6,8 @@ import { toHtml } from "hast-util-to-html";
 import Prettier from "prettier/standalone";
 import * as prettierPluginHtml from "prettier/parser-html";
 import * as prettierPluginCss from "prettier/parser-postcss";
-import { format } from "path";
 
-function printPrettier(source: string) {
+function printPrettier(source: string, printWidth = 50) {
     return Prettier.format(source, {
         parser: "html",
         plugins: [prettierPluginHtml],
@@ -16,7 +15,7 @@ function printPrettier(source: string) {
         // be totally ignored. We don't want that, but we do want to eagerly wrap
         // as much as possible. We attempt this by setting a small `printWidth`.
         htmlWhitespaceSensitivity: "strict",
-        printWidth: 50,
+        printWidth,
     });
 }
 
@@ -148,7 +147,10 @@ export function normalizeFragmentHtml(source: string): string {
     parsed = processor.runSync(parsed);
     let html = toHtml(parsed as any);
     try {
-        html = printPrettier(html);
+        // We print once with a small printWidth to force whitespace to turn into newlines.
+        // We then use a larger print width to let newlines become unwrapped for easy viewing.
+        html = printPrettier(html, 10);
+        html = printPrettier(html, 50);
     } catch (e) {}
 
     return html.trim();

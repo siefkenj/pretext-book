@@ -35,3 +35,4 @@ export { Stale } from "./stale";
 export { Icon } from "./icon";
 export { Insert } from "./insert";
 export { TexLogo } from "./tex-logo";
+export { Dl } from "./dl";

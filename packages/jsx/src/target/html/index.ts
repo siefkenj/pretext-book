@@ -52,6 +52,7 @@ import {
     Icon,
     Insert,
     TexLogo,
+    Dl,
 } from "./components";
 
 const REPLACERS = [
@@ -129,6 +130,7 @@ const REPLACERS = [
         insert: { component: Insert },
         tex: { component: TexLogo },
         latex: { component: TexLogo },
+        dl: { component: Dl },
     }),
 ];
 
