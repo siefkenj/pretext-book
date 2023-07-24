@@ -48,6 +48,10 @@ import {
     Tage,
     Attr,
     Delete,
+    Stale,
+    Icon,
+    Insert,
+    TexLogo,
 } from "./components";
 
 const REPLACERS = [
@@ -120,6 +124,11 @@ const REPLACERS = [
         tage: { component: Tage },
         attr: { component: Attr },
         delete: { component: Delete },
+        stale: { component: Stale },
+        icon: { component: Icon },
+        insert: { component: Insert },
+        tex: { component: TexLogo },
+        latex: { component: TexLogo },
     }),
 ];
 

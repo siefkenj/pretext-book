@@ -31,3 +31,7 @@ export { Tag } from "./tag";
 export { Tage } from "./tage";
 export { Attr } from "./attr";
 export { Delete } from "./delete";
+export { Stale } from "./stale";
+export { Icon } from "./icon";
+export { Insert } from "./insert";
+export { TexLogo } from "./tex-logo";
