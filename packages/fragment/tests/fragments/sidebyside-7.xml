@@ -1,10 +1,6 @@
 <FRAGMENT>
     <sidebyside widths="49% 49%" margins="0% 0%">
         <tabular left="medium" top="medium">
-            <col/>
-            <col/>
-            <col/>
-            <col right="medium"/>
             <row header="yes">
                 <cell>State</cell>
                 <cell>Population</cell>
@@ -16,25 +12,9 @@
                 <cell>7,614,893</cell>
                 <cell>71,362</cell>
                 <cell>1889</cell>
-            </row>
-            <row>
-                <cell>Oregon</cell>
-                <cell>4,217,737</cell>
-                <cell>98,381</cell>
-                <cell>1859</cell>
-            </row>
-            <row bottom="medium">
-                <cell>California</cell>
-                <cell>39,512,223</cell>
-                <cell>163,696</cell>
-                <cell>1850</cell>
             </row>
         </tabular>
         <tabular left="medium" top="medium">
-            <col/>
-            <col/>
-            <col/>
-            <col right="medium"/>
             <row header="yes">
                 <cell>State</cell>
                 <cell>Population</cell>
@@ -46,18 +26,6 @@
                 <cell>7,614,893</cell>
                 <cell>71,362</cell>
                 <cell>1889</cell>
-            </row>
-            <row>
-                <cell>Oregon</cell>
-                <cell>4,217,737</cell>
-                <cell>98,381</cell>
-                <cell>1859</cell>
-            </row>
-            <row bottom="medium">
-                <cell>California</cell>
-                <cell>39,512,223</cell>
-                <cell>163,696</cell>
-                <cell>1850</cell>
             </row>
         </tabular>
     </sidebyside>

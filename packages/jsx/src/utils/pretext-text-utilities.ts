@@ -21,11 +21,24 @@ export function sanitizeText(text: string): string {
     lines = lines.map((l) => l.trimEnd());
     const minIndent = Math.min(
         ...lines.map((l) =>
-            l.trim().length > 0 ? l.length - l.trimStart().length : Infinity
+            l.trim().length > 0 ? l.length - l.trimStart().length : Infinity,
         ),
-        Infinity
+        Infinity,
     );
     // Strip indentation
     lines = lines.map((l) => l.slice(minIndent));
     return lines.join("\n") + "\n";
+}
+
+/**
+ * Xsl limits the precision of floats to 16 digits. This function truncates the number to 16 digits so our output appears
+ * the same as the XSL output.
+ */
+export function toXslPercentage(value: number) {
+    const strVal = `${value}`;
+    let truncVal = strVal.slice(0, 16);
+    if (strVal.endsWith("6667") && !truncVal.endsWith("6667")) {
+        truncVal = truncVal.slice(0, truncVal.length - 1) + "7";
+    }
+    return `${truncVal}%`;
 }

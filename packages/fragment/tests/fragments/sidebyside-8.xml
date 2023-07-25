@@ -1,5 +1,5 @@
 <FRAGMENT>
-    <sidebyside margins="5%" width="10%">
+    <sidebyside margins="25%" width="10%">
         <p>Some Text</p>
         <p>Other Text</p>
     </sidebyside>

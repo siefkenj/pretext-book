@@ -1,18 +1,12 @@
 <FRAGMENT>
-    <sidebyside margins="5%" widths="40% 45%">
-        <ol>
-            <li>Blue</li>
-            <li>Red</li>
-            <li>Green</li>
-            <li>Purple</li>
-            <li>Violet</li>
-            <li>Brown</li>
-        </ol>
-        <ul>
-            <li><p>Vestibulum sit amet est non lacus accumsan iaculis aliquam nec leo. Maecenas placerat consequat quam, a lobortis odio convallis vitae.</p>
-            <p>Curabitur sagittis, risus non suscipit pulvinar, enim tortor posuere purus, id dignissim sapien sapien non dui.</p></li>
-            <li><p>Vestibulum ultrices, enim a ornare consectetur, nisl est iaculis arcu, eget scelerisque nunc magna a nisl.</p>
-            <p>Vestibulum vestibulum ante sit amet ex vulputate, eu facilisis sapien tempor.</p></li>
-        </ul>
-    </sidebyside>
+	<sidebyside margins="15% 5%" widths="10% 25%">
+		<ol>
+			<li>
+				Blue
+			</li>
+		</ol>
+        <p>
+            Vestibulum sit
+        </p>
+	</sidebyside>
 </FRAGMENT>
