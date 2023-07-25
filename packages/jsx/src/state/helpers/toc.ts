@@ -21,7 +21,7 @@ export function _generateToc(this: PretextState) {
             const attrs = node.attributes || {};
             if (!attrs["xml:id"]) {
                 console.warn(
-                    "Trying to add TOC entry, but item has not been assigned an `xml:id`. Did you forget to decorate all items with an id first?"
+                    "Trying to add TOC entry, but item has not been assigned an `xml:id`. Did you forget to decorate all items with an id first?",
                 );
                 return;
             }
@@ -52,9 +52,9 @@ export function _generateToc(this: PretextState) {
             } else {
                 const parentId = parent.attributes["xml:id"];
                 if (!tocItemsById[parentId]) {
-                    throw new Error(
-                        `Parent with id "${parentId}" not in the toc. Cannot insert child.`
-                    );
+                    const error = `Parent with id "${parentId}" not in the toc. Cannot insert child.`;
+                    console.warn(error);
+                    return;
                 }
                 tocItemsById[parentId].children.push(newTocItem);
             }
@@ -63,7 +63,7 @@ export function _generateToc(this: PretextState) {
             // Keep track of all the nodes that we assigned a TOC item to.
             this._xastDivisions.add(node);
         },
-        { test: isDivision }
+        { test: isDivision },
     );
 
     this._generateTocItemInfoMap();

@@ -54,6 +54,7 @@ import {
     TexLogo,
     Dl,
 } from "./components";
+import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
 const REPLACERS = [
     multiReplacer({
@@ -150,6 +151,7 @@ export function pretextToHtml(source: string) {
                 replacerFactoryWithId("book", Book),
                 replacerFactoryWithId("article", Article),
                 ...REPLACERS,
+                replaceInvalidReactAndHtmlElements(),
             ],
         });
 
