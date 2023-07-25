@@ -94,7 +94,7 @@ const alphabetizeClassNamesPlugin: Plugin<void[], HastRoot, HastRoot> =
     };
 
 /**
- * Ensure classes always occur in alphabetical order
+ * Ensure that `style` attributes CSS contents is pretty printed
  */
 const formatStyleAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
     function () {
@@ -119,10 +119,30 @@ const formatStyleAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
                     // formattedStyle has newlines separating properties, but we want spaces.
                     formattedStyle = formattedStyle.replace(/\n/g, " ");
                     node.properties.style = formattedStyle;
-                })
+                }),
             );
         };
     };
+
+/**
+ * PreTeXt may do some encoding of the URI. We want to decode all URIs so before we compare them to each other.
+ */
+const normalizeUriPlugin: Plugin<void[], HastRoot, HastRoot> = function () {
+    return async (root) => {
+        visit(root, (node) => {
+            if (
+                node.type !== "element" ||
+                !node.properties.href ||
+                typeof node.properties.href !== "string"
+            ) {
+                return;
+            }
+            node.properties.href = decodeURIComponent(
+                decodeURIComponent(node.properties.href),
+            );
+        });
+    };
+};
 
 /**
  * Extract the children of the body element from the HTML
@@ -145,6 +165,7 @@ const processor = unified()
     .use(alphabetizeAttributesPlugin)
     .use(alphabetizeClassNamesPlugin)
     .use(formatStyleAttributesPlugin)
+    .use(normalizeUriPlugin)
     .use(extractBody);
 
 /**
