@@ -35,6 +35,7 @@ it("Can compute margins", () => {
         marginLeft: 0,
         marginRight: 0,
         width: 100,
+        wasAuto: true,
     });
 
     expect(
@@ -48,6 +49,7 @@ it("Can compute margins", () => {
         marginLeft: 10,
         marginRight: 10,
         width: 80,
+        wasAuto: false,
     });
 
     expect(
@@ -61,6 +63,7 @@ it("Can compute margins", () => {
         marginLeft: 10,
         marginRight: 10,
         width: 80,
+        wasAuto: false,
     });
 
     expect(
@@ -74,6 +77,7 @@ it("Can compute margins", () => {
         marginLeft: 10,
         marginRight: 5,
         width: 85,
+        wasAuto: false,
     });
 
     expect(
@@ -87,6 +91,7 @@ it("Can compute margins", () => {
         marginLeft: 85,
         marginRight: 5,
         width: 10,
+        wasAuto: false,
     });
 
     expect(
@@ -100,6 +105,7 @@ it("Can compute margins", () => {
         marginLeft: 10,
         marginRight: 80,
         width: 10,
+        wasAuto: false,
     });
 
     expect(
@@ -113,5 +119,6 @@ it("Can compute margins", () => {
         marginLeft: 0,
         marginRight: 0,
         width: 100,
+        wasAuto: true,
     });
 });
