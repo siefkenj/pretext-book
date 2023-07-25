@@ -14,7 +14,7 @@ export const Definition: ReplacerComponentWithId = function ({ node, id }) {
     let titleElement = node.children.find(isTitleNode);
     let statementElement = node.children.find(elmMatcher("statement"));
     if (!titleElement) {
-        titleElement = { type: "element", name: "title", children: [] };
+        titleElement = { type: "element", name: "title", children: [], attributes: {} };
     }
 
     // If we have an empty title, we omit it. Otherwise, we show the title, but without a number.

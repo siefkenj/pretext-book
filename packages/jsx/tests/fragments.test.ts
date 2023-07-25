@@ -14,7 +14,7 @@ import {
     jestToMatchFragment,
 } from "@pretext-book/fragment";
 import Prettier from "prettier/standalone";
-import * as prettierPluginHtml from "prettier/parser-html";
+import * as prettierPluginHtml from "prettier/plugins/html";
 /* eslint-env jest */
 
 function printPrettier(source: string) {
@@ -63,13 +63,13 @@ describe("Basic fragment rendering", async () => {
     ])) {
         const fileName = path.basename(await file);
         const fragment = await fragmentPromise;
-        it(`Can render ${fileName}`, () => {
+        it(`Can render ${fileName}`, async () => {
             const templateName = getTemplateName(fragment);
             const expandedFragment = fragmentToPretext(fragment, {
                 [templateName]: ARTICLE_TEMPLATE,
             });
-            const processed = pretextToHtml(expandedFragment);
-            const extracted = extractFragmentFromHtml(processed);
+            const processed = await pretextToHtml(expandedFragment);
+            const extracted = await extractFragmentFromHtml(processed);
             //console.log(extracted);
         });
 
@@ -88,9 +88,9 @@ describe("Basic fragment rendering", async () => {
                 const expandedFragment = fragmentToPretext(fragment, {
                     [templateName]: ARTICLE_TEMPLATE,
                 });
-                const processed = pretextToHtml(expandedFragment);
-                const extracted = printPrettier(
-                    extractFragmentFromHtml(processed)
+                const processed = await pretextToHtml(expandedFragment);
+                const extracted = await printPrettier(
+                    await extractFragmentFromHtml(processed)
                 );
                 expect(extracted).toMatchFragment(pretextRenderedFragment);
             });

@@ -20,12 +20,12 @@ export interface ElementPretext extends XMLElement {
     )[];
 }
 
-export interface ElementMemorandum extends Omit<XMLElement, "attributes"> {
+export interface ElementMemorandum extends XMLElement {
     name: "memo";
     children: never[];
 }
 
-export interface ElementLetter extends Omit<XMLElement, "attributes"> {
+export interface ElementLetter extends XMLElement {
     name: "letter";
     children: never[];
 }
@@ -61,7 +61,7 @@ export interface ElementRename extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementNumbering extends Omit<XMLElement, "attributes"> {
+export interface ElementNumbering extends XMLElement {
     name: "numbering";
     children: ElementDivision[];
 }
@@ -74,17 +74,17 @@ export interface ElementDivision extends XMLElement {
     children: never[];
 }
 
-export interface ElementMacros extends Omit<XMLElement, "attributes"> {
+export interface ElementMacros extends XMLElement {
     name: "macros";
     children: XMLText[];
 }
 
-export interface ElementLatexPreamble extends Omit<XMLElement, "attributes"> {
+export interface ElementLatexPreamble extends XMLElement {
     name: "latex-preamble";
     children: ElementPackage[];
 }
 
-export interface ElementPackage extends Omit<XMLElement, "attributes"> {
+export interface ElementPackage extends XMLElement {
     name: "package";
     children: XMLText[];
 }
@@ -97,12 +97,12 @@ export interface ElementLatexImagePreamble extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementInitialism extends Omit<XMLElement, "attributes"> {
+export interface ElementInitialism extends XMLElement {
     name: "initialism";
     children: XMLText[];
 }
 
-export interface ElementImages extends Omit<XMLElement, "attributes"> {
+export interface ElementImages extends XMLElement {
     name: "images";
     children: ElementArchive[];
 }
@@ -115,12 +115,12 @@ export interface ElementArchive extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementFeedback extends Omit<XMLElement, "attributes"> {
+export interface ElementFeedback extends XMLElement {
     name: "feedback";
     children: ElementUrl2[];
 }
 
-export interface ElementUrl2 extends Omit<XMLElement, "attributes"> {
+export interface ElementUrl2 extends XMLElement {
     name: "url";
     children: XMLText[];
 }
@@ -161,7 +161,7 @@ export interface ElementAuthorBiographies extends XMLElement {
 }
 
 export interface ElementAsymptotePreamble
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "asymptote-preamble";
     children: XMLText[];
 }
@@ -189,7 +189,7 @@ export interface ElementBook extends XMLElement {
     )[];
 }
 
-export interface ElementTitle extends Omit<XMLElement, "attributes"> {
+export interface ElementTitle extends XMLElement {
     name: "title";
     children: (
         | ElementAbbr
@@ -394,37 +394,37 @@ export interface ElementXref extends XMLElement {
     )[];
 }
 
-export interface ElementXetex extends Omit<XMLElement, "attributes"> {
+export interface ElementXetex extends XMLElement {
     name: "xetex";
     children: never[];
 }
 
-export interface ElementXelatex extends Omit<XMLElement, "attributes"> {
+export interface ElementXelatex extends XMLElement {
     name: "xelatex";
     children: never[];
 }
 
-export interface ElementWebwork extends Omit<XMLElement, "attributes"> {
+export interface ElementWebwork extends XMLElement {
     name: "webwork";
     children: never[];
 }
 
-export interface ElementVs extends Omit<XMLElement, "attributes"> {
+export interface ElementVs extends XMLElement {
     name: "vs";
     children: never[];
 }
 
-export interface ElementViz extends Omit<XMLElement, "attributes"> {
+export interface ElementViz extends XMLElement {
     name: "viz";
     children: never[];
 }
 
-export interface ElementTrademark extends Omit<XMLElement, "attributes"> {
+export interface ElementTrademark extends XMLElement {
     name: "trademark";
     children: never[];
 }
 
-export interface ElementToday extends Omit<XMLElement, "attributes"> {
+export interface ElementToday extends XMLElement {
     name: "today";
     children: never[];
 }
@@ -438,22 +438,22 @@ export interface ElementTimesignature extends XMLElement {
     children: never[];
 }
 
-export interface ElementTimes extends Omit<XMLElement, "attributes"> {
+export interface ElementTimes extends XMLElement {
     name: "times";
     children: never[];
 }
 
-export interface ElementTimeofday extends Omit<XMLElement, "attributes"> {
+export interface ElementTimeofday extends XMLElement {
     name: "timeofday";
     children: never[];
 }
 
-export interface ElementTex extends Omit<XMLElement, "attributes"> {
+export interface ElementTex extends XMLElement {
     name: "tex";
     children: never[];
 }
 
-export interface ElementTerm extends Omit<XMLElement, "attributes"> {
+export interface ElementTerm extends XMLElement {
     name: "term";
     children: (
         | ElementAbbr
@@ -714,12 +714,12 @@ export interface ElementTaxon extends XMLElement {
     )[];
 }
 
-export interface ElementSwungdash extends Omit<XMLElement, "attributes"> {
+export interface ElementSwungdash extends XMLElement {
     name: "swungdash";
     children: never[];
 }
 
-export interface ElementSpecies extends Omit<XMLElement, "attributes"> {
+export interface ElementSpecies extends XMLElement {
     name: "species";
     children: (
         | ElementCopyright1
@@ -757,107 +757,107 @@ export interface ElementSpecies extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSolidus extends Omit<XMLElement, "attributes"> {
+export interface ElementSolidus extends XMLElement {
     name: "solidus";
     children: never[];
 }
 
-export interface ElementServicemark extends Omit<XMLElement, "attributes"> {
+export interface ElementServicemark extends XMLElement {
     name: "servicemark";
     children: never[];
 }
 
-export interface ElementSectionMark extends Omit<XMLElement, "attributes"> {
+export interface ElementSectionMark extends XMLElement {
     name: "section-mark";
     children: never[];
 }
 
-export interface ElementRsq extends Omit<XMLElement, "attributes"> {
+export interface ElementRsq extends XMLElement {
     name: "rsq";
     children: never[];
 }
 
-export interface ElementRq extends Omit<XMLElement, "attributes"> {
+export interface ElementRq extends XMLElement {
     name: "rq";
     children: never[];
 }
 
-export interface ElementRegistered extends Omit<XMLElement, "attributes"> {
+export interface ElementRegistered extends XMLElement {
     name: "registered";
     children: never[];
 }
 
-export interface ElementRangle extends Omit<XMLElement, "attributes"> {
+export interface ElementRangle extends XMLElement {
     name: "rangle";
     children: never[];
 }
 
-export interface ElementPrime extends Omit<XMLElement, "attributes"> {
+export interface ElementPrime extends XMLElement {
     name: "prime";
     children: never[];
 }
 
-export interface ElementPlusminus extends Omit<XMLElement, "attributes"> {
+export interface ElementPlusminus extends XMLElement {
     name: "plusminus";
     children: never[];
 }
 
-export interface ElementPilcrow extends Omit<XMLElement, "attributes"> {
+export interface ElementPilcrow extends XMLElement {
     name: "pilcrow";
     children: never[];
 }
 
-export interface ElementPhonomark extends Omit<XMLElement, "attributes"> {
+export interface ElementPhonomark extends XMLElement {
     name: "phonomark";
     children: never[];
 }
 
-export interface ElementPermille extends Omit<XMLElement, "attributes"> {
+export interface ElementPermille extends XMLElement {
     name: "permille";
     children: never[];
 }
 
-export interface ElementObelus extends Omit<XMLElement, "attributes"> {
+export interface ElementObelus extends XMLElement {
     name: "obelus";
     children: never[];
 }
 
-export interface ElementNdash extends Omit<XMLElement, "attributes"> {
+export interface ElementNdash extends XMLElement {
     name: "ndash";
     children: never[];
 }
 
-export interface ElementNbsp extends Omit<XMLElement, "attributes"> {
+export interface ElementNbsp extends XMLElement {
     name: "nbsp";
     children: never[];
 }
 
-export interface ElementMinus extends Omit<XMLElement, "attributes"> {
+export interface ElementMinus extends XMLElement {
     name: "minus";
     children: never[];
 }
 
-export interface ElementMidpoint extends Omit<XMLElement, "attributes"> {
+export interface ElementMidpoint extends XMLElement {
     name: "midpoint";
     children: never[];
 }
 
-export interface ElementMdash extends Omit<XMLElement, "attributes"> {
+export interface ElementMdash extends XMLElement {
     name: "mdash";
     children: never[];
 }
 
-export interface ElementLsq extends Omit<XMLElement, "attributes"> {
+export interface ElementLsq extends XMLElement {
     name: "lsq";
     children: never[];
 }
 
-export interface ElementLq extends Omit<XMLElement, "attributes"> {
+export interface ElementLq extends XMLElement {
     name: "lq";
     children: never[];
 }
 
-export interface ElementLangle extends Omit<XMLElement, "attributes"> {
+export interface ElementLangle extends XMLElement {
     name: "langle";
     children: never[];
 }
@@ -886,27 +886,27 @@ export interface ElementFillIn extends XMLElement {
     children: never[];
 }
 
-export interface ElementEllipsis extends Omit<XMLElement, "attributes"> {
+export interface ElementEllipsis extends XMLElement {
     name: "ellipsis";
     children: never[];
 }
 
-export interface ElementDegree extends Omit<XMLElement, "attributes"> {
+export interface ElementDegree extends XMLElement {
     name: "degree";
     children: never[];
 }
 
-export interface ElementDblprime extends Omit<XMLElement, "attributes"> {
+export interface ElementDblprime extends XMLElement {
     name: "dblprime";
     children: never[];
 }
 
-export interface ElementCopyright1 extends Omit<XMLElement, "attributes"> {
+export interface ElementCopyright1 extends XMLElement {
     name: "copyright";
     children: never[];
 }
 
-export interface ElementGenus extends Omit<XMLElement, "attributes"> {
+export interface ElementGenus extends XMLElement {
     name: "genus";
     children: (
         | ElementCopyright1
@@ -944,17 +944,17 @@ export interface ElementGenus extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementTage extends Omit<XMLElement, "attributes"> {
+export interface ElementTage extends XMLElement {
     name: "tage";
     children: XMLText[];
 }
 
-export interface ElementTag extends Omit<XMLElement, "attributes"> {
+export interface ElementTag extends XMLElement {
     name: "tag";
     children: XMLText[];
 }
 
-export interface ElementStale extends Omit<XMLElement, "attributes"> {
+export interface ElementStale extends XMLElement {
     name: "stale";
     children: (
         | ElementAbbr
@@ -1049,7 +1049,7 @@ export interface ElementStale extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSq extends Omit<XMLElement, "attributes"> {
+export interface ElementSq extends XMLElement {
     name: "sq";
     children: (
         | ElementAbbr
@@ -1144,17 +1144,17 @@ export interface ElementSq extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSharp extends Omit<XMLElement, "attributes"> {
+export interface ElementSharp extends XMLElement {
     name: "sharp";
     children: never[];
 }
 
-export interface ElementScaledeg extends Omit<XMLElement, "attributes"> {
+export interface ElementScaledeg extends XMLElement {
     name: "scaledeg";
     children: never[];
 }
 
-export interface ElementQuantity extends Omit<XMLElement, "attributes"> {
+export interface ElementQuantity extends XMLElement {
     name: "quantity";
     children: (ElementMag | ElementPer | ElementUnit)[];
 }
@@ -1179,12 +1179,12 @@ export interface ElementPer extends XMLElement {
     children: never[];
 }
 
-export interface ElementMag extends Omit<XMLElement, "attributes"> {
+export interface ElementMag extends XMLElement {
     name: "mag";
     children: XMLText[];
 }
 
-export interface ElementQ extends Omit<XMLElement, "attributes"> {
+export interface ElementQ extends XMLElement {
     name: "q";
     children: (
         | ElementAbbr
@@ -1279,7 +1279,7 @@ export interface ElementQ extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPubtitle extends Omit<XMLElement, "attributes"> {
+export interface ElementPubtitle extends XMLElement {
     name: "pubtitle";
     children: (
         | ElementAbbr
@@ -1374,27 +1374,27 @@ export interface ElementPubtitle extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPs extends Omit<XMLElement, "attributes"> {
+export interface ElementPs extends XMLElement {
     name: "ps";
     children: never[];
 }
 
-export interface ElementPretext1 extends Omit<XMLElement, "attributes"> {
+export interface ElementPretext1 extends XMLElement {
     name: "pretext";
     children: never[];
 }
 
-export interface ElementPm extends Omit<XMLElement, "attributes"> {
+export interface ElementPm extends XMLElement {
     name: "pm";
     children: never[];
 }
 
-export interface ElementNb extends Omit<XMLElement, "attributes"> {
+export interface ElementNb extends XMLElement {
     name: "nb";
     children: never[];
 }
 
-export interface ElementNatural extends Omit<XMLElement, "attributes"> {
+export interface ElementNatural extends XMLElement {
     name: "natural";
     children: never[];
 }
@@ -1433,17 +1433,17 @@ export interface ElementN extends XMLElement {
     children: never[];
 }
 
-export interface ElementMathInline extends Omit<XMLElement, "attributes"> {
+export interface ElementMathInline extends XMLElement {
     name: "m";
     children: (ElementFillIn | ElementWWVariable | XMLText)[];
 }
 
-export interface ElementLatex extends Omit<XMLElement, "attributes"> {
+export interface ElementLatex extends XMLElement {
     name: "latex";
     children: never[];
 }
 
-export interface ElementInsert extends Omit<XMLElement, "attributes"> {
+export interface ElementInsert extends XMLElement {
     name: "insert";
     children: (
         | ElementAbbr
@@ -1538,7 +1538,7 @@ export interface ElementInsert extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementInit extends Omit<XMLElement, "attributes"> {
+export interface ElementInit extends XMLElement {
     name: "init";
     children: (
         | ElementCopyright1
@@ -1576,7 +1576,7 @@ export interface ElementInit extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementIe extends Omit<XMLElement, "attributes"> {
+export interface ElementIe extends XMLElement {
     name: "ie";
     children: never[];
 }
@@ -1679,27 +1679,27 @@ export interface ElementForeign extends XMLElement {
     )[];
 }
 
-export interface ElementFlat extends Omit<XMLElement, "attributes"> {
+export interface ElementFlat extends XMLElement {
     name: "flat";
     children: never[];
 }
 
-export interface ElementEtc extends Omit<XMLElement, "attributes"> {
+export interface ElementEtc extends XMLElement {
     name: "etc";
     children: never[];
 }
 
-export interface ElementEtal extends Omit<XMLElement, "attributes"> {
+export interface ElementEtal extends XMLElement {
     name: "etal";
     children: never[];
 }
 
-export interface ElementEmail3 extends Omit<XMLElement, "attributes"> {
+export interface ElementEmail3 extends XMLElement {
     name: "email";
     children: XMLText[];
 }
 
-export interface ElementEm extends Omit<XMLElement, "attributes"> {
+export interface ElementEm extends XMLElement {
     name: "em";
     children: (
         | ElementAbbr
@@ -1794,22 +1794,22 @@ export interface ElementEm extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementEg extends Omit<XMLElement, "attributes"> {
+export interface ElementEg extends XMLElement {
     name: "eg";
     children: never[];
 }
 
-export interface ElementDoublesharp extends Omit<XMLElement, "attributes"> {
+export interface ElementDoublesharp extends XMLElement {
     name: "doublesharp";
     children: never[];
 }
 
-export interface ElementDoubleflat extends Omit<XMLElement, "attributes"> {
+export interface ElementDoubleflat extends XMLElement {
     name: "doubleflat";
     children: never[];
 }
 
-export interface ElementDelete extends Omit<XMLElement, "attributes"> {
+export interface ElementDelete extends XMLElement {
     name: "delete";
     children: (
         | ElementAbbr
@@ -1904,7 +1904,7 @@ export interface ElementDelete extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementDblbrackets extends Omit<XMLElement, "attributes"> {
+export interface ElementDblbrackets extends XMLElement {
     name: "dblbrackets";
     children: (
         | ElementAbbr
@@ -2012,7 +2012,7 @@ export interface ElementChord extends XMLElement {
     children: ElementAlteration[];
 }
 
-export interface ElementAlteration extends Omit<XMLElement, "attributes"> {
+export interface ElementAlteration extends XMLElement {
     name: "alteration";
     children: (
         | ElementCopyright1
@@ -2052,37 +2052,37 @@ export interface ElementAlteration extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSharp1 extends Omit<XMLElement, "attributes"> {
+export interface ElementSharp1 extends XMLElement {
     name: "sharp";
     children: never[];
 }
 
-export interface ElementFlat1 extends Omit<XMLElement, "attributes"> {
+export interface ElementFlat1 extends XMLElement {
     name: "flat";
     children: never[];
 }
 
-export interface ElementCa extends Omit<XMLElement, "attributes"> {
+export interface ElementCa extends XMLElement {
     name: "ca";
     children: never[];
 }
 
-export interface ElementC extends Omit<XMLElement, "attributes"> {
+export interface ElementC extends XMLElement {
     name: "c";
     children: XMLText[];
 }
 
-export interface ElementBc extends Omit<XMLElement, "attributes"> {
+export interface ElementBc extends XMLElement {
     name: "bc";
     children: never[];
 }
 
-export interface ElementAttr extends Omit<XMLElement, "attributes"> {
+export interface ElementAttr extends XMLElement {
     name: "attr";
     children: XMLText[];
 }
 
-export interface ElementArticletitle extends Omit<XMLElement, "attributes"> {
+export interface ElementArticletitle extends XMLElement {
     name: "articletitle";
     children: (
         | ElementAbbr
@@ -2177,7 +2177,7 @@ export interface ElementArticletitle extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAngles extends Omit<XMLElement, "attributes"> {
+export interface ElementAngles extends XMLElement {
     name: "angles";
     children: (
         | ElementAbbr
@@ -2272,12 +2272,12 @@ export interface ElementAngles extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAm extends Omit<XMLElement, "attributes"> {
+export interface ElementAm extends XMLElement {
     name: "am";
     children: never[];
 }
 
-export interface ElementAlert extends Omit<XMLElement, "attributes"> {
+export interface ElementAlert extends XMLElement {
     name: "alert";
     children: (
         | ElementAbbr
@@ -2372,12 +2372,12 @@ export interface ElementAlert extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAd extends Omit<XMLElement, "attributes"> {
+export interface ElementAd extends XMLElement {
     name: "ad";
     children: never[];
 }
 
-export interface ElementAcro extends Omit<XMLElement, "attributes"> {
+export interface ElementAcro extends XMLElement {
     name: "acro";
     children: (
         | ElementCopyright1
@@ -2415,7 +2415,7 @@ export interface ElementAcro extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAbbr extends Omit<XMLElement, "attributes"> {
+export interface ElementAbbr extends XMLElement {
     name: "abbr";
     children: (
         | ElementCopyright1
@@ -2453,7 +2453,7 @@ export interface ElementAbbr extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSubtitle extends Omit<XMLElement, "attributes"> {
+export interface ElementSubtitle extends XMLElement {
     name: "subtitle";
     children: (
         | ElementAbbr
@@ -2548,7 +2548,7 @@ export interface ElementSubtitle extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementShortTitle extends Omit<XMLElement, "attributes"> {
+export interface ElementShortTitle extends XMLElement {
     name: "shorttitle";
     children: (
         | ElementAbbr
@@ -2640,7 +2640,7 @@ export interface ElementShortTitle extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPlainTitle extends Omit<XMLElement, "attributes"> {
+export interface ElementPlainTitle extends XMLElement {
     name: "plaintitle";
     children: XMLText[];
 }
@@ -2663,12 +2663,12 @@ export interface ElementPart extends XMLElement {
     )[];
 }
 
-export interface ElementLinedTitle extends Omit<XMLElement, "attributes"> {
+export interface ElementLinedTitle extends XMLElement {
     name: "title";
     children: ElementLongLine[];
 }
 
-export interface ElementLongLine extends Omit<XMLElement, "attributes"> {
+export interface ElementLongLine extends XMLElement {
     name: "line";
     children: (
         | ElementAbbr
@@ -2866,7 +2866,7 @@ export interface ElementIndex extends XMLElement {
     )[];
 }
 
-export interface ElementSeealso extends Omit<XMLElement, "attributes"> {
+export interface ElementSeealso extends XMLElement {
     name: "seealso";
     children: (
         | ElementAbbr
@@ -2958,7 +2958,7 @@ export interface ElementSeealso extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSee extends Omit<XMLElement, "attributes"> {
+export interface ElementSee extends XMLElement {
     name: "see";
     children: (
         | ElementAbbr
@@ -3728,7 +3728,7 @@ export interface ElementSideBySide extends XMLElement {
     )[];
 }
 
-export interface ElementStack extends Omit<XMLElement, "attributes"> {
+export interface ElementStack extends XMLElement {
     name: "stack";
     children: (
         | ElementConsole
@@ -3757,17 +3757,17 @@ export interface ElementProgram extends XMLElement {
     children: ElementInput1[];
 }
 
-export interface ElementInput1 extends Omit<XMLElement, "attributes"> {
+export interface ElementInput1 extends XMLElement {
     name: "input";
     children: XMLText[];
 }
 
-export interface ElementPreformatted extends Omit<XMLElement, "attributes"> {
+export interface ElementPreformatted extends XMLElement {
     name: "pre";
     children: (ElementCodeLine | XMLText)[];
 }
 
-export interface ElementCodeLine extends Omit<XMLElement, "attributes"> {
+export interface ElementCodeLine extends XMLElement {
     name: "cline";
     children: XMLText[];
 }
@@ -3926,27 +3926,27 @@ export interface ElementSage extends XMLElement {
     children: (ElementInput2 | ElementOutput1)[];
 }
 
-export interface ElementOutput1 extends Omit<XMLElement, "attributes"> {
+export interface ElementOutput1 extends XMLElement {
     name: "output";
     children: XMLText[];
 }
 
-export interface ElementInput2 extends Omit<XMLElement, "attributes"> {
+export interface ElementInput2 extends XMLElement {
     name: "input";
     children: XMLText[];
 }
 
-export interface ElementNotation extends Omit<XMLElement, "attributes"> {
+export interface ElementNotation extends XMLElement {
     name: "notation";
     children: (ElementDescription4 | ElementUsage)[];
 }
 
-export interface ElementUsage extends Omit<XMLElement, "attributes"> {
+export interface ElementUsage extends XMLElement {
     name: "usage";
     children: ElementMathInline[];
 }
 
-export interface ElementDescription4 extends Omit<XMLElement, "attributes"> {
+export interface ElementDescription4 extends XMLElement {
     name: "description";
     children: (
         | ElementAbbr
@@ -4047,7 +4047,7 @@ export interface ElementMen extends XMLElement {
     children: (ElementFillIn | ElementIndex | ElementWWVariable | XMLText)[];
 }
 
-export interface ElementMe extends Omit<XMLElement, "attributes"> {
+export interface ElementMe extends XMLElement {
     name: "me";
     children: (ElementFillIn | ElementWWVariable | XMLText)[];
 }
@@ -4096,7 +4096,7 @@ export interface ElementMathRow extends XMLElement {
     )[];
 }
 
-export interface ElementMathIntertext extends Omit<XMLElement, "attributes"> {
+export interface ElementMathIntertext extends XMLElement {
     name: "intertext";
     children: (
         | ElementAbbr
@@ -4229,22 +4229,22 @@ export interface ElementConsole extends XMLElement {
     children: (ElementInput | ElementOutput | ElementPrompt)[];
 }
 
-export interface ElementPrompt extends Omit<XMLElement, "attributes"> {
+export interface ElementPrompt extends XMLElement {
     name: "prompt";
     children: XMLText[];
 }
 
-export interface ElementOutput extends Omit<XMLElement, "attributes"> {
+export interface ElementOutput extends XMLElement {
     name: "output";
     children: XMLText[];
 }
 
-export interface ElementInput extends Omit<XMLElement, "attributes"> {
+export interface ElementInput extends XMLElement {
     name: "input";
     children: XMLText[];
 }
 
-export interface ElementCaption extends Omit<XMLElement, "attributes"> {
+export interface ElementCaption extends XMLElement {
     name: "caption";
     children: (
         | ElementAbbr
@@ -4361,7 +4361,7 @@ export interface ElementList extends XMLElement {
 }
 
 export interface ElementIntroductionText
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "introduction";
     children: (
         | ElementBlockQuote
@@ -4390,7 +4390,7 @@ export interface ElementImageRaster extends XMLElement {
     children: ElementDescription[];
 }
 
-export interface ElementDescription extends Omit<XMLElement, "attributes"> {
+export interface ElementDescription extends XMLElement {
     name: "description";
     children: (
         | ElementAbbr
@@ -4509,12 +4509,12 @@ export interface ElementSageplot extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementLatexImage extends Omit<XMLElement, "attributes"> {
+export interface ElementLatexImage extends XMLElement {
     name: "latex-image";
     children: XMLText[];
 }
 
-export interface ElementDescription1 extends Omit<XMLElement, "attributes"> {
+export interface ElementDescription1 extends XMLElement {
     name: "description";
     children: (
         | ElementAbbr
@@ -4606,7 +4606,7 @@ export interface ElementDescription1 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAsymptote extends Omit<XMLElement, "attributes"> {
+export interface ElementAsymptote extends XMLElement {
     name: "asymptote";
     children: XMLText[];
 }
@@ -4627,7 +4627,7 @@ export interface ElementBlockQuote extends XMLElement {
     )[];
 }
 
-export interface ElementAttribution extends Omit<XMLElement, "attributes"> {
+export interface ElementAttribution extends XMLElement {
     name: "attribution";
     children: (
         | ElementAbbr
@@ -4864,7 +4864,7 @@ export interface ElementAside extends XMLElement {
     )[];
 }
 
-export interface ElementConclusionText extends Omit<XMLElement, "attributes"> {
+export interface ElementConclusionText extends XMLElement {
     name: "conclusion";
     children: (
         | ElementBlockQuote
@@ -5253,7 +5253,7 @@ export interface ElementTheorem extends XMLElement {
     )[];
 }
 
-export interface ElementStatement extends Omit<XMLElement, "attributes"> {
+export interface ElementStatement extends XMLElement {
     name: "statement";
     children: (
         | ElementAside
@@ -5346,7 +5346,7 @@ export interface ElementCase extends XMLElement {
     )[];
 }
 
-export interface ElementCreator extends Omit<XMLElement, "attributes"> {
+export interface ElementCreator extends XMLElement {
     name: "creator";
     children: (
         | ElementAbbr
@@ -5711,7 +5711,7 @@ export interface ElementSolution extends XMLElement {
 }
 
 export interface ElementIntroductionStatement
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "introduction";
     children: (
         | ElementAside
@@ -5771,7 +5771,7 @@ export interface ElementHint extends XMLElement {
 }
 
 export interface ElementConclusionStatement
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "conclusion";
     children: (
         | ElementAside
@@ -5908,7 +5908,7 @@ export interface ElementProject extends XMLElement {
     )[];
 }
 
-export interface ElementPrelude extends Omit<XMLElement, "attributes"> {
+export interface ElementPrelude extends XMLElement {
     name: "prelude";
     children: (
         | ElementBlockQuote
@@ -5923,7 +5923,7 @@ export interface ElementPrelude extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPostlude extends Omit<XMLElement, "attributes"> {
+export interface ElementPostlude extends XMLElement {
     name: "postlude";
     children: (
         | ElementBlockQuote
@@ -6267,7 +6267,7 @@ export interface ElementFragref extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementCode extends Omit<XMLElement, "attributes"> {
+export interface ElementCode extends XMLElement {
     name: "code";
     children: XMLText[];
 }
@@ -6426,12 +6426,12 @@ export interface ElementWebWorkAuthored extends XMLElement {
     )[];
 }
 
-export interface ElementWWMacros extends Omit<XMLElement, "attributes"> {
+export interface ElementWWMacros extends XMLElement {
     name: "pg-macros";
     children: ElementMacroFile[];
 }
 
-export interface ElementMacroFile extends Omit<XMLElement, "attributes"> {
+export interface ElementMacroFile extends XMLElement {
     name: "macro-file";
     children: XMLText[];
 }
@@ -6457,7 +6457,7 @@ export interface ElementTaskWW extends XMLElement {
 }
 
 export interface ElementStatementExerciseWW
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "statement";
     children: (
         | ElementImageWW
@@ -6468,7 +6468,7 @@ export interface ElementStatementExerciseWW
     )[];
 }
 
-export interface ElementWWInstruction extends Omit<XMLElement, "attributes"> {
+export interface ElementWWInstruction extends XMLElement {
     name: "instruction";
     children: (
         | ElementAbbr
@@ -6578,7 +6578,7 @@ export interface ElementLatexImage1 extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementDescription2 extends Omit<XMLElement, "attributes"> {
+export interface ElementDescription2 extends XMLElement {
     name: "description";
     children: (
         | ElementAbbr
@@ -6671,7 +6671,7 @@ export interface ElementDescription2 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSolutionWW extends Omit<XMLElement, "attributes"> {
+export interface ElementSolutionWW extends XMLElement {
     name: "solution";
     children: (
         | ElementImageWW
@@ -6681,7 +6681,7 @@ export interface ElementSolutionWW extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementHintWW extends Omit<XMLElement, "attributes"> {
+export interface ElementHintWW extends XMLElement {
     name: "hint";
     children: (
         | ElementImageWW
@@ -6691,7 +6691,7 @@ export interface ElementHintWW extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementStage extends Omit<XMLElement, "attributes"> {
+export interface ElementStage extends XMLElement {
     name: "stage";
     children: (
         | ElementHintWW
@@ -6701,12 +6701,12 @@ export interface ElementStage extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPgCode extends Omit<XMLElement, "attributes"> {
+export interface ElementPgCode extends XMLElement {
     name: "pg-code";
     children: XMLText[];
 }
 
-export interface ElementDescription3 extends Omit<XMLElement, "attributes"> {
+export interface ElementDescription3 extends XMLElement {
     name: "description";
     children: (
         | ElementCopyright1
@@ -6745,7 +6745,7 @@ export interface ElementDescription3 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementSimpleLine extends Omit<XMLElement, "attributes"> {
+export interface ElementSimpleLine extends XMLElement {
     name: "line";
     children: (
         | ElementCopyright1
@@ -6784,7 +6784,7 @@ export interface ElementSimpleLine extends Omit<XMLElement, "attributes"> {
 }
 
 export interface ElementStatementExercise
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "statement";
     children: (
         | ElementAside
@@ -6978,7 +6978,7 @@ export interface ElementExample extends XMLElement {
     )[];
 }
 
-export interface ElementDemonstration extends Omit<XMLElement, "attributes"> {
+export interface ElementDemonstration extends XMLElement {
     name: "demonstration";
     children: (ElementParagraph | ElementSage | ElementTitle)[];
 }
@@ -7783,22 +7783,22 @@ export interface ElementBibliographyItem extends XMLElement {
     )[];
 }
 
-export interface ElementIbid extends Omit<XMLElement, "attributes"> {
+export interface ElementIbid extends XMLElement {
     name: "ibid";
     children: never[];
 }
 
-export interface ElementBibYear extends Omit<XMLElement, "attributes"> {
+export interface ElementBibYear extends XMLElement {
     name: "year";
     children: XMLText[];
 }
 
-export interface ElementBibVolume extends Omit<XMLElement, "attributes"> {
+export interface ElementBibVolume extends XMLElement {
     name: "volume";
     children: XMLText[];
 }
 
-export interface ElementBibTitle extends Omit<XMLElement, "attributes"> {
+export interface ElementBibTitle extends XMLElement {
     name: "title";
     children: (
         | ElementAbbr
@@ -7893,12 +7893,12 @@ export interface ElementBibTitle extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementBibSeries extends Omit<XMLElement, "attributes"> {
+export interface ElementBibSeries extends XMLElement {
     name: "series";
     children: XMLText[];
 }
 
-export interface ElementBibPublisher extends Omit<XMLElement, "attributes"> {
+export interface ElementBibPublisher extends XMLElement {
     name: "publisher";
     children: XMLText[];
 }
@@ -7912,7 +7912,7 @@ export interface ElementBibPages extends XMLElement {
     children: XMLText[];
 }
 
-export interface ElementBibNumber extends Omit<XMLElement, "attributes"> {
+export interface ElementBibNumber extends XMLElement {
     name: "number";
     children: XMLText[];
 }
@@ -7925,7 +7925,7 @@ export interface ElementBibNote extends XMLElement {
     children: ElementParagraph[];
 }
 
-export interface ElementBibJournal extends Omit<XMLElement, "attributes"> {
+export interface ElementBibJournal extends XMLElement {
     name: "journal";
     children: (
         | ElementCopyright1
@@ -7964,12 +7964,12 @@ export interface ElementBibJournal extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementBibEditor extends Omit<XMLElement, "attributes"> {
+export interface ElementBibEditor extends XMLElement {
     name: "editor";
     children: XMLText[];
 }
 
-export interface ElementBibAuthor extends Omit<XMLElement, "attributes"> {
+export interface ElementBibAuthor extends XMLElement {
     name: "author";
     children: XMLText[];
 }
@@ -8119,7 +8119,7 @@ export interface ElementGlossary extends XMLElement {
     )[];
 }
 
-export interface ElementHeadNote extends Omit<XMLElement, "attributes"> {
+export interface ElementHeadNote extends XMLElement {
     name: "headnote";
     children: (
         | ElementAside
@@ -8227,7 +8227,7 @@ export interface ElementExerciseGroup extends XMLElement {
 }
 
 export interface ElementIntroductionStatementNoCaption
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "introduction";
     children: (
         | ElementAside
@@ -8248,7 +8248,7 @@ export interface ElementIntroductionStatementNoCaption
 }
 
 export interface ElementConclusionStatementNoCaption
-    extends Omit<XMLElement, "attributes"> {
+    extends XMLElement {
     name: "conclusion";
     children: (
         | ElementAside
@@ -8296,7 +8296,7 @@ export interface ElementCommentary extends XMLElement {
     )[];
 }
 
-export interface ElementAuthorByline extends Omit<XMLElement, "attributes"> {
+export interface ElementAuthorByline extends XMLElement {
     name: "author";
     children: (
         | ElementCopyright1
@@ -8335,7 +8335,7 @@ export interface ElementAuthorByline extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementLinedSubtitle extends Omit<XMLElement, "attributes"> {
+export interface ElementLinedSubtitle extends XMLElement {
     name: "subtitle";
     children: ElementLongLine[];
 }
@@ -8360,12 +8360,12 @@ export interface ElementBookFrontMatter extends XMLElement {
     )[];
 }
 
-export interface ElementTitlePage extends Omit<XMLElement, "attributes"> {
+export interface ElementTitlePage extends XMLElement {
     name: "titlepage";
     children: (ElementAuthor | ElementCredit | ElementDate | ElementEditor)[];
 }
 
-export interface ElementEditor extends Omit<XMLElement, "attributes"> {
+export interface ElementEditor extends XMLElement {
     name: "editor";
     children: (
         | ElementDepartment1
@@ -8375,7 +8375,7 @@ export interface ElementEditor extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPersonname1 extends Omit<XMLElement, "attributes"> {
+export interface ElementPersonname1 extends XMLElement {
     name: "personname";
     children: (
         | ElementCopyright1
@@ -8413,7 +8413,7 @@ export interface ElementPersonname1 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementInstitution1 extends Omit<XMLElement, "attributes"> {
+export interface ElementInstitution1 extends XMLElement {
     name: "institution";
     children: (
         | ElementCopyright1
@@ -8452,7 +8452,7 @@ export interface ElementInstitution1 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementShortLine extends Omit<XMLElement, "attributes"> {
+export interface ElementShortLine extends XMLElement {
     name: "line";
     children: (
         | ElementAbbr
@@ -8544,12 +8544,12 @@ export interface ElementShortLine extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementEmail1 extends Omit<XMLElement, "attributes"> {
+export interface ElementEmail1 extends XMLElement {
     name: "email";
     children: XMLText[];
 }
 
-export interface ElementDepartment1 extends Omit<XMLElement, "attributes"> {
+export interface ElementDepartment1 extends XMLElement {
     name: "department";
     children: (
         | ElementCopyright1
@@ -8588,7 +8588,7 @@ export interface ElementDepartment1 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementDate extends Omit<XMLElement, "attributes"> {
+export interface ElementDate extends XMLElement {
     name: "date";
     children: (
         | ElementAd
@@ -8648,12 +8648,12 @@ export interface ElementDate extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementCredit extends Omit<XMLElement, "attributes"> {
+export interface ElementCredit extends XMLElement {
     name: "credit";
     children: (ElementAuthor | ElementTitle2)[];
 }
 
-export interface ElementTitle2 extends Omit<XMLElement, "attributes"> {
+export interface ElementTitle2 extends XMLElement {
     name: "title";
     children: (
         | ElementAbbr
@@ -8748,7 +8748,7 @@ export interface ElementTitle2 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAuthor extends Omit<XMLElement, "attributes"> {
+export interface ElementAuthor extends XMLElement {
     name: "author";
     children: (
         | ElementDepartment
@@ -8758,7 +8758,7 @@ export interface ElementAuthor extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementPersonname extends Omit<XMLElement, "attributes"> {
+export interface ElementPersonname extends XMLElement {
     name: "personname";
     children: (
         | ElementCopyright1
@@ -8796,7 +8796,7 @@ export interface ElementPersonname extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementInstitution extends Omit<XMLElement, "attributes"> {
+export interface ElementInstitution extends XMLElement {
     name: "institution";
     children: (
         | ElementCopyright1
@@ -8835,12 +8835,12 @@ export interface ElementInstitution extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementEmail extends Omit<XMLElement, "attributes"> {
+export interface ElementEmail extends XMLElement {
     name: "email";
     children: XMLText[];
 }
 
-export interface ElementDepartment extends Omit<XMLElement, "attributes"> {
+export interface ElementDepartment extends XMLElement {
     name: "department";
     children: (
         | ElementCopyright1
@@ -8939,7 +8939,7 @@ export interface ElementParagraphsNoNumber extends XMLElement {
     )[];
 }
 
-export interface ElementContributors extends Omit<XMLElement, "attributes"> {
+export interface ElementContributors extends XMLElement {
     name: "contributors";
     children: ElementContributor[];
 }
@@ -8960,7 +8960,7 @@ export interface ElementContributor extends XMLElement {
     )[];
 }
 
-export interface ElementPersonname2 extends Omit<XMLElement, "attributes"> {
+export interface ElementPersonname2 extends XMLElement {
     name: "personname";
     children: (
         | ElementCopyright1
@@ -8998,7 +8998,7 @@ export interface ElementPersonname2 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementLocation extends Omit<XMLElement, "attributes"> {
+export interface ElementLocation extends XMLElement {
     name: "location";
     children: (
         | ElementCopyright1
@@ -9036,7 +9036,7 @@ export interface ElementLocation extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementInstitution2 extends Omit<XMLElement, "attributes"> {
+export interface ElementInstitution2 extends XMLElement {
     name: "institution";
     children: (
         | ElementCopyright1
@@ -9074,12 +9074,12 @@ export interface ElementInstitution2 extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementEmail2 extends Omit<XMLElement, "attributes"> {
+export interface ElementEmail2 extends XMLElement {
     name: "email";
     children: XMLText[];
 }
 
-export interface ElementDepartment2 extends Omit<XMLElement, "attributes"> {
+export interface ElementDepartment2 extends XMLElement {
     name: "department";
     children: (
         | ElementCopyright1
@@ -9142,7 +9142,7 @@ export interface ElementParagraphLined extends XMLElement {
     children: ElementLine[];
 }
 
-export interface ElementLine extends Omit<XMLElement, "attributes"> {
+export interface ElementLine extends XMLElement {
     name: "line";
     children: (
         | ElementAbbr
@@ -9249,12 +9249,12 @@ export interface ElementColophonFront extends XMLElement {
     )[];
 }
 
-export interface ElementWebsite extends Omit<XMLElement, "attributes"> {
+export interface ElementWebsite extends XMLElement {
     name: "website";
     children: (ElementAddress | ElementName)[];
 }
 
-export interface ElementName extends Omit<XMLElement, "attributes"> {
+export interface ElementName extends XMLElement {
     name: "name";
     children: (
         | ElementAbbr
@@ -9346,22 +9346,22 @@ export interface ElementName extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementAddress extends Omit<XMLElement, "attributes"> {
+export interface ElementAddress extends XMLElement {
     name: "address";
     children: XMLText[];
 }
 
-export interface ElementEdition extends Omit<XMLElement, "attributes"> {
+export interface ElementEdition extends XMLElement {
     name: "edition";
     children: XMLText[];
 }
 
-export interface ElementCredit2 extends Omit<XMLElement, "attributes"> {
+export interface ElementCredit2 extends XMLElement {
     name: "credit";
     children: (ElementEntity | ElementRole)[];
 }
 
-export interface ElementRole extends Omit<XMLElement, "attributes"> {
+export interface ElementRole extends XMLElement {
     name: "role";
     children: (
         | ElementAbbr
@@ -9453,7 +9453,7 @@ export interface ElementRole extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementEntity extends Omit<XMLElement, "attributes"> {
+export interface ElementEntity extends XMLElement {
     name: "entity";
     children: (
         | ElementAbbr
@@ -9548,7 +9548,7 @@ export interface ElementEntity extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementCopyright extends Omit<XMLElement, "attributes"> {
+export interface ElementCopyright extends XMLElement {
     name: "copyright";
     children: (
         | ElementHolder
@@ -9558,7 +9558,7 @@ export interface ElementCopyright extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementYear extends Omit<XMLElement, "attributes"> {
+export interface ElementYear extends XMLElement {
     name: "year";
     children: (
         | ElementAbbr
@@ -9650,7 +9650,7 @@ export interface ElementYear extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementShortlicense extends Omit<XMLElement, "attributes"> {
+export interface ElementShortlicense extends XMLElement {
     name: "shortlicense";
     children: (
         | ElementAbbr
@@ -9745,7 +9745,7 @@ export interface ElementShortlicense extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementMinilicense extends Omit<XMLElement, "attributes"> {
+export interface ElementMinilicense extends XMLElement {
     name: "minilicense";
     children: (
         | ElementAbbr
@@ -9837,7 +9837,7 @@ export interface ElementMinilicense extends Omit<XMLElement, "attributes"> {
     )[];
 }
 
-export interface ElementHolder extends Omit<XMLElement, "attributes"> {
+export interface ElementHolder extends XMLElement {
     name: "holder";
     children: XMLText[];
 }
@@ -9938,7 +9938,7 @@ export interface ElementIndexDivision extends XMLElement {
     )[];
 }
 
-export interface ElementIndexList extends Omit<XMLElement, "attributes"> {
+export interface ElementIndexList extends XMLElement {
     name: "index-list";
     children: never[];
 }
@@ -10051,7 +10051,7 @@ export interface ElementBookAppendix extends XMLElement {
     )[];
 }
 
-export interface ElementNotationList extends Omit<XMLElement, "attributes"> {
+export interface ElementNotationList extends XMLElement {
     name: "notation-list";
     children: never[];
 }

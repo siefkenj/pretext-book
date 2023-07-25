@@ -117,24 +117,24 @@ grammar {
         const ast = fromXml(source) as XastRoot;
 
         const processor = unified().use(stripCommentsAndFriendsPlugin);
-        const processed = processor.runSync(ast);
+        const processed = await processor.run(ast);
         expect(toXml(processed)).toEqual(
-            '<pretext><article xml:id="hello-world"><p>Hello, World!</p><b>foo</b></article><baz></baz></pretext>'
+            '<pretext><article xml:id="hello-world"><p>Hello, World!</p><b>foo</b></article><baz></baz></pretext>',
         );
     });
-    it("Can convert cdata to text", () => {
+    it("Can convert cdata to text", async () => {
         let source: string;
         source = `<pretext><!--foo--><article xml:id="hello-world"><![CDATA[Some text & invalid chars! <foo/>]]></article></pretext>`;
         let ast: XastRoot = { type: "root", children: [] };
         ast = fromXml(source) as XastRoot;
 
         const processor = unified().use(expandCdataPlugin);
-        const processed = processor.runSync(ast);
+        const processed = await processor.run(ast);
         expect(toXml(processed)).toEqual(
-            '<pretext><!--foo--><article xml:id="hello-world">Some text &#x26; invalid chars! &#x3C;foo/></article></pretext>'
+            '<pretext><!--foo--><article xml:id="hello-world">Some text &#x26; invalid chars! &#x3C;foo/></article></pretext>',
         );
     });
-    it("Can merge adjacent text nodes", () => {
+    it("Can merge adjacent text nodes", async () => {
         let ast: XastRoot = {
             type: "root",
             children: [
@@ -145,12 +145,13 @@ grammar {
                         { type: "text", value: "text1" },
                         { type: "text", value: "text2" },
                     ],
+                    attributes: {},
                 },
             ],
         };
 
         const processor = unified().use(mergeAdjacentTextPlugin);
-        const processed = processor.runSync(ast);
+        const processed = await processor.run(ast);
         expect(processed).toEqual({
             type: "root",
             children: [
@@ -158,11 +159,12 @@ grammar {
                     type: "element",
                     name: "foo",
                     children: [{ type: "text", value: "text1text2" }],
+                    attributes: {},
                 },
             ],
         });
     });
-    it("Can remove unneeded whitespace based on schema data", () => {
+    it("Can remove unneeded whitespace based on schema data", async () => {
         // No whitespace: shouldn't change
         {
             const source = `<root><a><c>hi</c></a><b><c><d>there</d></c></b></root>`;
@@ -178,9 +180,9 @@ grammar {
                     schema: jsonGrammar,
                     nodeToSchemaMap,
                 });
-            const processed = processor.runSync(ast);
+            const processed = await processor.run(ast);
             expect(toXml(processed)).toEqual(
-                "<root><a><c>hi</c></a><b><c><d>there</d></c></b></root>"
+                "<root><a><c>hi</c></a><b><c><d>there</d></c></b></root>",
             );
         }
 
@@ -208,9 +210,9 @@ grammar {
                     schema: jsonGrammar,
                     nodeToSchemaMap,
                 });
-            const processed = processor.runSync(ast);
+            const processed = await processor.run(ast);
             expect(toXml(processed)).toEqual(
-                "<root><a><c>hi</c></a><b><c><d>there</d></c></b></root>"
+                "<root><a><c>hi</c></a><b><c><d>there</d></c></b></root>",
             );
         }
 
@@ -239,13 +241,13 @@ grammar {
                     schema: jsonGrammar,
                     nodeToSchemaMap,
                 });
-            const processed = processor.runSync(ast);
+            const processed = await processor.run(ast);
             expect(toXml(processed)).toEqual(
-                "<root><a><c>hi</c></a><b><c><d>\n                                        </d></c></b></root>"
+                "<root><a><c>hi</c></a><b><c><d>\n                                        </d></c></b></root>",
             );
         }
     });
-    it("Can extract pretext element", () => {
+    it("Can extract pretext element", async () => {
         const source = `<?xml version="1.0" encoding="UTF-8" ?>
 
         <!-- comment -->
@@ -254,12 +256,12 @@ grammar {
         const ast = fromXml(source) as XastRoot;
         // Set up the processor
         const processor = unified().use(findRootElementPlugin);
-        const processed = processor.runSync(ast);
+        const processed = await processor.run(ast);
         expect(toXml(processed)).toEqual(
-            "<pretext><p>Hello, World!</p></pretext>"
+            "<pretext><p>Hello, World!</p></pretext>",
         );
     });
-    it("Can normalize pretext document", () => {
+    it("Can normalize pretext document", async () => {
         const source = `<pretext>
         <!-- a comment -->
                     <article xml:id="hello-world">
@@ -270,9 +272,9 @@ grammar {
         const ast = fromXml(source) as XastRoot;
         // Set up the processor
         const processor = unified().use(normalizePretextPlugin);
-        const processed = processor.runSync(ast);
+        const processed = await processor.run(ast);
         expect(toXml(processed)).toEqual(
-            '<pretext><article xml:id="hello-world"><p>Hello, World!</p><p>other &#x3C;stuff></p></article></pretext>'
+            '<pretext><article xml:id="hello-world"><p>Hello, World!</p><p>other &#x3C;stuff></p></article></pretext>',
         );
     });
 });

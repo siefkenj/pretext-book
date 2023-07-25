@@ -28,6 +28,7 @@ export const ensureTitleElementsPlugin: Plugin<
                         type: "element",
                         name: "title",
                         children: [],
+                        attributes: {},
                     });
                 }
                 if (titleIndex > 0) {

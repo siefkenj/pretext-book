@@ -15,6 +15,7 @@ export const Book: ReplacerComponentWithId = function ({ node: _node, id }) {
         type: "element",
         name: "",
         children: titleChildren,
+        attributes: {},
     }).trim();
 
     return (

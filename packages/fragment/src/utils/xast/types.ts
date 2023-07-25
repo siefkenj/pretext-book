@@ -4,13 +4,12 @@ import {
     Comment,
     Doctype,
     Element,
-    ElementChildMap,
+    ElementContent,
     Instruction,
     Literal,
     Node,
     Parent,
     Root,
-    RootChildMap,
     Text,
 } from "xast";
 
@@ -21,7 +20,8 @@ export type XastNode =
     | Element
     | Instruction
     | Root
-    | Text;
+    | Text
+    | ElementContent;
 
 export type XastAttributes = Attributes;
 export type XastRoot = Root;

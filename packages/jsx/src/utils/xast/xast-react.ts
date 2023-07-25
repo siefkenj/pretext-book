@@ -130,14 +130,7 @@ export const xastReactTransformer: Plugin<
     }
 
     function process(
-        node:
-            | XMLRoot
-            | XMLElement
-            | XMLText
-            | XMLComment
-            | XMLDoctype
-            | XMLInstruction
-            | XMLCdata,
+        node: XastNode,
         key: number = 0,
         file: VFile
     ): React.ReactNode[] {

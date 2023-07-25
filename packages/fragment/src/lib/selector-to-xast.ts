@@ -44,7 +44,7 @@ export function selectorToXastNode(selector: Selector): XastElement {
         }
     }
     console.warn("Failed to convert", selector, "into xast element");
-    const ret: XastElement = { type: "element", name: "ERROR", children: [] };
+    const ret: XastElement = { type: "element", name: "ERROR", children: [], attributes: {} };
     return ret;
 }
 
@@ -74,7 +74,7 @@ function simpleSelectorToNode(selector: SimpleSelector): XastElement {
         if (name !== "class") {
             attributes[name] = attr;
         } else {
-            // name === "class". We can list mutliple class names with multiple dots.
+            // name === "class". We can list multiple class names with multiple dots.
             // class attributes are merged with a space, unlike any other attribute.
             attributes[name] ||= "";
             attributes[name] +=

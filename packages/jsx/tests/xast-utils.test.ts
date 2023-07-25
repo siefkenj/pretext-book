@@ -46,9 +46,9 @@ describe("XAST utility functions", () => {
             },
             {
                 test: ((node: any) => node && node.type === "element") as (
-                    node: any
+                    node: any,
                 ) => node is XastNode & { type: "element" },
-            }
+            },
         );
 
         expect(elementNameOnly).toEqual([
@@ -75,7 +75,7 @@ describe("XAST utility functions", () => {
             }
         });
         expect(toXml(ast)).toEqual(
-            '<pretext><article xml:id="hello-world"><b>foo</b></article><baz></baz></pretext>'
+            '<pretext><article xml:id="hello-world"><b>foo</b></article><baz></baz></pretext>',
         );
 
         // Get replace <p> with <x /><y />
@@ -86,13 +86,23 @@ describe("XAST utility functions", () => {
             }
             if (node.type === "element" && node.name === "p") {
                 return [
-                    { type: "element", name: "x", children: [] },
-                    { type: "element", name: "y", children: [] },
+                    {
+                        type: "element",
+                        name: "x",
+                        children: [],
+                        attributes: {},
+                    },
+                    {
+                        type: "element",
+                        name: "y",
+                        children: [],
+                        attributes: {},
+                    },
                 ];
             }
         });
         expect(toXml(ast)).toEqual(
-            '<pretext><article xml:id="hello-world"><x></x><y></y><b>foo</b></article><baz></baz><x></x><y></y></pretext>'
+            '<pretext><article xml:id="hello-world"><x></x><y></y><b>foo</b></article><baz></baz><x></x><y></y></pretext>',
         );
     });
 });

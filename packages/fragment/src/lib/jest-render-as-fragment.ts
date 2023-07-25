@@ -32,9 +32,9 @@ declare module "vitest" {
  * for vitest/jest types to work correctly.
  */
 export const jestToMatchFragment: ExpectExtendObject = {
-    toMatchFragment(received: string, expected: string) {
-        const normalizedReceived = normalizeFragmentHtml(received);
-        const normalizedExpected = normalizeFragmentHtml(expected);
+    async toMatchFragment(received: string, expected: string) {
+        const normalizedReceived = await normalizeFragmentHtml(received);
+        const normalizedExpected = await normalizeFragmentHtml(expected);
         const pass: boolean = this.equals(
             normalizedReceived,
             normalizedExpected

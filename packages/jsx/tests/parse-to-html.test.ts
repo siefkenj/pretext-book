@@ -17,7 +17,7 @@ const toXmlPlugin = function () {
 } as Plugin<never[], XastRoot, string>;
 
 describe.skip("Parse to HTML tests", () => {
-    it("Can do a basic conversion", () => {
+    it("Can do a basic conversion", async () => {
         let source = `<pretext><docinfo />
                     <book xml:id="hello-world">
                         <title>Cool Article</title>
@@ -117,7 +117,7 @@ describe.skip("Parse to HTML tests", () => {
     </pretext>
     `;
 
-        const processed = pretextToHtml(source);
+        const processed = await pretextToHtml(source);
         //fs.writeFileSync("./tests/tmp/webpage.html", processed)
         console.log(processed);
     });
