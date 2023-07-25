@@ -1,0 +1,8 @@
+<FRAGMENT>
+	<image source="images/keller-trotter-graph" decorative="no" />
+	<image source="images/keller-trotter-graph" decorative="yes" />
+	<image source="images/keller-trotter-graph" width="10%" />
+	<image source="images/keller-trotter-graph" margins="10%" />
+	<image source="images/keller-trotter-graph" margins="4% 3%" />
+	<image source="images/keller-trotter-graph" margins="auto" width="10%" />
+</FRAGMENT>
