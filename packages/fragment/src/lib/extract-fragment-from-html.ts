@@ -2,7 +2,7 @@ import { fromHtml } from "hast-util-from-html";
 import { visit } from "unist-util-visit";
 import { toHtml } from "hast-util-to-html";
 import Prettier from "prettier/standalone";
-import * as prettierPluginHtml from "prettier/parser-html";
+import * as prettierPluginHtml from "prettier/plugins/html";
 
 type HastNode = ReturnType<typeof fromHtml>["children"][0];
 type HastElement = HastNode & { type: "element" };
@@ -22,10 +22,10 @@ function printPrettier(source: string) {
  * fragment.
  * @param source
  */
-export function extractFragmentFromHtml(
+export async function extractFragmentFromHtml(
     source: string,
     options?: { prettyPrint?: boolean }
-): string {
+): Promise<string> {
     const { prettyPrint = false } = options || {};
 
     const html = fromHtml(source);
@@ -63,7 +63,7 @@ export function extractFragmentFromHtml(
     const ret = toHtml(parent.children);
     if (prettyPrint) {
         try {
-            return printPrettier(ret);
+            return await printPrettier(ret);
         } catch {}
     }
 

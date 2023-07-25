@@ -1,11 +1,15 @@
 import { fromHtml } from "hast-util-from-html";
-import type { Root as HastRoot, Node as HastNode } from "hast";
+import type {
+    Root as HastRoot,
+    Node as HastNode,
+    Element as HastElement,
+} from "hast";
 import { Plugin, unified } from "unified";
 import { EXIT, visit } from "unist-util-visit";
 import { toHtml } from "hast-util-to-html";
 import Prettier from "prettier/standalone";
-import * as prettierPluginHtml from "prettier/parser-html";
-import * as prettierPluginCss from "prettier/parser-postcss";
+import * as prettierPluginHtml from "prettier/plugins/html";
+import * as prettierPluginCss from "prettier/plugins/postcss";
 
 function printPrettier(source: string, printWidth = 50) {
     return Prettier.format(source, {
@@ -94,7 +98,10 @@ const alphabetizeClassNamesPlugin: Plugin<void[], HastRoot, HastRoot> =
  */
 const formatStyleAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
     function () {
-        return (root) => {
+        return async (root) => {
+            const nodesToFormat: (HastElement & {
+                properties: { style: string };
+            })[] = [];
             visit(root, (node) => {
                 if (
                     node.type !== "element" ||
@@ -103,12 +110,17 @@ const formatStyleAttributesPlugin: Plugin<void[], HastRoot, HastRoot> =
                 ) {
                     return;
                 }
-                const style = node.properties.style;
-                let formattedStyle = prettyPrintCss(style).trim();
-                // formattedStyle has newlines separating properties, but we want spaces.
-                formattedStyle = formattedStyle.replace(/\n/g, " ");
-                node.properties.style = formattedStyle;
+                nodesToFormat.push(node as any);
             });
+            await Promise.all(
+                nodesToFormat.map(async (node) => {
+                    const style = node.properties.style;
+                    let formattedStyle = (await prettyPrintCss(style)).trim();
+                    // formattedStyle has newlines separating properties, but we want spaces.
+                    formattedStyle = formattedStyle.replace(/\n/g, " ");
+                    node.properties.style = formattedStyle;
+                })
+            );
         };
     };
 
@@ -142,15 +154,15 @@ const processor = unified()
  *  - sorting class names in alphabetical order
  *  - pretty printing
  */
-export function normalizeFragmentHtml(source: string): string {
+export async function normalizeFragmentHtml(source: string): Promise<string> {
     let parsed = fromHtml(source) as HastRoot;
-    parsed = processor.runSync(parsed);
+    parsed = await processor.run(parsed);
     let html = toHtml(parsed as any);
     try {
         // We print once with a small printWidth to force whitespace to turn into newlines.
         // We then use a larger print width to let newlines become unwrapped for easy viewing.
-        html = printPrettier(html, 10);
-        html = printPrettier(html, 50);
+        html = await printPrettier(html, 10);
+        html = await printPrettier(html, 50);
     } catch (e) {}
 
     return html.trim();

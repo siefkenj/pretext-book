@@ -24,7 +24,7 @@ describe("Fragments", () => {
             new URL("./rendered-fragments/p1.html", import.meta.url).pathname,
             { encoding: "utf-8" }
         );
-        expect(extractFragmentFromHtml(source)).toEqual(
+        expect(await extractFragmentFromHtml(source)).toEqual(
             '<h2 class="heading hide-type">\n' +
                 '<span class="type">Chapter</span> <span class="codenumber"></span> <span class="title"></span>\n' +
                 "</h2>\n" +

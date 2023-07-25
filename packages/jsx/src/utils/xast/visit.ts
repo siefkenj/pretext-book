@@ -224,7 +224,7 @@ export function visit<Opts extends VisitOptions>(
                 const grandparents =
                     node.type === "root" ? parents : [node, ...parents];
 
-                const result = walk(node.children, {
+                const result = walk(node.children as XastElement[], {
                     key,
                     index: undefined,
                     parents: grandparents,

@@ -57,7 +57,7 @@ export const ensureLiHasPChildrenPlugin: Plugin<
                 const firstChild = significantChildren[0];
                 if (significantChildren.length !== 1 || !isBlockElement(firstChild)) {
                     node.children = [
-                        { type: "element", name: "p", children: node.children },
+                        { type: "element", name: "p", children: node.children, attributes: {} },
                     ];
                 }
                 if (titleElement) {

@@ -42,6 +42,7 @@ export const ensureWrapPiInUnits: Plugin<
                                         value: "\\pi",
                                     },
                                 ],
+                                attributes: {},
                             });
                         }
                         if (part.length > 0) {
