@@ -53,7 +53,13 @@ import {
     Insert,
     TexLogo,
     Dl,
+    C,
+    Image,
+    Sidebyside,
+    Stack,
+    Pre,
 } from "./components";
+import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
 const REPLACERS = [
     multiReplacer({
@@ -131,6 +137,11 @@ const REPLACERS = [
         tex: { component: TexLogo },
         latex: { component: TexLogo },
         dl: { component: Dl },
+        c: { component: C },
+        image: { component: Image },
+        sidebyside: { component: Sidebyside },
+        stack: { component: Stack },
+        pre: { component: Pre },
     }),
 ];
 
@@ -150,6 +161,7 @@ export function pretextToHtml(source: string) {
                 replacerFactoryWithId("book", Book),
                 replacerFactoryWithId("article", Article),
                 ...REPLACERS,
+                replaceInvalidReactAndHtmlElements(),
             ],
         });
 

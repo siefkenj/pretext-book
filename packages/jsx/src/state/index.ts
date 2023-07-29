@@ -139,7 +139,7 @@ export class PretextState {
                     number++;
                 }
             },
-            { test: isElement }
+            { test: isElement },
         );
     }
 
@@ -156,7 +156,7 @@ export class PretextState {
             if (isElement(node) && this._xastDivisions.has(node)) {
                 this._xastNodeToTocDivisionId.set(
                     node,
-                    node.attributes?.["xml:id"] || ""
+                    node.attributes?.["xml:id"] || "",
                 );
                 return;
             }
@@ -166,7 +166,7 @@ export class PretextState {
                 if (isElement(parent) && this._xastDivisions.has(parent)) {
                     this._xastNodeToTocDivisionId.set(
                         node,
-                        parent.attributes?.["xml:id"] || ""
+                        parent.attributes?.["xml:id"] || "",
                     );
                     break;
                 }
@@ -274,6 +274,14 @@ export class PretextState {
         return `${parentDivision.codenumber}.${
             eqRawNum - parentDivisionNumber + 1
         }`;
+    }
+
+    /**
+     * Returns whether `node` is a child of an element with name `parentName`.
+     */
+    isChildOf(node: XastNode, parentName: string) {
+        const parent = this._parentMap.get(node);
+        return parent && isElement(parent) && parent.name === parentName;
     }
 }
 

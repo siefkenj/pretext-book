@@ -1,7 +1,9 @@
 import React from "react";
 import { PretextStateContext } from "../state";
 import { ReplacerComponent } from "../replacers/replacer-factory";
-import { XastElement } from "@pretext-book/jsx/src/utils/xast";
+import { XastElement } from "../../../utils/xast";
+import { computeMargins } from "../../../utils/compute-margins";
+import { isElement } from "../../../utils/tools";
 
 const weightNum = { major: "3", medium: "2", minor: "1", none: "0" };
 const weightAttrNum = (s: string | null | undefined) => {
@@ -30,21 +32,21 @@ const hAlignAttrAbbr = (s: string | null | undefined) => {
 const cellClassName = function (
     tabular: XastElement,
     row_index: number,
-    col_index: number
+    col_index: number,
 ): string {
     const rows = tabular.children.filter(
-        (n): n is XastElement => n.type == "element" && n.name == "row"
+        (n): n is XastElement => n.type == "element" && n.name == "row",
     );
     const row: XastElement = rows[row_index];
 
     // col may be undefined
     const cols = tabular.children.filter(
-        (n): n is XastElement => n.type == "element" && n.name == "col"
+        (n): n is XastElement => n.type == "element" && n.name == "col",
     );
     const col: XastElement | undefined = cols[col_index];
 
     const cells = row.children.filter(
-        (n): n is XastElement => n.type == "element" && n.name == "cell"
+        (n): n is XastElement => n.type == "element" && n.name == "cell",
     );
     const cell: XastElement = cells[col_index];
 
@@ -149,52 +151,67 @@ const cellClassName = function (
 export const Tabular: ReplacerComponent = function ({ node }) {
     const state = React.useContext(PretextStateContext);
     const rows = node.children.filter(
-        (n): n is XastElement => n.type == "element" && n.name == "row"
+        (n): n is XastElement => n.type == "element" && n.name == "row",
+    );
+    const { marginLeft, marginRight, width } = computeMargins(node);
+
+    const tabularInner = (
+        <table className="tabular">
+            <tbody>
+                {rows.map((row, row_index) => {
+                    const isHeader = row.attributes?.header == "yes";
+                    // CellTag is `th` or `td`
+                    const CellTag: keyof JSX.IntrinsicElements = `t${
+                        isHeader ? "h" : "d"
+                    }`;
+                    const cells = row.children.filter(
+                        (n): n is XastElement =>
+                            n.type == "element" && n.name == "cell",
+                    );
+                    return (
+                        <tr
+                            className={
+                                isHeader ? "header-horizontal" : undefined
+                            }
+                            key={row_index}
+                        >
+                            {cells.map((cell, col_index) => {
+                                return (
+                                    <CellTag
+                                        className={cellClassName(
+                                            node,
+                                            row_index,
+                                            col_index,
+                                        )}
+                                        scope={isHeader ? "col" : undefined}
+                                        key={col_index}
+                                    >
+                                        {state.processContent(cell.children)}
+                                    </CellTag>
+                                );
+                            })}
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
     );
 
-    return (
-        <div className="natural-width tabular-box">
-            <table className="tabular">
-                <tbody>
-                    {rows.map((row, row_index) => {
-                        const isHeader = row.attributes?.header == "yes";
-                        // CellTag is `th` or `td`
-                        const CellTag: keyof JSX.IntrinsicElements = `t${
-                            isHeader ? "h" : "d"
-                        }`;
-                        const cells = row.children.filter(
-                            (n): n is XastElement =>
-                                n.type == "element" && n.name == "cell"
-                        );
-                        return (
-                            <tr
-                                className={
-                                    isHeader ? "header-horizontal" : undefined
-                                }
-                                key={row_index}
-                            >
-                                {cells.map((cell, col_index) => {
-                                    return (
-                                        <CellTag
-                                            className={cellClassName(
-                                                node,
-                                                row_index,
-                                                col_index
-                                            )}
-                                            scope={isHeader ? "col" : undefined}
-                                            key={col_index}
-                                        >
-                                            {state.processContent(
-                                                cell.children
-                                            )}
-                                        </CellTag>
-                                    );
-                                })}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
-    );
+    if (state.isChildOf(node, "sidebyside")) {
+        // <tabular>s that are children of <sidebyside> are treaded specially
+        // https://github.com/PreTeXtBook/pretext/blob/9bce7e55911fb14e3e6e362bfa78bd6431c38597/xsl/pretext-html.xsl#L7866-L7867
+        return tabularInner;
+    }
+
+    // As per
+    // https://github.com/PreTeXtBook/pretext/blob/9bce7e55911fb14e3e6e362bfa78bd6431c38597/xsl/pretext-html.xsl#L7830-L7831
+    // Only wrap in a div.natural-width if there are no margins or width is auto
+    if (
+        !node.attributes.margins &&
+        (!node.attributes.width || node.attributes.width == "auto")
+    ) {
+        return <div className="natural-width tabular-box">{tabularInner}</div>;
+    }
+
+    return tabularInner;
 };

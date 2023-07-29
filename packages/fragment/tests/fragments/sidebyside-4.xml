@@ -1,0 +1,19 @@
+<FRAGMENT>
+    <sidebyside widths="40% 50%">
+        <pre>
+            <cline>program HelloWorld;</cline>
+            <cline>begin</cline>
+            <cline>  WriteLn('Hello, world!');</cline>
+            <cline>end.</cline>
+        </pre>
+        <pre>
+        #include
+
+        int main()
+        {
+            std::cout &lt;&lt; "Hello, world!";
+            return 0;
+        }
+        </pre>
+    </sidebyside>
+</FRAGMENT>

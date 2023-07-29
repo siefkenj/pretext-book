@@ -36,3 +36,8 @@ export { Icon } from "./icon";
 export { Insert } from "./insert";
 export { TexLogo } from "./tex-logo";
 export { Dl } from "./dl";
+export { C } from "./c";
+export { Image } from "./image";
+export { Sidebyside } from "./sidebyside";
+export { Stack } from "./stack";
+export { Pre } from "./pre";

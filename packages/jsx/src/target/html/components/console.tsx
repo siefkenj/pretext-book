@@ -5,47 +5,24 @@ import { multiElmMatcher } from "../../../utils/tools";
 import { XastElement } from "../../../utils/xast";
 import { toString } from "xast-util-to-string";
 import { sanitizeText } from "../../../utils/pretext-text-utilities";
+import { computeMargins } from "../../../utils/compute-margins";
 
 const isConsoleContent = multiElmMatcher(["prompt", "input", "output"]);
 
 export const Console: ReplacerComponent = function ({ node }) {
     const children = node.children.filter((n) =>
-        isConsoleContent(n)
+        isConsoleContent(n),
     ) as XastElement[];
 
-    let [leftMargin, rightMargin] = node.attributes?.margins
-        ?.trim()
-        ?.split(/\s+/)
-        ?.map((m) => Number(m.replace("%", ""))) || [0, 0];
-    if (rightMargin == null) {
-        rightMargin = leftMargin;
-    }
-    if (Number.isNaN(leftMargin)) {
-        leftMargin = 0;
-    }
-    if (Number.isNaN(rightMargin)) {
-        rightMargin = 0;
-    }
-    let width = Number((node.attributes?.width || "100%").replace("%", ""));
-    if (Number.isNaN(width)) {
-        width = 100;
-    }
-    // If the margins are not specified, we need to calculate them from the width
-    if (leftMargin == null || rightMargin == null) {
-        leftMargin = (100 - width) / 2;
-        rightMargin = (100 - width) / 2;
-    }
-    if (width + leftMargin + rightMargin !== 100) {
-        width = 100 - (leftMargin + rightMargin);
-    }
+    const { width, marginLeft, marginRight } = computeMargins(node);
 
     return (
         <div
             className="code-box"
             style={{
                 width: `${width}%`,
-                marginLeft: `${leftMargin}%`,
-                marginRight: `${rightMargin}%`,
+                marginLeft: `${marginLeft}%`,
+                marginRight: `${marginRight}%`,
             }}
         >
             <pre className="console">
