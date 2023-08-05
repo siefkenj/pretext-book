@@ -1,0 +1,10 @@
+<FRAGMENT parents="p">
+	<mdn>
+                    <mrow xml:id="equation-local-star" tag="dstar">c^2 \amp = a^2+b^2</mrow>
+                    <mrow xml:id="equation-local-dagger" tag="ddagger">c^2 \amp = a^2+b^2</mrow>
+                    <mrow xml:id="equation-local-daggerdbl" tag="ddaggerdbl">c^2 \amp = a^2+b^2</mrow>
+                    <mrow xml:id="equation-local-hash" tag="dhash">c^2 \amp = a^2+b^2</mrow>
+                    <mrow xml:id="equation-local-maltese" tag="dmaltese">c^2 \amp = a^2+b^2</mrow>
+                    <mrow>z^2 \amp = x^2+y^2</mrow>
+                </mdn>
+</FRAGMENT>

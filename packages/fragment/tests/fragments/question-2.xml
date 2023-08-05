@@ -1,0 +1,14 @@
+<FRAGMENT parents="section">
+	<question xml:id="sample-question">
+                        <title>An Example of a Question</title>
+                        <statement>
+                            <p>Any kind of question can be marked as such with <tag>question</tag>.  Or similarly, as a <tag>problem</tag>.  They behave identically to <c>example</c>s, such as the one preceding and are numbered along with theorems, examples. etc.</p>
+                        </statement>
+                        <solution>
+                            <p>You can have a solution. Or several, even if you don't ask a question.</p>
+                        </solution>
+                        <solution>
+                            <p>See?</p>
+                        </solution>
+                    </question>
+</FRAGMENT>

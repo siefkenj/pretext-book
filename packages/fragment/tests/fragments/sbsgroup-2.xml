@@ -1,0 +1,14 @@
+<FRAGMENT>
+	<sbsgroup widths="5% 5% 5%" margins="30%">
+                        <sidebyside>
+                            <p>One.</p>
+                            <p>Two.</p>
+                            <p>Three.</p>
+                        </sidebyside>
+                        <sidebyside widths="25% 20% 15%" margins="5%">
+                            <p>Four.</p>
+                            <p>Five.</p>
+                            <p>Six.</p>
+                        </sidebyside>
+                    </sbsgroup>
+</FRAGMENT>

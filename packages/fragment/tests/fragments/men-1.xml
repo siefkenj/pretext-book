@@ -1,0 +1,3 @@
+<FRAGMENT parents="p">
+	<men xml:id="equation-alternate-FTC">\frac{d}{dx}\definiteintegral{a}{x}{f(t)}{t}=f(x)</men>
+</FRAGMENT>

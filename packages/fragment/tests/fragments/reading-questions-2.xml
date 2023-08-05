@@ -1,0 +1,18 @@
+<FRAGMENT parents="section subsection subsubsection">
+	<reading-questions>
+                        <title>What Did You Learn?</title>
+                        <exercise>
+                            <statement>
+                                <p>A mock exercise to appease validation.</p>
+                            </statement>
+                            <answer>
+                                <p>An answer so there is something to appear in a <tag>solutions</tag>.</p>
+                            </answer>
+                        </exercise>
+                        <exercise>
+                            <statement>
+                                <p>And a second to help with formatting the division heading.</p>
+                            </statement>
+                        </exercise>
+                    </reading-questions>
+</FRAGMENT>

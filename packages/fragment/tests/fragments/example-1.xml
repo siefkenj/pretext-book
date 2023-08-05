@@ -1,0 +1,11 @@
+<FRAGMENT parents="section subsection subsubsection">
+	<example xml:id="example-math-title">
+                        <title>An Example of with <m>\frac12</m> math formula <m>\displaystyle{\int e^x \, dx}</m> in the title</title>
+                        <statement>
+                            <p>
+                               Just for testing math in knowls,
+                               and also extra whitespace in a <tag>p</tag>.
+                            </p>
+                        </statement>
+                    </example>
+</FRAGMENT>

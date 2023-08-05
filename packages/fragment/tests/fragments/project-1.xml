@@ -1,0 +1,10 @@
+<FRAGMENT>
+	<project>
+                            <statement>
+                                <p>A simple project, no tasks, just an answer.</p>
+                            </statement>
+                            <answer>
+                                <p>Here's the answer we are looking for.</p>
+                            </answer>
+                        </project>
+</FRAGMENT>

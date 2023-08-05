@@ -1,0 +1,14 @@
+<FRAGMENT parents="section subsection exercises">
+	<exercisegroup cols="2">
+                        <exercise>
+                            <statement>
+                                <image margins="0% 70%" source="images/nz-landscape.jpg"></image>
+                            </statement>
+                        </exercise>
+                        <exercise>
+                            <statement>
+                                <image source="images/nz-landscape.jpg"></image>
+                            </statement>
+                        </exercise>
+                    </exercisegroup>
+</FRAGMENT>

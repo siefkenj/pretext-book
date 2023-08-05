@@ -1,0 +1,16 @@
+<FRAGMENT>
+	<listing>
+                        <caption>Raspberry Pi</caption>
+                        <console>
+                            <prompt>$ </prompt>
+                            <input>gcc -Wall -o intAndFloat intAndFloat.c</input>
+                            <prompt>$ </prompt>
+                            <input>./intAndFloat</input>
+                            <output>
+                            The integer is 19088743 and the float is 19088.742188
+                            </output>
+                            <prompt>$ </prompt>
+                            <input></input>
+                        </console>
+                    </listing>
+</FRAGMENT>

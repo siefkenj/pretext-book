@@ -1,0 +1,10 @@
+<FRAGMENT parents="section">
+	<table xml:id="table-minimal">
+                <title>One entry table</title>
+                <tabular top="medium">
+                    <row bottom="medium" left="minor">
+                        <cell right="minor">One</cell>
+                    </row>
+                </tabular>
+            </table>
+</FRAGMENT>

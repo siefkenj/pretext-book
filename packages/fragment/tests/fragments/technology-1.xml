@@ -1,0 +1,14 @@
+<FRAGMENT>
+	<technology>
+                        <title>Sample Use of Sage</title>
+
+                        <p>This would be a good place to talk about Sage, including a cell or two.</p>
+
+                        <sage>
+                            <input>diff(x^4, x)</input>
+                            <output>4*x^3</output>
+                        </sage>
+
+                        <p>But you might want to describe how to use some other calculator, or maybe some numerical method.</p>
+                    </technology>
+</FRAGMENT>

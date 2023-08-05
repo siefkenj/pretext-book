@@ -1,0 +1,15 @@
+<FRAGMENT parents="section subsection subsubsection">
+	<exploration>
+                        <title>Exploring Explorations</title>
+
+                        <statement>
+                            <p>This is an <tag>exploration</tag>.<idx><h>exploration</h></idx>  Other similar possibilities are <tag>project</tag><idx><h>project</h></idx>, <tag>activity</tag><idx><h>activity</h></idx>, <tag>task</tag><idx><h>task</h></idx>, and <tag>investigation</tag><idx><h>investigation</h></idx>.</p>
+
+                            <p>Note that projects, activities, explorations, tasks and investigations <em>share</em> the independent numbering scheme, so it is really only intended you use one of these.  If you want a variant of the name (<eg></eg> <q>Directed Activity</q>) you can use the <tag>rename</tag><idx><h>rename an environment</h></idx> facility (<xref ref="rename-facility" text="type-global"></xref>).</p>
+                        </statement>
+
+                        <solution>
+                            <p>This is a <q>solution</q> to the exploration.  In practice, you might choose to not make this visible for students, but instead include it as part of some guidance you might provide to instructors (<eg></eg> an <pubtitle>Instructor's Manual</pubtitle>).</p>
+                        </solution>
+                    </exploration>
+</FRAGMENT>

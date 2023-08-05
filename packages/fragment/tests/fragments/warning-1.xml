@@ -1,0 +1,9 @@
+<FRAGMENT>
+	<warning>
+                    <title>Icons, <c>xelatex</c>, and Fonts</title>
+
+                    <p>When processing.</p>
+
+                    <p>The Publisher's Guide contains some discussion about installing fonts into a system, as part of the documentation of creating a <latex></latex> style, and has particular warnings about only using the <latex></latex> <c>fontawesome</c> package as a vehicle for installing and accessing these fonts.</p>
+                </warning>
+</FRAGMENT>

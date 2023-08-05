@@ -1,0 +1,5 @@
+<FRAGMENT parents="section subsection example">
+	<sage>
+                        <input>2+2</input>
+                    </sage>
+</FRAGMENT>
