@@ -1,7 +1,6 @@
 import { Plugin } from "unified";
 import { toString } from "xast-util-to-string";
 import { PretextRoot } from "../../assets/types";
-import { PretextState } from "../../state";
 import { visit, XastElement } from "../../utils/xast";
 import {
     ASIDE_LIKE,
@@ -14,7 +13,7 @@ import {
     REMARK_LIKE,
     THEOREM_LIKE,
 } from "../helpers/entities";
-import { isDivision, isRefable, isTitleNode } from "../helpers/special-tags";
+import { isTitleNode } from "../helpers/special-tags";
 
 type PluginOptions = void;
 
@@ -125,7 +124,7 @@ export const ensureTitlePunctuation: Plugin<
                     ensurePunctuation(node);
                 }
             },
-            { test: isTitleNode }
+            { test: isTitleNode },
         );
     };
 };

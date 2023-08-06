@@ -41,3 +41,7 @@ export { Image } from "./image";
 export { Sidebyside } from "./sidebyside";
 export { Stack } from "./stack";
 export { Pre } from "./pre";
+export { Foreign } from "./foreign";
+export { Angles } from "./angles";
+export { Attribution } from "./attribution";
+export { DblBrackets } from "./dblbrackets";

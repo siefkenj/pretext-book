@@ -58,6 +58,10 @@ import {
     Sidebyside,
     Stack,
     Pre,
+    Foreign,
+    Angles,
+    Attribution,
+    DblBrackets,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -142,6 +146,10 @@ const REPLACERS = [
         sidebyside: { component: Sidebyside },
         stack: { component: Stack },
         pre: { component: Pre },
+        foreign: { component: Foreign },
+        angles: { component: Angles },
+        attribution: { component: Attribution },
+        dblbrackets: { component: DblBrackets },
     }),
 ];
 
