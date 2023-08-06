@@ -1,0 +1,9 @@
+<FRAGMENT>
+	<project>
+                        <title>Start Exploring <pretext></pretext></title>
+
+                        <p>You could grab the <c>minimal.xml</c> file from the <c>examples/minimal</c> directory and experiment with that.</p>
+
+                        <p>Projects get their own independent numbering scheme, since they may be central to your textbook, workbook, or lab manual.  If you process this sample article with level for project numbering set to <c>0</c> then you will get consecutive numbers from the beginning of your book, starting with 1.</p>
+                    </project>
+</FRAGMENT>

@@ -1,0 +1,6 @@
+<FRAGMENT parents="section subsection">
+	<figure>
+                    <caption>New Zealand Landscape</caption>
+                    <image source="images/nz-landscape.jpg"></image>
+                </figure>
+</FRAGMENT>

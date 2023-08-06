@@ -1,0 +1,12 @@
+<FRAGMENT parents="section exercises">
+	<exercisegroup>
+                    <introduction><p>Introduction to second exercise group.</p></introduction>
+                    <exercise>
+                        <statement><p>First exercise of second group.</p></statement>
+                    </exercise>
+                    <exercise>
+                        <statement><p>Second exercise of second group.</p></statement>
+                    </exercise>
+                    <conclusion><p>Conclusion to second exercise group.</p></conclusion>
+                </exercisegroup>
+</FRAGMENT>

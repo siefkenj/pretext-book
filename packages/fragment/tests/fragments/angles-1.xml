@@ -1,0 +1,3 @@
+<FRAGMENT parents="p">
+	<angles>some <foreign>foreign words</foreign> inside angle brackets</angles>
+</FRAGMENT>

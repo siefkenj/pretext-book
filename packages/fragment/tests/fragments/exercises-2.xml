@@ -1,0 +1,23 @@
+<FRAGMENT parents="section">
+	<exercises>
+                <title>Clickable Area</title>
+
+                <p>Words, not code.</p>
+
+                <exercise label="clickable-text">
+                    <title>Clickable Areas, <q>Regular</q> Text</title>
+
+                    <statement>
+                        <p>Identify (by clicking, or by circling) all of the nouns in this quotation by Eleanor Roosevelt.</p>
+                    </statement>
+
+                    <areas>
+                        <p><q>The <area>future</area> belongs to <area correct="no">those</area> who believe in the <area correct="yes">beauty</area> of <area correct="no">their</area> <area>dreams</area>.</q></p>
+                    </areas>
+
+                    <feedback>
+                        <p>The incorrect words are pronouns.</p>
+                    </feedback>
+                </exercise>
+            </exercises>
+</FRAGMENT>

@@ -1,0 +1,6 @@
+<FRAGMENT parents="section">
+	<sage>
+                <input>integral(sin(x)^2, x)</input>
+                <output>1/2*x - 1/4*sin(2*x)</output>
+            </sage>
+</FRAGMENT>

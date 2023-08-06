@@ -1,0 +1,15 @@
+<FRAGMENT parents="section subsection">
+	<definition>
+                    <title>Group</title>
+                    <idx>Group</idx>
+                    <statement>
+                        <p><idx><h>group</h><h>definition</h></idx><idx><h>paragraph</h><h>initial list</h></idx><ol marker="a)">
+                            <li>There is a binary operation, denoted <q><m>\cdot</m></q>.</li>
+                            <li>The operation is associative.</li>
+                            <li>There is an identity element, <m>e</m>.</li>
+                            <li><p>For every element <m>b</m>, there is an element <m>c</m> (the inverse), such that <me>b\cdot c=c\cdot b = e</me>.</p></li>
+                        </ol></p>
+                        <p>If these conditions are met for a set <m>G</m>, then we say <m>G</m> is a <term>group</term>.</p>
+                    </statement>
+                </definition>
+</FRAGMENT>

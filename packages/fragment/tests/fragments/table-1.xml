@@ -1,0 +1,8 @@
+<FRAGMENT parents="section">
+	<table>
+                        <title>First</title>
+                        <tabular>
+                            <row><cell>One</cell></row>
+                        </tabular>
+                    </table>
+</FRAGMENT>

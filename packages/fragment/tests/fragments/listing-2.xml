@@ -1,0 +1,17 @@
+<FRAGMENT>
+	<listing>
+                    <caption>Hello, World! in C</caption>
+                        <program language="c">
+                            <input>
+                            /* Hello World program */
+
+                            #include&#x3C;stdio.h>
+
+                            main()
+                            {
+                                printf("Hello, World!");
+                            }
+                            </input>
+                        </program>
+                </listing>
+</FRAGMENT>

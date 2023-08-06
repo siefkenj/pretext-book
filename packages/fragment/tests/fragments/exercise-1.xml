@@ -1,0 +1,5 @@
+<FRAGMENT parents="section exercises">
+	<exercise>
+                    <p>Compute <m>\int 3x^2\,dx</m>.</p>
+                </exercise>
+</FRAGMENT>

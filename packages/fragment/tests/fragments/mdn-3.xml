@@ -1,0 +1,9 @@
+<FRAGMENT parents="p">
+	<mdn>
+                <mrow>{\mathcal L}(y')(s)  &#x26;= s {\mathcal L}(y)(s) - y(0) = s Y(s) - y(0)</mrow>
+                <mrow>{\mathcal L}(y'')(s) &#x26;= s^2 {\mathcal L}(y)(s) - sy(0) - y'(0)= s^2 Y(s) - sy(0) - y'(0).</mrow>
+                <intertext>And so it follows that,</intertext>
+                <mrow>{\mathcal L}(y')(s)^{++}  &#x26;= s {\mathcal L}(y)(s) - y(0) = s Y(s) - y(0)</mrow>
+                <mrow>{\mathcal L}(y'')(s)^{5} &#x26;= s^2 {\mathcal L}(y)(s) - sy(0) - y'(0)= s^2 Y(s) - sy(0) - y'(0).</mrow>
+            </mdn>
+</FRAGMENT>

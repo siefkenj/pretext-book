@@ -1,0 +1,9 @@
+<FRAGMENT>
+	<principle xml:id="principle-principle">
+                    <title>The Title Principle</title>
+
+                    <statement>
+                        <p>It is a fundamental principle that many elements can have a title.  Try it and see. If you get better formatting, then it is being recognized.  If it looks very plain, check the documentation and perhaps make a feature request.</p>
+                    </statement>
+                </principle>
+</FRAGMENT>

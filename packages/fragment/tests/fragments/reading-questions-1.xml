@@ -1,0 +1,14 @@
+<FRAGMENT parents="section">
+	<reading-questions>
+                <title>A Reading Question</title>
+
+                <exercise label="short-answer-question">
+                    <title>Short Answer</title>
+
+                    <statement>
+                        <p>This should be built with a text-box, <em>only</em> on a capable server (Runestone).  So it can be answered</p>
+                    </statement>
+                    <response></response>
+                </exercise>
+            </reading-questions>
+</FRAGMENT>

@@ -1,0 +1,16 @@
+<FRAGMENT parents="section subsection">
+	<example>
+                    <statement>
+                        <sbsgroup>
+                            <sidebyside>
+                                <p>Here is text block 1</p>
+                                <p>Here is text block 2</p>
+                            </sidebyside>
+                            <sidebyside>
+                                <p>Here is text block 3</p>
+                                <p>Here is text block 4</p>
+                            </sidebyside>
+                        </sbsgroup>
+                    </statement>
+                </example>
+</FRAGMENT>

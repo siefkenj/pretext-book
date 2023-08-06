@@ -1,0 +1,19 @@
+<FRAGMENT parents="section">
+	<objectives permid="dEf" xml:id="objectives-structures">
+                <title>Fundamental Structures</title>
+
+                <introduction>
+                    <p>This is an <tag>objectives</tag> element you are reading, and this is its introduction.  This early section has really grown and tries to accomplish many things.  Not all of them are listed here.</p>
+                </introduction>
+
+                <ol>
+                    <li xml:id="objective-structure">Display various <q>blocks</q>, fundamental units of the flow.</li>
+                    <li>More.</li>
+                    <li>Evermore.</li>
+                </ol>
+
+                <conclusion>
+                    <p>This concludes the (incomplete) objectives for this section, so now we can carry-on as before.</p>
+                </conclusion>
+            </objectives>
+</FRAGMENT>

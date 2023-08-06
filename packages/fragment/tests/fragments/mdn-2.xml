@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+	<mdn>
+                            <mrow xml:id="equation-use-FTC">\frac{d}{dx}\definiteintegral{a}{x}{f(t)}{t}&#x26;=\frac{d}{dx}\left(F(x)-F(a)\right)</mrow>
+                            <mrow number="no">&#x26;=\frac{d}{dx}F(x)-\frac{d}{dx}F(a)</mrow>
+                            <mrow xml:id="equation-conclude">&#x26;=f(x)-0 = f(x)</mrow>
+                        </mdn>
+</FRAGMENT>

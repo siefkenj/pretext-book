@@ -1,0 +1,8 @@
+<FRAGMENT>
+	<proposition xml:id="proposition-as-conundrum">
+                    <creator>Smith</creator>
+                    <statement>
+                        <p>Aah, this <em>is</em> confusing!</p>
+                    </statement>
+                </proposition>
+</FRAGMENT>

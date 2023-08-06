@@ -1,0 +1,17 @@
+<FRAGMENT>
+	<listing xml:id="listing-c-hello">
+                <caption>C Version of <q>Hello, World!</q></caption>
+                <program language="c">
+                    <input>
+                    /* Hello World program */
+
+                    #include&#x3C;stdio.h>
+
+                    main()
+                    {
+                        printf("Hello, World!");
+                    }
+                    </input>
+                </program>
+            </listing>
+</FRAGMENT>
