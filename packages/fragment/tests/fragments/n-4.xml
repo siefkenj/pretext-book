@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    <n pc="A" acc="doublesharp" octave="2"/>
+    <n pc="C" acc="sharp" octave="3"/>
+    <n pc="E" acc="flat" octave="4"/>
+    <n pc="G" acc="doubleflat" octave="5"/> 
+</FRAGMENT>
+
