@@ -2,13 +2,15 @@ import { Plugin } from "unified";
 import { toString } from "xast-util-to-string";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
-import { isElement } from "../../utils/tools";
-import { visit } from "../../utils/xast";
+import { isElement, multiElmMatcher } from "../../utils/tools";
+import { visit, XastElement } from "../../utils/xast";
 import { isDivision, isRefable, isTitleNode } from "../helpers/special-tags";
 
 type PluginOptions = {
     state: PretextState;
 };
+
+const alwaysId = multiElmMatcher(["sage"]);
 
 /**
  * Ensure that every ref-able element has a unique id, including divisions like <section>, <subsection>, etc.
@@ -26,17 +28,17 @@ export const ensureIdsPlugin: Plugin<
             (node) => {
                 if (node.attributes && node.attributes["xml:id"]) {
                     const isNotUnique = state.declareId(
-                        node.attributes["xml:id"]
+                        node.attributes["xml:id"],
                     );
                     if (isNotUnique) {
                         file.message(
                             `xml:id="${node.attributes["xml:id"]}" has already been declared`,
-                            node
+                            node,
                         );
                     }
                 }
             },
-            { test: isElement }
+            { test: isElement },
         );
 
         // Next we assign ids to all divisions. This comes before other refables because
@@ -63,7 +65,7 @@ export const ensureIdsPlugin: Plugin<
                 attrs["xml:id"] = newSlug;
                 node.attributes = attrs;
             },
-            { test: isDivision }
+            { test: isDivision },
         );
 
         // Finally add ids to all other refable elements.
@@ -89,7 +91,11 @@ export const ensureIdsPlugin: Plugin<
                 attrs["xml:id"] = newSlug;
                 node.attributes = attrs;
             },
-            { test: isRefable }
+            {
+                test: ((x) => isRefable(x) || alwaysId(x)) as (
+                    x: any,
+                ) => x is XastElement,
+            },
         );
     };
 };

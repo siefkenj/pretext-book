@@ -1,19 +1,21 @@
-<FRAGMENT parents="section subsection sidebyside figure image">
-	<sageplot variant="2d">
-                            def f(x):
-                               return RDF(1 / (1 + 25 * x^2))
-
-                            def runge():
-                                R = PolynomialRing(RDF, 'x')
-                                g = plot(f, -1, 1, rgbcolor='red', thickness=1)
-                                polynom = []
-                                for i, n in enumerate([6, 8, 10, 12]):
-                                  data = [(x, f(x)) for x in xsrange(-1, 1, 2 / (n - 1), include_endpoint=True)]
-                                  polynom.append(R.lagrange_polynomial(data))
-                                  g += list_plot(data, rgbcolor='black', pointsize=5)
-                                g += plot(polynom, -1, 1, fill=f, fillalpha=0.2, thickness=0)
-                                return g
-
-                            runge()
-                            </sageplot>
+<FRAGMENT parents="section subsection sidebyside figure">
+	<image xml:id="sageplot">
+		<sageplot variant="2d">
+			def f(x):
+			return RDF(1 / (1 + 25 * x^2))
+			
+			def runge():
+			R = PolynomialRing(RDF, 'x')
+			g = plot(f, -1, 1, rgbcolor='red', thickness=1)
+			polynom = []
+			for i, n in enumerate([6, 8, 10, 12]):
+			data = [(x, f(x)) for x in xsrange(-1, 1, 2 / (n - 1), include_endpoint=True)]
+			polynom.append(R.lagrange_polynomial(data))
+			g += list_plot(data, rgbcolor='black', pointsize=5)
+			g += plot(polynom, -1, 1, fill=f, fillalpha=0.2, thickness=0)
+			return g
+			
+			runge()
+		</sageplot>
+	</image>
 </FRAGMENT>

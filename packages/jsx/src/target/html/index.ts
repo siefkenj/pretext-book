@@ -43,7 +43,7 @@ import {
     Kbd,
     Url,
     Quantity,
-    Console,
+    ConsoleOrProgram,
     Tag,
     Tage,
     Attr,
@@ -62,6 +62,10 @@ import {
     Angles,
     Attribution,
     DblBrackets,
+    Q,
+    Listing,
+    Caption,
+    Sage,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -130,7 +134,7 @@ const REPLACERS = [
         kbd: { component: Kbd },
         url: { component: Url },
         quantity: { component: Quantity },
-        console: { component: Console },
+        console: { component: ConsoleOrProgram },
         tag: { component: Tag },
         tage: { component: Tage },
         attr: { component: Attr },
@@ -150,6 +154,11 @@ const REPLACERS = [
         angles: { component: Angles },
         attribution: { component: Attribution },
         dblbrackets: { component: DblBrackets },
+        q: { component: Q },
+        listing: { component: Listing, passId: true },
+        caption: { component: Caption },
+        program: { component: ConsoleOrProgram },
+        sage: { component: Sage, passId: true },
     }),
 ];
 
