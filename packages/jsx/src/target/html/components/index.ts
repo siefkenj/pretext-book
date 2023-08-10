@@ -49,3 +49,6 @@ export { Q } from "./q";
 export { Listing } from "./listing";
 export { Caption } from "./caption";
 export { Sage } from "./sage";
+export { ScaleDeg } from "./scaledeg";
+export { TimeSignature } from "./timesignature";
+export { Taxon } from "./taxon";

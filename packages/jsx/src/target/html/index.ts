@@ -66,6 +66,9 @@ import {
     Listing,
     Caption,
     Sage,
+    ScaleDeg,
+    TimeSignature,
+    Taxon,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -114,6 +117,17 @@ const REPLACERS = [
         degree: { component: SpecialSymbol },
         prime: { component: SpecialSymbol },
         dblprime: { component: SpecialSymbol },
+        langle: { component: SpecialSymbol },
+        rangle: { component: SpecialSymbol },
+        flat: { component: SpecialSymbol },
+        sharp: { component: SpecialSymbol },
+        natural: { component: SpecialSymbol },
+        doubleflat: { component: SpecialSymbol },
+        doublesharp: { component: SpecialSymbol },
+        lq: { component: SpecialSymbol },
+        rq: { component: SpecialSymbol },
+        lsq: { component: SpecialSymbol },
+        rsq: { component: SpecialSymbol },
         date: { component: Date },
         cd: { component: Cd },
         m: { component: M },
@@ -159,6 +173,9 @@ const REPLACERS = [
         caption: { component: Caption },
         program: { component: ConsoleOrProgram },
         sage: { component: Sage, passId: true },
+        scaledeg: { component: ScaleDeg },
+        timesignature: { component: TimeSignature },
+        taxon: { component: Taxon },
     }),
 ];
 
