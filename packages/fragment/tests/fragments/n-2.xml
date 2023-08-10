@@ -1,0 +1,8 @@
+<FRAGMENT parents="p">
+    <n pc="A" acc="doublesharp" />,
+    <n pc="B" acc="sharp" />,
+    <n pc="C" acc="flat" />,
+    <n pc="D" acc="doubleflat" />.
+</FRAGMENT>
+
+

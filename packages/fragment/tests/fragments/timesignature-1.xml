@@ -1,0 +1,7 @@
+<FRAGMENT parents="p">
+    Some time signatures are
+    <timesignature top="4" bottom="4"/>,
+    <timesignature top="3" bottom="8"/>,
+    and <timesignature top="2\frac{1}{2}" bottom="4"/>.
+</FRAGMENT>
+
