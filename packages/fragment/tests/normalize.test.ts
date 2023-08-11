@@ -19,12 +19,12 @@ describe("normalize HTML", () => {
         // Normalize ids
         source = `<li id="foo">bar</li>`;
         expect(await normalizeFragmentHtml(source)).toEqual(
-            `<li id="id-0">bar</li>`
+            `<li id="id-0">bar</li>`,
         );
 
         source = `<li id="foo"><i id="baz">bar</i></li>`;
         expect(await normalizeFragmentHtml(source)).toEqual(
-            `<li id="id-0"><i id="id-1">bar</i></li>`
+            `<li id="id-0">\n  <i id="id-1">bar</i>\n</li>`,
         );
     });
 
@@ -32,7 +32,7 @@ describe("normalize HTML", () => {
         let source: string;
         source = `<li id="foo" class="bees" wos="waz">bar</li>`;
         expect(await normalizeFragmentHtml(source)).toEqual(
-            `<li class="bees" id="id-0" wos="waz">bar</li>`
+            `<li class="bees" id="id-0" wos="waz">bar</li>`,
         );
     });
 
@@ -40,7 +40,7 @@ describe("normalize HTML", () => {
         let source: string;
         source = `<li class="bees alice zed">bar</li>`;
         expect(await normalizeFragmentHtml(source)).toEqual(
-            `<li class="alice bees zed">bar</li>`
+            `<li class="alice bees zed">bar</li>`,
         );
     });
 
@@ -69,10 +69,10 @@ describe("normalize HTML", () => {
       <div class="para" id="p-1">Some text!</div>
       `;
         expect(await normalizeFragmentHtml(source1)).toEqual(
-            await normalizeFragmentHtml(source2)
+            await normalizeFragmentHtml(source2),
         );
         expect(await normalizeFragmentHtml(source1)).not.toEqual(
-            await normalizeFragmentHtml(source3)
+            await normalizeFragmentHtml(source3),
         );
     });
 
@@ -87,13 +87,22 @@ appears twice
 <span class="times-sign">×</span>`;
 
         expect(await normalizeFragmentHtml(source1)).toEqual(
-            await normalizeFragmentHtml(source2)
+            await normalizeFragmentHtml(source2),
+        );
+
+        source1 = `<h1 class="heading">
+        <span class="title">Sonnet to Liberty</span>
+      </h1>`;
+        source2 = `<h1 class="heading"><span class="title">Sonnet to Liberty</span></h1>`;
+
+        expect(await normalizeFragmentHtml(source1)).toEqual(
+            await normalizeFragmentHtml(source2),
         );
     });
 
     it("Fragment matcher works", () => {
         expect(`<li id="foo">bar</li>`).toMatchFragment(
-            `<li id="id-0" >bar</li>`
+            `<li id="id-0" >bar</li>`,
         );
     });
 
@@ -102,7 +111,7 @@ appears twice
         source1 = `<div style="color: red; font-size: 12px;">Some text!</div>`;
         source2 = `<div style="color:red;font-size:12px;">Some text!</div>`;
         expect(await normalizeFragmentHtml(source1)).toEqual(
-            await normalizeFragmentHtml(source2)
+            await normalizeFragmentHtml(source2),
         );
     });
 });

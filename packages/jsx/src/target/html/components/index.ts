@@ -52,3 +52,4 @@ export { Sage } from "./sage";
 export { ScaleDeg } from "./scaledeg";
 export { TimeSignature } from "./timesignature";
 export { Taxon } from "./taxon";
+export { Poem } from "./poem";

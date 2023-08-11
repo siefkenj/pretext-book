@@ -18,7 +18,7 @@ function printPrettier(source: string, printWidth = 50) {
         // Setting a value to `insensitive` here will cause whitespace to
         // be totally ignored. We don't want that, but we do want to eagerly wrap
         // as much as possible. We attempt this by setting a small `printWidth`.
-        htmlWhitespaceSensitivity: "strict",
+        htmlWhitespaceSensitivity: "css",
         printWidth,
     });
 }

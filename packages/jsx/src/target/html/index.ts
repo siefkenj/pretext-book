@@ -69,6 +69,7 @@ import {
     ScaleDeg,
     TimeSignature,
     Taxon,
+    Poem,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -176,6 +177,7 @@ const REPLACERS = [
         scaledeg: { component: ScaleDeg },
         timesignature: { component: TimeSignature },
         taxon: { component: Taxon },
+        poem: { component: Poem, passId: true },
     }),
 ];
 

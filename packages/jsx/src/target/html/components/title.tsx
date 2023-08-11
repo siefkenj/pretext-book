@@ -22,13 +22,32 @@ export const Title: ReplacerComponent = function ({ node }) {
             })}
         >
             <span className="type">{displayName}</span>
-            { // See https://github.com/PreTeXtBook/pretext/blob/1e78f38800e6180fc70e2b3635055212f020e0a4/xsl/pretext-html.xsl#L862, which puts a space here and ...
-            " "}
+            {
+                // See https://github.com/PreTeXtBook/pretext/blob/1e78f38800e6180fc70e2b3635055212f020e0a4/xsl/pretext-html.xsl#L862, which puts a space here and ...
+                " "
+            }
             <span className="codenumber">
                 {makeCodenumber(tocItemInfo?.numbering || [])}
             </span>
-            { // ... here. These are invoked inside the template at line 783 referenced above.
-            " "}
+            {
+                // ... here. These are invoked inside the template at line 783 referenced above.
+                " "
+            }
+            <span className="title">{state.processContent(node.children)}</span>
+        </LeveledHeading>
+    );
+};
+
+/**
+ * A title element that is not associated with a division so it doesn't have, e.g., "Section 1.1" inserted
+ * in front of it. However, it is still wrapped in an <h#> as appropriate.
+ */
+export const AnonymousTitle: ReplacerComponent = function ({ node }) {
+    const state = React.useContext(PretextStateContext);
+    const tocItemInfo = state.getTocItemInfo(node);
+
+    return (
+        <LeveledHeading level={tocItemInfo?.level ?? 1}>
             <span className="title">{state.processContent(node.children)}</span>
         </LeveledHeading>
     );
