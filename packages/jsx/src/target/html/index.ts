@@ -71,6 +71,8 @@ import {
     Taxon,
     Poem,
     Figure,
+    Theorem,
+    Statement,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -180,6 +182,8 @@ const REPLACERS = [
         taxon: { component: Taxon },
         poem: { component: Poem, passId: true },
         figure: { component: Figure, passId: true },
+        theorem: { component: Theorem, passId: true },
+        statement: { component: Statement },
     }),
 ];
 
