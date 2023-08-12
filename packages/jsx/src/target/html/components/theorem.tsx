@@ -32,7 +32,7 @@ export const Theorem: ReplacerComponentWithId = function ({ node, id }) {
 
     // If we have an empty title, we omit it. Otherwise, we show the title, but without a number.
     let title: React.ReactNode = null;
-    if (toString(titleElement).trim().length > 0) {
+    if (!["", "."].includes(toString(titleElement).trim())) {
         title = (
             <React.Fragment>
                 {state.processContent(titleElement.children)}
