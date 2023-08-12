@@ -1,9 +1,11 @@
 import React from "react";
 import { ReplacerComponent } from "../replacers/replacer-factory";
-import { isElement } from "../../../utils/tools";
+import { elmMatcher, isElement } from "../../../utils/tools";
 import { toString } from "xast-util-to-string";
 import { computeMargins } from "../../../utils/compute-margins";
 import { PretextStateContext } from "../state";
+
+const isSagePlot = elmMatcher("sageplot");
 
 export const Image: ReplacerComponent = function ({ node }) {
     const state = React.useContext(PretextStateContext);
@@ -26,9 +28,10 @@ export const Image: ReplacerComponent = function ({ node }) {
     // If no file has been detected, we assume there is a latex-image that has been
     // auto-generated for us as an svg with name based on the xml:id
     if (urlInfo.fileName === "") {
-        urlInfo = getUrlComponents(
-            `latex-image/${node.attributes?.["xml:id"]}`,
-        );
+        const dirName = node.children.find(isSagePlot)
+            ? "sageplot"
+            : "latex-image";
+        urlInfo = getUrlComponents(`${dirName}/${node.attributes?.["xml:id"]}`);
         imageDir = "generated";
     }
 

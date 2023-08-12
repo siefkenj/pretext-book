@@ -1,6 +1,6 @@
 {
     "name": "@pretext-book/fragment",
-    "version": "1.0.0b6",
+    "version": "1.0.0b7",
     "description": "Take a PreTeXt fragment and create a document suitable for compilation",
     "main": "dist/index.js",
     "bin": {

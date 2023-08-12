@@ -53,3 +53,4 @@ export { ScaleDeg } from "./scaledeg";
 export { TimeSignature } from "./timesignature";
 export { Taxon } from "./taxon";
 export { Poem } from "./poem";
+export { Figure } from "./figure";

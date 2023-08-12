@@ -70,6 +70,7 @@ import {
     TimeSignature,
     Taxon,
     Poem,
+    Figure,
 } from "./components";
 import { replaceInvalidReactAndHtmlElements } from "./replacers/dummy-replacer";
 
@@ -178,6 +179,7 @@ const REPLACERS = [
         timesignature: { component: TimeSignature },
         taxon: { component: Taxon },
         poem: { component: Poem, passId: true },
+        figure: { component: Figure, passId: true },
     }),
 ];
 
