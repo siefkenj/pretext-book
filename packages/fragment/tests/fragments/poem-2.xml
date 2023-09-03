@@ -1,14 +1,31 @@
 <FRAGMENT>
 	<poem>
-                        <title>Sonnet to Liberty</title>
-                        <author>Oscar Wilde</author>
-                        <stanza>
-                            <line>Not that I love thy children, whose dull eyes</line>
-                            <line>See nothing save their own unlovely woe,</line>
-                            <line>Whose minds know nothing, nothing care to know,</line>
-                            <line>But that the roar of thy Democracies,</line>
-                            <line>Thy reigns of Terror, thy great Anarchies,</line>
-                            <line><ellipsis></ellipsis></line>
-                        </stanza>
-                    </poem>
+		<title>
+			Sonnet to Liberty
+		</title>
+		<author>
+			Oscar Wilde
+		</author>
+		<stanza>
+			<line>
+				Not that I love thy children, whose dull eyes
+			</line>
+			<line>
+				See nothing save their own unlovely woe,
+			</line>
+			<line>
+				Whose minds know nothing, nothing care to know,
+			</line>
+			<line>
+				But that the roar of thy Democracies,
+			</line>
+			<line>
+				Thy reigns of Terror, thy great Anarchies,
+			</line>
+			<line>
+				<ellipsis>
+				</ellipsis>
+			</line>
+		</stanza>
+	</poem>
 </FRAGMENT>

@@ -1,6 +1,5 @@
 import { Plugin } from "unified";
 import { toString } from "xast-util-to-string";
-import { toXml } from "xast-util-to-xml";
 import { ElementDocInfo } from "../../assets/generated-types";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";

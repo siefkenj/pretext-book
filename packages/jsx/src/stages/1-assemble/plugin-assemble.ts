@@ -1,6 +1,7 @@
 import { Plugin, unified } from "unified";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
+import { ensureCurlyQuotes } from "./plugin-ensure-curly-quotes";
 import { ensureIdsPlugin } from "./plugin-ensure-ids";
 import { ensureLiHasPChildrenPlugin } from "./plugin-ensure-li-have-p-children";
 import { ensureMathAbsorbsFollowingPunctuation } from "./plugin-ensure-math-absorbs-following-punctuation";
@@ -23,7 +24,7 @@ export const assemblePlugin: Plugin<PluginOptions[], PretextRoot, PretextRoot> =
         const { state } = options;
         if (!state) {
             throw new Error(
-                `Cannot use plugin without passing in a PretextState object`
+                `Cannot use plugin without passing in a PretextState object`,
             );
         }
         const processor = unified()
@@ -33,6 +34,7 @@ export const assemblePlugin: Plugin<PluginOptions[], PretextRoot, PretextRoot> =
             .use(ensureMathAbsorbsFollowingPunctuation)
             .use(ensureLiHasPChildrenPlugin)
             .use(ensureWrapPiInUnits)
+            .use(ensureCurlyQuotes)
             .use(ensureIdsPlugin, { state })
             .use(extractFrontmatterPlugin, { state });
         return (root, file) => {

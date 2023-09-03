@@ -3,6 +3,7 @@ import React from "react";
 import { ReplacerComponent } from "../replacers/replacer-factory";
 import { PretextStateContext } from "../state";
 import { XastElement } from "../../../utils/xast";
+import { interleaveWith } from "../../../utils/interleave";
 
 // From https://github.com/PreTeXtBook/pretext/blob/9bce7e55911fb14e3e6e362bfa78bd6431c38597/xsl/pretext-units.xsl#L38
 const PREFIX: Record<string, string> = {
@@ -118,10 +119,10 @@ export const Quantity: ReplacerComponent = function ({ node }) {
         | XastElement
         | undefined;
     let units = node.children.filter(
-        (n) => isElement(n) && n.name === "unit"
+        (n) => isElement(n) && n.name === "unit",
     ) as XastElement[];
     let pers = node.children.filter(
-        (n) => isElement(n) && n.name === "per"
+        (n) => isElement(n) && n.name === "per",
     ) as XastElement[];
 
     const displayMag = state.processContent(mag?.children || []);
@@ -142,14 +143,14 @@ export const Quantity: ReplacerComponent = function ({ node }) {
 
     const displayUnitsInner = interleaveWith(
         units.map((n, i) => <UnitOrPerInner key={i} node={n} />),
-        <React.Fragment>·</React.Fragment>
+        <React.Fragment>·</React.Fragment>,
     );
     const displayUnits =
         pers.length > 0 ? <sup>{displayUnitsInner}</sup> : displayUnitsInner;
 
     const displayPersInner = interleaveWith(
         pers.map((n, i) => <UnitOrPerInner key={i} node={n} />),
-        <React.Fragment>·</React.Fragment>
+        <React.Fragment>·</React.Fragment>,
     );
     const displayPers = displayPersInner.length > 0 && (
         <sub>{displayPersInner}</sub>
@@ -185,17 +186,4 @@ function UnitOrPerInner({ node }: { node: XastElement }) {
             {exp && <sup>{exp}</sup>}
         </React.Fragment>
     );
-}
-
-function interleaveWith(arr: React.ReactNode[], sep: React.ReactNode) {
-    const result: React.ReactNode[] = [];
-    for (let i = 0; i < arr.length; i++) {
-        result.push(arr[i]);
-        if (i < arr.length - 1) {
-            result.push(
-                <React.Fragment key={`added-${i}`}>{sep}</React.Fragment>
-            );
-        }
-    }
-    return result;
 }

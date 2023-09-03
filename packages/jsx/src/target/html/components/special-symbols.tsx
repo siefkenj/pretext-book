@@ -25,6 +25,17 @@ const SYMBOL_MAP: Record<string, React.ReactNode> = {
     prime: "′",
     dblprime: "″",
     times: <span className="times-sign">×</span>,
+    rangle: "〉",
+    langle: "〈",
+    sharp: "♯",
+    flat: "♭",
+    doublesharp: "𝄪",
+    doubleflat: "𝄫",
+    natural: "♮",
+    lq: "“",
+    rq: "”",
+    lsq: "‘",
+    rsq: "’",
 };
 
 export const SpecialSymbol: ReplacerComponent = function ({ node }) {

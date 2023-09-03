@@ -233,6 +233,17 @@ export class PretextState {
     }
 
     /**
+     * Get information about a <caption> element.
+     */
+    getCaptionInfo(node: XastElement) {
+        const parent = this._parentMap.get(node);
+        if (!parent || !isElement(parent)) {
+            throw new Error("Could not find parent of caption");
+        }
+        return this.getBlockInfo(parent);
+    }
+
+    /**
      * Get information about what type of label a list should have. This is done by walking up the
      * parents and counting down from the last one that has a specified label, cycling through the label types.
      */

@@ -1,5 +1,6 @@
 <FRAGMENT>
 	<listing>
+        <title>My Title</title>
         <caption>Raspberry Pi</caption>
         <console>
             <prompt>$ </prompt>

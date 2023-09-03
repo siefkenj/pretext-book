@@ -1,7 +1,6 @@
 {
     "name": "@pretext-book/jsx",
-    "version": "1.0.0",
-    "private": true,
+    "version": "1.0.1",
     "description": "Use JSX to render a pretext file",
     "main": "dist/index.js",
     "type": "module",

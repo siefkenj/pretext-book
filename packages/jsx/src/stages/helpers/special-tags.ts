@@ -96,6 +96,7 @@ export const NUMBERED_BLOCKS = new Set([
     "assumption",
     "example",
     "remark",
+    "listing",
 ]);
 
 /**

@@ -25,17 +25,22 @@ export const IntroOrConclusion: ReplacerComponentWithId = function ({
             }> to be a title element, but instead it was "${toXml({
                 ...titleElement,
                 children: [],
-            })}"`
+            })}"`,
         );
-        titleElement = { type: "element", name: "title", children: [], attributes: {} };
+        titleElement = {
+            type: "element",
+            name: "title",
+            children: [],
+            attributes: {},
+        };
     }
 
     // If we have an empty title, we omit it. Otherwise, we show the title, but without a number.
     let title: React.ReactNode = null;
-    if (toString(titleElement).trim().length > 0) {
+    if (!["", "."].includes(toString(titleElement).trim())) {
         title = (
             <LeveledHeading id={id} level={tocItemInfo?.level || 1}>
-                {state.processContent(titleElement.children)}.
+                {state.processContent(titleElement.children)}
             </LeveledHeading>
         );
     }

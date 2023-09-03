@@ -1,8 +1,7 @@
 import { Plugin } from "unified";
 import { PretextRoot } from "../../assets/types";
-import { PretextState } from "../../state";
 import { visit } from "../../utils/xast";
-import { isDivision, isRefable, isTitleNode } from "../helpers/special-tags";
+import { isDivision, isTitleNode } from "../helpers/special-tags";
 
 type PluginOptions = void;
 
@@ -20,7 +19,7 @@ export const ensureTitleElementsPlugin: Plugin<
             root,
             (node) => {
                 const titleIndex = node.children.findIndex((n) =>
-                    isTitleNode(n)
+                    isTitleNode(n),
                 );
                 if (titleIndex === -1) {
                     // No title element. Insert a dummy one.
@@ -37,7 +36,7 @@ export const ensureTitleElementsPlugin: Plugin<
                     node.children.unshift(titleElement);
                 }
             },
-            { test: isDivision }
+            { test: isDivision },
         );
     };
 };

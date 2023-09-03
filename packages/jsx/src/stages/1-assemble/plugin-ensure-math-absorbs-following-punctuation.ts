@@ -1,10 +1,7 @@
 import { Plugin } from "unified";
-import { Element } from "xast";
 import { PretextRoot } from "../../assets/types";
-import { elmMatcher, findLast, isElement, multiElmMatcher } from "../../utils/tools";
+import { findLast, isElement, multiElmMatcher } from "../../utils/tools";
 import { visit, XastElement } from "../../utils/xast";
-import { ASIDE_LIKE, FIGURE_LIKE } from "../helpers/entities";
-import { isTitleNode } from "../helpers/special-tags";
 
 type PluginOptions = void;
 

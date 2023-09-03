@@ -1,15 +1,16 @@
 import React from "react";
-import { PretextStateContext } from "../state";
 import { ReplacerComponent } from "../replacers/replacer-factory";
 import { multiElmMatcher } from "../../../utils/tools";
 import { XastElement } from "../../../utils/xast";
 import { toString } from "xast-util-to-string";
 import { sanitizeText } from "../../../utils/pretext-text-utilities";
 import { computeMargins } from "../../../utils/compute-margins";
+import { LANGUAGE_NAMES } from "../../../stages/helpers/languages";
 
 const isConsoleContent = multiElmMatcher(["prompt", "input", "output"]);
 
-export const Console: ReplacerComponent = function ({ node }) {
+export const ConsoleOrProgram: ReplacerComponent = function ({ node }) {
+    const type = node.name as "console" | "program";
     const children = node.children.filter((n) =>
         isConsoleContent(n),
     ) as XastElement[];
@@ -25,9 +26,20 @@ export const Console: ReplacerComponent = function ({ node }) {
                 marginRight: `${marginRight}%`,
             }}
         >
-            <pre className="console">
+            <pre className={type}>
                 {children.map((n, i) => {
                     const value = toString(n);
+                    // A <program> element only has one <input> as a child that is always rendered the same way
+                    if (type === "program") {
+                        return (
+                            <ProgramSource
+                                key={i}
+                                value={value}
+                                language={node.attributes["language"] || ""}
+                            />
+                        );
+                    }
+
                     switch (n.name) {
                         case "prompt":
                             return <Prompt key={i} value={value} />;
@@ -53,4 +65,20 @@ function Input({ value }: { value: string }) {
 
 function Output({ value }: { value: string }) {
     return <React.Fragment>{sanitizeText(value)}</React.Fragment>;
+}
+
+function ProgramSource({
+    value,
+    language,
+}: {
+    value: string;
+    language: string;
+}) {
+    const prismLanguage = LANGUAGE_NAMES[language]?.prism;
+
+    return (
+        <code className={`language-${prismLanguage}`}>
+            {sanitizeText(value)}
+        </code>
+    );
 }

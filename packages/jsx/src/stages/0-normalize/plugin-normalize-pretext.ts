@@ -9,6 +9,7 @@ import { removeUnneededTextPlugin } from "./plugin-remove-unneeded-text";
 import { stripCommentsAndFriendsPlugin } from "./plugin-strip-comments";
 import { createNodeToSchemaMapPlugin } from "../helpers/plugin-create-node-to-schema-map";
 import { findRootElementPlugin } from "./plugin-find-root-element";
+import { trimTitleAndFriendsPlugin } from "./plugin-trim-title-and-friends";
 
 /**
  * Unifiedjs plugin that removes normalizes a pretext document to conform to the pretext schema. E.g.,
@@ -30,7 +31,8 @@ export const normalizePretextPlugin: Plugin<void[], XastRoot, PretextRoot> =
                 nodeToSchemaMap,
                 validationErrors,
             })
-            .use(removeUnneededTextPlugin, { schema, nodeToSchemaMap });
+            .use(removeUnneededTextPlugin, { schema, nodeToSchemaMap })
+            .use(trimTitleAndFriendsPlugin);
 
         return (root: XastRoot, file) => {
             const processed = processor.runSync(root, file);

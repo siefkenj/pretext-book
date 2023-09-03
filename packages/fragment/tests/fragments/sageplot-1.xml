@@ -1,5 +1,12 @@
-<FRAGMENT parents="section subsection figure image">
-	<sageplot>
-                        plot(vector([-1,2]),color='red')+plot(vector([2,1]),color='blue')
-                        </sageplot>
+<FRAGMENT parents="section subsection">
+	<figure>
+		<caption>
+			Plot of two vectors
+		</caption>
+		<image xml:id="sageplot">
+			<sageplot>
+				plot(vector([-1,2]),color='red')+plot(vector([2,1]),color='blue')
+			</sageplot>
+		</image>
+	</figure>
 </FRAGMENT>
