@@ -18,12 +18,10 @@
         "jsx": "react-jsx",
         "composite": true,
         "paths": {
-        "@pretext-book/jsx": ["../jsx/src/index.ts"]
-        }
+            "@pretext-book/jsx": ["../jsx/src/index.ts"],
+            "@pretext-book/*": ["../*"]
+        },
     },
     "include": ["src"],
-    "references": [{ "path": "../jsx" }],
-    "paths": {
-        "@pretext-book/*": ["../*"]
-    }
+    "references": [{ "path": "../jsx" }]
 }
