@@ -1,9 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
 
-export const Angles: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return <React.Fragment>〈{state.processContent(node.children)}〉</React.Fragment>;
+export const AnglesPure: PureFunctionComponent = function ({ children }) {
+    return <React.Fragment>〈{children}〉</React.Fragment>;
 };
+
+export const Angles = passThroughChildren(AnglesPure);

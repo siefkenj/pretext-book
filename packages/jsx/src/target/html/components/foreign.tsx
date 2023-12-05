@@ -1,9 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Foreign: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return <i className="foreign">{state.processContent(node.children)}</i>;
+export const ForeignPure: PureFunctionComponent = function ({ children }) {
+    return <i className="foreign">{children}</i>;
 };
+
+export const Foreign = passThroughChildren(ForeignPure);

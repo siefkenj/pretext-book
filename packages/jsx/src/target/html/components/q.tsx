@@ -1,11 +1,12 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Q: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return (
-        <React.Fragment>“{state.processContent(node.children)}”</React.Fragment>
-    );
+export const QPure: PureFunctionComponent = function ({ children }) {
+    return <React.Fragment>“{children}”</React.Fragment>;
 };
+
+export const Q: ReplacerComponent = passThroughChildren(QPure);

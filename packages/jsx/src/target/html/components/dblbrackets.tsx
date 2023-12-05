@@ -1,11 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const DblBrackets: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return (
-        <React.Fragment>⟦{state.processContent(node.children)}⟧</React.Fragment>
-    );
+export const DblBracketsPure: PureFunctionComponent = function ({ children }) {
+    return <React.Fragment>⟦{children}⟧</React.Fragment>;
 };
+
+export const DblBrackets = passThroughChildren(DblBracketsPure);

@@ -1,13 +1,20 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponentWithId } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponentWithId,
+    ReplacerComponentWithId,
+} from "../replacers/replacer-factory";
+import { passThroughChildrenWithId } from "./utils/pass-through-children";
 
-export const Blockquote: ReplacerComponentWithId = function ({ node, id }) {
-    const state = React.useContext(PretextStateContext);
-
+export const BlockquotePure: PureFunctionComponentWithId = function ({
+    children,
+    id,
+}) {
     return (
         <blockquote id={id} className="blockquote">
-            {state.processContent(node.children)}
+            {children}
         </blockquote>
     );
 };
+
+export const Blockquote: ReplacerComponentWithId =
+    passThroughChildrenWithId(BlockquotePure);

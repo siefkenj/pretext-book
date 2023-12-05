@@ -1,5 +1,8 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 
 const SYMBOL_MAP: Record<string, React.ReactNode> = {
     copyright: "©",
@@ -38,8 +41,13 @@ const SYMBOL_MAP: Record<string, React.ReactNode> = {
     rsq: "’",
 };
 
+export const SpecialSymbolPure: PureFunctionComponent<{ name: string }> =
+    function ({ name }) {
+        const symbol = SYMBOL_MAP[name] || name;
+        return <React.Fragment>{symbol}</React.Fragment>;
+    };
+
 export const SpecialSymbol: ReplacerComponent = function ({ node }) {
-    const symbolName = node.name;
-    const symbol = SYMBOL_MAP[symbolName] || symbolName;
-    return <React.Fragment>{symbol}</React.Fragment>;
+    const name = node.name;
+    return <SpecialSymbolPure name={name} />;
 };

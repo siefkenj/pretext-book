@@ -3,7 +3,6 @@ import { PretextStateContext } from "../state";
 import { ReplacerComponent } from "../replacers/replacer-factory";
 import { XastElement } from "../../../utils/xast";
 import { computeMargins } from "../../../utils/compute-margins";
-import { isElement } from "../../../utils/tools";
 
 const weightNum = { major: "3", medium: "2", minor: "1", none: "0" };
 const weightAttrNum = (s: string | null | undefined) => {

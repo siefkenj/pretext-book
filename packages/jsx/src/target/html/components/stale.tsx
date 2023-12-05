@@ -1,9 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Stale: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return <s className="stale">{state.processContent(node.children)}</s>;
+export const StalePure: PureFunctionComponent = function ({ children }) {
+    return <s className="stale">{children}</s>;
 };
+
+export const Stale = passThroughChildren(StalePure);

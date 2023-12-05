@@ -1,9 +1,12 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 
-export const TexLogo: ReplacerComponent = function ({ node }) {
-    const name = node.name;
-
+export const TexLogoPure: PureFunctionComponent<{ name: string }> = function ({
+    name,
+}) {
     switch (name) {
         case "tex":
             return (
@@ -18,4 +21,9 @@ export const TexLogo: ReplacerComponent = function ({ node }) {
             L<span className="A">a</span>T<span className="E">e</span>X
         </span>
     );
+};
+
+export const TexLogo: ReplacerComponent = function ({ node }) {
+    const name = node.name;
+    return <TexLogoPure name={name} />;
 };

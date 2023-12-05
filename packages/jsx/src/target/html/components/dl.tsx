@@ -1,6 +1,9 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 import classNames from "classnames";
 import { elmMatcher } from "../../../utils/tools";
 import { XastElement } from "../../../utils/xast";
@@ -8,21 +11,29 @@ import { isTitleNode } from "../../../stages/helpers/special-tags";
 
 const isLi = elmMatcher("li");
 
-export const Dl: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    const liChildren = node.children.filter(isLi);
-
+export const DlPure: PureFunctionComponent<{ width?: string }> = function ({
+    children,
+    width,
+}) {
     return (
         <dl
             className={classNames("description-list", {
-                narrow: node.attributes?.width === "narrow",
+                narrow: width === "narrow",
             })}
         >
-            {liChildren.map((node, i) => (
-                <DlItem key={i} node={node} />
-            ))}
+            {children}
         </dl>
+    );
+};
+
+export const Dl: ReplacerComponent = function ({ node }) {
+    const liChildren = node.children.filter(isLi);
+    const children = liChildren.map((node, i) => (
+        <DlItem key={i} node={node} />
+    ));
+
+    return (
+        <DlPure width={node.attributes?.width || undefined}>{children}</DlPure>
     );
 };
 
@@ -41,4 +52,3 @@ function DlItem({ node }: { node: XastElement }) {
         </React.Fragment>
     );
 }
-

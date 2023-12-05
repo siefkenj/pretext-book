@@ -1,6 +1,9 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 import classNames from "classnames";
 
 const MARKER_TO_STYLE: Record<string, string> = {
@@ -10,11 +13,28 @@ const MARKER_TO_STYLE: Record<string, string> = {
     "": "no-marker",
 };
 
+export const UlPure: PureFunctionComponent<{
+    marker: string;
+    colStyle?: string;
+}> = function ({ children, marker, colStyle }) {
+    return (
+        <ul className={classNames(MARKER_TO_STYLE[marker], colStyle)}>
+            {children}
+        </ul>
+    );
+};
+
 export const Ul: ReplacerComponent = function ({ node }) {
     const state = React.useContext(PretextStateContext);
     const itemInfo = state.getListItemInfo(node);
-    let style: string | undefined = MARKER_TO_STYLE[itemInfo.marker];
-    let colStyle = node.attributes?.cols ? `cols${node.attributes?.cols}` : undefined;
+    const colStyle = node.attributes?.cols
+        ? `cols${node.attributes?.cols}`
+        : undefined;
+    const children = state.processContent(node.children);
 
-    return <ul className={classNames(style, colStyle)}>{state.processContent(node.children)}</ul>;
+    return (
+        <UlPure marker={itemInfo.marker} colStyle={colStyle}>
+            {children}
+        </UlPure>
+    );
 };

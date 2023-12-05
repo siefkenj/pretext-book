@@ -1,13 +1,12 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent, ReplacerComponentWithId } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Term: ReplacerComponent = function ({ node}) {
-    const state = React.useContext(PretextStateContext);
-
-    return (
-        <dfn  className="terminology">
-            {state.processContent(node.children)}
-        </dfn>
-    );
+export const TermPure: PureFunctionComponent = function ({ children }) {
+    return <dfn className="terminology">{children}</dfn>;
 };
+
+export const Term: ReplacerComponent = passThroughChildren(TermPure);

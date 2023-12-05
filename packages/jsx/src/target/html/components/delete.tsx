@@ -1,9 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Delete: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return <del className="delete">{state.processContent(node.children)}</del>;
+export const DeletePure: PureFunctionComponent = function ({ children }) {
+    return <del className="delete">{children}</del>;
 };
+
+export const Delete = passThroughChildren(DeletePure);

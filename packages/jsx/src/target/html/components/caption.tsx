@@ -1,7 +1,39 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 import { extractTitle, makeCodenumber } from "../../../utils/tools";
+
+export const CaptionPure: PureFunctionComponent<{
+    title: React.ReactNode;
+    caption: string;
+    codenumber: string;
+}> = function ({ children, title, caption, codenumber }) {
+    // If the title is not null, it should be wrapped in some spans
+    if (title) {
+        title = (
+            <span className="heading">
+                <span className="title">{title}</span>
+            </span>
+        );
+    }
+
+    return (
+        <figcaption>
+            <span className="type">{caption}</span>
+            <span className="space"> </span>
+            <span className="codenumber">
+                {codenumber}
+                <span className="period">.</span>
+            </span>
+            <span className="space"> </span>
+            {title}
+            {children}
+        </figcaption>
+    );
+};
 
 export const Caption: ReplacerComponent = function ({ node }) {
     const state = React.useContext(PretextStateContext);
@@ -13,31 +45,20 @@ export const Caption: ReplacerComponent = function ({ node }) {
     }
 
     const split = extractTitle(node.children);
-    let title: React.ReactElement | null = null;
-    if (split.title) {
-        title = (
-            <span className="heading">
-                <span className="title">
-                    {state.processContent(split.title.children)}
-                </span>
-            </span>
-        );
-    }
+
+    const title = split.title
+        ? state.processContent(split.title.children)
+        : null;
+    const caption = captionInfo.displayName;
+    const codenumber = makeCodenumber([
+        ...captionInfo.divisionInfo.numbering,
+        captionInfo.number || 0,
+    ]);
+    const children = state.processContent(split.rest);
 
     return (
-        <figcaption>
-            <span className="type">{captionInfo.displayName}</span>
-            <span className="space"> </span>
-            <span className="codenumber">
-                {makeCodenumber([
-                    ...captionInfo.divisionInfo.numbering,
-                    captionInfo.number || 0,
-                ])}
-                <span className="period">.</span>
-            </span>
-            <span className="space"> </span>
-            {title}
-            {state.processContent(split.rest)}
-        </figcaption>
+        <CaptionPure title={title} caption={caption} codenumber={codenumber}>
+            {children}
+        </CaptionPure>
     );
 };

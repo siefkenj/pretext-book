@@ -19,8 +19,8 @@ export const XRef: ReplacerComponent = function ({ node }) {
         return <a href={`#${targetInfo.id}`}>({targetInfo.codenumber})</a>;
     }
 
-    const localisedName = STRING_ID_TO_DISPLAY_NAME[targetInfo.tag];
-    const fullName = `${localisedName} ${targetInfo.codenumber}`;
+    const localizedName = STRING_ID_TO_DISPLAY_NAME[targetInfo.tag];
+    const fullName = `${localizedName} ${targetInfo.codenumber}`;
 
     return (
         <a

@@ -1,5 +1,8 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 
 // Icon list taken from
 // https://github.com/PreTeXtBook/pretext/blob/9bce7e55911fb14e3e6e362bfa78bd6431c38597/xsl/pretext-common.xsl#L3544-L3545
@@ -70,16 +73,22 @@ const ICONS: Record<string, { fontAwesome: string; unicode: string }> = {
     },
 };
 
-export const Icon: ReplacerComponent = function ({ node }) {
-    const name = node.attributes?.["name"] || "";
+export const IconPure: PureFunctionComponent<{ name: string }> = function ({
+    name,
+}) {
     const faNameBase = ICONS[name]?.fontAwesome || "";
     if (!faNameBase) {
         console.warn(
             `Could not find icon "${name}". Valid icon names are ${Object.keys(
-                ICONS
-            ).join(", ")}`
+                ICONS,
+            ).join(", ")}`,
         );
     }
 
     return <span className={`fas fa-${faNameBase}`}></span>;
+};
+
+export const Icon: ReplacerComponent = function ({ node }) {
+    const name = node.attributes?.["name"] || "";
+    return <IconPure name={name} />;
 };
