@@ -1,5 +1,8 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 import { multiElmMatcher } from "../../../utils/tools";
 import { XastElement } from "../../../utils/xast";
 import { toString } from "xast-util-to-string";
@@ -9,14 +12,12 @@ import { LANGUAGE_NAMES } from "../../../stages/helpers/languages";
 
 const isConsoleContent = multiElmMatcher(["prompt", "input", "output"]);
 
-export const ConsoleOrProgram: ReplacerComponent = function ({ node }) {
-    const type = node.name as "console" | "program";
-    const children = node.children.filter((n) =>
-        isConsoleContent(n),
-    ) as XastElement[];
-
-    const { width, marginLeft, marginRight } = computeMargins(node);
-
+export const ConsoleOrProgramPure: PureFunctionComponent<{
+    type: "console" | "program";
+    width: number;
+    marginLeft: number;
+    marginRight: number;
+}> = function ({ type, width, marginLeft, marginRight, children }) {
     return (
         <div
             className="code-box"
@@ -26,32 +27,50 @@ export const ConsoleOrProgram: ReplacerComponent = function ({ node }) {
                 marginRight: `${marginRight}%`,
             }}
         >
-            <pre className={type}>
-                {children.map((n, i) => {
-                    const value = toString(n);
-                    // A <program> element only has one <input> as a child that is always rendered the same way
-                    if (type === "program") {
-                        return (
-                            <ProgramSource
-                                key={i}
-                                value={value}
-                                language={node.attributes["language"] || ""}
-                            />
-                        );
-                    }
-
-                    switch (n.name) {
-                        case "prompt":
-                            return <Prompt key={i} value={value} />;
-                        case "input":
-                            return <Input key={i} value={value} />;
-                        case "output":
-                            return <Output key={i} value={value} />;
-                    }
-                    return null;
-                })}
-            </pre>
+            <pre className={type}>{children}</pre>
         </div>
+    );
+};
+
+export const ConsoleOrProgram: ReplacerComponent = function ({ node }) {
+    const type = node.name as "console" | "program";
+    const children = (
+        node.children.filter((n) => isConsoleContent(n)) as XastElement[]
+    ).map((n, i) => {
+        const value = toString(n);
+        // A <program> element only has one <input> as a child that is always rendered the same way
+        if (type === "program") {
+            return (
+                <ProgramSource
+                    key={i}
+                    value={value}
+                    language={node.attributes["language"] || ""}
+                />
+            );
+        }
+
+        switch (n.name) {
+            case "prompt":
+                return <Prompt key={i} value={value} />;
+            case "input":
+                return <Input key={i} value={value} />;
+            case "output":
+                return <Output key={i} value={value} />;
+        }
+        return null;
+    });
+
+    const { width, marginLeft, marginRight } = computeMargins(node);
+
+    return (
+        <ConsoleOrProgramPure
+            type={type}
+            width={width}
+            marginLeft={marginLeft}
+            marginRight={marginRight}
+        >
+            {children}
+        </ConsoleOrProgramPure>
     );
 };
 

@@ -1,10 +1,25 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponentWithId } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponentWithId,
+    ReplacerComponentWithId,
+} from "../replacers/replacer-factory";
 import { ElementTitle } from "../../../assets/generated-types";
 import { toXml } from "xast-util-to-xml";
 import { toString } from "xast-util-to-string";
 import { LeveledHeading } from "./title";
+
+export const IntroOrConclusionPure: PureFunctionComponentWithId<{
+    name: string;
+    title: React.ReactNode;
+}> = function ({ children, id, name, title }) {
+    return (
+        <section id={id} className={name}>
+            {title}
+            {children}
+        </section>
+    );
+};
 
 /**
  * Generates an html `<section>` tag for an `<introduction>` or `<conclusion>` element.
@@ -45,10 +60,11 @@ export const IntroOrConclusion: ReplacerComponentWithId = function ({
         );
     }
 
+    const children = state.processContent(rest);
+
     return (
-        <section id={id} className={node.name}>
-            {title}
-            {state.processContent(rest)}
-        </section>
+        <IntroOrConclusionPure id={id} name={node.name} title={title}>
+            {children}
+        </IntroOrConclusionPure>
     );
 };

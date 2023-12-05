@@ -1,32 +1,46 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
-import { XastNode } from "../../../utils/xast";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 import { toString } from "xast-util-to-string";
 import { isElement } from "../../../utils/tools";
 
-export const Taxon: ReplacerComponent = function ({ node }) {
-    const species = node.children.find(
-        (n) => isElement(n) && n.name === "species",
-    );
-    const genus = node.children.find((n) => isElement(n) && n.name === "genus");
-    let content: React.ReactNode = toString(node);
+export const TaxonPure: PureFunctionComponent<{
+    species?: string;
+    genus?: string;
+    base: string;
+}> = function ({ species, genus, base }) {
     if (species || genus) {
-        content = (
-            <React.Fragment>
-                {genus && <Genus key="genus" node={genus} />}
+        return (
+            <span className="taxon">
+                {genus && <Genus key="genus" value={genus} />}
                 {species && genus && " "}
-                {species && <Species key="species" node={species} />}
-            </React.Fragment>
+                {species && <Species key="species" value={species} />}
+            </span>
         );
     }
-
-    return <span className="taxon">{content}</span>;
+    return <span className="taxon">{base}</span>;
 };
 
-function Genus({ node }: { node: XastNode }) {
-    return <span className="genus">{toString(node)}</span>;
+export const Taxon: ReplacerComponent = function ({ node }) {
+    const speciesNode = node.children.find(
+        (n) => isElement(n) && n.name === "species",
+    );
+    const genusNode = node.children.find(
+        (n) => isElement(n) && n.name === "genus",
+    );
+    const base = toString(node);
+    const genus = genusNode && toString(genusNode);
+    const species = speciesNode && toString(speciesNode);
+
+    return <TaxonPure species={species} genus={genus} base={base} />;
+};
+
+function Genus({ value }: { value: string }) {
+    return <span className="genus">{value}</span>;
 }
 
-function Species({ node }: { node: XastNode }) {
-    return <span className="species">{toString(node)}</span>;
+function Species({ value }: { value: string }) {
+    return <span className="species">{value}</span>;
 }

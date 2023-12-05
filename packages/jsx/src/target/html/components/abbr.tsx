@@ -1,13 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
 
-export const Abbr: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return (
-        <abbr className="abbreviation">
-            {state.processContent(node.children)}
-        </abbr>
-    );
+export const AbbrPure: PureFunctionComponent = function ({ children }) {
+    return <abbr className="abbreviation">{children}</abbr>;
 };
+
+export const Abbr = passThroughChildren(AbbrPure);

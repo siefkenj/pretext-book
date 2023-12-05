@@ -1,13 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
 
-export const Acro: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return (
-        <abbr className="acronym">
-            {state.processContent(node.children)}
-        </abbr>
-    );
+export const AcroPure: PureFunctionComponent = function ({ children }) {
+    return <abbr className="acronym">{children}</abbr>;
 };
+
+export const Acro = passThroughChildren(AcroPure);

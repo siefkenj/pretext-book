@@ -1,5 +1,8 @@
 import React from "react";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponent,
+    ReplacerComponent,
+} from "../replacers/replacer-factory";
 
 const SYMBOL_MAP: Record<string, React.ReactNode> = {
     ad: "AD",
@@ -17,8 +20,14 @@ const SYMBOL_MAP: Record<string, React.ReactNode> = {
     viz: "viz.",
 };
 
+export const LatinAbbreviationPure: PureFunctionComponent<{ symbol: string }> =
+    function ({ symbol }) {
+        const symbolNode = SYMBOL_MAP[symbol] || symbol;
+        return <React.Fragment>{symbolNode}</React.Fragment>;
+    };
+
 export const LatinAbbreviation: ReplacerComponent = function ({ node }) {
-    const symbolName = node.name;
-    const symbol = SYMBOL_MAP[symbolName] || symbolName;
-    return <React.Fragment>{symbol}</React.Fragment>;
+    const symbol = node.name;
+
+    return <LatinAbbreviationPure symbol={symbol} />;
 };

@@ -1,10 +1,33 @@
 import React from "react";
 import { PretextStateContext } from "../state";
-import { ReplacerComponentWithId } from "../replacers/replacer-factory";
+import {
+    PureFunctionComponentWithId,
+    ReplacerComponentWithId,
+} from "../replacers/replacer-factory";
 import { isTitleNode } from "../../../stages/helpers/special-tags";
 import { toString } from "xast-util-to-string";
 import { LeveledHeading } from "./title";
 import { elmMatcher, makeCodenumber } from "../../../utils/tools";
+
+export const DefinitionPure: PureFunctionComponentWithId<{
+    level: number;
+    codenumber: string | number;
+    displayName: React.ReactNode;
+    title: React.ReactNode;
+    children: React.ReactNode;
+}> = function ({ id, level, codenumber, title, displayName, children }) {
+    return (
+        <article id={id} className="definition definition-like">
+            <LeveledHeading id={id} level={level}>
+                <span className="type">{displayName}</span>{" "}
+                <span className="codenumber">{codenumber}</span>
+                <span className="period">.</span>
+                {title}
+            </LeveledHeading>
+            {children}
+        </article>
+    );
+};
 
 export const Definition: ReplacerComponentWithId = function ({ node, id }) {
     const state = React.useContext(PretextStateContext);
@@ -41,17 +64,13 @@ export const Definition: ReplacerComponentWithId = function ({ node, id }) {
             : (blockInfo?.number || 0) + 1 || "";
 
     return (
-        <article id={id} className="definition definition-like">
-            <LeveledHeading
-                id={id}
-                level={(blockInfo?.divisionInfo?.level || 1) + 1}
-            >
-                <span className="type">{blockInfo?.displayName}</span>{" "}
-                <span className="codenumber">{codenumber}</span>
-                <span className="period">.</span>
-                {title}
-            </LeveledHeading>
-            {state.processContent(statementElement?.children || [])}
-        </article>
+        <DefinitionPure
+            id={id}
+            level={(blockInfo?.divisionInfo?.level || 1) + 1}
+            codenumber={codenumber}
+            displayName={blockInfo?.displayName || null}
+            title={title}
+            children={state.processContent(statementElement?.children || [])}
+        />
     );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import { PretextStateContext } from "../state";
-import { ReplacerComponent } from "../replacers/replacer-factory";
+import { PureFunctionComponent } from "../replacers/replacer-factory";
+import { passThroughChildren } from "./utils/pass-through-children";
 
-export const Em: ReplacerComponent = function ({ node }) {
-    const state = React.useContext(PretextStateContext);
-
-    return <em className="emphasis">{state.processContent(node.children)}</em>;
+export const EmPure: PureFunctionComponent = function ({ children }) {
+    return <em className="emphasis">{children}</em>;
 };
+
+export const Em = passThroughChildren(EmPure);
