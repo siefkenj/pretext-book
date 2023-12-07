@@ -62,6 +62,19 @@ npm install @pretext-book/fragment
 If you installed globally (and you've configured your path to include npm-install-executables), you should have
 access to the `pretext-fragment` command. Otherwise, `npx pretext-fragment` should execute the fragment cli.
 
+### Basic Usage
+
+If all you want to do is render a fragment to its corresponding HTML with a basic PreTeXt temple, you can use the `basic_compile.sh` command.
+
+```bash
+./basic_compile ./path/to/fragment.xml
+```
+The result will be stored in `./tmp_fragment_compile/fragment.html` file.
+
+### Advanced Usage
+
+If you want total control over the environments that the fragments are compiled with, you can use the `pretext-fragment` command directly.
+
 The fragment cli can be used to expand a template and to extract the contents of a template that has been rendered
 by PreTeXt. For example, if you have `@pretext-book/fragment` installed locally, you can run
 
