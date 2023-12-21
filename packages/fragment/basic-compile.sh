@@ -17,15 +17,10 @@ TARGET_DIR=${TARGET_DIR:-$TMP_DIR}
 
 IFS='' read -r -d '' PROJECT_PTX <<"EOF"
 <?xml version="1.0" encoding="utf-8"?>
-<project>
+<project ptx-version="2" source="." publication=".">
   <targets>
     <!-- To build this target, run `pretext build web` -->
-    <target name="web">
-      <format>html</format>
-      <source>main.ptx</source>
-      <publication>publication.ptx</publication>
-      <output-dir>output</output-dir>
-    </target>
+    <target name="web" format="html" />
   </targets>
 </project>
 EOF
