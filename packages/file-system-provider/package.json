@@ -34,13 +34,13 @@
     "homepage": "https://github.com/siefkenj/pretext-book#readme",
     "devDependencies": {
         "@types/glob": "^8.1.0",
-        "@types/node": "^20.10.1",
-        "esbuild": "^0.18.20",
+        "@types/node": "^20.14.3",
+        "esbuild": "^0.21.5",
         "esbuild-runner": "^2.2.2",
         "mkdirp": "^3.0.1",
-        "prettier": "^3.1.0",
-        "typescript": "^5.3.2",
-        "memfs": "^4.6.0",
+        "prettier": "^3.3.2",
+        "typescript": "^5.4.5",
+        "memfs": "^4.9.3",
         "node-stdlib-browser": "^1.2.0"
     },
     "dependencies": {
