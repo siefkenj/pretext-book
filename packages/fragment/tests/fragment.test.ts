@@ -20,19 +20,22 @@ describe("Fragments", () => {
 
         source = `<FRAGMENT>a</FRAGMENT>`;
         parsed = parseFragment(source);
-        expect(parsed).toContain({ selector: "", template: "article" });
+        expect(parsed).toMatchObject({ selector: "", template: "article" });
 
         source = `<FRAGMENT></FRAGMENT>`;
         parsed = parseFragment(source);
-        expect(parsed).toContain({ selector: "", template: "article" });
+        expect(parsed).toMatchObject({ selector: "", template: "article" });
 
         source = `<FRAGMENT parents="foo bar">a</FRAGMENT>`;
         parsed = parseFragment(source);
-        expect(parsed).toContain({ selector: "foo bar", template: "article" });
+        expect(parsed).toMatchObject({
+            selector: "foo bar",
+            template: "article",
+        });
 
         source = `<FRAGMENT parents="foo bar" template="book">a</FRAGMENT>`;
         parsed = parseFragment(source);
-        expect(parsed).toContain({ selector: "foo bar", template: "book" });
+        expect(parsed).toMatchObject({ selector: "foo bar", template: "book" });
     });
     it("can insert a fragment into a template", async () => {
         let source: string;
@@ -42,20 +45,20 @@ describe("Fragments", () => {
         source = `<FRAGMENT parents="foo bar"><baz><biz>sss</biz></baz></FRAGMENT>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
-            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></bar></foo></article>`
+            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></bar></foo></article>`,
         );
 
         source = `<FRAGMENT parents="foo bar"><xxx /></FRAGMENT>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
-            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`
+            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="FRAGMENT_PARENT_ID__1"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`,
         );
 
         // Doesn't overwrite existing xml:ids
         source = `<FRAGMENT parents="foo#myid bar"><xxx /></FRAGMENT>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
-            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="myid"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`
+            `<article xml:id="FRAGMENT_PARENT_ID__2"><foo xml:id="myid"><bar xml:id="FRAGMENT_PARENT_ID__0"><xxx></xxx></bar></foo></article>`,
         );
     });
     it("can extract template name from fragment", async () => {
@@ -74,7 +77,7 @@ describe("Fragments", () => {
         source = `<FRAGMENT><baz><biz>sss</biz></baz></FRAGMENT>`;
         parsed = fragmentToXast(source, templates);
         expect(toXml(parsed)).toEqual(
-            `<article xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></article>`
+            `<article xml:id="FRAGMENT_PARENT_ID__0"><baz><biz>sss</biz></baz></article>`,
         );
     });
 });
