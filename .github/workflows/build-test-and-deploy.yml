@@ -17,13 +17,14 @@ permissions:
 
 jobs:
     build:
+        name: Build and Test
         runs-on: ubuntu-latest
         env:
             CI: false
 
         strategy:
             matrix:
-                node-version: [18.x]
+                node-version: [20.x]
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
@@ -35,13 +36,35 @@ jobs:
                   cache: "npm"
             - run: npm ci
             - run: npm run build --if-present
-            - run: npm test
+
+            - name: Package artifacts for testing
+              uses: actions/upload-artifact@v2
+              with:
+                  name: build
 
             - name: Prepare for Github Pages
               if: ${{ github.event_name == 'push' }}
-              uses: actions/upload-pages-artifact@v1
+              uses: actions/upload-pages-artifact@v2
               with:
                   path: ./packages/pretext-playground/build
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+            - name: Extract artifact
+              run: tar -xvf build.tar
+            - name: Run tests
+              run: npm test
+
+    docs:
+        name: Build Docs
+        runs-on: ubuntu-latest
+
     deploy:
         if: ${{ github.event_name == 'push' }}
         environment:
@@ -51,4 +74,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v1
+              uses: actions/deploy-pages@v2

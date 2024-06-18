@@ -24,19 +24,19 @@ const withNextra = nextraConfig({
                 for (const themeName of themes) {
                     const theme = await bundledThemes[themeName]();
 
-                //    // Add doenet-specific colors to the themes (github-light and github-dark).
-                //    theme.default.tokenColors.push({
-                //        scope: [
-                //            "string.quoted.single.xml",
-                //            "string.quoted.double.xml",
-                //            "punctuation.definition.string.begin.xml",
-                //            "punctuation.definition.string.end.xml",
-                //        ],
-                //        settings: {
-                //            foreground:
-                //                theme.default.colors["terminal.ansiRed"],
-                //        },
-                //    });
+                    //    // Add doenet-specific colors to the themes (github-light and github-dark).
+                    //    theme.default.tokenColors.push({
+                    //        scope: [
+                    //            "string.quoted.single.xml",
+                    //            "string.quoted.double.xml",
+                    //            "punctuation.definition.string.begin.xml",
+                    //            "punctuation.definition.string.end.xml",
+                    //        ],
+                    //        settings: {
+                    //            foreground:
+                    //                theme.default.colors["terminal.ansiRed"],
+                    //        },
+                    //    });
                     modifiedThemes.push(theme);
                 }
 
@@ -114,11 +114,27 @@ const withNextra = nextraConfig({
     },
 });
 
-// module.exports = require('nextra')({
-//     latex: true
-//   });
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
-export default withNextra();
+let assetPrefix = "";
+let basePath = "";
 
-// If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
+if (isGithubActions) {
+    // trim off `<owner>/`
+    const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
+
+    assetPrefix = `/${repo}/`;
+    basePath = `/${repo}`;
+}
+
+export default withNextra({
+    images: {
+        unoptimized: true,
+    },
+    webpack: (config, options) => {
+        config.resolve.fallback = { fs: false, path: false };
+    },
+    assetPrefix,
+    basePath,
+    //productionBrowserSourceMaps: true,
+});
