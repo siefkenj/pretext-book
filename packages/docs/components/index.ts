@@ -1,2 +1,2 @@
-export * from "./doenetml-example";
-export * from "./props-display";
+export * from "./attr-display";
+export * from "./children-display";

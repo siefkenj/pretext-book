@@ -1,0 +1,33 @@
+import { AttrDisplay, ChildrenDisplay, ParentsDisplay } from "../../../components";
+
+# `<li>`
+
+The `<li>` tag renders a list item. That is, if you have an ordered ([`<ol>`](ol)) or unordered ([`<ul>`](ul)) list,
+every item in the list is surrounded by an `<li>` tag.
+
+## Syntax
+
+### Attributes
+
+<AttrDisplay name="li" />
+
+### Children
+
+The following elements can be used as children.
+<ChildrenDisplay name="li" />
+
+### Child of
+
+This element can appear as an immediate child of the following elements.
+<ParentsDisplay name="li" />
+
+## Examples
+
+```ptx
+<FRAGMENT parents="p">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</FRAGMENT>
+```

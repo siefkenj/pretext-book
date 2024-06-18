@@ -110,3 +110,4 @@ dist
 .tern-port
 .next
 .wireit
+packages/file-system-provider/*

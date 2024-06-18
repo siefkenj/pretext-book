@@ -1,1 +1,1 @@
-import { AttrInfo, PropAttrType, PropInfo } from "../components";
+import { } from "../components";

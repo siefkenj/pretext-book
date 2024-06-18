@@ -4,6 +4,10 @@ import { parseModule, Program as EstreeProgram } from "esprima";
 import { Root as MdastRoot } from "mdast";
 // Importing this automatically imports all the types from `mdast-util-mdx-jsx`.
 import "mdast-util-mdx-jsx";
+import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
+import { JsonGrammar } from "../components/types";
+
+const jsonGrammar = _jsonGrammar as any as JsonGrammar;
 
 export const autoInsertAttrPropDescriptions: Plugin<
     void[],
@@ -11,82 +15,117 @@ export const autoInsertAttrPropDescriptions: Plugin<
     MdastRoot
 > = function () {
     return (tree, file) => {
-//        file.data.extraSearchData = {};
-//
-//        visit(tree, (node) => {
-//            if (node?.type !== "mdxJsxFlowElement") {
-//                return;
-//            }
-//            if (node.name !== "AttrDisplay" && node.name !== "PropDisplay") {
-//                return;
-//            }
-//            const nameAttr = node.attributes.find(
-//                (attr) =>
-//                    attr.type === "mdxJsxAttribute" && attr.name === "name",
-//            );
-//            const name = String(nameAttr?.value);
-//            const info = optimizedSchema[name || ""];
-//            if (!info) {
-//                return;
-//            }
-//
-//            if (
-//                node.name === "AttrDisplay" &&
-//                !node.attributes.find(
-//                    (attr) =>
-//                        attr.type === "mdxJsxAttribute" &&
-//                        attr.name === "attrs",
-//                )
-//            ) {
-//                // Info has all the schema information for this element. We need to insert it into the node.
-//                node.attributes.push({
-//                    type: "mdxJsxAttribute",
-//                    name: "attrs",
-//                    value: {
-//                        type: "mdxJsxAttributeValueExpression",
-//                        value: JSON.stringify(info.attrs),
-//                        data: {
-//                            estree: objectToEstree(info.attrs),
-//                        },
-//                    },
-//                });
-//
-//                // Add some data that will be used for search
-//                // @ts-ignore
-//                file.data.extraSearchData["attr-list#Attribute"] = info.attrs
-//                    .filter((attr) => !attr.common)
-//                    .map((attr) => attr.name)
-//                    .join("\n");
-//            }
-//            if (
-//                node.name === "PropDisplay" &&
-//                !node.attributes.find(
-//                    (attr) =>
-//                        attr.type === "mdxJsxAttribute" &&
-//                        attr.name === "props",
-//                )
-//            ) {
-//                // Info has all the schema information for this element. We need to insert it into the node.
-//                node.attributes.push({
-//                    type: "mdxJsxAttribute",
-//                    name: "props",
-//                    value: {
-//                        type: "mdxJsxAttributeValueExpression",
-//                        value: JSON.stringify(info.props),
-//                        data: {
-//                            estree: objectToEstree(info.props),
-//                        },
-//                    },
-//                });
-//
-//                // Add some data that will be used for search
-//                // @ts-ignore
-//                file.data.extraSearchData["prop-list#Property"] = info.props
-//                    .filter((prop) => !prop.common)
-//                    .map((prop) => prop.name)
-//                    .join("\n");
-//            }
-//        });
+        file.data.extraSearchData = {};
+
+        visit(tree, (node) => {
+            if (node?.type !== "mdxJsxFlowElement") {
+                return;
+            }
+            if (
+                !["AttrDisplay", "ChildrenDisplay", "ParentsDisplay"].includes(
+                    node.name!,
+                )
+            ) {
+                return;
+            }
+            const nameAttr = node.attributes.find(
+                (attr) =>
+                    attr.type === "mdxJsxAttribute" && attr.name === "name",
+            );
+            const name = String(nameAttr?.value);
+            const info = Object.values(jsonGrammar.refs).find(
+                (v) => v.name === name,
+            );
+            const infoKey = Object.entries(jsonGrammar.refs).find(
+                ([k, v]) => v === info,
+            )?.[0];
+            if (!info || !infoKey) {
+                return;
+            }
+
+            if (
+                node.name === "AttrDisplay" &&
+                !node.attributes.find(
+                    (attr) =>
+                        attr.type === "mdxJsxAttribute" &&
+                        attr.name === "attrs",
+                )
+            ) {
+                // Info has all the schema information for this element. We need to insert it into the node.
+                node.attributes.push({
+                    type: "mdxJsxAttribute",
+                    name: "attrs",
+                    value: {
+                        type: "mdxJsxAttributeValueExpression",
+                        value: JSON.stringify(info.attributes),
+                        data: {
+                            estree: objectToEstree(info.attributes),
+                        },
+                    },
+                });
+
+                // Add some data that will be used for search
+                // @ts-ignore
+                file.data.extraSearchData["attr-list#Attribute"] = Object.keys(
+                    info.attributes,
+                )
+                    .map((v) => `${v} = "…" (attribute of <${info.name}/>)`)
+                    //.filter((attr) => !attr.common)
+                    .join("\n");
+            }
+            if (
+                node.name === "ChildrenDisplay" &&
+                !node.attributes.find(
+                    (attr) =>
+                        attr.type === "mdxJsxAttribute" &&
+                        attr.name === "childList",
+                )
+            ) {
+                const childList = info.children
+                    .map((v) => jsonGrammar.refs[v.ref]?.name)
+                    .filter((x) => x);
+                // Info has all the schema information for this element. We need to insert it into the node.
+                node.attributes.push({
+                    type: "mdxJsxAttribute",
+                    name: "childList",
+                    value: {
+                        type: "mdxJsxAttributeValueExpression",
+                        value: JSON.stringify(childList),
+                        data: {
+                            estree: objectToEstree(childList),
+                        },
+                    },
+                });
+            }
+            if (
+                node.name === "ParentsDisplay" &&
+                !node.attributes.find(
+                    (attr) =>
+                        attr.type === "mdxJsxAttribute" &&
+                        attr.name === "childList",
+                )
+            ) {
+                const parentList = Object.values(jsonGrammar.refs)
+                    .filter(
+                        (v) =>
+                            v.type === "element" &&
+                            v.children.some((c) => c.ref === infoKey),
+                    )
+                    .map((v) => v.name);
+                // Info has all the schema information for this element. We need to insert it into the node.
+                node.attributes.push({
+                    type: "mdxJsxAttribute",
+                    name: "parentList",
+                    value: {
+                        type: "mdxJsxAttributeValueExpression",
+                        value: JSON.stringify(parentList),
+                        data: {
+                            estree: objectToEstree(parentList),
+                        },
+                    },
+                });
+            }
+        });
     };
 };
 
