@@ -41,7 +41,8 @@ jobs:
               run: npm test
 
             - name: Prepare for Github Pages
-              run: mkdir -p ./website
+              run: |
+                  mkdir -p ./website
                   cp -r ./packages/pretext-playground/build/* ./website
                   cp -r ./packages/docs/out ./website/docs
 
