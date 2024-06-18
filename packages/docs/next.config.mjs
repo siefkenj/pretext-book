@@ -136,5 +136,6 @@ export default withNextra({
     },
     assetPrefix,
     basePath,
+    output: "export"
     //productionBrowserSourceMaps: true,
 });
