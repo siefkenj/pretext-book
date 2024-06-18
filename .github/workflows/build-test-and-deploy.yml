@@ -41,6 +41,7 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: build
+                  path: ./
 
             - name: Prepare for Github Pages
               if: ${{ github.event_name == 'push' }}
