@@ -7,7 +7,7 @@ on:
     push:
         branches: ["main"]
     pull_request:
-        branches: ["main"]
+        branches: ["*"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
