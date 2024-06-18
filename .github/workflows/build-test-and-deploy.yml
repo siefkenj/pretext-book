@@ -61,10 +61,6 @@ jobs:
             - name: Run tests
               run: npm test
 
-    docs:
-        name: Build Docs
-        runs-on: ubuntu-latest
-
     deploy:
         if: ${{ github.event_name == 'push' }}
         environment:
