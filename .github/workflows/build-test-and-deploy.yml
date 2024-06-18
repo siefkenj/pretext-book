@@ -7,7 +7,7 @@ on:
     push:
         branches: ["main"]
     pull_request:
-        branches: ["main"]
+        branches: ["*"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -17,13 +17,14 @@ permissions:
 
 jobs:
     build:
+        name: Build and Test
         runs-on: ubuntu-latest
         env:
             CI: false
 
         strategy:
             matrix:
-                node-version: [18.x]
+                node-version: [20.x]
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
@@ -35,13 +36,22 @@ jobs:
                   cache: "npm"
             - run: npm ci
             - run: npm run build --if-present
-            - run: npm test
+
+            - name: Run tests
+              run: npm test
 
             - name: Prepare for Github Pages
-              if: ${{ github.event_name == 'push' }}
-              uses: actions/upload-pages-artifact@v1
+              run: |
+                  mkdir -p ./website
+                  cp -r ./packages/pretext-playground/build/* ./website
+                  cp -r ./packages/docs/out ./website/docs
+
+            - name: Package website deployment
+              uses: actions/upload-pages-artifact@v2
               with:
-                  path: ./packages/pretext-playground/build
+                  artifact-name: website
+                  path: ./website
+
     deploy:
         if: ${{ github.event_name == 'push' }}
         environment:
@@ -50,5 +60,5 @@ jobs:
         needs: build
         steps:
             - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v1
+              id: website
+              uses: actions/deploy-pages@v2
