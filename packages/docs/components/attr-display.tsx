@@ -4,11 +4,13 @@ import { GrammarEntry } from "./types";
 
 export function AttrDisplay({
     name,
+    variant,
     attrs = {},
     links = {},
     children,
 }: React.PropsWithChildren<{
     name: string;
+    variant?: string;
     attrs: GrammarEntry["attributes"];
     links?: Record<string, string>;
 }>) {

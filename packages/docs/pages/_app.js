@@ -1,4 +1,5 @@
 import "./style.css";
+import "../components/tabstrip.css";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {

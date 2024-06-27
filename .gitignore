@@ -111,3 +111,5 @@ dist
 .next
 .wireit
 packages/file-system-provider/*
+packages/docs/out
+tmp_fragment_compile
