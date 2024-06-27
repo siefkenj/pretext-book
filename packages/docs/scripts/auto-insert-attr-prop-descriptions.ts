@@ -1,11 +1,11 @@
 import { visit } from "unist-util-visit";
 import { Plugin } from "unified";
-import { parseModule, Program as EstreeProgram } from "esprima";
 import { Root as MdastRoot } from "mdast";
 // Importing this automatically imports all the types from `mdast-util-mdx-jsx`.
 import "mdast-util-mdx-jsx";
 import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 import { JsonGrammar } from "../components/types";
+import { objectToEstree } from "./object-to-estree";
 
 const jsonGrammar = _jsonGrammar as any as JsonGrammar;
 
@@ -33,11 +33,17 @@ export const autoInsertAttrPropDescriptions: Plugin<
                     attr.type === "mdxJsxAttribute" && attr.name === "name",
             );
             const name = String(nameAttr?.value);
-            const info = Object.values(jsonGrammar.refs).find(
-                (v) => v.name === name,
-            );
+            const variantRaw = node.attributes.find(
+                (attr) =>
+                    attr.type === "mdxJsxAttribute" && attr.name === "variant",
+            )?.value;
+            const variant = variantRaw == null ? undefined : String(variantRaw);
+            const info = Object.entries(jsonGrammar.refs).find(
+                ([tVar, v]) =>
+                    v.name === name && (variant ? tVar === variant : true),
+            )?.[1];
             const infoKey = Object.entries(jsonGrammar.refs).find(
-                ([k, v]) => v === info,
+                ([k, v]) => v === info && (variant ? k === variant : true),
             )?.[0];
             if (!info || !infoKey) {
                 return;
@@ -128,34 +134,3 @@ export const autoInsertAttrPropDescriptions: Plugin<
         });
     };
 };
-
-/**
- * Turn a plain JS object into an ESTree object suitable for including in a `mdxJsxAttributeValueExpression`.
- */
-function objectToEstree(obj: any): EstreeProgram {
-    const estreeRaw = parseModule(`const IGNORE = ${JSON.stringify(obj)}`);
-
-    const decl = estreeRaw.body[0];
-    if (decl.type !== "VariableDeclaration") {
-        throw new Error("PARSE ERROR: Expected a VariableDeclaration");
-    }
-    const decl2 = decl.declarations[0];
-    if (decl2.type !== "VariableDeclarator") {
-        throw new Error("PARSE ERROR: Expected a VariableDeclarator");
-    }
-    const expr = decl2.init;
-    if (!expr) {
-        throw new Error("PARSE ERROR: Expected an Expression");
-    }
-
-    return {
-        type: "Program",
-        body: [
-            {
-                type: "ExpressionStatement",
-                expression: expr,
-            },
-        ],
-        sourceType: "module",
-    };
-}

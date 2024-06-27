@@ -1,4 +1,4 @@
-import { AttrDisplay, ChildrenDisplay, ParentsDisplay } from "../../../components";
+import { AttrDisplay, ChildrenDisplay, ParentsDisplay, PtxExample } from "../../../components";
 
 # `<li>`
 
@@ -19,10 +19,22 @@ The following elements can be used as children.
 ### Child of
 
 This element can appear as an immediate child of the following elements.
-<ParentsDisplay name="li" />
+<ParentsDisplay name="li" variant="ElementLi" />
+<ParentsDisplay name="li" variant="ElementLi1" />
+<ParentsDisplay name="li" variant="ElementLi2" />
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="p">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</FRAGMENT>
+```
+
+<PtxExample>
 ```ptx
 <FRAGMENT parents="p">
     <ul>
@@ -31,3 +43,4 @@ This element can appear as an immediate child of the following elements.
     </ul>
 </FRAGMENT>
 ```
+</PtxExample>
