@@ -13,5 +13,15 @@ export default defineConfig({
             },
             formats: ["es"],
         },
+        rollupOptions: {
+            external: [
+                "glob",
+                "node:path",
+                "node:fs/promises",
+                "util",
+                "node:fs",
+                "node:crypto",
+            ],
+        },
     },
 });

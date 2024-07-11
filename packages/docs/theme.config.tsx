@@ -11,6 +11,7 @@ const config: DocsThemeConfig = {
         defaultMenuCollapseLevel: 2,
         autoCollapse: true,
     },
+    docsRepositoryBase: "https://github.com/siefkenj/pretext-book/tree/main/packages/docs",
     footer: {
         content: (
             <React.Fragment>

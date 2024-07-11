@@ -1,5 +1,8 @@
 import nextraConfig from "nextra";
-import { autoInsertAttrPropDescriptions } from "./dist/index.js";
+import {
+    autoInsertAttrPropDescriptions,
+    wrapPtxExample,
+} from "./dist/index.js";
 import { getHighlighter, bundledLanguages, bundledThemes } from "shiki";
 import fs from "node:fs";
 
@@ -18,6 +21,7 @@ const withNextra = nextraConfig({
                 const { langAlias = {}, themes = [], ...rest } = options;
                 // Add `dn` to the language aliases.
                 langAlias.ptx = "xml";
+                langAlias["ptx-example"] = "xml";
 
                 //// Add doenet-specific colors to the themes (github-light and github-dark).
                 const modifiedThemes = [];
@@ -58,7 +62,7 @@ const withNextra = nextraConfig({
                 return await highlighter;
             },
         },
-        remarkPlugins: [autoInsertAttrPropDescriptions],
+        remarkPlugins: [autoInsertAttrPropDescriptions, wrapPtxExample],
         rehypePlugins: [
             /**
              * Add any data in `extraSearchData` to `structurizedData` so that it shows up in the search box.
@@ -136,6 +140,10 @@ export default withNextra({
     },
     assetPrefix,
     basePath,
-    output: "export"
+    output: "export",
+    env: {
+        NEXT_PUBLIC_ASSET_PREFIX: assetPrefix,
+        NEXT_PUBLIC_BASE_PATH: basePath,
+    },
     //productionBrowserSourceMaps: true,
 });

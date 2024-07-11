@@ -1,4 +1,9 @@
-import { AttrDisplay, ChildrenDisplay, ParentsDisplay } from "../../../components";
+import {
+    AttrDisplay,
+    ChildrenDisplay,
+    ParentsDisplay,
+    PtxExample,
+} from "../../../components";
 
 # `<ul>`
 
@@ -13,20 +18,42 @@ The `<ul>` tag renders an unordered list. E.g., a list with bullets/dashes/some 
 ### Children
 
 The following elements can be used as children.
+
 <ChildrenDisplay name="ul" />
 
 ### Child of
 
 This element can appear as an immediate child of the following elements.
+
 <ParentsDisplay name="ul" />
 
 ## Examples
 
-```ptx
+```ptx-example
 <FRAGMENT parents="p">
     <ul>
         <li>Item 1</li>
         <li>Item 2</li>
+    </ul>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    <ul marker="square">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    <ul cols="3">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
     </ul>
 </FRAGMENT>
 ```
