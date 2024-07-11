@@ -141,5 +141,9 @@ export default withNextra({
     assetPrefix,
     basePath,
     output: "export",
+    env: {
+        NEXT_PUBLIC_ASSET_PREFIX: assetPrefix,
+        NEXT_PUBLIC_BASE_PATH: basePath,
+    },
     //productionBrowserSourceMaps: true,
 });

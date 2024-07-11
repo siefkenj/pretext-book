@@ -1,4 +1,5 @@
 import { Link } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 import React from "react";
 import {
     Tab,
@@ -33,7 +34,11 @@ export function PtxExample({
                 {children}
             </TabPanel>
             <TabPanel store={store} id="preview">
-                {rendered ? <IframePretext fragmentSource={rendered} /> : "No preview available"}
+                {rendered ? (
+                    <IframePretext fragmentSource={rendered} />
+                ) : (
+                    "No preview available"
+                )}
             </TabPanel>
         </TabProvider>
     );
@@ -45,6 +50,7 @@ export function PtxExample({
 export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     const ref = React.useRef<HTMLIFrameElement>(null);
     const [height, setHeight] = React.useState("0px");
+    const router = useRouter();
 
     const onLoad = () => {
         const iframe =
@@ -101,7 +107,7 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     return (
         <iframe
             ref={ref}
-            srcDoc={createHtmlForIframe(fragmentSource)}
+            srcDoc={createHtmlForIframe(fragmentSource, router.basePath)}
             style={{
                 width: "100%",
                 boxSizing: "content-box",
@@ -115,7 +121,7 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
 /**
  * Create HTML for a single page document that renders the given DoenetML.
  */
-function createHtmlForIframe(doenetML: string) {
+function createHtmlForIframe(doenetML: string, basePath = "") {
     return `
     <html>
     <head>
@@ -196,16 +202,16 @@ function createHtmlForIframe(doenetML: string) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-        <link href="/_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-        <link href="/_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+        <link href="${basePath}/_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
         <!-- Override some of the default styles -->
