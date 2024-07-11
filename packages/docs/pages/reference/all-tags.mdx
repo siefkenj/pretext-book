@@ -1,0 +1,20 @@
+import toc from "./elements/_meta";
+import { Cards, Card } from "../../components";
+
+export function AllTags() {
+    return (
+        <Cards>
+            {Object.entries(toc)
+                .filter(([tag, data]) => data.isPretextTag)
+                .map(([tag, data]) => (
+                    <Card key={tag} title={<code>{`<${tag}>`}</code>} href={tag} arrow />
+                ))}
+        </Cards>
+    );
+}
+
+# PreTeXt Tags
+
+A complete list of all tags available in PreTeXt.
+
+<AllTags />

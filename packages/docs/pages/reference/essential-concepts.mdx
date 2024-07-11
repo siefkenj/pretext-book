@@ -26,27 +26,3 @@ A simple example of a PreTeXt document may look like:
 ```
 
 The [PreTeXt Guide](https://pretextbook.org/doc/guide/html/guide-toc.html) has a full introduction to PreTeXt and its concepts.
-
-## Basic Language syntax
-
-Components can communicate information between one another by means of references. To create a reference, attach a `name` attribute to a defined component following the DoenetML naming convention.
-
-<Callout type="info">
-    **DoenetML naming convention:** * Can only contain numbers, letters, and
-    underscores * Cannot start with an underscore or a number * Is
-    case-sensitive
-</Callout>
-
-When you need to access the value of the named component or one of its stored properties, use the notation `$componentName` to create a reference to the component itself, and use the notation `$componentName.propertyName` to create a reference to one of its properties.
-
-```html
-<line name="line1" through="(1,2) (-7,5)" />
-
-<p>Referencing the line component on a graph:</p>
-<graph>$line1</graph>
-
-<p>Accessing data from the line component:</p>
-<p>line1.yIntercept = $line1.yIntercept</p>
-```
-
-Test code [here](https://www.doenet.org/portfolioeditor/_J1J2N530LyIvVWx64xB8V/_AgzWwqGV6Yy9DfqMyGlFm).

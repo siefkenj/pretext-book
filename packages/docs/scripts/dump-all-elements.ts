@@ -9,4 +9,4 @@ function dumpAllElements() {
     return ret;
 }
 
-console.log(dumpAllElements());
+console.log(JSON.stringify(dumpAllElements()));
