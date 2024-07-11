@@ -1,11 +1,16 @@
-import { Callout } from 'nextra/components'
+import Image from "next/image";
+import { Card, Cards } from "../components";
+import { useRouter } from "next/router";
 
 # What is PreTeXt?
 
 PreTeXt is a semantic markup language used for authoring materials that can be transformed into a variety of formats,
 including PDF, HTML, and EPUB, Braille, etc.. The core of pretext is a semantic markup language that separates content from presentation.
 
-```ptx 
+Below is a small example of a complete PreTeXt document. It could be saved to a `main.ptx` file and compiled to a PDF or webpage with
+the [PreTeXt _Command Line Inerface_ (CLI)](https://pretextbook.org/doc/guide/html/processing-CLI.html).
+
+```ptx
 <pretext>
     <docinfo>
         <macros>
@@ -34,7 +39,7 @@ including PDF, HTML, and EPUB, Braille, etc.. The core of pretext is a semantic 
 
         <introduction>
             <p>
-                This is a short paragraph to introduce the article 
+                This is a short paragraph to introduce the article
                 (but it is not the abstract).  It is optional, in case it
                  would be preferable to have the first section be titled an <q>Introduction.</q>
             </p>
@@ -52,10 +57,10 @@ including PDF, HTML, and EPUB, Braille, etc.. The core of pretext is a semantic 
             <p>The previous section (<xref ref="section-textual" />) was a bit boring.</p>
 
             <p>
-                This paragraph has some inline math, a Diophantine equation, 
-                <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about 
-                infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>  
-                Look at the XML source to see how <latex /> macros are 
+                This paragraph has some inline math, a Diophantine equation,
+                <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about
+                infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>
+                Look at the XML source to see how <latex /> macros are
                 employed universally across all possible output formats.</p>
         </section>
 
@@ -63,12 +68,12 @@ including PDF, HTML, and EPUB, Braille, etc.. The core of pretext is a semantic 
             <title>Computation</title>
             <p>
                 The following is a chunk of Sage code.  Your output format will dictate what you see next.
-                In print, you will see expected output.  In HTML you will have an executable, and editable, 
+                In print, you will see expected output.  In HTML you will have an executable, and editable,
                 Sage Cell to work with.  In a SageMathCloud worksheet, you will be able to execute and edit
-                the code with all the other features of SageMathCloud.  Note that if you include the 
-                expected output in your source, then you can test the example to verify that the behavior 
+                the code with all the other features of SageMathCloud.  Note that if you include the
+                expected output in your source, then you can test the example to verify that the behavior
                 of Sage has not changed.
-            </p> 
+            </p>
             <sage>
                 <input>
                 A = matrix(4,5, srange(20))
@@ -85,3 +90,17 @@ including PDF, HTML, and EPUB, Braille, etc.. The core of pretext is a semantic 
     </article>
 </pretext>
 ```
+
+## Resources
+
+To learn more about PreTeXt look at
+
+<Cards>
+    <Card
+        title="The PreTeXt Guide (Book)"
+        href="https://pretextbook.org/doc/guide/html/guide-toc.html"
+        arrow
+    />
+    <Card title="PreTeXt Essential Concepts" href="reference/essential-concepts" arrow />
+    <Card title="PreTeXt Tags" href="reference/all-tags" arrow />
+</Cards>

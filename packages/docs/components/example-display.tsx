@@ -18,7 +18,6 @@ export function PtxExample({
     rendered?: string;
 }>) {
     const store = useTabStore();
-    console.log(rendered, typeof rendered);
 
     return (
         <TabProvider>
@@ -174,7 +173,6 @@ function createHtmlForIframe(doenetML: string, basePath = "") {
               "startup": {
                 pageReady() {
                   return MathJax.startup.defaultPageReady().then(function () {
-                  console.log("in ready function");
                   rsMathReady();
                   }
                 )}

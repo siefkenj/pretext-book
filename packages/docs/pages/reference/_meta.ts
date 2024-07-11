@@ -1,4 +1,7 @@
 export default {
     "essential-concepts": "Essential Concepts",
-    elements: "Element Reference",
+    "all-tags": "All Tags",
+    elements: {
+        title: "Element Reference",
+    },
 };

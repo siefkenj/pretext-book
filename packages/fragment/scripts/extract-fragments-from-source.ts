@@ -137,7 +137,6 @@ async function main() {
             };
             const outPath = new URL(`./tmp/${fragmentFileName}`, baseURL)
                 .pathname;
-            console.log(outPath, toXml(fragment));
             await fs.writeFile(outPath, toXml(fragment));
         }
     }

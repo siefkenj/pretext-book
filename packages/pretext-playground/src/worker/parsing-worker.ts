@@ -5,7 +5,6 @@ import * as Comlink from "comlink";
 
 const exposed = {
     parse: (s: string) => {
-        console.log("being asked to render")
         try {
             return "foo" //pretextToHtml(s);
         } catch (e: any) {
