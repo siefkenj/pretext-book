@@ -1,0 +1,6 @@
+<FRAGMENT parents="p">
+    <ul cols="3">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</FRAGMENT>
