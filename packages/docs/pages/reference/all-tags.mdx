@@ -7,7 +7,12 @@ export function AllTags() {
             {Object.entries(toc)
                 .filter(([tag, data]) => data.isPretextTag)
                 .map(([tag, data]) => (
-                    <Card key={tag} title={<code>{`<${tag}>`}</code>} href={tag} arrow />
+                    <Card
+                        key={tag}
+                        title={<code>{`<${tag}>`}</code>}
+                        href={`elements/${tag}`}
+                        arrow
+                    />
                 ))}
         </Cards>
     );
