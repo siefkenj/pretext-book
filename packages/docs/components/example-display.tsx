@@ -130,8 +130,8 @@ function createHtmlForIframe(doenetML: string, basePath = "") {
               "tex": {
                 "inlineMath": [
                   [
-                    "\\(",
-                    "\\)"
+                    "\\\\(",
+                    "\\\\)"
                   ]
                 ],
                 "tags": "none",
@@ -228,13 +228,13 @@ function createHtmlForIframe(doenetML: string, basePath = "") {
           style="display: none"
         >
             <span class="process-math"
-                >\( \newcommand{\lt}{&lt;} \newcommand{\gt}{&gt;}
-                \newcommand{\amp}{&amp;} \definecolor{fillinmathshade}{gray}{0.9}
-                \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle
-                \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle
-                \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle
-                \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
-                \)
+                >\\( \\newcommand{\\lt}{&lt;} \\newcommand{\\gt}{&gt;}
+                \\newcommand{\\amp}{&amp;} \\definecolor{fillinmathshade}{gray}{0.9}
+                \\newcommand{\\fillinmath}[1]{\\mathchoice{\\colorbox{fillinmathshade}{$\\displaystyle
+                \\phantom{\\,#1\\,}$}}{\\colorbox{fillinmathshade}{$\\textstyle
+                \\phantom{\\,#1\\,}$}}{\\colorbox{fillinmathshade}{$\\scriptstyle
+                \\phantom{\\,#1\\,}$}}{\\colorbox{fillinmathshade}{$\\scriptscriptstyle\\phantom{\\,#1\\,}$}}}
+                \\)
             </span>
         </div>
         <div class="ptx-page">
