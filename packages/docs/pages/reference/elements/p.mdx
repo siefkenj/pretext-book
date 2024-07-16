@@ -7,8 +7,10 @@ import {
 
 # `<p>`
 
-A paragraph, which can contain text and a wide variety of inline tags, and
-functions much like the `<p>` tag in HTML.
+The `<p>` tag represents a paragraph, which can contain text and a wide variety
+of inline tags, and functions much like the `<p>` tag in HTML.  This tag is
+extremely common and most PreTeXt documents contain many `<p>` tags, because
+documents typically contain many paragraphs.
 
 ## Syntax
 
@@ -30,6 +32,9 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
+Our first example shows a paragraph in isolation, containing only plain text,
+plus one small math expression and one emphasized word.
+
 ```ptx-example
 <FRAGMENT parents="subsection section">
     <p>
@@ -38,6 +43,10 @@ This element can appear as an immediate child of the following elements.
     </p>
 </FRAGMENT>
 ```
+
+But because paragraphs are typically the immediate children of other blocks
+(including sections, subsections, theorems, etc.) we also include an example in
+which a few paragraphs sit inside a theorem block.
 
 ```ptx-example
 <FRAGMENT parents="subsection section">
