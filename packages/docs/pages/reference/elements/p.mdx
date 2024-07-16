@@ -7,7 +7,8 @@ import {
 
 # `<p>`
 
-Short description of what the `p` element does.
+A paragraph, which can contain text and a wide variety of inline tags, and
+functions much like the `<p>` tag in HTML.
 
 ## Syntax
 
@@ -29,4 +30,26 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <p>
+        Suppose <m>f</m> were a function on the natural numbers.
+        That would make some of us <em>very</em> interested in it.
+    </p>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <theorem>
+        <p>Many divisions (including theorems, like in this example) can contain
+        more than one paragraph in them.</p>
+        <p>This one includes three paragraphs, as an example.  I suppose to
+        count as a theorem, we should make a mathematical statement, so...</p>
+        <p>If <m>a</m>, <m>b</m>, and <m>c</m> are the side lengths of a right
+        triangle in the Euclidean plane, and <m>c</m> corresponds to the
+        hypotenuse, then <m>a^2+b^2=c^2</m>.</p>
+    </theorem>
+</FRAGMENT>
+```
     
