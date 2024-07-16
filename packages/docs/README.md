@@ -44,4 +44,6 @@ To generate the rendered examples, on a unix system, run
 ./compile-examples.sh
 ```
 
-This will re-compile every example. If you want to recompile a single example only, you can use the `compile-example.sh` script.
+This will re-compile every example whose source file (`.ptx`) is newer than one of its output files (`.raw.html`).
+If you want to force recompilation of all examples regardless of file timestamps, run `compile-examples.sh --force`.
+If you want to recompile a single example only, you can use the `compile-example.sh` script.
