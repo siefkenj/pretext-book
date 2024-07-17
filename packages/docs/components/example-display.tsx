@@ -210,6 +210,9 @@ function createHtmlForIframe(pretext: string, basePath = "") {
                 padding: unset;
                 border: unset;
             }
+            pre {
+                white-space: initial;
+            }
         </style>
     </head>
     <body class="pretext article">
