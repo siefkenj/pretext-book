@@ -1,0 +1,10 @@
+<FRAGMENT parents="subsection section">
+    <paragraphs>
+        <p>You need exercise every day.</p>
+        <exercise>
+            <p>Do five pushups.</p>
+            <p>Stretch for five minutes.</p>
+        </exercise>
+        <p>Live long and prosper.</p>
+    </paragraphs>
+</FRAGMENT>
