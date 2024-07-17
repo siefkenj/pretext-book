@@ -7,7 +7,9 @@ import {
 
 # `<lsq>`
 
-Short description of what the `lsq` element does.
+Left single quote. For those occasional times when you want to open a single quote but not close it,
+or close it after some intervening content that can't go inside `<sq>`.
+Produces the character `&#x2018;` in HTML. Always used with self-closing syntax `<lsq/>`.
 
 ## Syntax
 
@@ -28,5 +30,9 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="lsq" />
 
 ## Examples
-
+```ptx-example
+<FRAGMENT parents="p">
+    I have a sentence with the beginning of a <lsq/>quote...
+</FRAGMENT>
+```
     

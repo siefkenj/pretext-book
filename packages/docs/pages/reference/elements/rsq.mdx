@@ -7,7 +7,9 @@ import {
 
 # `<rsq>`
 
-Short description of what the `rsq` element does.
+Right single quote. For those occasional times when you want to close a single quote that wasn't opened,
+or close it after some intervening content that can't go inside `<sq>`.
+Produces the character `&#x2019;` in HTML. Always used with self-closing syntax `<rsq/>`.
 
 ## Syntax
 
@@ -28,5 +30,9 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="rsq" />
 
 ## Examples
-
+```ptx-example
+<FRAGMENT parents="p">
+    I have a sentence ending with a single quote.<rsq/>
+</FRAGMENT>
+```
     
