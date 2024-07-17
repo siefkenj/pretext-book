@@ -7,7 +7,12 @@ import {
 
 # `<m>`
 
-Short description of what the `m` element does.
+The `<m>` tag is a wrapper for a piece of inline mathematics, similar to `$` in LaTeX. It is rendered by MathJax, so the most common packages are available. For example,
+`<m>\alpha^2 + \beta^4</m>` will display $\alpha^2 + \beta^4$.
+
+Closely related tags are: [`<me>`](./me) for displayed math, which will be centered on its own line, and is better for longer and/or taller mathematics notation; [`<men>`](./men) for displayed math that is also numbered; [`<md>`](./md) for a sequence of displayed math elements; and [`<mdn>`](./mdn) for a sequence of numbered displayed math elements.
+
+For more information, see the [PreTeXt Guide](https://pretextbook.org/doc/guide/html/topic-mathematics.html)
 
 ## Syntax
 
@@ -29,4 +34,20 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    <m>x^2+y^2=1</m>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    <m>\sin(\theta)</m>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    <m>\lim_{h\to 0} \frac{f(2+h)-f(2)}{h}</m>
+</FRAGMENT>
+```
