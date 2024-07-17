@@ -1,35 +1,3 @@
-import {
-    AttrDisplay,
-    ChildrenDisplay,
-    ParentsDisplay,
-    PtxExample,
-} from "../../../components";
-
-# `<caption>`
-
-Contains the caption for a `figure` or `listing`.
-It is a mandatory component of both elements. 
-
-## Syntax
-
-### Attributes
-
-<AttrDisplay name="caption" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="caption" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements.
-
-<ParentsDisplay name="caption" />
-
-## Examples
-```ptx-example
 <FRAGMENT parents="subsection section">
     <figure xml:id="fig-super">
         <caption>A really super figure</caption>
@@ -50,4 +18,3 @@ This element can appear as an immediate child of the following elements.
         </p>
     </figure>
 </FRAGMENT>
-```
