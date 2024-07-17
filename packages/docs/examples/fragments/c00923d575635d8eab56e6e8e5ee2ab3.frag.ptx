@@ -1,0 +1,11 @@
+<FRAGMENT parents="subsection section">
+    <theorem>
+        <p>Many divisions (including theorems, like in this example) can contain
+        more than one paragraph in them.</p>
+        <p>This one includes three paragraphs, as an example.  I suppose to
+        count as a theorem, we should make a mathematical statement, so...</p>
+        <p>If <m>a</m>, <m>b</m>, and <m>c</m> are the side lengths of a right
+        triangle in the Euclidean plane, and <m>c</m> corresponds to the
+        hypotenuse, then <m>a^2+b^2=c^2</m>.</p>
+    </theorem>
+</FRAGMENT>
