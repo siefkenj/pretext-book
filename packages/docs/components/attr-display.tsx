@@ -17,6 +17,10 @@ export function AttrDisplay({
     const order = Object.keys(attrs);
     order.sort();
 
+    if (order.length === 0) {
+        return <em>This tag has no attributes.</em>;
+    }
+
     return (
         <table className="attr-table" id="attr-list">
             <caption>
