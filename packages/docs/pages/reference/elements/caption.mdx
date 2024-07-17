@@ -7,7 +7,8 @@ import {
 
 # `<caption>`
 
-Short description of what the `caption` element does.
+Contains the caption for a `figure` or `listing`.
+It is a mandatory component of both elements. 
 
 ## Syntax
 
@@ -28,5 +29,13 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="caption" />
 
 ## Examples
-
-    
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <figure xml:id="fig-super">
+        <caption>A really super figure</caption>
+        <image source="https://avatars.githubusercontent.com/u/44950358?s=200&amp;v=4">
+            <shortdescription>The PreTeXt logo</shortdescription>
+        </image>
+    </figure>
+</FRAGMENT>
+```
