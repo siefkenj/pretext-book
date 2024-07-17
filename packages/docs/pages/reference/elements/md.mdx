@@ -7,7 +7,7 @@ import {
 
 # `<md>`
 
-Short description of what the `md` element does.
+Used to produce multiline displays of mathematics. Individual lines of the display are entered as the content of `mrow` tags. The displayed expression can be aligned in columns using `\amp` within each individual `mrow`.  
 
 ## Syntax
 
@@ -29,4 +29,12 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="p">
+    <md>
+        <mrow>\det\begin{bmatrix}1\amp 1\\ 1\amp 3\end{bmatrix}\amp = 3-1</mrow>
+        <mrow>  \amp = 2 </mrow>
+    </md>
+</FRAGMENT>
+```
     
