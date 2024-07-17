@@ -44,7 +44,7 @@ export function PtxExample({
 }
 
 /**
- * Render DoenetML in an iframe so that its styling/state is completely isolated from the page.
+ * Render PreTeXt in an iframe so that its styling/state is completely isolated from the page.
  */
 export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     const ref = React.useRef<HTMLIFrameElement>(null);
@@ -54,10 +54,9 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     const onLoad = () => {
         const iframe =
             ref.current?.contentWindow?.document?.body?.parentElement;
-        if (!iframe) {
-            return;
+        if (iframe) {
+            setHeight(iframe.scrollHeight + "px");
         }
-        setHeight(iframe.scrollHeight + "px");
 
         const updateHeight = () => {
             const iframe =
@@ -71,18 +70,10 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
             }
         };
 
-        const observer = new MutationObserver(updateHeight);
-        observer.observe(iframe, {
-            attributes: true,
-            childList: true,
-            subtree: true,
-        });
-
         // The mutation observer might not catch all resize changes, so we poll as well.
         const interval = setInterval(updateHeight, 500);
 
         return () => {
-            observer.disconnect();
             clearInterval(interval);
         };
     };
@@ -92,13 +83,13 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
 
     if (typeof fragmentSource !== "string") {
         console.error(
-            "Error with DoenetML component. Expected a string child containing DoenetML source code, but found",
+            "Error with PreTeXt component. Expected a string child containing PreTeXt source code, but found",
             fragmentSource,
         );
         return (
             <div className="docs-error">
-                <em>Error with DoenetML component.</em> Expected a string child
-                containing DoenetML source code, but found{" "}
+                <em>Error with PreTeXt component.</em> Expected a string child
+                containing PreTeXt source code, but found{" "}
                 {typeof fragmentSource}. Check the console for details
             </div>
         );
@@ -118,9 +109,9 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
 }
 
 /**
- * Create HTML for a single page document that renders the given DoenetML.
+ * Create HTML for a single page document that renders the given PreTeXt.
  */
-function createHtmlForIframe(doenetML: string, basePath = "") {
+function createHtmlForIframe(pretext: string, basePath = "") {
     return `
     <html>
     <head>
@@ -240,7 +231,7 @@ function createHtmlForIframe(doenetML: string, basePath = "") {
         <div class="ptx-page">
             <main class="ptx-main">
                 <div id="ptx-content" class="ptx-content">
-                    ${doenetML}
+                    ${pretext}
                 </div>
             </main>
         </div>

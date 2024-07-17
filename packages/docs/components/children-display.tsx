@@ -11,6 +11,7 @@ export function ChildrenDisplay({
     name,
     variant,
     childList = [],
+    textAllowed,
     links = {},
     children,
 }: React.PropsWithChildren<{
@@ -18,30 +19,48 @@ export function ChildrenDisplay({
     variant?: string;
     childList: string[];
     links?: Record<string, string>;
+    textAllowed?: boolean;
 }>) {
     childList = Array.from(new Set([...childList]));
     childList.sort();
 
+    const noChildren = childList.length === 0 && !textAllowed;
+
+    if (noChildren) {
+        return (
+            <em>This tag must be empty (i.e., no children or text allowed).</em>
+        );
+    }
+
     return (
         <React.Fragment>
-            {childList.map((childName) => {
-                const linkTarget = links[childName];
-                const nameElm = linkTarget ? (
-                    <Link href={linkTarget}>{childName}</Link>
-                ) : (
-                    <Link href={childName}>{childName}</Link>
-                );
+            {[
+                ...childList.map((childName) => {
+                    const linkTarget = links[childName];
+                    const nameElm = linkTarget ? (
+                        <Link href={linkTarget}>{childName}</Link>
+                    ) : (
+                        <Link href={childName}>{childName}</Link>
+                    );
 
-                return (
-                    <React.Fragment key={childName}>
-                        <code className="xml">
-                            {"<"}
-                            <span className="tag-name">{nameElm}</span>
-                            {">"}
-                        </code>{" "}
-                    </React.Fragment>
-                );
-            })}
+                    return (
+                        <React.Fragment key={childName}>
+                            <code className="xml">
+                                {"<"}
+                                <span className="tag-name">{nameElm}</span>
+                                {">"}
+                            </code>{" "}
+                        </React.Fragment>
+                    );
+                }),
+                ...(textAllowed
+                    ? [
+                          <Link key="Text" href="Text">
+                              <em>Text</em>
+                          </Link>,
+                      ]
+                    : []),
+            ]}
         </React.Fragment>
     );
 }
@@ -66,6 +85,10 @@ export function ParentsDisplay({
 }>) {
     parentList = Array.from(new Set([...parentList]));
     parentList.sort();
+
+    if (parentList.length === 0) {
+        return <em>This tag cannot be the child of any other.</em>;
+    }
 
     return (
         <React.Fragment>

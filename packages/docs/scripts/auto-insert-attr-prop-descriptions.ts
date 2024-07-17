@@ -102,6 +102,17 @@ export const autoInsertAttrPropDescriptions: Plugin<
                         },
                     },
                 });
+                node.attributes.push({
+                    type: "mdxJsxAttribute",
+                    name: "textAllowed",
+                    value: {
+                        type: "mdxJsxAttributeValueExpression",
+                        value: JSON.stringify(info.textChildrenAllowed),
+                        data: {
+                            estree: objectToEstree(info.textChildrenAllowed),
+                        },
+                    },
+                });
             }
             if (
                 node.name === "ParentsDisplay" &&
