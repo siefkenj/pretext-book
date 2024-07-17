@@ -26,8 +26,6 @@ export function ChildrenDisplay({
 
     const noChildren = childList.length === 0 && !textAllowed;
 
-    console.log("cand do text", textAllowed);
-
     if (noChildren) {
         return (
             <em>This tag must be empty (i.e., no children or text allowed).</em>
