@@ -7,7 +7,10 @@ import {
 
 # `<times>`
 
-Short description of what the `times` element does.
+A "multiplication sign" symbol for use in text.
+Styled to enhance, consensus at Google Group was
+`font-size: larger; vertical-align: -.2ex;`.
+Used with self-closing syntax: <times/>.
 
 ## Syntax
 
@@ -28,5 +31,9 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="times" />
 
 ## Examples
-
+```ptx-example
+<FRAGMENT parents="p">
+    It would be strange to use math mode to input <q>humans<times/>cats</q>.
+</FRAGMENT>
+```
     
