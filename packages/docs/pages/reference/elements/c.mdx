@@ -7,7 +7,9 @@ import {
 
 # `<c>`
 
-Short description of what the `c` element does.
+Wrapper for inline code, or other verbatim text, displayed in a monospace font.
+For example, to render a snippet of Python code like `from sympy import Matrix`,
+you would type `<c>from sympy import Matrix</c>`
 
 ## Syntax
 
@@ -28,5 +30,15 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="c" />
 
 ## Examples
+```ptx-example
+<FRAGMENT parents="p">
+    <c>from sympy import Matrix</c>
+</FRAGMENT>
+```
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    <c>print('Hello World')</c>
+</FRAGMENT>
+```
+  
