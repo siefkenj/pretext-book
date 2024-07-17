@@ -49,7 +49,7 @@ Short description of what the \`${elmName}\` element does.
 
 ### Children
 
-The following elements can be used as children.
+The following can be used as children.
 
 <ChildrenDisplay name="${elmName}" />
 
