@@ -288,6 +288,7 @@ const ALL_TAGS = [
 ];
 
 export default {
+    Text: { title: <em>Text</em> },
     ...Object.fromEntries(
         ALL_TAGS.map((tag) => [
             tag,

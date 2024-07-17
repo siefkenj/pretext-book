@@ -7,7 +7,7 @@ import {
 
 # `<men>`
 
-Short description of what the `men` element does.
+Produces a numbered equation. Typically you will get vertical separation above and below, and the contents will be centered. If the equation concludes a sentence, put the concluding punctuation after the closing tag.
 
 ## Syntax
 
@@ -17,7 +17,7 @@ Short description of what the `men` element does.
 
 ### Children
 
-The following elements can be used as children.
+The following can be used as children.
 
 <ChildrenDisplay name="men" />
 
@@ -29,4 +29,9 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="p">
+    The quadratic formula is <men>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</men>.
+</FRAGMENT>
+```
     

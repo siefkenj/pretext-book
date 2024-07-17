@@ -7,7 +7,10 @@ import {
 
 # `<exercise>`
 
-Short description of what the `exercise` element does.
+The `exercise` tag contains a description of an exercise for readers to perform. It can be freeform,
+containing elements such as [`<p>`](./p), [`<figure>`](./figure) or [`<image>`](./image).
+Alternatively, it can be structured with components such as [`<statement>`](./statement) and [`<solution>`](./solution),
+or even broken down with the [`<task>`](./task) tag.
 
 ## Syntax
 
@@ -17,7 +20,7 @@ Short description of what the `exercise` element does.
 
 ### Children
 
-The following elements can be used as children.
+The following can be used as children.
 
 <ChildrenDisplay name="exercise" />
 
@@ -29,4 +32,121 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
-    
+### An unstructured exercise within the section content
+
+This exercise occurs within other content inside a division (a [`<paragraphs>`](./paragraphs)), so it appears as a **Checkpoint**.
+It is unstructured as it itself contains only [`<p>`](./p) tags.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <paragraphs>
+        <p>You need exercise every day.</p>
+        <exercise>
+            <p>Do five pushups.</p>
+            <p>Stretch for five minutes.</p>
+        </exercise>
+        <p>Live long and prosper.</p>
+    </paragraphs>
+</FRAGMENT>
+```
+
+## A structured exercises with in a list of exercises
+
+This exercise occurs inside an [`<exercises>`](./exercises) tag, so it is rendered a list item.
+It is structured to include a hint, solution, and answer.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <exercises>
+        <title>Review exercises</title>
+        <exercise>
+            <statement>
+                <p>Solve for <m>x</m>:
+                <me>9x - 2= 4x + 5</me></p>
+            </statement>
+            <hint>
+                <p>Add or subtract terms from both sides so that terms with an <m>x</m>
+                are on the left side and all other terms are on the right.</p>
+            </hint>
+            <solution>
+                <p>First, combine the two terms that contain <m>x</m>.
+                To do this, we subtract <m>4x</m> from both sides, obtaining.
+                <me>5x - 2 = 5</me>.</p>
+                <p>Next, we add <m>2</m> to both sides so only the term containing
+                <m>x</m> remain on the left-hand side:
+                <me>5x = 7</me>.</p>
+                <p>Finally, divide both sides by <m>5</m> to get <m>x</m> by itself:
+                <me>x = \frac{7}{5}</me>.</p>
+            </solution>
+            <answer>
+                <p><m>x = \frac{7}{5}</m></p>
+            </answer>
+        </exercise>
+    </exercises>
+</FRAGMENT>
+```
+
+### A complex exercise with task
+
+This exercise is broken down into an introduction, a set of tasks, and a conclusion.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <exercises>
+        <title>Complex exercises</title>
+        <exercise>
+            <title>A structured exercise</title>
+            <introduction>
+                <p>
+                    Here is where we give the student the background information
+                    required to start accomplishing tasks.
+                </p>
+            </introduction>
+
+            <task>
+                <statement>
+                    <p>
+                        The first step to do.
+                    </p>
+                </statement>
+                <hint>
+                    <p>
+                        A little hint.
+                    </p>
+                </hint>
+                <answer>
+                    <p>
+                        Just the answer.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        All the glorious details about how to do the first step.
+                    </p>
+                </solution>
+            </task>
+
+            <task>
+                <statement>
+                    <p>
+                        The second step to do.
+                        We'll be lazy and just include an answer.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        Just the answer.
+                    </p>
+                </answer>
+            </task>
+
+            <conclusion>
+                <p>
+                    A little wrap up.
+                </p>
+            </conclusion>
+
+        </exercise>
+    </exercises>
+</FRAGMENT>
+```

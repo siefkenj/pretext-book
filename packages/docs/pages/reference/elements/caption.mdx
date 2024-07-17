@@ -7,7 +7,8 @@ import {
 
 # `<caption>`
 
-Short description of what the `caption` element does.
+Contains the caption for a `figure` or `listing`.
+It is a mandatory component of both elements. 
 
 ## Syntax
 
@@ -17,7 +18,7 @@ Short description of what the `caption` element does.
 
 ### Children
 
-The following elements can be used as children.
+The following can be used as children.
 
 <ChildrenDisplay name="caption" />
 
@@ -28,5 +29,25 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="caption" />
 
 ## Examples
-
-    
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <figure xml:id="fig-super">
+        <caption>A really super figure</caption>
+        <p>
+          <pre>
+<cline>        ⢀⣀⣀⣀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀</cline>
+<cline>⠀⠀⠀⠀⠀⠀⣾⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⢀⠀⠈⡇⠀⠀⠀⠀    </cline>
+<cline>⠀⠀⠀⠀⠀⠀⣿⠀⠁⠀⠘⠁⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠈⠀⠀⡇⠀⠀⠀⠀   </cline>
+<cline>⣀⣀⣀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠄⠀⠀⠸⢰⡏⠉⠳⣄⠰⠀⠀⢰⣷⠶⠛⣧⠀  </cline>
+<cline>⢻⡀⠈⠙⠲⡄⣿⠀⠀⠀⠀⠀⠀⠀⠠⠀⢸⠀⠀⠀⠈⠓⠒⠒⠛⠁⠀⠀⣿⠀  </cline>
+<cline>⠀⠻⣄⠀⠀⠙⣿⠀⠀⠀⠈⠁⠀⢠⠄⣰⠟⠀⢀⡔⢠⠀⠀⠀⠀⣠⠠⡄⠘⢧  </cline>
+<cline>⠀⠀⠈⠛⢦⣀⣿⠀⠀⢠⡆⠀⠀⠈⠀⣯⠀⠀⠈⠛⠛⠀⠠⢦⠄⠙⠛⠃⠀⢸  </cline>
+<cline>⠀⠀⠀⠀⠀⠉⣿⠀⠀⠀⢠⠀⠀⢠⠀⠹⣆⠀⠀⠀⠢⢤⠠⠞⠤⡠⠄⠀⢀⡾   </cline>
+<cline>⠀⠀⠀⠀⠀⢀⡿⠦⢤⣤⣤⣤⣤⣤⣤⣤⡼⣷⠶⠤⢤⣤⣤⡤⢤⡤⠶⠖⠋⠀ </cline>
+<cline>⠀⠀⠀⠀⠀⠸⣤⡴⠋⠸⣇⣠⠼⠁⠀⠀⠀⠹⣄⣠⠞⠀⢾⡀⣠⠃⠀⠀⠀⠀  </cline>
+<cline>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀    </cline>
+          </pre>
+        </p>
+    </figure>
+</FRAGMENT>
+```

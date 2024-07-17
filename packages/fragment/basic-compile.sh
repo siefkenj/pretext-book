@@ -29,7 +29,7 @@ IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 <?xml version="1.0" encoding="UTF-8"?>
 <publication>
 	<common>
-		<chunking level="2" />
+		<chunking level="0" />
 		<tableofcontents level="2" />
 		<exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
 		<exercise-divisional statement="yes" hint="yes" />

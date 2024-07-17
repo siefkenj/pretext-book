@@ -7,7 +7,8 @@ import {
 
 # `<statement>`
 
-Short description of what the `statement` element does.
+The `<statement>` element renders the main content of block such as theorem-like and example-link elements.
+It separates the main content from other parts, such as [`<proof>`](./proof), [`<solution>`](./solution), or [`<hint>`](./hint).
 
 ## Syntax
 
@@ -17,7 +18,7 @@ Short description of what the `statement` element does.
 
 ### Children
 
-The following elements can be used as children.
+The following can be used as children.
 
 <ChildrenDisplay name="statement" />
 
@@ -29,4 +30,43 @@ This element can appear as an immediate child of the following elements.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <theorem>
+        <title>The Fundamental Theorem of Calculus</title>
+        <statement>
+            <p>
+                If <m>f(x)</m> is continuous,
+                and the derivative of <m>F(x)</m> is <m>f(x)</m>, then
+                <me>
+                    \definiteintegral{a}{b}{f(x)}{x}=F(b)-F(a)
+                </me>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Left to the reader.
+            </p>
+        </proof>
+    </theorem>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <example>
+        <title>Differentiating a polynomial</title>
+        <statement>
+            <p>
+                Differentiate the function <m>f(x) = 3x^5-7x+5</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                We use the power, sum,
+                and constant multiple rules and find that the derivative is <m>f'(x) = 15x^4-7</m>.
+            </p>
+        </solution>
+    </example>
+</FRAGMENT>
+```

@@ -1,0 +1,3 @@
+<FRAGMENT parents="p">
+    <c>print('Hello World')</c>
+</FRAGMENT>
