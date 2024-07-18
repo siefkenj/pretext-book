@@ -7,7 +7,9 @@ import {
 
 # `<copyright>`
 
-Short description of what the `copyright` element does.
+Produces the copyright symbol.
+The unicode character is &#xa9;, which is entered as `&#xa9;` in HTML.
+Used with the self-closing syntax `<copyright/>`.
 
 ## Syntax
 
@@ -28,5 +30,9 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="copyright" />
 
 ## Examples
-
+```ptx-eample
+<FRAGMENT parents="p">
+  Copyright <copyright/> 1993, all rights reserved.
+</FRAGMENT>
+```
     
