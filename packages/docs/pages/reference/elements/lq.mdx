@@ -7,7 +7,9 @@ import {
 
 # `<lq>`
 
-Short description of what the `lq` element does.
+Left double quote. For those occasional times when you want to open a quote but not close it,
+or close it after some intervening content that can't go inside `<q>`.
+Produces the character `&#x201c;` in HTML. Always used with self-closing syntax `<lq/>`.
 
 ## Syntax
 
@@ -28,5 +30,9 @@ This element can appear as an immediate child of the following elements.
 <ParentsDisplay name="lq" />
 
 ## Examples
-
+```ptx-example
+<FRAGMENT parents="p">
+    I have a sentence with the beginning of a <lq/>quote...
+</FRAGMENT>
+```
     
