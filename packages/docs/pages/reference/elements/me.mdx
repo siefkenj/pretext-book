@@ -7,7 +7,7 @@ import {
 
 # `<me>`
 
-Short description of what the `me` element does.
+Expressions enclosed by the `<me>` tag are rendered as a single line of displayed mathematics. By contrast, the [`<m>`](./m) tag is used for in-line mathematics.  
 
 ## Syntax
 
@@ -23,10 +23,15 @@ The following can be used as children.
 
 ### Child of
 
-This element can appear as an immediate child of the following elements.
+This element can appear as an immediate child of the following elements. If the equation concludes a sentence, put the concluding punctuation after the closing tag.
 
 <ParentsDisplay name="me" />
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="p">
+    <me>\int \cos x\, dx=\sin x+C</me>
+</FRAGMENT>
+```
     
