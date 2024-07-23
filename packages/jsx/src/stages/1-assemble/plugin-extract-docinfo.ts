@@ -4,7 +4,7 @@ import { ElementDocInfo } from "../../assets/generated-types";
 import { PretextRoot } from "../../assets/types";
 import { PretextState } from "../../state";
 import { isElement } from "../../utils/tools";
-import { replaceNode } from "../../utils/xast";
+import { replaceNode, XastElement, XastNode, XastRoot } from "../../utils/xast";
 
 export type PluginOptions = {
     state: PretextState;
@@ -22,14 +22,14 @@ export const extractDocInfoPlugin: Plugin<
     const { state } = options;
     if (!state) {
         throw new Error(
-            `Cannot use plugin without passing in a PretextState object`
+            `Cannot use plugin without passing in a PretextState object`,
         );
     }
 
     return (root, file) => {
         const pretext = root.children[0];
         const docinfoNode = pretext.children.find(
-            (n) => n.name === "docinfo"
+            (n) => n.name === "docinfo",
         ) as ElementDocInfo;
         if (!docinfoNode) {
             // This turns out to be a common occurrence in fragments.
@@ -65,11 +65,12 @@ export const extractDocInfoPlugin: Plugin<
                     docinfo.latex_image_preamble =
                         docinfo.latex_image_preamble || [];
                     docinfo.latex_image_preamble.push({
-                        content: toString(node),
+                        content: toString(node as XastNode),
+                        // @ts-ignore
                         syntax: node.attributes.syntax,
                     });
                     break;
-                case "latex-preamble":
+                case "latex-image-preamble":
                     docinfo.latex_preamble = docinfo.latex_preamble || [];
                     for (const n of node.children) {
                         docinfo.latex_preamble.push(toString(n).trim());
@@ -77,7 +78,7 @@ export const extractDocInfoPlugin: Plugin<
                     break;
                 case "macros":
                     docinfo.macros = docinfo.macros || [];
-                    docinfo.macros.push(toString(node).trim());
+                    docinfo.macros.push(toString(node as XastElement).trim());
                     break;
                 case "numbering":
                 case "rename":
@@ -86,14 +87,14 @@ export const extractDocInfoPlugin: Plugin<
                 default:
                     console.warn(
                         `Encountered unknown element while processing`,
-                        node
+                        node,
                     );
             }
         }
 
         // Remove the docinfo element from the tree
-        replaceNode(root, (node) =>
-            isElement(node) && node.name === "docinfo" ? null : undefined
+        replaceNode(root as XastRoot, (node) =>
+            isElement(node) && node.name === "docinfo" ? null : undefined,
         );
     };
 };

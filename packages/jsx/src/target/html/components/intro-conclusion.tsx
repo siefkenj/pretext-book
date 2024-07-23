@@ -8,6 +8,7 @@ import { ElementTitle } from "../../../assets/generated-types";
 import { toXml } from "xast-util-to-xml";
 import { toString } from "xast-util-to-string";
 import { LeveledHeading } from "./title";
+import { XastElement } from "@pretext-book/jsx/src/utils/xast";
 
 export const IntroOrConclusionPure: PureFunctionComponentWithId<{
     name: string;
@@ -40,22 +41,23 @@ export const IntroOrConclusion: ReplacerComponentWithId = function ({
             }> to be a title element, but instead it was "${toXml({
                 ...titleElement,
                 children: [],
-            })}"`,
+            } as unknown as XastElement)}"`,
         );
         titleElement = {
             type: "element",
             name: "title",
             children: [],
+            // @ts-ignore
             attributes: {},
         };
     }
 
     // If we have an empty title, we omit it. Otherwise, we show the title, but without a number.
     let title: React.ReactNode = null;
-    if (!["", "."].includes(toString(titleElement).trim())) {
+    if (!["", "."].includes(toString(titleElement as XastElement).trim())) {
         title = (
             <LeveledHeading id={id} level={tocItemInfo?.level || 1}>
-                {state.processContent(titleElement.children)}
+                {state.processContent(titleElement.children as XastElement[])}
             </LeveledHeading>
         );
     }
