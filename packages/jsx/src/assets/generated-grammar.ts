@@ -1,10 +1,10 @@
 export const jsonGrammar = {
-    "startType": "ElementPretext",
+    "startType": "ElementPretextRoot",
     "refs": {
         "XMLText": {
             "type": "text"
         },
-        "ElementPretext": {
+        "ElementPretextRoot": {
             "type": "element",
             "name": "pretext",
             "attributes": {
@@ -223,12 +223,12 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [
                 {
-                    "ref": "ElementUrl2"
+                    "ref": "ElementFeedbackUrl"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementUrl2": {
+        "ElementFeedbackUrl": {
             "type": "element",
             "name": "url",
             "attributes": {},
@@ -423,13 +423,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -456,7 +453,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -466,9 +463,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -516,6 +510,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -549,7 +549,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -589,9 +589,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -753,13 +750,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -786,7 +780,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -796,9 +790,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -846,6 +837,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -879,7 +876,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -919,9 +916,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -1118,13 +1112,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -1151,7 +1142,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -1161,9 +1152,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -1211,6 +1199,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -1244,7 +1238,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -1284,9 +1278,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -1467,13 +1458,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -1500,7 +1488,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -1510,9 +1498,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -1560,6 +1545,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -1593,7 +1584,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -1633,9 +1624,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -1798,13 +1786,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -1831,7 +1816,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -1841,9 +1826,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -1891,6 +1873,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -1924,7 +1912,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -1964,9 +1952,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -2082,13 +2067,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -2115,7 +2097,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -2125,9 +2107,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -2175,6 +2154,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -2208,7 +2193,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -2248,9 +2233,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -2324,13 +2306,6 @@ export const jsonGrammar = {
         "ElementSolidus": {
             "type": "element",
             "name": "solidus",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": false
-        },
-        "ElementSharp": {
-            "type": "element",
-            "name": "sharp",
             "attributes": {},
             "children": [],
             "textChildrenAllowed": false
@@ -2512,13 +2487,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -2545,7 +2517,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -2555,9 +2527,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -2605,6 +2574,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -2638,7 +2613,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -2678,9 +2653,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -2796,13 +2768,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -2829,7 +2798,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -2839,9 +2808,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -2889,6 +2855,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -2922,7 +2894,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -2962,9 +2934,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -3049,7 +3018,7 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementPretext2": {
+        "ElementPretext": {
             "type": "element",
             "name": "pretext",
             "attributes": {},
@@ -3179,6 +3148,20 @@ export const jsonGrammar = {
                     ]
                 }
             },
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementMusicSharp": {
+            "type": "element",
+            "name": "sharp",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementMusicFlat": {
+            "type": "element",
+            "name": "flat",
+            "attributes": {},
             "children": [],
             "textChildrenAllowed": false
         },
@@ -3331,13 +3314,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -3364,7 +3344,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -3374,9 +3354,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -3424,6 +3401,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -3457,7 +3440,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -3497,9 +3480,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -3579,7 +3559,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -3712,7 +3692,7 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementCopyright1": {
+        "ElementCopyrightCharacter": {
             "type": "element",
             "name": "copyright",
             "attributes": {},
@@ -3785,13 +3765,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -3818,7 +3795,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -3828,9 +3805,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -3878,6 +3852,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -3911,7 +3891,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -3951,9 +3931,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -4024,13 +4001,6 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementFlat": {
-            "type": "element",
-            "name": "flat",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": false
-        },
         "ElementFillInText": {
             "type": "element",
             "name": "fillin",
@@ -4071,7 +4041,7 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementEmail3": {
+        "ElementEmail": {
             "type": "element",
             "name": "email",
             "attributes": {},
@@ -4123,13 +4093,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -4156,7 +4123,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -4166,9 +4133,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -4216,6 +4180,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -4249,7 +4219,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -4289,9 +4259,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -4428,13 +4395,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -4461,7 +4425,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -4471,9 +4435,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -4521,6 +4482,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -4554,7 +4521,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -4594,293 +4561,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementDblbrackets1": {
-            "type": "element",
-            "name": "dblbrackets",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -4996,13 +4676,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -5029,7 +4706,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -5039,9 +4716,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -5089,6 +4763,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -5122,7 +4802,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -5162,9 +4842,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -5294,7 +4971,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -5304,9 +4981,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementFlat1"
                 },
                 {
                     "ref": "ElementIcon"
@@ -5334,6 +5008,12 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
                 },
                 {
                     "ref": "ElementNbsp"
@@ -5381,9 +5061,6 @@ export const jsonGrammar = {
                     "ref": "ElementServicemark"
                 },
                 {
-                    "ref": "ElementSharp1"
-                },
-                {
                     "ref": "ElementSolidus"
                 },
                 {
@@ -5397,20 +5074,6 @@ export const jsonGrammar = {
                 }
             ],
             "textChildrenAllowed": true
-        },
-        "ElementSharp1": {
-            "type": "element",
-            "name": "sharp",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": false
-        },
-        "ElementFlat1": {
-            "type": "element",
-            "name": "flat",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": false
         },
         "ElementCa": {
             "type": "element",
@@ -5485,13 +5148,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -5518,7 +5178,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -5528,9 +5188,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -5578,6 +5235,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -5611,7 +5274,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -5651,9 +5314,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -5769,13 +5429,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -5802,7 +5459,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -5812,9 +5469,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -5862,6 +5516,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -5895,7 +5555,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -5935,9 +5595,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -6060,13 +5717,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -6093,7 +5747,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -6103,9 +5757,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -6153,6 +5804,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -6186,7 +5843,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -6226,9 +5883,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -6315,7 +5969,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -6422,7 +6076,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -6565,13 +6219,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -6598,7 +6249,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -6608,9 +6259,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -6658,6 +6306,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -6691,7 +6345,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -6731,9 +6385,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -6849,13 +6500,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -6882,7 +6530,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -6892,9 +6540,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -6942,6 +6587,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -6975,7 +6626,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -7015,9 +6666,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -7205,13 +6853,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -7238,7 +6883,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -7248,9 +6893,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -7298,6 +6940,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -7331,7 +6979,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -7371,9 +7019,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -7532,13 +7177,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -7565,7 +7207,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -7575,9 +7217,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -7631,6 +7270,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -7664,7 +7309,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -7710,9 +7355,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -7819,13 +7461,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -7852,7 +7491,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -7862,9 +7501,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -7912,6 +7548,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -7945,7 +7587,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -7985,9 +7627,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -8094,13 +7733,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -8127,7 +7763,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -8137,9 +7773,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -8187,6 +7820,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -8220,7 +7859,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -8260,9 +7899,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -8376,13 +8012,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -8409,7 +8042,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -8419,9 +8052,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -8469,6 +8099,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -8502,7 +8138,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -8542,9 +8178,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -9322,13 +8955,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -9355,7 +8985,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -9365,9 +8995,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -9418,6 +9045,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -9454,7 +9087,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -9494,9 +9127,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -9640,13 +9270,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -9676,7 +9303,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -9686,9 +9313,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementFootnote"
@@ -9754,6 +9378,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -9793,7 +9423,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -9833,9 +9463,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -9947,12 +9574,12 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementLi1"
+                    "ref": "ElementListItem"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementLi1": {
+        "ElementListItem": {
             "type": "element",
             "name": "li",
             "attributes": {
@@ -10049,13 +9676,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -10085,7 +9709,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -10098,9 +9722,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementFootnote"
@@ -10181,6 +9802,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -10226,7 +9853,7 @@ export const jsonGrammar = {
                     "ref": "ElementPreformatted"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -10272,9 +9899,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSideBySide"
@@ -10690,22 +10314,12 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementInput1"
-                },
-                {
-                    "ref": "ElementTests"
+                    "ref": "ElementProgramInput"
                 }
             ],
             "textChildrenAllowed": true
         },
-        "ElementTests": {
-            "type": "element",
-            "name": "tests",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementInput1": {
+        "ElementProgramInput": {
             "type": "element",
             "name": "input",
             "attributes": {},
@@ -10765,12 +10379,284 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementLi"
+                    "ref": "ElementListItem"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementLi": {
+        "ElementImageRaster": {
+            "type": "element",
+            "name": "image",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "margins": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "rotate": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "archive": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "source": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "decorative": {
+                    "optional": true,
+                    "type": [
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementImageDescription"
+                },
+                {
+                    "ref": "ElementImageShortDescription"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementImageShortDescription": {
+            "type": "element",
+            "name": "shortdescription",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementImageDescription": {
+            "type": "element",
+            "name": "description",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementTabular"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementImageCode": {
+            "type": "element",
+            "name": "image",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "margins": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "archive": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "decorative": {
+                    "optional": true,
+                    "type": [
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementAsymptote"
+                },
+                {
+                    "ref": "ElementCodeLatexImage"
+                },
+                {
+                    "ref": "ElementImageDescription"
+                },
+                {
+                    "ref": "ElementImageShortDescriptionCode"
+                },
+                {
+                    "ref": "ElementSageplot"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementSageplot": {
+            "type": "element",
+            "name": "sageplot",
+            "attributes": {
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "variant": {
+                    "optional": true,
+                    "type": [
+                        "\"2d\"",
+                        "\"3d\""
+                    ]
+                },
+                "aspect": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementImageShortDescriptionCode": {
+            "type": "element",
+            "name": "shortdescription",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementWWVariable"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementCodeLatexImage": {
+            "type": "element",
+            "name": "latex-image",
+            "attributes": {
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementAsymptote": {
+            "type": "element",
+            "name": "asymptote",
+            "attributes": {
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementDl": {
+            "type": "element",
+            "name": "dl",
+            "attributes": {
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "\"narrow\"",
+                        "\"medium\"",
+                        "\"wide\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementDefinitionListItem"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementDefinitionListItem": {
             "type": "element",
             "name": "li",
             "attributes": {
@@ -10813,34 +10699,7 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
                     "ref": "ElementAside"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
                 },
                 {
                     "ref": "ElementBiographical"
@@ -10849,91 +10708,13 @@ export const jsonGrammar = {
                     "ref": "ElementBlockQuote"
                 },
                 {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCodeDisplay"
-                },
-                {
                     "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDl"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
                 },
                 {
                     "ref": "ElementFigure"
                 },
                 {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementFootnote"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
                     "ref": "ElementHistorical"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
                 },
                 {
                     "ref": "ElementImageCode"
@@ -10945,154 +10726,22 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
                     "ref": "ElementList"
                 },
                 {
                     "ref": "ElementListing"
                 },
                 {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMd"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMdn"
-                },
-                {
-                    "ref": "ElementMe"
-                },
-                {
-                    "ref": "ElementMen"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementNotation"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementOl"
-                },
-                {
                     "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
                 },
                 {
                     "ref": "ElementPreformatted"
                 },
                 {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
                     "ref": "ElementProgram"
                 },
                 {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
                     "ref": "ElementSage"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSideBySide"
@@ -11101,88 +10750,19 @@ export const jsonGrammar = {
                     "ref": "ElementSideBySideGroup"
                 },
                 {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
                     "ref": "ElementTable"
                 },
                 {
                     "ref": "ElementTabular"
                 },
                 {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
                     "ref": "ElementTitle"
                 },
                 {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUl"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
                     "ref": "ElementVideo"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
                 }
             ],
-            "textChildrenAllowed": true
+            "textChildrenAllowed": false
         },
         "ElementSage": {
             "type": "element",
@@ -11234,828 +10814,27 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementInput2"
+                    "ref": "ElementSageInput"
                 },
                 {
-                    "ref": "ElementOutput1"
+                    "ref": "ElementSageOutput"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementOutput1": {
+        "ElementSageOutput": {
             "type": "element",
             "name": "output",
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
         },
-        "ElementInput2": {
+        "ElementSageInput": {
             "type": "element",
             "name": "input",
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
-        },
-        "ElementNotation": {
-            "type": "element",
-            "name": "notation",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementDescription4"
-                },
-                {
-                    "ref": "ElementUsage"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementUsage": {
-            "type": "element",
-            "name": "usage",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementMathInline"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementDescription4": {
-            "type": "element",
-            "name": "description",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementMen": {
-            "type": "element",
-            "name": "men",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementFillInMath"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementMe": {
-            "type": "element",
-            "name": "me",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementFillInMath"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementMdn": {
-            "type": "element",
-            "name": "mdn",
-            "attributes": {
-                "number": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                },
-                "break": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                },
-                "alignment": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "alignat-columns": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementMathIntertext"
-                },
-                {
-                    "ref": "ElementMathRow"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementMathRow": {
-            "type": "element",
-            "name": "mrow",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "number": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                },
-                "tag": {
-                    "optional": true,
-                    "type": [
-                        "\"star\"",
-                        "\"dstar\"",
-                        "\"tstar\"",
-                        "\"dagger\"",
-                        "\"ddagger\"",
-                        "\"tdagger\"",
-                        "\"daggerdbl\"",
-                        "\"ddaggerdbl\"",
-                        "\"tdaggerdbl\"",
-                        "\"hash\"",
-                        "\"dhash\"",
-                        "\"thash\"",
-                        "\"maltese\"",
-                        "\"dmaltese\"",
-                        "\"tmaltese\""
-                    ]
-                },
-                "break": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementFillInMath"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementMathIntertext": {
-            "type": "element",
-            "name": "intertext",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementMd": {
-            "type": "element",
-            "name": "md",
-            "attributes": {
-                "number": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                },
-                "break": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                },
-                "alignment": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "alignat-columns": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementMathIntertext"
-                },
-                {
-                    "ref": "ElementMathRow"
-                }
-            ],
-            "textChildrenAllowed": false
         },
         "ElementListing": {
             "type": "element",
@@ -12161,22 +10940,22 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementInput"
+                    "ref": "ElementConsoleInput"
                 },
                 {
-                    "ref": "ElementOutput"
+                    "ref": "ElementConsoleOutput"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementOutput": {
+        "ElementConsoleOutput": {
             "type": "element",
             "name": "output",
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
         },
-        "ElementInput": {
+        "ElementConsoleInput": {
             "type": "element",
             "name": "input",
             "attributes": {
@@ -12235,13 +11014,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -12268,7 +11044,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -12278,9 +11054,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -12328,6 +11101,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -12361,7 +11140,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -12401,9 +11180,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -12588,260 +11364,6 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": false
         },
-        "ElementImageRaster": {
-            "type": "element",
-            "name": "image",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "width": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "margins": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "rotate": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "archive": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "source": {
-                    "optional": false,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "decorative": {
-                    "optional": true,
-                    "type": [
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementDescription"
-                },
-                {
-                    "ref": "ElementShortdescription"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementShortdescription": {
-            "type": "element",
-            "name": "shortdescription",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDescription": {
-            "type": "element",
-            "name": "description",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementTabular"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementImageCode": {
-            "type": "element",
-            "name": "image",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "width": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "margins": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "archive": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "decorative": {
-                    "optional": true,
-                    "type": [
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAsymptote"
-                },
-                {
-                    "ref": "ElementDescription1"
-                },
-                {
-                    "ref": "ElementLatexImage"
-                },
-                {
-                    "ref": "ElementSageplot"
-                },
-                {
-                    "ref": "ElementShortdescription1"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementShortdescription1": {
-            "type": "element",
-            "name": "shortdescription",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementWWVariable"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementSageplot": {
-            "type": "element",
-            "name": "sageplot",
-            "attributes": {
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "variant": {
-                    "optional": true,
-                    "type": [
-                        "\"2d\"",
-                        "\"3d\""
-                    ]
-                },
-                "aspect": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementLatexImage": {
-            "type": "element",
-            "name": "latex-image",
-            "attributes": {
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDescription1": {
-            "type": "element",
-            "name": "description",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementTabular"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementAsymptote": {
-            "type": "element",
-            "name": "asymptote",
-            "attributes": {
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": true
-        },
         "ElementBlockQuote": {
             "type": "element",
             "name": "blockquote",
@@ -12944,13 +11466,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -12977,7 +11496,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -12987,9 +11506,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -13040,6 +11556,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -13073,7 +11595,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -13113,9 +11635,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -13186,86 +11705,11 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementDl": {
+        "ElementConclusionText": {
             "type": "element",
-            "name": "dl",
-            "attributes": {
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "width": {
-                    "optional": true,
-                    "type": [
-                        "\"narrow\"",
-                        "\"medium\"",
-                        "\"wide\""
-                    ]
-                }
-            },
+            "name": "conclusion",
+            "attributes": {},
             "children": [
-                {
-                    "ref": "ElementLi2"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementLi2": {
-            "type": "element",
-            "name": "li",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAside"
-                },
-                {
-                    "ref": "ElementBiographical"
-                },
                 {
                     "ref": "ElementBlockQuote"
                 },
@@ -13273,25 +11717,10 @@ export const jsonGrammar = {
                     "ref": "ElementConsole"
                 },
                 {
-                    "ref": "ElementFigure"
-                },
-                {
-                    "ref": "ElementHistorical"
-                },
-                {
                     "ref": "ElementImageCode"
                 },
                 {
                     "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementList"
-                },
-                {
-                    "ref": "ElementListing"
                 },
                 {
                     "ref": "ElementParagraph"
@@ -13303,22 +11732,7 @@ export const jsonGrammar = {
                     "ref": "ElementProgram"
                 },
                 {
-                    "ref": "ElementSage"
-                },
-                {
-                    "ref": "ElementSideBySide"
-                },
-                {
-                    "ref": "ElementSideBySideGroup"
-                },
-                {
-                    "ref": "ElementTable"
-                },
-                {
                     "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementTitle"
                 },
                 {
                     "ref": "ElementVideo"
@@ -13659,371 +12073,6 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": false
         },
-        "ElementConclusionText": {
-            "type": "element",
-            "name": "conclusion",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementFootnote": {
-            "type": "element",
-            "name": "fn",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "permid": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementCodeDisplay": {
-            "type": "element",
-            "name": "cd",
-            "attributes": {
-                "latexsep": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementCodeLine"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
         "ElementPoem": {
             "type": "element",
             "name": "poem",
@@ -14075,10 +12124,10 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementAuthor2"
+                    "ref": "ElementIndex"
                 },
                 {
-                    "ref": "ElementIndex"
+                    "ref": "ElementPoemAuthor"
                 },
                 {
                     "ref": "ElementPoemLine"
@@ -14198,13 +12247,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -14231,7 +12277,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -14241,9 +12287,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -14291,6 +12334,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -14324,7 +12373,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -14364,9 +12413,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -14428,7 +12474,7 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementAuthor2": {
+        "ElementPoemAuthor": {
             "type": "element",
             "name": "author",
             "attributes": {
@@ -14482,13 +12528,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -14515,7 +12558,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -14525,9 +12568,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -14575,6 +12615,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -14608,7 +12654,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -14648,9 +12694,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -14708,6 +12751,1128 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementXetex"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementNotation": {
+            "type": "element",
+            "name": "notation",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementNotationDescription"
+                },
+                {
+                    "ref": "ElementUsage"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementUsage": {
+            "type": "element",
+            "name": "usage",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementMathInline"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementNotationDescription": {
+            "type": "element",
+            "name": "description",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementMen": {
+            "type": "element",
+            "name": "men",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementFillInMath"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementMe": {
+            "type": "element",
+            "name": "me",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementFillInMath"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementMdn": {
+            "type": "element",
+            "name": "mdn",
+            "attributes": {
+                "number": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
+                "break": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
+                "alignment": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "alignat-columns": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementMathIntertext"
+                },
+                {
+                    "ref": "ElementMathRow"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementMathRow": {
+            "type": "element",
+            "name": "mrow",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "number": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
+                "tag": {
+                    "optional": true,
+                    "type": [
+                        "\"star\"",
+                        "\"dstar\"",
+                        "\"tstar\"",
+                        "\"dagger\"",
+                        "\"ddagger\"",
+                        "\"tdagger\"",
+                        "\"daggerdbl\"",
+                        "\"ddaggerdbl\"",
+                        "\"tdaggerdbl\"",
+                        "\"hash\"",
+                        "\"dhash\"",
+                        "\"thash\"",
+                        "\"maltese\"",
+                        "\"dmaltese\"",
+                        "\"tmaltese\""
+                    ]
+                },
+                "break": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementFillInMath"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXref"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementMathIntertext": {
+            "type": "element",
+            "name": "intertext",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementMd": {
+            "type": "element",
+            "name": "md",
+            "attributes": {
+                "number": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
+                "break": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
+                "alignment": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "alignat-columns": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementMathIntertext"
+                },
+                {
+                    "ref": "ElementMathRow"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementFootnote": {
+            "type": "element",
+            "name": "fn",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "permid": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementCodeDisplay": {
+            "type": "element",
+            "name": "cd",
+            "attributes": {
+                "latexsep": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementCodeLine"
                 }
             ],
             "textChildrenAllowed": true
@@ -15205,13 +14370,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -15238,7 +14400,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -15248,9 +14410,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -15298,6 +14457,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -15331,7 +14496,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -15371,9 +14536,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -17004,9 +16166,6 @@ export const jsonGrammar = {
                     "ref": "ElementConclusionText"
                 },
                 {
-                    "ref": "ElementDescription3"
-                },
-                {
                     "ref": "ElementHintWW"
                 },
                 {
@@ -17023,6 +16182,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementTaskWW"
+                },
+                {
+                    "ref": "ElementWWDescription"
                 },
                 {
                     "ref": "ElementWWMacros"
@@ -17046,6 +16208,223 @@ export const jsonGrammar = {
             "name": "macro-file",
             "attributes": {},
             "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementWWDescription": {
+            "type": "element",
+            "name": "description",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSimpleLine"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementSimpleLine": {
+            "type": "element",
+            "name": "line",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
             "textChildrenAllowed": true
         },
         "ElementTaskWW": {
@@ -17185,13 +16564,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -17218,7 +16594,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -17228,9 +16604,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -17278,6 +16651,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -17311,7 +16690,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -17351,9 +16730,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -17440,48 +16816,23 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementDescription2"
+                    "ref": "ElementImageDescription"
                 },
                 {
-                    "ref": "ElementLatexImage1"
+                    "ref": "ElementImageShortDescriptionCode"
                 },
                 {
-                    "ref": "ElementShortdescription2"
+                    "ref": "ElementWWLatexImage"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementShortdescription2": {
-            "type": "element",
-            "name": "shortdescription",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementWWVariable"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementLatexImage1": {
+        "ElementWWLatexImage": {
             "type": "element",
             "name": "latex-image",
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
-        },
-        "ElementDescription2": {
-            "type": "element",
-            "name": "description",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementTabular"
-                }
-            ],
-            "textChildrenAllowed": false
         },
         "ElementSolutionWW": {
             "type": "element",
@@ -17528,223 +16879,6 @@ export const jsonGrammar = {
             "name": "pg-code",
             "attributes": {},
             "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDescription3": {
-            "type": "element",
-            "name": "description",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSimpleLine"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementSimpleLine": {
-            "type": "element",
-            "name": "line",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
             "textChildrenAllowed": true
         },
         "ElementPrelude": {
@@ -19240,6 +18374,9 @@ export const jsonGrammar = {
                     "ref": "ElementConsole"
                 },
                 {
+                    "ref": "ElementExerciseOrderedList"
+                },
+                {
                     "ref": "ElementFigure"
                 },
                 {
@@ -19268,9 +18405,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementListing"
-                },
-                {
-                    "ref": "ElementOl1"
                 },
                 {
                     "ref": "ElementParagraph"
@@ -19338,6 +18472,9 @@ export const jsonGrammar = {
                     "ref": "ElementConsole"
                 },
                 {
+                    "ref": "ElementExerciseOrderedList"
+                },
+                {
                     "ref": "ElementFigure"
                 },
                 {
@@ -19354,9 +18491,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementListing"
-                },
-                {
-                    "ref": "ElementOl1"
                 },
                 {
                     "ref": "ElementParagraph"
@@ -19388,7 +18522,7 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": false
         },
-        "ElementOl1": {
+        "ElementExerciseOrderedList": {
             "type": "element",
             "name": "ol",
             "attributes": {
@@ -19407,12 +18541,12 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementLi3"
+                    "ref": "ElementExerciseListItem"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementLi3": {
+        "ElementExerciseListItem": {
             "type": "element",
             "name": "li",
             "attributes": {
@@ -19491,13 +18625,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -19527,7 +18658,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -19537,9 +18668,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementFootnote"
@@ -19611,6 +18739,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -19656,7 +18790,7 @@ export const jsonGrammar = {
                     "ref": "ElementPreformatted"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -19699,9 +18833,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -22372,13 +21503,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -22405,7 +21533,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -22415,9 +21543,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -22471,6 +21596,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -22504,7 +21635,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -22544,9 +21675,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -22683,13 +21811,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -22716,7 +21841,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -22726,9 +21851,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -22776,6 +21898,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -22809,7 +21937,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -22849,9 +21977,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -22990,7 +22115,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24062,7 +23187,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24269,21 +23394,21 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [
                 {
-                    "ref": "ElementDepartment1"
+                    "ref": "ElementDepartment"
                 },
                 {
-                    "ref": "ElementEmail1"
+                    "ref": "ElementEmail"
                 },
                 {
-                    "ref": "ElementInstitution1"
+                    "ref": "ElementInstitution"
                 },
                 {
-                    "ref": "ElementPersonname1"
+                    "ref": "ElementPersonName"
                 }
             ],
             "textChildrenAllowed": false
         },
-        "ElementPersonname1": {
+        "ElementPersonName": {
             "type": "element",
             "name": "personname",
             "attributes": {},
@@ -24292,7 +23417,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24390,7 +23515,7 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementInstitution1": {
+        "ElementInstitution": {
             "type": "element",
             "name": "institution",
             "attributes": {},
@@ -24399,7 +23524,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24545,13 +23670,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24578,7 +23700,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -24588,9 +23710,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -24638,6 +23757,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -24671,7 +23796,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -24711,9 +23836,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -24775,14 +23897,7 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementEmail1": {
-            "type": "element",
-            "name": "email",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDepartment1": {
+        "ElementDepartment": {
             "type": "element",
             "name": "department",
             "attributes": {},
@@ -24791,7 +23906,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24913,7 +24028,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -24997,7 +24112,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -25077,294 +24192,10 @@ export const jsonGrammar = {
                     "ref": "ElementAuthor"
                 },
                 {
-                    "ref": "ElementTitle2"
+                    "ref": "ElementTitle"
                 }
             ],
             "textChildrenAllowed": false
-        },
-        "ElementTitle2": {
-            "type": "element",
-            "name": "title",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
         },
         "ElementAuthor": {
             "type": "element",
@@ -25381,344 +24212,10 @@ export const jsonGrammar = {
                     "ref": "ElementInstitution"
                 },
                 {
-                    "ref": "ElementPersonname"
+                    "ref": "ElementPersonName"
                 }
             ],
             "textChildrenAllowed": false
-        },
-        "ElementPersonname": {
-            "type": "element",
-            "name": "personname",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementInstitution": {
-            "type": "element",
-            "name": "institution",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementShortLine"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementEmail": {
-            "type": "element",
-            "name": "email",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDepartment": {
-            "type": "element",
-            "name": "department",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementShortLine"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
         },
         "ElementPreface": {
             "type": "element",
@@ -25960,132 +24457,25 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementDepartment2"
+                    "ref": "ElementDepartment"
                 },
                 {
-                    "ref": "ElementEmail2"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementIndex"
                 },
                 {
-                    "ref": "ElementInstitution2"
+                    "ref": "ElementInstitution"
                 },
                 {
                     "ref": "ElementLocation"
                 },
                 {
-                    "ref": "ElementPersonname2"
+                    "ref": "ElementPersonName"
                 }
             ],
             "textChildrenAllowed": false
-        },
-        "ElementPersonname2": {
-            "type": "element",
-            "name": "personname",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
         },
         "ElementLocation": {
             "type": "element",
@@ -26096,228 +24486,7 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementInstitution2": {
-            "type": "element",
-            "name": "institution",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTrademark"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementEmail2": {
-            "type": "element",
-            "name": "email",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementDepartment2": {
-            "type": "element",
-            "name": "department",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -26553,13 +24722,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -26586,7 +24752,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -26596,9 +24762,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -26646,6 +24809,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -26679,7 +24848,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -26719,9 +24888,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -26814,10 +24980,10 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementCopyright"
+                    "ref": "ElementColophonCredit"
                 },
                 {
-                    "ref": "ElementCredit2"
+                    "ref": "ElementCopyright"
                 },
                 {
                     "ref": "ElementEdition"
@@ -26849,579 +25015,6 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
-        "ElementCredit2": {
-            "type": "element",
-            "name": "credit",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementEntity"
-                },
-                {
-                    "ref": "ElementRole"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementRole": {
-            "type": "element",
-            "name": "role",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementEntity": {
-            "type": "element",
-            "name": "entity",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAbbr"
-                },
-                {
-                    "ref": "ElementAcro"
-                },
-                {
-                    "ref": "ElementAd"
-                },
-                {
-                    "ref": "ElementAlert"
-                },
-                {
-                    "ref": "ElementAm"
-                },
-                {
-                    "ref": "ElementAngles"
-                },
-                {
-                    "ref": "ElementArticletitle"
-                },
-                {
-                    "ref": "ElementAttr"
-                },
-                {
-                    "ref": "ElementBc"
-                },
-                {
-                    "ref": "ElementC"
-                },
-                {
-                    "ref": "ElementCa"
-                },
-                {
-                    "ref": "ElementChord"
-                },
-                {
-                    "ref": "ElementCopyleft"
-                },
-                {
-                    "ref": "ElementCopyright1"
-                },
-                {
-                    "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
-                },
-                {
-                    "ref": "ElementDblprime"
-                },
-                {
-                    "ref": "ElementDegree"
-                },
-                {
-                    "ref": "ElementDelete"
-                },
-                {
-                    "ref": "ElementDoubleflat"
-                },
-                {
-                    "ref": "ElementDoublesharp"
-                },
-                {
-                    "ref": "ElementEg"
-                },
-                {
-                    "ref": "ElementEllipsis"
-                },
-                {
-                    "ref": "ElementEm"
-                },
-                {
-                    "ref": "ElementEmail3"
-                },
-                {
-                    "ref": "ElementEtal"
-                },
-                {
-                    "ref": "ElementEtc"
-                },
-                {
-                    "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
-                },
-                {
-                    "ref": "ElementForeign"
-                },
-                {
-                    "ref": "ElementIcon"
-                },
-                {
-                    "ref": "ElementIe"
-                },
-                {
-                    "ref": "ElementInit"
-                },
-                {
-                    "ref": "ElementInsert"
-                },
-                {
-                    "ref": "ElementKbd"
-                },
-                {
-                    "ref": "ElementLangle"
-                },
-                {
-                    "ref": "ElementLatex"
-                },
-                {
-                    "ref": "ElementLdblbracket"
-                },
-                {
-                    "ref": "ElementLq"
-                },
-                {
-                    "ref": "ElementLsq"
-                },
-                {
-                    "ref": "ElementMathInline"
-                },
-                {
-                    "ref": "ElementMdash"
-                },
-                {
-                    "ref": "ElementMidpoint"
-                },
-                {
-                    "ref": "ElementMinus"
-                },
-                {
-                    "ref": "ElementN"
-                },
-                {
-                    "ref": "ElementNatural"
-                },
-                {
-                    "ref": "ElementNb"
-                },
-                {
-                    "ref": "ElementNbsp"
-                },
-                {
-                    "ref": "ElementNdash"
-                },
-                {
-                    "ref": "ElementObelus"
-                },
-                {
-                    "ref": "ElementPermille"
-                },
-                {
-                    "ref": "ElementPhonomark"
-                },
-                {
-                    "ref": "ElementPilcrow"
-                },
-                {
-                    "ref": "ElementPlusminus"
-                },
-                {
-                    "ref": "ElementPm"
-                },
-                {
-                    "ref": "ElementPretext2"
-                },
-                {
-                    "ref": "ElementPrime"
-                },
-                {
-                    "ref": "ElementPs"
-                },
-                {
-                    "ref": "ElementPubtitle"
-                },
-                {
-                    "ref": "ElementQ"
-                },
-                {
-                    "ref": "ElementQuantity"
-                },
-                {
-                    "ref": "ElementRangle"
-                },
-                {
-                    "ref": "ElementRdblbracket"
-                },
-                {
-                    "ref": "ElementRegistered"
-                },
-                {
-                    "ref": "ElementRq"
-                },
-                {
-                    "ref": "ElementRsq"
-                },
-                {
-                    "ref": "ElementScaledeg"
-                },
-                {
-                    "ref": "ElementSectionMark"
-                },
-                {
-                    "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
-                },
-                {
-                    "ref": "ElementSolidus"
-                },
-                {
-                    "ref": "ElementSq"
-                },
-                {
-                    "ref": "ElementStale"
-                },
-                {
-                    "ref": "ElementSwungdash"
-                },
-                {
-                    "ref": "ElementTag"
-                },
-                {
-                    "ref": "ElementTage"
-                },
-                {
-                    "ref": "ElementTaxon"
-                },
-                {
-                    "ref": "ElementTerm"
-                },
-                {
-                    "ref": "ElementTex"
-                },
-                {
-                    "ref": "ElementTimeofday"
-                },
-                {
-                    "ref": "ElementTimes"
-                },
-                {
-                    "ref": "ElementTimesignature"
-                },
-                {
-                    "ref": "ElementToday"
-                },
-                {
-                    "ref": "ElementTrademark"
-                },
-                {
-                    "ref": "ElementUrl"
-                },
-                {
-                    "ref": "ElementViz"
-                },
-                {
-                    "ref": "ElementVs"
-                },
-                {
-                    "ref": "ElementWebwork"
-                },
-                {
-                    "ref": "ElementWWVariable"
-                },
-                {
-                    "ref": "ElementXelatex"
-                },
-                {
-                    "ref": "ElementXetex"
-                },
-                {
-                    "ref": "ElementXref"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
         "ElementCopyright": {
             "type": "element",
             "name": "copyright",
@@ -27434,7 +25027,7 @@ export const jsonGrammar = {
                     "ref": "ElementMinilicense"
                 },
                 {
-                    "ref": "ElementShortlicense"
+                    "ref": "ElementShortLicense"
                 },
                 {
                     "ref": "ElementYear"
@@ -27487,13 +25080,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -27520,7 +25110,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -27530,9 +25120,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -27580,6 +25167,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -27613,7 +25206,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -27653,9 +25246,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -27717,7 +25307,7 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
-        "ElementShortlicense": {
+        "ElementShortLicense": {
             "type": "element",
             "name": "shortlicense",
             "attributes": {},
@@ -27762,13 +25352,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -27795,7 +25382,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -27805,9 +25392,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -27855,6 +25439,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -27888,7 +25478,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -27928,9 +25518,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -28046,13 +25633,10 @@ export const jsonGrammar = {
                     "ref": "ElementCopyleft"
                 },
                 {
-                    "ref": "ElementCopyright1"
+                    "ref": "ElementCopyrightCharacter"
                 },
                 {
                     "ref": "ElementDblbrackets"
-                },
-                {
-                    "ref": "ElementDblbrackets1"
                 },
                 {
                     "ref": "ElementDblprime"
@@ -28079,7 +25663,7 @@ export const jsonGrammar = {
                     "ref": "ElementEm"
                 },
                 {
-                    "ref": "ElementEmail3"
+                    "ref": "ElementEmail"
                 },
                 {
                     "ref": "ElementEtal"
@@ -28089,9 +25673,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementFillInText"
-                },
-                {
-                    "ref": "ElementFlat"
                 },
                 {
                     "ref": "ElementForeign"
@@ -28139,6 +25720,12 @@ export const jsonGrammar = {
                     "ref": "ElementMinus"
                 },
                 {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
                     "ref": "ElementN"
                 },
                 {
@@ -28172,7 +25759,7 @@ export const jsonGrammar = {
                     "ref": "ElementPm"
                 },
                 {
-                    "ref": "ElementPretext2"
+                    "ref": "ElementPretext"
                 },
                 {
                     "ref": "ElementPrime"
@@ -28212,9 +25799,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementServicemark"
-                },
-                {
-                    "ref": "ElementSharp"
                 },
                 {
                     "ref": "ElementSolidus"
@@ -28281,6 +25865,573 @@ export const jsonGrammar = {
             "name": "holder",
             "attributes": {},
             "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementColophonCredit": {
+            "type": "element",
+            "name": "credit",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementEntity"
+                },
+                {
+                    "ref": "ElementRole"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementRole": {
+            "type": "element",
+            "name": "role",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementEntity": {
+            "type": "element",
+            "name": "entity",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
+                }
+            ],
             "textChildrenAllowed": true
         },
         "ElementBiography": {
