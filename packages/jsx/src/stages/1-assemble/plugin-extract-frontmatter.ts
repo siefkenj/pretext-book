@@ -14,7 +14,14 @@ import {
     TitlePage,
 } from "../../state/types";
 import { elmMatcher } from "../../utils/tools";
-import { EXIT, replaceNode, visit } from "../../utils/xast";
+import {
+    EXIT,
+    XastElement,
+    XastElementContent,
+    XastRoot,
+    replaceNode,
+    visit,
+} from "../../utils/xast";
 
 export type PluginOptions = {
     state: PretextState;
@@ -33,28 +40,29 @@ export const extractFrontmatterPlugin: Plugin<
     const { state } = options;
     if (!state) {
         throw new Error(
-            `Cannot use plugin without passing in a PretextState object`
+            `Cannot use plugin without passing in a PretextState object`,
         );
     }
 
     return (root, file) => {
         visit(
-            root,
+            root as XastRoot,
             (node) => {
                 const frontmatter: ArticleFrontMatter = state.frontmatter;
                 const frontmatterNode = node as ElementArticleFrontMatter;
                 for (const node of frontmatterNode.children) {
                     switch (node.name) {
                         case "abstract":
-                            frontmatter.abstract = node.children;
+                            frontmatter.abstract =
+                                node.children as XastElement[];
                             break;
                         case "idx":
                             console.warn(
-                                `<${node.name}> is not implemented yet`
+                                `<${node.name}> is not implemented yet`,
                             );
                             break;
                         case "title":
-                            frontmatter.title = node.children;
+                            frontmatter.title = node.children as XastElement[];
                             break;
                         case "titlepage":
                             frontmatter.titlepage =
@@ -68,7 +76,7 @@ export const extractFrontmatterPlugin: Plugin<
 
                 if (!frontmatter.titlepage) {
                     throw new Error(
-                        "Frontmatter must have a <titlepage>, but no title page was found."
+                        "Frontmatter must have a <titlepage>, but no title page was found.",
                     );
                 }
                 file.data.frontmatter = frontmatter;
@@ -76,12 +84,12 @@ export const extractFrontmatterPlugin: Plugin<
                 // We found the front matter. There isn't any more of it.
                 return EXIT;
             },
-            { test: isFrontmatterNode }
+            { test: isFrontmatterNode },
         );
 
         // Remove the docinfo element from the tree
-        replaceNode(root, (node) =>
-            isFrontmatterNode(node) ? null : undefined
+        replaceNode(root as XastRoot, (node) =>
+            isFrontmatterNode(node) ? null : undefined,
         );
     };
 };
@@ -97,7 +105,7 @@ function extractTitlePageDetails(ast: ElementTitlePage) {
                 console.warn(`<${node.name}> is not implemented yet`);
                 break;
             case "date":
-                ret.date = node.children;
+                ret.date = node.children as XastElement[];
                 break;
             case "editor":
                 ret.editors.push(extractPersonDetails(node));
@@ -111,23 +119,23 @@ function extractTitlePageDetails(ast: ElementTitlePage) {
 }
 
 function extractPersonDetails(
-    ast: ElementAuthor | ElementEditor
+    ast: ElementAuthor | ElementEditor,
 ): Author | Editor {
     const ret: Author = { personname: [] };
 
     for (const node of ast.children) {
         switch (node.name) {
             case "department":
-                ret.department = node.children;
+                ret.department = node.children as XastElement[];
                 break;
             case "email":
                 ret.email = node.children;
                 break;
             case "institution":
-                ret.institution = node.children;
+                ret.institution = node.children as XastElement[];
                 break;
             case "personname":
-                ret.personname = node.children;
+                ret.personname = node.children as XastElement[];
                 break;
             default:
                 const unknownNode: never = node;

@@ -3,6 +3,7 @@ import {
     ChildrenDisplay,
     ParentsDisplay,
     PtxExample,
+    SyntaxDisplay,
 } from "../../../components";
 
 # `<men>`
@@ -11,27 +12,14 @@ Produces a numbered equation. Typically you will get vertical separation above a
 
 ## Syntax
 
-### Attributes
-
-<AttrDisplay name="men" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="men" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements.
-
-<ParentsDisplay name="men" />
+<SyntaxDisplay name="men" />
 
 ## Examples
 
 ```ptx-example
 <FRAGMENT parents="p">
-    The quadratic formula is <men>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</men>.
+    The quadratic formula is
+    <men>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</men>.
 </FRAGMENT>
 ```
     

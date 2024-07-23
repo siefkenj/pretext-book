@@ -3,29 +3,19 @@ import {
     ChildrenDisplay,
     ParentsDisplay,
     PtxExample,
+    SyntaxDisplay,
 } from "../../../components";
 
 # `<me>`
 
-Expressions enclosed by the `<me>` tag are rendered as a single line of displayed mathematics. By contrast, the [`<m>`](./m) tag is used for in-line mathematics.  
+Expressions enclosed by the `<me>` tag are rendered as a single line of displayed mathematics.
+By contrast, the [`<m>`](./m) tag is used for in-line mathematics.
+
+Note: If an equation concludes a sentence, put the concluding punctuation after the closing tag.
 
 ## Syntax
 
-### Attributes
-
-<AttrDisplay name="me" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="me" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements. If the equation concludes a sentence, put the concluding punctuation after the closing tag.
-
-<ParentsDisplay name="me" />
+<SyntaxDisplay name="me" />
 
 ## Examples
 
@@ -34,4 +24,10 @@ This element can appear as an immediate child of the following elements. If the 
     <me>\int \cos x\, dx=\sin x+C</me>
 </FRAGMENT>
 ```
-    
+
+```ptx-example
+<FRAGMENT parents="p">
+    Behold, an important equation:
+    <me>\int \cos x\, dx=\sin x+C</me>.
+</FRAGMENT>
+```

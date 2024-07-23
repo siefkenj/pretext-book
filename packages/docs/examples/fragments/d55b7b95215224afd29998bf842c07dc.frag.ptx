@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+    Behold, an important equation:
+    <me>\int \cos x\, dx=\sin x+C</me>.
+</FRAGMENT>

@@ -43,21 +43,7 @@ Short description of what the \`${elmName}\` element does.
 
 ## Syntax
 
-### Attributes
-
-<AttrDisplay name="${elmName}" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="${elmName}" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements.
-
-<ParentsDisplay name="${elmName}" />
+<SyntaxDisplay name="${elmName}" />
 
 ## Examples
 

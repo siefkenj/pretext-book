@@ -3,6 +3,7 @@ import {
     ChildrenDisplay,
     ParentsDisplay,
     PtxExample,
+    SyntaxDisplay,
 } from "../../../components";
 
 # `<md>`
@@ -11,29 +12,19 @@ Used to produce multiline displays of mathematics. Individual lines of the displ
 
 ## Syntax
 
-### Attributes
-
-<AttrDisplay name="md" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="md" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements.
-
-<ParentsDisplay name="md" />
+<SyntaxDisplay name="md" />
 
 ## Examples
 
 ```ptx-example
 <FRAGMENT parents="p">
     <md>
-        <mrow>\det\begin{bmatrix}1\amp 1\\ 1\amp 3\end{bmatrix}\amp = 3-1</mrow>
-        <mrow>  \amp = 2 </mrow>
+        <mrow>
+            \det\begin{bmatrix}1\amp 1\\ 1\amp 3\end{bmatrix}\amp = 3-1
+        </mrow>
+        <mrow>
+            \amp = 2
+        </mrow>
     </md>
 </FRAGMENT>
 ```

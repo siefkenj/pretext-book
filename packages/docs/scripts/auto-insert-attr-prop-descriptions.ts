@@ -6,6 +6,7 @@ import "mdast-util-mdx-jsx";
 import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 import { JsonGrammar } from "../components/types";
 import { objectToEstree } from "./object-to-estree";
+import { computeVariantLookup } from "./compute-optimized-schema";
 
 const jsonGrammar = _jsonGrammar as any as JsonGrammar;
 
@@ -14,6 +15,8 @@ export const autoInsertAttrPropDescriptions: Plugin<
     MdastRoot,
     MdastRoot
 > = function () {
+    const variantInfo = computeVariantLookup();
+
     return (tree, file) => {
         file.data.extraSearchData = {};
 
@@ -22,9 +25,12 @@ export const autoInsertAttrPropDescriptions: Plugin<
                 return;
             }
             if (
-                !["AttrDisplay", "ChildrenDisplay", "ParentsDisplay"].includes(
-                    node.name!,
-                )
+                ![
+                    "AttrDisplay",
+                    "ChildrenDisplay",
+                    "ParentsDisplay",
+                    "SyntaxDisplay",
+                ].includes(node.name!)
             ) {
                 return;
             }
@@ -45,8 +51,32 @@ export const autoInsertAttrPropDescriptions: Plugin<
             const infoKey = Object.entries(jsonGrammar.refs).find(
                 ([k, v]) => v === info && (variant ? k === variant : true),
             )?.[0];
-            if (!info || !infoKey) {
+            if (!info || !infoKey || info.type !== "element") {
                 return;
+            }
+
+            if (
+                node.name === "SyntaxDisplay" &&
+                !node.attributes.find(
+                    (attr) =>
+                        attr.type === "mdxJsxAttribute" &&
+                        attr.name === "variants",
+                )
+            ) {
+                // Info has all the schema information for this element. We need to insert it into the node.
+                node.attributes.push({
+                    type: "mdxJsxAttribute",
+                    name: "variants",
+                    value: {
+                        type: "mdxJsxAttributeValueExpression",
+                        value: JSON.stringify(variantInfo[name]),
+                        data: {
+                            estree: objectToEstree(variantInfo[name] || []),
+                        },
+                    },
+                });
+
+                //  XXX: Finish add information to search
             }
 
             if (

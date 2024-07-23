@@ -3,6 +3,7 @@ import {
     ChildrenDisplay,
     ParentsDisplay,
     PtxExample,
+    SyntaxDisplay,
 } from "../../../components";
 
 # `<p>`
@@ -14,21 +15,7 @@ documents typically contain many paragraphs.
 
 ## Syntax
 
-### Attributes
-
-<AttrDisplay name="p" />
-
-### Children
-
-The following can be used as children.
-
-<ChildrenDisplay name="p" />
-
-### Child of
-
-This element can appear as an immediate child of the following elements.
-
-<ParentsDisplay name="p" />
+<SyntaxDisplay name="p" />
 
 ## Examples
 
@@ -51,8 +38,8 @@ which a few paragraphs sit inside a theorem block.
 ```ptx-example
 <FRAGMENT parents="subsection section">
     <theorem>
-        <p>Many divisions (including theorems, like in this example) can contain
-        more than one paragraph in them.</p>
+        <p>Many divisions (including theorems, like in this example) can
+        contain more than one paragraph in them.</p>
         <p>This one includes three paragraphs, as an example.  I suppose to
         count as a theorem, we should make a mathematical statement, so...</p>
         <p>If <m>a</m>, <m>b</m>, and <m>c</m> are the side lengths of a right
