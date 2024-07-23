@@ -7,7 +7,7 @@ import {
     isElement,
     multiElmMatcher,
 } from "../../utils/tools";
-import { visit, XastElement, XastText } from "../../utils/xast";
+import { visit, XastElement, XastRoot, XastText } from "../../utils/xast";
 import { ASIDE_LIKE, FIGURE_LIKE } from "../helpers/entities";
 import { isTitleNode } from "../helpers/special-tags";
 
@@ -34,7 +34,7 @@ export const ensureCurlyQuotes: Plugin<
 > = function () {
     return (root, file) => {
         visit(
-            root,
+            root as XastRoot,
             (node, info) => {
                 if (!info.containingArray || info.index == null) {
                     return;

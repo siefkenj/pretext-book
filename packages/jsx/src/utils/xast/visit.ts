@@ -1,5 +1,6 @@
 import * as Xast from "xast";
 import { XastElement, XastNode, XastRoot } from "./types";
+import { PretextRoot } from "../../assets/types";
 
 export type VisitorContext = {};
 
@@ -127,7 +128,7 @@ export type VisitInfo = {
  * @param [visitor] Function to run for each node
  */
 export function visit<Opts extends VisitOptions>(
-    tree: XastNode | XastNode[],
+    tree: XastNode | XastNode[] | PretextRoot,
     visitor:
         | Visitor<VisitorTypeFromOptions<Opts>>
         | Visitors<VisitorTypeFromOptions<Opts>>,
@@ -148,7 +149,7 @@ export function visit<Opts extends VisitOptions>(
         leave = visitor.leave;
     }
 
-    walk(tree, {
+    walk(tree as XastRoot, {
         key: undefined,
         index: undefined,
         parents: [],

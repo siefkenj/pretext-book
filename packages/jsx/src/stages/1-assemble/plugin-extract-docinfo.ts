@@ -70,12 +70,6 @@ export const extractDocInfoPlugin: Plugin<
                         syntax: node.attributes.syntax,
                     });
                     break;
-                case "latex-image-preamble":
-                    docinfo.latex_preamble = docinfo.latex_preamble || [];
-                    for (const n of node.children) {
-                        docinfo.latex_preamble.push(toString(n).trim());
-                    }
-                    break;
                 case "macros":
                     docinfo.macros = docinfo.macros || [];
                     docinfo.macros.push(toString(node as XastElement).trim());
