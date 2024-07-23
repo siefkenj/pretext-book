@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+    The quadratic formula is
+    <men>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</men>.
+</FRAGMENT>
