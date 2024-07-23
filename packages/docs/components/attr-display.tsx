@@ -1,6 +1,6 @@
 import { Link } from "nextra-theme-docs";
 import React from "react";
-import { GrammarEntry } from "./types";
+import { GrammarElementEntry } from "./types";
 
 export function AttrDisplay({
     name,
@@ -11,7 +11,7 @@ export function AttrDisplay({
 }: React.PropsWithChildren<{
     name: string;
     variant?: string;
-    attrs: GrammarEntry["attributes"];
+    attrs: GrammarElementEntry["attributes"];
     links?: Record<string, string>;
 }>) {
     const order = Object.keys(attrs);
