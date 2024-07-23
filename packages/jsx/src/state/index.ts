@@ -15,6 +15,7 @@ import { ArticleFrontMatter, DocInfo, Toc, TocItem } from "./types";
 import { _generateRefalbeInfoMap } from "./helpers/refs";
 import { getListItemInfo } from "./helpers/lists";
 import { _generateEquationNumberingMap } from "./helpers/numbering";
+import { PretextRoot } from "../assets/types";
 
 export type XRefTargetInfo = {
     node: XastElement;
@@ -108,8 +109,8 @@ export class PretextState {
      * Set the root node of the XAST tree. This function
      * also generates information needed for the TOC, etc.
      */
-    setRoot(root: XastRoot) {
-        this.root = root;
+    setRoot(root: XastRoot | PretextRoot) {
+        this.root = root as XastRoot;
         this._generateParentMap();
         this._generateToc();
         this._generateRefalbeInfoMap();
