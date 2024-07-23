@@ -8,12 +8,20 @@ import {
 
 # `<times>`
 
-Short description of what the `times` element does.
+A "multiplication sign" symbol for use in text.
+Styled to enhance, consensus at Google Group was
+`font-size: larger; vertical-align: -.2ex;`.
+The unicode character is &#xd7;, which is entered in HTML as `&#xd7;`.
+Used with self-closing syntax: <times/>.
 
 ## Syntax
 
 <SyntaxDisplay name="times" />
 
 ## Examples
-
+```ptx-example
+<FRAGMENT parents="p">
+    It would be strange to use math mode to input <q>humans<times/>cats</q>.
+</FRAGMENT>
+```
     

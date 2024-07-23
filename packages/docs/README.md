@@ -11,6 +11,9 @@ part of PreTeXt code that is not part of a larger document. See `packages/fragme
 
 In the root directory (i.e. at the same level as the root of `packages/docs` (_not_ the directory that this README is in)) run `npm install`.
 
+If you are on an ARM-based Mac, you will need to also run `npm install @rollup/rollup-darwin-arm64`.
+(This step is not required on other architectures or operating systems.)
+
 Then, in this directory (the directory of this README), run
 
 ```
