@@ -9,7 +9,46 @@ import {
     useTabStore,
 } from "@ariakit/react";
 import { ChildrenDisplay, ParentsDisplay } from "./children-display";
+import { AttrDisplay } from "./attr-display";
 
+/**
+ * Display a list of a tag's allowed children.
+ *
+ * @name The name of the tag.
+ * @variant The variant of the tag as specified in `generated-grammar.ts`.
+ */
+export function SyntaxDisplay({
+    name,
+    variants = [],
+}: React.PropsWithChildren<{
+    name: string;
+    variants: VariantInfo[];
+}>) {
+    variants = [...variants].sort((a, b) => a.refId.localeCompare(b.refId));
+
+    const variantsDescription =
+        variants.length <= 1 ? null : (
+            <React.Fragment>
+                <Heading>Variants</Heading>
+                <p className="_my-4">
+                    There are {variants.length} variants of{" "}
+                    <code>{`<${name}>`}</code>.{" "}
+                </p>
+            </React.Fragment>
+        );
+
+    return (
+        <React.Fragment>
+            {variantsDescription}
+            <VariantsTabs name={name} variants={variants} />
+        </React.Fragment>
+    );
+}
+
+/**
+ * Displays a tab strip with one tab per variant. Each tab contains information about attributes/children/parents of
+ * the variant.
+ */
 export function VariantsTabs({
     name,
     variants,
@@ -18,6 +57,16 @@ export function VariantsTabs({
     variants: VariantInfo[];
 }>) {
     const store = useTabStore();
+
+    if (variants.length === 1) {
+        return (
+            <VariantInfoDisplay
+                variant={variants[0]}
+                name={name}
+                marginTop={8}
+            />
+        );
+    }
 
     return (
         <TabProvider>
@@ -35,16 +84,10 @@ export function VariantsTabs({
             </TabList>
             {variants.map((variant) => (
                 <TabPanel key={variant.refId} store={store} id={variant.refId}>
-                    <Heading>Children</Heading>
-                    <ChildrenDisplay
+                    <VariantInfoDisplay
+                        variant={variant}
                         name={name}
-                        textAllowed={variant.textChildrenAllowed}
-                        childList={variant.children.map((c) => c.name)}
-                    />
-                    <Heading>Parents</Heading>
-                    <ParentsDisplay
-                        name={name}
-                        parentList={variant.parents.map((p) => p.name)}
+                        marginTop={2}
                     />
                 </TabPanel>
             ))}
@@ -53,41 +96,34 @@ export function VariantsTabs({
 }
 
 /**
- * Display a list of a tag's allowed children.
- *
- * @name The name of the tag.
- * @variant The variant of the tag as specified in `generated-grammar.ts`.
+ * Display all relevant information about a particular variant of a tag.
  */
-export function SyntaxDisplay({
+export function VariantInfoDisplay({
+    variant,
     name,
-    variants = [],
-}: React.PropsWithChildren<{
+    marginTop,
+}: {
+    variant: VariantInfo;
     name: string;
-    variants: VariantInfo[];
-}>) {
-    const variantPluralization = variants.length === 1 ? `variant` : `variants`;
-    const variantsDescription =
-        variants.length === 0 ? null : (
-            <React.Fragment>
-                <Heading>Variants</Heading>
-                <p>
-                    There are {variants.length} {variantPluralization} of{" "}
-                    <code>{`<${name}>`}</code>:{" "}
-                    {variants
-                        .flatMap((v) => [
-                            <i key={v.name}>{formatVariantName(v)}</i>,
-                            ", ",
-                        ])
-                        .slice(0, -1)}
-                    .
-                </p>
-            </React.Fragment>
-        );
-
+    marginTop: number;
+}) {
     return (
         <React.Fragment>
-            {variantsDescription}
-            <VariantsTabs name={name} variants={variants} />
+            <Heading marginTop={marginTop}>Attributes</Heading>
+            <AttrDisplay name={name} attrs={variant.attributes} />
+            <Heading>Children</Heading>
+            {variant.children.length !== 0 && "The following may appear as children: "}
+            <ChildrenDisplay
+                name={name}
+                textAllowed={variant.textChildrenAllowed}
+                childList={variant.children.map((c) => c.name)}
+            />
+            <Heading>Parents</Heading>
+            {variant.parents.length !== 0 && "This element may appear as an immediate child of the following elements: "}
+            <ParentsDisplay
+                name={name}
+                parentList={variant.parents.map((p) => p.name)}
+            />
         </React.Fragment>
     );
 }
@@ -106,9 +142,14 @@ function formatVariantName(variant: VariantInfo): string {
 /**
  * Heading that matches Nextra's theme for a `### Foo` heading.
  */
-function Heading({ children }: React.PropsWithChildren<{}>) {
+function Heading({
+    children,
+    marginTop,
+}: React.PropsWithChildren<{ marginTop?: number }>) {
     return (
-        <h2 className="_font-semibold _tracking-tight _text-slate-900 dark:_text-slate-100 _mt-8 _text-2xl">
+        <h2
+            className={`_font-semibold _tracking-tight _text-slate-900 dark:_text-slate-100 _mt-${marginTop || 8} _text-2xl`}
+        >
             {children}
         </h2>
     );

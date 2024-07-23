@@ -24,6 +24,19 @@ function getVariantInfo(name: string): VariantInfo[] {
                     name: (refs[child.ref] as GrammarElementEntry).name,
                 };
             }),
+            parents: Object.entries(refs)
+                .filter(([ref, info]) => {
+                    return (
+                        info.type === "element" &&
+                        info.children.some((c) => c.ref === refId)
+                    );
+                })
+                .map(([ref, info]) => {
+                    return {
+                        ref,
+                        name: (info as GrammarElementEntry).name,
+                    };
+                }),
             textChildrenAllowed: entry.textChildrenAllowed,
         };
     });

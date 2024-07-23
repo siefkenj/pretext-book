@@ -23,5 +23,6 @@ export type VariantInfo = {
     name: string;
     attributes: Record<string, { optional?: boolean; type: string[] }>;
     children: { ref: string; name: string }[];
+    parents: { ref: string; name: string }[];
     textChildrenAllowed: boolean;
 };
