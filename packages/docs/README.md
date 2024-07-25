@@ -29,6 +29,8 @@ _Notes_:
 -   You can call tags _tags_ or _elements_. Your choice.
 -   Tags should always include `<>` brackets. For example, write `<p>` instead of `p` when talking about the `<p>` tag.
 -   Examples should be word-wrapped at 80 characters so a horizontal scrollbar is not needed.
+-   **Do not** commit your rendered fragment files (those in `examples/`). I will re-render and commit those files as needed
+    as the docs are updated.
 -   See [Divio](https://docs.divio.com/documentation-system/reference/) description of good reference documentation.
 
 See `pages/reference/elements/exercise.mdx` for an advanced example of writing reference documentation.
