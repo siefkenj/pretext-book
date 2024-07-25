@@ -76,7 +76,7 @@ export function VariantsTabs({
                         key={variant.refId}
                         store={store}
                         id={variant.refId}
-                        title={`Information about the ${variant.refId} variant`}
+                        title={`Information about the ${formatVariantName(variant)} variant of <${name}>`}
                     >
                         <i>{formatVariantName(variant)}</i>
                     </Tab>
@@ -112,7 +112,6 @@ export function VariantInfoDisplay({
             <Heading marginTop={marginTop}>Attributes</Heading>
             <AttrDisplay name={name} attrs={variant.attributes} />
             <Heading>Children</Heading>
-            {variant.children.length !== 0 && "The following may appear as children: "}
             <ChildrenDisplay
                 name={name}
                 textAllowed={variant.textChildrenAllowed}

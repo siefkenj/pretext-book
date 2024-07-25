@@ -41,3 +41,34 @@
     --tw-text-opacity: 1;
     color: rgb(59 130 246 / var(--tw-text-opacity));
 }
+
+.hidden-tags-label {
+    color: hsl(
+        var(--nextra-primary-hue) var(--nextra-primary-saturation) 25% /
+            var(--tw-text-opacity)
+    );
+}
+.hidden-tags-label:hover {
+    color: hsl(
+        var(--nextra-primary-hue) var(--nextra-primary-saturation) 50% /
+            var(--tw-text-opacity)
+    );
+}
+.hidden-tags-expand-button {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+.hidden-tags-expand-all-button sup {
+    top: -.25em;
+}
+.hidden-tags-expand-all-button{
+    font-size: smaller;
+    margin-left: .15em;
+    opacity: 0.6;
+}
+.hidden-tags-expand-all-button:hover {
+    color: hsl(
+        var(--nextra-primary-hue) var(--nextra-primary-saturation) 50% /
+            var(--tw-text-opacity)
+    );
+}

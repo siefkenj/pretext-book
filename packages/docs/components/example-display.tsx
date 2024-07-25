@@ -158,7 +158,7 @@ function createHtmlForIframe(pretext: string, basePath = "") {
                   "[pretext]/mathjaxknowl3.js"
                 ],
                 "paths": {
-                  "pretext": "/_static/pretext/js/lib"
+                  "pretext": "${basePath}/_static/pretext/js/lib"
                 }
               },
               "startup": {
@@ -171,7 +171,7 @@ function createHtmlForIframe(pretext: string, basePath = "") {
             };
         </script>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-        <script src="/_static/pretext/js/pretext.js"></script>
+        <script src="${basePath}/_static/pretext/js/pretext.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
         <link
