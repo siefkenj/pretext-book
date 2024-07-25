@@ -15,7 +15,18 @@ or even broken down with the [`<task>`](./task) tag.
 
 ## Syntax
 
-<SyntaxDisplay name="exercise" />
+<SyntaxDisplay
+    name="exercise"
+    additionalAttributeInfo={{
+        // Add some custom information that cannot be extracted from the schema
+
+        // The variant name is required (even though `<exercise>` has only one variant)
+        Exercise: {
+            // Add additional information about the `number` attribute of the `Exercise` variant
+            number: { value: "An override for the numbering of the exercise", link: "#numbering-example" },
+        },
+    }}
+/>
 
 ## Examples
 
@@ -37,7 +48,7 @@ It is unstructured as it itself contains only [`<p>`](./p) tags.
 </FRAGMENT>
 ```
 
-## A structured exercises with in a list of exercises
+### A structured exercises with in a list of exercises
 
 This exercise occurs inside an [`<exercises>`](./exercises) tag, so it is rendered a list item.
 It is structured to include a hint, solution, and answer.
@@ -53,7 +64,7 @@ It is structured to include a hint, solution, and answer.
             </statement>
             <hint>
                 <p>Add or subtract terms from both sides so that terms with an
-                <m>x</m> are on the left side and all other terms are on the 
+                <m>x</m> are on the left side and all other terms are on the
                 right.</p>
             </hint>
             <solution>
@@ -136,6 +147,26 @@ This exercise is broken down into an introduction, a set of tasks, and a conclus
                 </p>
             </conclusion>
 
+        </exercise>
+    </exercises>
+</FRAGMENT>
+```
+
+<a id="numbering-example" />
+### An exercise with a custom number
+
+You can use the `number` attribute to override the display number of an example. This is useful,
+for example, when quoting exercises from other textbooks.
+
+```ptx-example /number/
+<FRAGMENT parents="subsection section">
+    <exercises>
+        <title>Review exercises</title>
+        <exercise number="42c">
+            <statement>
+                <p>Solve for <m>x</m>:
+                <me>9x - 2= 4x + 5</me></p>
+            </statement>
         </exercise>
     </exercises>
 </FRAGMENT>

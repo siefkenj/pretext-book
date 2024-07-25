@@ -1,24 +1,36 @@
 import { Link } from "nextra-theme-docs";
 import React from "react";
 import { GrammarElementEntry } from "./types";
+import { SPECIAL_ATTRS } from "./special-groups";
 
 export function AttrDisplay({
     name,
     variant,
     attrs = {},
     links = {},
+    typeOverrides = {},
     children,
 }: React.PropsWithChildren<{
     name: string;
     variant?: string;
     attrs: GrammarElementEntry["attributes"];
     links?: Record<string, string>;
+    typeOverrides?: Record<string, React.ReactNode>;
 }>) {
     const order = Object.keys(attrs);
     order.sort();
 
     if (order.length === 0) {
         return <em>This tag has no attributes.</em>;
+    }
+
+    for (const attrName of Object.keys(attrs)) {
+        if (attrName in links) {
+            continue;
+        }
+        if (SPECIAL_ATTRS.includes(attrName)) {
+            links[attrName] = `../attributes/${attrName.replace(":", "")}`;
+        }
     }
 
     return (
@@ -61,21 +73,23 @@ export function AttrDisplay({
                                 {attrInfo.optional ? "optional" : "required"}
                             </td>
                             <td className="attr-values">
-                                {attrInfo.type?.map((v) => (
-                                    <React.Fragment key={v}>
-                                        {v.startsWith('"') ? (
-                                            <code className="attr-value">
-                                                {v}
-                                            </code>
-                                        ) : (
-                                            <React.Fragment>
-                                                <code className="attr-value abstract-type">
+                                {typeOverrides[attrName] ||
+                                    attrInfo.type?.map((v) => (
+                                        <React.Fragment key={v}>
+                                            {v.startsWith('"') ? (
+                                                <code className="attr-value">
                                                     {v}
                                                 </code>
-                                            </React.Fragment>
-                                        )}
-                                    </React.Fragment>
-                                )) || ""}
+                                            ) : (
+                                                <React.Fragment>
+                                                    <code className="attr-value abstract-type">
+                                                        {v}
+                                                    </code>
+                                                </React.Fragment>
+                                            )}
+                                        </React.Fragment>
+                                    )) ||
+                                    ""}
                             </td>
                         </tr>
                     );

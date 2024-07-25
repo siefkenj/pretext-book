@@ -98,3 +98,8 @@ export const SPECIAL_GROUPS = {
     Math: ["m", "me", "men", "md", "mdn"],
     Lists: ["ol", "ul", "dl"],
 };
+
+/**
+ * A list of special attributes for which separate documentation pages already exist.
+ */
+export const SPECIAL_ATTRS = ["xml:id", "xml:lang", "label", "component"];

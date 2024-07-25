@@ -1,0 +1,11 @@
+<FRAGMENT parents="subsection section">
+    <exercises>
+        <title>Review exercises</title>
+        <exercise number="42c">
+            <statement>
+                <p>Solve for <m>x</m>:
+                <me>9x - 2= 4x + 5</me></p>
+            </statement>
+        </exercise>
+    </exercises>
+</FRAGMENT>

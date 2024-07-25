@@ -2,6 +2,7 @@ import nextraConfig from "nextra";
 import {
     autoInsertAttrPropDescriptions,
     wrapPtxExample,
+    addSyntaxHeadingsToToc,
 } from "./dist/index.js";
 import { getHighlighter, bundledLanguages, bundledThemes } from "shiki";
 import fs from "node:fs";
