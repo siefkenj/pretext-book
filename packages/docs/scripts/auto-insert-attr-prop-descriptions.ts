@@ -4,7 +4,7 @@ import { Root as MdastRoot } from "mdast";
 // Importing this automatically imports all the types from `mdast-util-mdx-jsx`.
 import "mdast-util-mdx-jsx";
 import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
-import { JsonGrammar } from "../components/types";
+import { JsonGrammar, VariantInfo } from "../components/types";
 import { objectToEstree } from "./object-to-estree";
 import { computeVariantLookup } from "./compute-optimized-schema";
 
@@ -76,7 +76,27 @@ export const autoInsertAttrPropDescriptions: Plugin<
                     },
                 });
 
-                //  XXX: Finish add information to search
+                // Add some data that will be used for search
+                const multipleVariants =
+                    Object.keys(variantInfo[name] || {}).length > 1;
+                // @ts-ignore
+                file.data.extraSearchData["attributes#Attribute"] =
+                    Object.values(variantInfo[name] || {})
+                        .flat()
+                        .flatMap((v) =>
+                            Object.keys(v.attributes).map(
+                                (attrName) => [attrName, v] as const,
+                            ),
+                        )
+                        .map(([attrName, elm]) => {
+                            return (
+                                `${attrName} = "…" (attribute of <${elm.name}/>)` +
+                                (multipleVariants
+                                    ? ` (variant: ${formatVariantName(elm)})`
+                                    : "")
+                            );
+                        })
+                        .join("\n");
             }
 
             if (
@@ -175,3 +195,14 @@ export const autoInsertAttrPropDescriptions: Plugin<
         });
     };
 };
+
+/**
+ * Format `variant.refId` for display to the user.
+ */
+function formatVariantName(variant: VariantInfo): string {
+    // Strip off any leading `Element` from `variant.name` unless
+    // `variant.name` is `Element` itself.
+    return variant.refId === "Element"
+        ? variant.refId
+        : variant.refId.replace(/^Element/, "");
+}

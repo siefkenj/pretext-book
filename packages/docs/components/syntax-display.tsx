@@ -190,7 +190,7 @@ export function VariantInfoDisplay({
 /**
  * Format `variant.refId` for display to the user.
  */
-function formatVariantName(variant: VariantInfo): string {
+export function formatVariantName(variant: VariantInfo): string {
     // Strip off any leading `Element` from `variant.name` unless
     // `variant.name` is `Element` itself.
     return variant.refId === "Element"
