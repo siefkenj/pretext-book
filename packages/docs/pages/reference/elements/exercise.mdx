@@ -18,7 +18,11 @@ or even broken down with the [`<task>`](./task) tag.
 <SyntaxDisplay
     name="exercise"
     additionalAttributeInfo={{
+        // Add some custom information that cannot be extracted from the schema
+
+        // The variant name is required (even though `<exercise>` has only one variant)
         Exercise: {
+            // Add additional information about the `number` attribute of the `Exercise` variant
             number: { value: "An override for the numbering of the exercise", link: "#numbering-example" },
         },
     }}

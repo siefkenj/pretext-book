@@ -31,6 +31,8 @@ _Notes_:
 -   Examples should be word-wrapped at 80 characters so a horizontal scrollbar is not needed.
 -   See [Divio](https://docs.divio.com/documentation-system/reference/) description of good reference documentation.
 
+See `pages/reference/elements/exercise.mdx` for an advanced example of writing reference documentation.
+
 ## Dev Instructions
 
 In the root directory (i.e. at the same level as the root of `packages/docs` (_not_ the directory that this README is in)) run `npm install`.
