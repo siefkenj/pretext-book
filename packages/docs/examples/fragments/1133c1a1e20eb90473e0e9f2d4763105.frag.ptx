@@ -1,0 +1,6 @@
+<FRAGMENT parents="p">
+    <quantity>
+        4
+        <unit base="hour">
+    </quantity>
+</FRAGMENT>

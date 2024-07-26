@@ -38,12 +38,19 @@ export function SyntaxDisplay({
     name,
     variants = [],
     additionalAttributeInfo = {},
+    defaultVariant,
 }: React.PropsWithChildren<{
     name: string;
     variants: VariantInfo[];
     additionalAttributeInfo: AdditionalAttributeInfo;
+    defaultVariant?: string;
 }>) {
     variants = [...variants].sort((a, b) => a.refId.localeCompare(b.refId));
+    // Make sure we have the canonically shortened name of the default variant.
+    defaultVariant = defaultVariant
+        ? "Element" +
+          formatVariantName({ refId: defaultVariant } as VariantInfo)
+        : undefined;
 
     const variantsDescription =
         variants.length <= 1 ? null : (
@@ -63,6 +70,7 @@ export function SyntaxDisplay({
                 name={name}
                 variants={variants}
                 additionalAttributeInfo={additionalAttributeInfo}
+                defaultVariant={defaultVariant}
             />
         </React.Fragment>
     );
@@ -76,12 +84,17 @@ export function VariantsTabs({
     name,
     variants,
     additionalAttributeInfo,
+    defaultVariant,
 }: React.PropsWithChildren<{
     name: string;
     variants: VariantInfo[];
     additionalAttributeInfo: AdditionalAttributeInfo;
+    defaultVariant?: string;
 }>) {
-    const store = useTabStore();
+    const store = useTabStore({
+        defaultActiveId: defaultVariant,
+        activeId: defaultVariant,
+    });
 
     if (variants.length === 1) {
         return (

@@ -8,7 +8,9 @@ import {
 
 # `<warning>`
 
-Short description of what the `<warning>` tag does.
+A `<warning>` is a special type of division. Like [`<paragraphs>`](paragraphs), it can be the immediate child
+of other divisions (like [`<section>`](section), [`<chapter>`](chapter), etc.) and does not need to follow a particular
+heirarchical structure.
 
 ## Syntax
 
@@ -16,4 +18,10 @@ Short description of what the `<warning>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section paragraphs">
+    <warning>
+        <p>Do not eat the yellow snow.</p>
+    </warning>
+</FRAGMENT>
+```

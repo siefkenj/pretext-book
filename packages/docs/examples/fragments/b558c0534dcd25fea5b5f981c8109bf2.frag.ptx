@@ -1,22 +1,3 @@
-import {
-    AttrDisplay,
-    ChildrenDisplay,
-    ParentsDisplay,
-    PtxExample,
-    SyntaxDisplay,
-} from "../../../components";
-
-# `<volume>`
-
-The `<volume>` is used to specify the volume reference in a citation in a [`<biblio>`](biblio) tag.
-
-## Syntax
-
-<SyntaxDisplay name="volume" />
-
-## Examples
-
-```ptx-example {5}
 <FRAGMENT parents="references section">
     <biblio type="bibtex">
         <author>H. Davenport</author>
@@ -28,4 +9,3 @@ The `<volume>` is used to specify the volume reference in a citation in a [`<bib
         <pages>xiv+177</pages>
     </biblio>
 </FRAGMENT>
-```

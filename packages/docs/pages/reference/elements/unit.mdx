@@ -8,7 +8,9 @@ import {
 
 # `<unit>`
 
-Short description of what the `<unit>` tag does.
+The self-closing `<unit/>` tag is used to specify units inside a [`<quantity>`](quantity). Adjacent units will
+be multiplied together. Units may optionally include a prefix via the `prefix` attribute and an exponent via the `exp` attribute.
+See [The PreTeXt Guide](https://pretextbook.org/doc/guide/html/overview-si-units.html) for more information.
 
 ## Syntax
 
@@ -16,4 +18,30 @@ Short description of what the `<unit>` tag does.
 
 ## Examples
 
-    
+```ptx-example {3-4}
+<FRAGMENT parents="p">
+    <quantity>
+        <mag>4</mag>
+        <unit base="meter"/>
+        <unit base="hour"/>
+    </quantity>
+</FRAGMENT>
+```
+
+```ptx-example {3}
+<FRAGMENT parents="p">
+    <quantity>
+        <mag>4</mag>
+        <unit prefix="mega" base="second"/>
+    </quantity>
+</FRAGMENT>
+```
+
+```ptx-example {3}
+<FRAGMENT parents="p">
+    <quantity>
+        <mag>4</mag>
+        <unit base="second" exp="2"/>
+    </quantity>
+</FRAGMENT>
+```
