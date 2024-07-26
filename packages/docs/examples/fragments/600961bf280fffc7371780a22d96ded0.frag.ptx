@@ -1,0 +1,5 @@
+<FRAGMENT parents="p">
+    Visit
+    <url href="https://www.example.com" visual="example.com"/>
+    for more information.
+</FRAGMENT>

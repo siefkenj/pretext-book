@@ -87,6 +87,7 @@ export function AttrDisplay({
                                                     </code>
                                                 </React.Fragment>
                                             )}
+                                            {"\u200B"}
                                         </React.Fragment>
                                     )) ||
                                     ""}

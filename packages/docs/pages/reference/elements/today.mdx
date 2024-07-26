@@ -8,7 +8,8 @@ import {
 
 # `<today>`
 
-Short description of what the `<today>` tag does.
+The self-closing `<today/>` tag outputs the date that the PreTeXt content was compiled (or re-compiled). Its content
+will change on every compilation, so take care if you are trying to produce archivable documents.
 
 ## Syntax
 
@@ -16,4 +17,8 @@ Short description of what the `<today>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    This example was written on <today/>.
+</FRAGMENT>
+```

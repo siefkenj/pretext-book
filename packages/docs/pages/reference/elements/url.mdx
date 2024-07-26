@@ -8,12 +8,58 @@ import {
 
 # `<url>`
 
-Short description of what the `<url>` tag does.
+The `<url>` tag is used to link to an external website. If you are linking to a page within the same document, use [`<xref>`](xref)
+instead.
+
+A `<url>` may be self-closing, but for accessibility reasons, it is recommended that the `<url>` wrap text that describes the link.
+See [An Accessible URL](#an-accessible-url) for an example.
 
 ## Syntax
 
-<SyntaxDisplay name="url" />
+<SyntaxDisplay
+    name="url"
+    defaultVariant="Url"
+    additionalAttributeInfo={{
+        Url: { visual: { link: "#the-visual-attribute" } },
+    }}
+/>
 
 ## Examples
 
-    
+### A Minimal URL
+
+A url with no additional information (generally considered bad practice for accessibility reasons).
+
+```ptx-example {2}
+<FRAGMENT parents="p">
+    Visit
+    <url href="https://www.example.com" />
+    for more information.
+</FRAGMENT>
+```
+
+### The `visual` Attribute
+
+A url with the `visual` attribute set. If the `visual` attribute is provided and the `<url>` tag has no content,
+then the content of the `visual` attribute will be shown.
+
+```ptx-example {2}
+<FRAGMENT parents="p">
+    Visit
+    <url href="https://www.example.com" visual="example.com"/>
+    for more information.
+</FRAGMENT>
+```
+
+### An Accessible URL
+
+A url that has both a simplified form for print (via the `visual` attribute) and a reasonable text
+for the web.
+
+```ptx-example {2}
+<FRAGMENT parents="p">
+    Visit the
+    <url href="https://www.example.com" visual="example.com">example page</url>
+    for more information.
+</FRAGMENT>
+```

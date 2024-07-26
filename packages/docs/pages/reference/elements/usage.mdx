@@ -8,7 +8,10 @@ import {
 
 # `<usage>`
 
-Short description of what the `<usage>` tag does.
+The `<usage>` tag is used inside of a [`<notation>`](notation) block to
+specify how a particular piece of mathematical notation is used. Content placed
+inside of a `<usage>` tag will only be displayed inside of a [`<notation-list/>`](notation-list)
+tag, and will not show up in the immediately surrounding text.
 
 ## Syntax
 
@@ -16,4 +19,21 @@ Short description of what the `<usage>` tag does.
 
 ## Examples
 
-    
+```ptx-example {7}
+<FRAGMENT parents="">
+    <section>
+        <title>Integration</title>
+        <p>
+            The integral is a fine tool. First we will study the
+            <term>indefinite integral</term>.
+            <notation>
+                <usage><m>\int\,f(x)\,dx</m></usage>
+                <description>indefinite integral of <m>f(x)</m></description>
+            </notation>
+        </p>
+    </section>
+    <appendix>
+        <notation-list/>
+    </appendix>
+</FRAGMENT>
+```

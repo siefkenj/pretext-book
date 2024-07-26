@@ -1,0 +1,16 @@
+<FRAGMENT parents="">
+    <section>
+        <title>Integration</title>
+        <p>
+            The integral is a fine tool. First we will study the
+            <term>indefinite integral</term>.
+            <notation>
+                <usage><m>\int\,f(x)\,dx</m></usage>
+                <description>indefinite integral of <m>f(x)</m></description>
+            </notation>
+        </p>
+    </section>
+    <appendix>
+        <notation-list/>
+    </appendix>
+</FRAGMENT>

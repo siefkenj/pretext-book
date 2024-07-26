@@ -56,6 +56,7 @@ const ALL_TAGS = [
     "contributor",
     "contributors",
     "convention",
+    "copyleft",
     "copyright",
     "corollary",
     "creator",

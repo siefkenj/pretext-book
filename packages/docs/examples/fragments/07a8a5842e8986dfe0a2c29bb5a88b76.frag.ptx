@@ -1,22 +1,3 @@
-import {
-    AttrDisplay,
-    ChildrenDisplay,
-    ParentsDisplay,
-    PtxExample,
-    SyntaxDisplay,
-} from "../../../components";
-
-# `<year>`
-
-The `<year>` is used to specify the year in a [`<biblio>`](biblio) or a [`<copyright>`](copyright) tag.
-
-## Syntax
-
-<SyntaxDisplay name="year" />
-
-## Examples
-
-```ptx-example {6}
 <FRAGMENT parents="references section">
     <biblio type="bibtex">
         <author>J. B. Conrey and D. W. Farmer</author>
@@ -27,5 +8,3 @@ The `<year>` is used to specify the year in a [`<biblio>`](biblio) or a [`<copyr
         <pages start="883" end="908"/>
     </biblio>
 </FRAGMENT>
-```
-    

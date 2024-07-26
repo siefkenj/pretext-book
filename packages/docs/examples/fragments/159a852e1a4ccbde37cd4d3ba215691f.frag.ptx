@@ -1,0 +1,6 @@
+<FRAGMENT parents="p">
+    <quantity>
+        <mag>4</mag>
+        <unit prefix="mega" base="second"/>
+    </quantity>
+</FRAGMENT>
