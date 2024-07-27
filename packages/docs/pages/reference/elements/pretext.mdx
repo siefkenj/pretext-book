@@ -8,12 +8,42 @@ import {
 
 # `<pretext>`
 
-Short description of what the `<pretext>` tag does.
+The `<pretext>` tag is the top-level tag of a document. It may contain [`<docinfo>`](docinfo) and _one of_
+[`<article>`](article), [`<book>`](book), [`<letter>`](letter), or [`<memo>`](memo).
+
+The self-closing `<pretext/>` tag maybe be used to typeset the PreTeXt logo.
 
 ## Syntax
 
-<SyntaxDisplay name="pretext" />
+<SyntaxDisplay name="pretext" defaultVariant="PretextRoot" />
 
 ## Examples
 
-    
+### The `<pretext>` Root Tag
+
+```ptx
+<pretext>
+    <docinfo>
+        <title>My Document</title>
+        <author>
+            <person>
+                <name>John Doe</name>
+            </person>
+        </author>
+    </docinfo>
+    <article>
+        <section>
+            <title>Introduction</title>
+            <p>Hello, world!</p>
+        </section>
+    </article>
+</pretext>
+```
+
+### Typesetting the PreTeXt Logo
+
+```ptx-example
+<FRAGMENT parents="p">
+    This is written in <pretext/>.
+</FRAGMENT>
+```
