@@ -8,7 +8,7 @@ import {
 
 # `<stanza>`
 
-Short description of what the `<stanza>` tag does.
+The `<stanza>` tag groups lines inside of a [`<poem>`](poem).
 
 ## Syntax
 
@@ -16,4 +16,47 @@ Short description of what the `<stanza>` tag does.
 
 ## Examples
 
-    
+```ptx-example /stanza/
+<FRAGMENT parents="">
+   <poem>
+       <title>Fire and Ice</title>
+       <idx>Fire and Ice, Frost</idx>
+       <author>Robert Frost</author>
+       <stanza>
+           <line>Some say the world will end in fire,</line>
+           <line>Some say in ice.</line>
+           <line>From what I've tasted of desire</line>
+           <line>I hold with those who favor fire.</line>
+           <line>But if it had to perish twice,</line>
+           <line>I think I know enough of hate</line>
+           <line>To say that for destruction ice</line>
+           <line>Is also great</line>
+           <line>And would suffice.</line>
+       </stanza>
+   </poem>
+</FRAGMENT>
+```
+
+A `<stanza>` can have a `<title>` element, which is displayed above the lines of the stanza.
+
+```ptx-example /stanza/
+<FRAGMENT parents="">
+   <poem>
+       <title>My Poem</title>
+       <stanza>
+           <title>Beginnings</title>
+           <line>It starts with number one;</line>
+           <line>then on to number two.</line>
+           <line>But what I take away</line>
+           <line>is the start of something new.</line>
+       </stanza>
+       <stanza>
+           <title>Endings</title>
+           <line>After time has come and passed,</line>
+           <line>I fear not much will stand to last.</line>
+           <line>Farewell and goodbye is too much to say.</line>
+           <line>Instead I just walk away.</line>
+       </stanza>
+   </poem>
+</FRAGMENT>
+```

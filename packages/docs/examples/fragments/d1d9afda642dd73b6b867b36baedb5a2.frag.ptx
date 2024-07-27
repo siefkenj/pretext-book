@@ -1,0 +1,19 @@
+<FRAGMENT parents="">
+   <poem>
+       <title>My Poem</title>
+       <stanza>
+           <title>Beginnings</title>
+           <line>It starts with number one;</line>
+           <line>then on to number two.</line>
+           <line>But what I take away</line>
+           <line>is the start of something new.</line>
+       </stanza>
+       <stanza>
+           <title>Endings</title>
+           <line>After time has come and passed,</line>
+           <line>I fear not much will stand to last.</line>
+           <line>Farewell and goodbye is too much to say.</line>
+           <line>Instead I just walk away.</line>
+       </stanza>
+   </poem>
+</FRAGMENT>

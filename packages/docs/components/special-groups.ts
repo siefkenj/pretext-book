@@ -75,6 +75,7 @@ export const SPECIAL_GROUPS = {
         "chord",
     ],
     "Formatting Tags": [
+        "articletitle",
         "em",
         "alert",
         "delete",
@@ -91,7 +92,6 @@ export const SPECIAL_GROUPS = {
         "email",
         "url",
         "init",
-        "cd",
         "taxon",
     ],
     Quotation: ["q", "sq", "dblbrackets", "angles"],
