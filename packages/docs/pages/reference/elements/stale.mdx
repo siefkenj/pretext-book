@@ -8,7 +8,8 @@ import {
 
 # `<stale>`
 
-Short description of what the `<stale>` tag does.
+The `<stale>` tag marks it's contents as _stale_ to the reader by rendering it
+in <span style={{ textDecoration: "line-through" }}>strike-through text</span>.
 
 ## Syntax
 
@@ -16,4 +17,8 @@ Short description of what the `<stale>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    When proofreading, you may <stale>mark stale</stale> parts of your work.
+</FRAGMENT>
+```

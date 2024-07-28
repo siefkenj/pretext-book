@@ -8,7 +8,11 @@ import {
 
 # `<pre>`
 
-Short description of what the `<pre>` tag does.
+The `<pre>` tag is used for content where whitespace of the source should be preserved in the document.
+It is a paragraph-like tag that should be used in place of a [`<p>`](p), but _cannot_ be used inside of a
+[`<p>`](p) tag.
+
+If you need to preserve whitespace in a phrase inside of a paragraph, consider using the [`<c>`](c) tag.
 
 ## Syntax
 
@@ -16,4 +20,24 @@ Short description of what the `<pre>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="paragraphs">
+    <pre>
+        This is a line
+         with multiple
+          lines   and    wierd   whitespace.
+    </pre>
+</FRAGMENT>
+```
+
+To explicitly specify the lines in your `<pre>` block, use the [`<cline>`](cline) tag.
+
+```ptx-example
+<FRAGMENT parents="paragraphs">
+    <pre>
+        <cline>This is a line</cline>
+        <cline>with multiple</cline>
+        <cline>lines.</cline>
+    </pre>
+</FRAGMENT>
+```
