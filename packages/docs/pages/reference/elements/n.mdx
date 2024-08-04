@@ -8,12 +8,25 @@ import {
 
 # `<n>`
 
-Short description of what the `<n>` tag does.
-
+The self-closing `<n/>` tag displays detailed symbol about a musical note.
 ## Syntax
 
 <SyntaxDisplay name="n" />
 
 ## Examples
 
-    
+ 
+```ptx-example
+<FRAGMENT parents="p">
+    The &lt;n/&gt; tag is a compact way in which to convey detailed information about a musical 
+    note.  For example, "play the note C on a standard keyboard" does not provide enough 
+    information as it lacks the octave in which the C occurs.
+
+  "Middle C" is the fourth C on the 88-key paino keyboard denoted <n pc="C" octave="4"/>. One
+    denotes a C<sharp/> in the same octave as <n pc="C" acc="sharp" octave="4" />, written in 
+    PreTeXt as <c>&lt; n pc="C" acc="sharp" octave="4" /&gt; </c>.
+   
+   
+
+</FRAGMENT>
+```       
