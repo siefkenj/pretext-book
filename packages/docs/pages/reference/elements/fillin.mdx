@@ -8,12 +8,46 @@ import {
 
 # `<fillin>`
 
-Short description of what the `<fillin>` tag does.
+The self-closing `<fillin/>` tag is a generic fill-in-the-blank tag 
+which can produce answer blanks as underline, boxes or shade.
 
 ## Syntax
 
 <SyntaxDisplay name="fillin" />
 
+### Remark
+`<fillin/>` has publication options which govern the style
+ of fillin in both text and math modes.  Defaults are shown in the examples.
+
 ## Examples
 
-    
+### A `<fillin/>` in math
+
+```ptx-example
+<FRAGMENT parents="p">
+    Fillin box of a size tailored to its content:
+    <m>x^a * x^{b^c} = x^<fillin fill="a+b^c"/></m>.
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+  Fillin box of given length:
+  <m>x^a * x^{b^c} = x^<fillin characters="5"/></m>.
+</FRAGMENT>
+```
+
+### A `<fillin/>` in text
+
+```ptx-example
+<FRAGMENT parents="p">
+ What is the ultimate answer to life, the universe, and everything?
+ <fillin characters="5"/>
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+ An answer blank suggesting a column vector: <fillin cols="3"/>.
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+ An answer blank suggesting a matrix or array: <fillin rows="4" cols="7"/>.
+</FRAGMENT>
+```

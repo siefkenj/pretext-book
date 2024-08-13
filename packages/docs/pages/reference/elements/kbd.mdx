@@ -8,7 +8,7 @@ import {
 
 # `<kbd>`
 
-Short description of what the `<kbd>` tag does.
+The `<kbd>` tag produces stylized text made to look like a key on a keyboard or calculator.
 
 ## Syntax
 
@@ -16,4 +16,20 @@ Short description of what the `<kbd>` tag does.
 
 ## Examples
 
-    
+### For keys labeled by text
+
+```ptx-example
+<FRAGMENT parents="p">
+Keyboard keys with literal names:
+<kbd>Alt</kbd>, <kbd>Esc</kbd>, <kbd>F8</kbd>.
+</FRAGMENT>
+```
+
+### For keys labeled by symbols
+
+```ptx-example
+<FRAGMENT parents="p">
+ Keyboard keys given symbolically:
+ <kbd name="inverse"/>, <kbd name="enter"/>, <kbd name="hash"/>.
+</FRAGMENT>
+```
