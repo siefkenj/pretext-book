@@ -8,7 +8,10 @@ import {
 
 # `<tabular>`
 
-Short description of what the `<tabular>` tag does.
+The `<tabular>` tag is the workhorse tag for displaying a collection of cells
+presented in rows and columns.  For complex tables, there is an [online table
+builder](https://www.latex-tables.com/) which can generate PreTeXt output.
+
 
 ## Syntax
 
@@ -16,4 +19,168 @@ Short description of what the `<tabular>` tag does.
 
 ## Examples
 
-    
+### A tabular example wrapped by an `<activity>` instead of a `<table>`.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <activity>
+          <p> Which numbers between 1 and 10 can be represented as the
+          sum of three integer cubes: <m>n = x^3 + y^3 +z^3?</m>
+          </p>
+
+          <p>
+            If they can, give a solution. If they cannot, give a reason.
+            As the table below shows, not all integers that can be so
+            represented have simple solutions.
+          </p>
+
+          <p>
+            <tabular halign="center">
+              <row header="yes" bottom="minor">
+                <cell>n</cell>
+                <cell>x</cell>
+                <cell>y</cell>
+                <cell>z</cell>
+              </row>
+              <row>
+                <cell>1</cell>
+                <cell>0</cell>
+                <cell>0</cell>
+                <cell>1</cell>
+              </row>
+
+              <row>
+                <cell>1</cell>
+                <cell><m>9b^4</m></cell>
+                <cell><m>3b-9b^4</m></cell>
+                <cell><m>1-9b^3</m></cell>
+              </row>
+
+              <row>
+                <cell>2</cell>
+                <cell>1</cell>
+                <cell>1</cell>
+                <cell>0</cell>
+              </row>
+
+              <row>
+                <cell>3</cell>
+                <cell>1</cell>
+                <cell>1</cell>
+                <cell>1</cell>
+              </row>
+
+              <row>
+                <cell>4</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>5</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>6</cell>
+                <cell><m>-1</m></cell>
+                <cell><m>-1</m></cell>
+                <cell><m>2</m>
+                </cell>
+              </row>
+
+              <row>
+                <cell>7</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>8</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>9</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>10</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
+              </row>
+
+              <row>
+                <cell>42</cell>
+                <cell><m>-80,538,738,812,075,974</m></cell>
+                <cell><m>80,435,758,145,817,515</m></cell>
+                <cell><m>12,602,123,297335,631</m></cell>
+              </row>
+            </tabular>
+          </p>
+        </activity>
+    </FRAGMENT>
+```
+
+### A table with paragraphs and alignment variations
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+<table>
+  <title>Tabular Options</title>
+  <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
+    <col width="40%"/>
+    <col/>
+    <col/>
+    <col/>
+    <row>
+      <cell>Paragraphs</cell>
+      <cell>Column 2</cell>
+      <cell>Column 3</cell>
+      <cell>Column 4</cell>
+    </row>
+    <row>
+      <cell halign="center"><p>The quick brown fox <ellipsis/></p></cell>
+      <cell>A</cell>
+      <cell halign="center">B</cell>
+      <cell halign="right">C</cell>
+    </row>
+    <row valign="top">
+      <cell><p>
+        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+      </p></cell>
+      <cell halign="left">E</cell>
+      <cell halign="center">F</cell>
+      <cell halign="right">G</cell>
+    </row>
+    <row valign="middle">
+      <cell><p>
+        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+      </p></cell>
+      <cell halign="left" >E</cell>
+      <cell halign="center">F</cell>
+      <cell halign="right">G</cell>
+    </row>
+    <row valign="bottom">
+      <cell><p>
+        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+      </p></cell>
+      <cell halign="left">E</cell>
+      <cell halign="center">F</cell>
+      <cell halign="right">G</cell>
+    </row>
+  </tabular>
+</table>
+
+</FRAGMENT>
+```
