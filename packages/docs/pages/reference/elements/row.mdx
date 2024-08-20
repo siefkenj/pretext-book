@@ -1,9 +1,9 @@
 import {
-    AttrDisplay,
-    ChildrenDisplay,
-    ParentsDisplay,
-    PtxExample,
-    SyntaxDisplay,
+  AttrDisplay,
+  ChildrenDisplay,
+  ParentsDisplay,
+  PtxExample,
+  SyntaxDisplay,
 } from "../../../components";
 
 # `<row>`
@@ -20,4 +20,76 @@ adjust horizotal and vertical alignments of content within the row.
 
 ## Examples
 
-Representative examples for the use of this tag are found in the examples for the [`<tabular>`](tabular) and [`<table>`](table) tags.
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <table>
+          <title>Row options (left="minor" bottom="medium")</title>
+          <tabular>
+            <row left="minor" bottom="medium">
+              <cell>A</cell>
+              <cell>B</cell>
+              <cell>C</cell>
+              <cell>D</cell>
+            </row>
+          </tabular>
+        </table>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <table>
+          <title>Row option halign (1-left; 2-right; 3-center)</title>
+          <tabular>
+            <row halign="left">
+              <cell>AAAAAAAAAA</cell>
+              <cell>BBBBBB</cell>
+            </row>
+              <row halign="right">
+              <cell>A</cell>
+              <cell>B</cell>
+            </row>
+            <row halign="center">
+              <cell>AA A AA</cell>
+              <cell>B BB B</cell>
+            </row>
+          </tabular>
+        </table>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+  <table>
+          <title>Row option valign (1-top; 2-bottom; 3-center)</title>
+          <tabular>
+          <col width="60%"/>
+          <col/>
+            <row valign="top" left="minor" bottom="minor">
+              <cell right="minor">
+                <p>
+                  We use a paragraph here to generate enough vertical space to demonstrate the vertical alignments.
+                </p>
+              </cell>
+              <cell>BBBBBB</cell>
+            </row>
+            <row valign="bottom" left="minor" bottom="minor">
+              <cell right="minor">
+                <p>
+                  We use a paragraph here to generate enough vertical space to demonstrate the vertical alignments.
+                </p>
+              </cell>
+              <cell>B</cell>
+            </row>
+            <row valign="middle" left="minor" bottom="minor">
+              <cell right="minor">
+                <p>
+                  We use a paragraph here to generate enough vertical space to demonstrate the vertical alignments.
+                </p>
+              </cell>
+              <cell>B BB B</cell>
+            </row>
+          </tabular>
+        </table>
+ </FRAGMENT>
+```
