@@ -1,133 +1,133 @@
 import {
-    AttrDisplay,
-    ChildrenDisplay,
-    ParentsDisplay,
-    PtxExample,
-    SyntaxDisplay,
+  AttrDisplay,
+  ChildrenDisplay,
+  ParentsDisplay,
+  PtxExample,
+  SyntaxDisplay,
 } from "../../../components";
 
 # `<tabular>`
 
 The `<tabular>` tag is the workhorse tag for displaying a collection of cells
-presented in rows and columns.  For complex tables, there is an [online table
+presented in rows and columns; in most contexts this environment would be
+called a table, but in PreTeXt a `<table>` is simply one of many possible
+wrappers for a `<tabular>`. For complex tabulars, there is an [online table
 builder](https://www.latex-tables.com/) which can generate PreTeXt output.
-
 
 ## Syntax
 
 <SyntaxDisplay name="tabular" />
 
+## Notes
+
+### A note about tabular borders
+
+Placing borders in tabulars exactly where you want them requires that you
+understand in which elements the attributes `top`, `left`, `bottom`, and
+`right` may be applied. Note that while horizontal borders (rules)
+ are easy, vertical rules have been made intentionally more work "to gently
+ guide authors towards good choices" in document design.
+The section of the PreTeXt Guide on `Tables and Tabulars`
+is the definitive source.
+
 ## Examples
+
+### A simple tabular wrapper in a `<table>`.
+
+ In this example, all cell entries are right-justified; the table has a header
+ row and some cells have borders.
+
+  ```ptx-example
+<FRAGMENT parents="subsection section">
+    <table>
+          <title>Sample check registry</title>
+          <tabular halign="right">
+            <row header="yes" bottom="minor" >
+              <cell right="minor">Date</cell>
+              <cell>Credit</cell>
+              <cell>Debit</cell>
+              <cell>Balance</cell>
+            </row>
+            <row>
+              <cell right="minor">Aug 1, 2024</cell>
+              <cell>100.27</cell>
+              <cell>0.00</cell>
+              <cell>5455.21</cell>
+            </row>
+            <row>
+              <cell right="minor">Aug 5, 2024</cell>
+              <cell>0.00</cell>
+              <cell>200.00</cell>
+              <cell>5255.21</cell>
+            </row>
+            <row>
+              <cell right="minor">Aug 12, 2024</cell>
+              <cell>23.45</cell>
+              <cell>0.00</cell>
+              <cell>5278.66</cell>
+            </row>
+          </tabular>
+        </table>
+</FRAGMENT>
+```
 
 ### A tabular example wrapped by an `<activity>` instead of a `<table>`.
 
 ```ptx-example
 <FRAGMENT parents="subsection section">
-    <activity>
-          <p> Which numbers between 1 and 10 can be represented as the
-          sum of three integer cubes: <m>n = x^3 + y^3 +z^3?</m>
-          </p>
+  <activity>
+          <p> Many positive integers can be represented as the sum of three
+           integer cubes: <m>n =
+            x^3 + y^3 +z^3.</m> Exactly one of <m>n = 12, 13</m> can be represented as the sum of
+            three cubes. Determine a representation for the one that can, and a reason for the one
+            that cannot. </p>
 
-          <p>
-            If they can, give a solution. If they cannot, give a reason.
-            As the table below shows, not all integers that can be so
-            represented have simple solutions.
-          </p>
+          <hint>
+            <p> For the one that is representable, the absolute values of <m>x,y,z</m> are all less
+              than 12. </p>
+          </hint>
+          <hint>
+            <p>
+              For the one that is not representable, consider the values of cubes modulo 9.
+            </p>
+          </hint>
 
-          <p>
-            <tabular halign="center">
+          <tabular halign="center">
               <row header="yes" bottom="minor">
                 <cell>n</cell>
                 <cell>x</cell>
                 <cell>y</cell>
                 <cell>z</cell>
               </row>
-              <row>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>1</cell>
-              </row>
-
-              <row>
-                <cell>1</cell>
-                <cell><m>9b^4</m></cell>
-                <cell><m>3b-9b^4</m></cell>
-                <cell><m>1-9b^3</m></cell>
-              </row>
-
-              <row>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-              </row>
-
-              <row>
-                <cell>3</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-              </row>
-
-              <row>
-                <cell>4</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-
-              <row>
-                <cell>5</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-
-              <row>
-                <cell>6</cell>
-                <cell><m>-1</m></cell>
-                <cell><m>-1</m></cell>
-                <cell><m>2</m>
-                </cell>
-              </row>
-
-              <row>
-                <cell>7</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-
-              <row>
-                <cell>8</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-
-              <row>
-                <cell>9</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
 
               <row>
                 <cell>10</cell>
+                <cell>1</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+              </row>
+
+              <row>
+                <cell>11</cell>
+                <cell>-2</cell>
+                <cell>-2</cell>
+                <cell>3</cell>
+              </row>
+
+              <row>
+                <cell>12</cell>
                 <cell></cell>
                 <cell></cell>
                 <cell></cell>
               </row>
 
               <row>
-                <cell>42</cell>
-                <cell><m>-80,538,738,812,075,974</m></cell>
-                <cell><m>80,435,758,145,817,515</m></cell>
-                <cell><m>12,602,123,297335,631</m></cell>
+                <cell>13</cell>
+                <cell></cell>
+                <cell></cell>
+                <cell></cell>
               </row>
-            </tabular>
-          </p>
+          </tabular>
         </activity>
     </FRAGMENT>
 ```
@@ -137,7 +137,7 @@ builder](https://www.latex-tables.com/) which can generate PreTeXt output.
 ```ptx-example
 <FRAGMENT parents="subsection section">
 <table>
-  <title>Tabular Options</title>
+  <title>Tabular Alignment Options</title>
   <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
     <col width="40%"/>
     <col/>
@@ -157,7 +157,7 @@ builder](https://www.latex-tables.com/) which can generate PreTeXt output.
     </row>
     <row valign="top">
       <cell><p>
-        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+        While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row.
       </p></cell>
       <cell halign="left">E</cell>
       <cell halign="center">F</cell>
@@ -165,7 +165,7 @@ builder](https://www.latex-tables.com/) which can generate PreTeXt output.
     </row>
     <row valign="middle">
       <cell><p>
-        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+        While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row.
       </p></cell>
       <cell halign="left" >E</cell>
       <cell halign="center">F</cell>
@@ -173,7 +173,7 @@ builder](https://www.latex-tables.com/) which can generate PreTeXt output.
     </row>
     <row valign="bottom">
       <cell><p>
-        "While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row"
+        While horizontal alignment (halign) is allowed for each cell, vertical alignment (valign) is only permitted for each row.
       </p></cell>
       <cell halign="left">E</cell>
       <cell halign="center">F</cell>
