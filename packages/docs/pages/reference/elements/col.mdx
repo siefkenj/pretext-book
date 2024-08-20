@@ -8,7 +8,10 @@ import {
 
 # `<col>`
 
-The `<col>` tag is optionally used in a [`<tabular>`](tabular) environment. Its primary use is to define horizontal alignment within a column or to specify by percentage how much of the tabular environment the column should occupy.
+The `<col>` tag is optionally used in a [`<tabular>`](tabular) environment.
+ Its primary use is to define horizontal alignment within a column or to 
+ specify by percentage how much of the tabular environment the column should
+  occupy.
 
 If the `<col>` tag does appear, it must occur prior to any rows and must occur
 exactly as many times as there will be columns.
@@ -20,7 +23,9 @@ exactly as many times as there will be columns.
 
 ## Notes
 
-The `width` option will only affect columns containing a cell with a `&lt;p&gt;&lt; /p&gt;`.  Conversely, the use of a `&lt;p&gt;&lt; /p&gt;` tag inside a cell necessitates the use of a `&lt;col /&gt;` preamble to the rows of a `&lt;tabular&gt;`.
+The `width` option will only be applied to columns containing a cell with 
+a `<p>`.  Conversely, the use of a `<p>` tag inside a cell necessitates the
+ use of a `<col>` preamble to the rows of a `<tabular>`.
 
 ## Examples
 
