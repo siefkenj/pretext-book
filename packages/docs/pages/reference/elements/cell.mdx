@@ -26,6 +26,44 @@ most of the variations which are available.
 
 ## Examples
 
- Refer to the examples for the [`<tabular>`](tabular) or [`<table>`](table) tags  which demonstrate most of the variations which are available.   [Table 4.18.3]
-(https://pretextbook.org/doc/guide/html/topic-tabular.html#topic-tabular-13-7)
-gives further detail.
+```ptx-example
+<FRAGMENT parents="section subsection">
+ <sidebyside>
+        <table>
+          <title>Default options set bottom and right borders</title>
+          <tabular bottom="minor" right="minor">
+            <row>
+              <cell>A</cell>
+              <cell>B</cell>
+              <cell>C</cell>
+              <cell>D</cell>
+            </row>
+            <row>
+              <cell>E</cell>
+              <cell>F</cell>
+              <cell>G</cell>
+              <cell>H</cell>
+            </row>
+          </tabular>
+        </table>
+
+      <table>
+          <title>Cell options override defaults</title>
+          <tabular bottom="minor" right="minor">
+            <row>
+              <cell>A</cell>
+              <cell right="major">B</cell>
+              <cell>C</cell>
+              <cell>D</cell>
+            </row>
+            <row>
+              <cell>E</cell>
+              <cell>F</cell>
+              <cell bottom="none">G</cell>
+              <cell>H</cell>
+            </row>
+          </tabular>
+        </table>
+        </sidebyside>
+        </FRAGMENT>
+```
