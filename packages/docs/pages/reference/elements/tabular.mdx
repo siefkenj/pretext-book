@@ -39,35 +39,35 @@ is the definitive source.
 
   ```ptx-example
 <FRAGMENT parents="subsection section">
-    <table>
-          <title>Sample check registry</title>
-          <tabular halign="right">
-            <row header="yes" bottom="minor" >
-              <cell right="minor">Date</cell>
-              <cell>Credit</cell>
-              <cell>Debit</cell>
-              <cell>Balance</cell>
-            </row>
-            <row>
-              <cell right="minor">Aug 1, 2024</cell>
-              <cell>100.27</cell>
-              <cell>0.00</cell>
-              <cell>5455.21</cell>
-            </row>
-            <row>
-              <cell right="minor">Aug 5, 2024</cell>
-              <cell>0.00</cell>
-              <cell>200.00</cell>
-              <cell>5255.21</cell>
-            </row>
-            <row>
-              <cell right="minor">Aug 12, 2024</cell>
-              <cell>23.45</cell>
-              <cell>0.00</cell>
-              <cell>5278.66</cell>
-            </row>
-          </tabular>
-        </table>
+  <table>
+    <title>Sample check registry</title>
+    <tabular halign="right">
+      <row header="yes" bottom="minor" >
+        <cell right="minor">Date</cell>
+        <cell>Credit</cell>
+        <cell>Debit</cell>
+        <cell>Balance</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 1, 2024</cell>
+        <cell>100.27</cell>
+        <cell>0.00</cell>
+        <cell>5455.21</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 5, 2024</cell>
+        <cell>0.00</cell>
+        <cell>200.00</cell>
+        <cell>5255.21</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 12, 2024</cell>
+        <cell>23.45</cell>
+        <cell>0.00</cell>
+        <cell>5278.66</cell>
+      </row>
+    </tabular>
+  </table>
 </FRAGMENT>
 ```
 
@@ -76,115 +76,115 @@ is the definitive source.
 ```ptx-example
 <FRAGMENT parents="subsection section">
   <activity>
-          <p> Many positive integers can be represented as the sum of three
-           integer cubes: <m>n =
-            x^3 + y^3 +z^3.</m> Exactly one of <m>n = 12, 13</m> can be
-             represented as the sum of three cubes. Determine a representation
-              for the one that can, and a reason for the one that cannot. </p>
+    <p> Many positive integers can be represented as the sum of three
+      integer cubes: <m>n =
+      x^3 + y^3 +z^3.</m> Exactly one of <m>n = 12, 13</m> can be
+        represented as the sum of three cubes. Determine a representation
+        for the one that can, and a reason for the one that cannot. </p>
 
-          <hint>
-            <p> For the one that is representable, the absolute values of
-             <m>x,y,z</m> are all less than 12. </p>
-          </hint>
-          <hint>
-            <p>
-              For the one that is not representable, consider the values of
-               cubes modulo 9.
-            </p>
-          </hint>
+    <hint>
+      <p> For the one that is representable, the absolute values of
+        <m>x,y,z</m> are all less than 12. </p>
+    </hint>
+    <hint>
+      <p>
+        For the one that is not representable, consider the values of
+          cubes modulo 9.
+      </p>
+    </hint>
 
-          <tabular halign="center">
-              <row header="yes" bottom="minor">
-                <cell>n</cell>
-                <cell>x</cell>
-                <cell>y</cell>
-                <cell>z</cell>
-              </row>
+    <tabular halign="center">
+        <row header="yes" bottom="minor">
+          <cell>n</cell>
+          <cell>x</cell>
+          <cell>y</cell>
+          <cell>z</cell>
+        </row>
 
-              <row>
-                <cell>10</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>2</cell>
-              </row>
+        <row>
+          <cell>10</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>2</cell>
+        </row>
 
-              <row>
-                <cell>11</cell>
-                <cell>-2</cell>
-                <cell>-2</cell>
-                <cell>3</cell>
-              </row>
+        <row>
+          <cell>11</cell>
+          <cell>-2</cell>
+          <cell>-2</cell>
+          <cell>3</cell>
+        </row>
 
-              <row>
-                <cell>12</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
+        <row>
+          <cell>12</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
 
-              <row>
-                <cell>13</cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-          </tabular>
-        </activity>
-    </FRAGMENT>
+        <row>
+          <cell>13</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+    </tabular>
+  </activity>
+</FRAGMENT>
 ```
 
 ### A table with paragraphs and alignment variations
 
 ```ptx-example
 <FRAGMENT parents="subsection section">
-<table>
-  <title>Tabular Alignment Options</title>
-  <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
-    <col width="40%"/>
-    <col/>
-    <col/>
-    <col/>
-    <row>
-      <cell>Paragraphs</cell>
-      <cell>Column 2</cell>
-      <cell>Column 3</cell>
-      <cell>Column 4</cell>
-    </row>
-    <row>
-      <cell halign="center"><p>The quick brown fox <ellipsis/></p></cell>
-      <cell>A</cell>
-      <cell halign="center">B</cell>
-      <cell halign="right">C</cell>
-    </row>
-    <row valign="top">
-      <cell><p>
-        While horizontal alignment (halign) is allowed for each cell,
-         vertical alignment (valign) is only permitted for each row.
-      </p></cell>
-      <cell halign="left">E</cell>
-      <cell halign="center">F</cell>
-      <cell halign="right">G</cell>
-    </row>
-    <row valign="middle">
-      <cell><p>
-        While horizontal alignment (halign) is allowed for each cell,
-         vertical alignment (valign) is only permitted for each row.
-      </p></cell>
-      <cell halign="left" >E</cell>
-      <cell halign="center">F</cell>
-      <cell halign="right">G</cell>
-    </row>
-    <row valign="bottom">
-      <cell><p>
-        While horizontal alignment (halign) is allowed for each cell,
-         vertical alignment (valign) is only permitted for each row.
-      </p></cell>
-      <cell halign="left">E</cell>
-      <cell halign="center">F</cell>
-      <cell halign="right">G</cell>
-    </row>
-  </tabular>
-</table>
+  <table>
+    <title>Tabular Alignment Options</title>
+    <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
+      <col width="40%"/>
+      <col/>
+      <col/>
+      <col/>
+      <row>
+        <cell>Paragraphs</cell>
+        <cell>Column 2</cell>
+        <cell>Column 3</cell>
+        <cell>Column 4</cell>
+      </row>
+      <row>
+        <cell halign="center"><p>The quick brown fox <ellipsis/></p></cell>
+        <cell>A</cell>
+        <cell halign="center">B</cell>
+        <cell halign="right">C</cell>
+      </row>
+      <row valign="top">
+        <cell><p>
+          While horizontal alignment (halign) is allowed for each cell,
+          vertical alignment (valign) is only permitted for each row.
+        </p></cell>
+        <cell halign="left">E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+      <row valign="middle">
+        <cell><p>
+          While horizontal alignment (halign) is allowed for each cell,
+          vertical alignment (valign) is only permitted for each row.
+        </p></cell>
+        <cell halign="left" >E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+      <row valign="bottom">
+        <cell><p>
+          While horizontal alignment (halign) is allowed for each cell,
+          vertical alignment (valign) is only permitted for each row.
+        </p></cell>
+        <cell halign="left">E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+    </tabular>
+  </table>
 
 </FRAGMENT>
 ```
