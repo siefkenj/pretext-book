@@ -8,12 +8,82 @@ import {
 
 # `<sage>`
 
-Short description of what the `<sage>` tag does.
+The `<sage>` tag allows the author to incorporate the computational resources of
+the open source library `www.sagemath.org` into PreTeXt.
 
+Quoting from the PreTeXt Guide, a "typical use of the `<sage>` tag is to 
+include an `<input>` element, followed by an `<output>` element. The content of the `<input>` element may be presented statically in PDF output, or dynamically as a Sage Cell in an output format based on HTML."
 ## Syntax
 
 <SyntaxDisplay name="sage" />
 
 ## Examples
 
-    
+When rendered for HTML, this example will present the contents of the `<input>`
+block as a Sage Cell, and upon evaluating, will produce the output in LaTeX
+format.  Changing the `%display latex` to `%display plain` will produce output
+which can be copied to the `<output>` section within the `<sage>` environment and rendered in PDF.
+
+ ```ptx-example
+<FRAGMENT parents="p">
+    <sage>
+        <input>
+            %display latex
+            latex.matrix_delimiters("[", "]")
+            A = matrix(ZZ,[[1,2],[1,2]]);A
+        </input>
+        <output>
+            [1 2]
+            [1 2]
+        </output>
+    </sage>
+</FRAGMENT>
+```   
+
+You are free to place whatever text (text only) you wish in the `<output>`
+section, in this case explaining the structure of the output to the
+reader.
+
+```ptx-example
+<FRAGMENT parents="p">
+    <sage>
+        <input>
+            A.eigenvectors_right()
+        </input>
+        <output>
+            [(3,[(1, 1)],1), (0,[(1, -1/2)],1)]
+
+            This list contains two items of the form
+            (eigenvalue, eigenvector, multiplicity).
+        </output>
+    </sage>
+</FRAGMENT>    
+```
+
+In this example, we create a graphics playground by embedding `<sageplot>`
+within a `<sage>` enviroment.
+
+```ptx-example
+<FRAGMENT parents="p">
+    Graphics playground: Feel free to modify the functions <m>f</m> and <m>g</m>.
+
+    <sage>
+        <input>
+            <image width="65%">
+                <sageplot>
+                    f(x) = sin(x)
+                    g(x) = cos(x)
+                    C1 = plot(f, (x, -pi, pi), color='blue', thickness=2)
+                    C2 = plot(g, (x, -pi, pi), color='red', thickness=2)
+                    C1 + C2
+                </sageplot>
+            </image>
+        </input>
+        <output>
+            The image cannot be rendered for PDF using this construct. 
+            You must use `sageplot` directly instead of embedding it in a
+            `sage` cell.
+        </output>
+    </sage>
+</FRAGMENT>    
+```
