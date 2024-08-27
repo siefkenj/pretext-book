@@ -8,7 +8,8 @@ import {
 
 # `<ol>`
 
-Short description of what the `<ol>` tag does.
+The `<ol>` tag renders an ordered list with default markers which can (if
+desired) be modified.  For comparison, see [`<ul>`](./ul).
 
 ## Syntax
 
@@ -16,4 +17,55 @@ Short description of what the `<ol>` tag does.
 
 ## Examples
 
-    
+### A sample nested ordered list with default markers.
+
+ ```ptx-example
+<FRAGMENT parents="p">
+<ol>
+    <li>Call the meeting to order</li>
+    <li>Approval of the minutes</li>
+    <li>
+        <p>New Business
+        <ol>
+            <li>Approve new course</li>
+            <li>
+            <p>Vote on honors theses:
+            <ol>
+                <li>C. F. Gauss</li>
+                <li>Euclid</li>
+                <li>E. Noether</li>
+            </ol>
+            </p>
+            </li>
+        </ol>
+        </p>
+    </li>
+    <li>Old Business</li>
+</ol>
+</FRAGMENT>
+```
+
+### An ordered list with custom markers.
+
+ ```ptx-example
+<FRAGMENT parents="p">
+<ol marker="(1)">
+    <li>Call the meeting to order</li>
+    <li>Approval of the minutes</li>
+</ol>
+</FRAGMENT>
+```
+
+### To reference a list, place it inside a [`<list>`](list) environment.
+
+ ```ptx-example
+<FRAGMENT parents="p">
+<list>
+    <title>Meeting Agenda</title>
+    <ol marker="(1)">
+        <li>Call the meeting to order</li>
+        <li>Approval of the minutes</li>
+    </ol>
+</list>
+</FRAGMENT>
+```
