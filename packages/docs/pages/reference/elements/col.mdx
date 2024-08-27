@@ -8,12 +8,74 @@ import {
 
 # `<col>`
 
-Short description of what the `<col>` tag does.
+The `<col>` tag is optionally used in a [`<tabular>`](tabular) environment.
+ Its primary use is to define horizontal alignment within a column or to 
+ specify by percentage how much of the tabular environment the column should
+  occupy.
+
+If the `<col>` tag does appear, it must occur prior to any rows and must occur
+exactly as many times as there will be columns.
+
 
 ## Syntax
 
 <SyntaxDisplay name="col" />
 
+## Notes
+
+The `width` option will only be applied to columns containing a cell with 
+a `<p>`.  Conversely, the use of a `<p>` tag inside a cell necessitates the
+ use of a `<col>` preamble to the rows of a `<tabular>`.
+
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+  <table>
+    <title>Column border options</title>
+    <tabular>
+      <col top="minor" right="medium"/>
+        <row>
+          <cell>A</cell>
+        </row>
+        <row>
+          <cell>C</cell>
+        </row>
+    </tabular>
+  </table>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+<table>
+  <title>Column options halign and width</title>
+  <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
+    <col halign="left" width="35%" />
+    <col halign="left" />
+    <col halign="center"/>
+    <col halign="right" width="25%"/>
+    <row>
+      <cell>Paragraphs</cell>
+      <cell>Column 2</cell>
+      <cell>Column 3</cell>
+      <cell>Column 4</cell>
+    </row>
+    <row>
+      <cell>
+        <p>The quick brown fox jumps over the lazy brown dog.</p>
+      </cell>
+      <cell>B</cell>
+      <cell>C</cell>
+      <cell><p>D</p></cell>
+    </row>
+    <row>
+      <cell><p>A</p></cell>
+      <cell>B</cell>
+      <cell>C</cell>
+      <cell><p>The quick brown fox jumps over the lazy brown dog</p></cell>
+    </row>
+  </tabular>
+</table>
+</FRAGMENT>
+```

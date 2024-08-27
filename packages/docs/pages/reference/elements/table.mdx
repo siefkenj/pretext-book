@@ -8,12 +8,174 @@ import {
 
 # `<table>`
 
-Short description of what the `<table>` tag does.
+The `<table>` tag is similar to the [`<figure>`](figure) tag,
+but is made to be wrapper for a [`<tabular>`](tabular). Using
+the `<table>` tag allows the contained `<tabular>` to be referenced
+by name. That is, a `<table>` will result in a label like
+"Table 1.2.3" appearing in your document.
 
 ## Syntax
 
 <SyntaxDisplay name="table" />
 
+## Notes
+
+### A note about table borders
+
+Placing borders in tables exactly where you want them requires that you
+understand in which elements the attributes `top`, `left`, `bottom`, and
+`right` may be applied. Note that while horizontal borders (rules)
+ are easy, vertical rules have been made intentionally more work "to gently
+ guide authors towards good choices" in document design.
+The section of the PreTeXt Guide on `Tables and Tabulars`
+is the definitive source.
+
 ## Examples
 
-    
+### A simple table
+
+ In this example, all cell entries are right-justified; the table has a header
+ row and some cells have borders.
+
+  ```ptx-example
+<FRAGMENT parents="subsection section">
+  <table>
+    <title>Sample check registry</title>
+    <tabular halign="right">
+      <row header="yes" bottom="minor" >
+        <cell right="minor">Date</cell>
+        <cell>Credit</cell>
+        <cell>Debit</cell>
+        <cell>Balance</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 1, 2024</cell>
+        <cell>100.27</cell>
+        <cell>0.00</cell>
+        <cell>5455.21</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 5, 2024</cell>
+        <cell>0.00</cell>
+        <cell>200.00</cell>
+        <cell>5255.21</cell>
+      </row>
+      <row>
+        <cell right="minor">Aug 12, 2024</cell>
+        <cell>23.45</cell>
+        <cell>0.00</cell>
+        <cell>5278.66</cell>
+      </row>
+    </tabular>
+  </table>
+</FRAGMENT>
+```
+
+### A slightly more complicated table.
+
+In this example, we use the [`<col>`](./col) tag to set the horizontal
+alignment of [`<cell>`](./cell) entries in different columns as well as a
+`colspan` option in one of the header cells.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+  <table>
+    <title>Minimalist Pizza Order Form</title>
+    <tabular halign="center" top="minor" >
+      <col halign="left"/>
+      <col />
+      <col />
+      <col />
+      <col halign="right"/>
+      <row header="yes" left="minor">
+        <cell>Size</cell>
+        <cell colspan="3" halign="center">Toppings</cell>
+        <cell right="minor">Crust</cell>
+      </row>
+      <row bottom="minor" header="yes" left="minor">
+        <cell></cell>
+        <cell>
+          <c>Artichokes</c>
+        </cell>
+        <cell>
+          <c>Roni</c>
+        </cell>
+        <cell>
+          <c>Peppers</c>
+        </cell>
+        <cell right="minor">Regular/GF</cell>
+      </row>
+      <row left="minor">
+        <cell>Medium</cell>
+        <cell>X</cell>
+        <cell></cell>
+        <cell>X</cell>
+        <cell right="minor">GF</cell>
+      </row>
+
+      <row left="minor" bottom="minor">
+        <cell>Huge</cell>
+        <cell></cell>
+        <cell>X</cell>
+        <cell></cell>
+        <cell right="minor">Regular</cell>
+      </row>
+    </tabular>
+  </table>
+</FRAGMENT>
+```
+
+### A table with paragraphs and alignment variations
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+  <table>
+    <title>Tabular Options</title>
+    <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
+      <col width="40%"/>
+      <col/>
+      <col/>
+      <col/>
+      <row>
+        <cell>Paragraphs</cell>
+        <cell>Column 2</cell>
+        <cell>Column 3</cell>
+        <cell>Column 4</cell>
+      </row>
+      <row>
+        <cell halign="center"><p>The quick brown fox <ellipsis/></p></cell>
+        <cell>A</cell>
+        <cell halign="center">B</cell>
+        <cell halign="right">C</cell>
+      </row>
+      <row valign="top">
+        <cell><p>
+          While horizontal alignment `halign`is allowed for each cell, vertical
+          alignment `valign` is only permitted for each row.
+        </p></cell>
+        <cell halign="left">E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+      <row valign="middle">
+        <cell><p>
+          While horizontal alignment `halign` is allowed for each cell, vertical
+          alignment `valign` is only permitted for each row.
+        </p></cell>
+        <cell halign="left" >E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+      <row valign="bottom">
+        <cell><p>
+          While horizontal alignment `halign` is allowed for each cell, vertical
+          alignment `valign` is only permitted for each row.
+        </p></cell>
+        <cell halign="left">E</cell>
+        <cell halign="center">F</cell>
+        <cell halign="right">G</cell>
+      </row>
+    </tabular>
+  </table>
+</FRAGMENT>
+```
