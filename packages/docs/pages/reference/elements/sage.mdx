@@ -8,7 +8,15 @@ import {
 
 # `<sage>`
 
-Short description of what the `<sage>` tag does.
+The `<sage>` tag allows the author to incorporate the computational resources
+of the open source library [SageMath](https://sagemath.org) into PreTeXt.
+
+The `<sage>` tag contains an `<input>` element, followed by an `<output>`
+element. The `<input>` element contains native Sage commands rendered
+statically in PDF and dynamically as a Sage Cell in HTML.  The `<output>`
+element allows a text representation of expected output which is
+displayed in PDF. For further information, see the
+[PreTeXt Guide topic on Sage](https://pretextbook.org/doc/guide/html/topic-sage.html).
 
 ## Syntax
 
@@ -16,4 +24,80 @@ Short description of what the `<sage>` tag does.
 
 ## Examples
 
-    
+###  Output in LaTeX format
+
+When built for HTML, the contents of the `<input>`
+block is presented as a Sage Cell, and upon evaluating, will produce the output
+in LaTeX format.  The contents of the `<output>` block is a
+text rendering of the Sage Cell output used only for display in PDF.
+The next example produces plain (text) output intentionally.
+
+ ```ptx-example
+<FRAGMENT parents="p">
+    <sage>
+        <input>
+            %display latex
+            latex.matrix_delimiters("[", "]")
+            A = matrix(ZZ,[[1,2],[1,2]]);A
+        </input>
+        <output>
+            [1 2]
+            [1 2]
+        </output>
+    </sage>
+</FRAGMENT>
+```   
+
+### Output in plain (text) format
+
+When executed as a Sage Cell, the output will be a text rendering which one can
+then copy (and freely edit) into the `<output>` block for use in producing PDF.
+
+```ptx-example
+<FRAGMENT parents="p">
+    <sage>
+        <input>
+            %display plain
+            A.eigenvectors_right()
+        </input>
+        <output>
+            [(3,[(1, 1)],1), (0,[(1, -1/2)],1)]
+
+            This list contains two items of the form
+            (eigenvalue, eigenvector, multiplicity).
+        </output>
+    </sage>
+</FRAGMENT>    
+```
+
+### Graphics playground as a Sage Cell
+
+In this example, we create a graphics playground by embedding
+`<sageplot>` within a `<sage>` environment. For producing a fixed
+image renderable in HTML and PDF, the standalone [`<sageplot>`](sageplot)
+environment is the better choice.
+
+```ptx-example
+<FRAGMENT parents="p">
+    Graphics playground: Feel free to modify the functions <m>f</m> and <m>g</m>.
+
+    <sage>
+        <input>
+            <image width="65%">
+                <sageplot>
+                    f(x) = sin(x)
+                    g(x) = cos(x)
+                    C1 = plot(f, (x, -pi, pi), color='blue', thickness=2)
+                    C2 = plot(g, (x, -pi, pi), color='red', thickness=2)
+                    C1 + C2
+                </sageplot>
+            </image>
+        </input>
+        <output>
+            The image cannot be rendered for PDF using this construct. 
+            You must use `sageplot` directly instead of embedding it in a
+            `sage` cell.
+        </output>
+    </sage>
+</FRAGMENT>    
+```
