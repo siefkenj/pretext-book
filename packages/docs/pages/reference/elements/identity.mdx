@@ -8,7 +8,12 @@ import {
 
 # `<identity>`
 
-Short description of what the `<identity>` tag does.
+The `<identity>` tag creates a container for the statement of an identity
+with optional `title`, `creator`, and `proof`. The structure of the
+`identity` tag is completely analogous to that of the following tags:
+[`algorithm`](./algorithm), [`claim`](./claim), [`corollary`](./corollary),
+[`fact`](./fact), [`lemma`](./lemma), [`proposition`](./proposition),
+and [`theorem`](./theorem).
 
 ## Syntax
 
@@ -16,4 +21,18 @@ Short description of what the `<identity>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+<identity xml:id="ident-double-angle">
+  <title>Useful trigonometric identities for integration</title>
+  <statement>
+    <p>
+      <md>
+        <mrow>\cos^2 x \amp= \frac{1+\cos(2x)}{2},</mrow>
+        <mrow>\sin^2 x \amp= \frac{1-\cos(2x)}{2}.</mrow>
+      </md>
+    </p>
+  </statement>
+</identity>
+</FRAGMENT>
+```
