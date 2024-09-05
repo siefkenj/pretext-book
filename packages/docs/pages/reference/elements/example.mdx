@@ -8,7 +8,9 @@ import {
 
 # `<example>`
 
-Short description of what the `<example>` tag does.
+The `<example>`, `problem`, and `question` tags are closely related and have
+the same syntax.  The `title` element is optional but encouraged, and the
+structure can contain `hint`s, `answer`s, and `solution`s (in that order).
 
 ## Syntax
 
@@ -16,4 +18,58 @@ Short description of what the `<example>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="p">
+<example>
+    <title>Linear Maps</title>
+    <p>
+      Let <m>P_n(\mathbb R)</m> denote the real vector space of polynomials
+      of degree at most <m>n</m>.
+      The map <m>T:P_n(\mathbb R) \to P_n(\mathbb R)</m> given by
+      <m>T(p) = p'</m>, taking a polynomial to its derivative,
+      is a linear map.
+    </p>
+    <hint>
+      <p>
+        What do you know about how the derivative affects the degree
+        of a polynomial and what did you learn in calculus about the
+        derivative of a sum of differentiable functions?
+      </p>
+    </hint>
+    <hint>
+      <p>
+        How about the derivative of a constant times a differentiable function?
+      </p>
+    </hint>
+</example>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+<example>
+  <title>Testing vector space axioms</title>
+  <p>
+    Polynomials of degree 3 do not form a vector space.
+  </p>
+  <answer>
+    <p>
+      The set is not closed under addition and lacks an additive identity.
+    </p>
+  </answer>
+  <solution>
+    <p>
+      The sum of elements <m>x^3 + x^2</m> and <m>-x^3 + x</m> equals
+      <m>x^2 + x</m> which is not of degree 3,
+      so the set is not closed under vector addition.
+    </p>
+  </solution>
+  <solution>
+    <p>
+      We can also note that the zero polynomial does not have degree 3,
+      so is not an element of the set.
+    </p>
+  </solution>
+</example>
+</FRAGMENT>
+```
