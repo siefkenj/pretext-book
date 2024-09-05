@@ -8,7 +8,12 @@ import {
 
 # `<proposition>`
 
-Short description of what the `<proposition>` tag does.
+The `<proposition>` tag creates a container for the statement of a proposition
+with optional `title`, `creator`, and `proof`. The structure of the
+`proposition` tag is completely analogous to that of the following tags:
+[`algorithm`](./algorithm), [`claim`](./claim), [`corollary`](./corollary),
+[`fact`](./fact), [`identity`](./identity), [`lemma`](./lemma),
+ and [`theorem`](./theorem).
 
 ## Syntax
 
@@ -16,4 +21,17 @@ Short description of what the `<proposition>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+  As a precursor to Dirichlet's theorem on primes in arithmetic progressions,
+  we state a special case which is easy to prove.
+
+<proposition xml:id="prop-primes-1mod4">
+  <statement>
+    <p>
+      There are an infinite number of primes <m>p\equiv 1 \pmod 4.</m>
+    </p>
+  </statement>
+</proposition>
+</FRAGMENT>
+```
