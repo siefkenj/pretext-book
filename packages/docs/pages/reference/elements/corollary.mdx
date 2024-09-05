@@ -8,7 +8,12 @@ import {
 
 # `<corollary>`
 
-Short description of what the `<corollary>` tag does.
+The `<corollary>` tag creates a container for the statement of a corollary
+with optional `title`, `creator`, and `proof`. The structure of the
+ `corollary` tag is completely analogous to that of the following tags:
+[`algorithm`](./algorithm), [`claim`](./claim), [`fact`](./fact),
+[`identity`](./identity), [`lemma`](./lemma), [`proposition`](./proposition),
+and [`theorem`](./theorem).
 
 ## Syntax
 
@@ -16,4 +21,16 @@ Short description of what the `<corollary>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+As a corollary of the Pythagorean theorem, we can conclude:
+
+<corollary xml:id="cor-hypotenuse">
+    <statement>
+        <p>
+            In a right triangle, the hypotenuse is the longest side.
+        </p>
+    </statement>
+</corollary>
+</FRAGMENT>
+```
