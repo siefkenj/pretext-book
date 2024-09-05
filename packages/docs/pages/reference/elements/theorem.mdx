@@ -8,7 +8,12 @@ import {
 
 # `<theorem>`
 
-Short description of what the `<theorem>` tag does.
+The `<theorem>` tag creates a container for the statement of a theorem with
+optional `title`, `creator`, and `proof`. The structure of the `theorem` tag
+is completely analogous to that of the following tags:
+[`algorithm`](.algorithm), [`claim`](./claim), [`corollary`](./corollary),
+[`fact`](./fact), [`identity`](./identity), [`lemma`](./lemma),
+and [`proposition`](./proposition).
 
 ## Syntax
 
@@ -16,4 +21,23 @@ Short description of what the `<theorem>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="p">
+<theorem xml:id="thm-Lagrange">
+    <title>Optional title</title>
+    <creator>Lagrange</creator>
+    <statement>
+        <p>
+        Let <m>G</m> be a finite group and <m>H</m> a subgroup.
+        Then the order of <m>H</m> divides the order of <m>G</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>
+        The left cosets of <m>H</m> partition the group,
+        and all have the same size.
+        </p>
+    </proof>
+</theorem>
+</FRAGMENT>
+```
