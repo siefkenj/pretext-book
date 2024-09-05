@@ -8,7 +8,13 @@ import {
 
 # `<lemma>`
 
-Short description of what the `<lemma>` tag does.
+The `<lemma>` tag creates a container for the statement of a lemma
+with optional `title`, `creator`, and `proof`.
+The structure of the `lemma` tag is completely analogous to that of the
+following tags:
+[`algorithm`](./algorithm), [`claim`](./claim), [`corollary`](./corollary),
+[`fact`](./fact), [`identity`](./identity), [`proposition`](./proposition),
+and [`theorem`](./theorem).
 
 ## Syntax
 
@@ -16,4 +22,20 @@ Short description of what the `<lemma>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+Gauss's lemma is a key component used to show that
+the ring of polynomials with integer coefficients,
+<m>\mathbb Z[x]</m>, is a unique factorization domain.
+
+<lemma xml:id="lem-Gauss-polynomials">
+  <title>Gauss's lemma for polynomials</title>
+  <statement>
+    <p>
+     If <m>f,g \in \mathbb Z[x]</m> are primitive polynomials,
+     then so is their product, <m>fg</m>.
+    </p>
+  </statement>
+</lemma>
+</FRAGMENT>
+```
