@@ -8,7 +8,10 @@ import {
 
 # `<sidebyside>`
 
-The `<sidebyside>` tag provides a container in which to arrange items horizontally rather than vertically, such as three images in a row or blocks of text with associated commentary next to them.
+The `<sidebyside>` tag provides a container in which to arrange items
+horizontally rather than vertically,
+such as three images in a row or blocks of text with associated commentary
+next to them.
 
 ## Syntax
 
@@ -19,7 +22,7 @@ The `<sidebyside>` tag provides a container in which to arrange items horizontal
 ### Sidebyside "image" and description.
 
 ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 <sidebyside valigns="middle middle" widths="35% 50%">
   <tabular top="minor">
     <col width="100%"/>
@@ -40,8 +43,8 @@ The `<sidebyside>` tag provides a container in which to arrange items horizontal
 ### An alternate way to render a description list
 
 ```ptx-example
-<FRAGMENT parents="p">
-<sidebyside widths = "30% 60%" margins="5% 5%">
+<FRAGMENT parents="section subsection">
+<sidebyside widths="30% 60%" margins="5% 5%">
   <p>
     Groups of order <m>p^2:</m>
   </p>
@@ -54,8 +57,8 @@ The `<sidebyside>` tag provides a container in which to arrange items horizontal
     Advice about `sidebyside` from the PreTeXt guide:
   </p>
   <p>
-    We could give lots of examples, but instead it might be best to just experiment.
-     Error-checking is very robust, so it is hard to get it too wrong.
+    We could give lots of examples, but instead it might be best to just
+    experiment. Error-checking is very robust, so it is hard to get it too wrong.
   </p>
 </sidebyside>
 </FRAGMENT>
@@ -70,9 +73,9 @@ tikzcd which offers more mathematical options than the tikzpicture environment.
  environment which would give it its own reference label.
 
 ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 sidebyside widths="25% 65%">
-  <figure xml:id="fig-factor-through-quotient">
+  <figure>
     <caption>Factoring a homomorphism through a quotient</caption>
     <image>
       <latex-image >
@@ -108,9 +111,9 @@ sidebyside widths="25% 65%">
 ### Sidebyside images with individual references and spacing
 
 ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 sidebyside valign="top" widths="40% 25% 25%">
-  <figure xml:id="A">
+  <figure>
     <caption>Redacted Image</caption>
     <tabular top="minor">
       <col width="100%" />
@@ -119,7 +122,7 @@ sidebyside valign="top" widths="40% 25% 25%">
       </row>
     </tabular>
   </figure>
-  <figure xml:id="B">
+  <figure>
     <caption>Another image</caption>
     <tabular top="minor">
       <col width="100%" />
@@ -128,7 +131,7 @@ sidebyside valign="top" widths="40% 25% 25%">
       </row>
     </tabular>
   </figure>
-  <figure xml:id="C">
+  <figure>
     <caption>My best HS yearbook picture</caption>
     <tabular top="minor">
       <col width="100%" />
@@ -138,15 +141,14 @@ sidebyside valign="top" widths="40% 25% 25%">
     </tabular>
   </figure>
 </sidebyside>
-
 </FRAGMENT>
 ```
 
 ### A grid of different sized images with a single label
 
 ```ptx-example
-<FRAGMENT parents="p">
-<figure xml:id="D">
+<FRAGMENT parents="section subsection">
+<figure>
   <caption>A grid of images</caption>
   <sidebyside valign="middle" widths="30% 30% 30%">
     <tabular top="minor">
