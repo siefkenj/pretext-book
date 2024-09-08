@@ -8,9 +8,14 @@ import {
 
 # `<example>`
 
-The `<example>`, `problem`, and `question` tags are closely related and have
-the same syntax.  The `title` element is optional but encouraged, and the
-structure can contain `hint`s, `answer`s, and `solution`s (in that order).
+The `<example>` tag creates a container for the presentation of an example.
+The [`<title>`](.title) element is optional but encouraged, and the
+structure can contain multiple [`<hint>`](./hint)s, [`<answer>`](./answer)s, and
+[`<solution>`](./solution)s (in that order).
+
+Other tags which have the
+same attributes and structure as the `<example>` tag include:
+[`<problem>`](./problem) and [`<question>`](./question).
 
 ## Syntax
 
@@ -19,16 +24,18 @@ structure can contain `hint`s, `answer`s, and `solution`s (in that order).
 ## Examples
 
  ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 <example>
     <title>Linear Maps</title>
-    <p>
-      Let <m>P_n(\mathbb R)</m> denote the real vector space of polynomials
-      of degree at most <m>n</m>.
-      The map <m>T:P_n(\mathbb R) \to P_n(\mathbb R)</m> given by
-      <m>T(p) = p'</m>, taking a polynomial to its derivative,
-      is a linear map.
-    </p>
+    <statement>
+      <p>
+        Let <m>P_n(\mathbb R)</m> denote the real vector space of polynomials
+        of degree at most <m>n</m>.
+        The map <m>T:P_n(\mathbb R) \to P_n(\mathbb R)</m> given by
+        <m>T(p) = p'</m>, taking a polynomial to its derivative,
+        is a linear map.
+      </p>
+    </statement>
     <hint>
       <p>
         What do you know about how the derivative affects the degree
@@ -46,12 +53,14 @@ structure can contain `hint`s, `answer`s, and `solution`s (in that order).
 ```
 
 ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 <example>
   <title>Testing vector space axioms</title>
-  <p>
-    Polynomials of degree 3 do not form a vector space.
-  </p>
+  <statement>
+    <p>
+      Polynomials of degree 3 do not form a vector space.
+    </p>
+  </statement>
   <answer>
     <p>
       The set is not closed under addition and lacks an additive identity.
