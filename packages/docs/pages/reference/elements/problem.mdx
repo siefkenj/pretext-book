@@ -8,9 +8,11 @@ import {
 
 # `<problem>`
 
-The `<example>`, `problem`, and `question` tags are closely related and have
-the same syntax.  The `title` element is optional but encouraged, and the
-structure can contain `hint`s, `answer`s, and `solution`s (in that order).
+`<problem>` is an [`<example>`](./example)-like tag and so shares the
+attributes and structure with other example-like tags.
+In particular, the [`<title>`](./title)  element is optional but encouraged,
+and the structure can contain multiple [`<hint>`](./hint)s,
+[`<answer>`](./answer)s, and [`<solution>`](./solution)s (in that order).
 
 ## Syntax
 
@@ -19,15 +21,16 @@ structure can contain `hint`s, `answer`s, and `solution`s (in that order).
 ## Examples
 
  ```ptx-example
-<FRAGMENT parents="p">
+<FRAGMENT parents="section subsection">
 <problem>
   <title>Row and column spaces</title>
-  <p>
-  We know that the rank of a matrix <m>A</m> and of its row-reduced echelon
-  form <m>R</m> is the same.  Determine if the row space and column space of
-  <m>A</m> and <m>R</m> are always the same.
-  </p>
-
+  <statement>
+    <p>
+    We know that the rank of a matrix <m>A</m> and of its row-reduced echelon
+    form <m>R</m> is the same.  Determine if the row space and column space of
+    <m>A</m> and <m>R</m> are always the same.
+    </p>
+  </statement>
   <hint>
     <p>
       Elementary row operations are invertible transformations of the rows of
