@@ -8,12 +8,11 @@ import {
 
 # `<algorithm>`
 
-The `<algorithm>` tag creates a container for the statement of an algorithm
-with optional `title`, `creator`, and `proof`. The structure of the `algorithm`
-tag is completely analogous to that of the following tags:
-[`claim`](./claim), [`corollary`](./corollary),
-[`fact`](./fact), [`identity`](./identity), [`lemma`](./lemma),
-[`proposition`](./proposition), and [`theorem`](./theorem).
+`<algorithm>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<algorithm>` tag creates a container for the
+statement of an algorithm with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -22,8 +21,8 @@ tag is completely analogous to that of the following tags:
 ## Examples
 
  ```ptx-example
-<FRAGMENT parents="p">
-<algorithm xml:id="alg-infinite-loop">
+<FRAGMENT parents="section subsection">
+<algorithm>
     <title>Instructions on the shampoo bottle</title>
     <statement>
         <ol>
