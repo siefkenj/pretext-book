@@ -8,9 +8,11 @@ import {
 
 # `<question>`
 
-The `<example>`, `problem`, and `question` tags are closely related and have
-the same syntax.  The `title` element is optional but encouraged, and the
-structure can contain `hint`s, `answer`s, and `solution`s (in that order).
+`<question>` is an [`<example>`](./example)-like tag and so shares the
+attributes and structure with other example-like tags.
+In particular, the [`<title>`](./title)  element is optional but encouraged,
+and the structure can contain multiple [`<hint>`](./hint)s,
+[`<answer>`](./answer)s, and [`<solution>`](./solution)s (in that order).
 
 ## Syntax
 
@@ -19,8 +21,8 @@ structure can contain `hint`s, `answer`s, and `solution`s (in that order).
 ## Examples
 
  ```ptx-example
-<FRAGMENT parents="p">
-question>
+<FRAGMENT parents="section subsection">
+<question>
   <title>Unions of vector subspaces</title>
   <statement>
     <p>
