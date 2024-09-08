@@ -9,8 +9,9 @@ import {
 # `<theorem>`
 
 The `<theorem>` tag creates a container for the statement of a theorem with
-optional `title`, `creator`, and `proof`. The structure of the `theorem` tag
-is completely analogous to that of the following tags:
+optional  [`title`](./title), [`creator`](./creator), and [`proof`](./proof).
+Other tags which have the same attributes and structure as the `<theorem`>
+tag include:
 [`algorithm`](.algorithm), [`claim`](./claim), [`corollary`](./corollary),
 [`fact`](./fact), [`identity`](./identity), [`lemma`](./lemma),
 and [`proposition`](./proposition).
@@ -22,8 +23,8 @@ and [`proposition`](./proposition).
 ## Examples
 
  ```ptx-example
-<FRAGMENT parents="p">
-<theorem xml:id="thm-Lagrange">
+<FRAGMENT parents="section subsection">
+<theorem>
     <title>Optional title</title>
     <creator>Lagrange</creator>
     <statement>
