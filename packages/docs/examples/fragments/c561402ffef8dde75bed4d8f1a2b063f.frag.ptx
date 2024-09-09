@@ -1,0 +1,14 @@
+<FRAGMENT parents="section subsection">
+  <table>
+    <title>Column border options</title>
+    <tabular>
+      <col top="minor" right="medium"/>
+        <row>
+          <cell>A</cell>
+        </row>
+        <row>
+          <cell>C</cell>
+        </row>
+    </tabular>
+  </table>
+</FRAGMENT>

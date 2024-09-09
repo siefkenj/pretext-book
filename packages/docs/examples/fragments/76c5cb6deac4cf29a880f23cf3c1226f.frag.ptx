@@ -1,0 +1,45 @@
+<FRAGMENT parents="subsection section">
+  <table>
+    <title>Minimalist Pizza Order Form</title>
+    <tabular halign="center" top="minor" >
+      <col halign="left"/>
+      <col />
+      <col />
+      <col />
+      <col halign="right"/>
+      <row header="yes" left="minor">
+        <cell>Size</cell>
+        <cell colspan="3" halign="center">Toppings</cell>
+        <cell right="minor">Crust</cell>
+      </row>
+      <row bottom="minor" header="yes" left="minor">
+        <cell></cell>
+        <cell>
+          <c>Artichokes</c>
+        </cell>
+        <cell>
+          <c>Roni</c>
+        </cell>
+        <cell>
+          <c>Peppers</c>
+        </cell>
+        <cell right="minor">Regular/GF</cell>
+      </row>
+      <row left="minor">
+        <cell>Medium</cell>
+        <cell>X</cell>
+        <cell></cell>
+        <cell>X</cell>
+        <cell right="minor">GF</cell>
+      </row>
+
+      <row left="minor" bottom="minor">
+        <cell>Huge</cell>
+        <cell></cell>
+        <cell>X</cell>
+        <cell></cell>
+        <cell right="minor">Regular</cell>
+      </row>
+    </tabular>
+  </table>
+</FRAGMENT>

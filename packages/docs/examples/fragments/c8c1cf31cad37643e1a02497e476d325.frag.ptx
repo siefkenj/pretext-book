@@ -1,0 +1,31 @@
+<FRAGMENT parents="section subsection">
+<table>
+  <title>Column options halign and width</title>
+  <tabular left="minor" right="minor" top="minor" bottom="minor" valign="top">
+    <col halign="left" width="35%" />
+    <col halign="left" />
+    <col halign="center"/>
+    <col halign="right" width="25%"/>
+    <row>
+      <cell>Paragraphs</cell>
+      <cell>Column 2</cell>
+      <cell>Column 3</cell>
+      <cell>Column 4</cell>
+    </row>
+    <row>
+      <cell>
+        <p>The quick brown fox jumps over the lazy brown dog.</p>
+      </cell>
+      <cell>B</cell>
+      <cell>C</cell>
+      <cell><p>D</p></cell>
+    </row>
+    <row>
+      <cell><p>A</p></cell>
+      <cell>B</cell>
+      <cell>C</cell>
+      <cell><p>The quick brown fox jumps over the lazy brown dog</p></cell>
+    </row>
+  </tabular>
+</table>
+</FRAGMENT>

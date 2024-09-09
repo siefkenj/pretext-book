@@ -1,0 +1,22 @@
+<FRAGMENT parents="p">
+    Graphics playground: Feel free to modify the functions <m>f</m> and <m>g</m>.
+
+    <sage>
+        <input>
+            <image width="65%">
+                <sageplot>
+                    f(x) = sin(x)
+                    g(x) = cos(x)
+                    C1 = plot(f, (x, -pi, pi), color='blue', thickness=2)
+                    C2 = plot(g, (x, -pi, pi), color='red', thickness=2)
+                    C1 + C2
+                </sageplot>
+            </image>
+        </input>
+        <output>
+            The image cannot be rendered for PDF using this construct. 
+            You must use `sageplot` directly instead of embedding it in a
+            `sage` cell.
+        </output>
+    </sage>
+</FRAGMENT>    

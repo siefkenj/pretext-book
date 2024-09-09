@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+ Keyboard keys given symbolically:
+ <kbd name="inverse"/>, <kbd name="enter"/>, <kbd name="hash"/>.
+</FRAGMENT>

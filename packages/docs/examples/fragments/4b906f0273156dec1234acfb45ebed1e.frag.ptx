@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+Keyboard keys with literal names:
+<kbd>Alt</kbd>, <kbd>Esc</kbd>, <kbd>F8</kbd>.
+</FRAGMENT>

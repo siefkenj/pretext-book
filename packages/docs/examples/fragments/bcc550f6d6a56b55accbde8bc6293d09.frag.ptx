@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+     Icons for menu, power, and media-play:
+     <icon name="menu"/>, <icon name="power"/>, <icon name="media-play"/>.
+</FRAGMENT>

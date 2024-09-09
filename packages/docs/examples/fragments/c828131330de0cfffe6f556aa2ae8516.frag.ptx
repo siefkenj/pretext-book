@@ -1,0 +1,7 @@
+<FRAGMENT parents="paragraphs">
+    <pre>
+        This is a line
+         with multiple
+          lines   and    wierd   whitespace.
+    </pre>
+</FRAGMENT>

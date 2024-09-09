@@ -1,0 +1,9 @@
+<FRAGMENT parents="p">
+    Fillin box of a size tailored to its content:
+    <m>x^a * x^{b^c} = x^<fillin fill="a+b^c"/></m>.
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+  Fillin box of given length:
+  <m>x^a * x^{b^c} = x^<fillin characters="5"/></m>.
+</FRAGMENT>

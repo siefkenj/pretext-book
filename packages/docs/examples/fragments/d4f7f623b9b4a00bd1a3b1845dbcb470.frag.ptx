@@ -1,0 +1,12 @@
+<FRAGMENT parents="p">
+ What is the ultimate answer to life, the universe, and everything?
+ <fillin characters="5"/>
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+ An answer blank suggesting a column vector: <fillin cols="3"/>.
+</FRAGMENT>
+
+<FRAGMENT parents="p">
+ An answer blank suggesting a matrix or array: <fillin rows="4" cols="7"/>.
+</FRAGMENT>

@@ -1,0 +1,20 @@
+<FRAGMENT parents="p">
+   <figure>
+        <caption>
+            Fifth Taylor approximation of <m>\sin x</m> on <m>[0,\pi]</m>.
+        </caption>
+        <image xml:id="Taylor-polynomials" width="65%">
+            <description>
+              <p>Plot of <m>\sin x</m> and 5th Taylor polynomial
+              on <m>[0,\pi].</m></p>
+            </description>
+            <sageplot>
+              f(x) = sin(x)
+              T(x) = x - x^3/6 + x^5/factorial(5)
+              actual = plot(f, (x, 0, pi), color='blue', thickness=2)
+              approximation = plot(T, (x, 0, pi), color='red', thickness=2)
+              actual + approximation
+            </sageplot>
+        </image>
+    </figure>
+</FRAGMENT>

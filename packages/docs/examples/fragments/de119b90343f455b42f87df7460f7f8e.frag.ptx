@@ -1,0 +1,13 @@
+<FRAGMENT parents="p">
+   <sage>
+       <input>
+           %display latex
+           latex.matrix_delimiters("[", "]")
+           A = matrix(ZZ,[[1,2],[1,2]]);A
+       </input>
+       <output>
+           [1 2]
+           [1 2]
+       </output>
+   </sage>
+</FRAGMENT>
