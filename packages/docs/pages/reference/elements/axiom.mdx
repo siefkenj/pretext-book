@@ -8,7 +8,14 @@ import {
 
 # `<axiom>`
 
-Short description of what the `<axiom>` tag does.
+The `<axiom>` tag creates a container for the statement of an axiom with
+optional [`title`](./title), [`creator`](./creator), and [`idx`](./idx),
+followed by the required [`statement`](./statement).
+The structure of the `axiom` tag is completely analogous to that of the
+following tags:
+[`assumption`](./assumption), [`conjecture`](./conjecture),
+[`heuristic`](./heuristic), [`hypothesis`](./hypothesis),
+and [`principle`](./principle).
 
 ## Syntax
 
@@ -16,4 +23,16 @@ Short description of what the `<axiom>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<axiom>
+    <title>Basic Number-Theoretic Axiom</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        Equality of natural numbers is an equivalence relation.
+      </p>
+    </statement>
+</axiom>
+</FRAGMENT>
+```
