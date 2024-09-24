@@ -8,7 +8,11 @@ import {
 
 # `<fact>`
 
-Short description of what the `<fact>` tag does.
+`<fact>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<fact>` tag creates a container for the
+statement of a fact with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -16,4 +20,20 @@ Short description of what the `<fact>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<fact>
+  <title>Law of Cosines</title>
+  <statement>
+    <p>
+      Given any triangle with two sides having lengths <m>a</m>, <m>b</m>
+      and angle <m>\theta</m> between them,
+      the length, <m>c</m>, of the third side is given by:
+      <me>
+        c^2 = a^2 + b^2 -2ab\cos\theta.
+      </me>
+    </p>
+  </statement>
+</fact>
+</FRAGMENT>
+```

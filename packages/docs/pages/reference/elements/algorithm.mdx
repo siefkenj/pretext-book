@@ -8,7 +8,11 @@ import {
 
 # `<algorithm>`
 
-Short description of what the `<algorithm>` tag does.
+`<algorithm>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<algorithm>` tag creates a container for the
+statement of an algorithm with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -16,4 +20,17 @@ Short description of what the `<algorithm>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="section subsection">
+<algorithm>
+    <title>Instructions on the shampoo bottle</title>
+    <statement>
+        <ol>
+            <li><p>Lather.</p></li>
+            <li><p>Rinse.</p></li>
+            <li><p>Repeat.</p></li>
+        </ol>
+    </statement>
+</algorithm>
+</FRAGMENT>
+```

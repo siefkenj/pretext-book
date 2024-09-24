@@ -8,12 +8,33 @@ import {
 
 # `<claim>`
 
-Short description of what the `<claim>` tag does.
+`<claim>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<claim>` tag creates a container for the
+statement of a claim with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
 <SyntaxDisplay name="claim" />
 
 ## Examples
-
-    
+ ```ptx-example
+<FRAGMENT parents="section subsection">
+<claim>
+    <title>The number 42</title>
+    <creator>Booker and Sutherland</creator>
+    <statement>
+        <p>
+        42 may be the answer to life, the universe and everything,
+        but it is also the sum of three integer cubes.
+        </p>
+    </statement>
+    <proof>
+        <p>
+        Not so easy.
+        </p>
+    </proof>
+</claim>
+</FRAGMENT>
+```

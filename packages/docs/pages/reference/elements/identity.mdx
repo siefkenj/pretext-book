@@ -8,7 +8,11 @@ import {
 
 # `<identity>`
 
-Short description of what the `<identity>` tag does.
+`<identity>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<identity>` tag creates a container for the
+statement of an identity with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -16,4 +20,18 @@ Short description of what the `<identity>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<identity>
+  <title>Useful trigonometric identities for integration</title>
+  <statement>
+    <p>
+      <md>
+        <mrow>\cos^2 x \amp= \frac{1+\cos(2x)}{2},</mrow>
+        <mrow>\sin^2 x \amp= \frac{1-\cos(2x)}{2}.</mrow>
+      </md>
+    </p>
+  </statement>
+</identity>
+</FRAGMENT>
+```

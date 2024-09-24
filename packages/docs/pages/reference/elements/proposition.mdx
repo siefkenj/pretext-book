@@ -8,7 +8,11 @@ import {
 
 # `<proposition>`
 
-Short description of what the `<proposition>` tag does.
+`<proposition>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<proposition>` tag creates a container for the
+statement of a proposition with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -16,4 +20,17 @@ Short description of what the `<proposition>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subssection">
+  As a precursor to Dirichlet's theorem on primes in arithmetic progressions,
+  we state a special case which is easy to prove.
+
+<proposition>
+  <statement>
+    <p>
+      There are an infinite number of primes <m>p\equiv 1 \pmod 4.</m>
+    </p>
+  </statement>
+</proposition>
+</FRAGMENT>
+```

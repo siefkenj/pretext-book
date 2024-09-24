@@ -8,7 +8,11 @@ import {
 
 # `<corollary>`
 
-Short description of what the `<corollary>` tag does.
+`<corollary>` is a [`<theorem>`](theorem)-like tag
+and so shares the attributes and structure with other theorem-like tags.
+In particular, the `<corollary>` tag creates a container for the
+statement of a corollary with optional [`title`](./title),
+[`creator`](./creator), and [`proof`](./proof).
 
 ## Syntax
 
@@ -16,4 +20,16 @@ Short description of what the `<corollary>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+As a corollary of the Pythagorean theorem, we can conclude:
+
+<corollary>
+    <statement>
+        <p>
+            In a right triangle, the hypotenuse is the longest side.
+        </p>
+    </statement>
+</corollary>
+</FRAGMENT>
+```
