@@ -8,7 +8,10 @@ import {
 
 # `<sidebyside>`
 
-Short description of what the `<sidebyside>` tag does.
+The `<sidebyside>` tag provides a container in which to arrange items
+horizontally rather than vertically,
+such as three images in a row or blocks of text with associated commentary
+next to them.
 
 ## Syntax
 
@@ -16,4 +19,177 @@ Short description of what the `<sidebyside>` tag does.
 
 ## Examples
 
-    
+### Sidebyside "image" and description.
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+<sidebyside valigns="middle middle" widths="35% 50%">
+  <tabular top="minor">
+    <col width="100%"/>
+    <row left="minor" bottom="minor">
+      <cell right="minor">
+        <p>Colorful green frog</p><p>on a green leaf</p>
+      </cell>
+    </row>
+  </tabular>
+  <p>
+    At left is the (pseudo)image of the colorful green frog found in the
+    assets folder in the PreTeXt Sample Article. What are the odds it is AI generated?
+  </p>
+</sidebyside>
+</FRAGMENT>
+```
+
+### An alternate way to render a description list
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+<sidebyside widths="30% 60%" margins="5% 5%">
+  <p>
+    Groups of order <m>p^2:</m>
+  </p>
+  <p>
+    <m>\mathbb Z_p \times \mathbb Z_p, \mathbb Z_{p^2}</m>
+  </p>
+</sidebyside>
+<sidebyside widths = "30% 60%" margins="5% 5%">
+  <p>
+    Advice about `sidebyside` from the PreTeXt guide:
+  </p>
+  <p>
+    We could give lots of examples, but instead it might be best to just
+    experiment. Error-checking is very robust, so it is hard to get it too wrong.
+  </p>
+</sidebyside>
+</FRAGMENT>
+```
+
+### A more complicated sidebyside image and description.
+
+Typically for mathematical usage, one might use a SVG image here rendered from
+tikzcd which offers more mathematical options than the tikzpicture environment.
+ Placing the image in a [`<figure>`](./figure) environment gives it a reference
+ label. Analogously, one could put the statement in a [`<theorem>`](./theorem)
+ environment which would give it its own reference label.
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+sidebyside widths="25% 65%">
+  <figure>
+    <caption>Factoring a homomorphism through a quotient</caption>
+    <image>
+      <latex-image >
+        \begin{tikzpicture}
+          \node (G) at (0,0) {G};
+          \node (H) at (2,0) {H};
+          \draw [->] (G) -> (H);
+          \node (f) at (1,.3) {f};
+          \node (G/K) at (0,-2) {G/K};
+          \draw [->] (G) -> (G/K);
+          \draw[->, dashed] (G/K) -> (H);
+          \node (p) at (.25,-.8) {p};
+          \node (ff) at (1.5,-1) {f};
+          \node (ss) at (1.65,-1.15) {*};
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+  <p>
+    Let <m>G, H</m> be groups, and let <m>f:G \to H</m>
+    be a homomorphism.  Let <m>K </m> be any normal subgroup of
+    <m>G</m> with <m>K \subseteq \ker f</m>, and let <m>p:
+    G\to G/K</m> be the usual projection (<m>g \mapsto gK</m>).  Then there
+    exists a unique group homomorphism <m>f_*:G/K \to
+    H</m>, so that for all <m>g\in G</m>, <m>f(g) =
+    f_*(p(g))</m>. In this case we say that <term><m>f</m> factors
+    through the quotient <m>G/K</m></term>.
+  </p>
+</sidebyside>
+</FRAGMENT>
+```
+
+### Sidebyside images with individual references and spacing
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+sidebyside valign="top" widths="40% 25% 25%">
+  <figure>
+    <caption>Redacted Image</caption>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </figure>
+  <figure>
+    <caption>Another image</caption>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </figure>
+  <figure>
+    <caption>My best HS yearbook picture</caption>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </figure>
+</sidebyside>
+</FRAGMENT>
+```
+
+### A grid of different sized images with a single label
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+<figure>
+  <caption>A grid of images</caption>
+  <sidebyside valign="middle" widths="30% 30% 30%">
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </sidebyside>
+  <sidebyside widths="15% 15% 15%">
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </sidebyside>
+</figure>
+</FRAGMENT>
+```
