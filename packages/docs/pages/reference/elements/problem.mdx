@@ -8,7 +8,11 @@ import {
 
 # `<problem>`
 
-Short description of what the `<problem>` tag does.
+`<problem>` is an [`<example>`](./example)-like tag and so shares the
+attributes and structure with other example-like tags.
+In particular, the [`<title>`](./title)  element is optional but encouraged,
+and the structure can contain multiple [`<hint>`](./hint)s,
+[`<answer>`](./answer)s, and [`<solution>`](./solution)s (in that order).
 
 ## Syntax
 
@@ -16,4 +20,41 @@ Short description of what the `<problem>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="section subsection">
+<problem>
+  <title>Row and column spaces</title>
+  <statement>
+    <p>
+    We know that the rank of a matrix <m>A</m> and of its row-reduced echelon
+    form <m>R</m> is the same.  Determine if the row space and column space of
+    <m>A</m> and <m>R</m> are always the same.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      Elementary row operations are invertible transformations of the rows of
+      a matrix, not the columns.
+    </p>
+  </hint>
+  <answer>
+    <p>
+      The row space of <m>A</m> and <m>R</m> are always the same.  The column
+      spaces are generally not equal.
+    </p>
+  </answer>
+  <solution>
+    <p>
+      As in the hint, each elementary row operation is invertible showing the
+      row spaces are identical.  If <m>A=R</m>, then the column spaces are
+      obviously equal, but if
+      <me>
+        A = \begin{bmatrix}1\amp1\\1\amp 1\end{bmatrix}, \text{ then }
+        R = \begin{bmatrix}1\amp1\\0\amp 0\end{bmatrix},
+      </me>
+      so the column spaces are different lines in <m>\mathbb R^2.</m>
+    </p>
+  </solution>
+</problem>
+</FRAGMENT>
+```
