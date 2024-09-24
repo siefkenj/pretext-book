@@ -8,7 +8,12 @@ import {
 
 # `<assumption>`
 
-Short description of what the `<assumption>` tag does.
+`<assumption>` is an [`<axiom>`](./axiom)-like tag
+and so shares the attributes and structure with other axiom-like tags.
+In particular, the `<assumption>` tag creates a container for the
+statement of an assumption with optional [`title`](./title),
+[`creator`](./creator), and [`idx`](./idx), followed by the required
+[`statement`](./statement).
 
 ## Syntax
 
@@ -16,4 +21,16 @@ Short description of what the `<assumption>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<assumption>
+    <title>Physics and the Real World</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        Newtonian physics provides a reasonable description of the real world.
+      </p>
+    </statement>
+</assumption>
+</FRAGMENT>
+```
