@@ -8,7 +8,12 @@ import {
 
 # `<heuristic>`
 
-Short description of what the `<heuristic>` tag does.
+`<heuristic>` is an [`<axiom>`](./axiom)-like tag
+and so shares the attributes and structure with other axiom-like tags.
+In particular, the `<heuristic>` tag creates a container for the
+statement of a heuristic with optional [`title`](./title),
+[`creator`](./creator), and [`idx`](./idx), followed by the required
+[`statement`](./statement).
 
 ## Syntax
 
@@ -16,4 +21,18 @@ Short description of what the `<heuristic>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<heuristic>
+    <title>Assessing the validity of a conjecture</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        A good start for assessing the validity of a conjecture is to examine
+        many examples.  Ideas for a proof or a counterexample may manifest
+        themselves.
+      </p>
+    </statement>
+</heuristic>
+</FRAGMENT>
+```
