@@ -8,7 +8,11 @@ import {
 
 # `<tage>`
 
-Short description of what the `<tage>` tag does.
+Used to wrap the name of an empty tag/element when writing about
+PreTeXt or other XML, as in, `The <tage>latex</tage> element is self-closing.`
+
+See also [`<attr>`](./attr) and [`<tag>`](./tag) for other markup-describing
+elements.
 
 ## Syntax
 
@@ -16,4 +20,9 @@ Short description of what the `<tage>` tag does.
 
 ## Examples
 
+  ```ptx-example
+<FRAGMENT parents="p">
+    To get <latex/> you use the empty <tage>latex<tage> element.
+</FRAGMENT>
+```  
     
