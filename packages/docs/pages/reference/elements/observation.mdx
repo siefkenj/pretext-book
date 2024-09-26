@@ -8,7 +8,12 @@ import {
 
 # `<observation>`
 
-Short description of what the `<observation>` tag does.
+`<observation>` is a [`<remark>`](./remark)-like tag
+and so shares the attributes and structure with other remark-like tags.
+In particular, the `<observation>` tag creates a container for an
+observation with optional [`<title>`](./title)
+and [`<idx>`](./idx).
+
 
 ## Syntax
 
@@ -16,4 +21,19 @@ Short description of what the `<observation>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<observation>
+    <title>A very useful observation</title>
+    <p>
+    If a matrix is given by <m>A= [a_1 a_2 \dots a_n]</m> where <m>a_j</m>
+    is the <m>j</m>th column of <m>A</m>, and if <m>x</m> is the column vector
+    <m>x =[x_1, \dots, x_n]</m>, then the matrix product <m>Ax</m>
+    is a linear combination of the columns of <m>A</m>.  More precisely,
+    <md>
+        <mrow>Ax = x_1 a_1 + \cdots + x_n a_n.</mrow>
+    </md>
+    </p>
+</observation>
+</FRAGMENT>
+```
