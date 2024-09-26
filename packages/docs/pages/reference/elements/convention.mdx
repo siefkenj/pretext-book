@@ -8,7 +8,11 @@ import {
 
 # `<convention>`
 
-Short description of what the `<convention>` tag does.
+`<convention>` is a [`<remark>`](./remark)-like tag
+and so shares the attributes and structure with other remark-like tags.
+In particular, the `<convention>` tag creates a container to state some
+convention with optional [`<title>`](./title)
+and [`<idx>`](./idx).
 
 ## Syntax
 
@@ -16,4 +20,19 @@ Short description of what the `<convention>` tag does.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="section subsection">
+<convention>
+    <title>Optional</title>
+    <p>
+        For an arbitrary group <m>G</m>, we typically denote the operations
+        multiplicatively, so for elements <m>a,b \in G</m>, we would write
+        <m>a\cdot b</m> or <m>a^{-1}</m> for the the application of the group
+        operation or the inverse of an element.  However, when a group is known
+        to be abelian, the notation is often written additively,
+        such as <m>a+b</m> or <m>-a</m>.
+    </p>
+</convention>
+</FRAGMENT>
+```
     
