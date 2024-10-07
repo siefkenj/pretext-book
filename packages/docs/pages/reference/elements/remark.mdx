@@ -8,7 +8,16 @@ import {
 
 # `<remark>`
 
-Short description of what the `<remark>` tag does.
+The `<remark>` tag creates a container for a remark
+with optional [`<title>`](./title) and
+[`<idx>`](./idx), followed by a mixture of [`<p>`](./p),
+[`<blockquote>`](./blockquote), and [`<pre>`](./pre).
+
+The structure of the `remark` tag is completely
+analogous to that of the following tags: [`<convention>`](./convention),
+[`<insight>`](./insight), [`<note>`](./note), [`<observation>`](./observation),
+and [`<warning>`](./warning).
+
 
 ## Syntax
 
@@ -16,4 +25,18 @@ Short description of what the `<remark>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<remark>
+    <title>Eigenvectors and kernels</title>
+    <p>
+    Given a linear map <m>T:V \to V</m> on a vector space <m>V</m> over a field
+    <m>F</m>, an eigenvalue is a scalar <m>\lambda\in F</m> for which there exists
+    a nonzero vector <m>v\in V</m> (an eigenvector) for which
+    <m>T(v) = \lambda v</m>. At first blush this may seem an odd notion,
+    but it becomes less so when we observe that eigenvalues are defined to be those
+    scalars <m>\lambda\in F</m> for which <m>\ker(T-\lambda I_V) \ne 0.</m>
+    </p>
+</remark>
+</FRAGMENT>
+```

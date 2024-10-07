@@ -8,7 +8,10 @@ import {
 
 # `<note>`
 
-Short description of what the `<note>` tag does.
+`<note>` is a [`<remark>`](./remark)-like tag
+and so shares the attributes and structure with other remark-like tags.
+In particular, the `<note>` tag creates a container to state something about which
+the reader should take note with optional [`<title>`](./title) and [`<idx>`](./idx).
 
 ## Syntax
 
@@ -16,4 +19,23 @@ Short description of what the `<note>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="section subsection">
+ <note>
+    <title>Maps out of quotients</title>
+    <p>
+        In almost any algebraic context, you should never try to a define a map
+        directly whose domain is a quotient, rather try to find a natural way
+        to invoke the first isomorphism theorem.
+    </p>
+
+    <p>
+    For example if <m>V,W</m> are vector spaces and <m>U</m> is a subspace
+    of <m>V</m>, rather than try to define a map <m>T:V/U \to W</m>,
+    try instead to define a map <m>T_0:V\to W</m> whose kernel is <m>U</m>
+    and image is the same as that of <m>T</m>.
+    It is easier than you think and always well-defined.
+    </p>
+</note>
+</FRAGMENT>
+```
