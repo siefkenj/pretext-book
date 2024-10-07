@@ -8,7 +8,10 @@ import {
 
 # `<dedication>`
 
-Short description of what the `<dedication>` tag does.
+The `<dedication>` tag is an optional element of [`<frontmatter>`](./frontmatter) containing
+a small amount of text about who or what the project is dedicated to.  It 
+becomes its own division, whose name can be changed by giving it a `<title>`.  It is related to,
+but distinct from, [`<acknowledgement>`](./acknowledgement) and [`<contributors>`](./contributors).
 
 ## Syntax
 
@@ -16,4 +19,17 @@ Short description of what the `<dedication>` tag does.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <dedication>
+        <p>
+            <line>To my parents</line>
+            <line>and my children</line>
+        </p>
+        <p>
+            And everyone else in the world
+        </p>
+    </dedication>
+</FRAGMENT>
+```
     
