@@ -8,7 +8,11 @@ import {
 
 # `<attr>`
 
-Short description of what the `<attr>` tag does.
+Used when naming a PreTeXt (or other XML) attribute, as in,
+`The <attr>width</attr> controls the horizontal size of an image`
+
+See also [`<tag>`](./tag) and [`<tage>`](./tage) for other markup-describing
+elements.
 
 ## Syntax
 
@@ -16,4 +20,9 @@ Short description of what the `<attr>` tag does.
 
 ## Examples
 
-    
+  ```ptx-example
+<FRAGMENT parents="p">
+    You can specify the width of an image with the <attr>width</attr> 
+    attribute. 
+</FRAGMENT>
+```   

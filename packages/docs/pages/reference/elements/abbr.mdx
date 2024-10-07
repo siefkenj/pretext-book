@@ -8,7 +8,11 @@ import {
 
 # `<abbr>`
 
-Short description of what the `<abbr>` tag does.
+Wrapper for an abbreviation inside a paragraph or other block of text.  
+For example, `Many people write <abbr>Blvd.</abbr> instead of Boulevard.`
+
+Specifically for abbreviations that are neither initialisms (see [`<init>`](./init)) 
+nor acronyms (see [`<acro>`](./acro)).
 
 ## Syntax
 
@@ -16,4 +20,17 @@ Short description of what the `<abbr>` tag does.
 
 ## Examples
 
-    
+ ```ptx-example
+<FRAGMENT parents="p">
+    <abbr>Corp.</abbr> is an abbreviation, while <init>NSA</init> is an
+    initialism and <acro>LASIK</acro> is an acronym (which are both types
+    of abbreviations).
+</FRAGMENT>
+```
+
+ ```ptx-example
+<FRAGMENT parents="p">
+    Abbreviations can be shortened words, like <abbr>Prof.</abbr> or 
+    <abbr>Ms.</abbr> that are still read as the original word.
+</FRAGMENT>
+```
