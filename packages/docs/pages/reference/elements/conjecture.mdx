@@ -8,7 +8,12 @@ import {
 
 # `<conjecture>`
 
-Short description of what the `<conjecture>` tag does.
+`<conjecture>` is an [`<axiom>`](./axiom)-like tag
+and so shares the attributes and structure with other axiom-like tags.
+In particular, the `<conjecture>` tag creates a container for the
+statement of a conjecture with optional [`title`](./title),
+[`creator`](./creator), and [`idx`](./idx), followed by the required
+[`statement`](./statement).
 
 ## Syntax
 
@@ -16,4 +21,18 @@ Short description of what the `<conjecture>` tag does.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT parents="section subsection">
+<conjecture>
+    <title>Twin Prime Conjecture</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        There are an infinite number of primes <m>p</m> such that <m>p+2</m>
+        is also a prime number.
+      </p>
+    </statement>
+</conjecture>
+</FRAGMENT>
+```
     

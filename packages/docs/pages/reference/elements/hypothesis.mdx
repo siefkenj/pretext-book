@@ -6,9 +6,14 @@ import {
     SyntaxDisplay,
 } from "../../../components";
 
-# `<hypothesis>`
+# `<hypothesis>` 
 
-Short description of what the `<hypothesis>` tag does.
+`<hypothesis>` is an [`<axiom>`](./axiom)-like tag
+and so shares the attributes and structure with other axiom-like tags.
+In particular, the `<hypothesis>` tag creates a container for the
+statement of a hypothesis with optional [`title`](./title),
+[`creator`](./creator), and [`idx`](./idx), followed by the required
+[`statement`](./statement).
 
 ## Syntax
 
@@ -16,4 +21,17 @@ Short description of what the `<hypothesis>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+<hypothesis>
+    <title>The Riemann hypothesis</title>
+    <creator>Bernhard Riemann</creator>
+    <statement>
+      <p>
+        The nontrivial zeros of the Riemann zeta function all occur at complex
+        numbers with real part equal to 1/2.
+      </p>
+    </statement>
+</hypothesis>
+</FRAGMENT>
+```
