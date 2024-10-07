@@ -5,7 +5,7 @@ See the `packages/` folder for what is in this repository.
 
 ## PreTeXt Documentation
 
-In [`packages/docs`](packages/docs) you'll find a Nextra-based site to host PreTeXt documentation.
+In [`packages/docs`](packages/docs) you'll find a Nextra-based website https://siefkenj.github.io/pretext-book/docs to host PreTeXt documentation.
 
 ## PreTeXt Fragments
 
