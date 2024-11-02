@@ -1,0 +1,15 @@
+<FRAGMENT parents="section subsection">
+<fact>
+  <title>Law of Cosines</title>
+  <statement>
+    <p>
+      Given any triangle with two sides having lengths <m>a</m>, <m>b</m>
+      and angle <m>\theta</m> between them,
+      the length, <m>c</m>, of the third side is given by:
+      <me>
+        c^2 = a^2 + b^2 -2ab\cos\theta.
+      </me>
+    </p>
+  </statement>
+</fact>
+</FRAGMENT>

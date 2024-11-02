@@ -1,0 +1,17 @@
+<FRAGMENT parents="section subsection">
+<principle>
+    <title>The Prinicple of Mathematical Induction</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        To show that a mathematical statement, <m>P(n)</m>, indexed by integers
+        is true for all integers <m>n \ge a</m>, one need only show
+        <ol>
+            <li>P(a) is true, and</li>
+            <li> for any <m>k \ge a</m>, whenever <m>P(k)</m> is true, so is
+             <m>P(k+1)</m>.</li>
+        </ol>
+      </p>
+    </statement>
+</principle>
+</FRAGMENT>

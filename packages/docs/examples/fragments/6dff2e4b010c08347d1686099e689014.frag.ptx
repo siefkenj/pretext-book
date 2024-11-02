@@ -1,0 +1,28 @@
+<FRAGMENT parents="section subsection">
+<example>
+  <title>Testing vector space axioms</title>
+  <statement>
+    <p>
+      Polynomials of degree 3 do not form a vector space.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      The set is not closed under addition and lacks an additive identity.
+    </p>
+  </answer>
+  <solution>
+    <p>
+      The sum of elements <m>x^3 + x^2</m> and <m>-x^3 + x</m> equals
+      <m>x^2 + x</m> which is not of degree 3,
+      so the set is not closed under vector addition.
+    </p>
+  </solution>
+  <solution>
+    <p>
+      We can also note that the zero polynomial does not have degree 3,
+      so is not an element of the set.
+    </p>
+  </solution>
+</example>
+</FRAGMENT>

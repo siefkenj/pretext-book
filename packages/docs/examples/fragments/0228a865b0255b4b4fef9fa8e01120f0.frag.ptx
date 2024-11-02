@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+   Abbreviations can be shortened words, like <abbr>Prof.</abbr> or 
+   <abbr>Ms.</abbr> that are still read as the original word.
+</FRAGMENT>

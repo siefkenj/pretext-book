@@ -1,0 +1,15 @@
+<FRAGMENT parents="section subsection">
+Gauss's lemma is a key component used to show that
+the ring of polynomials with integer coefficients,
+<m>\mathbb Z[x]</m>, is a unique factorization domain.
+
+<lemma>
+  <title>Gauss's lemma for polynomials</title>
+  <statement>
+    <p>
+     If <m>f,g \in \mathbb Z[x]</m> are primitive polynomials,
+     then so is their product, <m>fg</m>.
+    </p>
+  </statement>
+</lemma>
+</FRAGMENT>

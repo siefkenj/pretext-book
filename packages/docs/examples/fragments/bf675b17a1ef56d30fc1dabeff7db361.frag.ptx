@@ -1,0 +1,16 @@
+<FRAGMENT parents="section subsection">
+<sidebyside valigns="middle middle" widths="35% 50%">
+  <tabular top="minor">
+    <col width="100%"/>
+    <row left="minor" bottom="minor">
+      <cell right="minor">
+        <p>Colorful green frog</p><p>on a green leaf</p>
+      </cell>
+    </row>
+  </tabular>
+  <p>
+    At left is the (pseudo)image of the colorful green frog found in the
+    assets folder in the PreTeXt Sample Article. What are the odds it is AI generated?
+  </p>
+</sidebyside>
+</FRAGMENT>

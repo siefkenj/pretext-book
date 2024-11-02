@@ -1,0 +1,19 @@
+<FRAGMENT parents="section subsection">
+<sidebyside widths="30% 60%" margins="5% 5%">
+  <p>
+    Groups of order <m>p^2:</m>
+  </p>
+  <p>
+    <m>\mathbb Z_p \times \mathbb Z_p, \mathbb Z_{p^2}</m>
+  </p>
+</sidebyside>
+<sidebyside widths = "30% 60%" margins="5% 5%">
+  <p>
+    Advice about `sidebyside` from the PreTeXt guide:
+  </p>
+  <p>
+    We could give lots of examples, but instead it might be best to just
+    experiment. Error-checking is very robust, so it is hard to get it too wrong.
+  </p>
+</sidebyside>
+</FRAGMENT>

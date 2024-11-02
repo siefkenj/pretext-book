@@ -1,0 +1,3 @@
+<FRAGMENT parents="p">
+  Every <tag>ol</tag> must be contained inside a <tag>p</tag> element. 
+</FRAGMENT>

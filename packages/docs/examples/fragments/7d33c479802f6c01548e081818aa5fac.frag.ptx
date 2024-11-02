@@ -1,0 +1,12 @@
+<FRAGMENT parents="section subsection">
+<conjecture>
+    <title>Twin Prime Conjecture</title>
+    <creator>Creator Optional</creator>
+    <statement>
+      <p>
+        There are an infinite number of primes <m>p</m> such that <m>p+2</m>
+        is also a prime number.
+      </p>
+    </statement>
+</conjecture>
+</FRAGMENT>

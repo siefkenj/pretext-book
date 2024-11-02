@@ -1,0 +1,4 @@
+<FRAGMENT parents="p">
+  You can specify the width of an image with the <attr>width</attr> 
+  attribute. 
+</FRAGMENT>

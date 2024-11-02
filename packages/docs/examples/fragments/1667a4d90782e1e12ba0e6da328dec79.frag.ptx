@@ -1,0 +1,45 @@
+<FRAGMENT parents="section subsection">
+<figure>
+  <caption>A grid of images</caption>
+  <sidebyside valign="middle" widths="30% 30% 30%">
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </sidebyside>
+  <sidebyside widths="15% 15% 15%">
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+    <tabular top="minor">
+      <col width="100%" />
+      <row left="minor" bottom="minor">
+        <cell right="minor"><p>Supersized Image rescaled</p><p>Placeholder</p></cell>
+      </row>
+    </tabular>
+  </sidebyside>
+</figure>
+</FRAGMENT>
