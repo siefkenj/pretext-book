@@ -40,6 +40,7 @@
         "vite-node": "^2.1.4",
         "vite-plugin-dts": "^4.3.0",
         "vite-plugin-node-polyfills": "^0.22.0",
+        "vite-tsconfig-paths": "^5.0.1",
         "wireit": "^0.14.9",
         "yargs": "^17.7.2"
     },
