@@ -2,29 +2,30 @@
   "name": "pretext-playground",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "./",
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
+    "@testing-library/react": "^14.3.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.10.1",
-    "@types/react": "^18.2.39",
-    "@types/react-dom": "^18.2.17",
-    "bootstrap": "^5.3.2",
-    "classnames": "^2.3.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "bootstrap": "^5.3.3",
+    "classnames": "^2.5.1",
     "comlink": "^4.4.1",
-    "easy-peasy": "^6.0.4",
-    "iframe-resizer-react": "^1.1.0",
-    "prettier": "^3.1.0",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.9.1",
-    "react-bootstrap-icons": "^1.10.3",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
-    "typescript": "^5.3.2",
-    "use-debounce": "^10.0.0",
-    "vfile": "^6.0.1",
-    "vitest": "^0.34.6"
+    "easy-peasy": "^6.0.5",
+    "iframe-resizer-react": "^1.1.1",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-bootstrap-icons": "^1.11.4",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.3",
+    "typescript": "^5.6.3",
+    "use-debounce": "^10.0.4",
+    "vfile": "^6.0.3",
+    "vitest": "^2.1.4"
   },
   "scripts": {
     "start": "vite --force",
@@ -49,10 +50,10 @@
     ]
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.3.1",
-    "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "prettier": {
     "tabWidth": 4

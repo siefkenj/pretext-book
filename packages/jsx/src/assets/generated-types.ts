@@ -1053,11 +1053,8 @@ export interface ElementImageShortDescriptionCode extends Omit<XMLElement, "attr
 export interface ElementCodeLatexImage extends XMLElement {
   name: "latex-image";
   attributes: {
-        label?: string;
-        label?: string;
-        permid?: string;
     label?: string;
-        permid?: string;
+    permid?: string;
     component?: string;
   };
   children: XMLText[];
