@@ -8,7 +8,8 @@ import {
 
 # `<aside>`
 
-Short description of what the `<aside>` tag does.
+The `<aside>` tag allows the author to make a slight digression without
+interrupting the flow of the text.
 
 ## Syntax
 
@@ -16,4 +17,27 @@ Short description of what the `<aside>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+Given an <m>m\times n</m> real matrix <m>A,</m> show that
+there exist (appropriately sized) elementary matrices
+<m>U,V</m> so that <m>UAV</m> has the form <me>UAV =
+\begin{bmatrix} I_r\amp \mathbf 0\\ \mathbf 0\amp\mathbf
+0 \end{bmatrix}.</me> where <m>I_r</m> is the <m>r\times
+r</m> identity matrix, <m>r</m> the rank of <m>A</m>,
+and the other entries are all zeros.
+
+<aside>
+<p>
+    Note that when we work with modules over a PID instead of
+    vector spaces over a field, this construct leads to a
+    diagonal matrix called the
+    <term>Smith normal form</term> of the matrix <m>A.</m>
+</p>
+<p>
+    The nonzero diagonal elements of the Smith normal form are
+    called the <term>invariant factors</term>.
+</p>
+</aside>
+</FRAGMENT>
+```
