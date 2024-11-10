@@ -8,7 +8,9 @@ import {
 
 # `<institution>`
 
-Short description of what the `<institution>` tag does.
+The `<institution>` tag is used to specify the department of an ['<author>`](./author), [`<editor>`](./editor), or ['<contributor>`](./contributor) as part of a document's [`<bibinfo>`](./bibinfo).  The tag can be structured with a number of [`<line>`](./line) tags if multiple lines are desired for the department.
+
+See also [`<department>`](./department).
 
 ## Syntax
 
@@ -16,4 +18,26 @@ Short description of what the `<institution>` tag does.
 
 ## Examples
 
-    
+```ptx-example {3}
+<FRAGMENT parents="bibinfo">
+        <author>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>Department of Non-Euclidean Geometry</department>
+            <email>euclid@circle.pi</email>
+        </author>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="bibinfo">
+    <editor>
+        <personname>Euclid</personname>
+        <institution>
+            <line>Euclid University</line>
+            <line>International Campus</line>
+        </institution>
+        <department>Department of Geometry</department>
+    </editor>
+</FRAGMENT>
+```

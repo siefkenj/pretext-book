@@ -8,10 +8,72 @@ import {
 
 # `<author>`
 
-Short description of what the `<author>` tag does.
+The `<author>` tag can be used in four distinct cases:
+
+1. In the [`<frontmatter>`](./frontmatter) as a child of [`<bibinfo>`](./bibinfo), the tag is used to provide information about the author of the document.  It is structured with [`<personname>`](./personname) as well as further information about the author, including their [`<institution>`](./institution), [`<department>`](./department), and [`<email>`](./email).
+2. When put at the beginning of a chapter, section, or other division, the tag contains just text to credit who the division was written by.
+3. The tag is also used as part of a bibliographic entry.
+4. The tag is used to give the author of a poem when included in a [`<poem>`] element.
 
 ## Syntax
 
 <SyntaxDisplay name="author" />
 
 ## Examples
+
+### Inside frontmatter
+
+```ptx-example
+<FRAGMENT parents="bibinfo">
+        <author>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>Department of Non-Euclidean Geometry</department>
+            <email>euclid@circle.pi</email>
+        </author>
+</FRAGMENT>
+```
+
+### Inside a section
+
+```ptx-example
+<FRAGMENT parents="section">
+    <title>On triples</title>
+    <author>Pythagoras</author>
+    <p>
+        Some triples of numbers should be named after me.
+    </p>
+</FRAGMENT>
+```
+
+### In bibliography
+
+```ptx-example {2}
+<FRAGMENT parents="references section">
+    <biblio type="bibtex">
+        <author>J. B. Conrey and D. W. Farmer</author>
+        <title>Mean values of <m>L</m>-functions and symmetry</title>
+        <journal>Internat. Math. Res. Notices</journal>
+        <number>17</number>
+        <year>2000</year>
+        <pages start="883" end="908"/>
+    </biblio>
+</FRAGMENT>
+```
+
+### In a poem
+
+```ptx-example {2}
+<FRAGMENT parents="section">
+    <poem>
+        <author>Karl-Dieter Crisman</author>
+        <stanza>
+            <line>CS students studying in Lowell</line>
+            <line>Required their books to have soul.</line>
+            <line>Along came their teacher</line>
+            <line>Who asked for this feature:</line>
+            <line>A poem that lives in a knowl.</line>
+        </stanza>
+    </poem>
+</FRAGMENT>
+```
