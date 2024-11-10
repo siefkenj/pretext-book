@@ -8,7 +8,8 @@ import {
 
 # `<see>`
 
-Short description of what the `<see>` tag does.
+The `<see>` tag is used to create a cross-reference entry for an item in the
+Index.  It is functionally equivalent to the [`<seealso>`](./seealso) tag.
 
 ## Syntax
 
@@ -16,4 +17,12 @@ Short description of what the `<see>` tag does.
 
 ## Examples
 
-    
+Assuming the Index page contains a list of notation, and the notation <m>\trianglelefteq</m> has been introduced to indicate a
+normal subgroup, the following `<see>` tag would create an entry next to that
+symbol with the cross-reference to see `normal subgroup` for further information.
+
+```ptx-example
+<FRAGMENT parents="p">
+<idx><h>notation</h><h><m>\trianglelefteq</m></h><see>normal subgroup</see></idx>
+</FRAGMENT>
+```
