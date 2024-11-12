@@ -23,23 +23,43 @@ the Index for the terms `group` and`subgroup`, and an entry for`normal`
 appearing as a secondary entry under `subgroup` in the Index.
 
 ```ptx-example
-<FRAGMENT parents="p">
-<idx><h>group</h></idx>
-<idx><h>subgroup</h></idx>
-<idx><h>subgroup</h><h>normal</h></idx>
+<FRAGMENT>
+<p>
+    <idx><h>group</h></idx>
+    <idx><h>subgroup</h></idx>
+    <idx><h>subgroup</h><h>normal</h></idx>
+</p>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
 </FRAGMENT>
 ```
 
-Assuming the notation <m>\trianglelefteq</m> has been introduced to indicate a
+Assuming the notation `\trianglelefteq` has been introduced to indicate a
 normal subgroup, the following `<h>` tag would create an entry for that symbol
-under the heading `notation` and symbol would appear in the list under
-`notation` sorted by the keyword normal, and with the cross-reference to see
+under the heading `notation` and the symbol would appear in the list under
+`notation` sorted by the keyword `normal`, and with the cross-reference to see
 `normal subgroup` for further information.
 
 ```ptx-example
-<FRAGMENT parents="p">
-<idx><h>notation</h><h sortby="normal"><m>\trianglelefteq</m></h>
-<see>normal subgroup</see></idx>
+<FRAGMENT>
+<p>
+    <idx><h>notation</h><h sortby="normal"><m>\trianglelefteq</m></h>
+        <see>normal subgroup</see></idx>
+</p>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
 </FRAGMENT>
 ```
 
@@ -49,10 +69,19 @@ may want to include either a standalone entry for `normal subgroup`, or perhaps 
 include it as a secondary entry under `normal`.
 
 ```ptx-example
-<FRAGMENT parents="p">
-<idx><h>normal subgroup</h></idx>
+<FRAGMENT>
+<p>
+    <idx><h>normal subgroup</h></idx>
+    <idx><h>normal</h><h>field extension</h><seealso>Galois</seealso></idx>
+    <idx><h>normal</h><h>subgroup</h></idx>
+</p>
 
-<idx><h><normal</h><h>field extension</h><seealso>Galois</seealso></idx>
-<idx><h><normal</h><h>subgroup</h></idx>
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
 </FRAGMENT>
 ```
