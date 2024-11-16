@@ -33,15 +33,18 @@
     },
     "homepage": "https://github.com/siefkenj/pretext-book#readme",
     "devDependencies": {
+        "@prettier/plugin-xml": "^3.4.1",
         "@types/glob": "^8.1.0",
         "@types/node": "^20.17.6",
+        "chalk": "^5.3.0",
         "esbuild": "^0.24.0",
         "esbuild-runner": "^2.2.2",
         "glob": "^10.4.5",
         "mkdirp": "^3.0.1",
         "prettier": "^3.3.3",
         "typescript": "^5.6.3",
-        "vitest": "^2.1.4"
+        "vitest": "^2.1.4",
+        "xastscript": "^4.0.0"
     },
     "dependencies": {
         "buffer": "^6.0.3",
