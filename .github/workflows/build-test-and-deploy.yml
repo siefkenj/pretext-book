@@ -40,6 +40,13 @@ jobs:
             - name: Run tests
               run: npm test
 
+            # This test just sees if the schema _can_ be updated, but it doesn't actually update it.
+            # If this breaks, it means something in the oh-so-fragile pipeline has broken.
+            - name: Test if schema can be updated
+              run: |
+                cd packages/jsx
+                ./update-schema-from-pretext-master.sh
+
             - name: Prepare for Github Pages
               run: |
                   mkdir -p ./website
