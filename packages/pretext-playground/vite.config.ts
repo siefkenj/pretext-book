@@ -8,7 +8,21 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 // https://vitejs.dev/config/
 export default defineConfig({
     base: "./",
-    build: { outDir: "./build" },
+    build: {
+        outDir: "./build",
+        rollupOptions: {
+            // Suppress unneeded warnings. These come from bundled code, so there's nothing
+            // we can do about it.
+            // https://github.com/remix-run/remix/issues/8891
+            onwarn(warning, warn) {
+                // Suppress "Module level directives cause errors when bundled" warnings
+                if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
+                    return;
+                }
+                warn(warning);
+            },
+        },
+    },
     define: {
         global: "globalThis",
     },
