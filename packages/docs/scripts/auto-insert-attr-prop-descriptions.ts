@@ -3,6 +3,7 @@ import { Plugin } from "unified";
 import { Root as MdastRoot } from "mdast";
 // Importing this automatically imports all the types from `mdast-util-mdx-jsx`.
 import "mdast-util-mdx-jsx";
+// @ts-ignore
 import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 import { JsonGrammar, VariantInfo } from "../components/types";
 import { objectToEstree } from "./object-to-estree";

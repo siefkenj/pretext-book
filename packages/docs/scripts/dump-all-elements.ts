@@ -1,3 +1,4 @@
+// @ts-ignore
 import { jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 
 function dumpAllElements() {

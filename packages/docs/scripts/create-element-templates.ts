@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+// @ts-ignore
 import { jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 
 function dumpAllElements() {
