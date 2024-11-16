@@ -1,3 +1,4 @@
+// @ts-ignore
 import { jsonGrammar as _jsonGrammar } from "../../jsx/src/assets/generated-grammar";
 import {
     GrammarElementEntry,
