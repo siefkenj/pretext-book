@@ -1,0 +1,7 @@
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <date><today /></date>
+    </bibinfo>
+
+    <titlepage><titlepage-items/></titlepage>
+</FRAGMENT>
