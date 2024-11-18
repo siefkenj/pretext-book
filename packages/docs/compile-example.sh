@@ -19,7 +19,6 @@ IFS='' read -r -d '' PROJECT_PTX <<"EOF"
 <?xml version="1.0" encoding="utf-8"?>
 <project ptx-version="2" source="." publication=".">
   <targets>
-    <!-- To build this target, run `pretext build web` -->
     <target name="web" format="html" />
   </targets>
 </project>
@@ -28,39 +27,14 @@ EOF
 IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 <?xml version="1.0" encoding="UTF-8"?>
 <publication>
-	<common>
-		<chunking level="0" />
-		<tableofcontents level="2" />
-		<exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
-		<exercise-divisional statement="yes" hint="yes" />
-		<fillin textstyle="underline" mathstyle="shade" />
-	</common>
 	<source>
 		<directories external="./assets" generated="./generated-assets" />
 	</source>
-	<numbering>
-		<blocks level="2" />
-		<projects level="2" />
-		<equations level="2" />
-		<footnotes level="2" />
-	</numbering>
-	<latex print="no" sides="one" font-size="10" draft="no">
-		<page right-alignment="flush" bottom-alignment="ragged" />
-		<asymptote links="no" />
-		<worksheets formatted="yes" />
-	</latex>
-	<html platform="web">
-		<knowl theorem="no" proof="no" definition="no" example="no" example-solution="no" project="no" task="no" remark="no" objectives="no" outcomes="no" figure="no" table="no" listing="no" list="no" exercise-inline="yes" exercise-divisional="no" exercise-worksheet="no" exercise-readingquestion="no" />
-		<css style="default" colors="blue_red" />
-		<search variant="default" />
-		<calculator model="none" activecode="none" />
-		<webwork inline="dynamic" divisional="static" reading="static" worksheet="static" project="dynamic" />
-	</html>
 </publication>
 EOF
 
 IFS='' read -r -d '' REQUIREMENTS_TXT <<"EOF"
-pretext == 1.6.0
+pretext == 2.9.1
 EOF
 
 
