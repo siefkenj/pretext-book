@@ -30,6 +30,9 @@ IFS='' read -r -d '' PUBLICATION_PTX <<"EOF"
 	<source>
 		<directories external="./assets" generated="./generated-assets" />
 	</source>
+  <common>
+		<chunking level="0" />
+	</common>
 </publication>
 EOF
 
