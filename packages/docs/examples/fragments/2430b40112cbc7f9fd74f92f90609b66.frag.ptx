@@ -1,0 +1,23 @@
+<FRAGMENT parents="book frontmatter">
+    <bibinfo>
+        <author>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>Department of Non-Euclidean Geometry</department>
+            <email>euclid@circle.pi</email>
+        </author>
+        <date>300 BCE</date>
+        <copyright>
+            <holder>Euclid's Estate</holder>
+            <year>300BCE-2024CE</year>
+        </copyright>
+    </bibinfo>
+
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
+
+    <colophon>
+        <colophon-items />
+    </colophon>
+</FRAGMENT>

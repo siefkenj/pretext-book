@@ -1,0 +1,17 @@
+<FRAGMENT parents="article">
+  <frontmatter>
+      <bibinfo>
+          <author>
+              <personname>Euclid</personname>
+          </author>
+      </bibinfo>
+      <titlepage>
+          <titlepage-items />
+      </titlepage>
+      <abstract>
+          <p>
+              This abstract is contained in the frontmatter.
+          </p>
+      </abstract>
+  </frontmatter>
+</FRAGMENT>

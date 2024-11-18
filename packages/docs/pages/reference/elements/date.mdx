@@ -8,7 +8,10 @@ import {
 
 # `<date>`
 
-Short description of what the `<date>` tag does.
+The `<date>` element wraps a date for the document, which can be a string (for example, "Fall 2024")
+or could be the generator element [`<today />`](.\today) which gives the current date.  The tag is
+authored inside the [`<bibinfo>`](./bibinfo) element of [`<frontmatter>`](./frontmatter), but where
+the date shows up in the document depends on the conversion and document type.
 
 ## Syntax
 
@@ -16,4 +19,22 @@ Short description of what the `<date>` tag does.
 
 ## Examples
 
-    
+```ptx-example {2}
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <date><today /></date>
+    </bibinfo>
+
+    <titlepage><titlepage-items/></titlepage>
+</FRAGMENT>
+```
+
+```ptx-example {2}
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <date>Early Spring, 2023</date>
+    </bibinfo>
+
+    <titlepage><titlepage-items/></titlepage>
+</FRAGMENT>
+```

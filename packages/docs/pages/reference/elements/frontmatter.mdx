@@ -8,7 +8,7 @@ import {
 
 # `<frontmatter>`
 
-Short description of what the `<frontmatter>` tag does.
+The `<frontmatter>` tag is a wrapper for material that comes before the first [`<chapter>`](./chapter) (or [`<part>`](./part)) or [`<section>`](./section) of a [`<book>`](./book) or [`<article>`](./article).  It contains author information, as well as other bibliographic information (contained in the [`<bibinfo>`](./bibinfo)), and perhaps a number [`<preface>`](./preface) tags or an [`<abstract>`](./abstract).  Note that the [`<title>`](./title) of the document does NOT go inside `<frontmatter>`.
 
 ## Syntax
 
@@ -16,4 +16,22 @@ Short description of what the `<frontmatter>` tag does.
 
 ## Examples
 
-    
+  ```ptx-example
+<FRAGMENT parents="article">
+    <frontmatter>
+        <bibinfo>
+            <author>
+                <personname>Euclid</personname>
+            </author>
+        </bibinfo>
+        <titlepage>
+            <titlepage-items />
+        </titlepage>
+        <abstract>
+            <p>
+                This abstract is contained in the frontmatter.
+            </p>
+        </abstract>
+    </frontmatter>
+</FRAGMENT>
+```
