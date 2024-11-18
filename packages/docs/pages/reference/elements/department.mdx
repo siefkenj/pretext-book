@@ -19,18 +19,25 @@ See also [`<institution>`](./institution).
 ## Examples
 
 ```ptx-example {4}
-<FRAGMENT parents="bibinfo">
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
         <author>
             <personname>Euclid</personname>
             <institution>Euclid University</institution>
             <department>Department of Non-Euclidean Geometry</department>
             <email>euclid@circle.pi</email>
         </author>
+    </bibinfo>
+
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
 </FRAGMENT>
 ```
 
 ```ptx-example
-<FRAGMENT parents="bibinfo">
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
         <editor>
             <personname>Euclid</personname>
             <institution>Euclid University</institution>
@@ -39,5 +46,10 @@ See also [`<institution>`](./institution).
                 <line>School of Optics</line>
             </department>
         </editor>
+    </bibinfo>
+
+    <titlepage>
+        <titepage-items />
+    </titlepage>
 </FRAGMENT>
 ```

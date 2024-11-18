@@ -19,25 +19,37 @@ See also [`<department>`](./department).
 ## Examples
 
 ```ptx-example {3}
-<FRAGMENT parents="bibinfo">
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
         <author>
             <personname>Euclid</personname>
             <institution>Euclid University</institution>
             <department>Department of Non-Euclidean Geometry</department>
             <email>euclid@circle.pi</email>
         </author>
+    </bibinfo>
+
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
 </FRAGMENT>
 ```
 
 ```ptx-example
-<FRAGMENT parents="bibinfo">
-    <editor>
-        <personname>Euclid</personname>
-        <institution>
-            <line>Euclid University</line>
-            <line>International Campus</line>
-        </institution>
-        <department>Department of Geometry</department>
-    </editor>
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <editor>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>
+                <line>Department of Geometry</line>
+                <line>School of Optics</line>
+            </department>
+        </editor>
+    </bibinfo>
+
+    <titlepage>
+        <titepage-items />
+    </titlepage>
 </FRAGMENT>
 ```

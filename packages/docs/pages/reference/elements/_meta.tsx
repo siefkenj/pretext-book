@@ -29,6 +29,7 @@ const ALL_TAGS = [
     "axiom",
     "backmatter",
     "bc",
+    "bibinfo",
     "biblio",
     "biographical",
     "biography",
