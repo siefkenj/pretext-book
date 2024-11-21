@@ -127,34 +127,41 @@ export class PtxCompiler {
     getHtmlWithLocalReferences() {
         this._check_init();
         const rawHtml = this.getHtml();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(rawHtml, "text/html");
-        // Loop through all the CSS tags and replace the href with a blob URL if applicable
-        for (const link of doc.querySelectorAll("link[rel=stylesheet]")) {
-            const href = link.getAttribute("href");
-            const path = `${OUT_DIR}/${href}`;
-            if (!this.pyodide.FS.findObject(path)) {
-                continue;
+        // If we are run in a WebWorker, we might not have access to the DOMParser. We still want to return something
+        // sensible.
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(rawHtml, "text/html");
+            // Loop through all the CSS tags and replace the href with a blob URL if applicable
+            for (const link of doc.querySelectorAll("link[rel=stylesheet]")) {
+                const href = link.getAttribute("href");
+                const path = `${OUT_DIR}/${href}`;
+                if (!this.pyodide.FS.findObject(path)) {
+                    continue;
+                }
+                const cssFile = DECODER.decode(this.pyodide.FS.readFile(path));
+                const blob = new Blob([cssFile], { type: "text/css" });
+                const blobUrl = URL.createObjectURL(blob);
+                link.setAttribute("href", blobUrl);
             }
-            const cssFile = DECODER.decode(this.pyodide.FS.readFile(path));
-            const blob = new Blob([cssFile], { type: "text/css" });
-            const blobUrl = URL.createObjectURL(blob);
-            link.setAttribute("href", blobUrl);
-        }
 
-        // Loop through all the script tags and replace the src with a blob URL if applicable
-        for (const script of doc.querySelectorAll("script")) {
-            const src = script.getAttribute("src");
-            const path = `${OUT_DIR}/${src}`;
-            if (!this.pyodide.FS.findObject(path)) {
-                continue;
+            // Loop through all the script tags and replace the src with a blob URL if applicable
+            for (const script of doc.querySelectorAll("script")) {
+                const src = script.getAttribute("src");
+                const path = `${OUT_DIR}/${src}`;
+                if (!this.pyodide.FS.findObject(path)) {
+                    continue;
+                }
+                const jsFile = DECODER.decode(this.pyodide.FS.readFile(path));
+                const blob = new Blob([jsFile], { type: "text/javascript" });
+                const blobUrl = URL.createObjectURL(blob);
+                script.setAttribute("src", blobUrl);
             }
-            const jsFile = DECODER.decode(this.pyodide.FS.readFile(path));
-            const blob = new Blob([jsFile], { type: "text/javascript" });
-            const blobUrl = URL.createObjectURL(blob);
-            script.setAttribute("src", blobUrl);
-        }
 
-        return doc.documentElement.outerHTML;
+            return doc.documentElement.outerHTML;
+        } catch (e) {
+            console.error(e);
+            return rawHtml;
+        }
     }
 }
