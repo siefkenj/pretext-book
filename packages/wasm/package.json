@@ -1,0 +1,43 @@
+{
+    "name": "@pretext-book/wasm",
+    "version": "1.0.0",
+    "description": "Run PreTeXt in the browser",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js"
+        },
+        "./*js": "./dist/*js",
+        "./*": {
+            "import": "./dist/*.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "test": "vitest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/siefkenj/pretext-book.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/siefkenj/pretext-book/issues"
+    },
+    "homepage": "https://github.com/siefkenj/pretext-book#readme",
+    "dependencies": {
+        "isomorphic-fetch": "^3.0.0",
+        "pyodide": "^0.26.4",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "vite-plugin-static-copy": "^2.1.0"
+    },
+    "devDependencies": {
+        "vite": "^5.4.11",
+        "vite-node": "^2.1.5",
+        "vite-plugin-arraybuffer": "^0.0.8",
+        "vitest": "^2.1.5"
+    }
+}

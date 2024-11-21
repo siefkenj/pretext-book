@@ -114,3 +114,7 @@ packages/file-system-provider/*
 packages/docs/out
 tmp_fragment_compile
 tmp_schema_compile
+
+*.egg-info
+__pycache__
+tmp_compile
