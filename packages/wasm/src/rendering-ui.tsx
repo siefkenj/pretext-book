@@ -39,7 +39,7 @@ export function RenderingUi() {
                         onClick={async () => {
                             setIsCompiling(true);
                             try {
-                                Compiler.set_main_ptx(mainPtx);
+                                Compiler.setMainPtx(mainPtx);
                                 setSavedSinceChange(true);
                                 await Compiler.compile();
                                 setCompiledOutput(Compiler.getHtmlWithLocalReferences());

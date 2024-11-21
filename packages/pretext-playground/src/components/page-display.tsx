@@ -4,6 +4,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import IframeResizer from "iframe-resizer-react";
 import { useStoreState, useStoreActions } from "../store";
 import { ReactLiveRender } from "./react-live-render";
+import { XslLiveRender } from "./xsl-live-render";
 
 export function PageDisplay() {
     const source = useStoreState((s) => s.renderedSource);
@@ -53,6 +54,9 @@ export function PageDisplay() {
                 </Tab>
                 <Tab eventKey="react-version" title="React Rendered">
                     {key === "react-version" && <ReactLiveRender />}
+                </Tab>
+                <Tab eventKey="xsl-version" title="XSL Rendered">
+                    {key === "xsl-version" && <XslLiveRender />}
                 </Tab>
             </Tabs>
         </div>

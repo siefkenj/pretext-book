@@ -15,6 +15,7 @@ import rawLxmlImport from "./assets/lxml-5.2.1-cp312-cp312-pyodide_2024_0_wasm32
 const rawLxml = rawLxmlImport as Uint8Array;
 
 type PyodideAPI = Awaited<ReturnType<typeof loadPyodide>>;
+type Options = Parameters<typeof loadPyodide>[0];
 
 // Get some default templates
 import mainPtxDefault from "../python/pretext_wasm/templates/hello/source/main.ptx?raw";
@@ -36,8 +37,8 @@ export class PtxCompiler {
     /**
      * Initialize the compiler.
      */
-    async init() {
-        this.pyodide = await loadPyodide();
+    async init(options: Options = {}) {
+        this.pyodide = await loadPyodide(options);
         await this.pyodide.unpackArchive(rawZip, "zip");
         await this.pyodide.unpackArchive(rawMicropip, "zip");
         await this.pyodide.unpackArchive(rawPackaging, "zip");
@@ -48,7 +49,7 @@ export class PtxCompiler {
         this.pyodide.FS.mkdir("./tmp_compile/out");
     }
 
-    _check_init(): asserts this is { pyodide: PyodideAPI } {
+    _checkInit(): asserts this is { pyodide: PyodideAPI } {
         if (!this.pyodide) {
             throw new Error("Compiler not initialized");
         }
@@ -57,32 +58,32 @@ export class PtxCompiler {
     /**
      * Set `main.ptx` to the given string. If no string is provided, a default "hello world" template is used.
      */
-    set_main_ptx(contents: string = mainPtxDefault) {
-        this._check_init();
+    setMainPtx(contents: string = mainPtxDefault) {
+        this._checkInit();
         this.pyodide.FS.writeFile(MAIN_PTX_PATH, contents);
     }
 
     /**
      * Get the contents of `main.ptx`.
      */
-    get_main_ptx() {
-        this._check_init();
+    getMainPtx() {
+        this._checkInit();
         return this.pyodide.FS.readFile(MAIN_PTX_PATH);
     }
 
     /**
      * Set `publication.ptx` to the given string. If no string is provided, a default template is used.
      */
-    set_publication_ptx(contents: string = publicationPtxDefault) {
-        this._check_init();
+    setPublicationPtx(contents: string = publicationPtxDefault) {
+        this._checkInit();
         this.pyodide.FS.writeFile(PUBLICATION_PTX_PATH, contents);
     }
 
     /**
      * Get the contents of `publication.ptx`.
      */
-    get_publication_ptx() {
-        this._check_init();
+    getPublicationPtx() {
+        this._checkInit();
         return this.pyodide.FS.readFile(PUBLICATION_PTX_PATH);
     }
 
@@ -90,17 +91,17 @@ export class PtxCompiler {
      * Compile the PreTeXt file.
      */
     async compile() {
-        this._check_init();
+        this._checkInit();
         // Check that `main.ptx` and `publication.ptx` exist.
         if (!this.pyodide.FS.findObject("/home/pyodide/tmp_compile/main.ptx")) {
-            this.set_main_ptx();
+            this.setMainPtx();
         }
         if (
             !this.pyodide.FS.findObject(
                 "/home/pyodide/tmp_compile/publication.ptx",
             )
         ) {
-            this.set_publication_ptx();
+            this.setPublicationPtx();
         }
         await this.pyodide.runPythonAsync(`
             import pretext_wasm
@@ -112,7 +113,40 @@ export class PtxCompiler {
      * Get the compiled HTML.
      */
     getHtml() {
-        this._check_init();
+        this._checkInit();
+        // We need to find the "root" file. There is always an `index.html` with a
+        //    `<meta http-equiv="refresh" content="0; URL='hello-world.html'">`
+        // style redirect element. Find the redirect URL and return the corresponding HTML.
+        const indexHtml = DECODER.decode(
+            this.pyodide.FS.readFile(`${OUT_DIR}/index.html`),
+        );
+        const redirectMatch = indexHtml.match(/URL='([^']+)'/);
+        if (redirectMatch) {
+            const redirectUrl = redirectMatch[1];
+            return DECODER.decode(
+                this.pyodide.FS.readFile(`${OUT_DIR}/${redirectUrl}`),
+            );
+        }
+        // Try actual DOM parsing
+
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(indexHtml, "text/html");
+            const redirectElm = doc.querySelector("meta[http-equiv=refresh]");
+            if (!redirectElm) {
+                throw new Error("No redirect element found");
+            }
+            const redirectUrl =
+                redirectElm.getAttribute("URL") ||
+                redirectElm.getAttribute("url");
+            if (redirectUrl) {
+                return DECODER.decode(
+                    this.pyodide.FS.readFile(`${OUT_DIR}/${redirectUrl}`),
+                );
+            }
+        } catch {}
+
+        // Last guess is to return the root-1-1.html file
         return DECODER.decode(
             this.pyodide.FS.readFile(
                 "/home/pyodide/tmp_compile/out/root-1-1.html",
@@ -125,7 +159,7 @@ export class PtxCompiler {
      * containing the contents of the requested files.
      */
     getHtmlWithLocalReferences() {
-        this._check_init();
+        this._checkInit();
         const rawHtml = this.getHtml();
         // If we are run in a WebWorker, we might not have access to the DOMParser. We still want to return something
         // sensible.

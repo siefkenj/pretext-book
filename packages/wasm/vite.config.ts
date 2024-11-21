@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import arraybuffer from "vite-plugin-arraybuffer";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import dts from "vite-plugin-dts";
 
 const PYODIDE_EXCLUDE = [
     "!**/*.{md,html}",
@@ -24,6 +25,16 @@ export function viteStaticCopyPyodide() {
 }
 
 export default defineConfig({
-    plugins: [viteStaticCopyPyodide() as any, arraybuffer()],
+    plugins: [viteStaticCopyPyodide() as any, arraybuffer(), dts()],
     optimizeDeps: { exclude: ["pyodide"] },
+    build: {
+        lib: {
+            entry: "src/ptx-compiler.ts",
+            name: "ptx-compiler",
+            fileName: "ptx-compiler",
+        },
+        rollupOptions: {
+            //           external: ["pyodide"],
+        },
+    },
 });

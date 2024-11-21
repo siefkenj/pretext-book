@@ -5,7 +5,8 @@
     "type": "module",
     "exports": {
         ".": {
-            "import": "./dist/index.js"
+            "import": "./dist/ptx-compiler.js",
+            "types": "./dist/ptx-compiler.d.ts"
         },
         "./*js": "./dist/*js",
         "./*": {
