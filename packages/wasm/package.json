@@ -15,7 +15,7 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "test": "vitest"
+        "test": "echo \"No tests yet\""
     },
     "repository": {
         "type": "git",
@@ -37,7 +37,6 @@
     "devDependencies": {
         "vite": "^5.4.11",
         "vite-node": "^2.1.5",
-        "vite-plugin-arraybuffer": "^0.0.8",
-        "vitest": "^2.1.5"
+        "vite-plugin-arraybuffer": "^0.0.8"
     }
 }
