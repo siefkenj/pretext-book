@@ -8,7 +8,8 @@ import {
 
 # `<seealso>`
 
-Short description of what the `<seealso>` tag does.
+The `<seealso>` tag is used to create a cross-reference entry for an item in the
+Index.  It is functionally equivalent to the [`<see>`](./see) tag.
 
 ## Syntax
 
@@ -16,4 +17,22 @@ Short description of what the `<seealso>` tag does.
 
 ## Examples
 
-    
+In abstract algebra, the term `normal` could refer to normal subgroups or
+to normal field extensions.  One might choose to create a cross-reference
+from normal field extensions to Galois extensions as a point of further
+investigaton.
+
+```ptx-example
+<FRAGMENT>
+<p>
+    <idx><h><normal</h><h>field extension</h><seealso>Galois</seealso></idx>
+</p>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
+```
