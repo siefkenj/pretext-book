@@ -1,0 +1,16 @@
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <editor>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>
+                <line>Department of Geometry</line>
+                <line>School of Optics</line>
+            </department>
+        </editor>
+    </bibinfo>
+
+    <titlepage>
+        <titepage-items />
+    </titlepage>
+</FRAGMENT>

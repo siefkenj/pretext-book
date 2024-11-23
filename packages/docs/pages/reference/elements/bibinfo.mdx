@@ -1,0 +1,68 @@
+import {
+    AttrDisplay,
+    ChildrenDisplay,
+    ParentsDisplay,
+    PtxExample,
+    SyntaxDisplay,
+} from "../../../components";
+
+# `<bibinfo>`
+
+The `<bibinfo>` element contains *bibliographic information* about the document.
+Likely children include [`<author>`](./author), [`<edition>`](./edition), [`<copyright>`](./copyright),
+and others.
+
+Depending on the type of document being built (i.e., a book or article), some of the children of bibinfo
+get placed on a [`<titlepage>`](./titlepage) or in the front [`<colophon>`](./colophon).
+
+## Syntax
+
+<SyntaxDisplay name="bibinfo" />
+
+## Examples
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <author>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>Department of Non-Euclidean Geometry</department>
+            <email>euclid@circle.pi</email>
+        </author>
+        <date>300 BCE</date>
+    </bibinfo>
+
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
+</FRAGMENT>
+```
+### In a book with a colophon (copyright page).
+
+```ptx-example
+<FRAGMENT parents="book frontmatter">
+    <bibinfo>
+        <author>
+            <personname>Euclid</personname>
+            <institution>Euclid University</institution>
+            <department>Department of Non-Euclidean Geometry</department>
+            <email>euclid@circle.pi</email>
+        </author>
+        <date>300 BCE</date>
+        <copyright>
+            <holder>Euclid's Estate</holder>
+            <year>300BCE-2024CE</year>
+        </copyright>
+    </bibinfo>
+
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
+
+    <colophon>
+        <colophon-items />
+    </colophon>
+</FRAGMENT>
+```
+
