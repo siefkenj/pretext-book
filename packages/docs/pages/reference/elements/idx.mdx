@@ -8,7 +8,7 @@ import {
 
 # `<idx>`
 
-Short description of what the `<idx>` tag does.
+The `<idx>` tag is used to create entries within the Index.
 
 ## Syntax
 
@@ -16,4 +16,101 @@ Short description of what the `<idx>` tag does.
 
 ## Examples
 
-    
+A simple Index entry for `subgroup` which will link to its definition.
+
+```ptx-example
+<FRAGMENT>
+<section><subsection>
+<definition xml:id="def-subgroup">
+  <statement>
+    <p>
+      A <term>subgroup</term> <m>H</m> of a group <m>G</m> is <ellipsis/>.
+      <idx><h>subgroup</h></idx>
+    </p>
+  </statement>
+</definition>
+</subsection></section>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
+</FRAGMENT>
+```
+
+The first two (placeholder) `<idx>` entries below provide distinct search points
+in the Index for a `normal subgroup`. Note that because of their arbitrary
+placement in the text, they refer only to the subsection and not to a
+definition. The third `<idx>` creates an entry under the category `notation` for
+the symbol `\trianglelefteq` (sorting it in the `notation` list as if the label
+were `normal`), and leading the reader to consult the definition for a `normal subgroup`.
+
+```ptx-example
+<FRAGMENT>
+<section><subsection>
+  <idx><h>subgroup</h><h>normal</h></idx>
+  <idx><h>normal</h><h>subgroup</h></idx>
+
+  <definition xml:id="def-normal-subgroup">
+    <statement>
+      <p>
+        A subgroup <m>H</m> of a group <m>G</m> is a <term>normal</term> subgroup
+        if <ellipsis/>.
+        <idx><h>subgroup</h><h>normal</h></idx>
+        <idx><h>normal</h><h>subgroup</h></idx>
+        We denote this relationship by <m>H \trianglelefteq G</m>.
+        <idx><h>notation</h><h sortby="normal"><m>\trianglelefteq</m></h>
+          <see>normal subgroup</see></idx>
+      </p>
+    </statement>
+  </definition>
+</subsection></section>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
+
+</FRAGMENT>
+```
+
+The first `<idx>` tag creates an entry in the Index for the subcategory `field
+extension` under the main catergory `normal` (with a link to its definition),
+while the second adds the suggestion to consult `Galois` extensions.
+Both `<idx>` tags are necessary.  Note that with the placeholder index entry at
+the end of the example, there are now two subcategories (`subgroup` and `field
+extension`) under the category `normal` in the Index.
+
+
+```ptx-example
+<FRAGMENT>
+<section><subsection>
+<definition xml:id="def-fieldext-normal">
+  <statement>
+    <p>
+      An algebraic extension of fields, <m>E/F</m>, is <term>normal</term>
+      if <ellipsis />.
+      <idx><h>normal</h><h>field extension</h></idx>
+      <idx><h>normal</h><h>field extension</h><seealso>Galois</seealso></idx>
+    </p>
+  </statement>
+</definition>
+<!-- Placeholder entry for appearances -->
+<idx><h>normal</h><h>subgroup</h></idx>
+</subsection></section>
+
+<backmatter>
+ <title>Backmatter</title>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+</backmatter>
+</FRAGMENT>
+```
