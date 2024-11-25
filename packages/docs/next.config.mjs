@@ -67,6 +67,9 @@ const withNextra = nextraConfig({
         },
         remarkPlugins: [
             autoInsertAttrPropDescriptions,
+            // The `wrapPtxExample` plugin extracts the contents of each `ptx-example` code fence so that it can be
+            // compiled with a locally installed `pretext`. This is not superseded by the `compileFragmentPluginFactory`
+            // which dynamically compiles fragments during the build process.
             //wrapPtxExample,
             compileFragmentPluginFactory(),
         ],
