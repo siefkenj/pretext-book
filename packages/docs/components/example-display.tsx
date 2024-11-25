@@ -12,10 +12,12 @@ import {
 export function PtxExample({
     code,
     rendered,
+    devData,
     children,
 }: React.PropsWithChildren<{
     code: string;
     rendered?: string;
+    devData?: string;
 }>) {
     const store = useTabStore();
 
@@ -28,6 +30,16 @@ export function PtxExample({
                 <Tab store={store} id="preview" title="View Rendered Output">
                     Preview
                 </Tab>
+                {devData && (
+                    <Tab
+                        store={store}
+                        id="debug"
+                        title="Debug Info"
+                        style={{ color: "red" }}
+                    >
+                        Debug Info
+                    </Tab>
+                )}
             </TabList>
             <TabPanel store={store} id="source">
                 {children}
@@ -39,7 +51,60 @@ export function PtxExample({
                     "No preview available"
                 )}
             </TabPanel>
+            {devData && (
+                <TabPanel store={store} id="debug">
+                    <DebugDisplay devData={devData} />
+                </TabPanel>
+            )}
         </TabProvider>
+    );
+}
+
+function DebugDisplay({ devData }: { devData: string }) {
+    const data = JSON.parse(devData) as {
+        fragment: string;
+        logs: { level: string; message: string }[];
+        rawHtml: string;
+        rawPretext: string;
+    };
+    return (
+        <div className="debug-data">
+            <h2>Debug Info</h2>
+            <h4>PreTeXt Source</h4>
+            <p>
+                The following is the PreTeXt code that was compiled for this
+                example. It is a result of expanding the fragment code.
+            </p>
+            <pre>{data.rawPretext}</pre>
+            <h4>Original Fragment</h4>
+            <pre>{data.fragment}</pre>
+            <h4>PreTeXt Compile Logs</h4>
+            <table>
+                <tbody>
+                    {data.logs.map((log, i) => {
+                        const message = typeof log.message === "string" ? log.message : JSON.stringify(log.message);
+                        return (
+                            <tr key={i} className={log.level}>
+                                <td className="log-header">{log.level}</td>
+                                <td className="log-message">
+                                    {message.startsWith(":")
+                                        ? message.slice(1).trim()
+                                        : message}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <h4>Raw HTML</h4>
+            <p>
+                This is the HTML that was produced by PreTeXt. The HTML rendered
+                for the preview is the fragment extracted from this HTML. (Look
+                for nodes with IDs <code>FRAGMENT_PARENT_ID__*</code> to find
+                what should be extracted.)
+            </p>
+            <pre className="raw-html">{data.rawHtml}</pre>
+        </div>
     );
 }
 

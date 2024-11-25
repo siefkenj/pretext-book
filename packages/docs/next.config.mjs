@@ -3,6 +3,8 @@ import {
     autoInsertAttrPropDescriptions,
     wrapPtxExample,
     addSyntaxHeadingsToToc,
+    PyodideWorkerPool,
+    compileFragmentPluginFactory,
 } from "./dist/index.js";
 import { getHighlighter, bundledLanguages, bundledThemes } from "shiki";
 import fs from "node:fs";
@@ -63,7 +65,11 @@ const withNextra = nextraConfig({
                 return await highlighter;
             },
         },
-        remarkPlugins: [autoInsertAttrPropDescriptions, wrapPtxExample],
+        remarkPlugins: [
+            autoInsertAttrPropDescriptions,
+            //wrapPtxExample,
+            compileFragmentPluginFactory(),
+        ],
         rehypePlugins: [
             /**
              * Add any data in `extraSearchData` to `structurizedData` so that it shows up in the search box.

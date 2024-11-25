@@ -33,20 +33,51 @@ const DECODER = new TextDecoder();
  */
 export class PtxCompiler {
     pyodide: PyodideAPI | null = null;
+    _pyodide: ReturnType<typeof loadPyodide> | null = null;
+    pyodideInitPromise: Promise<void> | null = null;
 
     /**
-     * Initialize the compiler.
+     * @param pyodidePromise Optionally pass in an instance of `loadPyodide` to use a custom configuration.
+     */
+    constructor(pyodidePromise?: ReturnType<typeof loadPyodide>) {
+        if (pyodidePromise) {
+            this._pyodide = pyodidePromise;
+        }
+    }
+
+    /**
+     * Initialize the compiler. This is safe to call multiple times.
      */
     async init(options: Options = {}) {
-        this.pyodide = await loadPyodide(options);
-        await this.pyodide.unpackArchive(rawZip, "zip");
-        await this.pyodide.unpackArchive(rawMicropip, "zip");
-        await this.pyodide.unpackArchive(rawPackaging, "zip");
-        await this.pyodide.unpackArchive(rawLxml, "zip");
-        this.pyodide.FS.mkdir("./tmp_compile");
-        this.pyodide.FS.mkdir("./tmp_compile/generated-assets");
-        this.pyodide.FS.mkdir("./tmp_compile/assets");
-        this.pyodide.FS.mkdir("./tmp_compile/out");
+        // Wait for any other initialization to finish
+        await this.pyodideInitPromise;
+        // No initialization if already initialized
+        if (this.pyodide) {
+            return;
+        }
+
+        this.pyodideInitPromise = new Promise(async (resolve, reject) => {
+            try {
+                // Prefer `._pyodide` over creating a new pyodide instance
+                // since `._pyodide` was provided by the user.
+                this.pyodide =
+                    (await this._pyodide) || (await loadPyodide(options));
+                await this.pyodide.unpackArchive(rawZip, "zip");
+                await this.pyodide.unpackArchive(rawMicropip, "zip");
+                await this.pyodide.unpackArchive(rawPackaging, "zip");
+                await this.pyodide.unpackArchive(rawLxml, "zip");
+                this.pyodide.FS.mkdir("./tmp_compile");
+                this.pyodide.FS.mkdir("./tmp_compile/generated-assets");
+                this.pyodide.FS.mkdir("./tmp_compile/assets");
+                this.pyodide.FS.mkdir("./tmp_compile/out");
+            } catch (e) {
+                reject(e);
+            }
+
+            resolve();
+        });
+
+        await this.pyodideInitPromise;
     }
 
     _checkInit(): asserts this is { pyodide: PyodideAPI } {
