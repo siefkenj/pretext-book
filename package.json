@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "description": "Tools for working with PreTeXt in TypeScript",
     "workspaces": [
+        "./packages/fragment",
         "./packages/wasm",
         "./packages/*"
     ],
