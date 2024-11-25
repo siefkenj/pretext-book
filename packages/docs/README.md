@@ -65,16 +65,10 @@ not relocatable to a subfolder. There are workarounds in place for deploying to 
 
 ### Building/Rebuilding Examples
 
-Examples must be compiled with PreTeXt on a local computer. Every time a markdown code fence annotated with `ptx-example` is encountered,
-the source code of the example is saved in `examples/fragments` to a file whose name is the md5 sum of the fragment. The next compiler
-is configured to automatically pull any any file with the same name (except ending in `.html`) from `examples/rendered`.
+Examples are dynamically via a built-in version of PreTeXt. See `packages/wasm` for details about the built-in version.
 
-To generate the rendered examples, on a unix system, run
+When running in dev mode (`npm run dev`) additional information is passed to the page preview in the _Debug Info_ tab on each example.
+This tab will not show up when the site is built in production mode.
 
-```
-./compile-examples.sh
-```
-
-This will re-compile every example whose source file (`.ptx`) is newer than one of its output files (`.raw.html`).
-If you want to force recompilation of all examples regardless of file timestamps, run `compile-examples.sh --force`.
-If you want to recompile a single example only, you can use the `compile-example.sh` script.
+It is a good idea to check the PreTeXt log info in the _Debug Info_ tab to make sure you're not creating an example with
+invalid PreTeXt.

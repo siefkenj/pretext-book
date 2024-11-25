@@ -1,7 +1,0 @@
-<FRAGMENT parents="paragraphs">
-    <pre>
-        <cline>This is a line</cline>
-        <cline>with multiple</cline>
-        <cline>lines.</cline>
-    </pre>
-</FRAGMENT>

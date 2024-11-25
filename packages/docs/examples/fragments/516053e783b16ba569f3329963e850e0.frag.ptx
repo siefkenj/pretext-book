@@ -1,6 +1,0 @@
-<FRAGMENT parents="p">
-Explain how the Cauchy-Schwarz inequality allows
-one to define the angle <m>\theta</m> between two vectors <m>u,v \in \mathbb R^n</m>.
-<fn>In statistics, the value <m>\cos \theta</m> is often called the
-<term>correlation coefficient</term> between variables <m>u,v</m>.</fn>
-</FRAGMENT>
