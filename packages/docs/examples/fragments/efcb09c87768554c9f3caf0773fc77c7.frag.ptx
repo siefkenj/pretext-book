@@ -1,7 +1,0 @@
-<FRAGMENT parents="p">
-    <quantity>
-        <mag>4</mag>
-        <unit base="meter"/>
-        <unit base="hour"/>
-    </quantity>
-</FRAGMENT>

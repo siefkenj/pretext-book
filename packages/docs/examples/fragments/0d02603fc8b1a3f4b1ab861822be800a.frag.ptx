@@ -1,3 +1,0 @@
-<FRAGMENT parents="p">
-    <m>\lim_{h\to 0} \frac{f(2+h)-f(2)}{h}</m>
-</FRAGMENT>

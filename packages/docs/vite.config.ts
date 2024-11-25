@@ -17,10 +17,13 @@ export default defineConfig({
             external: [
                 "glob",
                 "node:path",
+                "path",
                 "node:fs/promises",
                 "util",
                 "node:fs",
                 "node:crypto",
+                "node:module",
+                "pyodide",
             ],
         },
     },

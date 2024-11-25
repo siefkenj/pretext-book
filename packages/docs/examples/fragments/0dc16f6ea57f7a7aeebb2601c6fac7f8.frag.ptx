@@ -1,6 +1,0 @@
-<FRAGMENT parents="p">
-  Middle C is the fourth C on the 88-key piano keyboard denoted 
-  <n pc="C" octave="4"/>. One denotes a C<sharp/> in the same octave as 
-  <n pc="C" acc="sharp" octave="4" />, written in PreTeXt as 
-  <c>&lt;n pc="C" acc="sharp" octave="4"/&gt;</c>.
-</FRAGMENT>

@@ -59,3 +59,59 @@
     padding: unset;
     display: inline;
 }
+
+.debug-data {
+    margin: 0px 0.5ex;
+    background-color: white;
+    border-radius: 1ex;
+    border: 1px solid #ddd;
+    padding: 1em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin: 0.75em 0em;
+    }
+
+    pre {
+        width :100%;
+        overflow: auto;
+        font-size:smaller;
+        background-color: #f6f6f6;
+        padding: 0.5ex;
+    }
+
+    tr.debug {
+        color: #888;
+    }
+    tr.info {
+        color: #559;
+    }
+    tr.warning {
+        color: #955;
+    }
+    tr.error {
+        color: #900;
+    }
+    .log-header {
+        font-size: smaller;
+        vertical-align: top;
+        text-align: right;
+        font-style: oblique;
+        padding-right: .5em;
+    }
+    .log-message {
+        font-size: smaller;
+        font-family: monospace;
+    }
+    table {
+        background-color: #f6f6f6;
+    }
+    .raw-html {
+        max-height: 15em;
+    }
+}

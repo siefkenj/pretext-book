@@ -3,6 +3,8 @@ import {
     autoInsertAttrPropDescriptions,
     wrapPtxExample,
     addSyntaxHeadingsToToc,
+    PyodideWorkerPool,
+    compileFragmentPluginFactory,
 } from "./dist/index.js";
 import { getHighlighter, bundledLanguages, bundledThemes } from "shiki";
 import fs from "node:fs";
@@ -63,7 +65,14 @@ const withNextra = nextraConfig({
                 return await highlighter;
             },
         },
-        remarkPlugins: [autoInsertAttrPropDescriptions, wrapPtxExample],
+        remarkPlugins: [
+            autoInsertAttrPropDescriptions,
+            // The `wrapPtxExample` plugin extracts the contents of each `ptx-example` code fence so that it can be
+            // compiled with a locally installed `pretext`. This is not superseded by the `compileFragmentPluginFactory`
+            // which dynamically compiles fragments during the build process.
+            //wrapPtxExample,
+            compileFragmentPluginFactory(),
+        ],
         rehypePlugins: [
             /**
              * Add any data in `extraSearchData` to `structurizedData` so that it shows up in the search box.

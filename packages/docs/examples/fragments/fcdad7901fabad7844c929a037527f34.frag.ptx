@@ -1,9 +1,0 @@
-<FRAGMENT parents="p">
-<list>
-   <title>Meeting Agenda</title>
-   <ol marker="(1)">
-       <li>Call the meeting to order</li>
-       <li>Approval of the minutes</li>
-   </ol>
-</list>
-</FRAGMENT>
