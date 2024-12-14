@@ -8,7 +8,13 @@ import {
 
 # `<title>`
 
-Short description of what the `<title>` tag does.
+The `<title>` tag is quite ubiquitous within PreTeXt, and appears in three
+distinct contexts:  
+A `BibTitle` as an immediate child of [`<biblio>`](./biblio);  
+a  `LinedTitle` as an immediate child of [`<article>`](./article),
+[`<book>`](./book),[`<chapter>`](./chapter), [`<part>`](./part),
+[`<section>`](./section);  
+or a (generic) `<title>` which appears as a child of many other tags.
 
 ## Syntax
 
@@ -16,4 +22,64 @@ Short description of what the `<title>` tag does.
 
 ## Examples
 
-    
+### BibTitles
+
+The title following a [`<biblio>`](./biblio) tag is italicized.
+
+```ptx-example
+<FRAGMENT>
+<backmatter>
+    <references>
+        <title>References</title>
+            <biblio type="raw">Tom Judson,
+                <title>Abstract Algebra: Theory and Applications</title>.
+            </biblio>
+    </references>
+</backmatter>
+</FRAGMENT>
+```
+
+### Division, Lined, and generic titles
+
+The title of a division appears not only within the body of the text, but also
+as an entry in the Table of Contents and as a label for the browser tab when the corresponding web page is rendered.
+
+When a title is too long for a Table of Contents entry, a
+[`<shorttitle>`](./shorttitle) may be provided which will
+render more compactly, and a [`<plaintitle>`](./plaintitle) may be given to
+provide an even more compact version for the tab in a web browser.
+In a PDF version of the document, the [`<plaintitle>`](./plaintitle) is ignored,
+but the [`<shorttitle>`](./shorttitle) is honored.
+
+Moreover, when a division title is particularly long, the author may choose to
+use a `LinedTitle`, that is using one of more [`<line>`](./line) tags to
+specify the manner in which the title should be broken into
+separate lines.
+
+Note that division titles do not acquire an trailing period, but the generic title
+of say a [`<theorem>`](./theorem) does.
+
+
+```ptx-example
+<FRAGMENT>
+<chapter>
+    <title>
+        <line>A long title will either render</line>
+        <line>as a run-on, or as here,</line>
+        <line>be broken at specific points</line>
+        <line>via <alert>line</alert> tags.</line>
+    </title>
+    <shorttitle>A shorter title for the TOC</shorttitle>
+    <plaintitle>Web page tab title</plaintitle>
+    <section>
+        <title>
+        A section title does not acquire an trailing period
+        </title>
+        <theorem>
+            <title>The title of this theorem acquires a trailing period</title>
+            <statement><p><m>2+2=4</m>.</p></statement>
+        </theorem>
+    </section>
+</chapter>
+</FRAGMENT>
+```
