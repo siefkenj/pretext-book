@@ -8,7 +8,8 @@ import {
 
 # `<shorttitle>`
 
-Short description of what the `<shorttitle>` tag does.
+The `<shorttitle>` tag is used to provide a length-conscious title to appear in
+the Table of Contents when the given [`<title>`](./title) is too long.
 
 ## Syntax
 
@@ -16,4 +17,13 @@ Short description of what the `<shorttitle>` tag does.
 
 ## Examples
 
+```ptx-example
+<FRAGMENT>
+<section>
+    <title>This section title is far too long to work as a table of contents
+    entry, so we shall include a <alert>shorttitle</alert> for the TOC</title>
+    <shorttitle>A shorter title for the TOC</shorttitle>
+</section>
+</FRAGMENT>
+```
     
