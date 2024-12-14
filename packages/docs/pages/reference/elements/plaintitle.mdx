@@ -8,7 +8,9 @@ import {
 
 # `<plaintitle>`
 
-Short description of what the `<plaintitle>` tag does.
+The `<plaintitle>` tag allows the user to provide a short title which will
+appear on the tab of the web browser for an html-rendered PreTeXt
+document.
 
 ## Syntax
 
@@ -16,4 +18,14 @@ Short description of what the `<plaintitle>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT>
+<section>
+    <title>This section title is far too long to work as a table of contents
+    entry, so we shall include a <alert>shorttitle</alert> for the TOC
+    and a <alert>plaintitle</alert> for the web browser tab</title>
+    <shorttitle>A shorter title for the TOC</shorttitle>
+    <plaintitle>Browser tab title</plaintitle>
+</section>
+</FRAGMENT>
+```
