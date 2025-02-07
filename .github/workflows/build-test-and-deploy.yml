@@ -54,7 +54,7 @@ jobs:
                   cp -r ./packages/docs/out ./website/docs
 
             - name: Package website deployment
-              uses: actions/upload-pages-artifact@v4
+              uses: actions/upload-pages-artifact@v3
               with:
                   artifact-name: website
                   path: ./website
