@@ -28,9 +28,9 @@ jobs:
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
@@ -54,7 +54,7 @@ jobs:
                   cp -r ./packages/docs/out ./website/docs
 
             - name: Package website deployment
-              uses: actions/upload-pages-artifact@v2
+              uses: actions/upload-pages-artifact@v3
               with:
                   artifact-name: website
                   path: ./website
@@ -68,4 +68,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: website
-              uses: actions/deploy-pages@v2
+              uses: actions/deploy-pages@v4
