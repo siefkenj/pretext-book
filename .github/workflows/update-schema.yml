@@ -1,0 +1,58 @@
+# This workflow will checkout pull the latest pretext schema from pretextbook/pretext, build it with relax-ng-to-typescript, and then create or update a PR with the change (if there was one).
+
+name: Update Schema
+on:
+  schedule:
+    - cron: '0 0 * * *' # every day at midnight GMT
+  workflow_dispatch:
+
+jobs:
+  update-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: setup git config
+        run: |
+          git config user.name "${{ github.actor }} via GitHub Actions"
+          git config user.email "${{ github.actor }}@github_actions.no_reply"
+          git checkout -b schema-update-action
+          # Ensure the branch exists on the remote
+          git ls-remote --exit-code origin schema-update-action || {
+            git push -u origin schema-update-action
+          }
+          # Fetch the branch from the remote
+          git fetch origin schema-update-action
+          git reset --hard origin/schema-update-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: generate new schema
+        run: |
+          git clone https://github.com/siefkenj/relax-ng-to-typescript.git
+          cd relax-ng-to-typescript
+          npm install
+          wget https://raw.githubusercontent.com/PreTeXtBook/pretext/refs/heads/master/schema/pretext.rng
+          npx vite-node scripts/generate-typescript.ts -- -g pretext.rng -o ./
+          cp -f ./generated-grammar.ts ../packages/jsx/src/assets/generated-grammar.ts
+          cp -f ./generated-types.ts ../packages/jsx/src/assets/generated-types.ts
+          cd ..
+          rm -rf relax-ng-to-typescript
+
+
+      - name: check for changes
+        run: |
+          git diff --quiet || {
+            git add .
+            git commit -m "Update relaxng schema"
+            git push --set-upstream origin schema-update-action
+            gh pr create --fill || true
+          }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
