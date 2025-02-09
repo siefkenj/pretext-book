@@ -6,8 +6,8 @@ name: Build and deploy to github pages
 on:
     push:
         branches: ["main"]
-    #pull_request:
-    #    branches: ["*"]
+    pull_request:
+        branches: ["*"]
     # use the create-pull-request even so that the CI is triggered even for PRs made from a github action
     repository_dispatch:
         types: [create-pull-request]
