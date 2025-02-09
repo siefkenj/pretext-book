@@ -47,7 +47,7 @@
         "@types/yargs": "^17.0.33",
         "@types/hast": "^3.0.4",
         "classnames": "^2.5.1",
-        "esbuild": "^0.24.0",
+        "esbuild": "^0.25.0",
         "esbuild-runner": "^2.2.2",
         "hast-util-from-html": "^1.0.2",
         "hast-util-to-html": "^8.0.4",
