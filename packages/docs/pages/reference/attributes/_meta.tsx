@@ -1,14 +1,16 @@
+const ALL_ATTRIBUTES = [
+    "component",
+    "label",
+    "xmlid",
+    "xmllang",
+]
+
+
 export default {
-    component: {
-        title: <code>component</code>,
-    },
-    label: {
-        title: <code>label</code>,
-    },
-    xmlid: {
-        title: <code>xml:id</code>,
-    },
-    xmllang: {
-        title: <code>xml:lang</code>,
-    },
+    ...Object.fromEntries(
+        ALL_ATTRIBUTES.map((tag) => [
+            tag,
+            { title: <code>{`${tag}`}</code>, isPretextAttribute: true },
+        ]),
+    ),
 };
