@@ -1,8 +1,8 @@
 const ALL_ATTRIBUTES = [
     "component",
     "label",
-    "xmlid",
-    "xmllang",
+    "xml:id",
+    "xml:lang",
 ]
 
 
