@@ -9,7 +9,7 @@ const ALL_ATTRIBUTES = [
 export default {
     ...Object.fromEntries(
         ALL_ATTRIBUTES.map((tag) => [
-            tag,
+            tag.replace(/:/g, ""),
             { title: <code>{`${tag}`}</code>, isPretextAttribute: true },
         ]),
     ),
