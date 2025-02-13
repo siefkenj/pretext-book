@@ -77,14 +77,14 @@ invalid PreTeXt.
 
 ### Adding element and attribute file templates
 
-When the schema is updated, to get new template files for new elements or attributes, you can run a script to add just missing pages.  This can be done with `tsx`, from the root of the `pacckages/docs` folder:
+When the schema is updated, to get new template files for new elements or attributes, you can run a script to add just missing pages.  This can be done with `vite-node`, from the root of the `packages/docs` folder:
 
 ```
-npx tsx scripts/create-element-templates.ts
+npx vite-node scripts/create-element-templates.ts
 ```
 
 New files will be put directly into the `pages/reference/` folders (either `elements` or `attributes`).
 
-To update the list of elements to be displayed, run `npx tsx scripts/dump-all-elements.ts` and copy the output to the appropriate place in `pages/reference/_meta.tsx`.
+To update the list of elements to be displayed, run `npx vite-node scripts/dump-all-elements.ts` and copy the output to the appropriate place in `pages/reference/_meta.tsx`.
 
 After doing this, restart `npm run dev` to see changes.
