@@ -50,6 +50,8 @@ npm run dev
 
 to start in development mode. This will start a live-reloading server that will respond to changes in the markdown files.
 
+If this doesn't work, you might need to run `npm run build` inside a few other package directories.  Run this command from inside `packages/wasm`, `packages/fragments`, and `packages/jsx` in order (you can ignore errors when building `jsx`).
+
 ### Building
 
 To build, run
@@ -72,3 +74,17 @@ This tab will not show up when the site is built in production mode.
 
 It is a good idea to check the PreTeXt log info in the _Debug Info_ tab to make sure you're not creating an example with
 invalid PreTeXt.
+
+### Adding element and attribute file templates
+
+When the schema is updated, to get new template files for new elements or attributes, you can run a script to add just missing pages.  This can be done with `tsx`, from the root of the `pacckages/docs` folder:
+
+```
+npx tsx scripts/create-element-templates.ts
+```
+
+New files will be put directly into the `pages/reference/` folders (either `elements` or `attributes`).
+
+To update the list of elements to be displayed, run `npx tsx scripts/dump-all-elements.ts` and copy the output to the appropriate place in `pages/reference/_meta.tsx`.
+
+After doing this, restart `npm run dev` to see changes.

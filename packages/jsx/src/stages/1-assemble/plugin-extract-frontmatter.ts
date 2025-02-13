@@ -32,6 +32,7 @@ const isFrontmatterNode = elmMatcher("frontmatter");
 /**
  * Extract information from the <frontmatter> node and remove it from the tree.
  */
+// This all needs to be fixed with the introduction for bibinfo.
 export const extractFrontmatterPlugin: Plugin<
     PluginOptions[],
     PretextRoot,
@@ -69,6 +70,7 @@ export const extractFrontmatterPlugin: Plugin<
                                 extractTitlePageDetails(node);
                             break;
                         default:
+                            // @ts-ignore - Suppress type error for unknown node
                             const unknownNode: never = node;
                             console.warn("Unexpected child", unknownNode);
                     }
@@ -94,23 +96,32 @@ export const extractFrontmatterPlugin: Plugin<
     };
 };
 
+
+// The following is incorrect since titlepage elements are now in bibinfo
 function extractTitlePageDetails(ast: ElementTitlePage) {
     const ret: TitlePage = { authors: [], editors: [], credits: [] };
     for (const node of ast.children) {
         switch (node.name) {
+            // @ts-ignore - Suppress type error for unknown node
             case "author":
+                // @ts-ignore - Suppress type error for unknown node
                 ret.authors.push(extractPersonDetails(node));
                 break;
+            // @ts-ignore - Suppress type error for unknown node
             case "credit":
                 console.warn(`<${node.name}> is not implemented yet`);
                 break;
+            // @ts-ignore - Suppress type error for unknown node
             case "date":
                 ret.date = node.children as XastElement[];
                 break;
+            // @ts-ignore - Suppress type error for unknown node
             case "editor":
+                // @ts-ignore - Suppress type error for unknown node
                 ret.editors.push(extractPersonDetails(node));
                 break;
             default:
+                // @ts-ignore - Suppress type error for unknown node
                 const unknownNode: never = node;
                 console.warn("Unexpected child", unknownNode);
         }
@@ -138,6 +149,7 @@ function extractPersonDetails(
                 ret.personname = node.children as XastElement[];
                 break;
             default:
+                // @ts-ignore - Suppress type error for unknown node
                 const unknownNode: never = node;
                 console.warn("Unexpected child", unknownNode);
         }
