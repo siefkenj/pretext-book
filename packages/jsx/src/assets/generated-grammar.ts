@@ -10436,7 +10436,8 @@ export const jsonGrammar = {
                 "interactive": {
                     "optional": true,
                     "type": [
-                        "\"codelens\""
+                        "\"codelens\"",
+                        "\"activecode\""
                     ]
                 },
                 "interpreter-args": {

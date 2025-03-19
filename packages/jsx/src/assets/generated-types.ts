@@ -984,7 +984,7 @@ export interface ElementProgram extends XMLElement {
     hidecode?: "yes" | "no";
     "highlight-lines"?: string;
     include?: string;
-    interactive?: "codelens";
+    interactive?: "codelens" | "activecode";
     "interpreter-args"?: string;
     language?: string;
     "line-numbers"?: "yes" | "no";
