@@ -603,6 +603,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -931,6 +934,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -1298,6 +1304,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -1647,6 +1656,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -1978,6 +1990,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -2260,6 +2275,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -2685,6 +2703,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -2969,6 +2990,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -3149,6 +3173,20 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [],
             "textChildrenAllowed": false
+        },
+        "ElementPf": {
+            "type": "element",
+            "name": "pf",
+            "attributes": {
+                "language": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
         },
         "ElementPermille": {
             "type": "element",
@@ -3523,6 +3561,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -3979,6 +4020,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -4310,6 +4354,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -4615,6 +4662,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -4897,6 +4947,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -5374,6 +5427,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -5656,6 +5712,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -5947,6 +6006,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -6454,6 +6516,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -6736,6 +6801,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -7088,6 +7156,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -7415,6 +7486,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -7696,6 +7770,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -7969,6 +8046,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -8251,6 +8331,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -9178,6 +9261,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -9509,6 +9595,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -9927,6 +10016,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -11348,6 +11440,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -11792,6 +11887,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -12539,6 +12637,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -12821,6 +12922,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -13121,6 +13225,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -13562,6 +13669,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -13907,6 +14017,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -14639,6 +14752,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -16766,6 +16882,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -18780,6 +18899,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -21498,6 +21620,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -21801,6 +21926,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -23814,6 +23942,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -24407,6 +24538,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -24889,6 +25023,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -25612,6 +25749,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -25885,6 +26025,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -26169,6 +26312,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
@@ -26467,6 +26613,9 @@ export const jsonGrammar = {
                     "ref": "ElementPermille"
                 },
                 {
+                    "ref": "ElementPf"
+                },
+                {
                     "ref": "ElementPhonomark"
                 },
                 {
@@ -26740,6 +26889,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
                 },
                 {
                     "ref": "ElementPhonomark"
