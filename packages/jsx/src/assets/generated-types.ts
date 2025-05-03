@@ -1197,7 +1197,7 @@ export interface ElementListing extends XMLElement {
     "xml:lang"?: string;
     landscape?: "yes" | "no";
   };
-  children: (ElementCaption | ElementConsole | ElementIndex | ElementProgram | ElementTitle)[];
+  children: (ElementConsole | ElementIndex | ElementPlainTitle | ElementProgram | ElementShortTitle | ElementTitle)[];
 }
 
 export interface ElementConsole extends XMLElement {
@@ -1224,11 +1224,6 @@ export interface ElementConsoleInput extends XMLElement {
     continuation?: string;
   };
   children: XMLText[];
-}
-
-export interface ElementCaption extends Omit<XMLElement, "attributes"> {
-  name: "caption";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
 }
 
 export interface ElementList extends XMLElement {
@@ -1303,6 +1298,11 @@ export interface ElementMuseScore extends XMLElement {
     musescore: string;
   };
   children: never[];
+}
+
+export interface ElementCaption extends Omit<XMLElement, "attributes"> {
+  name: "caption";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
 }
 
 export interface ElementBiographical extends XMLElement {
