@@ -10487,13 +10487,25 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
+                "extra-compiler-args": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
                 "database": {
                     "optional": true,
                     "type": [
                         "string"
                     ]
                 },
-                "datafile": {
+                "add-files": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "compile-also": {
                     "optional": true,
                     "type": [
                         "string"
@@ -10520,6 +10532,12 @@ export const jsonGrammar = {
                     ]
                 },
                 "include": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "filename": {
                     "optional": true,
                     "type": [
                         "string"

@@ -986,12 +986,15 @@ export interface ElementProgram extends XMLElement {
     chatcodes?: "yes" | "no";
     codelens?: "yes" | "no";
     "compiler-args"?: string;
+    "extra-compiler-args"?: string;
     database?: string;
-    datafile?: string;
+    "add-files"?: string;
+    "compile-also"?: string;
     download?: "yes" | "no";
     hidecode?: "yes" | "no";
     "highlight-lines"?: string;
     include?: string;
+    filename?: string;
     interactive?: "codelens" | "activecode";
     "interpreter-args"?: string;
     language?: string;
