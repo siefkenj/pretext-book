@@ -73,6 +73,7 @@ const ALL_TAGS = [
     "definition",
     "degree",
     "delete",
+    "demonstration",
     "department",
     "description",
     "division",
