@@ -8,7 +8,8 @@ import {
 
 # `<mdn>`
 
-Short description of what the `<mdn>` tag does.
+The `<mdn>` tag is the numbered version of the [`<md>`](./md) tag, used for multiline displays of mathematics
+in which each aligned row will be numbered.
 
 ## Syntax
 
@@ -16,4 +17,15 @@ Short description of what the `<mdn>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    <mdn>
+        <mrow>
+            \det\begin{bmatrix}1\amp 1\\ 1\amp 3\end{bmatrix}\amp = 3-1
+        </mrow>
+        <mrow>
+            \amp = 2
+        </mrow>
+    </mdn>
+</FRAGMENT>
+```
