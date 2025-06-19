@@ -8,12 +8,40 @@ import {
 
 # `<paragraphs>`
 
-Short description of what the `<paragraphs>` tag does.
+The `<paragraphs>` tag is a pseudo-division. It is a way of grouping material together 
+that doesn't get a number, but it can have a title and be the subject of a cross-reference 
+with custom text.  `<paragraphs>` might be used if an author doesn't want to fully 
+partition a section into subsections but still wants to spend some extended time on a particular 
+topic. An author might also use `<paragraphs>` for exposition containing one or more 
+interactive questions, since an `<exercise>` cannot be a child of an `<example>`, but it can be 
+a child of `<paragraphs>`.
 
 ## Syntax
 
 <SyntaxDisplay name="paragraphs" />
 
 ## Examples
+
+```ptx-example
+<FRAGMENT>
+    <paragraphs><title>A set of material an author wants to group together</title>
+        <p>
+            An author can put lots of different elements inside the paragraphs
+            pseudo-division, including tables, images, exercises, etc.
+        </p>
+        <exercise>
+            <p>
+                This exercise could be interactive to keep the readers' attention in the 
+                middle of exposition of a topic.
+            </p>
+        </exercise>
+        <p>
+            An author could say more here.  The paragraphs tag can be cross-referenced
+            and linked to from elsewhere within the document.
+        </p>
+    </paragraphs>
+</FRAGMENT>
+```
+
 
     
