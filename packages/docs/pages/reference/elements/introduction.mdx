@@ -8,7 +8,9 @@ import {
 
 # `<introduction>`
 
-Short description of what the `<introduction>` tag does.
+The `<introduction>` tag contains introductory material, usually brief and uncomplicated.  
+Divisions, [exercise groups](./exercisegroup.mdx), and `<task>`-containing, highly-structured exercises and PROJECT-like 
+can all have introductions. 
 
 ## Syntax
 
@@ -16,4 +18,103 @@ Short description of what the `<introduction>` tag does.
 
 ## Examples
 
+### An introduction as part of a `<project>`
+
+```ptx-example
+<FRAGMENT parents="project">
+    <introduction>
+        <p>
+            Let <m>f(x)=3x^5-7x+5</m> and <m>g(x)=x^2</m>.  
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Calculate <m>f(g(x))</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Calculate <m>g(f(x))</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                What can you say about composition and commutativity?
+            </p>
+        </statement>
+        <hint>
+            <p>
+                One counterexample demonstrates that a statement is not <em>always</em> true;
+                one example does <em>not</em> demonstrate that a statement is always true. 
+            </p>
+        </hint>
+    </task> 
+</FRAGMENT>
+```
+
+### An introduction as part of an `<exercisegroup>`
+
+```ptx-example
+<FRAGMENT parents="exercisegroup">
+    <introduction>
+      <p>
+        Take the derivative of each of the following functions.
+      </p>
+    </introduction>
+
+    <exercise>
+      <statement>
+        <p>
+          <m>e^x+4</m>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          <m>x^2-5x</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+            <m>2x-5</m>
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <p>
+        <m>\sin(x)+\ln(x)</m>
+      </p>
+    </exercise>
+</FRAGMENT>
+```
+
+### An introduction to a `<section>`
+
+```ptx-example
+<FRAGMENT parents="section">
+    <introduction>
+        <p>
+            Something fairly short that introduces or gives an overview of what's coming up.  
+        </p>
+    </introduction>
+
+    <subsection>
+
+        <p>
+            Material not in an introduction can be much longer and more involved. There can't be any 
+            <q>unincorporated territory</q> in a structured division, that is, if a section contains
+            subsections, all material must be in a subsection or peer division or an introduction 
+            or a conclusion.  
+        </p>
+    </subsection>
+</FRAGMENT>
+```
     
