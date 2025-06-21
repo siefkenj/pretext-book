@@ -8,7 +8,13 @@ import {
 
 # `<project>`
 
-Short description of what the `<project>` tag does.
+The `<project>` tag, together with [`<investigation>`](./investigation.mdx), [`<activity>`](./activity.mdx), 
+and [`<exploration>`](./exploration.mdx), are called PROJECT-like tags.  They are meant to contain
+material for readers to do as part of their learning.  PROJECT-like tags share many features and structure
+ with [EXAMPLE-like](./example.mdx) and [`<exercise>`](./exercise.mdx) tags; however the connotation of 
+ their contents is different, and the visibility of components and the knowling behavior are controlled separately for each 
+ of the three categories.  PROJECT-like are also on a different numbering system from other elements by default, 
+ though that behavior can be changed.
 
 ## Syntax
 
@@ -16,4 +22,112 @@ Short description of what the `<project>` tag does.
 
 ## Examples
 
-    
+### An unstructured project
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <project><title>Differentiating polynomials</title>
+        <p>
+            Find the derivative of the functions
+            <m>f(x) = 3x^5-7x+5</m> and <m>g(x) = 3x^5-7x+10</m>. What do you notice?
+        </p>
+    </project>
+</FRAGMENT>
+```
+
+### A project can have a `<statement>`, and then an optional `<hint>`, `<answer>`, and/or `<solution>`.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <project><title>Differentiating polynomials</title>
+        <statement>
+            <p>
+                Find the derivative of the functions
+                <m>f(x) = 3x^5-7x+5</m> and <m>g(x) = 3x^5-7x+10</m>.  What do you notice?
+            </p>
+        </statement>
+        <hint>
+            <p>
+                Remember to use the power rule, and that the derivative of a constant is 0.
+            </p>
+        </hint>
+        <answer>
+            <p>
+                <m>f'(x) = 15x^4-7</m> and <m>g'(x) = 15x^4-7</m>
+            </p>
+        </answer>
+        <solution>
+            <p>
+                We use the power, sum,
+                and constant multiple rules and find that the derivative is 
+                <md>
+                    <mrow> f'(x) \amp = 5\cdot 3x^{5-1}-1\cdot 7x^{1-1}+0</mrow>
+                    <mrow> \amp = 15x^4-7 </mrow>
+                </md>.
+            </p>
+            <p>
+                The solution for <m>g'(x)</m> is the same, since <m>f</m> and <m>g</m> are 
+                the same except for their constants, but the derivative of a constant is 0. 
+            </p>
+        </solution>
+    </project>
+</FRAGMENT>
+```
+
+### A project can also be structured with an `<introduction>`, `<conclusion>`, and some number of `<task>`, each of which has a `<statement>`, and then an optional `<hint>`, `<answer>`, and/or `<solution>`.
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <project><title>A highly structured project</title>
+        <introduction>
+            <p>
+            Here is where we describe what the reader will accomplish in the project.
+            </p>
+        </introduction>
+
+        <task>
+            <statement>
+            <p>
+                The first step to do.
+            </p>
+            </statement>
+            <hint>
+            <p>
+                A little hint.
+            </p>
+            </hint>
+            <answer>
+            <p>
+                Just the answer.
+            </p>
+            </answer>
+            <solution>
+            <p>
+                All the glorious details about how to do the first step.
+            </p>
+            </solution>
+        </task>
+
+        <task>
+            <statement>
+            <p>
+                The second step to do.
+                We'll be lazy and just include an answer.
+            </p>
+            </statement>
+            <answer>
+            <p>
+                Just the answer.
+            </p>
+            </answer>
+        </task>
+
+        <conclusion>
+            <p>
+            A little wrap up.
+            </p>
+        </conclusion>
+
+    </project>
+</FRAGMENT>
+```
