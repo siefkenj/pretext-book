@@ -8,12 +8,116 @@ import {
 
 # `<answer>`
 
-Short description of what the `<answer>` tag does.
+The `<answer>` tag is optionally part of a structured [`<example>`](./example)-like, 
+[`<project>`](./project)-like, or [`<exercise>`](./exercise).
+It contains more direct information than a [`<hint>`](./hint) but isn't a complete 
+[`<solution>`](./solution).
+The visibility and knowling behavior of hints, answers, and solutions can be controlled separately
+from the statement of the exercise, example, or project at the document level via the publication file.
 
 ## Syntax
 
 <SyntaxDisplay name="answer" />
 
 ## Examples
+
+### An `<example>` structured with statement, hint, answer, and solution
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <example>
+        <title>Solve a linear equation</title>
+            <statement>
+                <p>Solve for <m>x</m>:
+                <me>9x - 2= 4x + 5</me></p>
+            </statement>
+            <hint>
+                <p>Add or subtract terms from both sides so that terms with an
+                <m>x</m> are on the left side and all other terms are on the
+                right.</p>
+            </hint>
+            <answer>
+                <p><m>x = \frac{7}{5}</m></p>
+            </answer>
+            <solution>
+                <p>First, combine the two terms that contain <m>x</m>.
+                To do this, we subtract <m>4x</m> from both sides, obtaining.
+                <me>5x - 2 = 5</me>.</p>
+                <p>Next, we add <m>2</m> to both sides so only the term
+                containing <m>x</m> remain on the left-hand side:
+                <me>5x = 7</me>.</p>
+                <p>Finally, divide both sides by <m>5</m> to get <m>x</m> by
+                itself:
+                <me>x = \frac{7}{5}</me>.</p>
+            </solution>
+    </example>
+</FRAGMENT>
+```
+
+### Answers can also go on individual tasks of a highly structured project or exercise
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <project>
+        <title>Answers on Individual Tasks</title>
+            <introduction>
+                <p>
+                    Here is where we give the student the background
+                    information required to start accomplishing tasks.
+                </p>
+            </introduction>
+
+            <task>
+                <statement>
+                    <p>
+                        The first step to do.
+                    </p>
+                </statement>
+                <hint>
+                    <p>
+                        A little hint.
+                    </p>
+                </hint>
+                <answer>
+                    <p>
+                        Just the answer.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        All the glorious details about how to do the first
+                        step.
+                    </p>
+                </solution>
+            </task>
+
+            <task>
+                <statement>
+                    <p>
+                        The second step to do.
+                        We'll include two answers.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        First answer.
+                    </p>
+                </answer>
+                <answer>
+                    <p>
+                        Second answer.
+                    </p>
+                </answer>
+            </task>
+
+            <conclusion>
+                <p>
+                    A little wrap up.
+                </p>
+            </conclusion>
+
+        </project>
+</FRAGMENT>
+```
 
     
