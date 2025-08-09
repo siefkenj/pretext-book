@@ -16421,7 +16421,7 @@ export const jsonGrammar = {
                     "ref": "ElementWWMacros"
                 }
             ],
-            "textChildrenAllowed": false
+            "textChildrenAllowed": true
         },
         "ElementWWMacros": {
             "type": "element",
