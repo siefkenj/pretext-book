@@ -33,7 +33,7 @@ export interface ElementDocInfo extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementAsymptotePreamble | ElementAuthorBiographies | ElementBrandlogo | ElementCrossReferences | ElementFeedback | ElementImages | ElementInitialism | ElementLatexImagePreamble | ElementMacros | ElementMathPackage | ElementNumbering | ElementParsons | ElementPrograms | ElementRename)[];
+  children: (ElementAsymptotePreamble | ElementAuthorBiographies | ElementBrandlogo | ElementCrossReferences | ElementFeedback1 | ElementImages | ElementInitialism | ElementLatexImagePreamble | ElementMacros | ElementMathPackage | ElementNumbering | ElementParsons | ElementPrograms | ElementRename)[];
 }
 
 export interface ElementRename extends XMLElement {
@@ -117,7 +117,7 @@ export interface ElementArchive extends XMLElement {
   children: XMLText[];
 }
 
-export interface ElementFeedback extends Omit<XMLElement, "attributes"> {
+export interface ElementFeedback1 extends Omit<XMLElement, "attributes"> {
   name: "feedback";
   children: ElementFeedbackUrl[];
 }
@@ -985,6 +985,7 @@ export interface ElementProgram extends XMLElement {
     autorun?: "yes" | "no";
     chatcodes?: "yes" | "no";
     codelens?: "yes" | "no";
+    "starting-step"?: "yes" | "no";
     "compiler-args"?: string;
     "extra-compiler-args"?: string;
     database?: string;
@@ -1002,7 +1003,7 @@ export interface ElementProgram extends XMLElement {
     "linker-args"?: string;
     timelimit?: string;
   };
-  children: (ElementProgramCode | ElementProgramPostamble | ElementProgramPreamble | ElementProgramStdin | ElementProgramTests | XMLText)[];
+  children: (ElementCodelensCheckpoint | ElementProgramCode | ElementProgramPostamble | ElementProgramPreamble | ElementProgramStdin | ElementProgramTests | XMLText)[];
 }
 
 export interface ElementProgramTests extends XMLElement {
@@ -1054,6 +1055,21 @@ export interface ElementProgramCode extends Omit<XMLElement, "attributes"> {
   children: XMLText[];
 }
 
+export interface ElementCodelensCheckpoint extends XMLElement {
+  name: "checkpoint";
+  attributes: {
+    line: string;
+    answer?: string;
+    "answer-variable"?: string;
+  };
+  children: (ElementFeedback | ElementPrompt)[];
+}
+
+export interface ElementPrompt extends Omit<XMLElement, "attributes"> {
+  name: "prompt";
+  children: (ElementBlockQuote | ElementConsole | ElementImageCode | ElementImageRaster | ElementParagraph | ElementPreformatted | ElementProgram | ElementTabular | ElementVideo)[];
+}
+
 export interface ElementPreformatted extends Omit<XMLElement, "attributes"> {
   name: "pre";
   children: (ElementCodeLine | XMLText)[];
@@ -1062,16 +1078,6 @@ export interface ElementPreformatted extends Omit<XMLElement, "attributes"> {
 export interface ElementCodeLine extends Omit<XMLElement, "attributes"> {
   name: "cline";
   children: XMLText[];
-}
-
-export interface ElementOl extends XMLElement {
-  name: "ol";
-  attributes: {
-    component?: string;
-    cols?: "2" | "3" | "4" | "5" | "6";
-    marker?: string;
-  };
-  children: ElementListItem[];
 }
 
 export interface ElementImageRaster extends XMLElement {
@@ -1146,6 +1152,64 @@ export interface ElementAsymptote extends XMLElement {
   children: XMLText[];
 }
 
+export interface ElementConsole extends XMLElement {
+  name: "console";
+  attributes: {
+    component?: string;
+    prompt?: string;
+    continuation?: string;
+    width?: string;
+    margins?: string;
+  };
+  children: (ElementConsoleInput | ElementConsoleOutput)[];
+}
+
+export interface ElementConsoleOutput extends Omit<XMLElement, "attributes"> {
+  name: "output";
+  children: XMLText[];
+}
+
+export interface ElementConsoleInput extends XMLElement {
+  name: "input";
+  attributes: {
+    prompt?: string;
+    continuation?: string;
+  };
+  children: XMLText[];
+}
+
+export interface ElementBlockQuote extends XMLElement {
+  name: "blockquote";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementAttribution | ElementIndex | ElementParagraph | ElementTitle)[];
+}
+
+export interface ElementAttribution extends Omit<XMLElement, "attributes"> {
+  name: "attribution";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLongLine | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
+}
+
+export interface ElementFeedback extends Omit<XMLElement, "attributes"> {
+  name: "feedback";
+  children: (ElementBlockQuote | ElementConsole | ElementImageCode | ElementImageRaster | ElementParagraph | ElementPreformatted | ElementProgram | ElementTabular | ElementVideo)[];
+}
+
+export interface ElementOl extends XMLElement {
+  name: "ol";
+  attributes: {
+    component?: string;
+    cols?: "2" | "3" | "4" | "5" | "6";
+    marker?: string;
+  };
+  children: ElementListItem[];
+}
+
 export interface ElementDl extends XMLElement {
   name: "dl";
   attributes: {
@@ -1203,32 +1267,6 @@ export interface ElementListing extends XMLElement {
   children: (ElementConsole | ElementIndex | ElementPlainTitle | ElementProgram | ElementShortTitle | ElementTitle)[];
 }
 
-export interface ElementConsole extends XMLElement {
-  name: "console";
-  attributes: {
-    component?: string;
-    prompt?: string;
-    continuation?: string;
-    width?: string;
-    margins?: string;
-  };
-  children: (ElementConsoleInput | ElementConsoleOutput)[];
-}
-
-export interface ElementConsoleOutput extends Omit<XMLElement, "attributes"> {
-  name: "output";
-  children: XMLText[];
-}
-
-export interface ElementConsoleInput extends XMLElement {
-  name: "input";
-  attributes: {
-    prompt?: string;
-    continuation?: string;
-  };
-  children: XMLText[];
-}
-
 export interface ElementList extends XMLElement {
   name: "list";
   attributes: {
@@ -1245,23 +1283,6 @@ export interface ElementList extends XMLElement {
 export interface ElementIntroductionText extends Omit<XMLElement, "attributes"> {
   name: "introduction";
   children: (ElementBlockQuote | ElementConsole | ElementImageCode | ElementImageRaster | ElementParagraph | ElementPreformatted | ElementProgram | ElementTabular | ElementVideo)[];
-}
-
-export interface ElementBlockQuote extends XMLElement {
-  name: "blockquote";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementAttribution | ElementIndex | ElementParagraph | ElementTitle)[];
-}
-
-export interface ElementAttribution extends Omit<XMLElement, "attributes"> {
-  name: "attribution";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLongLine | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
 }
 
 export interface ElementConclusionText extends Omit<XMLElement, "attributes"> {

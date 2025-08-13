@@ -79,7 +79,7 @@ export const jsonGrammar = {
                     "ref": "ElementCrossReferences"
                 },
                 {
-                    "ref": "ElementFeedback"
+                    "ref": "ElementFeedback1"
                 },
                 {
                     "ref": "ElementImages"
@@ -289,7 +289,7 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
-        "ElementFeedback": {
+        "ElementFeedback1": {
             "type": "element",
             "name": "feedback",
             "attributes": {},
@@ -10481,6 +10481,13 @@ export const jsonGrammar = {
                         "\"no\""
                     ]
                 },
+                "starting-step": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                },
                 "compiler-args": {
                     "optional": true,
                     "type": [
@@ -10583,6 +10590,9 @@ export const jsonGrammar = {
                 }
             },
             "children": [
+                {
+                    "ref": "ElementCodelensCheckpoint"
+                },
                 {
                     "ref": "ElementProgramCode"
                 },
@@ -10692,6 +10702,74 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
+        "ElementCodelensCheckpoint": {
+            "type": "element",
+            "name": "checkpoint",
+            "attributes": {
+                "line": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "answer": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "answer-variable": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementFeedback"
+                },
+                {
+                    "ref": "ElementPrompt"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementPrompt": {
+            "type": "element",
+            "name": "prompt",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
         "ElementPreformatted": {
             "type": "element",
             "name": "pre",
@@ -10709,40 +10787,6 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
-        },
-        "ElementOl": {
-            "type": "element",
-            "name": "ol",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "cols": {
-                    "optional": true,
-                    "type": [
-                        "\"2\"",
-                        "\"3\"",
-                        "\"4\"",
-                        "\"5\"",
-                        "\"6\""
-                    ]
-                },
-                "marker": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementListItem"
-                }
-            ],
-            "textChildrenAllowed": false
         },
         "ElementImageRaster": {
             "type": "element",
@@ -10972,264 +11016,6 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
-        "ElementDl": {
-            "type": "element",
-            "name": "dl",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "width": {
-                    "optional": true,
-                    "type": [
-                        "\"narrow\"",
-                        "\"medium\"",
-                        "\"wide\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementDefinitionListItem"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementDefinitionListItem": {
-            "type": "element",
-            "name": "li",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAside"
-                },
-                {
-                    "ref": "ElementBiographical"
-                },
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementFigure"
-                },
-                {
-                    "ref": "ElementHistorical"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementList"
-                },
-                {
-                    "ref": "ElementListing"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementSage"
-                },
-                {
-                    "ref": "ElementSideBySide"
-                },
-                {
-                    "ref": "ElementSideBySideGroup"
-                },
-                {
-                    "ref": "ElementTable"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementTitle"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementSage": {
-            "type": "element",
-            "name": "sage",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "doctest": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "tolerance": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "auto-evaluate": {
-                    "optional": true,
-                    "type": [
-                        "\"no\"",
-                        "\"yes\""
-                    ]
-                },
-                "language": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "type": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementSageInput"
-                },
-                {
-                    "ref": "ElementSageOutput"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementSageOutput": {
-            "type": "element",
-            "name": "output",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementSageInput": {
-            "type": "element",
-            "name": "input",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementListing": {
-            "type": "element",
-            "name": "listing",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "landscape": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementPlainTitle"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementShortTitle"
-                },
-                {
-                    "ref": "ElementTitle"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
         "ElementConsole": {
             "type": "element",
             "name": "console",
@@ -11301,114 +11087,6 @@ export const jsonGrammar = {
             },
             "children": [],
             "textChildrenAllowed": true
-        },
-        "ElementList": {
-            "type": "element",
-            "name": "list",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "landscape": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementConclusionText"
-                },
-                {
-                    "ref": "ElementDl"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementIntroductionText"
-                },
-                {
-                    "ref": "ElementOl"
-                },
-                {
-                    "ref": "ElementPlainTitle"
-                },
-                {
-                    "ref": "ElementShortTitle"
-                },
-                {
-                    "ref": "ElementTitle"
-                },
-                {
-                    "ref": "ElementUl"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementIntroductionText": {
-            "type": "element",
-            "name": "introduction",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
         },
         "ElementBlockQuote": {
             "type": "element",
@@ -11750,6 +11428,441 @@ export const jsonGrammar = {
                 }
             ],
             "textChildrenAllowed": true
+        },
+        "ElementFeedback": {
+            "type": "element",
+            "name": "feedback",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementOl": {
+            "type": "element",
+            "name": "ol",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "cols": {
+                    "optional": true,
+                    "type": [
+                        "\"2\"",
+                        "\"3\"",
+                        "\"4\"",
+                        "\"5\"",
+                        "\"6\""
+                    ]
+                },
+                "marker": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementListItem"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementDl": {
+            "type": "element",
+            "name": "dl",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "\"narrow\"",
+                        "\"medium\"",
+                        "\"wide\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementDefinitionListItem"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementDefinitionListItem": {
+            "type": "element",
+            "name": "li",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:base": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementAside"
+                },
+                {
+                    "ref": "ElementBiographical"
+                },
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementFigure"
+                },
+                {
+                    "ref": "ElementHistorical"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementList"
+                },
+                {
+                    "ref": "ElementListing"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementSage"
+                },
+                {
+                    "ref": "ElementSideBySide"
+                },
+                {
+                    "ref": "ElementSideBySideGroup"
+                },
+                {
+                    "ref": "ElementTable"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementTitle"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementSage": {
+            "type": "element",
+            "name": "sage",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "doctest": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "tolerance": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "auto-evaluate": {
+                    "optional": true,
+                    "type": [
+                        "\"no\"",
+                        "\"yes\""
+                    ]
+                },
+                "language": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "type": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementSageInput"
+                },
+                {
+                    "ref": "ElementSageOutput"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementSageOutput": {
+            "type": "element",
+            "name": "output",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementSageInput": {
+            "type": "element",
+            "name": "input",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementListing": {
+            "type": "element",
+            "name": "listing",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:base": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "landscape": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementPlainTitle"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementShortTitle"
+                },
+                {
+                    "ref": "ElementTitle"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementList": {
+            "type": "element",
+            "name": "list",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:base": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "landscape": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementConclusionText"
+                },
+                {
+                    "ref": "ElementDl"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementIntroductionText"
+                },
+                {
+                    "ref": "ElementOl"
+                },
+                {
+                    "ref": "ElementPlainTitle"
+                },
+                {
+                    "ref": "ElementShortTitle"
+                },
+                {
+                    "ref": "ElementTitle"
+                },
+                {
+                    "ref": "ElementUl"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementIntroductionText": {
+            "type": "element",
+            "name": "introduction",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
         },
         "ElementConclusionText": {
             "type": "element",
