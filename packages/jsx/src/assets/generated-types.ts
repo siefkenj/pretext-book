@@ -166,7 +166,58 @@ export interface ElementBook extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementBookBackMatter | ElementBookFrontMatter | ElementChapter | ElementIndex | ElementLinedSubtitle | ElementLinedTitle | ElementPart | ElementPlainTitle | ElementShortTitle | ElementSubtitle | ElementTitle)[];
+  children: (ElementBookBackMatter | ElementBookFrontMatter | ElementChapter | ElementIndex | ElementLinedSubtitle | ElementLinedTitle | ElementPart | ElementPlainTitle | ElementShortTitle | ElementSubtitle | ElementTitle | ElementWorksheet)[];
+}
+
+export interface ElementWorksheet extends XMLElement {
+  name: "worksheet";
+  attributes: {
+    margin?: string;
+    top?: string;
+    bottom?: string;
+    right?: string;
+    left?: string;
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementPage | ElementParagraph | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementPrintoutExercise | ElementPrintoutSideBySide | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+}
+
+export interface ElementWarning extends XMLElement {
+  name: "warning";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementAside | ElementBiographical | ElementBlockQuote | ElementConsole | ElementFigure | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTitle | ElementVideo)[];
+}
+
+export interface ElementVideo extends XMLElement {
+  name: "video";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    width?: string;
+    margins?: string;
+    aspect?: string;
+    start?: string;
+    end?: string;
+    "play-at"?: "embed" | "popout" | "select";
+    preview?: "default" | "generic" | string;
+    source?: string;
+    href?: string;
+    youtube?: string;
+    youtubeplaylist?: string;
+    vimeo?: string;
+  };
+  children: never[];
 }
 
 export interface ElementTitle extends Omit<XMLElement, "attributes"> {
@@ -744,120 +795,6 @@ export interface ElementAbbr extends Omit<XMLElement, "attributes"> {
   children: (ElementCopyleft | ElementCopyrightCharacter | ElementDblprime | ElementDegree | ElementEllipsis | ElementIcon | ElementKbd | ElementLangle | ElementLdblbracket | ElementLq | ElementLsq | ElementMdash | ElementMidpoint | ElementMinus | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPrime | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSwungdash | ElementTimes | ElementTrademark | XMLText)[];
 }
 
-export interface ElementSubtitle extends Omit<XMLElement, "attributes"> {
-  name: "subtitle";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
-}
-
-export interface ElementShortTitle extends Omit<XMLElement, "attributes"> {
-  name: "shorttitle";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
-}
-
-export interface ElementPlainTitle extends Omit<XMLElement, "attributes"> {
-  name: "plaintitle";
-  children: XMLText[];
-}
-
-export interface ElementPart extends XMLElement {
-  name: "part";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementChapter | ElementIndex | ElementLinedTitle | ElementPlainTitle | ElementShortTitle | ElementTitle)[];
-}
-
-export interface ElementLinedTitle extends Omit<XMLElement, "attributes"> {
-  name: "title";
-  children: ElementLongLine[];
-}
-
-export interface ElementLongLine extends Omit<XMLElement, "attributes"> {
-  name: "line";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
-}
-
-export interface ElementIndex extends XMLElement {
-  name: "idx";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    sortby?: string;
-    start?: string;
-    finish?: string;
-  };
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIdxHeading | ElementIe | ElementIndex | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementSee | ElementSeealso | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
-}
-
-export interface ElementSeealso extends Omit<XMLElement, "attributes"> {
-  name: "seealso";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
-}
-
-export interface ElementSee extends Omit<XMLElement, "attributes"> {
-  name: "see";
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
-}
-
-export interface ElementIdxHeading extends XMLElement {
-  name: "h";
-  attributes: {
-    sortby?: string;
-  };
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
-}
-
-export interface ElementChapter extends XMLElement {
-  name: "chapter";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
-}
-
-export interface ElementWarning extends XMLElement {
-  name: "warning";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementAside | ElementBiographical | ElementBlockQuote | ElementConsole | ElementFigure | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTitle | ElementVideo)[];
-}
-
-export interface ElementVideo extends XMLElement {
-  name: "video";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    width?: string;
-    margins?: string;
-    aspect?: string;
-    start?: string;
-    end?: string;
-    "play-at"?: "embed" | "popout" | "select";
-    preview?: "default" | "generic" | string;
-    source?: string;
-    href?: string;
-    youtube?: string;
-    youtubeplaylist?: string;
-    vimeo?: string;
-  };
-  children: never[];
-}
-
 export interface ElementTabular extends XMLElement {
   name: "tabular";
   attributes: {
@@ -941,6 +878,47 @@ export interface ElementTable extends XMLElement {
     landscape?: "yes" | "no";
   };
   children: (ElementIndex | ElementPlainTitle | ElementShortTitle | ElementTabular | ElementTitle)[];
+}
+
+export interface ElementShortTitle extends Omit<XMLElement, "attributes"> {
+  name: "shorttitle";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
+}
+
+export interface ElementPlainTitle extends Omit<XMLElement, "attributes"> {
+  name: "plaintitle";
+  children: XMLText[];
+}
+
+export interface ElementIndex extends XMLElement {
+  name: "idx";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    sortby?: string;
+    start?: string;
+    finish?: string;
+  };
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIdxHeading | ElementIe | ElementIndex | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementSee | ElementSeealso | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
+}
+
+export interface ElementSeealso extends Omit<XMLElement, "attributes"> {
+  name: "seealso";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
+}
+
+export interface ElementSee extends Omit<XMLElement, "attributes"> {
+  name: "see";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
+}
+
+export interface ElementIdxHeading extends XMLElement {
+  name: "h";
+  attributes: {
+    sortby?: string;
+  };
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementViz | ElementVs | ElementWebwork | ElementXelatex | ElementXetex | XMLText)[];
 }
 
 export interface ElementSideBySideGroup extends XMLElement {
@@ -1193,6 +1171,11 @@ export interface ElementBlockQuote extends XMLElement {
 export interface ElementAttribution extends Omit<XMLElement, "attributes"> {
   name: "attribution";
   children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLongLine | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
+}
+
+export interface ElementLongLine extends Omit<XMLElement, "attributes"> {
+  name: "line";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
 }
 
 export interface ElementFeedback extends Omit<XMLElement, "attributes"> {
@@ -1552,34 +1535,6 @@ export interface ElementTechnology extends XMLElement {
   children: (ElementAside | ElementBiographical | ElementBlockQuote | ElementConsole | ElementFigure | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTitle | ElementVideo)[];
 }
 
-export interface ElementSolutions extends XMLElement {
-  name: "solutions";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-    inline?: string;
-    divisional?: string;
-    project?: string;
-    admit?: "all" | "odd" | "even";
-  };
-  children: (ElementConclusionDivision | ElementIndex | ElementIntroductionDivision | ElementPlainTitle | ElementShortTitle | ElementTitle)[];
-}
-
-export interface ElementIntroductionDivision extends XMLElement {
-  name: "introduction";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObservation | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
-}
-
 export interface ElementRemark extends XMLElement {
   name: "remark";
   attributes: {
@@ -1801,6 +1756,70 @@ export interface ElementProblem extends XMLElement {
   children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConsole | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatement | ElementTable | ElementTabular | ElementTask | ElementTitle | ElementVideo)[];
 }
 
+export interface ElementPrintoutSideBySide extends XMLElement {
+  name: "sidebyside";
+  attributes: {
+    component?: string;
+    margins?: string;
+    width?: string;
+    widths?: string;
+    valign?: "top" | "middle" | "bottom";
+    valigns?: string;
+  };
+  children: (ElementConsole | ElementDl | ElementFigure | ElementImageCode | ElementImageRaster | ElementList | ElementListing | ElementOl | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrintoutExercise | ElementPrintoutTask | ElementProgram | ElementStack | ElementTable | ElementTabular | ElementUl | ElementVideo)[];
+}
+
+export interface ElementPrintoutTask extends XMLElement {
+  name: "task";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+    workspace?: string;
+  };
+  children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConsole | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementPrintoutTask | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatement | ElementTable | ElementTabular | ElementTitle | ElementVideo)[];
+}
+
+export interface ElementPrintoutExercise extends XMLElement {
+  name: "exercise";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+    number?: string;
+    workspace?: string;
+  };
+  children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConclusionText | ElementConsole | ElementExerciseOrderedList | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementIntroductionText | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementPrintoutTask | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatementExercise | ElementTable | ElementTabular | ElementTitle | ElementVideo | ElementWebWorkAuthored | ElementWebWorkSource)[];
+}
+
+export interface ElementStatementExercise extends Omit<XMLElement, "attributes"> {
+  name: "statement";
+  children: (ElementAside | ElementBiographical | ElementBlockQuote | ElementConsole | ElementExerciseOrderedList | ElementFigure | ElementHistorical | ElementImageCode | ElementImageRaster | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementVideo)[];
+}
+
+export interface ElementExerciseOrderedList extends XMLElement {
+  name: "ol";
+  attributes: {
+    cols?: string;
+    marker?: string;
+  };
+  children: ElementExerciseListItem[];
+}
+
+export interface ElementExerciseListItem extends XMLElement {
+  name: "li";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+  };
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementBlockQuote | ElementC | ElementCa | ElementChord | ElementCodeDisplay | ElementConsole | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDl | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementFootnote | ElementForeign | ElementIcon | ElementIe | ElementImageCode | ElementImageRaster | ElementIndex | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMd | ElementMdash | ElementMdn | ElementMe | ElementMen | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementNotation | ElementObelus | ElementOl | ElementParagraph | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPreformatted | ElementPretext | ElementPrime | ElementProgram | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTabular | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUl | ElementUrl | ElementVideo | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
+}
+
 export interface ElementPrinciple extends XMLElement {
   name: "principle";
   attributes: {
@@ -1811,6 +1830,11 @@ export interface ElementPrinciple extends XMLElement {
     "xml:lang"?: string;
   };
   children: (ElementCreator | ElementIndex | ElementStatement | ElementTitle)[];
+}
+
+export interface ElementPage extends Omit<XMLElement, "attributes"> {
+  name: "page";
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObservation | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrinciple | ElementPrintoutExercise | ElementPrintoutSideBySide | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementVideo | ElementWarning)[];
 }
 
 export interface ElementObservation extends XMLElement {
@@ -1964,43 +1988,6 @@ export interface ElementExploration extends XMLElement {
     "xml:lang"?: string;
   };
   children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConclusionText | ElementConsole | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementIntroductionText | ElementList | ElementListing | ElementParagraph | ElementPostlude | ElementPreformatted | ElementPrelude | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatement | ElementTable | ElementTabular | ElementTask | ElementTitle | ElementVideo | ElementWebWorkAuthored | ElementWebWorkSource)[];
-}
-
-export interface ElementExercise extends XMLElement {
-  name: "exercise";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-    number?: string;
-  };
-  children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConclusionText | ElementConsole | ElementExerciseOrderedList | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementIntroductionText | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatementExercise | ElementTable | ElementTabular | ElementTask | ElementTitle | ElementVideo | ElementWebWorkAuthored | ElementWebWorkSource)[];
-}
-
-export interface ElementStatementExercise extends Omit<XMLElement, "attributes"> {
-  name: "statement";
-  children: (ElementAside | ElementBiographical | ElementBlockQuote | ElementConsole | ElementExerciseOrderedList | ElementFigure | ElementHistorical | ElementImageCode | ElementImageRaster | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementVideo)[];
-}
-
-export interface ElementExerciseOrderedList extends XMLElement {
-  name: "ol";
-  attributes: {
-    cols?: string;
-    marker?: string;
-  };
-  children: ElementExerciseListItem[];
-}
-
-export interface ElementExerciseListItem extends XMLElement {
-  name: "li";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-  };
-  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementBlockQuote | ElementC | ElementCa | ElementChord | ElementCodeDisplay | ElementConsole | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDl | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementFootnote | ElementForeign | ElementIcon | ElementIe | ElementImageCode | ElementImageRaster | ElementIndex | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMd | ElementMdash | ElementMdn | ElementMe | ElementMen | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementNotation | ElementObelus | ElementOl | ElementParagraph | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPreformatted | ElementPretext | ElementPrime | ElementProgram | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTabular | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUl | ElementUrl | ElementVideo | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
 }
 
 export interface ElementExample extends XMLElement {
@@ -2185,6 +2172,55 @@ export interface ElementActivity extends XMLElement {
   children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConclusionText | ElementConsole | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementIntroductionText | ElementList | ElementListing | ElementParagraph | ElementPostlude | ElementPreformatted | ElementPrelude | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatement | ElementTable | ElementTabular | ElementTask | ElementTitle | ElementVideo | ElementWebWorkAuthored | ElementWebWorkSource)[];
 }
 
+export interface ElementOutcomes extends XMLElement {
+  name: "outcomes";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementConclusionText | ElementDl | ElementIndex | ElementIntroductionText | ElementOl | ElementTitle | ElementUl)[];
+}
+
+export interface ElementObjectives extends XMLElement {
+  name: "objectives";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementConclusionText | ElementDl | ElementIndex | ElementIntroductionText | ElementOl | ElementTitle | ElementUl)[];
+}
+
+export interface ElementIntroductionDivision extends XMLElement {
+  name: "introduction";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObservation | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+}
+
+export interface ElementExercise extends XMLElement {
+  name: "exercise";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+    number?: string;
+  };
+  children: (ElementAnswer | ElementAside | ElementBiographical | ElementBlockQuote | ElementConclusionStatement | ElementConclusionText | ElementConsole | ElementExerciseOrderedList | ElementFigure | ElementHint | ElementHistorical | ElementImageCode | ElementImageRaster | ElementIndex | ElementIntroductionStatement | ElementIntroductionText | ElementList | ElementListing | ElementParagraph | ElementPreformatted | ElementProgram | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementSolution | ElementStatementExercise | ElementTable | ElementTabular | ElementTask | ElementTitle | ElementVideo | ElementWebWorkAuthored | ElementWebWorkSource)[];
+}
+
 export interface ElementConclusionDivision extends XMLElement {
   name: "conclusion";
   attributes: {
@@ -2197,6 +2233,56 @@ export interface ElementConclusionDivision extends XMLElement {
   children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObservation | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
 }
 
+export interface ElementSubtitle extends Omit<XMLElement, "attributes"> {
+  name: "subtitle";
+  children: (ElementAbbr | ElementAcro | ElementAd | ElementAlert | ElementAm | ElementAngles | ElementArticletitle | ElementAttr | ElementBc | ElementC | ElementCa | ElementChord | ElementCopyleft | ElementCopyrightCharacter | ElementDblbrackets | ElementDblprime | ElementDegree | ElementDelete | ElementDoubleflat | ElementDoublesharp | ElementEg | ElementEllipsis | ElementEm | ElementEmail | ElementEtal | ElementEtc | ElementFillInText | ElementForeign | ElementIcon | ElementIe | ElementInit | ElementInsert | ElementKbd | ElementLangle | ElementLatex | ElementLdblbracket | ElementLq | ElementLsq | ElementMathInline | ElementMdash | ElementMidpoint | ElementMinus | ElementMusicFlat | ElementMusicSharp | ElementN | ElementNatural | ElementNb | ElementNbsp | ElementNdash | ElementObelus | ElementPermille | ElementPf | ElementPhonomark | ElementPilcrow | ElementPlusminus | ElementPm | ElementPrefigure | ElementPretext | ElementPrime | ElementPs | ElementPubtitle | ElementQ | ElementQuantity | ElementRangle | ElementRdblbracket | ElementRegistered | ElementRq | ElementRsq | ElementScaledeg | ElementSectionMark | ElementServicemark | ElementSolidus | ElementSq | ElementStale | ElementSwungdash | ElementTag | ElementTage | ElementTaxon | ElementTerm | ElementTex | ElementTimeofday | ElementTimes | ElementTimesignature | ElementToday | ElementTrademark | ElementUrl | ElementViz | ElementVs | ElementWWVariable | ElementWebwork | ElementXelatex | ElementXetex | ElementXref | XMLText)[];
+}
+
+export interface ElementPart extends XMLElement {
+  name: "part";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementChapter | ElementIndex | ElementLinedTitle | ElementPlainTitle | ElementShortTitle | ElementTitle)[];
+}
+
+export interface ElementLinedTitle extends Omit<XMLElement, "attributes"> {
+  name: "title";
+  children: ElementLongLine[];
+}
+
+export interface ElementChapter extends XMLElement {
+  name: "chapter";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+  };
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
+}
+
+export interface ElementSolutions extends XMLElement {
+  name: "solutions";
+  attributes: {
+    "xml:id"?: string;
+    label?: string;
+    component?: string;
+    "xml:base"?: string;
+    "xml:lang"?: string;
+    inline?: string;
+    divisional?: string;
+    project?: string;
+    admit?: "all" | "odd" | "even";
+  };
+  children: (ElementConclusionDivision | ElementIndex | ElementIntroductionDivision | ElementPlainTitle | ElementShortTitle | ElementTitle)[];
+}
+
 export interface ElementSection extends XMLElement {
   name: "section";
   attributes: {
@@ -2206,7 +2292,7 @@ export interface ElementSection extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
 
 export interface ElementSubsection extends XMLElement {
@@ -2218,7 +2304,7 @@ export interface ElementSubsection extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
 
 export interface ElementSubsubsection extends XMLElement {
@@ -2230,7 +2316,7 @@ export interface ElementSubsubsection extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
 
 export interface ElementReferences extends XMLElement {
@@ -2345,30 +2431,6 @@ export interface ElementParagraphs extends XMLElement {
     "xml:lang"?: string;
   };
   children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObservation | ElementParagraph | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementRemark | ElementSage | ElementSideBySide | ElementSideBySideGroup | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
-}
-
-export interface ElementOutcomes extends XMLElement {
-  name: "outcomes";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementConclusionText | ElementDl | ElementIndex | ElementIntroductionText | ElementOl | ElementTitle | ElementUl)[];
-}
-
-export interface ElementObjectives extends XMLElement {
-  name: "objectives";
-  attributes: {
-    "xml:id"?: string;
-    label?: string;
-    component?: string;
-    "xml:base"?: string;
-    "xml:lang"?: string;
-  };
-  children: (ElementConclusionText | ElementDl | ElementIndex | ElementIntroductionText | ElementOl | ElementTitle | ElementUl)[];
 }
 
 export interface ElementGlossary extends XMLElement {
@@ -2763,7 +2825,7 @@ export interface ElementBookAppendix extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNotationList | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNotationList | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
 
 export interface ElementNotationList extends Omit<XMLElement, "attributes"> {
@@ -2780,7 +2842,7 @@ export interface ElementArticle extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementArticleBackMatter | ElementArticleFrontMatter | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedSubtitle | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubtitle | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementArticleBackMatter | ElementArticleFrontMatter | ElementAside | ElementAssemblage | ElementAssumption | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementLinedSubtitle | ElementLinedTitle | ElementList | ElementListGenerator | ElementListing | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementSection | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubtitle | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
 
 export interface ElementArticleFrontMatter extends XMLElement {
@@ -2826,5 +2888,5 @@ export interface ElementArticleAppendix extends XMLElement {
     "xml:base"?: string;
     "xml:lang"?: string;
   };
-  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNotationList | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning)[];
+  children: (ElementActivity | ElementAlgorithm | ElementAside | ElementAssemblage | ElementAssumption | ElementAuthorByline | ElementAxiom | ElementBiographical | ElementBlockQuote | ElementClaim | ElementComputation | ElementConclusionDivision | ElementConjecture | ElementConsole | ElementConvention | ElementCorollary | ElementData | ElementDefinition | ElementExample | ElementExercise | ElementExercises | ElementExploration | ElementFact | ElementFigure | ElementFragment | ElementGlossary | ElementHeuristic | ElementHistorical | ElementHypothesis | ElementIdentity | ElementImageCode | ElementImageRaster | ElementIndex | ElementInsight | ElementIntroductionDivision | ElementInvestigation | ElementLemma | ElementList | ElementListGenerator | ElementListing | ElementNotationList | ElementNote | ElementObjectives | ElementObservation | ElementOutcomes | ElementParagraph | ElementParagraphs | ElementPlainTitle | ElementPoem | ElementPreformatted | ElementPrinciple | ElementProblem | ElementProgram | ElementProject | ElementProof | ElementProposition | ElementQuestion | ElementReadingQuestions | ElementReferences | ElementRemark | ElementSage | ElementShortTitle | ElementSideBySide | ElementSideBySideGroup | ElementSolutions | ElementSubsection | ElementTable | ElementTabular | ElementTechnology | ElementTheorem | ElementTitle | ElementVideo | ElementWarning | ElementWorksheet)[];
 }
