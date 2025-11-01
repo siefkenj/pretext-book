@@ -35,12 +35,12 @@
         }
     },
     "dependencies": {
-        "nextra": "^3.2.0",
-        "nextra-theme-docs": "^3.2.0",
+        "nextra": "^3.3.1",
+        "nextra-theme-docs": "^3.3.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
     "devDependencies": {
-        "@ariakit/react": "^0.4.13"
+        "@ariakit/react": "^0.4.15"
     }
 }
