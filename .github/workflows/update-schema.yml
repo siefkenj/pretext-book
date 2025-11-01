@@ -32,7 +32,8 @@ jobs:
           git reset --hard origin/schema-update-action
           # make sure we match main
           git fetch origin main
-          git rebase origin/main
+          git merge main
+          git checkout --theirs .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
