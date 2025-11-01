@@ -30,6 +30,9 @@ jobs:
           # Fetch the branch from the remote
           git fetch origin schema-update-action
           git reset --hard origin/schema-update-action
+          # make sure we match main
+          git fetch origin main
+          git rebase origin/main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -41,7 +44,8 @@ jobs:
           wget https://raw.githubusercontent.com/PreTeXtBook/pretext/refs/heads/master/schema/pretext.rng
           npx vite-node scripts/generate-typescript.ts -- -g pretext.rng -o ./
           cp -f ./generated-grammar.ts ../packages/jsx/src/assets/generated-grammar.ts
-          cp -f ./generated-types.ts ../packages/jsx/src/assets/generated-types.ts
+          # The grammar is still relevant; the types are currently not used and updates may cause code to fail to compile.
+          #cp -f ./generated-types.ts ../packages/jsx/src/assets/generated-types.ts
           cd ..
           rm -rf relax-ng-to-typescript
 
