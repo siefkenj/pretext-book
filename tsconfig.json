@@ -4,7 +4,9 @@
         "**/*.stub.ts",
         "node_modules",
         "**/tests/",
-        "**/dist/**/*"
+        "**/dist/**/*",
+        "**/node_modules/**/*",
+        "**/build/**/*",
     ],
     //"include": ["lambda-calculus-interpreter/src/**/*.ts"],
     "compilerOptions": {

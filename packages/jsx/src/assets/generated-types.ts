@@ -1684,7 +1684,7 @@ export interface ElementWebWorkAuthored extends XMLElement {
     seed?: string;
     copy?: string;
   };
-  children: (ElementConclusionText | ElementHintWW | ElementIntroductionText | ElementPgCode | ElementSolutionWW | ElementStatementExerciseWW | ElementTaskWW | ElementWWDescription | ElementWWMacros)[];
+  children: (ElementConclusionText | ElementHintWW | ElementIntroductionText | ElementPgCode | ElementSolutionWW | ElementStatementExerciseWW | ElementTaskWW | ElementWWDescription | ElementWWMacros | XMLText)[];
 }
 
 export interface ElementWWMacros extends Omit<XMLElement, "attributes"> {

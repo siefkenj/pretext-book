@@ -8,12 +8,28 @@ import {
 
 # `<macros>`
 
-Short description of what the `<macros>` tag does.
+The `<macros>` tag contains LaTeX math shortcuts for use 
+throughout the PreTeXt document inside a math element such as `<m>` and `<me>`.
 
 ## Syntax
 
 <SyntaxDisplay name="macros" />
 
 ## Examples
+
+```ptx
+<docinfo>
+    <!-- There are likely other tags in docinfo besides macros -->
+
+    <macros>
+        \newcommand{\N}{\mathbb N} 
+        \newcommand{\Z}{\mathbb Z} 
+        \newcommand{\rrefarrow}{\xrightarrow{\mathrm{rref}}}
+        \newcommand{\spn}[1]{\left\langle#1\right\rangle}
+    </macros>
+
+    <!-- There are likely more tags here, too. -->
+</docinfo>
+```
 
     
