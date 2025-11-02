@@ -29,11 +29,9 @@ jobs:
           }
           # Fetch the branch from the remote
           git fetch origin schema-update-action
-          git reset --hard origin/schema-update-action
-          # make sure we match main
           git fetch origin main
-          git merge main
-          git checkout --theirs .
+          # make sure we match main
+          git reset --hard origin/main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
