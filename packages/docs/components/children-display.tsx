@@ -129,7 +129,7 @@ export function ChildrenDisplay({
                     }}
                 />
             )}
-            :
+            :{" "}
             {hideFormattingTags && (
                 <HiddenTagsButton
                     label="Formatting Tags"
