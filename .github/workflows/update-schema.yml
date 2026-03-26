@@ -3,7 +3,7 @@
 name: Update Schema
 on:
   schedule:
-    - cron: '0 0 * * *' # every day at midnight GMT
+    - cron: "0 0 * * *" # every day at midnight GMT
   workflow_dispatch:
 
 jobs:
@@ -16,22 +16,17 @@ jobs:
       - name: use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          
+          node-version: "22"
+
       - name: setup git config
         run: |
           git config user.name "${{ github.actor }} via GitHub Actions"
           git config user.email "${{ github.actor }}@github_actions.no_reply"
-          git checkout -b schema-update-action
-          # Ensure the branch exists on the remote
-          git ls-remote --exit-code origin schema-update-action || {
-            git push -u origin schema-update-action
-          }
-          # Fetch the branch from the remote
-          git fetch origin schema-update-action
           git fetch origin main
-          # make sure we match main
-          git reset --hard origin/main
+
+          # Always reset the automation branch to main so each run starts
+          # from a fresh history rooted at the current main.
+          git checkout -B schema-update-action origin/main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,13 +43,12 @@ jobs:
           cd ..
           rm -rf relax-ng-to-typescript
 
-
       - name: check for changes
         run: |
           git diff --quiet || {
             git add .
             git commit -m "Update relaxng schema"
-            git push --set-upstream origin schema-update-action
+            git push --force origin schema-update-action
             gh pr create --fill || true
           }
         env:
