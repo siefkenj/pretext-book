@@ -8,12 +8,38 @@ import {
 
 # `<reading-questions>`
 
-Short description of what the `<reading-questions>` tag does.
+A division containing one or more [`<exercise>`](./exercise.mdx) whose purpose is to ascertain
+understanding of the preceding material.  Authors might include a `<reading-questions>` division 
+after exposition but before material intended for during class or after class practice.  
+
+Similar to an [`<exercises>`](./exercises.mdx) division but differing in intended purpose and some 
+allowed content. Exercises in `<reading-questions>` have their own numbering counter and are 
+controlled separately from divisional exercises, inline exercises, and worksheet exercises for 
+things like publisher settings and renaming of elements.
 
 ## Syntax
 
 <SyntaxDisplay name="reading-questions" />
 
 ## Examples
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <reading-questions>
+        <exercise>
+            <statement>
+                <p>Describe three differences between a <em>linear</em> function and 
+                a <em>quadratic</em> function.</p>
+            </statement>
+        </exercise>
+        <exercise>
+            <p>How many roots can a linear function have?  There can be more than 1 answer.</p>
+        </exercise>
+        <exercise>
+            <p>How many roots can a quadratic function have?  There can be more than 1 answer.</p>
+        </exercise>
+    </reading-questions>
+</FRAGMENT>
+```
 
     

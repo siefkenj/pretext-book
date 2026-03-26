@@ -8,12 +8,90 @@ import {
 
 # `<exercisegroup>`
 
-Short description of what the `<exercisegroup>` tag does.
+An `<exercisegroup>` is a collection of similar exercises with a common set of instructions 
+and an optional conclusion. Authors would likely use this tag when they want to provide a 
+plethora of similar exercises to pick and choose from.  
 
 ## Syntax
 
 <SyntaxDisplay name="exercisegroup" />
 
 ## Examples
+
+### Basic exercisegroup
+
+```ptx-example
+<FRAGMENT parents="exercises">
+    <exercisegroup>
+        <introduction>
+            <p>For each of the following exercises, factor the given quadratic.</p>
+        </introduction>
+        <exercise>
+            <m>x^2+5x+6</m>
+        </exercise>
+        <exercise>
+            <m>x^2-5x+4</m>
+        </exercise>
+        <exercise>
+            <m>x^2+5x-6</m>
+        </exercise>
+        <exercise>
+            <m>x^2-5x-14</m>
+        </exercise>
+        <exercise>
+            <m>x^2-10x+24</m>
+        </exercise>
+        <exercise>
+            <m>x^2+10x+24</m>
+        </exercise>
+        <exercise>
+            <m>x^2-10x-24</m>
+        </exercise>
+        <exercise>
+            <m>x^2+10x-24</m>
+        </exercise>
+        <conclusion>
+            <p>Observe how your answer depends on whether the constant term is positive or negative.</p>
+        </conclusion>
+
+    </exercisegroup>
+</FRAGMENT>
+```
+
+### With a title and multiple columns
+
+```ptx-example
+<FRAGMENT parents="exercises">
+    <exercisegroup cols="3"><title>Power Rule Practice</title>
+        <introduction>
+            <p>Take the derivative using power rule.</p>
+        </introduction>
+        <exercise>
+            <m>f(x)=x^2</m>
+        </exercise>
+        <exercise>
+            <m>f(x)=x^7</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{-5}</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{-10}</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{\frac{1}{3}}</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{\frac{5}{2}}</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{-\frac{1}{3}}</m>
+        </exercise>
+        <exercise>
+            <m>y=x^{-\frac{5}{2}}</m>
+        </exercise>
+    </exercisegroup>
+</FRAGMENT>
+```
 
     

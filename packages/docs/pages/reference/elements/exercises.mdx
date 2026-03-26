@@ -8,12 +8,44 @@ import {
 
 # `<exercises>`
 
-Short description of what the `<exercises>` tag does.
+A division containing one or more [`<exercise>`](./exercise.mdx) or 
+[`<exercisegroup>`](./exercisegroup.mdx).  Authors often include an `<exercises>` division 
+at the end of a [`<chapter>`](./chapter.mdx) or [`<section>`](./section.mdx).
+
+Exercises in an `<exercises>` division have their own numbering counter, and these divisional 
+exercises are controlled separately from inline exercises, worksheet exercises, and exercises 
+in a [`<reading-questions>`](./reading-questions.mdx) division for things like publisher 
+settings and renaming of elements.
 
 ## Syntax
 
 <SyntaxDisplay name="exercises" />
 
 ## Examples
+
+```ptx-example
+<FRAGMENT parents="subsection section">
+    <exercises>
+        <title>Practice exercises</title>
+        <exercise>
+            <statement>
+                <p>Solve for <m>x</m>:
+                <me>9x - 2= 4x + 5</me></p>
+            </statement>
+            <hint>
+                <p>Add or subtract terms from both sides so that terms with an
+                <m>x</m> are on the left side and all other terms are on the
+                right.</p>
+            </hint>
+        </exercise>
+        <exercise>
+            <p>Find the root(s) of <m>x^2= 4</m>.</p>
+        </exercise>
+        <exercise>
+            <p>Find any <m>x-</m> intercept(s) of <m>f(x)=x^2+ 1</m>.</p>
+        </exercise>
+    </exercises>
+</FRAGMENT>
+```
 
     
