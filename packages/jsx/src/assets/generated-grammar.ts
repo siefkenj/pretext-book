@@ -13621,13 +13621,19 @@ export const jsonGrammar = {
             },
             "children": [
                 {
+                    "ref": "ElementFillInMath"
+                },
+                {
                     "ref": "ElementMathIntertext"
                 },
                 {
                     "ref": "ElementMathRow"
+                },
+                {
+                    "ref": "ElementWWVariable"
                 }
             ],
-            "textChildrenAllowed": false
+            "textChildrenAllowed": true
         },
         "ElementFootnote": {
             "type": "element",
