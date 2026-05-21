@@ -13672,6 +13672,12 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
                 "number": {
                     "optional": true,
                     "type": [
@@ -13679,10 +13685,24 @@ export const jsonGrammar = {
                         "\"no\""
                     ]
                 },
-                "xml:id": {
+                "tag": {
                     "optional": true,
                     "type": [
-                        "string"
+                        "\"star\"",
+                        "\"dstar\"",
+                        "\"tstar\"",
+                        "\"dagger\"",
+                        "\"ddagger\"",
+                        "\"tdagger\"",
+                        "\"daggerdbl\"",
+                        "\"ddaggerdbl\"",
+                        "\"tdaggerdbl\"",
+                        "\"hash\"",
+                        "\"dhash\"",
+                        "\"thash\"",
+                        "\"maltese\"",
+                        "\"dmaltese\"",
+                        "\"tmaltese\""
                     ]
                 },
                 "break": {
