@@ -10089,9 +10089,7 @@ export const jsonGrammar = {
                 },
                 "valigns": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
+                    "type": []
                 }
             },
             "children": [
@@ -10139,9 +10137,7 @@ export const jsonGrammar = {
                 },
                 "valigns": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
+                    "type": []
                 }
             },
             "children": [
@@ -13715,7 +13711,9 @@ export const jsonGrammar = {
                 "alignment": {
                     "optional": true,
                     "type": [
-                        "string"
+                        "\"align\"",
+                        "\"gather\"",
+                        "\"alignat\""
                     ]
                 },
                 "alignat-columns": {
@@ -17313,9 +17311,7 @@ export const jsonGrammar = {
                 },
                 "valigns": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
+                    "type": []
                 }
             },
             "children": [
@@ -17733,7 +17729,11 @@ export const jsonGrammar = {
                 "cols": {
                     "optional": true,
                     "type": [
-                        "string"
+                        "\"2\"",
+                        "\"3\"",
+                        "\"4\"",
+                        "\"5\"",
+                        "\"6\""
                     ]
                 },
                 "marker": {
@@ -20605,9 +20605,7 @@ export const jsonGrammar = {
                 },
                 "valigns": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
+                    "type": []
                 }
             },
             "children": [
@@ -20691,9 +20689,7 @@ export const jsonGrammar = {
                 },
                 "valigns": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
+                    "type": []
                 }
             },
             "children": [
