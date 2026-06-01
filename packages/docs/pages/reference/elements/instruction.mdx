@@ -8,7 +8,10 @@ import {
 
 # `<instruction>`
 
-Short description of what the `<instruction>` tag does.
+The `<instruction>` tag gives short directions to the reader, usually
+inside the [`<statement>`](./statement.mdx) of an interactive or WeBWorK
+exercise. Use it for answer-entry guidance that should stand apart from
+the main prompt.
 
 ## Syntax
 
@@ -16,4 +19,18 @@ Short description of what the `<instruction>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="exercise section subsection statement">
+    <instruction>
+        Type your answer without using the <c>+</c> sign.
+    </instruction>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="exercise section subsection statement">
+    <instruction>
+        To enter a power, use <c>^</c>, as in <c>x^2</c> for <m>x^2</m>.
+    </instruction>
+</FRAGMENT>
+```

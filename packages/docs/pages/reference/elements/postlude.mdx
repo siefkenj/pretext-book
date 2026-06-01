@@ -8,7 +8,10 @@ import {
 
 # `<postlude>`
 
-Short description of what the `<postlude>` tag does.
+The `<postlude>` tag is optional closing material for an
+[`<activity>`](./activity.mdx), [`<project>`](./project.mdx), or similar
+project-like block. It appears after the main content and works like a brief
+wrap-up, reflection, or next-step note.
 
 ## Syntax
 
@@ -16,4 +19,35 @@ Short description of what the `<postlude>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <activity>
+        <title>Estimating a derivative</title>
+        <statement>
+            <p>Approximate <m>f'(2)</m> from a table of values.</p>
+        </statement>
+        <postlude>
+            <p>
+                Compare your estimate with a classmate's and explain any
+                difference.
+            </p>
+        </postlude>
+    </activity>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <project>
+        <title>Modeling population growth</title>
+        <task>
+            <statement>
+                <p>Fit an exponential model to the data.</p>
+            </statement>
+        </task>
+        <postlude>
+            <p>Write one sentence about what the model cannot capture.</p>
+        </postlude>
+    </project>
+</FRAGMENT>
+```

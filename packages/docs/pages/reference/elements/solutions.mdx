@@ -8,7 +8,13 @@ import {
 
 # `<solutions>`
 
-Short description of what the `<solutions>` tag does.
+The `<solutions>` element is a specialized division that gathers and
+displays solutions from exercises in its scope. It can be placed inside
+a local division or in [`<backmatter>`](./backmatter.mdx) to collect
+solutions for a larger part of the document.
+
+Use `<solutions>` when you want PreTeXt to assemble solutions
+automatically instead of copying them by hand.
 
 ## Syntax
 
@@ -16,4 +22,27 @@ Short description of what the `<solutions>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="chapter">
+    <section>
+        <title>Practice</title>
+        <exercises>
+            <exercise>
+                <statement><p>Solve <m>x^2 = 9</m>.</p></statement>
+                <solution><p>The solutions are <m>x=\pm 3</m>.</p></solution>
+            </exercise>
+        </exercises>
+        <solutions>
+            <title>Section Solutions</title>
+        </solutions>
+    </section>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <solutions admit="odd">
+        <title>Odd-Numbered Solutions</title>
+    </solutions>
+</FRAGMENT>
+```

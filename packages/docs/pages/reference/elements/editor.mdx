@@ -8,7 +8,12 @@ import {
 
 # `<editor>`
 
-Short description of what the `<editor>` tag does.
+The `<editor>` tag identifies an editor of a work. In document metadata it is
+similar to [`<author>`](./author.mdx), using child elements such as
+[`<personname>`](./personname.mdx) and [`<email>`](./email.mdx).
+
+`<editor>` can also appear in bibliographic data as plain text naming the
+editor of a cited work.
 
 ## Syntax
 
@@ -16,4 +21,22 @@ Short description of what the `<editor>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <editor>
+        <personname>Isaac Newton</personname>
+        <institution>Trinity College</institution>
+        <email>inewton@example.edu</email>
+    </editor>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section references">
+    <biblio type="raw">
+        <editor>Jane Doe</editor>
+        <title>Collected Letters on Number Theory</title>
+        <year>2024</year>
+    </biblio>
+</FRAGMENT>
+```

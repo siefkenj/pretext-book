@@ -8,7 +8,12 @@ import {
 
 # `<per>`
 
-Short description of what the `<per>` tag does.
+The `<per>` tag supplies the denominator unit in a
+[`<quantity>`](./quantity.mdx), as in meters per second. It works with
+[`<mag>`](./mag.mdx) and [`<unit>`](./unit.mdx) to build compound units
+cleanly.
+
+Use one `<per>` for each unit that belongs in the denominator.
 
 ## Syntax
 
@@ -16,4 +21,26 @@ Short description of what the `<per>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The car travels at
+    <quantity>
+        <mag>27</mag>
+        <unit base="meter" />
+        <per><unit base="second" /></per>
+    </quantity>
+    .
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The acceleration is
+    <quantity>
+        <mag>9.8</mag>
+        <unit base="meter" />
+        <per><unit base="second" exp="2" /></per>
+    </quantity>
+    .
+</FRAGMENT>
+```

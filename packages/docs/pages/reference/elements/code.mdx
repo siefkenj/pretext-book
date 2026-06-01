@@ -8,7 +8,13 @@ import {
 
 # `<code>`
 
-Short description of what the `<code>` tag does.
+The `<code>` tag contains the verbatim source text of a
+[`<program>`](./program.mdx). It is especially useful when a program
+also has siblings such as [`<preamble>`](./preamble.mdx) or
+[`<tests>`](./tests.mdx), or when the source is kept in a separate file.
+
+If a `<program>` contains only code, the text may appear directly in the
+program, but `<code>` makes the source block explicit.
 
 ## Syntax
 
@@ -16,4 +22,28 @@ Short description of what the `<code>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="python">
+        <code><![CDATA[
+def square(n):
+    return n * n
+        ]]></code>
+    </program>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="java">
+        <preamble visible="yes">import java.util.Scanner;</preamble>
+        <code><![CDATA[
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+        ]]></code>
+    </program>
+</FRAGMENT>
+```

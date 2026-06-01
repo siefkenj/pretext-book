@@ -8,7 +8,13 @@ import {
 
 # `<biographical>`
 
-Short description of what the `<biographical>` tag does.
+The `<biographical>` element is an aside-like block for biographical
+background, such as a short note about a mathematician, author, or other
+historical figure.
+
+It behaves much like [`<aside>`](./aside.mdx) or
+[`<historical>`](./historical.mdx), but signals that the content is
+specifically biographical.
 
 ## Syntax
 
@@ -16,4 +22,14 @@ Short description of what the `<biographical>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <biographical>
+        <title>Sofia Kovalevskaya</title>
+        <p>
+            Kovalevskaya was the first woman in modern Europe to earn a
+            doctorate in mathematics.
+        </p>
+    </biographical>
+</FRAGMENT>
+```

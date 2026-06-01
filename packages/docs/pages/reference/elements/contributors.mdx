@@ -8,7 +8,13 @@ import {
 
 # `<contributors>`
 
-Short description of what the `<contributors>` tag does.
+The `<contributors>` tag groups a list of individual
+[`<contributor>`](./contributor.mdx) entries. It is useful in front or
+back matter when you want to acknowledge people who contributed to the
+project but are not listed as document authors.
+
+Each contributor is recorded separately so names and affiliations can be
+structured consistently.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<contributors>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter preface">
+    <contributors>
+        <contributor>
+            <personname>Jordan Lee</personname>
+        </contributor>
+        <contributor>
+            <personname>Priya Shah</personname>
+        </contributor>
+    </contributors>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter preface">
+    <contributors>
+        <contributor>
+            <personname>Alex Romero</personname>
+            <institution>Open Learning Lab</institution>
+        </contributor>
+    </contributors>
+</FRAGMENT>
+```

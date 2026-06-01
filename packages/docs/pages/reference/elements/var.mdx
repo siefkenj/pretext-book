@@ -8,7 +8,14 @@ import {
 
 # `<var>`
 
-Short description of what the `<var>` tag does.
+The `<var>` element is used inside [`<webwork>`](./webwork.mdx) content
+to insert a WeBWorK variable, answer blank, or other interactive answer
+control. In prose it can display a generated value, and with attributes
+such as `width` or `form` it can create an input widget.
+
+Use `<var>` in authored [`<statement>`](./statement.mdx),
+[`<hint>`](./hint.mdx), and [`<solution>`](./solution.mdx) content for a
+WeBWorK problem.
 
 ## Syntax
 
@@ -16,4 +23,41 @@ Short description of what the `<var>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection exercises">
+    <exercise>
+        <webwork>
+            <pg-code>
+                $a = Compute(2);
+                $b = Compute(5);
+                $c = $a + $b;
+            </pg-code>
+            <statement>
+                <p>
+                    Compute <m><var name="$a"/> + <var name="$b"/> =</m>
+                    <var name="$c" width="5"/>.
+                </p>
+            </statement>
+        </webwork>
+    </exercise>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection exercises">
+    <exercise>
+        <webwork>
+            <pg-code>
+                $n = Compute(7);
+            </pg-code>
+            <statement>
+                <p>Is <var name="$n"/> a prime number?</p>
+            </statement>
+            <solution>
+                <p>Yes, <var name="$n"/> has no positive divisors other
+                than 1 and itself.</p>
+            </solution>
+        </webwork>
+    </exercise>
+</FRAGMENT>
+```

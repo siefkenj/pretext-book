@@ -8,7 +8,12 @@ import {
 
 # `<ibid>`
 
-Short description of what the `<ibid>` tag does.
+The `<ibid>` tag is an inline bibliographic marker meaning "the same source as
+the previous citation." It is typically used inside a raw [`<biblio>`](./biblio.mdx)
+entry when successive references repeat the same work.
+
+Because it depends on the preceding entry, `<ibid>` only makes sense in a
+bibliographic context.
 
 ## Syntax
 
@@ -16,4 +21,15 @@ Short description of what the `<ibid>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section references">
+    <biblio type="raw">
+        <author>Euclid</author>
+        <title>Elements</title>
+    </biblio>
+    <biblio type="raw">
+        <ibid />
+        <volume>II</volume>
+    </biblio>
+</FRAGMENT>
+```

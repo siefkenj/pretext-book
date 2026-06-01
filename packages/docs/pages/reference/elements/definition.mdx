@@ -8,7 +8,14 @@ import {
 
 # `<definition>`
 
-Short description of what the `<definition>` tag does.
+The `<definition>` tag is a definition-like block for formally
+introducing a term, object, or notation. It normally contains a
+[`<statement>`](./statement.mdx) and may also include one or more
+[`<notation>`](./notation.mdx) elements and an optional
+[`<title>`](./title.mdx).
+
+Use `<definition>` when the content should stand apart from the
+surrounding prose and participate in numbering and cross-referencing.
 
 ## Syntax
 
@@ -16,4 +23,30 @@ Short description of what the `<definition>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <definition xml:id="def-function">
+        <statement>
+            <p>A function is a rule that assigns each input exactly one
+            output.</p>
+        </statement>
+    </definition>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <definition>
+        <title>Open interval</title>
+        <notation>
+            <usage><m>(a,b)</m></usage>
+            <description>the set of real numbers strictly between
+            <m>a</m> and <m>b</m></description>
+        </notation>
+        <statement>
+            <p>The open interval <m>(a,b)</m> is the set
+            <m>\{x \mid a &lt; x &lt; b\}</m>.</p>
+        </statement>
+    </definition>
+</FRAGMENT>
+```

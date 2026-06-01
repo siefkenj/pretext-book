@@ -8,7 +8,13 @@ import {
 
 # `<personname>`
 
-Short description of what the `<personname>` tag does.
+The `<personname>` tag marks up a person's name so PreTeXt can format it
+consistently wherever it appears. It is common in
+[`<author>`](./author.mdx) metadata and in [`<biblio>`](./biblio.mdx)
+entries.
+
+Use `<personname>` instead of plain text when the name identifies a
+person rather than functioning as ordinary prose.
 
 ## Syntax
 
@@ -16,4 +22,19 @@ Short description of what the `<personname>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    This theorem is commonly attributed to
+    <personname>Évariste Galois</personname>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio>
+        <author><personname>Katherine Johnson</personname></author>
+        <title>Orbital Computation Notes</title>
+        <year>1962</year>
+    </biblio>
+</FRAGMENT>
+```

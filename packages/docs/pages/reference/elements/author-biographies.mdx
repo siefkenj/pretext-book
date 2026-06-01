@@ -8,7 +8,11 @@ import {
 
 # `<author-biographies>`
 
-Short description of what the `<author-biographies>` tag does.
+The empty `<author-biographies>` element is a
+[`<docinfo>`](./docinfo.mdx) setting that tells PreTeXt to include author
+[`<biography>`](./biography.mdx) entries in the output.
+
+Its `length` attribute chooses whether short or long biographies are shown.
 
 ## Syntax
 
@@ -16,4 +20,14 @@ Short description of what the `<author-biographies>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book docinfo">
+    <author-biographies length="short" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book docinfo">
+    <author-biographies length="long" />
+</FRAGMENT>
+```

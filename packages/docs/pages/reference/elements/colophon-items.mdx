@@ -8,7 +8,13 @@ import {
 
 # `<colophon-items>`
 
-Short description of what the `colophon-items` element does.
+The `<colophon-items>` element is an empty helper used inside a
+front [`<colophon>`](./colophon.mdx). It tells PreTeXt to collect the
+appropriate publication details automatically from
+[`<bibinfo>`](./bibinfo.mdx).
+
+Use `<colophon-items />` instead of manually repeating copyright-page
+metadata inside the colophon.
 
 ## Syntax
 
@@ -16,4 +22,16 @@ Short description of what the `colophon-items` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter colophon">
+    <colophon-items />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <colophon label="copyright-page">
+        <colophon-items />
+    </colophon>
+</FRAGMENT>
+```

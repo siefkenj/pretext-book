@@ -8,7 +8,13 @@ import {
 
 # `<shortlicense>`
 
-Short description of what the `<shortlicense>` tag does.
+The `<shortlicense>` element gives a brief license statement in
+publication metadata, usually inside [`<copyright>`](./copyright.mdx)
+information that is displayed on a [`<colophon>`](./colophon.mdx) or
+other frontmatter page.
+
+Use `<shortlicense>` for a concise notice rather than a full legal
+explanation.
 
 ## Syntax
 
@@ -16,4 +22,20 @@ Short description of what the `<shortlicense>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo copyright">
+    <shortlicense>Released under a CC BY-SA 4.0 license.</shortlicense>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <copyright>
+            <shortlicense>
+                This text may be shared with attribution.
+            </shortlicense>
+        </copyright>
+    </bibinfo>
+</FRAGMENT>
+```

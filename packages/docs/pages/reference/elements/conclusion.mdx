@@ -8,7 +8,13 @@ import {
 
 # `<conclusion>`
 
-Short description of what the `<conclusion>` tag does.
+The `<conclusion>` tag holds the closing material of a structured
+division. It commonly appears after [`<task>`](./task.mdx) elements in
+an [`<activity>`](./activity.mdx), [`<exercise>`](./exercise.mdx), or
+similar element, and can also close a larger division such as a chapter.
+
+Use `<conclusion>` for wrap-up remarks, final instructions, or summary
+observations that belong after the main body.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<conclusion>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <activity>
+        <title>Collecting data from a sample</title>
+        <task>
+            <statement>
+                <p>Measure the height of ten plants and record the data.</p>
+            </statement>
+        </task>
+        <conclusion>
+            <p>Compare your summary statistics with another group's data.</p>
+        </conclusion>
+    </activity>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book chapter">
+    <conclusion>
+        <p>This chapter's results will be used repeatedly in Part II.</p>
+    </conclusion>
+</FRAGMENT>
+```

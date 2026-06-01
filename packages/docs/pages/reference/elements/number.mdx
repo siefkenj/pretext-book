@@ -8,7 +8,13 @@ import {
 
 # `<number>`
 
-Short description of what the `<number>` tag does.
+The `<number>` tag gives the issue number of a journal or similar
+serial publication inside a [`<biblio>`](./biblio.mdx) entry. It is
+usually paired with [`<volume>`](./volume.mdx),
+[`<journal>`](./journal.mdx), and [`<pages>`](./pages.mdx).
+
+Use `<number>` for the issue designation of the periodical, not for page
+numbers or document numbering elsewhere.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<number>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio>
+        <author><personname>David C. Lay</personname></author>
+        <title>Subspaces and Echelon Forms</title>
+        <journal>The College Mathematics Journal</journal>
+        <year>1993</year>
+        <volume>24</volume>
+        <number>1</number>
+        <pages start="57" end="62" />
+    </biblio>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        Jane Doe, <title>On Sequences</title>,
+        <journal>Sample Journal</journal> <volume>12</volume>
+        <number>3</number>, <year>2024</year>.
+    </biblio>
+</FRAGMENT>
+```

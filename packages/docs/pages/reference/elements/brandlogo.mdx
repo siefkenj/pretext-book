@@ -8,7 +8,10 @@ import {
 
 # `<brandlogo>`
 
-Short description of what the `<brandlogo>` tag does.
+The `<brandlogo>` element specifies a logo image for a publisher,
+project, or site brand. Place it in [`<docinfo>`](./docinfo.mdx); the
+`source` attribute gives the image file, and `url` can make the logo link
+to an external site.
 
 ## Syntax
 
@@ -16,4 +19,11 @@ Short description of what the `<brandlogo>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book docinfo">
+    <brandlogo
+        source="images/pretext-logo.png"
+        url="https://pretextbook.org"
+    />
+</FRAGMENT>
+```

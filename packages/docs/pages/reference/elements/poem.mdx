@@ -8,7 +8,10 @@ import {
 
 # `<poem>`
 
-Short description of what the `<poem>` tag does.
+The `<poem>` tag is a block for typesetting poetry. A poem may have an
+optional [`<title>`](./title.mdx) and [`<author>`](./author.mdx), and its
+verse can be written as individual [`<line>`](./line.mdx) elements or grouped
+into [`<stanza>`](./stanza.mdx) elements.
 
 ## Syntax
 
@@ -16,4 +19,29 @@ Short description of what the `<poem>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <poem>
+        <title>Evening Walk</title>
+        <author>Robin Hart</author>
+        <stanza>
+            <line>The streetlights wake before the stars.</line>
+            <line>The windows brighten one by one.</line>
+        </stanza>
+        <stanza>
+            <line>I follow homeward through the dark.</line>
+            <line>The day is done, but not undone.</line>
+        </stanza>
+    </poem>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <poem>
+        <title>Couplet</title>
+        <line indent="2">A quiet proof may still persuade,</line>
+        <line>even when no theorem's title is displayed.</line>
+    </poem>
+</FRAGMENT>
+```

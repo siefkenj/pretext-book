@@ -8,7 +8,13 @@ import {
 
 # `<gi>`
 
-Short description of what the `<gi>` tag does.
+The `<gi>` tag is a single glossary item inside a
+[`<glossary>`](./glossary.mdx). Each item typically has a
+[`<title>`](./title.mdx) naming the term followed by one or more blocks that
+provide the definition or discussion.
+
+Use `<gi>` for glossary entries that should be grouped, titled, and
+cross-referenceable.
 
 ## Syntax
 
@@ -16,4 +22,23 @@ Short description of what the `<gi>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section glossary">
+    <gi xml:id="gi-bijection">
+        <title>bijection</title>
+        <p>A function that is both one-to-one and onto.</p>
+    </gi>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section glossary">
+    <gi>
+        <title>eigenvalue</title>
+        <p>
+            A scalar <m>\lambda</m> such that <m>Av=\lambda v</m> for some
+            nonzero vector <m>v</m>.
+        </p>
+    </gi>
+</FRAGMENT>
+```

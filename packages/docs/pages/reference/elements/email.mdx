@@ -8,7 +8,12 @@ import {
 
 # `<email>`
 
-Short description of what the `<email>` tag does.
+The `<email>` tag gives an email address for a person listed in metadata,
+such as an [`<author>`](./author.mdx) or [`<editor>`](./editor.mdx). In HTML
+output it is typically rendered as a clickable `mailto:` link.
+
+Use `<email>` as part of a person's contact information rather than as normal
+body text.
 
 ## Syntax
 
@@ -16,4 +21,14 @@ Short description of what the `<email>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo author">
+    <email>author@example.edu</email>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo editor">
+    <email>editor@example.edu</email>
+</FRAGMENT>
+```

@@ -8,7 +8,12 @@ import {
 
 # `<subsection>`
 
-Short description of what the `<subsection>` tag does.
+The `<subsection>` element is a structural subdivision of a
+[`<section>`](./section.mdx). Like other named divisions, it should have
+a [`<title>`](./title.mdx) and may contain direct content or smaller
+[`<subsubsection>`](./subsubsection.mdx)s.
+
+Use `<subsection>` to break a section into its main internal topics.
 
 ## Syntax
 
@@ -16,4 +21,26 @@ Short description of what the `<subsection>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="chapter section">
+    <subsection>
+        <title>Continuity</title>
+        <p>
+            A function is continuous when nearby inputs produce nearby
+            outputs.
+        </p>
+    </subsection>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="chapter section">
+    <subsection>
+        <title>Derivative Rules</title>
+        <subsubsection>
+            <title>The Product Rule</title>
+            <p>Use the product rule when differentiating products.</p>
+        </subsubsection>
+    </subsection>
+</FRAGMENT>
+```

@@ -8,7 +8,12 @@ import {
 
 # `<references>`
 
-Short description of what the `<references>` tag does.
+The `<references>` tag is a specialized division for a bibliography. It holds
+one or more [`<biblio>`](./biblio.mdx) entries and may also include a
+[`<title>`](./title.mdx), introductory paragraphs, and concluding material.
+
+A references division can appear in back matter or as part of another major
+division when a local bibliography is needed.
 
 ## Syntax
 
@@ -16,4 +21,29 @@ Short description of what the `<references>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <references>
+        <title>References</title>
+        <biblio type="raw">
+            <title>Visual Group Theory</title>
+            <author><personname>Nathan Carter</personname></author>
+            <year>2009</year>
+        </biblio>
+    </references>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="chapter">
+    <references>
+        <title>Further Reading</title>
+        <p>These sources expand on the history discussed in this chapter.</p>
+        <biblio type="raw">
+            <title>Journey through Genius</title>
+            <author><personname>William Dunham</personname></author>
+            <year>1990</year>
+        </biblio>
+    </references>
+</FRAGMENT>
+```

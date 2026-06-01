@@ -8,7 +8,10 @@ import {
 
 # `<proof>`
 
-Short description of what the `<proof>` tag does.
+The `<proof>` tag contains the proof attached to a theorem-like statement such
+as a [`<theorem>`](./theorem.mdx) or [`<lemma>`](./lemma.mdx). It usually
+contains paragraphs, but it may also be organized into [`<case>`](./case.mdx)
+elements.
 
 ## Syntax
 
@@ -16,4 +19,40 @@ Short description of what the `<proof>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <theorem>
+        <title>Sum of two even numbers</title>
+        <statement>
+            <p>The sum of two even integers is even.</p>
+        </statement>
+        <proof>
+            <p>
+                Write the integers as <m>2a</m> and <m>2b</m>. Their sum is
+                <m>2(a+b)</m>, so it is even.
+            </p>
+        </proof>
+    </theorem>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <theorem>
+        <title>Absolute value is nonnegative</title>
+        <statement>
+            <p>For every real number <m>x</m>, we have <m>|x| \ge 0</m>.</p>
+        </statement>
+        <proof>
+            <case>
+                <title><m>x \ge 0</m></title>
+                <p>Then <m>|x| = x</m>, so <m>|x| \ge 0</m>.</p>
+            </case>
+            <case>
+                <title><m>x &lt; 0</m></title>
+                <p>Then <m>|x| = -x</m>, and <m>-x &gt; 0</m>.</p>
+            </case>
+        </proof>
+    </theorem>
+</FRAGMENT>
+```

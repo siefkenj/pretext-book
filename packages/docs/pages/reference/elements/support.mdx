@@ -8,7 +8,13 @@ import {
 
 # `<support>`
 
-Short description of what the `support` element does.
+The `<support>` element records a funding or support statement in
+[`<bibinfo>`](./bibinfo.mdx). It is commonly used for acknowledgments of
+grants, sponsoring institutions, or other assistance connected to the
+document.
+
+Because `<support>` is metadata, it belongs with publication details
+rather than in the main body text.
 
 ## Syntax
 
@@ -16,4 +22,24 @@ Short description of what the `support` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <support>
+        <p>
+            This work was supported in part by a departmental teaching
+            innovation grant.
+        </p>
+    </support>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <support>
+        <p>
+            We thank student testers and volunteer contributors for
+            their assistance.
+        </p>
+    </support>
+</FRAGMENT>
+```

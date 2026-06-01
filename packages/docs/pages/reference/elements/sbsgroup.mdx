@@ -8,7 +8,13 @@ import {
 
 # `<sbsgroup>`
 
-Short description of what the `<sbsgroup>` tag does.
+The `<sbsgroup>` tag groups multiple [`<sidebyside>`](./sidebyside.mdx)
+layouts so that their column widths and margins stay aligned from one row to
+the next. This is useful when you want several stacked side-by-side displays
+to share a common layout.
+
+An individual `<sidebyside>` inside the group can still override the inherited
+layout when necessary.
 
 ## Syntax
 
@@ -16,4 +22,32 @@ Short description of what the `<sbsgroup>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <sbsgroup widths="25% 50%" margins="5% 10%">
+        <sidebyside>
+            <p>Left panel</p>
+            <p>Right panel with a bit more text for comparison.</p>
+        </sidebyside>
+        <sidebyside>
+            <p>Another left panel</p>
+            <p>Another right panel using the same widths.</p>
+        </sidebyside>
+    </sbsgroup>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <sbsgroup widths="35% 35%" margins="10%">
+        <sidebyside>
+            <p>Inherited layout</p>
+            <p>Still inherited.</p>
+        </sidebyside>
+        <sidebyside widths="60% 20%">
+            <p>This row overrides the group widths.</p>
+            <p>Narrow.</p>
+        </sidebyside>
+    </sbsgroup>
+</FRAGMENT>
+```

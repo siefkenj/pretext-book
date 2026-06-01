@@ -8,7 +8,10 @@ import {
 
 # `<insert>`
 
-Short description of what the `<insert>` tag does.
+The `<insert>` tag marks text that has been added as part of an
+editorial revision. It is commonly used with [`<delete>`](./delete.mdx)
+and [`<stale>`](./stale.mdx), often inside an
+[`<alteration>`](./alteration.mdx) workflow.
 
 ## Syntax
 
@@ -16,4 +19,14 @@ Short description of what the `<insert>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    This sentence has <insert>new</insert> wording.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    We changed <delete>bad</delete><insert>better</insert> terminology.
+</FRAGMENT>
+```

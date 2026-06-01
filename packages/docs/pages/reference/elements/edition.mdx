@@ -8,7 +8,11 @@ import {
 
 # `<edition>`
 
-Short description of what the `<edition>` tag does.
+The `<edition>` tag records the edition statement for a document. It is
+typically authored in [`<bibinfo>`](./bibinfo.mdx) and then displayed by a
+[`<titlepage>`](./titlepage.mdx) or [`<colophon>`](./colophon.mdx).
+
+Use it for text such as "Second Edition" or "Revised Edition 2025."
 
 ## Syntax
 
@@ -16,4 +20,14 @@ Short description of what the `<edition>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <edition>Second Edition</edition>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <edition>Preliminary Edition, Summer 2025</edition>
+</FRAGMENT>
+```

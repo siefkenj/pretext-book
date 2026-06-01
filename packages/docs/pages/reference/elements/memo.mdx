@@ -8,7 +8,13 @@ import {
 
 # `<memo>`
 
-Short description of what the `<memo>` tag does.
+The `<memo>` tag is a root-level document type for a memorandum. Like
+[`<letter>`](./letter.mdx) or [`<article>`](./article.mdx), it starts a
+document, but it is tailored to internal correspondence with memo-style
+front matter such as to, from, subject, and date.
+
+A memo can still contain ordinary PreTeXt body content, including
+paragraphs and divisions like [`<paragraphs>`](./paragraphs.mdx).
 
 ## Syntax
 
@@ -16,4 +22,35 @@ Short description of what the `<memo>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <memo xml:id="team-memo">
+        <title>Department Memo</title>
+        <frontmatter>
+            <to>Faculty</to>
+            <from>Department Chair</from>
+            <subject>Schedule Update</subject>
+            <date>2025-08-15</date>
+        </frontmatter>
+        <p>The meeting has moved to Friday afternoon.</p>
+    </memo>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext">
+    <memo>
+        <title>Lab Memo</title>
+        <frontmatter>
+            <to>Research Team</to>
+            <from>Project Lead</from>
+            <subject>Equipment Check</subject>
+            <date>2025-09-01</date>
+        </frontmatter>
+        <paragraphs>
+            <title>Next Steps</title>
+            <p>Confirm all sensors are calibrated before class.</p>
+        </paragraphs>
+    </memo>
+</FRAGMENT>
+```

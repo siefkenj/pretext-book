@@ -8,7 +8,13 @@ import {
 
 # `<output>`
 
-Short description of what the `<output>` tag does.
+The `<output>` tag records the text produced by a command inside a
+[`<console>`](./console.mdx) transcript. Pair it with
+[`<input>`](./input.mdx) to show what a user typed and what the system
+returned.
+
+Use one `<output>` element for each chunk of terminal output you want to
+display.
 
 ## Syntax
 
@@ -16,4 +22,22 @@ Short description of what the `<output>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <console prompt="$ ">
+        <input>python hello.py</input>
+        <output>Hello, world!</output>
+    </console>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <console prompt="$ ">
+        <input>ls</input>
+        <output>notes.txt  results.csv  script.py</output>
+        <input>python script.py</input>
+        <output>Done.</output>
+    </console>
+</FRAGMENT>
+```

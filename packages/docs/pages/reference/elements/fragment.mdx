@@ -8,7 +8,12 @@ import {
 
 # `<fragment>`
 
-Short description of what the `<fragment>` tag does.
+The `<fragment>` tag defines a named piece of program text for literate
+programming and code assembly. A fragment can contain raw code along with
+references to other fragments via [`<fragref>`](./fragref.mdx).
+
+Fragments are useful when you want to explain code in pieces while still
+assembling complete source files for output.
 
 ## Syntax
 
@@ -16,4 +21,29 @@ Short description of what the `<fragment>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <fragment xml:id="frag-main" filename="hello.py" languages="python">
+        <code>
+print("Hello, world!")
+        </code>
+    </fragment>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <fragment xml:id="frag-helper" languages="python">
+        <code>
+def square(n):
+    return n*n
+        </code>
+    </fragment>
+    <fragment xml:id="frag-main" filename="main.py" languages="python">
+        <fragref ref="frag-helper" />
+        <code>
+print(square(5))
+        </code>
+    </fragment>
+</FRAGMENT>
+```

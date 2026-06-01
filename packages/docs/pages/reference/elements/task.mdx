@@ -8,7 +8,14 @@ import {
 
 # `<task>`
 
-Short description of what the `<task>` tag does.
+The `<task>` element is a subtask in a structured
+[`<exercise>`](./exercise.mdx), [`<activity>`](./activity.mdx), or
+similar project-like element. Each `<task>` usually contains a
+[`<statement>`](./statement.mdx) and may also include
+[`<hint>`](./hint.mdx), [`<answer>`](./answer.mdx), or
+[`<solution>`](./solution.mdx).
+
+Use `<task>` when a larger problem should be broken into explicit steps.
 
 ## Syntax
 
@@ -16,4 +23,32 @@ Short description of what the `<task>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <activity>
+        <title>Modeling Population Growth</title>
+        <task>
+            <statement>
+                <p>Estimate the initial population from the graph.</p>
+            </statement>
+            <answer><p>About 120 organisms.</p></answer>
+        </task>
+    </activity>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection exercises">
+    <exercise>
+        <title>Optimization</title>
+        <task>
+            <statement><p>Find the critical points.</p></statement>
+            <hint><p>Differentiate first.</p></hint>
+        </task>
+        <task>
+            <statement><p>Classify each critical point.</p></statement>
+            <solution><p>Use the second derivative test.</p></solution>
+        </task>
+    </exercise>
+</FRAGMENT>
+```

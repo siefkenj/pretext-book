@@ -8,7 +8,10 @@ import {
 
 # `<appendix>`
 
-Short description of what the `<appendix>` tag does.
+The `<appendix>` element is a major division in the
+[`<backmatter>`](./backmatter.mdx) of a [`<book>`](./book.mdx) or
+[`<article>`](./article.mdx). It behaves much like a chapter or section,
+but is labeled as an appendix.
 
 ## Syntax
 
@@ -16,4 +19,13 @@ Short description of what the `<appendix>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <appendix>
+        <title>Notation</title>
+        <p>
+            This appendix collects the symbols used throughout the text.
+        </p>
+    </appendix>
+</FRAGMENT>
+```

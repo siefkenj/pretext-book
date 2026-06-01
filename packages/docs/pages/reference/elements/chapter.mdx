@@ -8,7 +8,14 @@ import {
 
 # `<chapter>`
 
-Short description of what the `<chapter>` tag does.
+The `<chapter>` tag is a major structural division of a
+[`<book>`](./book.mdx). A chapter normally begins with a
+[`<title>`](./title.mdx) and can contain
+[`<introduction>`](./introduction.mdx), [`<section>`](./section.mdx),
+and a closing [`<conclusion>`](./conclusion.mdx).
+
+Use `<chapter>` when you want content organized and numbered at the
+chapter level within a book.
 
 ## Syntax
 
@@ -16,4 +23,32 @@ Short description of what the `<chapter>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book">
+    <chapter>
+        <title>Functions</title>
+        <section>
+            <title>Function notation</title>
+            <p>We write <m>f(x)</m> for the output of <m>f</m> at <m>x</m>.</p>
+        </section>
+    </chapter>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book">
+    <chapter>
+        <title>Sequences</title>
+        <introduction>
+            <p>We begin by looking at patterns in lists of numbers.</p>
+        </introduction>
+        <section>
+            <title>Arithmetic sequences</title>
+            <p>Each term differs from the previous one by a constant.</p>
+        </section>
+        <conclusion>
+            <p>These ideas prepare us for series in the next chapter.</p>
+        </conclusion>
+    </chapter>
+</FRAGMENT>
+```

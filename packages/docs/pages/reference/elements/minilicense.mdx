@@ -8,7 +8,13 @@ import {
 
 # `<minilicense>`
 
-Short description of what the `<minilicense>` tag does.
+The `<minilicense>` tag provides a short license label inside a
+[`<colophon>`](./colophon.mdx), typically within copyright metadata. It
+is meant for a brief summary such as a license name, not the full legal
+text.
+
+For a longer statement or linked license description, use a more
+detailed license element such as [`<shortlicense>`](./shortlicense.mdx).
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<minilicense>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <colophon>
+        <copyright>
+            <holder>Example Author</holder>
+            <year>2025</year>
+            <minilicense>All Rights Reserved</minilicense>
+        </copyright>
+    </colophon>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <colophon>
+        <copyright>
+            <holder>Example Author</holder>
+            <year>2025</year>
+            <minilicense>Creative Commons BY-SA</minilicense>
+        </copyright>
+    </colophon>
+</FRAGMENT>
+```

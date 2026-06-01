@@ -8,7 +8,9 @@ import {
 
 # `<address>`
 
-Short description of what the `<address>` tag does.
+The `<address>` element gives the address portion of a
+[`<website>`](./website.mdx) entry, usually in a
+[`<colophon>`](./colophon.mdx) or other front matter metadata.
 
 ## Syntax
 
@@ -16,4 +18,11 @@ Short description of what the `<address>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter colophon">
+    <website>
+        <name>PreTeXt Project</name>
+        <address>https://pretextbook.org</address>
+    </website>
+</FRAGMENT>
+```

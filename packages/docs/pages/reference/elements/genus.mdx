@@ -8,7 +8,12 @@ import {
 
 # `<genus>`
 
-Short description of what the `<genus>` tag does.
+The `<genus>` tag gives the genus portion of a scientific name inside a
+[`<taxon>`](./taxon.mdx). It is usually paired with [`<species>`](./species.mdx)
+and other taxonomic parts to format organism names consistently.
+
+Use `<genus>` when marking up biological classification rather than ordinary
+italicized text.
 
 ## Syntax
 
@@ -16,4 +21,16 @@ Short description of what the `<genus>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The gray wolf belongs to the taxon <taxon><genus>Canis</genus>
+    <species>lupus</species></taxon>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The domestic cat is classified in the genus
+    <taxon><genus>Felis</genus></taxon>.
+</FRAGMENT>
+```

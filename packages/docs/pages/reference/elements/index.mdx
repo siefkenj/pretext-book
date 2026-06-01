@@ -8,7 +8,10 @@ import {
 
 # `<index>`
 
-Short description of what the `<index>` tag does.
+The `<index>` tag creates the back-matter division that holds a book or
+article's generated index. It usually contains an optional
+[`<title>`](./title.mdx) and an [`<index-list>`](./index-list.mdx),
+while the actual entries are authored elsewhere with [`<idx>`](./idx.mdx).
 
 ## Syntax
 
@@ -16,4 +19,19 @@ Short description of what the `<index>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <index>
+        <index-list />
+    </index>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <index>
+        <title>Index</title>
+        <index-list />
+    </index>
+</FRAGMENT>
+```

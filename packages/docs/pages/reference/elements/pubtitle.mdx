@@ -8,7 +8,12 @@ import {
 
 # `<pubtitle>`
 
-Short description of what the `<pubtitle>` tag does.
+The `<pubtitle>` tag marks the title of a published work in running prose. It
+is an inline element, typically rendered in italics, for book, journal, or
+collection titles.
+
+Use [`<pubtitle>`](./pubtitle.mdx) for the container publication, not for the
+title of an article or chapter; compare [`<articletitle>`](./articletitle.mdx).
 
 ## Syntax
 
@@ -16,4 +21,15 @@ Short description of what the `<pubtitle>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The article first appeared in <pubtitle>Discrete Mathematics</pubtitle>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    See Chapter 3 of <pubtitle>Linear Algebra Done Right</pubtitle> for a
+    related argument.
+</FRAGMENT>
+```

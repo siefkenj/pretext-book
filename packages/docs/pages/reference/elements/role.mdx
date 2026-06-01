@@ -8,7 +8,9 @@ import {
 
 # `<role>`
 
-Short description of what the `<role>` tag does.
+The `<role>` tag names a person's contribution inside a
+[`<credit>`](./credit.mdx) entry. It pairs with [`<entity>`](./entity.mdx)
+to record work such as editing, design, or production.
 
 ## Syntax
 
@@ -16,4 +18,20 @@ Short description of what the `<role>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book frontmatter titlepage">
+    <credit>
+        <role>Cover Design</role>
+        <entity>Covers 4 U</entity>
+    </credit>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book frontmatter titlepage">
+    <credit>
+        <role>Production Editor</role>
+        <entity>Vilma Mesa</entity>
+    </credit>
+</FRAGMENT>
+```

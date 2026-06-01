@@ -8,7 +8,12 @@ import {
 
 # `<prefigure>`
 
-Short description of what the `prefigure` element does.
+The empty `<prefigure/>` tag inserts the name of the PreFigure diagram system
+inline. Use it in prose when referring to PreFigure as a tool, much like
+[`<pretext/>`](./pretext.mdx) names PreTeXt.
+
+This tag is not the external PreFigure diagram markup itself. Instead, it is
+a convenient inline reference to the PreFigure project.
 
 ## Syntax
 
@@ -16,4 +21,15 @@ Short description of what the `prefigure` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    This figure was authored in <prefigure/> and included in PreTeXt output.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    Accessible annotations are one of the features that make <prefigure/>
+    useful for mathematical diagrams.
+</FRAGMENT>
+```

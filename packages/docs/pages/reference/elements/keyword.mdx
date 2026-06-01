@@ -8,7 +8,9 @@ import {
 
 # `<keyword>`
 
-Short description of what the `keyword` element does.
+The `<keyword>` tag supplies one subject term inside a
+[`<keywords>`](./keywords.mdx) list. A keyword can also be marked as the
+primary entry with the <attr>primary</attr> attribute.
 
 ## Syntax
 
@@ -16,4 +18,14 @@ Short description of what the `keyword` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext docinfo keywords">
+    <keyword>graph theory</keyword>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext docinfo keywords">
+    <keyword primary="yes">05C10</keyword>
+</FRAGMENT>
+```

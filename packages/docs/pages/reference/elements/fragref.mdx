@@ -8,7 +8,11 @@ import {
 
 # `<fragref>`
 
-Short description of what the `<fragref>` tag does.
+The `<fragref>` tag inserts the contents of another
+[`<fragment>`](./fragment.mdx) into the current fragment. This lets you build
+larger code listings from smaller named pieces.
+
+Use `<fragref>` when composing source files in a literate-programming style.
 
 ## Syntax
 
@@ -16,4 +20,19 @@ Short description of what the `<fragref>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <fragment xml:id="frag-imports" languages="python">
+        <code>
+import math
+        </code>
+    </fragment>
+    <fragment xml:id="frag-program" filename="program.py"
+        languages="python">
+        <fragref ref="frag-imports" />
+        <code>
+print(math.pi)
+        </code>
+    </fragment>
+</FRAGMENT>
+```

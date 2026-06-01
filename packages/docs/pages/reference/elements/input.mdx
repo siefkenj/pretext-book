@@ -8,7 +8,10 @@ import {
 
 # `<input>`
 
-Short description of what the `<input>` tag does.
+The `<input>` tag records text entered by a reader or user. It is most
+commonly used inside [`<console>`](./console.mdx) to show typed commands,
+and it can pair with [`<output>`](./output.mdx) or appear inside
+[`<iotest>`](./iotest.mdx) test cases.
 
 ## Syntax
 
@@ -16,4 +19,17 @@ Short description of what the `<input>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="console section subsection">
+    <input prompt="$ ">python3 hello.py</input>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="console section subsection">
+    <input prompt=">>> " continuation="... ">
+        for n in range(3):
+            print(n)
+    </input>
+</FRAGMENT>
+```

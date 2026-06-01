@@ -8,7 +8,14 @@ import {
 
 # `<commentary>`
 
-Short description of what the `<commentary>` tag does.
+The `<commentary>` tag is an aside-like block for author notes,
+editorial remarks, or other commentary about nearby content. It is
+similar in spirit to [`<aside>`](./aside.mdx) or
+[`<remark>`](./remark.mdx), but is often intended for commentary that
+may be hidden from ordinary readers.
+
+Use it when you want material for instructors, editors, or specialized
+audiences kept distinct from the main exposition.
 
 ## Syntax
 
@@ -16,4 +23,19 @@ Short description of what the `<commentary>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <commentary>
+        <title>Instructor note</title>
+        <p>Students often confuse the domain with the codomain here.</p>
+    </commentary>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <commentary>
+        <p>This paragraph can record background notes for a later revision.</p>
+    </commentary>
+</FRAGMENT>
+```

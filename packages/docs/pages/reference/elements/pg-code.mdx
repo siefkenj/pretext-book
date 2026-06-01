@@ -8,7 +8,13 @@ import {
 
 # `<pg-code>`
 
-Short description of what the `<pg-code>` tag does.
+The `<pg-code>` tag contains the PG source for a
+[`<webwork>`](./webwork.mdx) problem. This is the WeBWorK Problem
+Generator code that defines randomization, answer checking, and any
+problem-specific logic.
+
+Keep supporting macro libraries in [`<pg-macros>`](./pg-macros.mdx), and
+put the actual PG program in `<pg-code>`.
 
 ## Syntax
 
@@ -16,4 +22,40 @@ Short description of what the `<pg-code>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection exercise">
+    <webwork>
+        <pg-code>
+DOCUMENT();
+loadMacros("PGstandard.pl");
+TEXT(beginproblem());
+BEGIN_TEXT
+What is 2 + 2? \{ ans_rule(5) \}
+END_TEXT
+ANS(num_cmp(4));
+ENDDOCUMENT();
+        </pg-code>
+    </webwork>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection exercise">
+    <webwork>
+        <pg-macros>
+            <macro-file>PGstandard.pl</macro-file>
+            <macro-file>MathObjects.pl</macro-file>
+        </pg-macros>
+        <pg-code>
+DOCUMENT();
+TEXT(beginproblem());
+Context("Numeric");
+BEGIN_TEXT
+Enter the value of \(3^2\): \{ ans_rule(5) \}
+END_TEXT
+ANS(num_cmp(9));
+ENDDOCUMENT();
+        </pg-code>
+    </webwork>
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<species>`
 
-Short description of what the `<species>` tag does.
+The `<species>` tag gives the species portion of a scientific name
+inside a [`<taxon>`](./taxon.mdx). It is usually paired with
+[`<genus>`](./genus.mdx) so the organism name is marked up
+semantically.
+
+Use `<species>` for biological classification rather than ordinary
+italicized text.
 
 ## Syntax
 
@@ -16,4 +22,16 @@ Short description of what the `<species>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The gray wolf is classified as
+    <taxon><genus>Canis</genus> <species>lupus</species></taxon>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    Humans belong to
+    <taxon><genus>Homo</genus> <species>sapiens</species></taxon>.
+</FRAGMENT>
+```

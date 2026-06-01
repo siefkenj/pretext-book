@@ -8,7 +8,13 @@ import {
 
 # `<notation-list>`
 
-Short description of what the `<notation-list>` tag does.
+The `<notation-list>` tag is an empty element that generates a list of
+all notation entries defined with [`<notation>`](./notation.mdx). It is
+typically placed in an appendix in the
+[`<backmatter>`](./backmatter.mdx) of a book or article.
+
+PreTeXt builds the list automatically from the notation entries in the
+order they appear in the document.
 
 ## Syntax
 
@@ -16,4 +22,21 @@ Short description of what the `<notation-list>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="article backmatter">
+    <appendix>
+        <title>Notation</title>
+        <notation-list />
+    </appendix>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <appendix>
+        <title>Symbols Used in the Text</title>
+        <p>This appendix collects the notation introduced earlier.</p>
+        <notation-list />
+    </appendix>
+</FRAGMENT>
+```

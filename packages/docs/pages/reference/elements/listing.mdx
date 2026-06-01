@@ -8,7 +8,13 @@ import {
 
 # `<listing>`
 
-Short description of what the `<listing>` tag does.
+The `<listing>` tag is a titled, numbered container for a code sample
+or terminal transcript. It wraps a [`<program>`](./program.mdx) or
+[`<console>`](./console.mdx) in the same way
+[`<figure>`](./figure.mdx) wraps an [`<image>`](./image.mdx).
+
+Use `<listing>` when the code needs a caption, number, or
+cross-reference target instead of appearing as an unnamed snippet.
 
 ## Syntax
 
@@ -16,4 +22,25 @@ Short description of what the `<listing>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing xml:id="hello-python">
+        <title>Hello, Python</title>
+        <program language="python">
+print("Hello, world!")
+        </program>
+    </listing>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing>
+        <title>Running the script</title>
+        <console prompt="$ ">
+            <input>python hello.py</input>
+            <output>Hello, world!</output>
+        </console>
+    </listing>
+</FRAGMENT>
+```

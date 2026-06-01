@@ -8,7 +8,15 @@ import {
 
 # `<cross-references>`
 
-Short description of what the `<cross-references>` tag does.
+The `<cross-references>` tag is an empty configuration element
+that sets the default text style for [`<xref>`](./xref.mdx) links
+throughout a document. Place it in [`<docinfo>`](./docinfo.mdx) or a
+publication file when you want a global style such as `global` or
+`type-global`.
+
+Use [`<xref>`](./xref.mdx) in the document body to make individual
+references; use `<cross-references>` only to choose the default
+formatting.
 
 ## Syntax
 
@@ -16,4 +24,14 @@ Short description of what the `<cross-references>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <cross-references text="global" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <cross-references text="type-global" />
+</FRAGMENT>
+```

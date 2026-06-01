@@ -8,7 +8,14 @@ import {
 
 # `<contributor>`
 
-Short description of what the `<contributor>` tag does.
+The `<contributor>` tag records one person in a
+[`<contributors>`](./contributors.mdx) list. It normally contains a
+[`<personname>`](./personname.mdx) and may include affiliation details
+such as [`<department>`](./department.mdx),
+[`<institution>`](./institution.mdx), [`<location>`](./location.mdx),
+or [`<email>`](./email.mdx).
+
+Use one `<contributor>` per individual you want to acknowledge.
 
 ## Syntax
 
@@ -16,4 +23,22 @@ Short description of what the `<contributor>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter preface contributors">
+    <contributor>
+        <personname>Jordan Lee</personname>
+    </contributor>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter preface contributors">
+    <contributor>
+        <personname>Priya Shah</personname>
+        <department>Department of Mathematics</department>
+        <institution>Example University</institution>
+        <location>Seattle, WA</location>
+        <email>priya@example.edu</email>
+    </contributor>
+</FRAGMENT>
+```

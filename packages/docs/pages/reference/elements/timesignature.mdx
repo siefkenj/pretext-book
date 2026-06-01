@@ -8,7 +8,12 @@ import {
 
 # `<timesignature>`
 
-Short description of what the `<timesignature>` tag does.
+The `<timesignature>` element inserts a formatted musical time
+signature in running text. Use the `top` and `bottom` attributes to
+specify the meter.
+
+Use `<timesignature>` when discussing notation semantically rather than
+typing a plain fraction such as 4/4.
 
 ## Syntax
 
@@ -16,4 +21,16 @@ Short description of what the `<timesignature>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The march begins in <timesignature top="4" bottom="4"/> time.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    This passage alternates between
+    <timesignature top="3+2+3" bottom="8"/> and
+    <timesignature top="3" bottom="4"/>.
+</FRAGMENT>
+```

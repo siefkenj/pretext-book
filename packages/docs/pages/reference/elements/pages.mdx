@@ -8,7 +8,13 @@ import {
 
 # `<pages>`
 
-Short description of what the `<pages>` tag does.
+The `<pages>` tag gives the page range for an article or other item in a
+[`<biblio>`](./biblio.mdx) entry. It usually appears alongside
+[`<journal>`](./journal.mdx), [`<volume>`](./volume.mdx), and
+[`<number>`](./number.mdx).
+
+Use the `start` and `end` attributes when the page range is known, so
+PreTeXt can format the citation consistently.
 
 ## Syntax
 
@@ -16,4 +22,24 @@ Short description of what the `<pages>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio>
+        <author><personname>Emmy Noether</personname></author>
+        <title>Ideal Theory in Rings</title>
+        <journal>Mathematische Annalen</journal>
+        <year>1921</year>
+        <volume>84</volume>
+        <pages start="24" end="66" />
+    </biblio>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        John Smith, <title>Notes on Graphs</title>,
+        <journal>Example Journal</journal>, <pages>101--118</pages>.
+    </biblio>
+</FRAGMENT>
+```

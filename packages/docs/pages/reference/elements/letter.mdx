@@ -8,7 +8,10 @@ import {
 
 # `<letter>`
 
-Short description of what the `<letter>` tag does.
+The `<letter>` tag is a root-level document type for formal letters. Like
+[`<article>`](./article.mdx) or [`<book>`](./book.mdx), it organizes
+front matter, a body, and back matter, but with structures such as
+salutations, signatures, and addresses suited to correspondence.
 
 ## Syntax
 
@@ -16,4 +19,22 @@ Short description of what the `<letter>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <letter xml:id="cover-letter">
+        <frontmatter>
+            <titlepage>
+                <author>
+                    <personname>Jane Writer</personname>
+                </author>
+            </titlepage>
+        </frontmatter>
+        <p>Thank you for your thoughtful review of our manuscript.</p>
+        <backmatter>
+            <signature>
+                <fromname>Jane Writer</fromname>
+            </signature>
+        </backmatter>
+    </letter>
+</FRAGMENT>
+```

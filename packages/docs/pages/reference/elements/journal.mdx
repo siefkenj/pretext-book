@@ -8,7 +8,10 @@ import {
 
 # `<journal>`
 
-Short description of what the `<journal>` tag does.
+The `<journal>` tag gives the journal name for an article cited in a
+[`<biblio>`](./biblio.mdx) entry. It commonly appears with
+[`<volume>`](./volume.mdx), [`<number>`](./number.mdx), and
+[`<year>`](./year.mdx).
 
 ## Syntax
 
@@ -16,4 +19,14 @@ Short description of what the `<journal>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section references biblio">
+    <journal>Notices of the AMS</journal>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section references biblio">
+    <journal>American Mathematical Monthly</journal>
+</FRAGMENT>
+```

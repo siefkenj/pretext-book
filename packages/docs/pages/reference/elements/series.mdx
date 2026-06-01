@@ -8,7 +8,12 @@ import {
 
 # `<series>`
 
-Short description of what the `<series>` tag does.
+The `<series>` element records the series name for a book or monograph
+inside a [`<biblio>`](./biblio.mdx) entry. Use it when a cited work
+belongs to a named publication series.
+
+`<series>` is bibliographic metadata, so it usually appears alongside
+other publication details in a references list.
 
 ## Syntax
 
@@ -16,4 +21,20 @@ Short description of what the `<series>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="bibtex">
+        <title>Algebraic Curves</title>
+        <series>Graduate Texts in Mathematics</series>
+    </biblio>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="bibtex">
+        <title>Introduction to Topology</title>
+        <series>Pure and Applied Mathematics</series>
+    </biblio>
+</FRAGMENT>
+```

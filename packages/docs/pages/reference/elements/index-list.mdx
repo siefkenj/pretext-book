@@ -8,7 +8,10 @@ import {
 
 # `<index-list>`
 
-Short description of what the `<index-list>` tag does.
+The empty `<index-list>` tag appears inside an
+[`<index>`](./index.mdx) division and tells PreTeXt to generate the
+finished index automatically from all [`<idx>`](./idx.mdx) entries in
+the document.
 
 ## Syntax
 
@@ -16,4 +19,17 @@ Short description of what the `<index-list>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter index">
+    <index-list />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter">
+    <index>
+        <title>Index</title>
+        <index-list />
+    </index>
+</FRAGMENT>
+```

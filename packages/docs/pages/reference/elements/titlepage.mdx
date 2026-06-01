@@ -8,7 +8,13 @@ import {
 
 # `<titlepage>`
 
-Short description of what the `<titlepage>` tag does.
+The `<titlepage>` element creates a document title page inside
+[`<frontmatter>`](./frontmatter.mdx). It usually contains
+[`<titlepage-items>`](./titlepage-items.mdx), which gathers the relevant
+information automatically from [`<bibinfo>`](./bibinfo.mdx).
+
+Use `<titlepage>` when you want a separate title page in a
+[`<book>`](./book.mdx) or [`<article>`](./article.mdx).
 
 ## Syntax
 
@@ -16,4 +22,10 @@ Short description of what the `<titlepage>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
+</FRAGMENT>
+```

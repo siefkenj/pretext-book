@@ -8,7 +8,13 @@ import {
 
 # `<taxon>`
 
-Short description of what the `<taxon>` tag does.
+The `<taxon>` element marks up a scientific name using taxonomic parts
+such as [`<genus>`](./genus.mdx) and [`<species>`](./species.mdx). It
+provides semantic markup for biological names rather than plain
+formatting.
+
+Use `<taxon>` when you want PreTeXt to treat a scientific name as a
+classification term.
 
 ## Syntax
 
@@ -16,4 +22,16 @@ Short description of what the `<taxon>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The fruit fly is
+    <taxon><genus>Drosophila</genus> <species>melanogaster</species></taxon>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The common sunflower is
+    <taxon><genus>Helianthus</genus> <species>annuus</species></taxon>.
+</FRAGMENT>
+```

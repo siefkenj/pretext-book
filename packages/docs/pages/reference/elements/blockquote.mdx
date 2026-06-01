@@ -8,7 +8,9 @@ import {
 
 # `<blockquote>`
 
-Short description of what the `<blockquote>` tag does.
+The `<blockquote>` element is a block-level quotation for passages that
+should stand apart from the surrounding prose. It can have an optional
+[`<title>`](./title.mdx) and an [`<attribution>`](./attribution.mdx).
 
 ## Syntax
 
@@ -16,4 +18,26 @@ Short description of what the `<blockquote>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <blockquote>
+        <p>
+            The essence of mathematics is not to make simple things
+            complicated, but to make complicated things simple.
+        </p>
+        <attribution>S. Gudder</attribution>
+    </blockquote>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <blockquote>
+        <title>From the Preface</title>
+        <p>
+            We have not succeeded in answering all our problems. The answers
+            we have found only serve to raise a whole set of new questions.
+        </p>
+    </blockquote>
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<outcomes>`
 
-Short description of what the `<outcomes>` tag does.
+The `<outcomes>` tag records learning outcomes for a division such as a
+section or chapter. It is similar to [`<objectives>`](./objectives.mdx),
+but it emphasizes what a learner should be able to do after completing
+the material.
+
+An `<outcomes>` element usually contains a list, often a
+[`<ul>`](./ul.mdx), of concrete and measurable outcomes.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<outcomes>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <outcomes>
+        <title>Learning Outcomes</title>
+        <ul>
+            <li><p>Compute a derivative from the limit definition.</p></li>
+            <li><p>Interpret a derivative as an instantaneous rate.</p></li>
+        </ul>
+    </outcomes>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <outcomes>
+        <p>After this section, you should be able to:</p>
+        <ol>
+            <li><p>Factor a quadratic polynomial.</p></li>
+            <li><p>Solve the associated quadratic equation.</p></li>
+        </ol>
+    </outcomes>
+</FRAGMENT>
+```

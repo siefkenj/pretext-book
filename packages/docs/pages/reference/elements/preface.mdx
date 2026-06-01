@@ -8,7 +8,13 @@ import {
 
 # `<preface>`
 
-Short description of what the `<preface>` tag does.
+The `<preface>` tag is a front-matter division for an author's preface or
+other introductory remarks written from the author's point of view. In a
+[`<book>`](./book.mdx), it functions much like a chapter in the
+[`<frontmatter>`](./frontmatter.mdx).
+
+Unlike an [`<introduction>`](./introduction.mdx), a `<preface>` is about the
+origin, purpose, or scope of the work rather than the subject matter itself.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<preface>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <preface>
+        <title>Preface</title>
+        <p>
+            This book grew out of lecture notes written for a first course in
+            abstract algebra.
+        </p>
+    </preface>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <preface>
+        <title>Preface to the Second Edition</title>
+        <p>
+            New exercises and historical notes were added in response to
+            reader feedback.
+        </p>
+    </preface>
+</FRAGMENT>
+```

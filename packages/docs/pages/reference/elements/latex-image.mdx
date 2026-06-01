@@ -8,7 +8,10 @@ import {
 
 # `<latex-image>`
 
-Short description of what the `<latex-image>` tag does.
+The `<latex-image>` tag appears inside an [`<image>`](./image.mdx) and
+contains the LaTeX, TikZ, or PGF code that draws the figure. Use
+[`<latex-image-preamble>`](./latex-image-preamble.mdx) for shared package
+imports or macros needed by these images.
 
 ## Syntax
 
@@ -16,4 +19,24 @@ Short description of what the `<latex-image>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="image section subsection">
+    <latex-image label="unit-circle">
+        \begin{tikzpicture}
+            \draw[->] (-1.2,0) -- (1.2,0);
+            \draw[->] (0,-1.2) -- (0,1.2);
+            \draw (0,0) circle (1);
+        \end{tikzpicture}
+    </latex-image>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="image section subsection">
+    <latex-image>
+        \begin{tikzpicture}
+            \draw (0,0) -- (2,0) -- (1,1.5) -- cycle;
+        \end{tikzpicture}
+    </latex-image>
+</FRAGMENT>
+```

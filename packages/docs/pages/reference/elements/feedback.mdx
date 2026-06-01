@@ -8,7 +8,12 @@ import {
 
 # `<feedback>`
 
-Short description of what the `<feedback>` tag does.
+The `<feedback>` tag provides targeted response text in interactive exercises.
+It is commonly used in true/false, multiple-choice, and similar problems to
+explain why an answer is correct or incorrect.
+
+Unlike a general [`<hint>`](./hint.mdx) or [`<solution>`](./solution.mdx),
+`<feedback>` reacts to a particular answer or response.
 
 ## Syntax
 
@@ -16,4 +21,35 @@ Short description of what the `<feedback>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection exercises">
+    <exercise>
+        <statement correct="no">
+            <p>Every prime number is odd.</p>
+        </statement>
+        <feedback>
+            <p>The number <m>2</m> is prime and even.</p>
+        </feedback>
+    </exercise>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection exercises">
+    <exercise>
+        <statement>
+            <p>Which number is a multiple of <m>3</m>?</p>
+        </statement>
+        <choices>
+            <choice correct="no">
+                <p>10</p>
+                <feedback><p><m>10</m> leaves remainder <m>1</m>.</p></feedback>
+            </choice>
+            <choice correct="yes">
+                <p>12</p>
+                <feedback><p><m>12=3\cdot 4</m>.</p></feedback>
+            </choice>
+        </choices>
+    </exercise>
+</FRAGMENT>
+```

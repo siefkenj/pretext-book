@@ -8,7 +8,13 @@ import {
 
 # `<numbering>`
 
-Short description of what the `<numbering>` tag does.
+The `<numbering>` tag groups configuration for how items in a document
+are numbered. It is commonly used in [`<docinfo>`](./docinfo.mdx), and
+publisher-side numbering controls may also appear in a publication XML
+file.
+
+One common use is choosing whether [`<part>`](./part.mdx) divisions are
+decorative or structural, which affects chapter numbering.
 
 ## Syntax
 
@@ -16,4 +22,22 @@ Short description of what the `<numbering>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <numbering>
+            <division part="structural" />
+        </numbering>
+    </docinfo>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <numbering>
+            <division part="decorative" />
+        </numbering>
+    </docinfo>
+</FRAGMENT>
+```

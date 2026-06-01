@@ -8,7 +8,12 @@ import {
 
 # `<subexercises>`
 
-Short description of what the `<subexercises>` tag does.
+The `<subexercises>` element groups exercises inside an
+[`<exercises>`](./exercises.mdx) division into a labeled subsection. It
+is useful when a larger exercise set should be broken into themed parts.
+
+Use `<subexercises>` to add local titles or introductions within a
+single exercise collection.
 
 ## Syntax
 
@@ -16,4 +21,32 @@ Short description of what the `<subexercises>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <exercises>
+        <title>Practice</title>
+        <subexercises>
+            <title>Warm-Up</title>
+            <exercise>
+                <statement><p>Compute <m>2+3</m>.</p></statement>
+            </exercise>
+        </subexercises>
+    </exercises>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <exercises>
+        <subexercises>
+            <title>Challenge Problems</title>
+            <introduction>
+                <p>Try these after finishing the routine practice.</p>
+            </introduction>
+            <exercise>
+                <statement><p>Prove the sequence is bounded.</p></statement>
+            </exercise>
+        </subexercises>
+    </exercises>
+</FRAGMENT>
+```

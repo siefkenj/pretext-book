@@ -8,7 +8,12 @@ import {
 
 # `<holder>`
 
-Short description of what the `<holder>` tag does.
+The `<holder>` tag gives the name of the copyright holder inside a
+[`<copyright>`](./copyright.mdx) statement. It identifies the person,
+organization, or publisher that owns the copyright.
+
+Use `<holder>` together with elements such as `<year>` to build a complete
+copyright notice.
 
 ## Syntax
 
@@ -16,4 +21,14 @@ Short description of what the `<holder>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo copyright">
+    <holder>Jane Smith</holder>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo copyright">
+    <holder>Open Math Publishing</holder>
+</FRAGMENT>
+```

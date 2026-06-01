@@ -8,7 +8,13 @@ import {
 
 # `<stack>`
 
-Short description of what the `<stack>` tag does.
+The `<stack>` element is used inside a
+[`<sidebyside>`](./sidebyside.mdx) to arrange multiple items vertically
+within a single panel. This is useful when one column should contain
+several paragraphs, images, or other blocks.
+
+Use `<stack>` when side-by-side material needs both horizontal panels
+and vertical grouping inside one panel.
 
 ## Syntax
 
@@ -16,4 +22,26 @@ Short description of what the `<stack>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <sidebyside>
+        <stack>
+            <p>Step 1: Plot the data points.</p>
+            <p>Step 2: Draw a line of best fit.</p>
+        </stack>
+        <p>The graph appears in the panel to the left.</p>
+    </sidebyside>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <sidebyside>
+        <p>A single paragraph in the left panel.</p>
+        <stack>
+            <p>The right panel contains two related observations.</p>
+            <p>Stacking keeps them in one column.</p>
+        </stack>
+    </sidebyside>
+</FRAGMENT>
+```

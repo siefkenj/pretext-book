@@ -8,7 +8,12 @@ import {
 
 # `<glossary>`
 
-Short description of what the `<glossary>` tag does.
+The `<glossary>` tag creates a glossary division containing terms and their
+definitions. Its entries are given by [`<gi>`](./gi.mdx), and it may begin
+with a [`<headnote>`](./headnote.mdx) introducing the list.
+
+A `<glossary>` often appears in [`<backmatter>`](./backmatter.mdx), but it can
+also be placed inside another division when a local glossary is useful.
 
 ## Syntax
 
@@ -16,4 +21,29 @@ Short description of what the `<glossary>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <glossary>
+        <title>Key Terms</title>
+        <headnote>
+            <p>These terms will be used throughout this section.</p>
+        </headnote>
+        <gi>
+            <title>vector</title>
+            <p>An element of a vector space.</p>
+        </gi>
+    </glossary>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="backmatter">
+    <glossary>
+        <title>Glossary</title>
+        <gi>
+            <title>ring</title>
+            <p>A set equipped with addition and multiplication.</p>
+        </gi>
+    </glossary>
+</FRAGMENT>
+```

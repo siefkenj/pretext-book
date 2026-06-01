@@ -8,7 +8,10 @@ import {
 
 # `<keywords>`
 
-Short description of what the `keywords` element does.
+The `<keywords>` tag belongs in [`<docinfo>`](./docinfo.mdx) and groups
+subject terms or classification codes for the document. It contains one
+or more [`<keyword>`](./keyword.mdx) elements and may use attributes such
+as <attr>authority</attr> and <attr>variant</attr>.
 
 ## Syntax
 
@@ -16,4 +19,20 @@ Short description of what the `keywords` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <keywords>
+        <keyword>linear algebra</keyword>
+        <keyword>eigenvalues</keyword>
+    </keywords>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <keywords authority="ams" variant="msc">
+        <keyword primary="yes">11R04</keyword>
+        <keyword>11R32</keyword>
+    </keywords>
+</FRAGMENT>
+```

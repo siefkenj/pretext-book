@@ -8,7 +8,12 @@ import {
 
 # `<cline>`
 
-Short description of what the `<cline>` tag does.
+The `<cline>` tag represents one line of verbatim text inside a
+displayed code block. It is most commonly used as a child of
+[`<cd>`](./cd.mdx) when you want each line break to be explicit.
+
+Use separate `<cline>` elements instead of embedded newlines when exact
+line structure matters.
 
 ## Syntax
 
@@ -16,4 +21,19 @@ Short description of what the `<cline>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <cd>
+        <cline>for i in range(3):</cline>
+        <cline>    print(i)</cline>
+    </cd>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <cd>
+        <cline>&lt;title&gt;Sample XML&lt;/title&gt;</cline>
+    </cd>
+</FRAGMENT>
+```

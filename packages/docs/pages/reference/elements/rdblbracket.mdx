@@ -8,7 +8,9 @@ import {
 
 # `<rdblbracket>`
 
-Short description of what the `rdblbracket` element does.
+The empty `<rdblbracket/>` tag inserts the right double bracket symbol ⟧. It
+is the closing partner of [`<ldblbracket/>`](./ldblbracket.mdx) for inline
+notation.
 
 ## Syntax
 
@@ -16,4 +18,14 @@ Short description of what the `rdblbracket` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The Iverson-style expression is <ldblbracket/>P<rdblbracket/>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    Write <ldblbracket/>n is even<rdblbracket/> for the indicator value.
+</FRAGMENT>
+```
