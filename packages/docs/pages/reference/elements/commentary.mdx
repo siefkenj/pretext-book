@@ -8,11 +8,7 @@ import {
 
 # `<commentary>`
 
-The `<commentary>` tag is an aside-like block for author notes,
-editorial remarks, or other commentary about nearby content. It is
-similar in spirit to [`<aside>`](./aside.mdx) or
-[`<remark>`](./remark.mdx), but is often intended for commentary that
-may be hidden from ordinary readers.
+The `<commentary>` tag used only for grouping material that can be included or excluded by using a `@component` attribute and adding its value to the `@version` element in the publication file.  Note that since `@component` can be added to just about any element, this might not be ncessasary; it is only offered as a convininece when multiple elements should be grouped together.
 
 Use it when you want material for instructors, editors, or specialized
 audiences kept distinct from the main exposition.
@@ -25,7 +21,7 @@ audiences kept distinct from the main exposition.
 
 ```ptx-example
 <FRAGMENT parents="section subsection">
-    <commentary>
+    <commentary component="instructor">
         <title>Instructor note</title>
         <p>Students often confuse the domain with the codomain here.</p>
     </commentary>
@@ -34,7 +30,7 @@ audiences kept distinct from the main exposition.
 
 ```ptx-example
 <FRAGMENT parents="section subsection">
-    <commentary>
+    <commentary component="notes">
         <p>This paragraph can record background notes for a later revision.</p>
     </commentary>
 </FRAGMENT>

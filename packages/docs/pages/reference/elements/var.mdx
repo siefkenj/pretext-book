@@ -23,41 +23,37 @@ WeBWorK problem.
 
 ## Examples
 
-```ptx-example
-<FRAGMENT parents="section subsection exercises">
-    <exercise>
-        <webwork>
-            <pg-code>
-                $a = Compute(2);
-                $b = Compute(5);
-                $c = $a + $b;
-            </pg-code>
-            <statement>
-                <p>
-                    Compute <m><var name="$a"/> + <var name="$b"/> =</m>
-                    <var name="$c" width="5"/>.
-                </p>
-            </statement>
-        </webwork>
-    </exercise>
-</FRAGMENT>
+```
+<exercise>
+    <webwork>
+        <pg-code>
+            $a = Compute(2);
+            $b = Compute(5);
+            $c = $a + $b;
+        </pg-code>
+        <statement>
+            <p>
+                Compute <m><var name="$a"/> + <var name="$b"/> =</m>
+                <var name="$c" width="5"/>.
+            </p>
+        </statement>
+    </webwork>
+</exercise>
 ```
 
 ```ptx-example
-<FRAGMENT parents="section subsection exercises">
-    <exercise>
-        <webwork>
-            <pg-code>
-                $n = Compute(7);
-            </pg-code>
-            <statement>
-                <p>Is <var name="$n"/> a prime number?</p>
-            </statement>
-            <solution>
-                <p>Yes, <var name="$n"/> has no positive divisors other
-                than 1 and itself.</p>
-            </solution>
-        </webwork>
-    </exercise>
-</FRAGMENT>
+<exercise>
+    <webwork>
+        <pg-code>
+            $n = Compute(7);
+        </pg-code>
+        <statement>
+            <p>Is <var name="$n"/> a prime number?</p>
+        </statement>
+        <solution>
+            <p>Yes, <var name="$n"/> has no positive divisors other
+            than 1 and itself.</p>
+        </solution>
+    </webwork>
+</exercise>
 ```

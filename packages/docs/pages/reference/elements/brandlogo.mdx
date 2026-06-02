@@ -19,11 +19,17 @@ to an external site.
 
 ## Examples
 
-```ptx-example
-<FRAGMENT parents="book docinfo">
-    <brandlogo
-        source="images/pretext-logo.png"
-        url="https://pretextbook.org"
-    />
-</FRAGMENT>
+```
+<pretext>
+    <docinfo>
+        <brandlogo
+            source="images/pretext-logo.png"
+            url="https://pretextbook.org"
+        />
+    </docinfo>
+
+    <book>
+    ...
+    </book>
+</docinfo>
 ```

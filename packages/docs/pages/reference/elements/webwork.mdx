@@ -23,36 +23,32 @@ WeBWorK rather than as a static exercise.
 
 ## Examples
 
-```ptx-example
-<FRAGMENT parents="section subsection exercises">
-    <exercise>
-        <webwork>
-            <pg-code>
-                $a = Compute(2);
-                $b = Compute(3);
-                $c = $a + $b;
-            </pg-code>
-            <statement>
-                <p>
-                    Compute <m><var name="$a"/> + <var name="$b"/> =</m>
-                    <var name="$c" width="5"/>.
-                </p>
-            </statement>
-            <solution>
-                <p>
-                    <m><var name="$a"/> + <var name="$b"/> =
-                    <var name="$c"/></m>.
-                </p>
-            </solution>
-        </webwork>
-    </exercise>
-</FRAGMENT>
+```
+<exercise>
+    <webwork>
+        <pg-code>
+            $a = Compute(2);
+            $b = Compute(3);
+            $c = $a + $b;
+        </pg-code>
+        <statement>
+            <p>
+                Compute <m><var name="$a"/> + <var name="$b"/> =</m>
+                <var name="$c" width="5"/>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <m><var name="$a"/> + <var name="$b"/> =
+                <var name="$c"/></m>.
+            </p>
+        </solution>
+    </webwork>
+</exercise>
 ```
 
-```ptx-example
-<FRAGMENT parents="section subsection exercises">
-    <exercise>
-        <webwork source="Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg" />
-    </exercise>
-</FRAGMENT>
+```
+<exercise>
+    <webwork source="Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg" />
+</exercise>
 ```

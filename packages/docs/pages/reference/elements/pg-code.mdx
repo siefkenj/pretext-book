@@ -22,40 +22,18 @@ put the actual PG program in `<pg-code>`.
 
 ## Examples
 
-```ptx-example
-<FRAGMENT parents="section subsection exercise">
+```
+<exercise>
     <webwork>
         <pg-code>
-DOCUMENT();
-loadMacros("PGstandard.pl");
-TEXT(beginproblem());
-BEGIN_TEXT
-What is 2 + 2? \{ ans_rule(5) \}
-END_TEXT
-ANS(num_cmp(4));
-ENDDOCUMENT();
+            $a = random(1,10);
         </pg-code>
+        <statement>
+            <p>
+                What number am I thinking of?  <var name="$a"/>
+            </p>
+        </statement>
     </webwork>
-</FRAGMENT>
+</exercise>
 ```
 
-```ptx-example
-<FRAGMENT parents="section subsection exercise">
-    <webwork>
-        <pg-macros>
-            <macro-file>PGstandard.pl</macro-file>
-            <macro-file>MathObjects.pl</macro-file>
-        </pg-macros>
-        <pg-code>
-DOCUMENT();
-TEXT(beginproblem());
-Context("Numeric");
-BEGIN_TEXT
-Enter the value of \(3^2\): \{ ans_rule(5) \}
-END_TEXT
-ANS(num_cmp(9));
-ENDDOCUMENT();
-        </pg-code>
-    </webwork>
-</FRAGMENT>
-```
