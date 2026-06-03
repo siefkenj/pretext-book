@@ -8,7 +8,12 @@ import {
 
 # `<foreign>`
 
-Short description of what the `<foreign>` tag does.
+The `<foreign>` tag marks a word or phrase written in a language different
+from the surrounding text. It is typically rendered in italics and is often
+paired with an `xml:lang` attribute.
+
+Use `<foreign>` for genuine language changes, not just for emphasis. For
+emphasis within the same language, use [`<em>`](./em.mdx) instead.
 
 ## Syntax
 
@@ -16,4 +21,15 @@ Short description of what the `<foreign>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    <foreign xml:lang="fr">raison d'être</foreign>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The phrase <foreign xml:lang="it">dolce far niente</foreign> literally
+    means "sweetness of doing nothing."
+</FRAGMENT>
+```

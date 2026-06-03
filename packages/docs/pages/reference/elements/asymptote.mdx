@@ -8,7 +8,10 @@ import {
 
 # `<asymptote>`
 
-Short description of what the `<asymptote>` tag does.
+The `<asymptote>` element contains Asymptote source code for a generated
+image. It usually appears inside an [`<image>`](./image.mdx), often within
+a [`<figure>`](./figure.mdx), and can share setup from an
+[`<asymptote-preamble>`](./asymptote-preamble.mdx).
 
 ## Syntax
 
@@ -16,4 +19,14 @@ Short description of what the `<asymptote>` tag does.
 
 ## Examples
 
-    
+```
+    <image>
+        <shortdescription>a line segment from 0 to 1</shortdescription>
+        <asymptote>
+size(120,0);
+draw((0,0)--(1,0), linewidth(1));
+dot((0,0));
+dot((1,0));
+        </asymptote>
+    </image>
+```

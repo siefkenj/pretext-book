@@ -8,7 +8,13 @@ import {
 
 # `<program>`
 
-Short description of what the `<program>` tag does.
+The `<program>` tag displays a source-code listing, usually with syntax
+highlighting based on its `language` attribute. The code itself may appear
+directly or inside a [`<code>`](./code.mdx) child.
+
+A program can also include pieces such as [`<preamble>`](./preamble.mdx),
+[`<postamble>`](./postamble.mdx), [`<tests>`](./tests.mdx), or
+[`<stdin>`](./stdin.mdx) to describe setup and execution details.
 
 ## Syntax
 
@@ -16,4 +22,30 @@ Short description of what the `<program>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="python">
+        <code><![CDATA[
+def square(n):
+    return n * n
+
+print(square(5))
+        ]]></code>
+    </program>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="java">
+        <preamble visible="yes">import java.util.Scanner;</preamble>
+        <code><![CDATA[
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+        ]]></code>
+    </program>
+</FRAGMENT>
+```

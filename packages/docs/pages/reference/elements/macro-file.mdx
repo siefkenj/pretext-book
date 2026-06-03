@@ -8,7 +8,14 @@ import {
 
 # `<macro-file>`
 
-Short description of what the `<macro-file>` tag does.
+The `<macro-file>` tag names an external macro library to load instead
+of writing all macros inline. It is most commonly used inside
+[`<pg-macros>`](./pg-macros.mdx) so a
+[`<webwork>`](./webwork.mdx) problem can reuse shared WeBWorK macro
+files.
+
+List one filename per `<macro-file>` element, using a path your build
+can resolve.
 
 ## Syntax
 
@@ -16,4 +23,29 @@ Short description of what the `<macro-file>` tag does.
 
 ## Examples
 
-    
+```ptx
+<exercise>
+    <webwork>
+        <pg-macros>
+            <macro-file>PGstandard.pl</macro-file>
+        </pg-macros>
+        <statement>
+            <p>Solve the equation <m>x + 3 = 7</m>.</p>
+        </statement>
+    </webwork>
+</exercise>
+```
+
+```ptx
+<exercise>
+    <webwork>
+        <pg-macros>
+            <macro-file>PGstandard.pl</macro-file>
+            <macro-file>MathObjects.pl</macro-file>
+        </pg-macros>
+        <statement>
+            <p>Evaluate <m>2+2</m>.</p>
+        </statement>
+    </webwork>
+</exercise>
+```

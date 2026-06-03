@@ -8,7 +8,14 @@ import {
 
 # `<computation>`
 
-Short description of what the `<computation>` tag does.
+The `<computation>` tag is a computation-like block for examples
+or activities centered on calculation, software, or algorithmic work.
+It shares the same general role as [`<technology>`](./technology.mdx)
+and [`<data>`](./data.mdx), but emphasizes the computational process
+itself.
+
+A `<computation>` can mix explanatory prose with things like
+[`<program>`](./program.mdx) or data resources.
 
 ## Syntax
 
@@ -16,4 +23,26 @@ Short description of what the `<computation>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <computation>
+        <title>Estimating a derivative numerically</title>
+        <p>Use a small value of <m>h</m> and compare several difference
+        quotients.</p>
+    </computation>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <computation>
+        <title>Summing the first ten squares</title>
+        <program language="python">
+            <code><![CDATA[
+total = sum(n * n for n in range(1, 11))
+print(total)
+            ]]></code>
+        </program>
+    </computation>
+</FRAGMENT>
+```

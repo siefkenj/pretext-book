@@ -8,7 +8,13 @@ import {
 
 # `<chord>`
 
-Short description of what the `<chord>` tag does.
+The `<chord>` tag produces an inline chord symbol for music
+notation. Use attributes such as `root`, `mode`, `bps`, and `bass` to
+build the symbol, and add [`<alteration>`](./alteration.mdx) children
+for altered tones.
+
+Because `<chord>` is inline, it usually appears inside a [`<p>`](./p.mdx)
+or other running text.
 
 ## Syntax
 
@@ -16,4 +22,20 @@ Short description of what the `<chord>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    Play the progression <chord root="C" mode="major" />,
+    <chord root="F" mode="major" />, and
+    <chord root="G" bps="7" />.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    A jazz voicing such as
+    <chord root="B flat" mode="minor" bps="7" bass="F">
+        <alteration><sharp />9</alteration>
+    </chord>
+    can be written directly in the text.
+</FRAGMENT>
+```

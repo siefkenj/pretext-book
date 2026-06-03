@@ -8,7 +8,10 @@ import {
 
 # `<prelude>`
 
-Short description of what the `<prelude>` tag does.
+The `<prelude>` tag is optional introductory material for an
+[`<activity>`](./activity.mdx), [`<project>`](./project.mdx), or similar
+project-like block. It appears before the main content and gives setup,
+motivation, or reading instructions.
 
 ## Syntax
 
@@ -16,4 +19,35 @@ Short description of what the `<prelude>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <activity>
+        <title>Estimating a derivative</title>
+        <prelude>
+            <p>
+                Review the graph first and identify where the slope is
+                steepest.
+            </p>
+        </prelude>
+        <statement>
+            <p>Approximate <m>f'(2)</m> from a table of values.</p>
+        </statement>
+    </activity>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <project>
+        <title>Modeling population growth</title>
+        <prelude>
+            <p>Work in pairs and decide which quantities should be measured.</p>
+        </prelude>
+        <task>
+            <statement>
+                <p>Fit an exponential model to the data.</p>
+            </statement>
+        </task>
+    </project>
+</FRAGMENT>
+```

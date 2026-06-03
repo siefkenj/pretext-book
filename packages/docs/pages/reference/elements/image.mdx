@@ -8,7 +8,13 @@ import {
 
 # `<image>`
 
-Short description of what the `<image>` tag does.
+The `<image>` tag embeds an image in a document. It can reference an external
+file with `@source` or include code-generated content such as a
+[`<latex-image>`](./latex-image.mdx) or `<asymptote>` block.
+
+Most non-decorative images should include a [`<description>`](./description.mdx)
+or [`<shortdescription>`](./shortdescription.mdx), and many images are wrapped
+in a [`<figure>`](./figure.mdx).
 
 ## Syntax
 
@@ -16,4 +22,27 @@ Short description of what the `<image>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection figure">
+    <image source="images/triangle.png" width="55%">
+        <description>
+            <p>A right triangle with legs labeled 3 and 4.</p>
+        </description>
+    </image>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection figure">
+    <image width="50%">
+        <description>
+            <p>A circle centered at the origin with radius 2.</p>
+        </description>
+        <latex-image>
+\begin{tikzpicture}
+  \draw (0,0) circle (1.5cm);
+\end{tikzpicture}
+        </latex-image>
+    </image>
+</FRAGMENT>
+```

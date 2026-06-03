@@ -8,7 +8,10 @@ import {
 
 # `<article>`
 
-Short description of what the `<article>` tag does.
+The `<article>` element is a root-level document type for a shorter work
+than a [`<book>`](./book.mdx). An article can have
+[`<frontmatter>`](./frontmatter.mdx), sections, and
+[`<backmatter>`](./backmatter.mdx), but it does not contain chapters.
 
 ## Syntax
 
@@ -16,4 +19,18 @@ Short description of what the `<article>` tag does.
 
 ## Examples
 
-    
+```ptx
+<article>
+    <title>Notes on Counting</title>
+    <frontmatter>
+        <bibinfo>
+            <author><personname>Emmy Noether</personname></author>
+        </bibinfo>
+        <titlepage><titlepage-items /></titlepage>
+    </frontmatter>
+    <section>
+        <title>Introduction</title>
+        <p>We begin with a simple counting argument.</p>
+    </section>
+</article>
+```

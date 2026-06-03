@@ -8,7 +8,14 @@ import {
 
 # `<demonstration>`
 
-Short description of what the `<demonstration>` tag does.
+The `<demonstration>` tag is a block for an interactive
+demonstration or guided exploration. Use it when readers are meant to
+manipulate or observe something dynamic rather than just read static
+exposition.
+
+A demonstration often includes a [`<title>`](./title.mdx), brief
+explanatory [`<p>`](./p.mdx) content, and links or embedded interactive
+material placed inside the block.
 
 ## Syntax
 
@@ -16,4 +23,21 @@ Short description of what the `<demonstration>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <demonstration>
+        <title>Exploring slope with a draggable point</title>
+        <p>Move the point along the curve and watch the secant line
+        approach the tangent line.</p>
+    </demonstration>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <demonstration>
+        <p>Use the interactive applet to test how changing the parameter
+        affects the graph.</p>
+    </demonstration>
+</FRAGMENT>
+```

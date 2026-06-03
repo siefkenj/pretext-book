@@ -8,7 +8,9 @@ import {
 
 # `<articletitle>`
 
-Short description of what the `<articletitle>` tag does.
+The `<articletitle>` element marks the title of a shorter work, such as an
+article, essay, chapter, or webpage. It is the companion to
+[`<pubtitle>`](./pubtitle.mdx), which is for larger stand-alone works.
 
 ## Syntax
 
@@ -16,4 +18,24 @@ Short description of what the `<articletitle>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    We recommend
+    <articletitle>On Computable Numbers</articletitle>
+    as a starting point.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        Alan Turing,
+        <articletitle>
+            On Computable Numbers, with an Application to the
+            Entscheidungsproblem
+        </articletitle>,
+        <journal>Proceedings of the London Mathematical Society</journal>
+        <year>1937</year>.
+    </biblio>
+</FRAGMENT>
+```

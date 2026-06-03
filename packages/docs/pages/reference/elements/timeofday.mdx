@@ -8,7 +8,12 @@ import {
 
 # `<timeofday>`
 
-Short description of what the `<timeofday>` tag does.
+The `<timeofday>` element inserts the current time when the document is
+processed. It is often paired with [`<today>`](./today.mdx) for build or
+revision timestamps.
+
+Because the value is generated dynamically, `<timeofday>` is useful for
+draft notices and generated-output metadata.
 
 ## Syntax
 
@@ -16,4 +21,14 @@ Short description of what the `<timeofday>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    Generated: <today/>, <timeofday/>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    Draft compiled at <timeofday/> on <today/>.
+</FRAGMENT>
+```

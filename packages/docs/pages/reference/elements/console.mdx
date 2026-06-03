@@ -8,7 +8,14 @@ import {
 
 # `<console>`
 
-Short description of what the `<console>` tag does.
+The `<console>` tag records a verbatim terminal session as a
+sequence of [`<input>`](./input.mdx) and optional
+[`<output>`](./output.mdx) elements. Prompts can be supplied on the
+`<console>` itself or on individual inputs with the `prompt` and
+`continuation` attributes.
+
+If the session needs a number, title, or cross-reference target, wrap
+the console in a [`<listing>`](./listing.mdx).
 
 ## Syntax
 
@@ -16,4 +23,23 @@ Short description of what the `<console>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <console prompt="$ ">
+        <input>python demo.py</input>
+        <output>Hello, world!</output>
+    </console>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <console prompt="&gt;&gt;&gt; " continuation="... ">
+        <input>for n in range(3):
+    print(n)</input>
+        <output>0
+1
+2</output>
+    </console>
+</FRAGMENT>
+```

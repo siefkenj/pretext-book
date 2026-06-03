@@ -8,7 +8,15 @@ import {
 
 # `<data>`
 
-Short description of what the `data` element does.
+The `<data>` element is a computation-like block for datasets,
+files, or other resources used by computational work. It can combine
+explanatory prose with [`<datafile>`](./datafile.mdx) children and is a
+natural place to describe input for programs, labs, or interactive
+activities.
+
+Like [`<computation>`](./computation.mdx) and
+[`<technology>`](./technology.mdx), it creates a titled block devoted to
+working with technology.
 
 ## Syntax
 
@@ -16,4 +24,22 @@ Short description of what the `data` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <data>
+        <title>Class survey results</title>
+        <p>The following file contains the responses collected this week.</p>
+    </data>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <data>
+        <title>Downloadable CSV</title>
+        <datafile filename="survey.csv">
+            <image source="csv-icon.png" width="10%" />
+        </datafile>
+    </data>
+</FRAGMENT>
+```

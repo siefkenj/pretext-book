@@ -8,7 +8,13 @@ import {
 
 # `<postamble>`
 
-Short description of what the `postamble` element does.
+In a [`<program>`](./program.mdx), the `<postamble>` tag holds text that comes
+after the main [`<code>`](./code.mdx) block. Use it for cleanup, driver code,
+or output statements that should be shown after the primary listing.
+
+Like [`<preamble>`](./preamble.mdx), `<postamble>` belongs to the internal
+structure of a program listing and may use a `visible` attribute to control
+whether it is displayed.
 
 ## Syntax
 
@@ -16,4 +22,30 @@ Short description of what the `postamble` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="python">
+        <code><![CDATA[
+def square(n):
+    return n * n
+        ]]></code>
+        <postamble visible="yes">print(square(5))</postamble>
+    </program>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="java">
+        <preamble visible="yes">import java.util.Scanner;</preamble>
+        <code><![CDATA[
+public class Main {
+    public static void main(String[] args) {
+        greet();
+    }
+}
+        ]]></code>
+        <postamble visible="no">static void greet() { }</postamble>
+    </program>
+</FRAGMENT>
+```

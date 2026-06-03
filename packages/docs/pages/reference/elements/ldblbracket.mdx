@@ -8,7 +8,10 @@ import {
 
 # `<ldblbracket>`
 
-Short description of what the `ldblbracket` element does.
+The empty `<ldblbracket>` tag inserts the left double-bracket symbol
+⟦ inline. It is usually paired with [`<rdblbracket>`](./rdblbracket.mdx)
+when you need semantic brackets or interval notation without typing the
+Unicode character directly.
 
 ## Syntax
 
@@ -16,4 +19,14 @@ Short description of what the `ldblbracket` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The Iverson bracket is <ldblbracket /> P <rdblbracket />.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    Write the denotation as <ldblbracket /> t <rdblbracket />.
+</FRAGMENT>
+```

@@ -8,7 +8,15 @@ import {
 
 # `<credit>`
 
-Short description of what the `<credit>` tag does.
+The `<credit>` tag records a special credit in
+[`<bibinfo>`](./bibinfo.mdx), such as a related work with its own author
+or a production role like cover design. These credits are then available
+for the generated [`<titlepage>`](./titlepage.mdx) and
+[`<colophon>`](./colophon.mdx).
+
+Depending on the kind of credit, use either a [`<title>`](./title.mdx)
+with one or more [`<author>`](./author.mdx) elements, or a
+[`<role>`](./role.mdx) with an [`<entity>`](./entity.mdx).
 
 ## Syntax
 
@@ -16,4 +24,22 @@ Short description of what the `<credit>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <credit>
+        <title>Companion workbook</title>
+        <author>
+            <personname>Riley Chen</personname>
+        </author>
+    </credit>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <credit>
+        <role>Cover design</role>
+        <entity>Studio North</entity>
+    </credit>
+</FRAGMENT>
+```

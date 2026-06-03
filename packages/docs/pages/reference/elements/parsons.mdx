@@ -8,7 +8,14 @@ import {
 
 # `<parsons>`
 
-Short description of what the `parsons` element does.
+The `<parsons>` tag creates an interactive Parsons problem, a drag-and-
+drop coding exercise used in Runestone. It combines a
+[`<statement>`](./statement.mdx) with a set of code
+[`<blocks>`](./blocks.mdx) that learners arrange into the correct
+order.
+
+Use `<parsons>` when you want students to reason about program structure
+without typing the entire solution.
 
 ## Syntax
 
@@ -16,4 +23,32 @@ Short description of what the `parsons` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <parsons language="python">
+        <statement>
+            <p>Arrange the blocks to print the numbers 1 through 3.</p>
+        </statement>
+        <blocks randomize="yes">
+            <block>for i in range(1, 4):</block>
+            <block>    print(i)</block>
+        </blocks>
+    </parsons>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <parsons language="javascript">
+        <statement>
+            <p>Arrange the blocks to define and call a function.</p>
+        </statement>
+        <blocks randomize="yes">
+            <block>function greet(name) {</block>
+            <block>    console.log(`Hello, ${name}`);</block>
+            <block>}</block>
+            <block>greet("Ada");</block>
+        </blocks>
+    </parsons>
+</FRAGMENT>
+```

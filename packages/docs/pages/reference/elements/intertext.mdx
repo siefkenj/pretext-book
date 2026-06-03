@@ -8,7 +8,10 @@ import {
 
 # `<intertext>`
 
-Short description of what the `<intertext>` tag does.
+The `<intertext>` tag inserts a short piece of prose between rows of a
+multiline display in [`<md>`](./md.mdx) or [`<mdn>`](./mdn.mdx). It is
+best for brief explanatory text that should interrupt the equations
+without ending the display.
 
 ## Syntax
 
@@ -16,4 +19,22 @@ Short description of what the `<intertext>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    <md>
+        <mrow>x^2 - 1 \amp= (x - 1)(x + 1)</mrow>
+        <intertext>Now divide both sides by <m>x + 1</m>.</intertext>
+        <mrow>x - 1 \amp= \frac{x^2 - 1}{x + 1}</mrow>
+    </md>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    <md>
+        <mrow>f(x) \amp= x^2 + 2x + 1</mrow>
+        <intertext>Complete the square before taking the derivative.</intertext>
+        <mrow>f(x) \amp= (x + 1)^2</mrow>
+    </md>
+</FRAGMENT>
+```

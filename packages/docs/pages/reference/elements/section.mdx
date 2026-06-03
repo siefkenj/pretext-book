@@ -8,7 +8,14 @@ import {
 
 # `<section>`
 
-Short description of what the `<section>` tag does.
+The `<section>` element is a major structural division inside a
+[`<chapter>`](./chapter.mdx) or [`<article>`](./article.mdx). Every
+`<section>` should have a [`<title>`](./title.mdx), and it may contain
+ordinary content directly or be subdivided into
+[`<subsection>`](./subsection.mdx)s.
+
+Use `<section>` for the main named parts of a chapter or article before
+going to smaller subdivisions.
 
 ## Syntax
 
@@ -16,4 +23,28 @@ Short description of what the `<section>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="chapter">
+    <section>
+        <title>Functions</title>
+        <p>
+            A function assigns each input exactly one output.
+        </p>
+    </section>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="chapter">
+    <section>
+        <title>Limits</title>
+        <subsection>
+            <title>One-Sided Limits</title>
+            <p>
+                Left-hand and right-hand limits may be considered
+                separately.
+            </p>
+        </subsection>
+    </section>
+</FRAGMENT>
+```

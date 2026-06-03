@@ -8,7 +8,10 @@ import {
 
 # `<asymptote-preamble>`
 
-Short description of what the `<asymptote-preamble>` tag does.
+The `<asymptote-preamble>` element stores Asymptote code that should be
+added before every [`<asymptote>`](./asymptote.mdx) graphic in the
+document. Place it in [`<docinfo>`](./docinfo.mdx) when several images
+share imports, size settings, or helper definitions.
 
 ## Syntax
 
@@ -16,4 +19,11 @@ Short description of what the `<asymptote-preamble>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="article docinfo">
+    <asymptote-preamble>
+import graph;
+defaultpen(linewidth(0.8));
+    </asymptote-preamble>
+</FRAGMENT>
+```

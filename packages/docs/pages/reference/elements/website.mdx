@@ -8,7 +8,12 @@ import {
 
 # `<website>`
 
-Short description of what the `<website>` tag does.
+The `<website>` element records a website in document metadata. It is
+usually part of [`<bibinfo>`](./bibinfo.mdx) or author information and
+contains a [`<url>`](./url.mdx).
+
+Use `<website>` for a site associated with the document or its authors,
+not for ordinary links in the main text.
 
 ## Syntax
 
@@ -16,4 +21,20 @@ Short description of what the `<website>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <website>
+        <url href="https://example.org" visual="example.org" />
+    </website>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo author">
+    <website>
+        <url href="https://alice.example.edu" visual="alice.example.edu">
+            Alice Author's homepage
+        </url>
+    </website>
+</FRAGMENT>
+```

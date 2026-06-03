@@ -8,7 +8,10 @@ import {
 
 # `<publisher>`
 
-Short description of what the `<publisher>` tag does.
+The `<publisher>` tag gives the publisher's name inside a structured
+[`<biblio>`](./biblio.mdx) entry. Use it alongside details such as
+[`<title>`](./title.mdx), [`<year>`](./year.mdx), and
+[`<location>`](./location.mdx) when recording publication data.
 
 ## Syntax
 
@@ -16,4 +19,23 @@ Short description of what the `<publisher>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        <title>A First Course in Number Theory</title>
+        <publisher>Open Math Press</publisher>
+        <year>2022</year>
+    </biblio>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        <title>Collected Papers on Graph Theory</title>
+        <publisher>Academic Publishing House</publisher>
+        <location>Boston</location>
+        <year>2018</year>
+    </biblio>
+</FRAGMENT>
+```

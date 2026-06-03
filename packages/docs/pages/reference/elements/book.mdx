@@ -8,7 +8,10 @@ import {
 
 # `<book>`
 
-Short description of what the `<book>` tag does.
+The `<book>` element is a root-level document type for longer works
+organized into chapters or parts. A book may also have
+[`<frontmatter>`](./frontmatter.mdx), [`<backmatter>`](./backmatter.mdx),
+and document-wide metadata in [`<docinfo>`](./docinfo.mdx).
 
 ## Syntax
 
@@ -16,4 +19,18 @@ Short description of what the `<book>` tag does.
 
 ## Examples
 
-    
+```ptx
+<book>
+    <title>Discrete Mathematics</title>
+    <frontmatter>
+        <titlepage><titlepage-items /></titlepage>
+    </frontmatter>
+    <chapter>
+        <title>Counting</title>
+        <p>We begin with basic counting techniques.</p>
+    </chapter>
+    <backmatter>
+        <references><title>References</title></references>
+    </backmatter>
+</book>
+```

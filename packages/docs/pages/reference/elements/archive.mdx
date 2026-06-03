@@ -8,7 +8,12 @@ import {
 
 # `<archive>`
 
-Short description of what the `<archive>` tag does.
+The `<archive>` element declares which archival or source-file links
+should be offered for generated graphics. Place it in the
+[`<images>`](./images.mdx) configuration inside [`<docinfo>`](./docinfo.mdx).
+
+Use the `from` attribute to target a particular subtree or image when you
+do not want the same archive formats everywhere.
 
 ## Syntax
 
@@ -16,4 +21,11 @@ Short description of what the `<archive>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book docinfo">
+    <images>
+        <archive>svg pdf</archive>
+        <archive from="graphics">tex</archive>
+    </images>
+</FRAGMENT>
+```

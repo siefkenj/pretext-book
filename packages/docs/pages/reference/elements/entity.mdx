@@ -8,7 +8,12 @@ import {
 
 # `<entity>`
 
-Short description of what the `<entity>` tag does.
+The `<entity>` tag names an organization or other non-person entity in a
+[`<credit>`](./credit.mdx) entry. Use it when the credited party is not an
+individual named with [`<personname>`](./personname.mdx).
+
+This metadata is usually authored in [`<bibinfo>`](./bibinfo.mdx) and may be
+displayed on a [`<titlepage>`](./titlepage.mdx) or [`<colophon>`](./colophon.mdx).
 
 ## Syntax
 
@@ -16,4 +21,20 @@ Short description of what the `<entity>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <credit>
+        <role>Cover design</role>
+        <entity>Acme Design Studio</entity>
+    </credit>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter bibinfo">
+    <credit>
+        <role>Production editor</role>
+        <entity>North Shore Publishing</entity>
+    </credit>
+</FRAGMENT>
+```

@@ -8,7 +8,9 @@ import {
 
 # `<biblio>`
 
-Short description of what the `<biblio>` tag does.
+The `<biblio>` element is a single bibliography entry inside
+[`<references>`](./references.mdx). A `<biblio>` can be written as raw text
+with embedded citation tags, or as a more structured entry.
 
 ## Syntax
 
@@ -16,4 +18,23 @@ Short description of what the `<biblio>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio type="raw">
+        Alan Turing,
+        <articletitle>On Computable Numbers</articletitle>,
+        <journal>Proceedings of the London Mathematical Society</journal>
+        <year>1937</year>.
+    </biblio>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter references">
+    <biblio>
+        <author><personname>Euclid</personname></author>
+        <title>Elements</title>
+        <year>300 BCE</year>
+    </biblio>
+</FRAGMENT>
+```

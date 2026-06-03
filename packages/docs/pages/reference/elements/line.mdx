@@ -8,7 +8,9 @@ import {
 
 # `<line>`
 
-Short description of what the `<line>` tag does.
+The `<line>` tag represents one explicit line of text. It is commonly
+used in poetry, lined titles, addresses, and other places where the line
+break is part of the content rather than ordinary paragraph wrapping.
 
 ## Syntax
 
@@ -16,4 +18,18 @@ Short description of what the `<line>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="chapter">
+    <title>
+        <line>The Integer</line>
+        <line>and Its Parts</line>
+    </title>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="poem section subsection stanza">
+    <line>Whose woods these are I think I know.</line>
+    <line>His house is in the village though.</line>
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<list>`
 
-Short description of what the `<list>` tag does.
+The `<list>` tag is a titled, numbered container for a single
+[`<ol>`](./ol.mdx) or [`<ul>`](./ul.mdx). Use it when the whole list
+needs a caption, number, or `xml:id`, much like
+[`<figure>`](./figure.mdx) wraps an [`<image>`](./image.mdx).
+
+A `<list>` may also include an [`<introduction>`](./introduction.mdx)
+or [`<conclusion>`](./conclusion.mdx) around the actual list.
 
 ## Syntax
 
@@ -16,4 +22,31 @@ Short description of what the `<list>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <list xml:id="favorite-primes">
+        <title>Favorite Prime Numbers</title>
+        <ol>
+            <li><p>2</p></li>
+            <li><p>3</p></li>
+            <li><p>5</p></li>
+        </ol>
+    </list>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <list>
+        <title>What to Bring</title>
+        <introduction>
+            <p>Pack the following items for the field trip.</p>
+        </introduction>
+        <ul>
+            <li><p>Notebook</p></li>
+            <li><p>Pencil</p></li>
+            <li><p>Water bottle</p></li>
+        </ul>
+    </list>
+</FRAGMENT>
+```

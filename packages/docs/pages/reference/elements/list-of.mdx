@@ -8,7 +8,14 @@ import {
 
 # `<list-of>`
 
-Short description of what the `<list-of>` tag does.
+The empty `<list-of>` tag asks PreTeXt to generate a list of selected
+elements, such as figures, tables, or theorems. Place it where the list
+should appear, often in back matter, and use the <attr>elements</attr>
+attribute to name what should be included.
+
+A generated list can also be grouped by divisions with
+<attr>divisions</attr> or forced to appear even when empty with
+<attr>empty</attr>. See also [`<index-list>`](./index-list.mdx).
 
 ## Syntax
 
@@ -16,4 +23,14 @@ Short description of what the `<list-of>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book backmatter appendix">
+    <list-of elements="figure table" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="book backmatter appendix">
+    <list-of elements="theorem lemma" divisions="chapter" empty="yes" />
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<preamble>`
 
-Short description of what the `preamble` element does.
+In a [`<program>`](./program.mdx), the `<preamble>` tag holds text that comes
+before the main [`<code>`](./code.mdx) block. It is useful for imports,
+helper definitions, or setup code that belongs with the listing.
+
+A `<program>` may use [`<preamble>`](./preamble.mdx),
+[`<code>`](./code.mdx), and [`<postamble>`](./postamble.mdx) together to show
+distinct parts of a program.
 
 ## Syntax
 
@@ -16,4 +22,29 @@ Short description of what the `preamble` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="python">
+        <preamble visible="yes">import math</preamble>
+        <code><![CDATA[
+print(math.sqrt(49))
+        ]]></code>
+    </program>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <program language="java">
+        <preamble visible="yes">import java.util.Scanner;</preamble>
+        <code><![CDATA[
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Ready");
+    }
+}
+        ]]></code>
+        <postamble visible="no">// hidden support code</postamble>
+    </program>
+</FRAGMENT>
+```

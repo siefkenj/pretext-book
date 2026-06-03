@@ -8,7 +8,7 @@ import {
 
 # `<assemblage>`
 
-Short description of what the `<assemblage>` tag does.
+The `<assemblage>` element is used as a summary or callout box, as you might see in a "blue box" in a textbook. Useful if the content doesn't nicely fit as a definition or theorem.
 
 ## Syntax
 
@@ -16,4 +16,16 @@ Short description of what the `<assemblage>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section">
+    <assemblage>
+        <title>Important formulas</title>
+        <p>The three most important formulas in calculus are:</p>
+        <ul>
+            <li><m>f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}</m></li>
+            <li><m>\int_a^b f(x)\, dx = \lim_{n \to \infty} \sum_{i=0}^{n-1}f(x_i)\Delta x</m></li>
+            <li><m>\int_a^b f(x)\, dx = F(b) - F(a)</m></li>
+        </ul>
+    </assemblage>
+</FRAGMENT>
+```

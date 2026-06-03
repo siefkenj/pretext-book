@@ -8,7 +8,9 @@ import {
 
 # `<scaledeg>`
 
-Short description of what the `<scaledeg>` tag does.
+The `<scaledeg>` tag is an inline music-notation element for scale degree
+numbers. It places a circumflex over the enclosed numeral and is most often
+used for single-digit degrees in music theory discussions.
 
 ## Syntax
 
@@ -16,4 +18,16 @@ Short description of what the `<scaledeg>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    In movable-do notation, the melody begins on <scaledeg>1</scaledeg> and
+    rises to <scaledeg>5</scaledeg>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The cadence emphasizes <scaledeg>7</scaledeg> resolving to
+    <scaledeg>1</scaledeg>.
+</FRAGMENT>
+```

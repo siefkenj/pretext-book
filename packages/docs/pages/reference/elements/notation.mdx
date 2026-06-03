@@ -8,7 +8,14 @@ import {
 
 # `<notation>`
 
-Short description of what the `<notation>` tag does.
+The `<notation>` tag defines one entry for a generated
+[`<notation-list>`](./notation-list.mdx). It contains a sample
+[`<usage>`](./usage.mdx) in mathematics and a short
+[`<description>`](./description.mdx) explaining what the notation means.
+
+A `<notation>` entry does not display where it is written. Place it near
+the introduction of the notation, often in a paragraph or near a
+[`<definition>`](./definition.mdx).
 
 ## Syntax
 
@@ -16,4 +23,27 @@ Short description of what the `<notation>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The set of integers modulo <m>n</m> is written <m>\mathbb{Z}_n</m>.
+    <notation>
+        <usage><m>\mathbb{Z}_n</m></usage>
+        <description>the integers modulo <m>n</m></description>
+    </notation>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <definition>
+        <title>Power Set</title>
+        <notation>
+            <usage><m>\mathcal{P}(X)</m></usage>
+            <description>the power set of <m>X</m></description>
+        </notation>
+        <statement>
+            <p>The power set of <m>X</m> is the set of all subsets of <m>X</m>.</p>
+        </statement>
+    </definition>
+</FRAGMENT>
+```

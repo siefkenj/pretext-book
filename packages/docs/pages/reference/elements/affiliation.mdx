@@ -8,7 +8,13 @@ import {
 
 # `<affiliation>`
 
-Short description of what the `affiliation` element does.
+The `<affiliation>` element groups the institutional details for an
+[`<author>`](./author.mdx) or [`<editor>`](./editor.mdx). It is especially
+useful when a person has more than one affiliation.
+
+An `<affiliation>` can bundle an [`<institution>`](./institution.mdx),
+[`<department>`](./department.mdx), and [`<location>`](./location.mdx)
+into a single unit.
 
 ## Syntax
 
@@ -16,4 +22,18 @@ Short description of what the `affiliation` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <bibinfo>
+        <author>
+            <personname>A. Second Author</personname>
+            <affiliation>
+                <department>Department of Mathematics</department>
+                <institution>University of Somewhere</institution>
+                <location>Anytown, USA</location>
+            </affiliation>
+        </author>
+    </bibinfo>
+    <titlepage><titlepage-items /></titlepage>
+</FRAGMENT>
+```

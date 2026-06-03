@@ -8,7 +8,12 @@ import {
 
 # `<video>`
 
-Short description of what the `<video>` tag does.
+The `<video>` element embeds video media in a PreTeXt document. It can
+reference hosted services such as YouTube or Vimeo, or a local/network
+video file.
+
+A `<video>` often appears inside a [`<figure>`](./figure.mdx), but it
+can also be used wherever video content belongs in the document.
 
 ## Syntax
 
@@ -16,4 +21,18 @@ Short description of what the `<video>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection figure">
+    <video youtube="X1-UNHUajfk" width="60%" preview="list-vars.png" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection figure">
+    <video
+        source="video/derivative-intuition"
+        width="70%"
+        preview="preview/derivative-intuition.jpg"
+    />
+</FRAGMENT>
+```

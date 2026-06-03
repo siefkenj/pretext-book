@@ -8,7 +8,9 @@ import {
 
 # `<case>`
 
-Short description of what the `<case>` tag does.
+The `<case>` element separates a [`<proof>`](./proof.mdx) into named
+cases. Use several `<case>` children when an argument branches into
+alternatives, each with its own paragraphs or supporting steps.
 
 ## Syntax
 
@@ -16,4 +18,26 @@ Short description of what the `<case>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <theorem>
+        <title>Parity of Squares</title>
+        <statement>
+            <p>If <m>n^2</m> is even, then <m>n</m> is even.</p>
+        </statement>
+        <proof>
+            <case>
+                <title><m>n</m> is even</title>
+                <p>Then <m>n = 2k</m>, so <m>n^2 = 4k^2</m> is even.</p>
+            </case>
+            <case>
+                <title><m>n</m> is odd</title>
+                <p>
+                    Then <m>n = 2k+1</m>, so <m>n^2 = 4k^2 + 4k + 1</m> is
+                    odd.
+                </p>
+            </case>
+        </proof>
+    </theorem>
+</FRAGMENT>
+```

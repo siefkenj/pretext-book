@@ -8,7 +8,12 @@ import {
 
 # `<headnote>`
 
-Short description of what the `<headnote>` tag does.
+The `<headnote>` tag provides introductory text at the start of a
+[`<glossary>`](./glossary.mdx), before the list of glossary items. It is a
+good place for instructions, scope notes, or brief explanation.
+
+Use `<headnote>` when the glossary needs a short preface before its
+[`<gi>`](./gi.mdx) entries begin.
 
 ## Syntax
 
@@ -16,4 +21,21 @@ Short description of what the `<headnote>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section glossary">
+    <headnote>
+        <p>
+            Terms in this glossary are listed in the order they appear in the
+            chapter.
+        </p>
+    </headnote>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="backmatter glossary">
+    <headnote>
+        <p>Greek letters are alphabetized by their English names.</p>
+    </headnote>
+</FRAGMENT>
+```

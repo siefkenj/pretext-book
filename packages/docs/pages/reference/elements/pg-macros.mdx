@@ -8,7 +8,13 @@ import {
 
 # `<pg-macros>`
 
-Short description of what the `<pg-macros>` tag does.
+The `<pg-macros>` tag lists the WeBWorK macro libraries a
+[`<webwork>`](./webwork.mdx) problem should load before running its
+[`<pg-code>`](./pg-code.mdx). It usually contains one or more
+[`<macro-file>`](./macro-file.mdx) entries.
+
+Use `<pg-macros>` to share standard PG support code across problems
+instead of repeating those library names inside the PG program text.
 
 ## Syntax
 
@@ -16,4 +22,15 @@ Short description of what the `<pg-macros>` tag does.
 
 ## Examples
 
-    
+```ptx
+<exercise>
+    <webwork>
+        <pg-macros>
+            <macro-file>PGstandard.pl</macro-file>
+        </pg-macros>
+        <statement>
+            <p>Evaluate <m>5-2</m>.</p>
+        </statement>
+    </webwork>
+</exercise>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<math-package>`
 
-Short description of what the `math-package` element does.
+The `<math-package>` tag goes in [`<docinfo>`](./docinfo.mdx) to load
+an additional LaTeX math package for the document. It also records the
+corresponding MathJax extension so the same macros can work in web
+output.
+
+Use one `<math-package>` per package, supplying both the LaTeX package
+name and the MathJax extension name, even if one of them is empty.
 
 ## Syntax
 
@@ -16,4 +22,18 @@ Short description of what the `math-package` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <math-package latex-name="cancel" mathjax-name="cancel" />
+    </docinfo>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <math-package latex-name="xfrac" mathjax-name="" />
+    </docinfo>
+</FRAGMENT>
+```

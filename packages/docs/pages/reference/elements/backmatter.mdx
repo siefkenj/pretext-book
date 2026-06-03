@@ -8,7 +8,10 @@ import {
 
 # `<backmatter>`
 
-Short description of what the `<backmatter>` tag does.
+The `<backmatter>` element wraps the material that comes after the main
+text of a [`<book>`](./book.mdx) or [`<article>`](./article.mdx). Typical
+children include [`<appendix>`](./appendix.mdx),
+[`<references>`](./references.mdx), and an index.
 
 ## Syntax
 
@@ -16,4 +19,15 @@ Short description of what the `<backmatter>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<backmatter>
+    <appendix>
+        <title>Background Results</title>
+        <p>This appendix records supporting lemmas.</p>
+    </appendix>
+    <references>
+        <title>References</title>
+        <biblio type="raw">...</biblio>
+    </references>
+</backmatter>
+```

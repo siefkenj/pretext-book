@@ -8,7 +8,10 @@ import {
 
 # `<biography>`
 
-Short description of what the `<biography>` tag does.
+The `<biography>` element holds a longer author biography in the
+[`<frontmatter>`](./frontmatter.mdx) of a [`<book>`](./book.mdx). These
+entries work together with [`<author-biographies>`](./author-biographies.mdx)
+in [`<docinfo>`](./docinfo.mdx), which controls how they are displayed.
 
 ## Syntax
 
@@ -16,4 +19,14 @@ Short description of what the `<biography>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="book frontmatter">
+    <biography>
+        <title>Ada Lovelace</title>
+        <p>
+            Ada Lovelace wrote one of the earliest published descriptions of
+            a general-purpose computing machine.
+        </p>
+    </biography>
+</FRAGMENT>
+```

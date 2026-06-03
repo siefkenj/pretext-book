@@ -8,7 +8,12 @@ import {
 
 # `<programs>`
 
-Short description of what the `programs` element does.
+The `<programs>` tag is a document-level configuration element inside
+[`<docinfo>`](./docinfo.mdx). It sets default options for
+[`<program>`](./program.mdx) listings, such as the default language or whether
+download links are shown.
+
+Individual `<program>` elements can still override these defaults when needed.
 
 ## Syntax
 
@@ -16,4 +21,19 @@ Short description of what the `programs` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <programs language="python" download="yes" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <programs
+        language="cpp"
+        compiler-args="-O2"
+        linenumbers="yes"
+        timeout="5"
+    />
+</FRAGMENT>
+```

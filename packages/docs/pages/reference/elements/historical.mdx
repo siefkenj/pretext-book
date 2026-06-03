@@ -8,7 +8,12 @@ import {
 
 # `<historical>`
 
-Short description of what the `<historical>` tag does.
+The `<historical>` tag is a remark-like block for historical context,
+background, or anecdotes. It is useful when you want to separate historical
+material from the main exposition.
+
+Like [`<aside>`](./aside.mdx) or [`<biographical>`](./biographical.mdx), a
+`<historical>` block can contain a title and one or more paragraphs.
 
 ## Syntax
 
@@ -16,4 +21,25 @@ Short description of what the `<historical>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <historical>
+        <title>Origins of the notation</title>
+        <p>
+            The symbol <m>\pi</m> was popularized in the eighteenth century,
+            though earlier authors used other notations.
+        </p>
+    </historical>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <historical>
+        <p>
+            Early tables of logarithms were computed by hand and circulated
+            widely before mechanical calculators became common.
+        </p>
+    </historical>
+</FRAGMENT>
+```

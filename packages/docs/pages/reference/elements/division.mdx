@@ -8,7 +8,13 @@ import {
 
 # `<division>`
 
-Short description of what the `<division>` tag does.
+The `<division>` tag is a configuration element used inside
+[`<numbering>`](./numbering.mdx) within [`<docinfo>`](./docinfo.mdx). It
+controls whether division numbers use their structural form or their
+decorative form.
+
+This is not a content division like [`<chapter>`](./chapter.mdx) or
+[`<section>`](./section.mdx); it only affects numbering configuration.
 
 ## Syntax
 
@@ -16,4 +22,14 @@ Short description of what the `<division>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext docinfo numbering">
+    <division part="structural" />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext docinfo numbering">
+    <division part="decorative" />
+</FRAGMENT>
+```

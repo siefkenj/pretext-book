@@ -8,7 +8,12 @@ import {
 
 # `<alteration>`
 
-Short description of what the `<alteration>` tag does.
+The `<alteration>` element adds an alteration to a
+[`<chord>`](./chord.mdx), such as <c>add 9</c>, <c>omit 5</c>, or a
+sharpened or flattened scale degree.
+
+Use one or more `<alteration>` children when the basic
+[`<chord>`](./chord.mdx) attributes are not enough to describe the harmony.
 
 ## Syntax
 
@@ -16,4 +21,22 @@ Short description of what the `<alteration>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    Write the sonority as
+    <chord root="A natural">
+        <alteration>add 9</alteration>
+        <alteration>omit 3</alteration>
+    </chord>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    A more altered dominant is
+    <chord root="B natural" bps="7">
+        <alteration><sharp/>11</alteration>
+        <alteration><flat/>9</alteration>
+    </chord>.
+</FRAGMENT>
+```

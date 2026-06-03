@@ -8,10 +8,26 @@ import {
 
 # `<init>`
 
-Short description of what the `<init>` tag does.
+The `<init>` tag marks an inline initialism, an abbreviation read one
+letter at a time, such as "HTML" or "NSA". Use it instead of
+[`<abbr>`](./abbr.mdx) or [`<acro>`](./acro.mdx) when the letters are
+spoken individually.
 
 ## Syntax
 
 <SyntaxDisplay name="init" />
 
 ## Examples
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The web version is written in <init>HTML</init>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The <init>NSA</init> is an initialism, while <acro>SCUBA</acro> is an
+    acronym.
+</FRAGMENT>
+```

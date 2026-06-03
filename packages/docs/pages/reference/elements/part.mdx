@@ -8,7 +8,13 @@ import {
 
 # `<part>`
 
-Short description of what the `<part>` tag does.
+The `<part>` tag is a major division of a [`<book>`](./book.mdx). A part
+groups multiple [`<chapter>`](./chapter.mdx) elements under a shared
+title, often to organize a long work into larger thematic units.
+
+Parts can also affect numbering. With structural parts, chapter
+numbering restarts within each part; with decorative parts, the part is
+presentational only.
 
 ## Syntax
 
@@ -16,4 +22,36 @@ Short description of what the `<part>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <book>
+        <title>Discrete Mathematics</title>
+        <part>
+            <title>Counting</title>
+            <chapter>
+                <title>Basic Principles</title>
+                <p>This chapter introduces counting techniques.</p>
+            </chapter>
+        </part>
+    </book>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext">
+    <book>
+        <title>Discrete Mathematics</title>
+        <part>
+            <title>Graphs</title>
+            <chapter>
+                <title>Paths and Cycles</title>
+                <p>This chapter studies connected graphs.</p>
+            </chapter>
+            <chapter>
+                <title>Trees</title>
+                <p>This chapter studies acyclic graphs.</p>
+            </chapter>
+        </part>
+    </book>
+</FRAGMENT>
+```

@@ -8,7 +8,10 @@ import {
 
 # `<latex-image-preamble>`
 
-Short description of what the `<latex-image-preamble>` tag does.
+The `<latex-image-preamble>` tag goes in [`<docinfo>`](./docinfo.mdx)
+and provides LaTeX packages or macro definitions used by
+[`<latex-image>`](./latex-image.mdx) graphics. Put shared TikZ libraries
+or custom commands here instead of repeating them in every image.
 
 ## Syntax
 
@@ -16,4 +19,19 @@ Short description of what the `<latex-image-preamble>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <latex-image-preamble>
+        <preamble>\usepackage{pgfplots}</preamble>
+        <preamble>\usetikzlibrary{arrows.meta}</preamble>
+    </latex-image-preamble>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <latex-image-preamble>
+        <preamble>\newcommand{\vect}[1]{\mathbf{#1}}</preamble>
+    </latex-image-preamble>
+</FRAGMENT>
+```

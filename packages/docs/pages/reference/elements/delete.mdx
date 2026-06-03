@@ -8,7 +8,13 @@ import {
 
 # `<delete>`
 
-Short description of what the `<delete>` tag does.
+The `<delete>` tag marks text that has been removed as part of an
+edit or revision. It is typically used alongside
+[`<insert>`](./insert.mdx) and [`<stale>`](./stale.mdx) when you want to
+show changes explicitly in running text.
+
+In output, deleted text is usually styled so readers can distinguish it
+from the current wording.
 
 ## Syntax
 
@@ -16,4 +22,16 @@ Short description of what the `<delete>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    The earlier claim <delete>every prime is odd</delete> needs a
+    correction.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    Replace <delete>triangle</delete><insert>quadrilateral</insert> in
+    the statement above.
+</FRAGMENT>
+```

@@ -8,7 +8,14 @@ import {
 
 # `<cd>`
 
-Short description of what the `<cd>` tag does.
+The `<cd>` tag displays verbatim text as a block, preserving line
+breaks and spacing. It is the block counterpart of [`<c>`](./c.mdx),
+and is a good fit for short code snippets or literal XML that do not
+need the extra structure of [`<program>`](./program.mdx) or
+[`<console>`](./console.mdx).
+
+When you want explicit control over each displayed line, use
+[`<cline>`](./cline.mdx) children inside `<cd>`.
 
 ## Syntax
 
@@ -16,4 +23,17 @@ Short description of what the `<cd>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <cd>
+        <cline>let total = subtotal + tax;</cline>
+        <cline>console.log(total);</cline>
+    </cd>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <cd>&lt;section xml:id="intro"&gt;...&lt;/section&gt;</cd>
+</FRAGMENT>
+```

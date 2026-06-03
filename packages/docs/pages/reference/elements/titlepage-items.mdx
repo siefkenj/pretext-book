@@ -8,7 +8,13 @@ import {
 
 # `<titlepage-items>`
 
-Short description of what the `titlepage-items` element does.
+The `<titlepage-items>` element is an empty helper used inside
+[`<titlepage>`](./titlepage.mdx). It tells PreTeXt to assemble the
+standard title-page information automatically from
+[`<bibinfo>`](./bibinfo.mdx).
+
+Use `<titlepage-items />` instead of repeating title-page metadata by
+hand.
 
 ## Syntax
 
@@ -16,4 +22,16 @@ Short description of what the `titlepage-items` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter titlepage">
+    <titlepage-items />
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <titlepage>
+        <titlepage-items />
+    </titlepage>
+</FRAGMENT>
+```

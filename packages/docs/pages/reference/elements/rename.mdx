@@ -8,7 +8,12 @@ import {
 
 # `<rename>`
 
-Short description of what the `<rename>` tag does.
+The `<rename>` tag appears in [`<docinfo>`](./docinfo.mdx) and changes the
+printed name of a standard block type, such as a theorem-like or remark-like
+element. This is useful for localization or house-style customization.
+
+Use the `element` attribute to identify the tag being renamed, and optionally
+add `xml:lang` to restrict the change to one language.
 
 ## Syntax
 
@@ -16,4 +21,14 @@ Short description of what the `<rename>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <rename element="proposition">Conundrum</rename>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="docinfo">
+    <rename element="note" xml:lang="en-US">Best Practice</rename>
+</FRAGMENT>
+```

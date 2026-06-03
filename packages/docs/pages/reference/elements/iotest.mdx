@@ -8,7 +8,10 @@ import {
 
 # `<iotest>`
 
-Short description of what the `iotest` element does.
+The `<iotest>` tag records one input/output test case inside
+[`<tests>`](./tests.mdx) for a [`<program>`](./program.mdx) or similar
+coding example. Each case contains one [`<input>`](./input.mdx) and the
+expected [`<output>`](./output.mdx).
 
 ## Syntax
 
@@ -16,4 +19,24 @@ Short description of what the `iotest` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="program section subsection tests">
+    <iotest>
+        <input>1</input>
+        <output>*</output>
+    </iotest>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="program section subsection tests">
+    <iotest>
+        <input>3</input>
+        <output>
+            ***
+            ***
+            ***
+        </output>
+    </iotest>
+</FRAGMENT>
+```

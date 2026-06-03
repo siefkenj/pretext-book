@@ -8,7 +8,9 @@ import {
 
 # `<latex>`
 
-Short description of what the `<latex>` tag does.
+The empty `<latex>` tag produces the LaTeX logo inline. It is handy
+when you want the properly typeset logo rather than plain text, much
+like [`<tex>`](./tex.mdx) for the TeX logo.
 
 ## Syntax
 
@@ -16,4 +18,14 @@ Short description of what the `<latex>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    This project is written in <latex /> and distributed as a PDF.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    We compare output from <tex />, <latex />, and <xetex />.
+</FRAGMENT>
+```

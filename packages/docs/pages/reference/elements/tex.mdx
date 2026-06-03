@@ -8,7 +8,11 @@ import {
 
 # `<tex>`
 
-Short description of what the `<tex>` tag does.
+The `<tex>` element inserts the stylized TeX logo in running text. It
+is an inline convenience element, similar to [`<latex>`](./latex.mdx)
+for the LaTeX logo.
+
+Use `<tex/>` when referring to the TeX typesetting system by name.
 
 ## Syntax
 
@@ -16,4 +20,14 @@ Short description of what the `<tex>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p">
+    This book was typeset with <tex/>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p">
+    Many mathematical publishing tools build on ideas from <tex/>.
+</FRAGMENT>
+```

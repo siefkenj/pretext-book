@@ -8,7 +8,12 @@ import {
 
 # `<docinfo>`
 
-Short description of what the `<docinfo>` tag does.
+The `<docinfo>` tag is a child of [`<pretext>`](./pretext.mdx) that holds
+document-level metadata and configuration. It is where authors place items
+such as [`<macros>`](./macros.mdx), numbering settings, and image preambles.
+
+`<docinfo>` is not rendered directly. Instead, its contents affect how the
+rest of the document is processed and displayed.
 
 ## Syntax
 
@@ -16,4 +21,26 @@ Short description of what the `<docinfo>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <macros>
+        \newcommand{\R}{\mathbb{R}}
+        </macros>
+        <latex-image-preamble>
+        \usepackage{tikz}
+        </latex-image-preamble>
+    </docinfo>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext">
+    <docinfo>
+        <cross-references text="type-global" />
+        <numbering>
+            <division part="structural" />
+        </numbering>
+    </docinfo>
+</FRAGMENT>
+```

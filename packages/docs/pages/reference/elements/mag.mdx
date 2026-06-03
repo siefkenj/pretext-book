@@ -8,7 +8,14 @@ import {
 
 # `<mag>`
 
-Short description of what the `<mag>` tag does.
+The `<mag>` tag gives the magnitude of a
+[`<quantity>`](./quantity.mdx): the numeric or symbolic amount that
+comes before the units. Use it with [`<unit>`](./unit.mdx) and
+[`<per>`](./per.mdx) when a physical quantity has an explicit value.
+
+If a quantity names only a unit, you can omit `<mag>`. Otherwise, put
+just the value in `<mag>` so PreTeXt can format the whole quantity
+consistently.
 
 ## Syntax
 
@@ -16,4 +23,25 @@ Short description of what the `<mag>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    A runner moves at
+    <quantity>
+        <mag>9.8</mag>
+        <unit base="meter" />
+        <per><unit base="second" /></per>
+    </quantity>
+    during the sprint.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    One revolution measures
+    <quantity>
+        <mag>2\pi</mag>
+        <unit base="radian" />
+    </quantity>
+    .
+</FRAGMENT>
+```

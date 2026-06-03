@@ -8,7 +8,12 @@ import {
 
 # `<technology>`
 
-Short description of what the `<technology>` tag does.
+The `<technology>` element is a remark-like block for notes about tools,
+software, or platform-specific details. It can be used when readers need
+a side comment about technology without making it part of the main flow.
+
+Use `<technology>` for implementation or software advice that supports
+the text but is not the main mathematical or narrative point.
 
 ## Syntax
 
@@ -16,4 +21,25 @@ Short description of what the `<technology>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <technology>
+        <title>Graphing Calculator Note</title>
+        <p>
+            On some calculators, the trace feature rounds values to
+            three decimal places.
+        </p>
+    </technology>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <technology>
+        <p>
+            If you use a spreadsheet, enter the formula once and fill it
+            down the column.
+        </p>
+    </technology>
+</FRAGMENT>
+```

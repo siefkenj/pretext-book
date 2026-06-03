@@ -8,7 +8,10 @@ import {
 
 # `<commentary>`
 
-Short description of what the `<commentary>` tag does.
+The `<commentary>` tag used only for grouping material that can be included or excluded by using a `@component` attribute and adding its value to the `@version` element in the publication file.  Note that since `@component` can be added to just about any element, this might not be ncessasary; it is only offered as a convininece when multiple elements should be grouped together.
+
+Use it when you want material for instructors, editors, or specialized
+audiences kept distinct from the main exposition.
 
 ## Syntax
 
@@ -16,4 +19,19 @@ Short description of what the `<commentary>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <commentary component="instructor">
+        <title>Instructor note</title>
+        <p>Students often confuse the domain with the codomain here.</p>
+    </commentary>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <commentary component="notes">
+        <p>This paragraph can record background notes for a later revision.</p>
+    </commentary>
+</FRAGMENT>
+```

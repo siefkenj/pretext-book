@@ -8,7 +8,12 @@ import {
 
 # `<stdin>`
 
-Short description of what the `stdin` element does.
+The `<stdin>` element supplies standard input for a
+[`<program>`](./program.mdx) example. It is useful when the program or
+interactive code expects the user to type data while it runs.
+
+Use `<stdin>` for the input stream itself; use [`<tests>`](./tests.mdx)
+for automated checking of program behavior.
 
 ## Syntax
 
@@ -16,4 +21,28 @@ Short description of what the `stdin` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing>
+        <program language="python">
+            <input>name = input()</input>
+            <input>print(f"Hello, {name}!")</input>
+            <stdin>Ada</stdin>
+        </program>
+    </listing>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing>
+        <program language="python">
+            <input>a = int(input())</input>
+            <input>b = int(input())</input>
+            <input>print(a + b)</input>
+            <stdin>2
+3</stdin>
+        </program>
+    </listing>
+</FRAGMENT>
+```

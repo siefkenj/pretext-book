@@ -8,7 +8,13 @@ import {
 
 # `<tests>`
 
-Short description of what the `tests` element does.
+The `<tests>` element holds automated checks for a
+[`<program>`](./program.mdx) or other interactive coding example. It can
+contain raw unit-test code or structured [`<iotest>`](./iotest.mdx)
+cases, depending on the kind of exercise.
+
+Use `<tests>` when readers should be able to run or inspect checks on
+their code.
 
 ## Syntax
 
@@ -16,4 +22,40 @@ Short description of what the `tests` element does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing>
+        <program interactive="activecode" language="python">
+            <code>
+                def square(n):
+                    return n*n
+            </code>
+            <tests>
+                from unittest.gui import TestCaseGui
+
+                class MyTests(TestCaseGui):
+                    def testSquare(self):
+                        self.assertEqual(square(4), 16)
+
+                MyTests().main()
+            </tests>
+        </program>
+    </listing>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <listing>
+        <program interactive="activecode" language="python">
+            <code>print(input()[::-1])</code>
+            <tests visible="yes">
+                <iotest>
+                    <input>stressed</input>
+                    <output>desserts</output>
+                </iotest>
+            </tests>
+        </program>
+    </listing>
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<creator>`
 
-Short description of what the `<creator>` tag does.
+The `<creator>` tag credits the person or people associated with a
+result, definition, or other statement. It is commonly used inside
+[`<theorem>`](./theorem.mdx)-like elements to name the originator of the
+result.
+
+Use `<creator>` for short attributions such as individual names or a
+small list of names.
 
 ## Syntax
 
@@ -16,4 +22,14 @@ Short description of what the `<creator>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection theorem">
+    <creator>Euclid</creator>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection theorem">
+    <creator>Newton and Leibniz</creator>
+</FRAGMENT>
+```

@@ -8,7 +8,13 @@ import {
 
 # `<quantity>`
 
-Short description of what the `<quantity>` tag does.
+The `<quantity>` tag marks up a physical quantity in prose. It usually
+contains a magnitude in [`<mag>`](./mag.mdx), followed by one or more
+[`<unit>`](./unit.mdx) elements, optionally divided by units in
+[`<per>`](./per.mdx).
+
+Use `<quantity>` instead of plain text when you want units formatted
+consistently and semantically.
 
 ## Syntax
 
@@ -16,11 +22,15 @@ Short description of what the `<quantity>` tag does.
 
 ## Examples
 
-```ptx-example {2}
-<FRAGMENT parents="p">
-    <quantity>
-        4
-        <unit base="hour"/>
-    </quantity>
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The car was traveling at
+    <quantity><mag>5</mag><unit>m</unit><per>s</per></quantity>.
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="p section subsection">
+    The board is <quantity><mag>2.4</mag><unit>m</unit></quantity> long.
 </FRAGMENT>
 ```

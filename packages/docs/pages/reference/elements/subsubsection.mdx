@@ -8,7 +8,12 @@ import {
 
 # `<subsubsection>`
 
-Short description of what the `<subsubsection>` tag does.
+The `<subsubsection>` element is a structural subdivision of a
+[`<subsection>`](./subsection.mdx). It is the smallest named structural
+division used for ordinary document organization.
+
+Use `<subsubsection>` when a subsection needs one more titled layer of
+organization before continuing with regular content.
 
 ## Syntax
 
@@ -16,4 +21,25 @@ Short description of what the `<subsubsection>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="chapter section subsection">
+    <subsubsection>
+        <title>Endpoints</title>
+        <p>
+            Endpoint behavior often determines whether an interval is
+            open or closed.
+        </p>
+    </subsubsection>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="chapter section subsection">
+    <subsubsection>
+        <title>Special Cases</title>
+        <p>
+            We now consider the exceptional cases separately.
+        </p>
+    </subsubsection>
+</FRAGMENT>
+```

@@ -8,7 +8,12 @@ import {
 
 # `<figure>`
 
-Short description of what the `<figure>` tag does.
+The `<figure>` tag creates a numbered figure with a caption and a primary
+visual object such as an [`<image>`](./image.mdx), [`<video>`](./video.mdx),
+or [`<sidebyside>`](./sidebyside.mdx).
+
+Use `<figure>` when the content should be numbered, titled, and available for
+cross-references.
 
 ## Syntax
 
@@ -16,4 +21,28 @@ Short description of what the `<figure>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <figure xml:id="fig-parabola">
+        <caption>A graph of a parabola.</caption>
+        <image source="images/parabola.png" width="60%">
+            <description>
+                <p>A parabola opening upward with vertex at the origin.</p>
+            </description>
+        </image>
+    </figure>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <figure>
+        <caption>Two views of the same region.</caption>
+        <sidebyside widths="45% 45%">
+            <image source="images/map.png" width="100%" decorative="yes" />
+            <image source="images/satellite.png" width="100%"
+                decorative="yes" />
+        </sidebyside>
+    </figure>
+</FRAGMENT>
+```

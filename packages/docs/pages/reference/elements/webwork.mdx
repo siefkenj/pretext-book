@@ -8,7 +8,14 @@ import {
 
 # `<webwork>`
 
-Short description of what the `<webwork>` tag does.
+The `<webwork>` element embeds an interactive WeBWorK exercise in a
+PreTeXt document. A problem may be authored directly with
+[`<pg-code>`](./pg-code.mdx), [`<statement>`](./statement.mdx), and
+related components, or it may reference an external problem with the
+`source` attribute.
+
+Use `<webwork>` when a problem should be rendered and evaluated by
+WeBWorK rather than as a static exercise.
 
 ## Syntax
 
@@ -16,4 +23,32 @@ Short description of what the `<webwork>` tag does.
 
 ## Examples
 
-    
+```ptx
+<exercise>
+    <webwork>
+        <pg-code>
+            $a = Compute(2);
+            $b = Compute(3);
+            $c = $a + $b;
+        </pg-code>
+        <statement>
+            <p>
+                Compute <m><var name="$a"/> + <var name="$b"/> =</m>
+                <var name="$c" width="5"/>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <m><var name="$a"/> + <var name="$b"/> =
+                <var name="$c"/></m>.
+            </p>
+        </solution>
+    </webwork>
+</exercise>
+```
+
+```ptx
+<exercise>
+    <webwork source="Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg" />
+</exercise>
+```

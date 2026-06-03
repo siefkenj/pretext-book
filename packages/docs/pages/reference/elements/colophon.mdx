@@ -8,7 +8,14 @@ import {
 
 # `<colophon>`
 
-Short description of what the `<colophon>` tag does.
+The `<colophon>` tag contains publication details that appear in
+front or back matter. In the front matter of a [`<book>`](./book.mdx),
+it usually contains the empty
+[`<colophon-items>`](./colophon-items.mdx) element so PreTeXt can
+generate a copyright page from [`<bibinfo>`](./bibinfo.mdx).
+
+A back-matter `<colophon>` can instead contain ordinary block content
+such as [`<p>`](./p.mdx) with production notes or edition history.
 
 ## Syntax
 
@@ -16,4 +23,18 @@ Short description of what the `<colophon>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="frontmatter">
+    <colophon>
+        <colophon-items />
+    </colophon>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="backmatter">
+    <colophon>
+        <p>This edition was typeset in PreTeXt and released in 2025.</p>
+    </colophon>
+</FRAGMENT>
+```

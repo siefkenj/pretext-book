@@ -8,7 +8,10 @@ import {
 
 # `<images>`
 
-Short description of what the `<images>` tag does.
+The `<images>` tag goes in [`<docinfo>`](./docinfo.mdx) and provides
+global archive settings for many [`<image>`](./image.mdx) elements at
+once. Each child [`<archive>`](./archive.mdx) can name alternate formats
+and optionally limit that setting to a particular subtree.
 
 ## Syntax
 
@@ -16,4 +19,19 @@ Short description of what the `<images>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <images>
+        <archive>pdf svg png</archive>
+    </images>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="pretext docinfo">
+    <images>
+        <archive from="graphics">pdf svg</archive>
+        <archive from="figure-special">png</archive>
+    </images>
+</FRAGMENT>
+```

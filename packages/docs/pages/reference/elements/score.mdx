@@ -8,7 +8,10 @@ import {
 
 # `<score>`
 
-Short description of what the `<score>` tag does.
+The `<score>` tag embeds an interactive musical score, typically from
+MuseScore, using identifying attributes such as `musescoreuser` and
+`musescore`. It is often placed inside a [`<figure>`](./figure.mdx) with a
+caption or surrounding discussion.
 
 ## Syntax
 
@@ -16,4 +19,20 @@ Short description of what the `<score>` tag does.
 
 ## Examples
 
-    
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <figure>
+        <caption>String Quartet 1</caption>
+        <score musescoreuser="141988" musescore="3113841" />
+    </figure>
+</FRAGMENT>
+```
+
+```ptx-example
+<FRAGMENT parents="section subsection">
+    <figure>
+        <caption>Sample piano étude</caption>
+        <score musescoreuser="141988" musescore="3113841" />
+    </figure>
+</FRAGMENT>
+```
