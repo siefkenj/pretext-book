@@ -52,12 +52,6 @@ export const jsonGrammar = {
             "type": "element",
             "name": "docinfo",
             "attributes": {
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -396,12 +390,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -496,12 +484,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -736,12 +718,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -8151,12 +8127,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -8554,12 +8524,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -10983,12 +10947,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -11718,12 +11676,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -11886,12 +11838,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -11945,12 +11891,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -12093,12 +12033,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -12160,12 +12094,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -12551,12 +12479,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -12618,12 +12540,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -12695,12 +12611,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -12752,12 +12662,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -14507,12 +14411,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -14683,12 +14581,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -14783,12 +14675,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -15174,12 +15060,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -15276,12 +15156,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -15373,12 +15247,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -15496,12 +15364,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -15625,12 +15487,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -15800,12 +15656,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -15970,12 +15820,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -16070,12 +15914,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -16181,12 +16019,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -16643,12 +16475,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -17172,12 +16998,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -17397,12 +17217,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -17521,12 +17335,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -18135,12 +17943,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -18181,12 +17983,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -18399,12 +18195,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -18496,12 +18286,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -18636,12 +18420,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -18742,12 +18520,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -18888,12 +18660,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -18985,12 +18751,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19101,12 +18861,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -19147,12 +18901,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19249,12 +18997,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19360,12 +19102,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19501,12 +19237,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19656,12 +19386,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -19779,12 +19503,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -19825,12 +19543,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -19927,12 +19639,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -20043,12 +19749,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -20145,12 +19845,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -20191,12 +19885,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -20293,12 +19981,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -20409,12 +20091,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -20460,12 +20136,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -20506,12 +20176,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -20721,12 +20385,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -20827,12 +20485,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -21155,12 +20807,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -21215,12 +20861,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -21270,12 +20910,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -21483,12 +21117,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -21994,12 +21622,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -22057,12 +21679,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -22323,12 +21939,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -22401,12 +22011,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -22667,12 +22271,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -22925,12 +22523,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -23169,12 +22761,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -24088,12 +23674,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -24143,12 +23723,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -24255,12 +23829,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -24342,12 +23910,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -24408,12 +23970,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -24466,12 +24022,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -24756,12 +24306,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -24835,12 +24379,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -24931,12 +24469,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -25814,12 +25346,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -26208,12 +25734,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -28544,12 +28064,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -28634,12 +28148,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -28692,12 +28200,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -28816,12 +28318,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -29084,12 +28580,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
@@ -29359,12 +28849,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -29470,12 +28954,6 @@ export const jsonGrammar = {
                         "string"
                     ]
                 },
-                "xml:base": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -29525,12 +29003,6 @@ export const jsonGrammar = {
                     ]
                 },
                 "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:base": {
                     "optional": true,
                     "type": [
                         "string"
