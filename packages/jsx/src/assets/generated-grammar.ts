@@ -10764,30 +10764,8 @@ export const jsonGrammar = {
                     ]
                 }
             },
-            "children": [
-                {
-                    "ref": "ElementAnyName"
-                }
-            ],
-            "textChildrenAllowed": true
-        },
-        "ElementAnyName": {
-            "type": "element",
-            "name": "*",
-            "attributes": {
-                "*": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAnyName"
-                }
-            ],
-            "textChildrenAllowed": true
+            "children": [],
+            "textChildrenAllowed": false
         },
         "ElementMermaid": {
             "type": "element",
