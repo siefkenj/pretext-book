@@ -10185,9 +10185,6 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementAudio"
-                },
-                {
                     "ref": "ElementConsole"
                 },
                 {
@@ -10237,9 +10234,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementUl"
-                },
-                {
-                    "ref": "ElementVideo"
                 }
             ],
             "textChildrenAllowed": false
@@ -10249,9 +10243,6 @@ export const jsonGrammar = {
             "name": "stack",
             "attributes": {},
             "children": [
-                {
-                    "ref": "ElementAudio"
-                },
                 {
                     "ref": "ElementConsole"
                 },
@@ -10281,9 +10272,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementUl"
-                },
-                {
-                    "ref": "ElementVideo"
                 }
             ],
             "textChildrenAllowed": false
@@ -21091,9 +21079,6 @@ export const jsonGrammar = {
             },
             "children": [
                 {
-                    "ref": "ElementAudio"
-                },
-                {
                     "ref": "ElementConsole"
                 },
                 {
@@ -21128,9 +21113,6 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementUl"
-                },
-                {
-                    "ref": "ElementVideo"
                 }
             ],
             "textChildrenAllowed": false
