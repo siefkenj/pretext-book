@@ -52,6 +52,12 @@ export const jsonGrammar = {
             "type": "element",
             "name": "docinfo",
             "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
                 "xml:lang": {
                     "optional": true,
                     "type": [
@@ -984,7 +990,14 @@ export const jsonGrammar = {
         "ElementTitle": {
             "type": "element",
             "name": "title",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -8624,7 +8637,14 @@ export const jsonGrammar = {
         "ElementShortTitle": {
             "type": "element",
             "name": "shorttitle",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -8902,7 +8922,14 @@ export const jsonGrammar = {
         "ElementPlainTitle": {
             "type": "element",
             "name": "plaintitle",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [],
             "textChildrenAllowed": true
         },
@@ -11037,7 +11064,14 @@ export const jsonGrammar = {
         "ElementAttribution": {
             "type": "element",
             "name": "attribution",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -12311,7 +12345,14 @@ export const jsonGrammar = {
         "ElementCaption": {
             "type": "element",
             "name": "caption",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -16916,7 +16957,14 @@ export const jsonGrammar = {
         "ElementCreator": {
             "type": "element",
             "name": "creator",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -22176,7 +22224,14 @@ export const jsonGrammar = {
         "ElementSubtitle": {
             "type": "element",
             "name": "subtitle",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
@@ -22520,7 +22575,14 @@ export const jsonGrammar = {
         "ElementLinedTitle": {
             "type": "element",
             "name": "title",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementLongLine"
@@ -26380,7 +26442,14 @@ export const jsonGrammar = {
         "ElementLinedSubtitle": {
             "type": "element",
             "name": "subtitle",
-            "attributes": {},
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementLongLine"
