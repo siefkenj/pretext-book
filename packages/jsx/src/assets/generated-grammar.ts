@@ -424,6 +424,9 @@ export const jsonGrammar = {
                     "ref": "ElementChapter"
                 },
                 {
+                    "ref": "ElementHandout"
+                },
+                {
                     "ref": "ElementIndex"
                 },
                 {
@@ -22702,6 +22705,9 @@ export const jsonGrammar = {
                     "ref": "ElementGlossary"
                 },
                 {
+                    "ref": "ElementHandout"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -23046,6 +23052,9 @@ export const jsonGrammar = {
                     "ref": "ElementGlossary"
                 },
                 {
+                    "ref": "ElementHandout"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -23313,6 +23322,9 @@ export const jsonGrammar = {
                     "ref": "ElementGlossary"
                 },
                 {
+                    "ref": "ElementHandout"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -23572,6 +23584,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementGlossary"
+                },
+                {
+                    "ref": "ElementHandout"
                 },
                 {
                     "ref": "ElementHeuristic"
@@ -25424,6 +25439,279 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementTitle"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementHandout": {
+            "type": "element",
+            "name": "handout",
+            "attributes": {
+                "margin": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "top": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "bottom": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "right": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "left": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementActivity"
+                },
+                {
+                    "ref": "ElementAlgorithm"
+                },
+                {
+                    "ref": "ElementAside"
+                },
+                {
+                    "ref": "ElementAssemblage"
+                },
+                {
+                    "ref": "ElementAssumption"
+                },
+                {
+                    "ref": "ElementAudio"
+                },
+                {
+                    "ref": "ElementAxiom"
+                },
+                {
+                    "ref": "ElementBiographical"
+                },
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementClaim"
+                },
+                {
+                    "ref": "ElementComputation"
+                },
+                {
+                    "ref": "ElementConclusionDivision"
+                },
+                {
+                    "ref": "ElementConjecture"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementConvention"
+                },
+                {
+                    "ref": "ElementCorollary"
+                },
+                {
+                    "ref": "ElementData"
+                },
+                {
+                    "ref": "ElementDefinition"
+                },
+                {
+                    "ref": "ElementExample"
+                },
+                {
+                    "ref": "ElementExercise"
+                },
+                {
+                    "ref": "ElementExploration"
+                },
+                {
+                    "ref": "ElementFact"
+                },
+                {
+                    "ref": "ElementFigure"
+                },
+                {
+                    "ref": "ElementFragment"
+                },
+                {
+                    "ref": "ElementHeuristic"
+                },
+                {
+                    "ref": "ElementHistorical"
+                },
+                {
+                    "ref": "ElementHypothesis"
+                },
+                {
+                    "ref": "ElementIdentity"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementInsight"
+                },
+                {
+                    "ref": "ElementIntroductionDivision"
+                },
+                {
+                    "ref": "ElementInvestigation"
+                },
+                {
+                    "ref": "ElementLemma"
+                },
+                {
+                    "ref": "ElementList"
+                },
+                {
+                    "ref": "ElementListGenerator"
+                },
+                {
+                    "ref": "ElementListing"
+                },
+                {
+                    "ref": "ElementNote"
+                },
+                {
+                    "ref": "ElementObjectives"
+                },
+                {
+                    "ref": "ElementObservation"
+                },
+                {
+                    "ref": "ElementOpenconjecture"
+                },
+                {
+                    "ref": "ElementOpenproblem"
+                },
+                {
+                    "ref": "ElementOpenquestion"
+                },
+                {
+                    "ref": "ElementOutcomes"
+                },
+                {
+                    "ref": "ElementPage"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementParagraphs"
+                },
+                {
+                    "ref": "ElementPlainTitle"
+                },
+                {
+                    "ref": "ElementPoem"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementPrinciple"
+                },
+                {
+                    "ref": "ElementProblem"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementProject"
+                },
+                {
+                    "ref": "ElementProof"
+                },
+                {
+                    "ref": "ElementProposition"
+                },
+                {
+                    "ref": "ElementQuestion"
+                },
+                {
+                    "ref": "ElementRemark"
+                },
+                {
+                    "ref": "ElementSage"
+                },
+                {
+                    "ref": "ElementShortTitle"
+                },
+                {
+                    "ref": "ElementSideBySide"
+                },
+                {
+                    "ref": "ElementSideBySideGroup"
+                },
+                {
+                    "ref": "ElementTable"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementTechnology"
+                },
+                {
+                    "ref": "ElementTheorem"
+                },
+                {
+                    "ref": "ElementTitle"
+                },
+                {
+                    "ref": "ElementVideo"
+                },
+                {
+                    "ref": "ElementWarning"
                 }
             ],
             "textChildrenAllowed": false
@@ -30594,6 +30882,9 @@ export const jsonGrammar = {
                     "ref": "ElementGlossary"
                 },
                 {
+                    "ref": "ElementHandout"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -30869,6 +31160,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementGlossary"
+                },
+                {
+                    "ref": "ElementHandout"
                 },
                 {
                     "ref": "ElementHeuristic"
@@ -31307,6 +31601,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementGlossary"
+                },
+                {
+                    "ref": "ElementHandout"
                 },
                 {
                     "ref": "ElementHeuristic"
