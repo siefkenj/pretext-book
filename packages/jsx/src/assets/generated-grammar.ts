@@ -73,16 +73,22 @@ export const jsonGrammar = {
                     "ref": "ElementAuthorBiographies"
                 },
                 {
-                    "ref": "ElementBrandlogo"
+                    "ref": "ElementBlurb"
                 },
                 {
                     "ref": "ElementCrossReferences"
                 },
                 {
-                    "ref": "ElementFeedback1"
+                    "ref": "ElementDefaults"
                 },
                 {
-                    "ref": "ElementImages"
+                    "ref": "ElementDirectories"
+                },
+                {
+                    "ref": "ElementDocumentId"
+                },
+                {
+                    "ref": "ElementDoenetml"
                 },
                 {
                     "ref": "ElementInitialism"
@@ -91,22 +97,16 @@ export const jsonGrammar = {
                     "ref": "ElementLatexImagePreamble"
                 },
                 {
+                    "ref": "ElementLogo"
+                },
+                {
                     "ref": "ElementMacros"
                 },
                 {
                     "ref": "ElementMathPackage"
                 },
                 {
-                    "ref": "ElementNumbering"
-                },
-                {
-                    "ref": "ElementParsons"
-                },
-                {
                     "ref": "ElementPfprefigurePreamble"
-                },
-                {
-                    "ref": "ElementPrograms"
                 },
                 {
                     "ref": "ElementRename"
@@ -133,6 +133,158 @@ export const jsonGrammar = {
             },
             "children": [],
             "textChildrenAllowed": true
+        },
+        "ElementPfprefigurePreamble": {
+            "type": "element",
+            "name": "pf:prefigure-preamble",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementMathPackage": {
+            "type": "element",
+            "name": "math-package",
+            "attributes": {
+                "latex-name": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "mathjax-name": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementMacros": {
+            "type": "element",
+            "name": "macros",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementLogo": {
+            "type": "element",
+            "name": "logo",
+            "attributes": {
+                "source": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "llx": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "lly": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "pages": {
+                    "optional": true,
+                    "type": [
+                        "\"first\"",
+                        "\"all\""
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementLatexImagePreamble": {
+            "type": "element",
+            "name": "latex-image-preamble",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementInitialism": {
+            "type": "element",
+            "name": "initialism",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementDoenetml": {
+            "type": "element",
+            "name": "doenetml",
+            "attributes": {
+                "version": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementDocumentId": {
+            "type": "element",
+            "name": "document-id",
+            "attributes": {
+                "edition": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementDirectories": {
+            "type": "element",
+            "name": "directories",
+            "attributes": {
+                "external": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "data": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementDefaults": {
+            "type": "element",
+            "name": "defaults",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementImages"
+                },
+                {
+                    "ref": "ElementParsons"
+                },
+                {
+                    "ref": "ElementPrograms"
+                }
+            ],
+            "textChildrenAllowed": false
         },
         "ElementPrograms": {
             "type": "element",
@@ -186,13 +338,6 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementPfprefigurePreamble": {
-            "type": "element",
-            "name": "pf:prefigure-preamble",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": false
-        },
         "ElementParsons": {
             "type": "element",
             "name": "parsons",
@@ -207,89 +352,17 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementNumbering": {
+        "ElementImages": {
             "type": "element",
-            "name": "numbering",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementDivision"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementDivision": {
-            "type": "element",
-            "name": "division",
+            "name": "images",
             "attributes": {
-                "part": {
-                    "optional": false,
-                    "type": [
-                        "\"decorative\"",
-                        "\"structural\""
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": false
-        },
-        "ElementMathPackage": {
-            "type": "element",
-            "name": "math-package",
-            "attributes": {
-                "latex-name": {
-                    "optional": false,
+                "width": {
+                    "optional": true,
                     "type": [
                         "string"
                     ]
                 },
-                "mathjax-name": {
-                    "optional": false,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": false
-        },
-        "ElementMacros": {
-            "type": "element",
-            "name": "macros",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementLatexImagePreamble": {
-            "type": "element",
-            "name": "latex-image-preamble",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementInitialism": {
-            "type": "element",
-            "name": "initialism",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementImages": {
-            "type": "element",
-            "name": "images",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementArchive"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementArchive": {
-            "type": "element",
-            "name": "archive",
-            "attributes": {
-                "from": {
+                "margins": {
                     "optional": true,
                     "type": [
                         "string"
@@ -297,25 +370,7 @@ export const jsonGrammar = {
                 }
             },
             "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementFeedback1": {
-            "type": "element",
-            "name": "feedback",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementFeedbackUrl"
-                }
-            ],
             "textChildrenAllowed": false
-        },
-        "ElementFeedbackUrl": {
-            "type": "element",
-            "name": "url",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
         },
         "ElementCrossReferences": {
             "type": "element",
@@ -342,25 +397,19 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementBrandlogo": {
+        "ElementBlurb": {
             "type": "element",
-            "name": "brandlogo",
+            "name": "blurb",
             "attributes": {
-                "url": {
+                "shelf": {
                     "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "source": {
-                    "optional": false,
                     "type": [
                         "string"
                     ]
                 }
             },
             "children": [],
-            "textChildrenAllowed": false
+            "textChildrenAllowed": true
         },
         "ElementAuthorBiographies": {
             "type": "element",
@@ -10364,8 +10413,14 @@ export const jsonGrammar = {
                 "codetailor": {
                     "optional": true,
                     "type": [
-                        "\"yes\"",
-                        "\"no\""
+                        "\"all\"",
+                        "\"incorrect\""
+                    ]
+                },
+                "codetailor-fallback": {
+                    "optional": true,
+                    "type": [
+                        "string"
                     ]
                 },
                 "starting-step": {
@@ -28298,6 +28353,9 @@ export const jsonGrammar = {
                     "ref": "ElementEditor"
                 },
                 {
+                    "ref": "ElementEvent"
+                },
+                {
                     "ref": "ElementKeywords"
                 },
                 {
@@ -28775,6 +28833,299 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementTrademark"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
+        "ElementEvent": {
+            "type": "element",
+            "name": "event",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementCustom"
+                },
+                {
+                    "ref": "ElementDataUrl"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPrefigure"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
                 }
             ],
             "textChildrenAllowed": true
