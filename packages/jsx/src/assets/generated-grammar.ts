@@ -76,9 +76,6 @@ export const jsonGrammar = {
                     "ref": "ElementBlurb"
                 },
                 {
-                    "ref": "ElementCrossReferences"
-                },
-                {
                     "ref": "ElementDefaults"
                 },
                 {
@@ -282,8 +279,36 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPrograms"
+                },
+                {
+                    "ref": "ElementXrefs"
                 }
             ],
+            "textChildrenAllowed": false
+        },
+        "ElementXrefs": {
+            "type": "element",
+            "name": "xrefs",
+            "attributes": {
+                "text": {
+                    "optional": false,
+                    "type": [
+                        "\"local\"",
+                        "\"global\"",
+                        "\"hybrid\"",
+                        "\"type-local\"",
+                        "\"type-global\"",
+                        "\"type-hybrid\"",
+                        "\"phrase-global\"",
+                        "\"phrase-hybrid\"",
+                        "\"type-local-title\"",
+                        "\"type-global-title\"",
+                        "\"title\"",
+                        "\"custom\""
+                    ]
+                }
+            },
+            "children": [],
             "textChildrenAllowed": false
         },
         "ElementPrograms": {
@@ -366,31 +391,6 @@ export const jsonGrammar = {
                     "optional": true,
                     "type": [
                         "string"
-                    ]
-                }
-            },
-            "children": [],
-            "textChildrenAllowed": false
-        },
-        "ElementCrossReferences": {
-            "type": "element",
-            "name": "cross-references",
-            "attributes": {
-                "text": {
-                    "optional": false,
-                    "type": [
-                        "\"local\"",
-                        "\"global\"",
-                        "\"hybrid\"",
-                        "\"type-local\"",
-                        "\"type-global\"",
-                        "\"type-hybrid\"",
-                        "\"phrase-global\"",
-                        "\"phrase-hybrid\"",
-                        "\"type-local-title\"",
-                        "\"type-global-title\"",
-                        "\"title\"",
-                        "\"custom\""
                     ]
                 }
             },
