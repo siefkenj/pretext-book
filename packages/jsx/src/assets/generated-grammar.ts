@@ -10823,6 +10823,18 @@ export const jsonGrammar = {
                     "type": [
                         "string"
                     ]
+                },
+                "pck": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "scene": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
                 }
             },
             "children": [
@@ -12657,6 +12669,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementMuseScore"
+                },
+                {
+                    "ref": "ElementParagraph"
                 },
                 {
                     "ref": "ElementSideBySide"
@@ -28135,9 +28150,122 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementLocation"
+                },
+                {
+                    "ref": "ElementPosition"
                 }
             ],
             "textChildrenAllowed": false
+        },
+        "ElementPosition": {
+            "type": "element",
+            "name": "position",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementShortLine"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
+            "textChildrenAllowed": true
         },
         "ElementDedication": {
             "type": "element",
@@ -29445,6 +29573,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPersonName"
+                },
+                {
+                    "ref": "ElementPosition"
                 }
             ],
             "textChildrenAllowed": false
@@ -29681,6 +29812,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementPersonName"
+                },
+                {
+                    "ref": "ElementPosition"
                 },
                 {
                     "ref": "ElementSupport"
