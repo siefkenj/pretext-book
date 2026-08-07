@@ -671,6 +671,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -851,6 +854,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -995,6 +1001,9 @@ export const jsonGrammar = {
                 }
             },
             "children": [
+                {
+                    "ref": "ElementTitle"
+                },
                 {
                     "ref": "ElementTrack"
                 }
@@ -2068,6 +2077,12 @@ export const jsonGrammar = {
                     "optional": true,
                     "type": [
                         "string"
+                    ]
+                },
+                "data": {
+                    "optional": true,
+                    "type": [
+                        "\"pgml\""
                     ]
                 },
                 "category": {
@@ -8679,6 +8694,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -10572,6 +10590,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -10623,6 +10644,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -10719,8 +10743,7 @@ export const jsonGrammar = {
                 "starting-step": {
                     "optional": true,
                     "type": [
-                        "\"yes\"",
-                        "\"no\""
+                        "string"
                     ]
                 },
                 "compiler-args": {
@@ -10736,6 +10759,12 @@ export const jsonGrammar = {
                     ]
                 },
                 "database": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "datafile": {
                     "optional": true,
                     "type": [
                         "string"
@@ -10989,37 +11018,585 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [
                 {
-                    "ref": "ElementAudio"
+                    "ref": "ElementAbbr"
                 },
                 {
-                    "ref": "ElementBlockQuote"
+                    "ref": "ElementAcro"
                 },
                 {
-                    "ref": "ElementConsole"
+                    "ref": "ElementAd"
                 },
                 {
-                    "ref": "ElementImageCode"
+                    "ref": "ElementAlert"
                 },
                 {
-                    "ref": "ElementImageRaster"
+                    "ref": "ElementAm"
                 },
                 {
-                    "ref": "ElementParagraph"
+                    "ref": "ElementAngles"
                 },
                 {
-                    "ref": "ElementPreformatted"
+                    "ref": "ElementArticletitle"
                 },
                 {
-                    "ref": "ElementProgram"
+                    "ref": "ElementAttr"
                 },
                 {
-                    "ref": "ElementTabular"
+                    "ref": "ElementBc"
                 },
                 {
-                    "ref": "ElementVideo"
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementCustom"
+                },
+                {
+                    "ref": "ElementDataUrl"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPrefigure"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
                 }
             ],
-            "textChildrenAllowed": false
+            "textChildrenAllowed": true
+        },
+        "ElementFeedback": {
+            "type": "element",
+            "name": "feedback",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAbbr"
+                },
+                {
+                    "ref": "ElementAcro"
+                },
+                {
+                    "ref": "ElementAd"
+                },
+                {
+                    "ref": "ElementAlert"
+                },
+                {
+                    "ref": "ElementAm"
+                },
+                {
+                    "ref": "ElementAngles"
+                },
+                {
+                    "ref": "ElementArticletitle"
+                },
+                {
+                    "ref": "ElementAttr"
+                },
+                {
+                    "ref": "ElementBc"
+                },
+                {
+                    "ref": "ElementC"
+                },
+                {
+                    "ref": "ElementCa"
+                },
+                {
+                    "ref": "ElementChord"
+                },
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementCustom"
+                },
+                {
+                    "ref": "ElementDataUrl"
+                },
+                {
+                    "ref": "ElementDblbrackets"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementDelete"
+                },
+                {
+                    "ref": "ElementDoubleflat"
+                },
+                {
+                    "ref": "ElementDoublesharp"
+                },
+                {
+                    "ref": "ElementEg"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementEm"
+                },
+                {
+                    "ref": "ElementEmail"
+                },
+                {
+                    "ref": "ElementEtal"
+                },
+                {
+                    "ref": "ElementEtc"
+                },
+                {
+                    "ref": "ElementFillInText"
+                },
+                {
+                    "ref": "ElementForeign"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementIe"
+                },
+                {
+                    "ref": "ElementInit"
+                },
+                {
+                    "ref": "ElementInsert"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLatex"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementMusicFlat"
+                },
+                {
+                    "ref": "ElementMusicSharp"
+                },
+                {
+                    "ref": "ElementN"
+                },
+                {
+                    "ref": "ElementNatural"
+                },
+                {
+                    "ref": "ElementNb"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPf"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPm"
+                },
+                {
+                    "ref": "ElementPrefigure"
+                },
+                {
+                    "ref": "ElementPretext"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementPs"
+                },
+                {
+                    "ref": "ElementPubtitle"
+                },
+                {
+                    "ref": "ElementQ"
+                },
+                {
+                    "ref": "ElementQuantity"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementScaledeg"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSq"
+                },
+                {
+                    "ref": "ElementStale"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTag"
+                },
+                {
+                    "ref": "ElementTage"
+                },
+                {
+                    "ref": "ElementTaxon"
+                },
+                {
+                    "ref": "ElementTerm"
+                },
+                {
+                    "ref": "ElementTex"
+                },
+                {
+                    "ref": "ElementTimeofday"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTimesignature"
+                },
+                {
+                    "ref": "ElementToday"
+                },
+                {
+                    "ref": "ElementTrademark"
+                },
+                {
+                    "ref": "ElementUrl"
+                },
+                {
+                    "ref": "ElementViz"
+                },
+                {
+                    "ref": "ElementVs"
+                },
+                {
+                    "ref": "ElementWebwork"
+                },
+                {
+                    "ref": "ElementWWVariable"
+                },
+                {
+                    "ref": "ElementXelatex"
+                },
+                {
+                    "ref": "ElementXetex"
+                },
+                {
+                    "ref": "ElementXref"
+                }
+            ],
+            "textChildrenAllowed": true
         },
         "ElementPreformatted": {
             "type": "element",
@@ -11038,6 +11615,40 @@ export const jsonGrammar = {
             "attributes": {},
             "children": [],
             "textChildrenAllowed": true
+        },
+        "ElementOl": {
+            "type": "element",
+            "name": "ol",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "cols": {
+                    "optional": true,
+                    "type": [
+                        "\"2\"",
+                        "\"3\"",
+                        "\"4\"",
+                        "\"5\"",
+                        "\"6\""
+                    ]
+                },
+                "marker": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementListItem"
+                }
+            ],
+            "textChildrenAllowed": false
         },
         "ElementImageRaster": {
             "type": "element",
@@ -11106,7 +11717,11 @@ export const jsonGrammar = {
             "type": "element",
             "name": "shortdescription",
             "attributes": {},
-            "children": [],
+            "children": [
+                {
+                    "ref": "ElementWWVariable"
+                }
+            ],
             "textChildrenAllowed": true
         },
         "ElementImageDescription": {
@@ -11121,6 +11736,32 @@ export const jsonGrammar = {
                     "ref": "ElementTabular"
                 }
             ],
+            "textChildrenAllowed": false
+        },
+        "ElementImagePG": {
+            "type": "element",
+            "name": "image",
+            "attributes": {
+                "pg-name": {
+                    "optional": false,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "margins": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [],
             "textChildrenAllowed": false
         },
         "ElementImageCode": {
@@ -11307,6 +11948,258 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
+        "ElementDl": {
+            "type": "element",
+            "name": "dl",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "width": {
+                    "optional": true,
+                    "type": [
+                        "\"narrow\"",
+                        "\"medium\"",
+                        "\"wide\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementDefinitionListItem"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementDefinitionListItem": {
+            "type": "element",
+            "name": "li",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementAside"
+                },
+                {
+                    "ref": "ElementAudio"
+                },
+                {
+                    "ref": "ElementBiographical"
+                },
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementFigure"
+                },
+                {
+                    "ref": "ElementHistorical"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementList"
+                },
+                {
+                    "ref": "ElementListing"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementSage"
+                },
+                {
+                    "ref": "ElementSideBySide"
+                },
+                {
+                    "ref": "ElementSideBySideGroup"
+                },
+                {
+                    "ref": "ElementTable"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementTitle"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementSage": {
+            "type": "element",
+            "name": "sage",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "doctest": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "tolerance": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "auto-evaluate": {
+                    "optional": true,
+                    "type": [
+                        "\"no\"",
+                        "\"yes\""
+                    ]
+                },
+                "language": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "type": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementSageInput"
+                },
+                {
+                    "ref": "ElementSageOutput"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementSageOutput": {
+            "type": "element",
+            "name": "output",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementSageInput": {
+            "type": "element",
+            "name": "input",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementListing": {
+            "type": "element",
+            "name": "listing",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "landscape": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementPlainTitle"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementShortTitle"
+                },
+                {
+                    "ref": "ElementTitle"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
         "ElementConsole": {
             "type": "element",
             "name": "console",
@@ -11378,6 +12271,114 @@ export const jsonGrammar = {
             },
             "children": [],
             "textChildrenAllowed": true
+        },
+        "ElementList": {
+            "type": "element",
+            "name": "list",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "landscape": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementConclusionText"
+                },
+                {
+                    "ref": "ElementDl"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementIntroductionText"
+                },
+                {
+                    "ref": "ElementOl"
+                },
+                {
+                    "ref": "ElementPlainTitle"
+                },
+                {
+                    "ref": "ElementShortTitle"
+                },
+                {
+                    "ref": "ElementTitle"
+                },
+                {
+                    "ref": "ElementUl"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementIntroductionText": {
+            "type": "element",
+            "name": "introduction",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAudio"
+                },
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
         },
         "ElementBlockQuote": {
             "type": "element",
@@ -12082,432 +13083,6 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": false
         },
-        "ElementFeedback": {
-            "type": "element",
-            "name": "feedback",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAudio"
-                },
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementOl": {
-            "type": "element",
-            "name": "ol",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "cols": {
-                    "optional": true,
-                    "type": [
-                        "\"2\"",
-                        "\"3\"",
-                        "\"4\"",
-                        "\"5\"",
-                        "\"6\""
-                    ]
-                },
-                "marker": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementListItem"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementDl": {
-            "type": "element",
-            "name": "dl",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "width": {
-                    "optional": true,
-                    "type": [
-                        "\"narrow\"",
-                        "\"medium\"",
-                        "\"wide\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementDefinitionListItem"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementDefinitionListItem": {
-            "type": "element",
-            "name": "li",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementAside"
-                },
-                {
-                    "ref": "ElementAudio"
-                },
-                {
-                    "ref": "ElementBiographical"
-                },
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementFigure"
-                },
-                {
-                    "ref": "ElementHistorical"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementList"
-                },
-                {
-                    "ref": "ElementListing"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementSage"
-                },
-                {
-                    "ref": "ElementSideBySide"
-                },
-                {
-                    "ref": "ElementSideBySideGroup"
-                },
-                {
-                    "ref": "ElementTable"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementTitle"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementSage": {
-            "type": "element",
-            "name": "sage",
-            "attributes": {
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "doctest": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "tolerance": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "auto-evaluate": {
-                    "optional": true,
-                    "type": [
-                        "\"no\"",
-                        "\"yes\""
-                    ]
-                },
-                "language": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "type": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementSageInput"
-                },
-                {
-                    "ref": "ElementSageOutput"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementSageOutput": {
-            "type": "element",
-            "name": "output",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementSageInput": {
-            "type": "element",
-            "name": "input",
-            "attributes": {},
-            "children": [],
-            "textChildrenAllowed": true
-        },
-        "ElementListing": {
-            "type": "element",
-            "name": "listing",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "landscape": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementPlainTitle"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementShortTitle"
-                },
-                {
-                    "ref": "ElementTitle"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementList": {
-            "type": "element",
-            "name": "list",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "landscape": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementConclusionText"
-                },
-                {
-                    "ref": "ElementDl"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementIntroductionText"
-                },
-                {
-                    "ref": "ElementOl"
-                },
-                {
-                    "ref": "ElementPlainTitle"
-                },
-                {
-                    "ref": "ElementShortTitle"
-                },
-                {
-                    "ref": "ElementTitle"
-                },
-                {
-                    "ref": "ElementUl"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
-        "ElementIntroductionText": {
-            "type": "element",
-            "name": "introduction",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAudio"
-                },
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
         "ElementConclusionText": {
             "type": "element",
             "name": "conclusion",
@@ -12524,6 +13099,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -12587,6 +13165,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -12660,6 +13241,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -13051,6 +13635,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -13118,6 +13705,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -13896,6 +14486,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -14802,6 +15395,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -14886,6 +15482,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -14979,6 +15578,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -15115,6 +15717,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -15220,6 +15825,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -15292,6 +15900,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -15387,6 +15998,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -15462,6 +16076,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -15557,6 +16174,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -15635,6 +16255,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -15843,6 +16466,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -17270,6 +17896,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -17660,6 +18289,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -17757,6 +18389,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -17871,6 +18506,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -17991,6 +18629,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -18116,6 +18757,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -18205,6 +18849,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -18241,6 +18888,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -18331,6 +18981,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -18547,6 +19200,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -18780,6 +19436,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -18879,6 +19538,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -18976,6 +19638,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -19143,6 +19808,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -19240,6 +19908,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -19485,6 +20156,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -19582,6 +20256,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -19725,6 +20402,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -19846,6 +20526,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -19974,6 +20657,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -20080,6 +20766,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -20337,6 +21026,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -20458,6 +21150,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -20599,6 +21294,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -20763,6 +21461,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -20871,6 +21572,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -20974,6 +21678,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -21120,6 +21827,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -21226,6 +21936,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -21411,6 +22124,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -21500,6 +22216,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -21656,6 +22375,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -21777,6 +22499,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -21938,6 +22663,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -22264,6 +22992,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -22481,6 +23212,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -23086,6 +23820,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -23433,6 +24170,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -23703,6 +24443,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -23967,6 +24710,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -24132,13 +24878,10 @@ export const jsonGrammar = {
                     "ref": "ElementBibliographyItem"
                 },
                 {
-                    "ref": "ElementConclusionDivision"
+                    "ref": "ElementHeadNote"
                 },
                 {
                     "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementIntroductionDivision"
                 },
                 {
                     "ref": "ElementPlainTitle"
@@ -24148,6 +24891,62 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementTitle"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementHeadNote": {
+            "type": "element",
+            "name": "headnote",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementAside"
+                },
+                {
+                    "ref": "ElementAudio"
+                },
+                {
+                    "ref": "ElementBiographical"
+                },
+                {
+                    "ref": "ElementBlockQuote"
+                },
+                {
+                    "ref": "ElementConsole"
+                },
+                {
+                    "ref": "ElementHistorical"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementPreformatted"
+                },
+                {
+                    "ref": "ElementProgram"
+                },
+                {
+                    "ref": "ElementSideBySideGroupNoNumber"
+                },
+                {
+                    "ref": "ElementSideBySideNoNumber"
+                },
+                {
+                    "ref": "ElementTabular"
+                },
+                {
+                    "ref": "ElementVideo"
                 }
             ],
             "textChildrenAllowed": false
@@ -25954,6 +26753,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -26130,59 +26932,6 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": false
         },
-        "ElementHeadNote": {
-            "type": "element",
-            "name": "headnote",
-            "attributes": {},
-            "children": [
-                {
-                    "ref": "ElementAside"
-                },
-                {
-                    "ref": "ElementAudio"
-                },
-                {
-                    "ref": "ElementBiographical"
-                },
-                {
-                    "ref": "ElementBlockQuote"
-                },
-                {
-                    "ref": "ElementConsole"
-                },
-                {
-                    "ref": "ElementHistorical"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementPreformatted"
-                },
-                {
-                    "ref": "ElementProgram"
-                },
-                {
-                    "ref": "ElementSideBySideGroupNoNumber"
-                },
-                {
-                    "ref": "ElementSideBySideNoNumber"
-                },
-                {
-                    "ref": "ElementTabular"
-                },
-                {
-                    "ref": "ElementVideo"
-                }
-            ],
-            "textChildrenAllowed": false
-        },
         "ElementGlossaryItem": {
             "type": "element",
             "name": "gi",
@@ -26233,6 +26982,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -26469,6 +27221,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -26520,6 +27275,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -26773,6 +27531,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -26987,6 +27748,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -27244,6 +28008,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -27329,6 +28096,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -28710,6 +29480,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -31335,6 +32108,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -31458,6 +32234,9 @@ export const jsonGrammar = {
             },
             "children": [
                 {
+                    "ref": "ElementHeadNote"
+                },
+                {
                     "ref": "ElementIndex"
                 },
                 {
@@ -31517,6 +32296,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -31663,6 +32445,9 @@ export const jsonGrammar = {
                     "ref": "ElementHandout"
                 },
                 {
+                    "ref": "ElementHeadNote"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -31676,6 +32461,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
@@ -31958,6 +32746,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -32189,6 +32980,9 @@ export const jsonGrammar = {
                     "ref": "ElementImageCode"
                 },
                 {
+                    "ref": "ElementImagePG"
+                },
+                {
                     "ref": "ElementImageRaster"
                 },
                 {
@@ -32384,6 +33178,9 @@ export const jsonGrammar = {
                     "ref": "ElementHandout"
                 },
                 {
+                    "ref": "ElementHeadNote"
+                },
+                {
                     "ref": "ElementHeuristic"
                 },
                 {
@@ -32397,6 +33194,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
                 },
                 {
                     "ref": "ElementImageRaster"
