@@ -6775,6 +6775,14 @@ export const jsonGrammar = {
             "type": "element",
             "name": "slide",
             "attributes": {
+                "valign": {
+                    "optional": true,
+                    "type": [
+                        "\"top\"",
+                        "\"middle\"",
+                        "\"bottom\""
+                    ]
+                },
                 "xml:id": {
                     "optional": true,
                     "type": [
@@ -26489,6 +26497,9 @@ export const jsonGrammar = {
                     "ref": "ElementPrograms"
                 },
                 {
+                    "ref": "ElementSlides"
+                },
+                {
                     "ref": "ElementXrefs"
                 }
             ],
@@ -26513,6 +26524,22 @@ export const jsonGrammar = {
                         "\"type-global-title\"",
                         "\"title\"",
                         "\"custom\""
+                    ]
+                }
+            },
+            "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementSlides": {
+            "type": "element",
+            "name": "slides",
+            "attributes": {
+                "valign": {
+                    "optional": true,
+                    "type": [
+                        "\"top\"",
+                        "\"middle\"",
+                        "\"bottom\""
                     ]
                 }
             },
