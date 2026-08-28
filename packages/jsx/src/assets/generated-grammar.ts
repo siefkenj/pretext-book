@@ -26006,7 +26006,7 @@ export const jsonGrammar = {
                 }
             },
             "children": [],
-            "textChildrenAllowed": true
+            "textChildrenAllowed": false
         },
         "ElementPfprefigurePreamble": {
             "type": "element",
