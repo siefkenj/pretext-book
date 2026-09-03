@@ -24688,7 +24688,14 @@ export const jsonGrammar = {
         "ElementShortLicense": {
             "type": "element",
             "name": "shortlicense",
-            "attributes": {},
+            "attributes": {
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementAbbr"
