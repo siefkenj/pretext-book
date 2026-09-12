@@ -8987,7 +8987,7 @@ export const jsonGrammar = {
                     "ref": "ElementExercise"
                 },
                 {
-                    "ref": "ElementFigure1"
+                    "ref": "ElementFigureInterior"
                 },
                 {
                     "ref": "ElementFigureList"
@@ -13193,6 +13193,9 @@ export const jsonGrammar = {
                     "ref": "ElementCaption"
                 },
                 {
+                    "ref": "ElementFigureStack"
+                },
+                {
                     "ref": "ElementImageCode"
                 },
                 {
@@ -13243,6 +13246,81 @@ export const jsonGrammar = {
                 }
             },
             "children": [],
+            "textChildrenAllowed": false
+        },
+        "ElementFigureStack": {
+            "type": "element",
+            "name": "stack",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementFigureInterior"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementFigureInterior": {
+            "type": "element",
+            "name": "figure",
+            "attributes": {
+                "xml:id": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "label": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "xml:lang": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "landscape": {
+                    "optional": true,
+                    "type": [
+                        "\"yes\"",
+                        "\"no\""
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementCaption"
+                },
+                {
+                    "ref": "ElementImageCode"
+                },
+                {
+                    "ref": "ElementImagePG"
+                },
+                {
+                    "ref": "ElementImageRaster"
+                },
+                {
+                    "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementMuseScore"
+                },
+                {
+                    "ref": "ElementParagraph"
+                },
+                {
+                    "ref": "ElementTitle"
+                }
+            ],
             "textChildrenAllowed": false
         },
         "ElementCaption": {
@@ -14358,70 +14436,6 @@ export const jsonGrammar = {
                 }
             ],
             "textChildrenAllowed": true
-        },
-        "ElementFigure1": {
-            "type": "element",
-            "name": "figure",
-            "attributes": {
-                "xml:id": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "label": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "component": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "xml:lang": {
-                    "optional": true,
-                    "type": [
-                        "string"
-                    ]
-                },
-                "landscape": {
-                    "optional": true,
-                    "type": [
-                        "\"yes\"",
-                        "\"no\""
-                    ]
-                }
-            },
-            "children": [
-                {
-                    "ref": "ElementCaption"
-                },
-                {
-                    "ref": "ElementImageCode"
-                },
-                {
-                    "ref": "ElementImagePG"
-                },
-                {
-                    "ref": "ElementImageRaster"
-                },
-                {
-                    "ref": "ElementIndex"
-                },
-                {
-                    "ref": "ElementMuseScore"
-                },
-                {
-                    "ref": "ElementParagraph"
-                },
-                {
-                    "ref": "ElementTitle"
-                }
-            ],
-            "textChildrenAllowed": false
         },
         "ElementExercise": {
             "type": "element",
