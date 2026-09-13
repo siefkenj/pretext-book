@@ -116,35 +116,56 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     const [height, setHeight] = React.useState("0px");
     const router = useRouter();
 
-    const onLoad = () => {
-        const iframe =
-            ref.current?.contentWindow?.document?.body?.parentElement;
-        if (iframe) {
-            setHeight(iframe.scrollHeight + "px");
-        }
+    const srcDoc = React.useMemo(
+        () => createHtmlForIframe(fragmentSource, router.basePath),
+        [fragmentSource, router.basePath],
+    );
 
-        const updateHeight = () => {
-            const iframe =
-                ref.current?.contentWindow?.document?.body?.parentElement;
-            if (!iframe) {
+    React.useEffect(() => {
+        const iframe = ref.current;
+        if (!iframe) {
+            return;
+        }
+        let observer: ResizeObserver | undefined;
+
+        const measure = () => {
+            const body = iframe.contentWindow?.document?.body;
+            if (!body) {
                 return;
             }
-            const newHeight = iframe.scrollHeight + "px";
-            if (newHeight !== height) {
-                setHeight(newHeight);
-            }
+            // Measure <body>, not documentElement. `documentElement.scrollHeight` is
+            // floored at the iframe's own viewport height, so it can never report a
+            // value smaller than the height we set, and the iframe ratchets upward.
+            const newHeight =
+                Math.ceil(body.getBoundingClientRect().height) + "px";
+            setHeight((prev) => (prev === newHeight ? prev : newHeight));
         };
 
-        // The mutation observer might not catch all resize changes, so we poll as well.
-        const interval = setInterval(updateHeight, 500);
+        const attach = () => {
+            const win = iframe.contentWindow;
+            if (!win?.document?.body) {
+                return;
+            }
+            measure();
+            observer?.disconnect();
+            observer = new (win as any).ResizeObserver(measure);
+            observer?.observe(win.document.body);
+            // Webfonts and MathJax typeset after load, both of which shift the height.
+            // `runestoneMathReady` is defined by the document we generate below.
+            win.document.fonts?.ready.then(measure).catch(() => {});
+            (win as any).runestoneMathReady?.then(measure).catch(() => {});
+        };
+
+        iframe.addEventListener("load", attach);
+        if (iframe.contentWindow?.document?.readyState === "complete") {
+            attach();
+        }
 
         return () => {
-            clearInterval(interval);
+            iframe.removeEventListener("load", attach);
+            observer?.disconnect();
         };
-    };
-    React.useEffect(() => {
-        return onLoad();
-    }, []);
+    }, [srcDoc]);
 
     if (typeof fragmentSource !== "string") {
         console.error(
@@ -162,7 +183,7 @@ export function IframePretext({ fragmentSource }: { fragmentSource: string }) {
     return (
         <iframe
             ref={ref}
-            srcDoc={createHtmlForIframe(fragmentSource, router.basePath)}
+            srcDoc={srcDoc}
             style={{
                 width: "100%",
                 boxSizing: "content-box",
@@ -275,12 +296,30 @@ function createHtmlForIframe(pretext: string, basePath = "") {
                 padding: unset;
                 border: unset;
             }
+            /* shell_default.css sizes the page against the viewport
+               (.ptx-page{min-height:100vh}, .ptx-content{min-height:60vh}). This iframe
+               is resized to fit its own content, so the viewport *is* the height we set,
+               which makes the content height feed back into its own measurement and the
+               iframe grow step by step until it converges. Size to content instead. */
+            .pretext .ptx-page {
+                min-height: 0;
+            }
+            .ptx-content {
+                min-height: 0;
+            }
             pre {
                 white-space: initial;
             }
         </style>
     </head>
     <body class="pretext article">
+        <!-- pretext.js unconditionally does
+             document.getElementsByClassName("toc-toggle")[0].addEventListener(...)
+             on window load. That element belongs to the full page shell, which a
+             fragment preview has no use for, so without this stub the call throws.
+             (The neighbouring scrollTocToActive() listener guards for this; the
+             toc-toggle one does not.) -->
+        <button class="toc-toggle" style="display: none" aria-hidden="true"></button>
         <div
           id="latex-macros"
           class="hidden-content process-math"
