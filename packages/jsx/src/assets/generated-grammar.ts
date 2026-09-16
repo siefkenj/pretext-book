@@ -19505,6 +19505,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementParagraph"
                 },
                 {
@@ -19536,6 +19539,24 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementVideo"
+                }
+            ],
+            "textChildrenAllowed": false
+        },
+        "ElementOrigins": {
+            "type": "element",
+            "name": "origins",
+            "attributes": {
+                "component": {
+                    "optional": true,
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "ref": "ElementXref"
                 }
             ],
             "textChildrenAllowed": false
@@ -20240,6 +20261,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementParagraph"
                 },
                 {
@@ -20670,6 +20694,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementStatement"
                 },
                 {
@@ -20937,6 +20964,9 @@ export const jsonGrammar = {
                     "ref": "ElementContext"
                 },
                 {
+                    "ref": "ElementCreator"
+                },
+                {
                     "ref": "ElementDiscussion"
                 },
                 {
@@ -20950,6 +20980,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementOpinion"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementPostlude"
@@ -21585,6 +21618,9 @@ export const jsonGrammar = {
                     "ref": "ElementContext"
                 },
                 {
+                    "ref": "ElementCreator"
+                },
+                {
                     "ref": "ElementDiscussion"
                 },
                 {
@@ -21598,6 +21634,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementOpinion"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementPostlude"
@@ -21657,6 +21696,9 @@ export const jsonGrammar = {
                     "ref": "ElementContext"
                 },
                 {
+                    "ref": "ElementCreator"
+                },
+                {
                     "ref": "ElementDiscussion"
                 },
                 {
@@ -21670,6 +21712,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementOpinion"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementPostlude"
@@ -22009,6 +22054,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementParagraph"
@@ -22377,6 +22425,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementParagraph"
                 },
                 {
@@ -22449,6 +22500,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementStatement"
                 },
                 {
@@ -22492,6 +22546,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementStatement"
@@ -22633,6 +22690,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementParagraph"
@@ -22983,10 +23043,16 @@ export const jsonGrammar = {
             },
             "children": [
                 {
+                    "ref": "ElementCreator"
+                },
+                {
                     "ref": "ElementIndex"
                 },
                 {
                     "ref": "ElementNotation"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementStatement"
@@ -23181,6 +23247,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementParagraph"
                 },
                 {
@@ -23353,6 +23422,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementStatement"
@@ -23547,6 +23619,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementParagraph"
                 },
                 {
@@ -23619,6 +23694,9 @@ export const jsonGrammar = {
                     "ref": "ElementIndex"
                 },
                 {
+                    "ref": "ElementOrigins"
+                },
+                {
                     "ref": "ElementStatement"
                 },
                 {
@@ -23662,6 +23740,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementStatement"
@@ -23830,6 +23911,9 @@ export const jsonGrammar = {
                 },
                 {
                     "ref": "ElementIndex"
+                },
+                {
+                    "ref": "ElementOrigins"
                 },
                 {
                     "ref": "ElementParagraph"
