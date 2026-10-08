@@ -17174,7 +17174,19 @@ export const jsonGrammar = {
                     "ref": "ElementBibAccessed"
                 },
                 {
+                    "ref": "ElementBibArchive"
+                },
+                {
+                    "ref": "ElementBibArchiveLocation"
+                },
+                {
                     "ref": "ElementBibAuthor"
+                },
+                {
+                    "ref": "ElementBibChapterNumber"
+                },
+                {
+                    "ref": "ElementBibCollectionNumber"
                 },
                 {
                     "ref": "ElementBibCollectionTitle"
@@ -17183,10 +17195,16 @@ export const jsonGrammar = {
                     "ref": "ElementBibContainerTitle"
                 },
                 {
+                    "ref": "ElementBibContainerTitleShort"
+                },
+                {
                     "ref": "ElementBibDOI"
                 },
                 {
                     "ref": "ElementBibEditor"
+                },
+                {
+                    "ref": "ElementBibEvent"
                 },
                 {
                     "ref": "ElementBibGenre"
@@ -17216,6 +17234,9 @@ export const jsonGrammar = {
                     "ref": "ElementBibNumberOfPages"
                 },
                 {
+                    "ref": "ElementBibNumberOfVolumes"
+                },
+                {
                     "ref": "ElementBibPage"
                 },
                 {
@@ -17237,10 +17258,16 @@ export const jsonGrammar = {
                     "ref": "ElementBibSeries"
                 },
                 {
+                    "ref": "ElementBibStatus"
+                },
+                {
                     "ref": "ElementBibTitle"
                 },
                 {
                     "ref": "ElementBibURL"
+                },
+                {
+                    "ref": "ElementBibVersion"
                 },
                 {
                     "ref": "ElementBibVolume"
@@ -17666,6 +17693,13 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
+        "ElementBibVersion": {
+            "type": "element",
+            "name": "version",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
         "ElementBibURL": {
             "type": "element",
             "name": "URL",
@@ -17966,6 +18000,116 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
+        "ElementBibStatus": {
+            "type": "element",
+            "name": "status",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
         "ElementBibSeries": {
             "type": "element",
             "name": "series",
@@ -18234,6 +18378,13 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
+        "ElementBibNumberOfVolumes": {
+            "type": "element",
+            "name": "number-of-volumes",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
         "ElementBibNumberOfPages": {
             "type": "element",
             "name": "number-of-pages",
@@ -18441,6 +18592,116 @@ export const jsonGrammar = {
             "children": [],
             "textChildrenAllowed": true
         },
+        "ElementBibEvent": {
+            "type": "element",
+            "name": "event",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
+            "textChildrenAllowed": true
+        },
         "ElementBibEditor": {
             "type": "element",
             "name": "editor",
@@ -18453,6 +18714,116 @@ export const jsonGrammar = {
             "name": "DOI",
             "attributes": {},
             "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementBibContainerTitleShort": {
+            "type": "element",
+            "name": "container-title-short",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
             "textChildrenAllowed": true
         },
         "ElementBibContainerTitle": {
@@ -18675,11 +19046,142 @@ export const jsonGrammar = {
             ],
             "textChildrenAllowed": true
         },
+        "ElementBibCollectionNumber": {
+            "type": "element",
+            "name": "collection-number",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementBibChapterNumber": {
+            "type": "element",
+            "name": "chapter-number",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
         "ElementBibAuthor": {
             "type": "element",
             "name": "author",
             "attributes": {},
             "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementBibArchiveLocation": {
+            "type": "element",
+            "name": "archive_location",
+            "attributes": {},
+            "children": [],
+            "textChildrenAllowed": true
+        },
+        "ElementBibArchive": {
+            "type": "element",
+            "name": "archive",
+            "attributes": {},
+            "children": [
+                {
+                    "ref": "ElementCopyleft"
+                },
+                {
+                    "ref": "ElementCopyrightCharacter"
+                },
+                {
+                    "ref": "ElementDblprime"
+                },
+                {
+                    "ref": "ElementDegree"
+                },
+                {
+                    "ref": "ElementEllipsis"
+                },
+                {
+                    "ref": "ElementIcon"
+                },
+                {
+                    "ref": "ElementKbd"
+                },
+                {
+                    "ref": "ElementLangle"
+                },
+                {
+                    "ref": "ElementLdblbracket"
+                },
+                {
+                    "ref": "ElementLq"
+                },
+                {
+                    "ref": "ElementLsq"
+                },
+                {
+                    "ref": "ElementMathInline"
+                },
+                {
+                    "ref": "ElementMdash"
+                },
+                {
+                    "ref": "ElementMidpoint"
+                },
+                {
+                    "ref": "ElementMinus"
+                },
+                {
+                    "ref": "ElementNbsp"
+                },
+                {
+                    "ref": "ElementNdash"
+                },
+                {
+                    "ref": "ElementObelus"
+                },
+                {
+                    "ref": "ElementPermille"
+                },
+                {
+                    "ref": "ElementPhonomark"
+                },
+                {
+                    "ref": "ElementPilcrow"
+                },
+                {
+                    "ref": "ElementPlusminus"
+                },
+                {
+                    "ref": "ElementPrime"
+                },
+                {
+                    "ref": "ElementRangle"
+                },
+                {
+                    "ref": "ElementRdblbracket"
+                },
+                {
+                    "ref": "ElementRegistered"
+                },
+                {
+                    "ref": "ElementRq"
+                },
+                {
+                    "ref": "ElementRsq"
+                },
+                {
+                    "ref": "ElementSectionMark"
+                },
+                {
+                    "ref": "ElementServicemark"
+                },
+                {
+                    "ref": "ElementSolidus"
+                },
+                {
+                    "ref": "ElementSwungdash"
+                },
+                {
+                    "ref": "ElementTimes"
+                },
+                {
+                    "ref": "ElementTrademark"
+                }
+            ],
             "textChildrenAllowed": true
         },
         "ElementBibAccessed": {
