@@ -24603,7 +24603,15 @@ export const jsonGrammar = {
         "ElementPage": {
             "type": "element",
             "name": "page",
-            "attributes": {},
+            "attributes": {
+                "pages": {
+                    "optional": true,
+                    "type": [
+                        "string",
+                        "\"multiple\""
+                    ]
+                }
+            },
             "children": [
                 {
                     "ref": "ElementActivity"
